@@ -97,18 +97,49 @@ static const VideoMode VMODE_1280x720 = {
 };
 
 static const VideoMode VMODE_1600x900 = {
-        .label = "1600x900@60Hz",
-        .width = 1600,
-        .height = 900,
-        .hps = 1648,
-        .hpe = 1680,
-        .hmax = 1759,
-        .hpol = 1,
-        .vps = 903,
-        .vpe = 908,
-        .vmax = 925,
-        .vpol = 0,
-        .freq = 97.75
+	.label = "1600x900@60Hz",
+	.width = 1600,
+	.height = 900,
+	.hps = 1648,
+	.hpe = 1680,
+	.hmax = 1759,
+	.hpol = 1,
+	.vps = 903,
+	.vpe = 908,
+	.vmax = 925,
+	.vpol = 0,
+	.freq = 97.75
+};
+
+//typedef struct {
+//	char label[64]; /* Label describing the resolution */
+//	u32 width; /*Width of the active video frame*/
+//	u32 height; /*Height of the active video frame*/
+//	u32 hps; /*Start time of Horizontal sync pulse, in pixel clocks (active width + H. front porch)*/
+//	u32 hpe; /*End time of Horizontal sync pulse, in pixel clocks (active width + H. front porch + H. sync width)*/
+//	u32 hmax; /*Total number of pixel clocks per line (active width + H. front porch + H. sync width + H. back porch) */
+//	u32 hpol; /*hsync pulse polarity*/
+//	u32 vps; /*Start time of Vertical sync pulse, in lines (active height + V. front porch)*/
+//	u32 vpe; /*End time of Vertical sync pulse, in lines (active height + V. front porch + V. sync width)*/
+//	u32 vmax; /*Total number of lines per frame (active height + V. front porch + V. sync width + V. back porch) */
+//	u32 vpol; /*vsync pulse polarity*/
+//	double freq; /*Pixel Clock frequency*/
+//} VideoMode;
+
+// Derived from http://tinyvga.com/vga-timing/1680x1050@60Hz
+static const VideoMode VMODE_1680x1050 = {
+	.label = "1680x1050@60Hz",
+	.width = 1680,
+	.height = 1050,
+	.hps = 1784,
+	.hpe = 1968,
+	.hmax = 2255,
+	.hpol = 0,
+	.vps = 1051,
+	.vpe = 1054,
+	.vmax = 1086,
+	.vpol = 1,
+	.freq = 147.14
 };
 
 static const VideoMode VMODE_1920x1080 = {

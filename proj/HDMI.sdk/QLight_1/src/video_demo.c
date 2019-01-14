@@ -85,6 +85,7 @@ const ivt_t ivt[] = {
 
 int main(void)
 {
+	printf("Hello world!\r\n");
 	DemoInitialize();
 
 	DemoRun();
@@ -360,6 +361,12 @@ void DemoChangeRes()
 			break;
 		case '6':
 			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_1680x1050);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case '7':
+			status = DisplayStop(&dispCtrl);
 			DisplaySetMode(&dispCtrl, &VMODE_1920x1080);
 			DisplayStart(&dispCtrl);
 			fResSet = 1;
@@ -394,7 +401,8 @@ void DemoCRMenu()
 	xil_printf("3 - %s\n\r", VMODE_1280x720.label);
 	xil_printf("4 - %s\n\r", VMODE_1280x1024.label);
 	xil_printf("5 - %s\n\r", VMODE_1600x900.label);
-	xil_printf("6 - %s\n\r", VMODE_1920x1080.label);
+	xil_printf("6 - %s\n\r", VMODE_1680x1050.label);
+	xil_printf("7 - %s\n\r", VMODE_1920x1080.label);
 	xil_printf("q - Quit (don't change resolution)\n\r");
 	xil_printf("\n\r");
 	xil_printf("Select a new resolution:");

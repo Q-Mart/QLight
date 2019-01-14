@@ -5,7 +5,7 @@
     <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1543226678"/>
     <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1543226678"/>
     <Generation Name="SIMULATION" State="GENERATED" Timestamp="1543226678"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1543226678"/>
+    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1547458341"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/system_processing_system7_0_0/system_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
