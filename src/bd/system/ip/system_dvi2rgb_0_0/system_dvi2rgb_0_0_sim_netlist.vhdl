@@ -1,8 +1,8 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
--- Date        : Mon Nov 26 10:06:07 2018
--- Host        : pc720s.cs.york.ac.uk running 64-bit Ubuntu 16.04.5 LTS
+-- Date        : Tue Jan 15 14:47:12 2019
+-- Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_dvi2rgb_0_0/system_dvi2rgb_0_0_sim_netlist.vhdl
 -- Design      : system_dvi2rgb_0_0
@@ -12912,7 +12912,7 @@ architecture STRUCTURE of system_dvi2rgb_0_0 is
   attribute x_interface_parameter : string;
   attribute x_interface_parameter of PixelClk : signal is "XIL_INTERFACENAME PixelClk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN system_dvi2rgb_0_0_PixelClk";
   attribute x_interface_info of RefClk : signal is "xilinx.com:signal:clock:1.0 RefClk CLK";
-  attribute x_interface_parameter of RefClk : signal is "XIL_INTERFACENAME RefClk, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK2";
+  attribute x_interface_parameter of RefClk : signal is "XIL_INTERFACENAME RefClk, FREQ_HZ 2e+08, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK2";
   attribute x_interface_info of SCL_I : signal is "xilinx.com:interface:iic:1.0 DDC SCL_I";
   attribute x_interface_info of SCL_O : signal is "xilinx.com:interface:iic:1.0 DDC SCL_O";
   attribute x_interface_info of SCL_T : signal is "xilinx.com:interface:iic:1.0 DDC SCL_T";

@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2018 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -62,7 +62,13 @@ ENTITY system_v_tc_0_1 IS
     clken : IN STD_LOGIC;
     s_axi_aclk : IN STD_LOGIC;
     s_axi_aclken : IN STD_LOGIC;
+    det_clken : IN STD_LOGIC;
     gen_clken : IN STD_LOGIC;
+    hsync_in : IN STD_LOGIC;
+    hblank_in : IN STD_LOGIC;
+    vsync_in : IN STD_LOGIC;
+    vblank_in : IN STD_LOGIC;
+    active_video_in : IN STD_LOGIC;
     hsync_out : OUT STD_LOGIC;
     hblank_out : OUT STD_LOGIC;
     vsync_out : OUT STD_LOGIC;
@@ -250,8 +256,8 @@ ARCHITECTURE system_v_tc_0_1_arch OF system_v_tc_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_wdata: SIGNAL IS "xilinx.com:interface:aximm:1.0 ctrl WDATA";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_awready: SIGNAL IS "xilinx.com:interface:aximm:1.0 ctrl AWREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 ctrl AWVALID";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME ctrl, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1," & 
-" NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME ctrl, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 1e+08, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM" & 
+"_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 ctrl AWADDR";
   ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aresetn: SIGNAL IS "XIL_INTERFACENAME s_axi_aresetn_intf, POLARITY ACTIVE_LOW";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 s_axi_aresetn_intf RST";
@@ -262,9 +268,14 @@ ARCHITECTURE system_v_tc_0_1_arch OF system_v_tc_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF vsync_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out VSYNC";
   ATTRIBUTE X_INTERFACE_INFO OF hblank_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out HBLANK";
   ATTRIBUTE X_INTERFACE_INFO OF hsync_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out HSYNC";
+  ATTRIBUTE X_INTERFACE_INFO OF active_video_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in ACTIVE_VIDEO";
+  ATTRIBUTE X_INTERFACE_INFO OF vblank_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in VBLANK";
+  ATTRIBUTE X_INTERFACE_INFO OF vsync_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in VSYNC";
+  ATTRIBUTE X_INTERFACE_INFO OF hblank_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in HBLANK";
+  ATTRIBUTE X_INTERFACE_INFO OF hsync_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in HSYNC";
   ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aclken: SIGNAL IS "XIL_INTERFACENAME s_axi_aclken_intf, POLARITY ACTIVE_LOW";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aclken: SIGNAL IS "xilinx.com:signal:clockenable:1.0 s_axi_aclken_intf CE";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aclk: SIGNAL IS "XIL_INTERFACENAME s_axi_aclk_intf, ASSOCIATED_BUSIF ctrl, ASSOCIATED_RESET s_axi_aresetn, ASSOCIATED_CLKEN s_axi_aclken, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aclk: SIGNAL IS "XIL_INTERFACENAME s_axi_aclk_intf, ASSOCIATED_BUSIF ctrl, ASSOCIATED_RESET s_axi_aresetn, ASSOCIATED_CLKEN s_axi_aclken, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 s_axi_aclk_intf CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF clken: SIGNAL IS "XIL_INTERFACENAME clken_intf, POLARITY ACTIVE_LOW";
   ATTRIBUTE X_INTERFACE_INFO OF clken: SIGNAL IS "xilinx.com:signal:clockenable:1.0 clken_intf CE";
@@ -341,7 +352,7 @@ BEGIN
       C_NUM_FSYNCS => 1,
       C_INTERLACE_EN => 0,
       C_GEN_AUTO_SWITCH => 0,
-      C_DETECT_EN => 0,
+      C_DETECT_EN => 1,
       C_SYNC_EN => 0,
       C_GENERATE_EN => 1,
       C_DET_HSYNC_EN => 1,
@@ -364,14 +375,14 @@ BEGIN
       clken => clken,
       s_axi_aclk => s_axi_aclk,
       s_axi_aclken => s_axi_aclken,
-      det_clken => '1',
+      det_clken => det_clken,
       gen_clken => gen_clken,
       field_id_in => '0',
-      hsync_in => '0',
-      hblank_in => '0',
-      vsync_in => '0',
-      vblank_in => '0',
-      active_video_in => '0',
+      hsync_in => hsync_in,
+      hblank_in => hblank_in,
+      vsync_in => vsync_in,
+      vblank_in => vblank_in,
+      active_video_in => active_video_in,
       active_chroma_in => '0',
       hsync_out => hsync_out,
       hblank_out => hblank_out,

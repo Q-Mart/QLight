@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
---Date        : Mon Nov 26 10:04:09 2018
---Host        : pc720s.cs.york.ac.uk running 64-bit Ubuntu 16.04.5 LTS
+--Date        : Tue Jan 15 14:45:22 2019
+--Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
 --Command     : generate_target system.bd
 --Design      : system
 --Purpose     : IP block netlist
@@ -3979,7 +3979,13 @@ architecture STRUCTURE of system is
     clken : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC;
     s_axi_aclken : in STD_LOGIC;
+    det_clken : in STD_LOGIC;
     gen_clken : in STD_LOGIC;
+    hsync_in : in STD_LOGIC;
+    hblank_in : in STD_LOGIC;
+    vsync_in : in STD_LOGIC;
+    vblank_in : in STD_LOGIC;
+    active_video_in : in STD_LOGIC;
     hsync_out : out STD_LOGIC;
     hblank_out : out STD_LOGIC;
     vsync_out : out STD_LOGIC;
@@ -5096,13 +5102,17 @@ v_tc_in: component system_v_tc_0_0
     );
 v_tc_out: component system_v_tc_0_1
      port map (
+      active_video_in => '0',
       active_video_out => v_tc_out_vtiming_out_ACTIVE_VIDEO,
       clk => axi_dynclk_0_PXL_CLK_O,
       clken => '1',
+      det_clken => '1',
       fsync_in => '0',
       fsync_out(0) => NLW_v_tc_out_fsync_out_UNCONNECTED(0),
       gen_clken => v_axi4s_vid_out_0_vtg_ce,
+      hblank_in => '0',
       hblank_out => v_tc_out_vtiming_out_HBLANK,
+      hsync_in => '0',
       hsync_out => v_tc_out_vtiming_out_HSYNC,
       irq => v_tc_out_irq,
       resetn => '1',
@@ -5126,7 +5136,9 @@ v_tc_out: component system_v_tc_0_1
       s_axi_wready => ps7_0_axi_periph_M01_AXI_WREADY,
       s_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M01_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => ps7_0_axi_periph_M01_AXI_WVALID,
+      vblank_in => '0',
       vblank_out => v_tc_out_vtiming_out_VBLANK,
+      vsync_in => '0',
       vsync_out => v_tc_out_vtiming_out_VSYNC
     );
 v_vid_in_axi4s_0: component system_v_vid_in_axi4s_0_0

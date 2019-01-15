@@ -1,8 +1,8 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-// Date        : Mon Nov 26 10:09:57 2018
-// Host        : pc720s.cs.york.ac.uk running 64-bit Ubuntu 16.04.5 LTS
+// Date        : Tue Jan 15 14:49:23 2019
+// Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_axi4s_vid_out_0_0/system_v_axi4s_vid_out_0_0_sim_netlist.v
 // Design      : system_v_axi4s_vid_out_0_0
@@ -45,14 +45,14 @@ module system_v_axi4s_vid_out_0_0
     overflow,
     underflow,
     status);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aclk_intf CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 133333344, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1" *) input aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aclk_intf CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 1.33333e+08, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1" *) input aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 aclken_intf CE" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_LOW" *) input aclken;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aresetn_intf RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW" *) input aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TDATA" *) input [23:0]s_axis_video_tdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TVALID" *) input s_axis_video_tvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TREADY" *) output s_axis_video_tready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TUSER" *) input s_axis_video_tuser;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TLAST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 133333344, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, LAYERED_METADATA undef" *) input s_axis_video_tlast;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TLAST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 1.33333e+08, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, LAYERED_METADATA undef" *) input s_axis_video_tlast;
   input fid;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 vid_io_out_clk_intf CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_clk_intf, ASSOCIATED_BUSIF vid_io_out, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN system_axi_dynclk_0_0_PXL_CLK_O" *) input vid_io_out_clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 vid_io_out_ce_intf CE" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_ce_intf, POLARITY ACTIVE_LOW" *) input vid_io_out_ce;
@@ -7175,8 +7175,8 @@ module system_v_axi4s_vid_out_0_0_xpm_counter_updn__parameterized0
     S,
     \grdc.rd_data_count_i_reg[7] ,
     \grdc.rd_data_count_i_reg[11] ,
-    DI,
     \grdc.rd_data_count_i_reg[12] ,
+    DI,
     \gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[3] ,
     E,
     \gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[11] ,
@@ -7194,8 +7194,8 @@ module system_v_axi4s_vid_out_0_0_xpm_counter_updn__parameterized0
   output [0:0]S;
   output [3:0]\grdc.rd_data_count_i_reg[7] ;
   output [3:0]\grdc.rd_data_count_i_reg[11] ;
-  output [0:0]DI;
   output [0:0]\grdc.rd_data_count_i_reg[12] ;
+  output [0:0]DI;
   output [3:0]\gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[3] ;
   output [0:0]E;
   output [3:0]\gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[11] ;
@@ -8956,6 +8956,7 @@ module system_v_axi4s_vid_out_0_0_xpm_fifo_base
   wire \gen_cdc_pntr.wpr_gray_reg_dc_n_23 ;
   wire \gen_cdc_pntr.wpr_gray_reg_dc_n_24 ;
   wire \gen_cdc_pntr.wpr_gray_reg_dc_n_25 ;
+  wire \gen_cdc_pntr.wpr_gray_reg_n_12 ;
   wire \gen_cdc_pntr.wpr_gray_reg_n_13 ;
   wire \gen_cdc_pntr.wpr_gray_reg_n_14 ;
   wire \gen_cdc_pntr.wpr_gray_reg_n_15 ;
@@ -8966,7 +8967,6 @@ module system_v_axi4s_vid_out_0_0_xpm_fifo_base
   wire \gen_cdc_pntr.wpr_gray_reg_n_20 ;
   wire \gen_cdc_pntr.wpr_gray_reg_n_21 ;
   wire \gen_cdc_pntr.wpr_gray_reg_n_22 ;
-  wire \gen_cdc_pntr.wpr_gray_reg_n_23 ;
   (* RTL_KEEP = "yes" *) wire [1:0]\gen_fwft.curr_fwft_state ;
   wire \gen_fwft.empty_fwft_i_reg0 ;
   wire [1:0]\gen_fwft.next_fwft_state__0 ;
@@ -9175,7 +9175,7 @@ module system_v_axi4s_vid_out_0_0_xpm_fifo_base
   system_v_axi4s_vid_out_0_0_xpm_fifo_reg_vec_0 \gen_cdc_pntr.wpr_gray_reg 
        (.D(diff_pntr_pe),
         .DI(p_1_in),
-        .Q({\gen_cdc_pntr.wpr_gray_reg_n_13 ,\gen_cdc_pntr.wpr_gray_reg_n_14 ,\gen_cdc_pntr.wpr_gray_reg_n_15 ,\gen_cdc_pntr.wpr_gray_reg_n_16 ,\gen_cdc_pntr.wpr_gray_reg_n_17 ,\gen_cdc_pntr.wpr_gray_reg_n_18 ,\gen_cdc_pntr.wpr_gray_reg_n_19 ,\gen_cdc_pntr.wpr_gray_reg_n_20 ,\gen_cdc_pntr.wpr_gray_reg_n_21 ,\gen_cdc_pntr.wpr_gray_reg_n_22 ,\gen_cdc_pntr.wpr_gray_reg_n_23 }),
+        .Q({\gen_cdc_pntr.wpr_gray_reg_n_12 ,\gen_cdc_pntr.wpr_gray_reg_n_13 ,\gen_cdc_pntr.wpr_gray_reg_n_14 ,\gen_cdc_pntr.wpr_gray_reg_n_15 ,\gen_cdc_pntr.wpr_gray_reg_n_16 ,\gen_cdc_pntr.wpr_gray_reg_n_17 ,\gen_cdc_pntr.wpr_gray_reg_n_18 ,\gen_cdc_pntr.wpr_gray_reg_n_19 ,\gen_cdc_pntr.wpr_gray_reg_n_20 ,\gen_cdc_pntr.wpr_gray_reg_n_21 ,\gen_cdc_pntr.wpr_gray_reg_n_22 }),
         .S({rdp_inst_n_36,rdp_inst_n_37,rdp_inst_n_38,rdp_inst_n_39}),
         .\count_value_i_reg[11] ({rdp_inst_n_41,rdp_inst_n_42,rdp_inst_n_43,rdp_inst_n_44}),
         .\count_value_i_reg[11]_0 ({rdpp1_inst_n_0,rdpp1_inst_n_1,rdpp1_inst_n_2,rdpp1_inst_n_3,rdpp1_inst_n_4,rdpp1_inst_n_5,rdpp1_inst_n_6,rdpp1_inst_n_7,rdpp1_inst_n_8,rdpp1_inst_n_9,rdpp1_inst_n_10,rdpp1_inst_n_11}),
@@ -9190,13 +9190,13 @@ module system_v_axi4s_vid_out_0_0_xpm_fifo_base
         .rd_en(rd_en));
   system_v_axi4s_vid_out_0_0_xpm_fifo_reg_vec__parameterized0_1 \gen_cdc_pntr.wpr_gray_reg_dc 
        (.D(\grdc.diff_wr_rd_pntr_rdc ),
-        .DI({rdp_inst_n_34,\gen_fwft.rdpp1_inst_n_2 }),
+        .DI({rdp_inst_n_35,\gen_fwft.rdpp1_inst_n_2 }),
         .Q({\gen_cdc_pntr.wpr_gray_reg_dc_n_13 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_14 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_15 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_16 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_17 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_18 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_19 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_20 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_21 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_22 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_23 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_24 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_25 }),
         .S({rdp_inst_n_25,\gen_fwft.rdpp1_inst_n_0 ,\gen_fwft.rdpp1_inst_n_1 }),
         .count_value_i(count_value_i[1]),
         .\count_value_i_reg[10] ({rdp_inst_n_30,rdp_inst_n_31,rdp_inst_n_32,rdp_inst_n_33}),
         .\count_value_i_reg[10]_0 (rd_pntr_ext[10:1]),
-        .\count_value_i_reg[11] (rdp_inst_n_35),
+        .\count_value_i_reg[11] (rdp_inst_n_34),
         .\count_value_i_reg[6] ({rdp_inst_n_26,rdp_inst_n_27,rdp_inst_n_28,rdp_inst_n_29}),
         .\dest_graysync_ff_reg[5][12] (wr_pntr_rd_cdc_dc),
         .\gen_rst_ic.fifo_rd_rst_ic_reg (rd_rst_busy),
@@ -9795,7 +9795,7 @@ module system_v_axi4s_vid_out_0_0_xpm_fifo_base
         .Q(wr_data_count[9]),
         .R(wrst_busy));
   system_v_axi4s_vid_out_0_0_xpm_counter_updn__parameterized0 rdp_inst
-       (.DI(rdp_inst_n_34),
+       (.DI(rdp_inst_n_35),
         .E(rdp_inst_n_40),
         .Q(rd_pntr_ext),
         .S(rdp_inst_n_25),
@@ -9805,13 +9805,13 @@ module system_v_axi4s_vid_out_0_0_xpm_fifo_base
         .\gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[7] ({rdp_inst_n_45,rdp_inst_n_46,rdp_inst_n_47,rdp_inst_n_48}),
         .\gen_rst_ic.fifo_rd_rst_ic_reg (rd_rst_busy),
         .\grdc.rd_data_count_i_reg[11] ({rdp_inst_n_30,rdp_inst_n_31,rdp_inst_n_32,rdp_inst_n_33}),
-        .\grdc.rd_data_count_i_reg[12] (rdp_inst_n_35),
+        .\grdc.rd_data_count_i_reg[12] (rdp_inst_n_34),
         .\grdc.rd_data_count_i_reg[7] ({rdp_inst_n_26,rdp_inst_n_27,rdp_inst_n_28,rdp_inst_n_29}),
         .out(\gen_fwft.curr_fwft_state ),
         .ram_empty_i(ram_empty_i),
         .rd_clk(rd_clk),
         .rd_en(rd_en),
-        .\reg_out_i_reg[11] ({\gen_cdc_pntr.wpr_gray_reg_n_13 ,\gen_cdc_pntr.wpr_gray_reg_n_14 ,\gen_cdc_pntr.wpr_gray_reg_n_15 ,\gen_cdc_pntr.wpr_gray_reg_n_16 ,\gen_cdc_pntr.wpr_gray_reg_n_17 ,\gen_cdc_pntr.wpr_gray_reg_n_18 ,\gen_cdc_pntr.wpr_gray_reg_n_19 ,\gen_cdc_pntr.wpr_gray_reg_n_20 ,\gen_cdc_pntr.wpr_gray_reg_n_21 ,\gen_cdc_pntr.wpr_gray_reg_n_22 ,\gen_cdc_pntr.wpr_gray_reg_n_23 }),
+        .\reg_out_i_reg[11] ({\gen_cdc_pntr.wpr_gray_reg_n_12 ,\gen_cdc_pntr.wpr_gray_reg_n_13 ,\gen_cdc_pntr.wpr_gray_reg_n_14 ,\gen_cdc_pntr.wpr_gray_reg_n_15 ,\gen_cdc_pntr.wpr_gray_reg_n_16 ,\gen_cdc_pntr.wpr_gray_reg_n_17 ,\gen_cdc_pntr.wpr_gray_reg_n_18 ,\gen_cdc_pntr.wpr_gray_reg_n_19 ,\gen_cdc_pntr.wpr_gray_reg_n_20 ,\gen_cdc_pntr.wpr_gray_reg_n_21 ,\gen_cdc_pntr.wpr_gray_reg_n_22 }),
         .\reg_out_i_reg[12] ({\gen_cdc_pntr.wpr_gray_reg_dc_n_13 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_14 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_15 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_16 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_17 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_18 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_19 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_20 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_21 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_22 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_23 ,\gen_cdc_pntr.wpr_gray_reg_dc_n_24 }),
         .src_in_bin(src_in_bin00_out));
   system_v_axi4s_vid_out_0_0_xpm_counter_updn__parameterized1 rdpp1_inst
@@ -10254,31 +10254,31 @@ endmodule
 
 (* ORIG_REF_NAME = "xpm_fifo_reg_vec" *) 
 module system_v_axi4s_vid_out_0_0_xpm_fifo_reg_vec_0
-   (ram_empty_i0,
-    D,
+   (D,
     Q,
-    out,
-    rd_en,
-    ram_empty_i,
+    ram_empty_i0,
     DI,
     S,
     \count_value_i_reg[7] ,
     \count_value_i_reg[11] ,
+    out,
+    rd_en,
+    ram_empty_i,
     \count_value_i_reg[11]_0 ,
     \count_value_i_reg[11]_1 ,
     \gen_rst_ic.fifo_rd_rst_ic_reg ,
     \dest_graysync_ff_reg[3][11] ,
     rd_clk);
-  output ram_empty_i0;
   output [11:0]D;
   output [10:0]Q;
-  input [1:0]out;
-  input rd_en;
-  input ram_empty_i;
+  output ram_empty_i0;
   input [0:0]DI;
   input [3:0]S;
   input [3:0]\count_value_i_reg[7] ;
   input [3:0]\count_value_i_reg[11] ;
+  input [1:0]out;
+  input rd_en;
+  input ram_empty_i;
   input [11:0]\count_value_i_reg[11]_0 ;
   input [11:0]\count_value_i_reg[11]_1 ;
   input \gen_rst_ic.fifo_rd_rst_ic_reg ;

@@ -1,8 +1,8 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
--- Date        : Mon Nov 26 10:09:57 2018
--- Host        : pc720s.cs.york.ac.uk running 64-bit Ubuntu 16.04.5 LTS
+-- Date        : Tue Jan 15 14:49:23 2019
+-- Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_axi4s_vid_out_0_0/system_v_axi4s_vid_out_0_0_sim_netlist.vhdl
 -- Design      : system_v_axi4s_vid_out_0_0
@@ -8767,8 +8767,8 @@ entity \system_v_axi4s_vid_out_0_0_xpm_counter_updn__parameterized0\ is
     S : out STD_LOGIC_VECTOR ( 0 to 0 );
     \grdc.rd_data_count_i_reg[7]\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
     \grdc.rd_data_count_i_reg[11]\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    DI : out STD_LOGIC_VECTOR ( 0 to 0 );
     \grdc.rd_data_count_i_reg[12]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DI : out STD_LOGIC_VECTOR ( 0 to 0 );
     \gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[3]\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
     E : out STD_LOGIC_VECTOR ( 0 to 0 );
     \gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[11]\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -11237,16 +11237,16 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity system_v_axi4s_vid_out_0_0_xpm_fifo_reg_vec_0 is
   port (
-    ram_empty_i0 : out STD_LOGIC;
     D : out STD_LOGIC_VECTOR ( 11 downto 0 );
     Q : out STD_LOGIC_VECTOR ( 10 downto 0 );
-    \out\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    rd_en : in STD_LOGIC;
-    ram_empty_i : in STD_LOGIC;
+    ram_empty_i0 : out STD_LOGIC;
     DI : in STD_LOGIC_VECTOR ( 0 to 0 );
     S : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \count_value_i_reg[7]\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \count_value_i_reg[11]\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    \out\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    rd_en : in STD_LOGIC;
+    ram_empty_i : in STD_LOGIC;
     \count_value_i_reg[11]_0\ : in STD_LOGIC_VECTOR ( 11 downto 0 );
     \count_value_i_reg[11]_1\ : in STD_LOGIC_VECTOR ( 11 downto 0 );
     \gen_rst_ic.fifo_rd_rst_ic_reg\ : in STD_LOGIC;
@@ -13765,6 +13765,7 @@ architecture STRUCTURE of system_v_axi4s_vid_out_0_0_xpm_fifo_base is
   signal \gen_cdc_pntr.wpr_gray_reg_dc_n_23\ : STD_LOGIC;
   signal \gen_cdc_pntr.wpr_gray_reg_dc_n_24\ : STD_LOGIC;
   signal \gen_cdc_pntr.wpr_gray_reg_dc_n_25\ : STD_LOGIC;
+  signal \gen_cdc_pntr.wpr_gray_reg_n_12\ : STD_LOGIC;
   signal \gen_cdc_pntr.wpr_gray_reg_n_13\ : STD_LOGIC;
   signal \gen_cdc_pntr.wpr_gray_reg_n_14\ : STD_LOGIC;
   signal \gen_cdc_pntr.wpr_gray_reg_n_15\ : STD_LOGIC;
@@ -13775,7 +13776,6 @@ architecture STRUCTURE of system_v_axi4s_vid_out_0_0_xpm_fifo_base is
   signal \gen_cdc_pntr.wpr_gray_reg_n_20\ : STD_LOGIC;
   signal \gen_cdc_pntr.wpr_gray_reg_n_21\ : STD_LOGIC;
   signal \gen_cdc_pntr.wpr_gray_reg_n_22\ : STD_LOGIC;
-  signal \gen_cdc_pntr.wpr_gray_reg_n_23\ : STD_LOGIC;
   signal \gen_fwft.curr_fwft_state\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute RTL_KEEP : string;
   attribute RTL_KEEP of \gen_fwft.curr_fwft_state\ : signal is "yes";
@@ -14180,17 +14180,17 @@ GND: unisim.vcomponents.GND
      port map (
       D(11 downto 0) => diff_pntr_pe(11 downto 0),
       DI(0) => p_1_in,
-      Q(10) => \gen_cdc_pntr.wpr_gray_reg_n_13\,
-      Q(9) => \gen_cdc_pntr.wpr_gray_reg_n_14\,
-      Q(8) => \gen_cdc_pntr.wpr_gray_reg_n_15\,
-      Q(7) => \gen_cdc_pntr.wpr_gray_reg_n_16\,
-      Q(6) => \gen_cdc_pntr.wpr_gray_reg_n_17\,
-      Q(5) => \gen_cdc_pntr.wpr_gray_reg_n_18\,
-      Q(4) => \gen_cdc_pntr.wpr_gray_reg_n_19\,
-      Q(3) => \gen_cdc_pntr.wpr_gray_reg_n_20\,
-      Q(2) => \gen_cdc_pntr.wpr_gray_reg_n_21\,
-      Q(1) => \gen_cdc_pntr.wpr_gray_reg_n_22\,
-      Q(0) => \gen_cdc_pntr.wpr_gray_reg_n_23\,
+      Q(10) => \gen_cdc_pntr.wpr_gray_reg_n_12\,
+      Q(9) => \gen_cdc_pntr.wpr_gray_reg_n_13\,
+      Q(8) => \gen_cdc_pntr.wpr_gray_reg_n_14\,
+      Q(7) => \gen_cdc_pntr.wpr_gray_reg_n_15\,
+      Q(6) => \gen_cdc_pntr.wpr_gray_reg_n_16\,
+      Q(5) => \gen_cdc_pntr.wpr_gray_reg_n_17\,
+      Q(4) => \gen_cdc_pntr.wpr_gray_reg_n_18\,
+      Q(3) => \gen_cdc_pntr.wpr_gray_reg_n_19\,
+      Q(2) => \gen_cdc_pntr.wpr_gray_reg_n_20\,
+      Q(1) => \gen_cdc_pntr.wpr_gray_reg_n_21\,
+      Q(0) => \gen_cdc_pntr.wpr_gray_reg_n_22\,
       S(3) => rdp_inst_n_36,
       S(2) => rdp_inst_n_37,
       S(1) => rdp_inst_n_38,
@@ -14227,7 +14227,7 @@ GND: unisim.vcomponents.GND
 \gen_cdc_pntr.wpr_gray_reg_dc\: entity work.\system_v_axi4s_vid_out_0_0_xpm_fifo_reg_vec__parameterized0_1\
      port map (
       D(12 downto 0) => \grdc.diff_wr_rd_pntr_rdc\(12 downto 0),
-      DI(1) => rdp_inst_n_34,
+      DI(1) => rdp_inst_n_35,
       DI(0) => \gen_fwft.rdpp1_inst_n_2\,
       Q(12) => \gen_cdc_pntr.wpr_gray_reg_dc_n_13\,
       Q(11) => \gen_cdc_pntr.wpr_gray_reg_dc_n_14\,
@@ -14251,7 +14251,7 @@ GND: unisim.vcomponents.GND
       \count_value_i_reg[10]\(1) => rdp_inst_n_32,
       \count_value_i_reg[10]\(0) => rdp_inst_n_33,
       \count_value_i_reg[10]_0\(9 downto 0) => rd_pntr_ext(10 downto 1),
-      \count_value_i_reg[11]\(0) => rdp_inst_n_35,
+      \count_value_i_reg[11]\(0) => rdp_inst_n_34,
       \count_value_i_reg[6]\(3) => rdp_inst_n_26,
       \count_value_i_reg[6]\(2) => rdp_inst_n_27,
       \count_value_i_reg[6]\(1) => rdp_inst_n_28,
@@ -14947,7 +14947,7 @@ GND: unisim.vcomponents.GND
     );
 rdp_inst: entity work.\system_v_axi4s_vid_out_0_0_xpm_counter_updn__parameterized0\
      port map (
-      DI(0) => rdp_inst_n_34,
+      DI(0) => rdp_inst_n_35,
       E(0) => rdp_inst_n_40,
       Q(11 downto 0) => rd_pntr_ext(11 downto 0),
       S(0) => rdp_inst_n_25,
@@ -14969,7 +14969,7 @@ rdp_inst: entity work.\system_v_axi4s_vid_out_0_0_xpm_counter_updn__parameterize
       \grdc.rd_data_count_i_reg[11]\(2) => rdp_inst_n_31,
       \grdc.rd_data_count_i_reg[11]\(1) => rdp_inst_n_32,
       \grdc.rd_data_count_i_reg[11]\(0) => rdp_inst_n_33,
-      \grdc.rd_data_count_i_reg[12]\(0) => rdp_inst_n_35,
+      \grdc.rd_data_count_i_reg[12]\(0) => rdp_inst_n_34,
       \grdc.rd_data_count_i_reg[7]\(3) => rdp_inst_n_26,
       \grdc.rd_data_count_i_reg[7]\(2) => rdp_inst_n_27,
       \grdc.rd_data_count_i_reg[7]\(1) => rdp_inst_n_28,
@@ -14978,17 +14978,17 @@ rdp_inst: entity work.\system_v_axi4s_vid_out_0_0_xpm_counter_updn__parameterize
       ram_empty_i => ram_empty_i,
       rd_clk => rd_clk,
       rd_en => rd_en,
-      \reg_out_i_reg[11]\(10) => \gen_cdc_pntr.wpr_gray_reg_n_13\,
-      \reg_out_i_reg[11]\(9) => \gen_cdc_pntr.wpr_gray_reg_n_14\,
-      \reg_out_i_reg[11]\(8) => \gen_cdc_pntr.wpr_gray_reg_n_15\,
-      \reg_out_i_reg[11]\(7) => \gen_cdc_pntr.wpr_gray_reg_n_16\,
-      \reg_out_i_reg[11]\(6) => \gen_cdc_pntr.wpr_gray_reg_n_17\,
-      \reg_out_i_reg[11]\(5) => \gen_cdc_pntr.wpr_gray_reg_n_18\,
-      \reg_out_i_reg[11]\(4) => \gen_cdc_pntr.wpr_gray_reg_n_19\,
-      \reg_out_i_reg[11]\(3) => \gen_cdc_pntr.wpr_gray_reg_n_20\,
-      \reg_out_i_reg[11]\(2) => \gen_cdc_pntr.wpr_gray_reg_n_21\,
-      \reg_out_i_reg[11]\(1) => \gen_cdc_pntr.wpr_gray_reg_n_22\,
-      \reg_out_i_reg[11]\(0) => \gen_cdc_pntr.wpr_gray_reg_n_23\,
+      \reg_out_i_reg[11]\(10) => \gen_cdc_pntr.wpr_gray_reg_n_12\,
+      \reg_out_i_reg[11]\(9) => \gen_cdc_pntr.wpr_gray_reg_n_13\,
+      \reg_out_i_reg[11]\(8) => \gen_cdc_pntr.wpr_gray_reg_n_14\,
+      \reg_out_i_reg[11]\(7) => \gen_cdc_pntr.wpr_gray_reg_n_15\,
+      \reg_out_i_reg[11]\(6) => \gen_cdc_pntr.wpr_gray_reg_n_16\,
+      \reg_out_i_reg[11]\(5) => \gen_cdc_pntr.wpr_gray_reg_n_17\,
+      \reg_out_i_reg[11]\(4) => \gen_cdc_pntr.wpr_gray_reg_n_18\,
+      \reg_out_i_reg[11]\(3) => \gen_cdc_pntr.wpr_gray_reg_n_19\,
+      \reg_out_i_reg[11]\(2) => \gen_cdc_pntr.wpr_gray_reg_n_20\,
+      \reg_out_i_reg[11]\(1) => \gen_cdc_pntr.wpr_gray_reg_n_21\,
+      \reg_out_i_reg[11]\(0) => \gen_cdc_pntr.wpr_gray_reg_n_22\,
       \reg_out_i_reg[12]\(11) => \gen_cdc_pntr.wpr_gray_reg_dc_n_13\,
       \reg_out_i_reg[12]\(10) => \gen_cdc_pntr.wpr_gray_reg_dc_n_14\,
       \reg_out_i_reg[12]\(9) => \gen_cdc_pntr.wpr_gray_reg_dc_n_15\,
@@ -15774,13 +15774,13 @@ architecture STRUCTURE of system_v_axi4s_vid_out_0_0 is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of aclk : signal is "xilinx.com:signal:clock:1.0 aclk_intf CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 133333344, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1";
+  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 1.33333e+08, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1";
   attribute X_INTERFACE_INFO of aclken : signal is "xilinx.com:signal:clockenable:1.0 aclken_intf CE";
   attribute X_INTERFACE_PARAMETER of aclken : signal is "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of aresetn : signal is "xilinx.com:signal:reset:1.0 aresetn_intf RST";
   attribute X_INTERFACE_PARAMETER of aresetn : signal is "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of s_axis_video_tlast : signal is "xilinx.com:interface:axis:1.0 video_in TLAST";
-  attribute X_INTERFACE_PARAMETER of s_axis_video_tlast : signal is "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 133333344, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, LAYERED_METADATA undef";
+  attribute X_INTERFACE_PARAMETER of s_axis_video_tlast : signal is "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 1.33333e+08, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of s_axis_video_tready : signal is "xilinx.com:interface:axis:1.0 video_in TREADY";
   attribute X_INTERFACE_INFO of s_axis_video_tuser : signal is "xilinx.com:interface:axis:1.0 video_in TUSER";
   attribute X_INTERFACE_INFO of s_axis_video_tvalid : signal is "xilinx.com:interface:axis:1.0 video_in TVALID";

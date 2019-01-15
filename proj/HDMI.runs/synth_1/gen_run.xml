@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1543325291">
-  <File Type="RDS-RDS" Name="system_wrapper.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1547563562">
+  <File Type="VDS-TIMING-PB" Name="system_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="system_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="system_wrapper.dcp"/>
-  <File Type="PA-TCL" Name="system_wrapper.tcl"/>
+  <File Type="RDS-UTIL-PB" Name="system_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="system_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="system_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="system_wrapper.vds"/>
   <File Type="REPORTS-TCL" Name="system_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="system_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/bd/system/system.bd">
@@ -50,4 +55,24 @@
       <Option Id="FsmExtraction">0</Option>
     </Step>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="system_s01_regslice_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_s00_regslice_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_v_tc_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axis_subset_converter_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_dvi2rgb_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_proc_sys_reset_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_m00_regslice_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_dynclk_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axis_subset_converter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_v_tc_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_v_vid_in_axi4s_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_vdma_0_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_v_axi4s_vid_out_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_xbar_1"/>
 </GenRun>

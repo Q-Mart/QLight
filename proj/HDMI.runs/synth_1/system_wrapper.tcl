@@ -42,7 +42,6 @@ set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc]
@@ -52,7 +51,6 @@ set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_vid_in_axi4s_0_0/system_v_vid_in_axi4s_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_tc_0_0/system_v_tc_0_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_tc_0_0/system_v_tc_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_tc_0_1/system_v_tc_0_1_clocks.xdc]
@@ -65,16 +63,11 @@ set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axis_subset_converter_0_0/system_axis_subset_converter_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_xbar_1/system_xbar_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_auto_pc_1/system_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_m00_regslice_0/system_m00_regslice_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_m00_regslice_0/system_m00_regslice_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_s01_regslice_0/system_s01_regslice_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_s01_regslice_0/system_s01_regslice_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_s00_regslice_0/system_s00_regslice_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_s00_regslice_0/system_s00_regslice_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/system_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -102,5 +95,6 @@ synth_design -top system_wrapper -part xc7z010clg400-1 -flatten_hierarchy none -
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef system_wrapper.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
