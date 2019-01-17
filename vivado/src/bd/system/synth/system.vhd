@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
---Date        : Tue Jan 15 14:45:21 2019
+--Date        : Thu Jan 17 15:55:06 2019
 --Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
 --Command     : generate_target system.bd
 --Design      : system
@@ -3534,7 +3534,7 @@ entity system is
     hdmi_out_ddc_sda_t : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=35,numReposBlks=24,numNonXlnxBlks=3,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=14,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=36,numReposBlks=25,numNonXlnxBlks=3,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=14,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
@@ -4062,6 +4062,11 @@ architecture STRUCTURE of system is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component system_xlconstant_0_0;
+  component system_xlconstant_0_2 is
+  port (
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component system_xlconstant_0_2;
   signal ACLK_1 : STD_LOGIC;
   signal axi_dynclk_0_LOCKED_O : STD_LOGIC;
   signal axi_dynclk_0_PXL_CLK_5X_O : STD_LOGIC;
@@ -4391,6 +4396,7 @@ architecture STRUCTURE of system is
   signal NLW_v_vid_in_axi4s_0_vtd_field_id_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_0_vtd_hblank_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_0_vtd_vblank_UNCONNECTED : STD_LOGIC;
+  signal NLW_xlconstant_0_dout_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
   attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
@@ -5180,6 +5186,10 @@ xlconcat_0: component system_xlconcat_0_0
       In3(0) => v_tc_in_irq,
       In4(0) => v_tc_out_irq,
       dout(4 downto 0) => xlconcat_0_dout(4 downto 0)
+    );
+xlconstant_0: component system_xlconstant_0_2
+     port map (
+      dout(0) => NLW_xlconstant_0_dout_UNCONNECTED(0)
     );
 xlconstant_axis_sc_reset: component system_xlconstant_0_0
      port map (

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="subsample.cpp" path="/home/userfs/q/qj544/w2k/QLight/SubSample/src/subsample.cpp"/>
     <originFiles name="subsample.h" path="/home/userfs/q/qj544/w2k/QLight/SubSample/src/subsample.h"/>
+    <originFiles name="subsample.cpp" path="/home/userfs/q/qj544/w2k/QLight/SubSample/src/subsample.cpp"/>
   </source>
   <testbench>
     <originFiles name="testbench.cpp" path="/home/userfs/q/qj544/w2k/QLight/SubSample/src/testbench.cpp"/>
+    <originFiles name="test1.bmp" path="/home/userfs/q/qj544/w2k/QLight/SubSample/src/test1.bmp"/>
+    <originFiles name="fox.jpg" path="/home/userfs/q/qj544/w2k/QLight/SubSample/src/fox.jpg"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

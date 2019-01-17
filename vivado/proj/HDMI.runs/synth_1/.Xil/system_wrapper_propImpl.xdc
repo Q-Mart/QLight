@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/userfs/q/qj544/w2k/QLight/src/constraints/Zybo-Z7-Master.xdc rfile:../../../../src/constraints/Zybo-Z7-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/Zybo-Z7-Master.xdc rfile:../../../../src/constraints/Zybo-Z7-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:72 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U19   IOSTANDARD TMDS_33   } [get_ports { hdmi_in_clk_n }]; #IO_L12N_T1_MRCC_34 Sch=hdmi_rx_clk_n
 set_property src_info {type:XDC file:1 line:73 export:INPUT save:INPUT read:READ} [current_design]

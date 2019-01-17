@@ -969,6 +969,13 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_xlconstant_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconstant_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_xlconstant_0_2</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -1042,9 +1049,9 @@
         <spirit:activeInterface spirit:busRef="S_AXIS" spirit:componentRef="axis_subset_converter_out"/>
       </spirit:interconnection>
       <spirit:interconnection>
-        <spirit:name>axis_subset_converter_out_M_AXIS</spirit:name>
-        <spirit:activeInterface spirit:busRef="M_AXIS" spirit:componentRef="axis_subset_converter_out"/>
-        <spirit:activeInterface spirit:busRef="video_in" spirit:componentRef="v_axi4s_vid_out_0"/>
+        <spirit:name>axis_subset_converter_in_M_AXIS</spirit:name>
+        <spirit:activeInterface spirit:busRef="M_AXIS" spirit:componentRef="axis_subset_converter_in"/>
+        <spirit:activeInterface spirit:busRef="S_AXIS_S2MM" spirit:componentRef="axi_vdma_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>v_vid_in_axi4s_0_video_out</spirit:name>
@@ -1052,9 +1059,9 @@
         <spirit:activeInterface spirit:busRef="S_AXIS" spirit:componentRef="axis_subset_converter_in"/>
       </spirit:interconnection>
       <spirit:interconnection>
-        <spirit:name>axis_subset_converter_in_M_AXIS</spirit:name>
-        <spirit:activeInterface spirit:busRef="M_AXIS" spirit:componentRef="axis_subset_converter_in"/>
-        <spirit:activeInterface spirit:busRef="S_AXIS_S2MM" spirit:componentRef="axi_vdma_0"/>
+        <spirit:name>axis_subset_converter_out_M_AXIS</spirit:name>
+        <spirit:activeInterface spirit:busRef="video_in" spirit:componentRef="v_axi4s_vid_out_0"/>
+        <spirit:activeInterface spirit:busRef="M_AXIS" spirit:componentRef="axis_subset_converter_out"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>

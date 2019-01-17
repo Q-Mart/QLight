@@ -78,6 +78,23 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.663730561.595025927" name="fox.jpg" rcbsApplicability="disable" resourcePath="testbench/fox.jpg" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.663730561.1294319220" name="test1.bmp" rcbsApplicability="disable" resourcePath="testbench/test1.bmp" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.663730561.1778473285" name="testbench.cpp" rcbsApplicability="disable" resourcePath="testbench/testbench.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1119186202.835254792">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1119186202.835254792" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1119186202">
+							<option id="gnu.cpp.compiler.option.preprocessor.def.449683399" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+							<option id="gnu.cpp.compiler.option.include.paths.1535664112" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include"/>
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/etc"/>
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/userfs/q/qj544/w2k/QLight"/>
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/auto_cc/include"/>
+							</option>
+							<option id="gnu.cpp.compiler.option.other.other.2055680325" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2009659480" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
+					</fileInfo>
 					<sourceEntries>
 						<entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -152,6 +169,23 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1001945759.1911813108" name="fox.jpg" rcbsApplicability="disable" resourcePath="testbench/fox.jpg" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1001945759.47246487" name="test1.bmp" rcbsApplicability="disable" resourcePath="testbench/test1.bmp" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1001945759.358047457" name="testbench.cpp" rcbsApplicability="disable" resourcePath="testbench/testbench.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.427491956.100470761">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.427491956.100470761" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.427491956">
+							<option id="gnu.cpp.compiler.option.preprocessor.def.1490527515" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+							<option id="gnu.cpp.compiler.option.include.paths.659257777" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include"/>
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/etc"/>
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/userfs/q/qj544/w2k/QLight"/>
+								<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/auto_cc/include"/>
+							</option>
+							<option id="gnu.cpp.compiler.option.other.other.1954041046" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2080131022" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
+					</fileInfo>
 					<sourceEntries>
 						<entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>

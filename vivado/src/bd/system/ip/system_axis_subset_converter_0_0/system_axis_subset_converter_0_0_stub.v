@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-// Date        : Tue Jan 15 14:53:02 2019
+// Date        : Tue Jan 15 14:53:01 2019
 // Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axis_subset_converter_0_0/system_axis_subset_converter_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top system_axis_subset_converter_0_0 -prefix
+//               system_axis_subset_converter_0_0_ system_axis_subset_converter_0_0_stub.v
 // Design      : system_axis_subset_converter_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1

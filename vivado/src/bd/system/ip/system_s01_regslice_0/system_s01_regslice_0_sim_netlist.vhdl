@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
--- Date        : Tue Jan 15 15:00:11 2019
+-- Date        : Tue Jan 15 15:00:09 2019
 -- Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_s01_regslice_0/system_s01_regslice_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_s01_regslice_0 -prefix
+--               system_s01_regslice_0_ system_s01_regslice_0_sim_netlist.vhdl
 -- Design      : system_s01_regslice_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -28,8 +28,6 @@ entity system_s01_regslice_0_axi_register_slice_v2_1_17_axic_register_slice is
     \aresetn_d_reg[1]_0\ : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 61 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_s01_regslice_0_axi_register_slice_v2_1_17_axic_register_slice : entity is "axi_register_slice_v2_1_17_axic_register_slice";
 end system_s01_regslice_0_axi_register_slice_v2_1_17_axic_register_slice;
 
 architecture STRUCTURE of system_s01_regslice_0_axi_register_slice_v2_1_17_axic_register_slice is
@@ -3217,8 +3215,6 @@ entity system_s01_regslice_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_WUSER_INDEX of system_s01_regslice_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 73;
   attribute G_AXI_WUSER_WIDTH : integer;
   attribute G_AXI_WUSER_WIDTH of system_s01_regslice_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_s01_regslice_0_axi_register_slice_v2_1_17_axi_register_slice : entity is "axi_register_slice_v2_1_17_axi_register_slice";
   attribute P_FORWARD : integer;
   attribute P_FORWARD of system_s01_regslice_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute P_RESPONSE : integer;

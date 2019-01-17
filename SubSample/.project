@@ -37,16 +37,6 @@
 			<location>/home/userfs/q/qj544/w2k/QLight/SubSample/.apc/.tb</location>
 		</link>
 		<link>
-			<name>.reference/ap_axi_sdata.h</name>
-			<type>1</type>
-			<location>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/ap_axi_sdata.h</location>
-		</link>
-		<link>
-			<name>.reference/hls_video.h</name>
-			<type>1</type>
-			<location>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/hls_video.h</location>
-		</link>
-		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>/home/userfs/q/qj544/w2k/QLight/SubSample/solution1/.tcls</location>
@@ -60,6 +50,16 @@
 			<name>source/subsample.h</name>
 			<type>1</type>
 			<location>/home/userfs/q/qj544/w2k/QLight/SubSample/src/subsample.h</location>
+		</link>
+		<link>
+			<name>testbench/fox.jpg</name>
+			<type>1</type>
+			<location>/home/userfs/q/qj544/w2k/QLight/SubSample/src/fox.jpg</location>
+		</link>
+		<link>
+			<name>testbench/test1.bmp</name>
+			<type>1</type>
+			<location>/home/userfs/q/qj544/w2k/QLight/SubSample/src/test1.bmp</location>
 		</link>
 		<link>
 			<name>testbench/testbench.cpp</name>

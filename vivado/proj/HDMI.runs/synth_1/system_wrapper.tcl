@@ -23,52 +23,55 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/userfs/q/qj544/w2k/QLight/proj/HDMI.cache/wt [current_project]
-set_property parent.project_path /home/userfs/q/qj544/w2k/QLight/proj/HDMI.xpr [current_project]
+set_property webtalk.parent_dir /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.cache/wt [current_project]
+set_property parent.project_path /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
-set_property ip_repo_paths /home/userfs/q/qj544/w2k/QLight/repo [current_project]
-set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/repo/cache [current_project]
+set_property ip_repo_paths {
+  /home/userfs/q/qj544/w2k/QLight/vivado/repo
+  /home/userfs/q/qj544/w2k/QLight/SubSample
+} [current_project]
+set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/cache [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib /home/userfs/q/qj544/w2k/QLight/src/bd/system/hdl/system_wrapper.vhd
-add_files /home/userfs/q/qj544/w2k/QLight/src/bd/system/system.bd
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_dvi2rgb_0_0/src/dvi2rgb.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_dvi2rgb_0_0/src/dvi2rgb_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_axi4s_vid_out_0_0/system_v_axi4s_vid_out_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_axi4s_vid_out_0_0/system_v_axi4s_vid_out_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_vid_in_axi4s_0_0/system_v_vid_in_axi4s_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_vid_in_axi4s_0_0/system_v_vid_in_axi4s_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_tc_0_0/system_v_tc_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_tc_0_0/system_v_tc_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_tc_0_1/system_v_tc_0_1_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_v_tc_0_1/system_v_tc_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_proc_sys_reset_1_0/system_proc_sys_reset_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_proc_sys_reset_1_0/system_proc_sys_reset_1_0.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_proc_sys_reset_1_0/system_proc_sys_reset_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axis_subset_converter_0_0/system_axis_subset_converter_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_auto_pc_1/system_auto_pc_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_m00_regslice_0/system_m00_regslice_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_s01_regslice_0/system_s01_regslice_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_s00_regslice_0/system_s00_regslice_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/src/bd/system/system_ooc.xdc]
+read_vhdl -library xil_defaultlib /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd
+add_files /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_dvi2rgb_0_0/src/dvi2rgb.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_dvi2rgb_0_0/src/dvi2rgb_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_ps7_0_100M_0/system_rst_ps7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_axi4s_vid_out_0_0/system_v_axi4s_vid_out_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_axi4s_vid_out_0_0/system_v_axi4s_vid_out_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_vid_in_axi4s_0_0/system_v_vid_in_axi4s_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_vid_in_axi4s_0_0/system_v_vid_in_axi4s_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_0_0/system_proc_sys_reset_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_0/system_v_tc_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_0/system_v_tc_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_1/system_v_tc_0_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_1/system_v_tc_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_1_0/system_proc_sys_reset_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_1_0/system_proc_sys_reset_1_0.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_1_0/system_proc_sys_reset_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_0/system_axis_subset_converter_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_1/system_auto_pc_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_m00_regslice_0/system_m00_regslice_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s01_regslice_0/system_s01_regslice_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s00_regslice_0/system_s00_regslice_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -78,11 +81,11 @@ set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/userfs/q/qj544/w2k/QLight/src/constraints/timing.xdc
-set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/src/constraints/timing.xdc]
+read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/timing.xdc
+set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/timing.xdc]
 
-read_xdc /home/userfs/q/qj544/w2k/QLight/src/constraints/Zybo-Z7-Master.xdc
-set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/src/constraints/Zybo-Z7-Master.xdc]
+read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/Zybo-Z7-Master.xdc
+set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/Zybo-Z7-Master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

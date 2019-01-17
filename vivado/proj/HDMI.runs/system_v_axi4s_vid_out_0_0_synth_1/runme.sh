@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/userfs/q/qj544/w2k/QLight/proj/HDMI.runs/system_v_axi4s_vid_out_0_0_synth_1'
+HD_PWD='/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_v_axi4s_vid_out_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

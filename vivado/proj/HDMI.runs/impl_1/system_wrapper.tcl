@@ -69,19 +69,22 @@ set rc [catch {
   set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/userfs/q/qj544/w2k/QLight/proj/HDMI.cache/wt [current_project]
-  set_property parent.project_path /home/userfs/q/qj544/w2k/QLight/proj/HDMI.xpr [current_project]
-  set_property ip_repo_paths /home/userfs/q/qj544/w2k/QLight/repo [current_project]
-  set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/repo/cache [current_project]
+  set_property webtalk.parent_dir /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.cache/wt [current_project]
+  set_property parent.project_path /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr [current_project]
+  set_property ip_repo_paths {
+  /home/userfs/q/qj544/w2k/QLight/vivado/repo
+  /home/userfs/q/qj544/w2k/QLight/SubSample
+} [current_project]
+  set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/cache [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet /home/userfs/q/qj544/w2k/QLight/proj/HDMI.runs/synth_1/system_wrapper.dcp
+  add_files -quiet /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/system_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/userfs/q/qj544/w2k/QLight/src/bd/system/system.bd
+  add_files /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd
   set_param project.isImplRun false
-  read_xdc /home/userfs/q/qj544/w2k/QLight/src/constraints/timing.xdc
-  read_xdc /home/userfs/q/qj544/w2k/QLight/src/constraints/Zybo-Z7-Master.xdc
+  read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/timing.xdc
+  read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/Zybo-Z7-Master.xdc
   set_param project.isImplRun true
   link_design -top system_wrapper -part xc7z010clg400-1
   set_param project.isImplRun false

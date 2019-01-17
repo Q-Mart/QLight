@@ -4,15 +4,17 @@
 ## Copyright (C) 1986-2018 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project SubSample
-set_top subsample
-add_files SubSample/src/subsample.cpp
+set_top subsamble
 add_files SubSample/src/subsample.h
-add_files -tb SubSample/src/testbench.cpp
+add_files SubSample/src/subsample.cpp
+add_files -tb SubSample/src/testbench.cpp -cflags "-Wno-unknown-pragmas"
+add_files -tb SubSample/src/test1.bmp -cflags "-Wno-unknown-pragmas"
+add_files -tb SubSample/src/fox.jpg -cflags "-Wno-unknown-pragmas"
 open_solution "solution1"
 set_part {xc7z010clg400-1} -tool vivado
-create_clock -period 10 -name default
+create_clock -period 13.5 -name default
 #source "./SubSample/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design
-export_design -format ip_catalog
+export_design -rtl verilog -format ip_catalog -display_name "SubSampler"
