@@ -6,7 +6,7 @@
         <DownStreamTool name="vivado"/>
     </downStreamTool>
     <clockList>
-        <clock default="false" name="default" period="13.5"/>
+        <clock default="false" name="default" period="10"/>
     </clockList>
     <config>
         <schedule model="subsamble"/>

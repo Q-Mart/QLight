@@ -32700,8 +32700,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>1773676</mMinLatency>
-			<mMaxLatency>1773676</mMaxLatency>
+			<mMinLatency>1774728</mMinLatency>
+			<mMaxLatency>1774728</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -32790,8 +32790,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>1052</mMinTripCount>
 			<mMaxTripCount>1052</mMaxTripCount>
-			<mMinLatency>1773672</mMinLatency>
-			<mMaxLatency>1773672</mMaxLatency>
+			<mMinLatency>1774724</mMinLatency>
+			<mMaxLatency>1774724</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -32872,11 +32872,11 @@
 				<item>493</item>
 			</basic_blocks>
 			<mII>1</mII>
-			<mDepth>3</mDepth>
+			<mDepth>4</mDepth>
 			<mMinTripCount>1682</mMinTripCount>
 			<mMaxTripCount>1682</mMaxTripCount>
-			<mMinLatency>1683</mMinLatency>
-			<mMaxLatency>1683</mMaxLatency>
+			<mMinLatency>1684</mMinLatency>
+			<mMaxLatency>1684</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -34249,56 +34249,56 @@
 		<item>
 			<first>229</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>230</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>231</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>232</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>233</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>234</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>235</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>236</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -34326,28 +34326,28 @@
 		<item>
 			<first>240</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>241</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>242</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>243</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -34361,7 +34361,7 @@
 		<item>
 			<first>245</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -34403,21 +34403,21 @@
 		<item>
 			<first>251</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>252</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>253</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -34487,14 +34487,14 @@
 		<item>
 			<first>263</first>
 			<second>
-				<first>5</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>264</first>
 			<second>
-				<first>5</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -34872,56 +34872,56 @@
 		<item>
 			<first>331</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>332</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>333</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>334</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>335</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>336</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>337</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>338</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -34949,28 +34949,28 @@
 		<item>
 			<first>342</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>343</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>344</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>345</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -34984,7 +34984,7 @@
 		<item>
 			<first>347</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -35026,21 +35026,21 @@
 		<item>
 			<first>353</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>354</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>355</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -35110,14 +35110,14 @@
 		<item>
 			<first>365</first>
 			<second>
-				<first>5</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>366</first>
 			<second>
-				<first>5</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -35453,56 +35453,56 @@
 		<item>
 			<first>427</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>428</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>429</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>430</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>431</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>432</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>433</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>434</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -35530,28 +35530,28 @@
 		<item>
 			<first>438</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>439</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>440</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>441</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -35565,7 +35565,7 @@
 		<item>
 			<first>443</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -35607,21 +35607,21 @@
 		<item>
 			<first>449</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>450</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>451</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -35691,217 +35691,217 @@
 		<item>
 			<first>461</first>
 			<second>
-				<first>5</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>462</first>
 			<second>
-				<first>5</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>464</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>465</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>466</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>467</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>468</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>469</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>470</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>471</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>472</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>474</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>475</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>476</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>477</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>478</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>479</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>480</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>481</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>482</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>483</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>484</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>485</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>486</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>487</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>488</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>489</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>490</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>491</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>492</first>
 			<second>
-				<first>4</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>495</first>
 			<second>
-				<first>6</first>
+				<first>7</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -36045,8 +36045,8 @@
 		<item>
 			<first>265</first>
 			<second>
-				<first>4</first>
-				<second>5</second>
+				<first>5</first>
+				<second>6</second>
 			</second>
 		</item>
 		<item>
@@ -36136,8 +36136,8 @@
 		<item>
 			<first>367</first>
 			<second>
-				<first>4</first>
-				<second>5</second>
+				<first>5</first>
+				<second>6</second>
 			</second>
 		</item>
 		<item>
@@ -36227,15 +36227,15 @@
 		<item>
 			<first>463</first>
 			<second>
-				<first>4</first>
-				<second>5</second>
+				<first>5</first>
+				<second>6</second>
 			</second>
 		</item>
 		<item>
 			<first>493</first>
 			<second>
-				<first>4</first>
-				<second>4</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
@@ -36310,7 +36310,7 @@
 			<anchor_node>-1</anchor_node>
 			<region_type>8</region_type>
 			<interval>1</interval>
-			<pipe_depth>3</pipe_depth>
+			<pipe_depth>4</pipe_depth>
 		</item>
 	</regions>
 	<dp_fu_nodes class_id="34" tracking_level="0" version="0">

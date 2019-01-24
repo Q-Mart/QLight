@@ -258,6 +258,8 @@ int XAxiVdma_CfgInitialize(XAxiVdma *InstancePtr, XAxiVdma_Config *CfgPtr,
 			xdbg_printf(XDBG_DEBUG_ERROR,
 			    "Read channel reset failed %x\n\r",
 			    (unsigned int)XAxiVdma_ChannelGetStatus(RdChannel));
+			printf("Read channel reset failed %x\n\r",
+					(unsigned int)XAxiVdma_ChannelGetStatus(RdChannel));
 
 			return XST_FAILURE;
 		}
@@ -341,6 +343,8 @@ int XAxiVdma_CfgInitialize(XAxiVdma *InstancePtr, XAxiVdma_Config *CfgPtr,
 			xdbg_printf(XDBG_DEBUG_ERROR,
 			    "Write channel reset failed %x\n\r",
 			    (unsigned int)XAxiVdma_ChannelGetStatus(WrChannel));
+			printf("Write channel reset failed %x\n\r",
+					(unsigned int)XAxiVdma_ChannelGetStatus(WrChannel));
 
 			return XST_FAILURE;
 		}

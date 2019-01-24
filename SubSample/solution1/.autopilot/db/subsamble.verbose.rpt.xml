@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'subsamble'" level="0">
-<item name = "Date">Thu Jan 17 15:40:46 2019
+<item name = "Date">Thu Jan 24 14:08:51 2019
 </item>
 <item name = "Version">2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)</item>
 <item name = "Project">SubSample</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">13.50, 12.563, 1.69</column>
+<column name="ap_clk">10.00, 9.400, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,16 +24,16 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">10613640, 10613640, 10613640, 10613640, none</column>
+<column name="">10615742, 10615742, 10615742, 10615742, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_Filter2D_fu_615">Filter2D, 1773676, 1773676, 1773676, 1773676, none</column>
+<column name="grp_Filter2D_fu_615">Filter2D, 1774728, 1774728, 1774728, 1774728, none</column>
 <column name="grp_AXIvideo2Mat_fu_625">AXIvideo2Mat, 1769253, 1769253, 1769253, 1769253, none</column>
-<column name="grp_CvtColor_fu_646">CvtColor, 1769251, 1769251, 1769251, 1769251, none</column>
+<column name="grp_CvtColor_fu_646">CvtColor, 1770301, 1770301, 1770301, 1770301, none</column>
 <column name="grp_Mat2AXIvideo_fu_656">Mat2AXIvideo, 1767151, 1767151, 1767151, 1767151, none</column>
 <column name="grp_Mat2AXIvideo_fu_677">Mat2AXIvideo, 1767151, 1767151, 1767151, 1767151, none</column>
 </table>
@@ -58,7 +58,7 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 376</column>
 <column name="FIFO">0, -, 90, 360</column>
-<column name="Instance">9, 3, 1021, 2441</column>
+<column name="Instance">9, 3, 1172, 2499</column>
 <column name="Memory">-, -, -, -</column>
 <column name="Multiplexer">-, -, -, 884</column>
 <column name="Register">-, -, 379, -</column>
@@ -71,8 +71,8 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="grp_AXIvideo2Mat_fu_625">AXIvideo2Mat, 0, 0, 196, 329</column>
-<column name="grp_CvtColor_fu_646">CvtColor, 0, 3, 159, 238</column>
-<column name="grp_Filter2D_fu_615">Filter2D, 9, 0, 580, 1506</column>
+<column name="grp_CvtColor_fu_646">CvtColor, 0, 3, 215, 238</column>
+<column name="grp_Filter2D_fu_615">Filter2D, 9, 0, 675, 1564</column>
 <column name="grp_Mat2AXIvideo_fu_656">Mat2AXIvideo, 0, 0, 43, 184</column>
 <column name="grp_Mat2AXIvideo_fu_677">Mat2AXIvideo, 0, 0, 43, 184</column>
 </table>

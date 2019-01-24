@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'subsamble'" level="0">
-<item name = "Date">Thu Jan 17 15:40:41 2019
+<item name = "Date">Thu Jan 24 14:08:47 2019
 </item>
 <item name = "Version">2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)</item>
 <item name = "Project">SubSample</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">13.50, 12.563, 1.69</column>
+<column name="ap_clk">10.00, 9.400, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">10613640, 10613640, 10613640, 10613640, none</column>
+<column name="">10615742, 10615742, 10615742, 10615742, none</column>
 </table>
 </item>
 <item name = "Detail">

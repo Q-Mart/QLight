@@ -433,7 +433,7 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fc8e1782</spirit:value>
+            <spirit:value>d7a1ebb7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -449,7 +449,7 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>250ee26d</spirit:value>
+            <spirit:value>2f278ce6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -465,7 +465,7 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6e3b9051</spirit:value>
+            <spirit:value>3144afe5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -481,7 +481,7 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>28626a9c</spirit:value>
+            <spirit:value>5d262fb6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1245,7 +1245,7 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
       <spirit:file>
         <spirit:name>hdl/vhdl/subsamble.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_a689e383</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_b893c3e1</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1353,7 +1353,7 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>clk_period</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="2">13.5</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="2">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>machine</spirit:name>
@@ -1365,7 +1365,7 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">10613640</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">10615742</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -1382,15 +1382,15 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
       </xilinx:taxonomies>
       <xilinx:displayName>SubSampler</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1901171541</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-01-17T15:41:34Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1901241409</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-01-24T14:10:08Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b862ddfb"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9783298f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="43079030"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="75aec508"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="0aa0ef8a"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="aaa57d47"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

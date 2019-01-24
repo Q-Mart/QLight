@@ -78,7 +78,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.663730561.595025927" name="fox.jpg" rcbsApplicability="disable" resourcePath="testbench/fox.jpg" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.663730561.1294319220" name="test1.bmp" rcbsApplicability="disable" resourcePath="testbench/test1.bmp" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.663730561.1778473285" name="testbench.cpp" rcbsApplicability="disable" resourcePath="testbench/testbench.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1119186202.835254792">
 						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1119186202.835254792" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1119186202">
@@ -169,7 +168,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1001945759.1911813108" name="fox.jpg" rcbsApplicability="disable" resourcePath="testbench/fox.jpg" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1001945759.47246487" name="test1.bmp" rcbsApplicability="disable" resourcePath="testbench/test1.bmp" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1001945759.358047457" name="testbench.cpp" rcbsApplicability="disable" resourcePath="testbench/testbench.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.427491956.100470761">
 						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.427491956.100470761" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.427491956">

@@ -2,8 +2,8 @@
 # Vivado v2018.2.1 (64-bit)
 # SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
 # IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Thu Jan 17 15:55:45 2019
-# Process ID: 16914
+# Start of session at: Thu Jan 24 14:11:26 2019
+# Process ID: 27221
 # Current directory: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1
 # Command line: vivado -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
 # Log file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/system_wrapper.vds
@@ -14,15 +14,15 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/userfs/q/qj544/w2k/QLight/vivado/repo'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/userfs/q/qj544/w2k/QLight/SubSample'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/data/ip'.
-add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1284.922 ; gain = 74.859 ; free physical = 7370 ; free virtual = 26240
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1284.926 ; gain = 74.859 ; free physical = 6995 ; free virtual = 27075
 Command: synth_design -top system_wrapper -part xc7z010clg400-1 -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16922 
+INFO: Helper process launched with PID 27229 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1377.375 ; gain = 80.859 ; free physical = 7252 ; free virtual = 26125
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1377.379 ; gain = 80.859 ; free physical = 6882 ; free virtual = 26961
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'system_wrapper' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:53]
 INFO: [Synth 8-3491] module 'IOBUF' declared at '/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_in_ddc_scl_iobuf' of component 'IOBUF' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:121]
@@ -37,42 +37,42 @@ INFO: [Synth 8-3491] module 'IOBUF' declared at '/opt/york/cs/net/xilinx_vivado-
 INFO: [Synth 8-3491] module 'IOBUF' declared at '/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_out_ddc_sda_iobuf' of component 'IOBUF' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:142]
 INFO: [Synth 8-3491] module 'system' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3491' bound to instance 'system_i' of component 'system' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:149]
 INFO: [Synth 8-638] synthesizing module 'system' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3542]
-INFO: [Synth 8-3491] module 'system_axi_dynclk_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axi_dynclk_0_0_stub.vhdl:5' bound to instance 'axi_dynclk_0' of component 'system_axi_dynclk_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4467]
-INFO: [Synth 8-638] synthesizing module 'system_axi_dynclk_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axi_dynclk_0_0_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'system_axi_gpio_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_video' of component 'system_axi_gpio_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4495]
-INFO: [Synth 8-638] synthesizing module 'system_axi_gpio_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axi_gpio_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'system_axi_dynclk_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axi_dynclk_0_0_stub.vhdl:5' bound to instance 'axi_dynclk_0' of component 'system_axi_dynclk_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4467]
+INFO: [Synth 8-638] synthesizing module 'system_axi_dynclk_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axi_dynclk_0_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'system_axi_gpio_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_video' of component 'system_axi_gpio_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4495]
+INFO: [Synth 8-638] synthesizing module 'system_axi_gpio_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axi_gpio_0_0_stub.vhdl:33]
 INFO: [Synth 8-638] synthesizing module 'system_axi_interconnect_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1931]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_LCIC31' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:201]
-INFO: [Synth 8-3491] module 'system_auto_pc_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:568]
-INFO: [Synth 8-638] synthesizing module 'system_auto_pc_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_auto_pc_0_stub.vhdl:90]
-INFO: [Synth 8-3491] module 'system_m00_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_m00_regslice_0_stub.vhdl:5' bound to instance 'm00_regslice' of component 'system_m00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:650]
-INFO: [Synth 8-638] synthesizing module 'system_m00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_m00_regslice_0_stub.vhdl:89]
+INFO: [Synth 8-3491] module 'system_auto_pc_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:568]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_auto_pc_0_stub.vhdl:90]
+INFO: [Synth 8-3491] module 'system_m00_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_m00_regslice_0_stub.vhdl:5' bound to instance 'm00_regslice' of component 'system_m00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:650]
+INFO: [Synth 8-638] synthesizing module 'system_m00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_m00_regslice_0_stub.vhdl:89]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_LCIC31' (2#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:201]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_Y9JEWS' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1498]
-INFO: [Synth 8-3491] module 'system_s00_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_s00_regslice_0_stub.vhdl:5' bound to instance 's00_regslice' of component 'system_s00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1599]
-INFO: [Synth 8-638] synthesizing module 'system_s00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_s00_regslice_0_stub.vhdl:45]
+INFO: [Synth 8-3491] module 'system_s00_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_s00_regslice_0_stub.vhdl:5' bound to instance 's00_regslice' of component 'system_s00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1599]
+INFO: [Synth 8-638] synthesizing module 'system_s00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_s00_regslice_0_stub.vhdl:45]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_Y9JEWS' (3#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1498]
 INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_1N4HKML' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1684]
-INFO: [Synth 8-3491] module 'system_s01_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_s01_regslice_0_stub.vhdl:5' bound to instance 's01_regslice' of component 'system_s01_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1803]
-INFO: [Synth 8-638] synthesizing module 'system_s01_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_s01_regslice_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'system_s01_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_s01_regslice_0_stub.vhdl:5' bound to instance 's01_regslice' of component 'system_s01_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1803]
+INFO: [Synth 8-638] synthesizing module 'system_s01_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_s01_regslice_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_1N4HKML' (4#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1684]
-INFO: [Synth 8-3491] module 'system_xbar_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xbar_1_stub.vhdl:5' bound to instance 'xbar' of component 'system_xbar_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2408]
-INFO: [Synth 8-638] synthesizing module 'system_xbar_1' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xbar_1_stub.vhdl:89]
+INFO: [Synth 8-3491] module 'system_xbar_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xbar_1_stub.vhdl:5' bound to instance 'xbar' of component 'system_xbar_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2408]
+INFO: [Synth 8-638] synthesizing module 'system_xbar_1' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xbar_1_stub.vhdl:89]
 INFO: [Synth 8-256] done synthesizing module 'system_axi_interconnect_0_0' (5#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1931]
-INFO: [Synth 8-3491] module 'system_axi_vdma_0_3' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axi_vdma_0_3_stub.vhdl:5' bound to instance 'axi_vdma_0' of component 'system_axi_vdma_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4598]
-INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axi_vdma_0_3_stub.vhdl:78]
-INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axis_subset_converter_0_0_stub.vhdl:5' bound to instance 'axis_subset_converter_in' of component 'system_axis_subset_converter_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4668]
-INFO: [Synth 8-638] synthesizing module 'system_axis_subset_converter_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axis_subset_converter_0_0_stub.vhdl:23]
-INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axis_subset_converter_0_1_stub.vhdl:5' bound to instance 'axis_subset_converter_out' of component 'system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4683]
-INFO: [Synth 8-638] synthesizing module 'system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_axis_subset_converter_0_1_stub.vhdl:25]
-INFO: [Synth 8-3491] module 'system_dvi2rgb_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_dvi2rgb_0_0_stub.vhdl:5' bound to instance 'dvi2rgb_0' of component 'system_dvi2rgb_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4700]
-INFO: [Synth 8-638] synthesizing module 'system_dvi2rgb_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_dvi2rgb_0_0_stub.vhdl:30]
-INFO: [Synth 8-3491] module 'system_proc_sys_reset_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_proc_sys_reset_0_0_stub.vhdl:5' bound to instance 'proc_sys_reset_0' of component 'system_proc_sys_reset_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4722]
-INFO: [Synth 8-638] synthesizing module 'system_proc_sys_reset_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_proc_sys_reset_0_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'system_proc_sys_reset_1_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_proc_sys_reset_1_0_stub.vhdl:5' bound to instance 'proc_sys_reset_1' of component 'system_proc_sys_reset_1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4735]
-INFO: [Synth 8-638] synthesizing module 'system_proc_sys_reset_1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_proc_sys_reset_1_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4748]
-INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_processing_system7_0_0_stub.vhdl:133]
+INFO: [Synth 8-3491] module 'system_axi_vdma_0_3' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axi_vdma_0_3_stub.vhdl:5' bound to instance 'axi_vdma_0' of component 'system_axi_vdma_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4598]
+INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axi_vdma_0_3_stub.vhdl:78]
+INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axis_subset_converter_0_0_stub.vhdl:5' bound to instance 'axis_subset_converter_in' of component 'system_axis_subset_converter_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4668]
+INFO: [Synth 8-638] synthesizing module 'system_axis_subset_converter_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axis_subset_converter_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axis_subset_converter_0_1_stub.vhdl:5' bound to instance 'axis_subset_converter_out' of component 'system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4683]
+INFO: [Synth 8-638] synthesizing module 'system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_axis_subset_converter_0_1_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'system_dvi2rgb_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_dvi2rgb_0_0_stub.vhdl:5' bound to instance 'dvi2rgb_0' of component 'system_dvi2rgb_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4700]
+INFO: [Synth 8-638] synthesizing module 'system_dvi2rgb_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_dvi2rgb_0_0_stub.vhdl:30]
+INFO: [Synth 8-3491] module 'system_proc_sys_reset_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_proc_sys_reset_0_0_stub.vhdl:5' bound to instance 'proc_sys_reset_0' of component 'system_proc_sys_reset_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4722]
+INFO: [Synth 8-638] synthesizing module 'system_proc_sys_reset_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_proc_sys_reset_0_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'system_proc_sys_reset_1_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_proc_sys_reset_1_0_stub.vhdl:5' bound to instance 'proc_sys_reset_1' of component 'system_proc_sys_reset_1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4735]
+INFO: [Synth 8-638] synthesizing module 'system_proc_sys_reset_1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_proc_sys_reset_1_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:4748]
+INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_processing_system7_0_0_stub.vhdl:133]
 INFO: [Synth 8-638] synthesizing module 'system_ps7_0_axi_periph_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2670]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1H7AUOX' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1H7AUOX' (6#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:57]
@@ -85,30 +85,30 @@ INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_15QZ4LV' (9#1) [/
 INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_TUCI1Y' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1087]
 INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_TUCI1Y' (10#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1087]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_11SE3QO' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1211]
-INFO: [Synth 8-3491] module 'system_auto_pc_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1394]
-INFO: [Synth 8-638] synthesizing module 'system_auto_pc_1' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_auto_pc_1_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'system_auto_pc_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1394]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_1' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_auto_pc_1_stub.vhdl:70]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_11SE3QO' (11#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1211]
-INFO: [Synth 8-3491] module 'system_xbar_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'system_xbar_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3371]
-INFO: [Synth 8-638] synthesizing module 'system_xbar_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'system_xbar_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'system_xbar_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3371]
+INFO: [Synth 8-638] synthesizing module 'system_xbar_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xbar_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'system_ps7_0_axi_periph_0' (12#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2670]
-INFO: [Synth 8-3491] module 'system_rgb2dvi_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_rgb2dvi_0_0_stub.vhdl:5' bound to instance 'rgb2dvi_0' of component 'system_rgb2dvi_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5017]
-INFO: [Synth 8-638] synthesizing module 'system_rgb2dvi_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_rgb2dvi_0_0_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'system_rst_ps7_0_100M_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'system_rst_ps7_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5031]
-INFO: [Synth 8-638] synthesizing module 'system_rst_ps7_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_rst_ps7_0_100M_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'system_v_axi4s_vid_out_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:5' bound to instance 'v_axi4s_vid_out_0' of component 'system_v_axi4s_vid_out_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5044]
-INFO: [Synth 8-638] synthesizing module 'system_v_axi4s_vid_out_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:41]
-INFO: [Synth 8-3491] module 'system_v_tc_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_v_tc_0_0_stub.vhdl:5' bound to instance 'v_tc_in' of component 'system_v_tc_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5077]
-INFO: [Synth 8-638] synthesizing module 'system_v_tc_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_v_tc_0_0_stub.vhdl:40]
-INFO: [Synth 8-3491] module 'system_v_tc_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_v_tc_0_1_stub.vhdl:5' bound to instance 'v_tc_out' of component 'system_v_tc_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5109]
-INFO: [Synth 8-638] synthesizing module 'system_v_tc_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_v_tc_0_1_stub.vhdl:49]
-INFO: [Synth 8-3491] module 'system_v_vid_in_axi4s_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_v_vid_in_axi4s_0_0_stub.vhdl:5' bound to instance 'v_vid_in_axi4s_0' of component 'system_v_vid_in_axi4s_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5150]
-INFO: [Synth 8-638] synthesizing module 'system_v_vid_in_axi4s_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_v_vid_in_axi4s_0_0_stub.vhdl:39]
-INFO: [Synth 8-3491] module 'system_xlconcat_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xlconcat_0_0_stub.vhdl:5' bound to instance 'xlconcat_0' of component 'system_xlconcat_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5181]
-INFO: [Synth 8-638] synthesizing module 'system_xlconcat_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xlconcat_0_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'system_xlconstant_0_2' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xlconstant_0_2_stub.vhdl:5' bound to instance 'xlconstant_0' of component 'system_xlconstant_0_2' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5190]
-INFO: [Synth 8-638] synthesizing module 'system_xlconstant_0_2' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xlconstant_0_2_stub.vhdl:12]
-INFO: [Synth 8-3491] module 'system_xlconstant_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xlconstant_0_0_stub.vhdl:5' bound to instance 'xlconstant_axis_sc_reset' of component 'system_xlconstant_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5194]
-INFO: [Synth 8-638] synthesizing module 'system_xlconstant_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-16914-cse166pc-17/realtime/system_xlconstant_0_0_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'system_rgb2dvi_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_rgb2dvi_0_0_stub.vhdl:5' bound to instance 'rgb2dvi_0' of component 'system_rgb2dvi_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5017]
+INFO: [Synth 8-638] synthesizing module 'system_rgb2dvi_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_rgb2dvi_0_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'system_rst_ps7_0_100M_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'system_rst_ps7_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5031]
+INFO: [Synth 8-638] synthesizing module 'system_rst_ps7_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_rst_ps7_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'system_v_axi4s_vid_out_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:5' bound to instance 'v_axi4s_vid_out_0' of component 'system_v_axi4s_vid_out_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5044]
+INFO: [Synth 8-638] synthesizing module 'system_v_axi4s_vid_out_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:41]
+INFO: [Synth 8-3491] module 'system_v_tc_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_v_tc_0_0_stub.vhdl:5' bound to instance 'v_tc_in' of component 'system_v_tc_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5077]
+INFO: [Synth 8-638] synthesizing module 'system_v_tc_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_v_tc_0_0_stub.vhdl:40]
+INFO: [Synth 8-3491] module 'system_v_tc_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_v_tc_0_1_stub.vhdl:5' bound to instance 'v_tc_out' of component 'system_v_tc_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5109]
+INFO: [Synth 8-638] synthesizing module 'system_v_tc_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_v_tc_0_1_stub.vhdl:49]
+INFO: [Synth 8-3491] module 'system_v_vid_in_axi4s_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_v_vid_in_axi4s_0_0_stub.vhdl:5' bound to instance 'v_vid_in_axi4s_0' of component 'system_v_vid_in_axi4s_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5150]
+INFO: [Synth 8-638] synthesizing module 'system_v_vid_in_axi4s_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_v_vid_in_axi4s_0_0_stub.vhdl:39]
+INFO: [Synth 8-3491] module 'system_xlconcat_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xlconcat_0_0_stub.vhdl:5' bound to instance 'xlconcat_0' of component 'system_xlconcat_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5181]
+INFO: [Synth 8-638] synthesizing module 'system_xlconcat_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xlconcat_0_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'system_xlconstant_0_2' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xlconstant_0_2_stub.vhdl:5' bound to instance 'xlconstant_0' of component 'system_xlconstant_0_2' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5190]
+INFO: [Synth 8-638] synthesizing module 'system_xlconstant_0_2' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xlconstant_0_2_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'system_xlconstant_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xlconstant_0_0_stub.vhdl:5' bound to instance 'xlconstant_axis_sc_reset' of component 'system_xlconstant_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5194]
+INFO: [Synth 8-638] synthesizing module 'system_xlconstant_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/.Xil/Vivado-27221-cse166pc-17/realtime/system_xlconstant_0_0_stub.vhdl:12]
 INFO: [Synth 8-256] done synthesizing module 'system' (13#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3542]
 INFO: [Synth 8-256] done synthesizing module 'system_wrapper' (14#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:53]
 WARNING: [Synth 8-3331] design s00_couplers_imp_11SE3QO has unconnected port M_ACLK
@@ -148,7 +148,7 @@ WARNING: [Synth 8-3331] design m00_couplers_imp_LCIC31 has unconnected port M_AX
 WARNING: [Synth 8-3331] design m00_couplers_imp_LCIC31 has unconnected port M_AXI_rid[2]
 WARNING: [Synth 8-3331] design m00_couplers_imp_LCIC31 has unconnected port M_AXI_rid[1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1427.000 ; gain = 130.484 ; free physical = 7255 ; free virtual = 26130
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1427.004 ; gain = 130.484 ; free physical = 6885 ; free virtual = 26965
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -161,10 +161,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1427.000 ; gain = 130.484 ; free physical = 7257 ; free virtual = 26132
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1427.004 ; gain = 130.484 ; free physical = 6886 ; free virtual = 26967
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1427.000 ; gain = 130.484 ; free physical = 7257 ; free virtual = 26132
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1427.004 ; gain = 130.484 ; free physical = 6886 ; free virtual = 26967
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -237,7 +237,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1730.781 ; gain = 0.000 ; free physical = 6953 ; free virtual = 25863
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1730.785 ; gain = 0.000 ; free physical = 6629 ; free virtual = 26709
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/axi_vdma_0' at clock pin 'm_axi_mm2s_aclk' is different from the actual clock period '7.499', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/proc_sys_reset_1' at clock pin 'slowest_sync_clk' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/v_axi4s_vid_out_0' at clock pin 'vid_io_out_clk' is different from the actual clock period '6.060', this can lead to different synthesis results.
@@ -247,14 +247,14 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'system_i/axi_interconnect_0/m00_couplers/auto_pc' at clock pin 'aclk' is different from the actual clock period '7.499', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'system_i/ps7_0_axi_periph/s00_couplers/auto_pc' at clock pin 'aclk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:29 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 7038 ; free virtual = 25949
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6715 ; free virtual = 26796
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:29 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 7038 ; free virtual = 25949
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6715 ; free virtual = 26796
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -580,10 +580,10 @@ Applied set_property DONT_TOUCH = true for system_i/axi_interconnect_0/m00_coupl
 Applied set_property DONT_TOUCH = true for system_i/axi_interconnect_0/s01_couplers/s01_regslice. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/axi_interconnect_0/s00_couplers/s00_regslice. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 7037 ; free virtual = 25947
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6714 ; free virtual = 26794
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 7037 ; free virtual = 25948
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6714 ; free virtual = 26795
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -619,7 +619,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:30 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 7034 ; free virtual = 25947
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6711 ; free virtual = 26795
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -636,7 +636,7 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'system_i/processing_syste
 INFO: [Synth 8-5578] Moved timing constraint from pin 'system_i/dvi2rgb_0/PixelClk' to pin 'system_i/dvi2rgb_0/bbstub_PixelClk/O'
 INFO: [Synth 8-5819] Moved 4 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 6899 ; free virtual = 25819
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6584 ; free virtual = 26668
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -648,7 +648,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 6897 ; free virtual = 25818
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6583 ; free virtual = 26666
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -666,7 +666,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 6898 ; free virtual = 25819
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6584 ; free virtual = 26667
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -679,7 +679,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 6898 ; free virtual = 25819
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6584 ; free virtual = 26667
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -691,7 +691,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 6898 ; free virtual = 25819
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6584 ; free virtual = 26667
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -775,11 +775,11 @@ Report Instance Areas:
 |8     |      s00_couplers     |s00_couplers_imp_11SE3QO    |   177|
 +------+-----------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.781 ; gain = 434.266 ; free physical = 6898 ; free virtual = 25819
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.785 ; gain = 434.266 ; free physical = 6584 ; free virtual = 26667
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1730.781 ; gain = 130.484 ; free physical = 6954 ; free virtual = 25875
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.789 ; gain = 434.266 ; free physical = 6964 ; free virtual = 25885
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1730.785 ; gain = 130.484 ; free physical = 6641 ; free virtual = 26724
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:38 . Memory (MB): peak = 1730.793 ; gain = 434.266 ; free physical = 6651 ; free virtual = 26734
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -792,9 +792,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 106 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1730.789 ; gain = 445.867 ; free physical = 6940 ; free virtual = 25860
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 1730.793 ; gain = 445.867 ; free physical = 6628 ; free virtual = 26711
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1730.789 ; gain = 0.000 ; free physical = 6938 ; free virtual = 25859
-INFO: [Common 17-206] Exiting Vivado at Thu Jan 17 15:56:47 2019...
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1730.793 ; gain = 0.000 ; free physical = 6625 ; free virtual = 26709
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 24 14:12:35 2019...

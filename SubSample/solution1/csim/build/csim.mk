@@ -76,7 +76,7 @@ all: $(TARGET)
 
 $(ObjDir)/testbench.o: ../../../src/testbench.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../src/testbench.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/testbench.d
 

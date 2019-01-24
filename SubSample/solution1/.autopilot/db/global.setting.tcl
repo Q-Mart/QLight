@@ -1,6 +1,6 @@
 
 set TopModule "subsamble"
-set ClockPeriod "13.500000"
+set ClockPeriod "10.000000"
 set ClockList {ap_clk}
 set multiClockList {}
 set PortClockMap {}
@@ -44,12 +44,12 @@ set TargetInfo "xc7z010:clg400:-1"
 set SourceFiles {sc {} c ../src/subsample.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/userfs/q/qj544/w2k/QLight/SubSample/solution1/solution1.directive}
-set TBFiles {verilog {../src/fox.jpg ../src/test1.bmp ../src/testbench.cpp} bc {../src/fox.jpg ../src/test1.bmp ../src/testbench.cpp} vhdl {../src/fox.jpg ../src/test1.bmp ../src/testbench.cpp} sc {../src/fox.jpg ../src/test1.bmp ../src/testbench.cpp} cas {../src/fox.jpg ../src/test1.bmp ../src/testbench.cpp} c {}}
+set TBFiles {verilog {../src/testbench.cpp ../src/test1.bmp} bc {../src/testbench.cpp ../src/test1.bmp} sc {../src/testbench.cpp ../src/test1.bmp} vhdl {../src/testbench.cpp ../src/test1.bmp} c {} cas {../src/testbench.cpp ../src/test1.bmp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set PlatformFiles {{DefaultPlatform {xilinx/zynq/zynq xilinx/zynq/zynq_fpv6}}}

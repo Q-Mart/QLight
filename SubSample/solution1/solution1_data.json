@@ -17,13 +17,13 @@
   },
   "ClockInfo": {
     "ClockName": "ap_clk",
-    "ClockPeriod": "13.5",
+    "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "10613640",
-    "Uncertainty": "1.6875"
+    "Latency": "10615742",
+    "Uncertainty": "1.25"
   },
-  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 13.500 [get_ports ap_clk]"]},
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
   "Ipx": {
     "Vendor": "xilinx.com",
     "Library": "hls",
@@ -520,8 +520,8 @@
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "13.50",
-          "Uncertainty": "1.69",
+          "Target": "10.00",
+          "Uncertainty": "1.25",
           "Estimate": "3.634"
         },
         "Loops": [
@@ -565,52 +565,52 @@
       },
       "CvtColor": {
         "Latency": {
-          "LatencyBest": "1769251",
-          "LatencyAvg": "1769251",
-          "LatencyWorst": "1769251",
-          "PipelineII": "1769251",
+          "LatencyBest": "1770301",
+          "LatencyAvg": "1770301",
+          "LatencyWorst": "1770301",
+          "PipelineII": "1770301",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "13.50",
-          "Uncertainty": "1.69",
-          "Estimate": "12.563"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.400"
         },
         "Loops": [{
             "Name": "loop_height",
             "TripCount": "1050",
-            "Latency": "1769250",
+            "Latency": "1770300",
             "PipelineII": "",
-            "PipelineDepth": "1685",
+            "PipelineDepth": "1686",
             "Loops": [{
                 "Name": "loop_width",
                 "TripCount": "1680",
-                "Latency": "1682",
+                "Latency": "1683",
                 "PipelineII": "1",
-                "PipelineDepth": "4"
+                "PipelineDepth": "5"
               }]
           }],
         "Area": {
           "BRAM_18K": "0",
           "DSP48E": "3",
-          "FF": "159",
+          "FF": "215",
           "LUT": "238"
         }
       },
       "Filter2D": {
         "Latency": {
-          "LatencyBest": "1773676",
-          "LatencyAvg": "1773676",
-          "LatencyWorst": "1773676",
-          "PipelineII": "1773676",
+          "LatencyBest": "1774728",
+          "LatencyAvg": "1774728",
+          "LatencyWorst": "1774728",
+          "PipelineII": "1774728",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "13.50",
-          "Uncertainty": "1.69",
-          "Estimate": "11.192"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.586"
         },
         "Loops": [
           {
@@ -623,22 +623,22 @@
           {
             "Name": "loop_height",
             "TripCount": "1052",
-            "Latency": "1773672",
+            "Latency": "1774724",
             "PipelineII": "",
-            "PipelineDepth": "1686",
+            "PipelineDepth": "1687",
             "Loops": [{
                 "Name": "loop_width",
                 "TripCount": "1682",
-                "Latency": "1683",
+                "Latency": "1684",
                 "PipelineII": "1",
-                "PipelineDepth": "3"
+                "PipelineDepth": "4"
               }]
           }
         ],
         "Area": {
           "BRAM_18K": "9",
-          "FF": "580",
-          "LUT": "1506",
+          "FF": "675",
+          "LUT": "1564",
           "DSP48E": "0"
         }
       },
@@ -652,8 +652,8 @@
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "13.50",
-          "Uncertainty": "1.69",
+          "Target": "10.00",
+          "Uncertainty": "1.25",
           "Estimate": "3.634"
         },
         "Loops": [{
@@ -679,17 +679,17 @@
       },
       "subsamble": {
         "Latency": {
-          "LatencyBest": "10613640",
-          "LatencyAvg": "10613640",
-          "LatencyWorst": "10613640",
-          "PipelineII": "10613641",
+          "LatencyBest": "10615742",
+          "LatencyAvg": "10615742",
+          "LatencyWorst": "10615742",
+          "PipelineII": "10615743",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "13.50",
-          "Uncertainty": "1.69",
-          "Estimate": "12.563"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.400"
         },
         "Loops": [
           {
@@ -724,8 +724,8 @@
         "Area": {
           "BRAM_18K": "9",
           "DSP48E": "3",
-          "FF": "1490",
-          "LUT": "4061"
+          "FF": "1641",
+          "LUT": "4119"
         }
       }
     }
@@ -737,7 +737,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2019-01-17 15:41:11 GMT",
+    "Time": "2019-01-24 14:09:46 GMT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2.1"
   }

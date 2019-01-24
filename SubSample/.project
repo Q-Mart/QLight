@@ -52,11 +52,6 @@
 			<location>/home/userfs/q/qj544/w2k/QLight/SubSample/src/subsample.h</location>
 		</link>
 		<link>
-			<name>testbench/fox.jpg</name>
-			<type>1</type>
-			<location>/home/userfs/q/qj544/w2k/QLight/SubSample/src/fox.jpg</location>
-		</link>
-		<link>
 			<name>testbench/test1.bmp</name>
 			<type>1</type>
 			<location>/home/userfs/q/qj544/w2k/QLight/SubSample/src/test1.bmp</location>

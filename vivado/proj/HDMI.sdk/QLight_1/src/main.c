@@ -148,6 +148,7 @@ void printGreeting() {
 int main() {
 	printGreeting();
 	init();
+	printf("Initialisation complete\r\n");
 	while (1) {
 		VideoStart(&videoCapt);
 	}

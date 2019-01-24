@@ -145,7 +145,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10613640", "EstimateLatencyMax" : "10613640",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10615742", "EstimateLatencyMax" : "10615742",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -228,7 +228,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1773676", "EstimateLatencyMax" : "1773676",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1774728", "EstimateLatencyMax" : "1774728",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -319,7 +319,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1769251", "EstimateLatencyMax" : "1769251",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1770301", "EstimateLatencyMax" : "1770301",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -459,9 +459,9 @@ set ArgLastReadFirstWriteLatency {
 		p_src_data_stream_0_V {Type I LastRead 4 FirstWrite -1}
 		p_src_data_stream_1_V {Type I LastRead 4 FirstWrite -1}
 		p_src_data_stream_2_V {Type I LastRead 4 FirstWrite -1}
-		p_dst_data_stream_0_V {Type O LastRead -1 FirstWrite 5}
-		p_dst_data_stream_1_V {Type O LastRead -1 FirstWrite 5}
-		p_dst_data_stream_2_V {Type O LastRead -1 FirstWrite 5}}
+		p_dst_data_stream_0_V {Type O LastRead -1 FirstWrite 6}
+		p_dst_data_stream_1_V {Type O LastRead -1 FirstWrite 6}
+		p_dst_data_stream_2_V {Type O LastRead -1 FirstWrite 6}}
 	AXIvideo2Mat {
 		AXI_video_strm_V_data_V {Type I LastRead 6 FirstWrite -1}
 		AXI_video_strm_V_keep_V {Type I LastRead 6 FirstWrite -1}
@@ -477,9 +477,9 @@ set ArgLastReadFirstWriteLatency {
 		p_src_data_stream_0_V {Type I LastRead 3 FirstWrite -1}
 		p_src_data_stream_1_V {Type I LastRead 3 FirstWrite -1}
 		p_src_data_stream_2_V {Type I LastRead 3 FirstWrite -1}
-		p_dst_data_stream_0_V {Type O LastRead -1 FirstWrite 5}
-		p_dst_data_stream_1_V {Type O LastRead -1 FirstWrite 5}
-		p_dst_data_stream_2_V {Type O LastRead -1 FirstWrite 5}}
+		p_dst_data_stream_0_V {Type O LastRead -1 FirstWrite 6}
+		p_dst_data_stream_1_V {Type O LastRead -1 FirstWrite 6}
+		p_dst_data_stream_2_V {Type O LastRead -1 FirstWrite 6}}
 	Mat2AXIvideo {
 		img_data_stream_0_V {Type I LastRead 3 FirstWrite -1}
 		img_data_stream_1_V {Type I LastRead 3 FirstWrite -1}
@@ -506,8 +506,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "10613640", "Max" : "10613640"}
-	, {"Name" : "Interval", "Min" : "10613641", "Max" : "10613641"}
+	{"Name" : "Latency", "Min" : "10615742", "Max" : "10615742"}
+	, {"Name" : "Interval", "Min" : "10615743", "Max" : "10615743"}
 ]}
 
 set PipelineEnableSignalInfo {[
