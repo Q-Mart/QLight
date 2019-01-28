@@ -15,10 +15,10 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     name AXI_video_strm_V_data_V \
     reset_level 1 \
     sync_rst true \
-    corename {stream_passThrough} \
+    corename {stream_process} \
     metadata {  } \
     op interface \
-    ports { stream_passThrough_TDATA { O 24 vector } } \
+    ports { stream_process_TDATA { O 24 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_data_V'"
@@ -34,10 +34,10 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     name AXI_video_strm_V_keep_V \
     reset_level 1 \
     sync_rst true \
-    corename {stream_passThrough} \
+    corename {stream_process} \
     metadata {  } \
     op interface \
-    ports { stream_passThrough_TKEEP { O 3 vector } } \
+    ports { stream_process_TKEEP { O 3 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_keep_V'"
@@ -53,10 +53,10 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     name AXI_video_strm_V_strb_V \
     reset_level 1 \
     sync_rst true \
-    corename {stream_passThrough} \
+    corename {stream_process} \
     metadata {  } \
     op interface \
-    ports { stream_passThrough_TSTRB { O 3 vector } } \
+    ports { stream_process_TSTRB { O 3 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_strb_V'"
@@ -72,10 +72,10 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     name AXI_video_strm_V_user_V \
     reset_level 1 \
     sync_rst true \
-    corename {stream_passThrough} \
+    corename {stream_process} \
     metadata {  } \
     op interface \
-    ports { stream_passThrough_TUSER { O 1 vector } } \
+    ports { stream_process_TUSER { O 1 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_user_V'"
@@ -91,10 +91,10 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     name AXI_video_strm_V_last_V \
     reset_level 1 \
     sync_rst true \
-    corename {stream_passThrough} \
+    corename {stream_process} \
     metadata {  } \
     op interface \
-    ports { stream_passThrough_TLAST { O 1 vector } } \
+    ports { stream_process_TLAST { O 1 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_last_V'"
@@ -110,10 +110,10 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     name AXI_video_strm_V_id_V \
     reset_level 1 \
     sync_rst true \
-    corename {stream_passThrough} \
+    corename {stream_process} \
     metadata {  } \
     op interface \
-    ports { stream_passThrough_TID { O 1 vector } } \
+    ports { stream_process_TID { O 1 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_id_V'"
@@ -129,10 +129,10 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     name AXI_video_strm_V_dest_V \
     reset_level 1 \
     sync_rst true \
-    corename {stream_passThrough} \
+    corename {stream_process} \
     metadata {  } \
     op interface \
-    ports { stream_passThrough_TVALID { O 1 bit } stream_passThrough_TREADY { I 1 bit } stream_passThrough_TDEST { O 1 vector } } \
+    ports { stream_process_TVALID { O 1 bit } stream_process_TREADY { I 1 bit } stream_process_TDEST { O 1 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_dest_V'"

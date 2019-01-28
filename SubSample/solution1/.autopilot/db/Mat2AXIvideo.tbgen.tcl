@@ -15,13 +15,13 @@ set C_modelArgList {
 	{ img_data_stream_0_V int 8 regular {fifo 0 volatile }  }
 	{ img_data_stream_1_V int 8 regular {fifo 0 volatile }  }
 	{ img_data_stream_2_V int 8 regular {fifo 0 volatile }  }
-	{ AXI_video_strm_V_data_V int 24 regular {axi_s 1 volatile  { stream_passThrough Data } }  }
-	{ AXI_video_strm_V_keep_V int 3 regular {axi_s 1 volatile  { stream_passThrough Keep } }  }
-	{ AXI_video_strm_V_strb_V int 3 regular {axi_s 1 volatile  { stream_passThrough Strb } }  }
-	{ AXI_video_strm_V_user_V int 1 regular {axi_s 1 volatile  { stream_passThrough User } }  }
-	{ AXI_video_strm_V_last_V int 1 regular {axi_s 1 volatile  { stream_passThrough Last } }  }
-	{ AXI_video_strm_V_id_V int 1 regular {axi_s 1 volatile  { stream_passThrough ID } }  }
-	{ AXI_video_strm_V_dest_V int 1 regular {axi_s 1 volatile  { stream_passThrough Dest } }  }
+	{ AXI_video_strm_V_data_V int 24 regular {axi_s 1 volatile  { stream_process Data } }  }
+	{ AXI_video_strm_V_keep_V int 3 regular {axi_s 1 volatile  { stream_process Keep } }  }
+	{ AXI_video_strm_V_strb_V int 3 regular {axi_s 1 volatile  { stream_process Strb } }  }
+	{ AXI_video_strm_V_user_V int 1 regular {axi_s 1 volatile  { stream_process User } }  }
+	{ AXI_video_strm_V_last_V int 1 regular {axi_s 1 volatile  { stream_process Last } }  }
+	{ AXI_video_strm_V_id_V int 1 regular {axi_s 1 volatile  { stream_process ID } }  }
+	{ AXI_video_strm_V_dest_V int 1 regular {axi_s 1 volatile  { stream_process Dest } }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "img_data_stream_0_V", "interface" : "fifo", "bitwidth" : 8, "direction" : "READONLY"} , 
@@ -52,15 +52,15 @@ set portList {
 	{ img_data_stream_2_V_dout sc_in sc_lv 8 signal 2 } 
 	{ img_data_stream_2_V_empty_n sc_in sc_logic 1 signal 2 } 
 	{ img_data_stream_2_V_read sc_out sc_logic 1 signal 2 } 
-	{ stream_passThrough_TDATA sc_out sc_lv 24 signal 3 } 
-	{ stream_passThrough_TVALID sc_out sc_logic 1 outvld 9 } 
-	{ stream_passThrough_TREADY sc_in sc_logic 1 outacc 9 } 
-	{ stream_passThrough_TKEEP sc_out sc_lv 3 signal 4 } 
-	{ stream_passThrough_TSTRB sc_out sc_lv 3 signal 5 } 
-	{ stream_passThrough_TUSER sc_out sc_lv 1 signal 6 } 
-	{ stream_passThrough_TLAST sc_out sc_lv 1 signal 7 } 
-	{ stream_passThrough_TID sc_out sc_lv 1 signal 8 } 
-	{ stream_passThrough_TDEST sc_out sc_lv 1 signal 9 } 
+	{ stream_process_TDATA sc_out sc_lv 24 signal 3 } 
+	{ stream_process_TVALID sc_out sc_logic 1 outvld 9 } 
+	{ stream_process_TREADY sc_in sc_logic 1 outacc 9 } 
+	{ stream_process_TKEEP sc_out sc_lv 3 signal 4 } 
+	{ stream_process_TSTRB sc_out sc_lv 3 signal 5 } 
+	{ stream_process_TUSER sc_out sc_lv 1 signal 6 } 
+	{ stream_process_TLAST sc_out sc_lv 1 signal 7 } 
+	{ stream_process_TID sc_out sc_lv 1 signal 8 } 
+	{ stream_process_TDEST sc_out sc_lv 1 signal 9 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -78,15 +78,15 @@ set NewPortList {[
  	{ "name": "img_data_stream_2_V_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "img_data_stream_2_V", "role": "dout" }} , 
  	{ "name": "img_data_stream_2_V_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "img_data_stream_2_V", "role": "empty_n" }} , 
  	{ "name": "img_data_stream_2_V_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "img_data_stream_2_V", "role": "read" }} , 
- 	{ "name": "stream_passThrough_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "AXI_video_strm_V_data_V", "role": "" }} , 
- 	{ "name": "stream_passThrough_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "AXI_video_strm_V_dest_V", "role": "D" }} , 
- 	{ "name": "stream_passThrough_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "AXI_video_strm_V_dest_V", "role": "Y" }} , 
- 	{ "name": "stream_passThrough_TKEEP", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "AXI_video_strm_V_keep_V", "role": "" }} , 
- 	{ "name": "stream_passThrough_TSTRB", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "AXI_video_strm_V_strb_V", "role": "" }} , 
- 	{ "name": "stream_passThrough_TUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "AXI_video_strm_V_user_V", "role": "" }} , 
- 	{ "name": "stream_passThrough_TLAST", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "AXI_video_strm_V_last_V", "role": "" }} , 
- 	{ "name": "stream_passThrough_TID", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "AXI_video_strm_V_id_V", "role": "" }} , 
- 	{ "name": "stream_passThrough_TDEST", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "AXI_video_strm_V_dest_V", "role": "" }}  ]}
+ 	{ "name": "stream_process_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "AXI_video_strm_V_data_V", "role": "default" }} , 
+ 	{ "name": "stream_process_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "AXI_video_strm_V_dest_V", "role": "default" }} , 
+ 	{ "name": "stream_process_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "AXI_video_strm_V_dest_V", "role": "default" }} , 
+ 	{ "name": "stream_process_TKEEP", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "AXI_video_strm_V_keep_V", "role": "default" }} , 
+ 	{ "name": "stream_process_TSTRB", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "AXI_video_strm_V_strb_V", "role": "default" }} , 
+ 	{ "name": "stream_process_TUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "AXI_video_strm_V_user_V", "role": "default" }} , 
+ 	{ "name": "stream_process_TLAST", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "AXI_video_strm_V_last_V", "role": "default" }} , 
+ 	{ "name": "stream_process_TID", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "AXI_video_strm_V_id_V", "role": "default" }} , 
+ 	{ "name": "stream_process_TDEST", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "AXI_video_strm_V_dest_V", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
@@ -114,7 +114,7 @@ set RtlHierarchyInfo {[
 					{"Name" : "img_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "AXI_video_strm_V_data_V", "Type" : "Axis", "Direction" : "O",
 				"BlockSignal" : [
-					{"Name" : "stream_passThrough_TDATA_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "stream_process_TDATA_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "AXI_video_strm_V_keep_V", "Type" : "Axis", "Direction" : "O"},
 			{"Name" : "AXI_video_strm_V_strb_V", "Type" : "Axis", "Direction" : "O"},
 			{"Name" : "AXI_video_strm_V_user_V", "Type" : "Axis", "Direction" : "O"},
@@ -151,11 +151,11 @@ set Spec2ImplPortList {
 	img_data_stream_0_V { ap_fifo {  { img_data_stream_0_V_dout fifo_data 0 8 }  { img_data_stream_0_V_empty_n fifo_status 0 1 }  { img_data_stream_0_V_read fifo_update 1 1 } } }
 	img_data_stream_1_V { ap_fifo {  { img_data_stream_1_V_dout fifo_data 0 8 }  { img_data_stream_1_V_empty_n fifo_status 0 1 }  { img_data_stream_1_V_read fifo_update 1 1 } } }
 	img_data_stream_2_V { ap_fifo {  { img_data_stream_2_V_dout fifo_data 0 8 }  { img_data_stream_2_V_empty_n fifo_status 0 1 }  { img_data_stream_2_V_read fifo_update 1 1 } } }
-	AXI_video_strm_V_data_V { axis {  { stream_passThrough_TDATA out_data 1 24 } } }
-	AXI_video_strm_V_keep_V { axis {  { stream_passThrough_TKEEP out_data 1 3 } } }
-	AXI_video_strm_V_strb_V { axis {  { stream_passThrough_TSTRB out_data 1 3 } } }
-	AXI_video_strm_V_user_V { axis {  { stream_passThrough_TUSER out_data 1 1 } } }
-	AXI_video_strm_V_last_V { axis {  { stream_passThrough_TLAST out_data 1 1 } } }
-	AXI_video_strm_V_id_V { axis {  { stream_passThrough_TID out_data 1 1 } } }
-	AXI_video_strm_V_dest_V { axis {  { stream_passThrough_TVALID out_vld 1 1 }  { stream_passThrough_TREADY out_acc 0 1 }  { stream_passThrough_TDEST out_data 1 1 } } }
+	AXI_video_strm_V_data_V { axis {  { stream_process_TDATA out_data 1 24 } } }
+	AXI_video_strm_V_keep_V { axis {  { stream_process_TKEEP out_data 1 3 } } }
+	AXI_video_strm_V_strb_V { axis {  { stream_process_TSTRB out_data 1 3 } } }
+	AXI_video_strm_V_user_V { axis {  { stream_process_TUSER out_data 1 1 } } }
+	AXI_video_strm_V_last_V { axis {  { stream_process_TLAST out_data 1 1 } } }
+	AXI_video_strm_V_id_V { axis {  { stream_process_TID out_data 1 1 } } }
+	AXI_video_strm_V_dest_V { axis {  { stream_process_TVALID out_vld 1 1 }  { stream_process_TREADY out_acc 0 1 }  { stream_process_TDEST out_data 1 1 } } }
 }

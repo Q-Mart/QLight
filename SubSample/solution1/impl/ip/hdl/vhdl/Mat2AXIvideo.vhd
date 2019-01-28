@@ -26,15 +26,15 @@ port (
     img_data_stream_2_V_dout : IN STD_LOGIC_VECTOR (7 downto 0);
     img_data_stream_2_V_empty_n : IN STD_LOGIC;
     img_data_stream_2_V_read : OUT STD_LOGIC;
-    stream_passThrough_TDATA : OUT STD_LOGIC_VECTOR (23 downto 0);
-    stream_passThrough_TVALID : OUT STD_LOGIC;
-    stream_passThrough_TREADY : IN STD_LOGIC;
-    stream_passThrough_TKEEP : OUT STD_LOGIC_VECTOR (2 downto 0);
-    stream_passThrough_TSTRB : OUT STD_LOGIC_VECTOR (2 downto 0);
-    stream_passThrough_TUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
-    stream_passThrough_TLAST : OUT STD_LOGIC_VECTOR (0 downto 0);
-    stream_passThrough_TID : OUT STD_LOGIC_VECTOR (0 downto 0);
-    stream_passThrough_TDEST : OUT STD_LOGIC_VECTOR (0 downto 0) );
+    stream_process_TDATA : OUT STD_LOGIC_VECTOR (23 downto 0);
+    stream_process_TVALID : OUT STD_LOGIC;
+    stream_process_TREADY : IN STD_LOGIC;
+    stream_process_TKEEP : OUT STD_LOGIC_VECTOR (2 downto 0);
+    stream_process_TSTRB : OUT STD_LOGIC_VECTOR (2 downto 0);
+    stream_process_TUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    stream_process_TLAST : OUT STD_LOGIC_VECTOR (0 downto 0);
+    stream_process_TID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    stream_process_TDEST : OUT STD_LOGIC_VECTOR (0 downto 0) );
 end;
 
 
@@ -74,7 +74,7 @@ architecture behav of Mat2AXIvideo is
     signal exitcond_reg_268 : STD_LOGIC_VECTOR (0 downto 0);
     signal img_data_stream_1_V_blk_n : STD_LOGIC;
     signal img_data_stream_2_V_blk_n : STD_LOGIC;
-    signal stream_passThrough_TDATA_blk_n : STD_LOGIC;
+    signal stream_process_TDATA_blk_n : STD_LOGIC;
     signal t_V_1_reg_186 : STD_LOGIC_VECTOR (10 downto 0);
     signal exitcond4_fu_202_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
@@ -84,7 +84,7 @@ architecture behav of Mat2AXIvideo is
     signal exitcond_fu_214_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_block_state3_pp0_stage0_iter0 : BOOLEAN;
     signal ap_block_state4_pp0_stage0_iter1 : BOOLEAN;
-    signal ap_sig_ioackin_stream_passThrough_TREADY : STD_LOGIC;
+    signal ap_sig_ioackin_stream_process_TREADY : STD_LOGIC;
     signal ap_block_state4_io : BOOLEAN;
     signal ap_block_pp0_stage0_11001 : BOOLEAN;
     signal j_V_fu_220_p2 : STD_LOGIC_VECTOR (10 downto 0);
@@ -98,7 +98,7 @@ architecture behav of Mat2AXIvideo is
     attribute fsm_encoding of ap_CS_fsm_state5 : signal is "none";
     signal tmp_user_V_fu_124 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_block_pp0_stage0_01001 : BOOLEAN;
-    signal ap_reg_ioackin_stream_passThrough_TREADY : STD_LOGIC := '0';
+    signal ap_reg_ioackin_stream_process_TREADY : STD_LOGIC := '0';
     signal ap_NS_fsm : STD_LOGIC_VECTOR (3 downto 0);
     signal ap_idle_pp0 : STD_LOGIC;
     signal ap_enable_pp0 : STD_LOGIC;
@@ -156,17 +156,17 @@ begin
     end process;
 
 
-    ap_reg_ioackin_stream_passThrough_TREADY_assign_proc : process(ap_clk)
+    ap_reg_ioackin_stream_process_TREADY_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                ap_reg_ioackin_stream_passThrough_TREADY <= ap_const_logic_0;
+                ap_reg_ioackin_stream_process_TREADY <= ap_const_logic_0;
             else
                 if ((ap_const_boolean_1 = ap_condition_206)) then
                     if ((ap_const_boolean_0 = ap_block_pp0_stage0_11001)) then 
-                        ap_reg_ioackin_stream_passThrough_TREADY <= ap_const_logic_0;
-                    elsif (((stream_passThrough_TREADY = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_01001))) then 
-                        ap_reg_ioackin_stream_passThrough_TREADY <= ap_const_logic_1;
+                        ap_reg_ioackin_stream_process_TREADY <= ap_const_logic_0;
+                    elsif (((stream_process_TREADY = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_01001))) then 
+                        ap_reg_ioackin_stream_process_TREADY <= ap_const_logic_1;
                     end if;
                 end if; 
             end if;
@@ -285,9 +285,9 @@ begin
 
         ap_block_state3_pp0_stage0_iter0 <= not((ap_const_boolean_1 = ap_const_boolean_1));
 
-    ap_block_state4_io_assign_proc : process(exitcond_reg_268, ap_sig_ioackin_stream_passThrough_TREADY)
+    ap_block_state4_io_assign_proc : process(exitcond_reg_268, ap_sig_ioackin_stream_process_TREADY)
     begin
-                ap_block_state4_io <= ((exitcond_reg_268 = ap_const_lv1_0) and (ap_sig_ioackin_stream_passThrough_TREADY = ap_const_logic_0));
+                ap_block_state4_io <= ((exitcond_reg_268 = ap_const_lv1_0) and (ap_sig_ioackin_stream_process_TREADY = ap_const_logic_0));
     end process;
 
 
@@ -354,12 +354,12 @@ begin
     end process;
 
 
-    ap_sig_ioackin_stream_passThrough_TREADY_assign_proc : process(stream_passThrough_TREADY, ap_reg_ioackin_stream_passThrough_TREADY)
+    ap_sig_ioackin_stream_process_TREADY_assign_proc : process(stream_process_TREADY, ap_reg_ioackin_stream_process_TREADY)
     begin
-        if ((ap_reg_ioackin_stream_passThrough_TREADY = ap_const_logic_0)) then 
-            ap_sig_ioackin_stream_passThrough_TREADY <= stream_passThrough_TREADY;
+        if ((ap_reg_ioackin_stream_process_TREADY = ap_const_logic_0)) then 
+            ap_sig_ioackin_stream_process_TREADY <= stream_process_TREADY;
         else 
-            ap_sig_ioackin_stream_passThrough_TREADY <= ap_const_logic_1;
+            ap_sig_ioackin_stream_process_TREADY <= ap_const_logic_1;
         end if; 
     end process;
 
@@ -428,30 +428,30 @@ begin
     end process;
 
     j_V_fu_220_p2 <= std_logic_vector(unsigned(t_V_1_reg_186) + unsigned(ap_const_lv11_1));
-    stream_passThrough_TDATA <= ((img_data_stream_2_V_dout & img_data_stream_1_V_dout) & img_data_stream_0_V_dout);
+    stream_process_TDATA <= ((img_data_stream_2_V_dout & img_data_stream_1_V_dout) & img_data_stream_0_V_dout);
 
-    stream_passThrough_TDATA_blk_n_assign_proc : process(stream_passThrough_TREADY, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0, exitcond_reg_268)
+    stream_process_TDATA_blk_n_assign_proc : process(stream_process_TREADY, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0, exitcond_reg_268)
     begin
         if (((exitcond_reg_268 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp0_stage0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
-            stream_passThrough_TDATA_blk_n <= stream_passThrough_TREADY;
+            stream_process_TDATA_blk_n <= stream_process_TREADY;
         else 
-            stream_passThrough_TDATA_blk_n <= ap_const_logic_1;
+            stream_process_TDATA_blk_n <= ap_const_logic_1;
         end if; 
     end process;
 
-    stream_passThrough_TDEST <= ap_const_lv1_0;
-    stream_passThrough_TID <= ap_const_lv1_0;
-    stream_passThrough_TKEEP <= ap_const_lv3_7;
-    stream_passThrough_TLAST <= axi_last_V_reg_277;
-    stream_passThrough_TSTRB <= ap_const_lv3_0;
-    stream_passThrough_TUSER <= tmp_user_V_fu_124;
+    stream_process_TDEST <= ap_const_lv1_0;
+    stream_process_TID <= ap_const_lv1_0;
+    stream_process_TKEEP <= ap_const_lv3_7;
+    stream_process_TLAST <= axi_last_V_reg_277;
+    stream_process_TSTRB <= ap_const_lv3_0;
+    stream_process_TUSER <= tmp_user_V_fu_124;
 
-    stream_passThrough_TVALID_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, exitcond_reg_268, ap_block_pp0_stage0_01001, ap_reg_ioackin_stream_passThrough_TREADY)
+    stream_process_TVALID_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, exitcond_reg_268, ap_block_pp0_stage0_01001, ap_reg_ioackin_stream_process_TREADY)
     begin
-        if (((exitcond_reg_268 = ap_const_lv1_0) and (ap_reg_ioackin_stream_passThrough_TREADY = ap_const_logic_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (ap_const_boolean_0 = ap_block_pp0_stage0_01001))) then 
-            stream_passThrough_TVALID <= ap_const_logic_1;
+        if (((exitcond_reg_268 = ap_const_lv1_0) and (ap_reg_ioackin_stream_process_TREADY = ap_const_logic_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (ap_const_boolean_0 = ap_block_pp0_stage0_01001))) then 
+            stream_process_TVALID <= ap_const_logic_1;
         else 
-            stream_passThrough_TVALID <= ap_const_logic_0;
+            stream_process_TVALID <= ap_const_logic_0;
         end if; 
     end process;
 

@@ -224,7 +224,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TDATA</name>
+<name>stream_process_TDATA</name>
 <Object>AXI_video_strm_V_data_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
@@ -235,7 +235,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TVALID</name>
+<name>stream_process_TVALID</name>
 <Object>AXI_video_strm_V_dest_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
@@ -246,7 +246,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TREADY</name>
+<name>stream_process_TREADY</name>
 <Object>AXI_video_strm_V_dest_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
@@ -257,7 +257,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TDEST</name>
+<name>stream_process_TDEST</name>
 <Object>AXI_video_strm_V_dest_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
@@ -268,7 +268,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TKEEP</name>
+<name>stream_process_TKEEP</name>
 <Object>AXI_video_strm_V_keep_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
@@ -279,7 +279,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TSTRB</name>
+<name>stream_process_TSTRB</name>
 <Object>AXI_video_strm_V_strb_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
@@ -290,7 +290,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TUSER</name>
+<name>stream_process_TUSER</name>
 <Object>AXI_video_strm_V_user_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
@@ -301,7 +301,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TLAST</name>
+<name>stream_process_TLAST</name>
 <Object>AXI_video_strm_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
@@ -312,7 +312,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>stream_passThrough_TID</name>
+<name>stream_process_TID</name>
 <Object>AXI_video_strm_V_id_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>

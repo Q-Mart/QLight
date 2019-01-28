@@ -100,7 +100,7 @@ reg   [0:0] axi_last_V_2_reg_243;
 reg   [23:0] p_Val2_s_reg_256;
 reg   [23:0] tmp_data_V_reg_383;
 reg   [0:0] tmp_last_V_reg_391;
-wire   [0:0] exitcond6_fu_321_p2;
+wire   [0:0] exitcond5_fu_321_p2;
 wire    ap_CS_fsm_state4;
 wire   [10:0] i_V_fu_327_p2;
 reg   [10:0] i_V_reg_407;
@@ -161,7 +161,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if (((1'b1 == ap_CS_fsm_pp1_stage0) & (1'b1 == ap_condition_pp1_exit_iter0_state5) & (1'b0 == ap_block_pp1_stage0_subdone))) begin
             ap_enable_reg_pp1_iter0 <= 1'b0;
-        end else if (((exitcond6_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        end else if (((exitcond5_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
             ap_enable_reg_pp1_iter0 <= 1'b1;
         end
     end
@@ -175,7 +175,7 @@ always @ (posedge ap_clk) begin
             ap_enable_reg_pp1_iter1 <= (1'b1 ^ ap_condition_pp1_exit_iter0_state5);
         end else if ((1'b0 == ap_block_pp1_stage0_subdone)) begin
             ap_enable_reg_pp1_iter1 <= ap_enable_reg_pp1_iter0;
-        end else if (((exitcond6_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        end else if (((exitcond5_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
             ap_enable_reg_pp1_iter1 <= 1'b0;
         end
     end
@@ -192,7 +192,7 @@ end
 always @ (posedge ap_clk) begin
     if (((exitcond_reg_412 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
         axi_data_V_1_reg_209 <= p_Val2_s_reg_256;
-    end else if (((exitcond6_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+    end else if (((exitcond5_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         axi_data_V_1_reg_209 <= axi_data_V1_reg_177;
     end
 end
@@ -236,7 +236,7 @@ end
 always @ (posedge ap_clk) begin
     if (((exitcond_reg_412 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
         eol_1_reg_198 <= axi_last_V_2_reg_243;
-    end else if (((exitcond6_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+    end else if (((exitcond5_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         eol_1_reg_198 <= axi_last_V1_reg_167;
     end
 end
@@ -252,7 +252,7 @@ end
 always @ (posedge ap_clk) begin
     if (((exitcond_reg_412 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
         eol_reg_231 <= axi_last_V_2_reg_243;
-    end else if (((exitcond6_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+    end else if (((exitcond5_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         eol_reg_231 <= 1'd0;
     end
 end
@@ -280,7 +280,7 @@ end
 always @ (posedge ap_clk) begin
     if (((exitcond_fu_333_p2 == 1'd0) & (ap_enable_reg_pp1_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
         t_V_3_reg_220 <= j_V_fu_339_p2;
-    end else if (((exitcond6_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+    end else if (((exitcond5_fu_321_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         t_V_3_reg_220 <= 11'd0;
     end
 end
@@ -329,7 +329,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)) | ((1'b1 == ap_CS_fsm_state4) & (exitcond6_fu_321_p2 == 1'd1)))) begin
+    if ((((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)) | ((1'b1 == ap_CS_fsm_state4) & (exitcond5_fu_321_p2 == 1'd1)))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -391,7 +391,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state4) & (exitcond6_fu_321_p2 == 1'd1))) begin
+    if (((1'b1 == ap_CS_fsm_state4) & (exitcond5_fu_321_p2 == 1'd1))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -484,7 +484,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state4;
         end
         ap_ST_fsm_state4 : begin
-            if (((1'b1 == ap_CS_fsm_state4) & (exitcond6_fu_321_p2 == 1'd1))) begin
+            if (((1'b1 == ap_CS_fsm_state4) & (exitcond5_fu_321_p2 == 1'd1))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp1_stage0;
@@ -584,7 +584,7 @@ end
 
 assign brmerge_fu_348_p2 = (sof_1_fu_124 | ap_phi_mux_eol_phi_fu_235_p4);
 
-assign exitcond6_fu_321_p2 = ((t_V_reg_187 == 11'd1050) ? 1'b1 : 1'b0);
+assign exitcond5_fu_321_p2 = ((t_V_reg_187 == 11'd1050) ? 1'b1 : 1'b0);
 
 assign exitcond_fu_333_p2 = ((t_V_3_reg_220 == 11'd1680) ? 1'b1 : 1'b0);
 

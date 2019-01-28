@@ -74,7 +74,7 @@ struct AXIvideo2Mat : public sc_module {
     sc_signal< sc_lv<24> > p_Val2_s_reg_256;
     sc_signal< sc_lv<24> > tmp_data_V_reg_383;
     sc_signal< sc_lv<1> > tmp_last_V_reg_391;
-    sc_signal< sc_lv<1> > exitcond6_fu_321_p2;
+    sc_signal< sc_lv<1> > exitcond5_fu_321_p2;
     sc_signal< sc_logic > ap_CS_fsm_state4;
     sc_signal< sc_lv<11> > i_V_fu_327_p2;
     sc_signal< sc_lv<11> > i_V_reg_407;
@@ -177,7 +177,7 @@ struct AXIvideo2Mat : public sc_module {
     void thread_ap_predicate_op50_read_state5();
     void thread_ap_ready();
     void thread_brmerge_fu_348_p2();
-    void thread_exitcond6_fu_321_p2();
+    void thread_exitcond5_fu_321_p2();
     void thread_exitcond_fu_333_p2();
     void thread_i_V_fu_327_p2();
     void thread_img_data_stream_0_V_blk_n();

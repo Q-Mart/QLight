@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'Mat2AXIvideo'
 ================================================================
-* Date:           Thu Jan 24 14:08:50 2019
+* Date:           Mon Jan 28 11:41:20 2019
 
 * Version:        2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)
 * Project:        SubSample
@@ -103,39 +103,39 @@
     +----------------------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
-    +------------------------------------------+----+-----------+-----+-----------+
-    |                   Name                   | LUT| Input Size| Bits| Total Bits|
-    +------------------------------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm                                 |  27|          5|    1|          5|
-    |ap_enable_reg_pp0_iter1                   |  15|          3|    1|          3|
-    |ap_sig_ioackin_stream_passThrough_TREADY  |   9|          2|    1|          2|
-    |img_data_stream_0_V_blk_n                 |   9|          2|    1|          2|
-    |img_data_stream_1_V_blk_n                 |   9|          2|    1|          2|
-    |img_data_stream_2_V_blk_n                 |   9|          2|    1|          2|
-    |stream_passThrough_TDATA_blk_n            |   9|          2|    1|          2|
-    |t_V_1_reg_186                             |   9|          2|   11|         22|
-    |t_V_reg_175                               |   9|          2|   11|         22|
-    +------------------------------------------+----+-----------+-----+-----------+
-    |Total                                     | 105|         22|   29|         62|
-    +------------------------------------------+----+-----------+-----+-----------+
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                             |  27|          5|    1|          5|
+    |ap_enable_reg_pp0_iter1               |  15|          3|    1|          3|
+    |ap_sig_ioackin_stream_process_TREADY  |   9|          2|    1|          2|
+    |img_data_stream_0_V_blk_n             |   9|          2|    1|          2|
+    |img_data_stream_1_V_blk_n             |   9|          2|    1|          2|
+    |img_data_stream_2_V_blk_n             |   9|          2|    1|          2|
+    |stream_process_TDATA_blk_n            |   9|          2|    1|          2|
+    |t_V_1_reg_186                         |   9|          2|   11|         22|
+    |t_V_reg_175                           |   9|          2|   11|         22|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 105|         22|   29|         62|
+    +--------------------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +------------------------------------------+----+----+-----+-----------+
-    |                   Name                   | FF | LUT| Bits| Const Bits|
-    +------------------------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                                 |   4|   0|    4|          0|
-    |ap_enable_reg_pp0_iter0                   |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter1                   |   1|   0|    1|          0|
-    |ap_reg_ioackin_stream_passThrough_TREADY  |   1|   0|    1|          0|
-    |axi_last_V_reg_277                        |   1|   0|    1|          0|
-    |exitcond_reg_268                          |   1|   0|    1|          0|
-    |i_V_reg_263                               |  11|   0|   11|          0|
-    |t_V_1_reg_186                             |  11|   0|   11|          0|
-    |t_V_reg_175                               |  11|   0|   11|          0|
-    |tmp_user_V_fu_124                         |   1|   0|    1|          0|
-    +------------------------------------------+----+----+-----+-----------+
-    |Total                                     |  43|   0|   43|          0|
-    +------------------------------------------+----+----+-----+-----------+
+    +--------------------------------------+----+----+-----+-----------+
+    |                 Name                 | FF | LUT| Bits| Const Bits|
+    +--------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                             |   4|   0|    4|          0|
+    |ap_enable_reg_pp0_iter0               |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1               |   1|   0|    1|          0|
+    |ap_reg_ioackin_stream_process_TREADY  |   1|   0|    1|          0|
+    |axi_last_V_reg_277                    |   1|   0|    1|          0|
+    |exitcond_reg_268                      |   1|   0|    1|          0|
+    |i_V_reg_263                           |  11|   0|   11|          0|
+    |t_V_1_reg_186                         |  11|   0|   11|          0|
+    |t_V_reg_175                           |  11|   0|   11|          0|
+    |tmp_user_V_fu_124                     |   1|   0|    1|          0|
+    +--------------------------------------+----+----+-----+-----------+
+    |Total                                 |  43|   0|   43|          0|
+    +--------------------------------------+----+----+-----+-----------+
 
 
 
@@ -161,14 +161,14 @@
 |img_data_stream_2_V_dout     |  in |    8|   ap_fifo  |   img_data_stream_2_V   |    pointer   |
 |img_data_stream_2_V_empty_n  |  in |    1|   ap_fifo  |   img_data_stream_2_V   |    pointer   |
 |img_data_stream_2_V_read     | out |    1|   ap_fifo  |   img_data_stream_2_V   |    pointer   |
-|stream_passThrough_TDATA     | out |   24|    axis    | AXI_video_strm_V_data_V |    pointer   |
-|stream_passThrough_TVALID    | out |    1|    axis    | AXI_video_strm_V_dest_V |    pointer   |
-|stream_passThrough_TREADY    |  in |    1|    axis    | AXI_video_strm_V_dest_V |    pointer   |
-|stream_passThrough_TDEST     | out |    1|    axis    | AXI_video_strm_V_dest_V |    pointer   |
-|stream_passThrough_TKEEP     | out |    3|    axis    | AXI_video_strm_V_keep_V |    pointer   |
-|stream_passThrough_TSTRB     | out |    3|    axis    | AXI_video_strm_V_strb_V |    pointer   |
-|stream_passThrough_TUSER     | out |    1|    axis    | AXI_video_strm_V_user_V |    pointer   |
-|stream_passThrough_TLAST     | out |    1|    axis    | AXI_video_strm_V_last_V |    pointer   |
-|stream_passThrough_TID       | out |    1|    axis    |  AXI_video_strm_V_id_V  |    pointer   |
+|stream_process_TDATA         | out |   24|    axis    | AXI_video_strm_V_data_V |    pointer   |
+|stream_process_TVALID        | out |    1|    axis    | AXI_video_strm_V_dest_V |    pointer   |
+|stream_process_TREADY        |  in |    1|    axis    | AXI_video_strm_V_dest_V |    pointer   |
+|stream_process_TDEST         | out |    1|    axis    | AXI_video_strm_V_dest_V |    pointer   |
+|stream_process_TKEEP         | out |    3|    axis    | AXI_video_strm_V_keep_V |    pointer   |
+|stream_process_TSTRB         | out |    3|    axis    | AXI_video_strm_V_strb_V |    pointer   |
+|stream_process_TUSER         | out |    1|    axis    | AXI_video_strm_V_user_V |    pointer   |
+|stream_process_TLAST         | out |    1|    axis    | AXI_video_strm_V_last_V |    pointer   |
+|stream_process_TID           | out |    1|    axis    |  AXI_video_strm_V_id_V  |    pointer   |
 +-----------------------------+-----+-----+------------+-------------------------+--------------+
 

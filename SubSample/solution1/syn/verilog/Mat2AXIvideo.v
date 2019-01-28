@@ -23,15 +23,15 @@ module Mat2AXIvideo (
         img_data_stream_2_V_dout,
         img_data_stream_2_V_empty_n,
         img_data_stream_2_V_read,
-        stream_passThrough_TDATA,
-        stream_passThrough_TVALID,
-        stream_passThrough_TREADY,
-        stream_passThrough_TKEEP,
-        stream_passThrough_TSTRB,
-        stream_passThrough_TUSER,
-        stream_passThrough_TLAST,
-        stream_passThrough_TID,
-        stream_passThrough_TDEST
+        stream_process_TDATA,
+        stream_process_TVALID,
+        stream_process_TREADY,
+        stream_process_TKEEP,
+        stream_process_TSTRB,
+        stream_process_TUSER,
+        stream_process_TLAST,
+        stream_process_TID,
+        stream_process_TDEST
 );
 
 parameter    ap_ST_fsm_state1 = 4'd1;
@@ -54,15 +54,15 @@ output   img_data_stream_1_V_read;
 input  [7:0] img_data_stream_2_V_dout;
 input   img_data_stream_2_V_empty_n;
 output   img_data_stream_2_V_read;
-output  [23:0] stream_passThrough_TDATA;
-output   stream_passThrough_TVALID;
-input   stream_passThrough_TREADY;
-output  [2:0] stream_passThrough_TKEEP;
-output  [2:0] stream_passThrough_TSTRB;
-output  [0:0] stream_passThrough_TUSER;
-output  [0:0] stream_passThrough_TLAST;
-output  [0:0] stream_passThrough_TID;
-output  [0:0] stream_passThrough_TDEST;
+output  [23:0] stream_process_TDATA;
+output   stream_process_TVALID;
+input   stream_process_TREADY;
+output  [2:0] stream_process_TKEEP;
+output  [2:0] stream_process_TSTRB;
+output  [0:0] stream_process_TUSER;
+output  [0:0] stream_process_TLAST;
+output  [0:0] stream_process_TID;
+output  [0:0] stream_process_TDEST;
 
 reg ap_done;
 reg ap_idle;
@@ -70,7 +70,7 @@ reg ap_ready;
 reg img_data_stream_0_V_read;
 reg img_data_stream_1_V_read;
 reg img_data_stream_2_V_read;
-reg stream_passThrough_TVALID;
+reg stream_process_TVALID;
 
 (* fsm_encoding = "none" *) reg   [3:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
@@ -81,7 +81,7 @@ wire    ap_block_pp0_stage0;
 reg   [0:0] exitcond_reg_268;
 reg    img_data_stream_1_V_blk_n;
 reg    img_data_stream_2_V_blk_n;
-reg    stream_passThrough_TDATA_blk_n;
+reg    stream_process_TDATA_blk_n;
 reg   [10:0] t_V_1_reg_186;
 wire   [0:0] exitcond4_fu_202_p2;
 wire    ap_CS_fsm_state2;
@@ -90,7 +90,7 @@ reg   [10:0] i_V_reg_263;
 wire   [0:0] exitcond_fu_214_p2;
 wire    ap_block_state3_pp0_stage0_iter0;
 reg    ap_block_state4_pp0_stage0_iter1;
-reg    ap_sig_ioackin_stream_passThrough_TREADY;
+reg    ap_sig_ioackin_stream_process_TREADY;
 reg    ap_block_state4_io;
 reg    ap_block_pp0_stage0_11001;
 wire   [10:0] j_V_fu_220_p2;
@@ -103,7 +103,7 @@ reg   [10:0] t_V_reg_175;
 wire    ap_CS_fsm_state5;
 reg   [0:0] tmp_user_V_fu_124;
 reg    ap_block_pp0_stage0_01001;
-reg    ap_reg_ioackin_stream_passThrough_TREADY;
+reg    ap_reg_ioackin_stream_process_TREADY;
 reg   [3:0] ap_NS_fsm;
 reg    ap_idle_pp0;
 wire    ap_enable_pp0;
@@ -114,7 +114,7 @@ initial begin
 #0 ap_CS_fsm = 4'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter0 = 1'b0;
-#0 ap_reg_ioackin_stream_passThrough_TREADY = 1'b0;
+#0 ap_reg_ioackin_stream_process_TREADY = 1'b0;
 end
 
 always @ (posedge ap_clk) begin
@@ -153,13 +153,13 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_reg_ioackin_stream_passThrough_TREADY <= 1'b0;
+        ap_reg_ioackin_stream_process_TREADY <= 1'b0;
     end else begin
         if ((1'b1 == ap_condition_206)) begin
             if ((1'b0 == ap_block_pp0_stage0_11001)) begin
-                ap_reg_ioackin_stream_passThrough_TREADY <= 1'b0;
-            end else if (((stream_passThrough_TREADY == 1'b1) & (1'b0 == ap_block_pp0_stage0_01001))) begin
-                ap_reg_ioackin_stream_passThrough_TREADY <= 1'b1;
+                ap_reg_ioackin_stream_process_TREADY <= 1'b0;
+            end else if (((stream_process_TREADY == 1'b1) & (1'b0 == ap_block_pp0_stage0_01001))) begin
+                ap_reg_ioackin_stream_process_TREADY <= 1'b1;
             end
         end
     end
@@ -248,10 +248,10 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((ap_reg_ioackin_stream_passThrough_TREADY == 1'b0)) begin
-        ap_sig_ioackin_stream_passThrough_TREADY = stream_passThrough_TREADY;
+    if ((ap_reg_ioackin_stream_process_TREADY == 1'b0)) begin
+        ap_sig_ioackin_stream_process_TREADY = stream_process_TREADY;
     end else begin
-        ap_sig_ioackin_stream_passThrough_TREADY = 1'b1;
+        ap_sig_ioackin_stream_process_TREADY = 1'b1;
     end
 end
 
@@ -305,17 +305,17 @@ end
 
 always @ (*) begin
     if (((exitcond_reg_268 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        stream_passThrough_TDATA_blk_n = stream_passThrough_TREADY;
+        stream_process_TDATA_blk_n = stream_process_TREADY;
     end else begin
-        stream_passThrough_TDATA_blk_n = 1'b1;
+        stream_process_TDATA_blk_n = 1'b1;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_reg_268 == 1'd0) & (ap_reg_ioackin_stream_passThrough_TREADY == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_01001))) begin
-        stream_passThrough_TVALID = 1'b1;
+    if (((exitcond_reg_268 == 1'd0) & (ap_reg_ioackin_stream_process_TREADY == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_01001))) begin
+        stream_process_TVALID = 1'b1;
     end else begin
-        stream_passThrough_TVALID = 1'b0;
+        stream_process_TVALID = 1'b0;
     end
 end
 
@@ -378,7 +378,7 @@ end
 assign ap_block_state3_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_block_state4_io = ((exitcond_reg_268 == 1'd0) & (ap_sig_ioackin_stream_passThrough_TREADY == 1'b0));
+    ap_block_state4_io = ((exitcond_reg_268 == 1'd0) & (ap_sig_ioackin_stream_process_TREADY == 1'b0));
 end
 
 always @ (*) begin
@@ -401,18 +401,18 @@ assign i_V_fu_208_p2 = (t_V_reg_175 + 11'd1);
 
 assign j_V_fu_220_p2 = (t_V_1_reg_186 + 11'd1);
 
-assign stream_passThrough_TDATA = {{{img_data_stream_2_V_dout}, {img_data_stream_1_V_dout}}, {img_data_stream_0_V_dout}};
+assign stream_process_TDATA = {{{img_data_stream_2_V_dout}, {img_data_stream_1_V_dout}}, {img_data_stream_0_V_dout}};
 
-assign stream_passThrough_TDEST = 1'd0;
+assign stream_process_TDEST = 1'd0;
 
-assign stream_passThrough_TID = 1'd0;
+assign stream_process_TID = 1'd0;
 
-assign stream_passThrough_TKEEP = 3'd7;
+assign stream_process_TKEEP = 3'd7;
 
-assign stream_passThrough_TLAST = axi_last_V_reg_277;
+assign stream_process_TLAST = axi_last_V_reg_277;
 
-assign stream_passThrough_TSTRB = 3'd0;
+assign stream_process_TSTRB = 3'd0;
 
-assign stream_passThrough_TUSER = tmp_user_V_fu_124;
+assign stream_process_TUSER = tmp_user_V_fu_124;
 
 endmodule //Mat2AXIvideo

@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
--- Date        : Tue Jan 15 14:57:07 2019
+-- Date        : Tue Jan 15 14:57:02 2019
 -- Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top system_axi_vdma_0_3 -prefix
+--               system_axi_vdma_0_3_ system_axi_vdma_0_3_stub.vhdl
 -- Design      : system_axi_vdma_0_3
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

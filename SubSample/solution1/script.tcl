@@ -7,13 +7,13 @@ open_project SubSample
 set_top subsamble
 add_files SubSample/src/subsample.cpp
 add_files SubSample/src/subsample.h
-add_files -tb SubSample/src/test1.bmp -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas"
-add_files -tb SubSample/src/testbench.cpp -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas"
+add_files -tb SubSample/src/test1.bmp -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
+add_files -tb SubSample/src/testbench.cpp -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
 open_solution "solution1"
 set_part {xc7z010clg400-1} -tool vivado
 create_clock -period 10 -name default
 #source "./SubSample/solution1/directives.tcl"
-csim_design
+csim_design -clean
 csynth_design
 cosim_design
 export_design -rtl verilog -format ip_catalog -display_name "SubSampler"

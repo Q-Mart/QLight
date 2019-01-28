@@ -15,12 +15,9 @@ fifo_w8_d1_A
 fifo_w8_d1_A
 fifo_w8_d1_A
 fifo_w8_d1_A
-fifo_w8_d1_A
-fifo_w8_d1_A
-fifo_w8_d1_A
-fifo_w8_d1_A
-fifo_w8_d1_A
-fifo_w8_d1_A
+subsamble_AXILiteS_s_axi
+subsamble_AXILiteS_r_s_axi
+subsamble_MAXI_m_axi
 AXIvideo2Mat
 CvtColor
 Filter2D

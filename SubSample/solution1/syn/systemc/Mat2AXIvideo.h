@@ -31,15 +31,15 @@ struct Mat2AXIvideo : public sc_module {
     sc_in< sc_lv<8> > img_data_stream_2_V_dout;
     sc_in< sc_logic > img_data_stream_2_V_empty_n;
     sc_out< sc_logic > img_data_stream_2_V_read;
-    sc_out< sc_lv<24> > stream_passThrough_TDATA;
-    sc_out< sc_logic > stream_passThrough_TVALID;
-    sc_in< sc_logic > stream_passThrough_TREADY;
-    sc_out< sc_lv<3> > stream_passThrough_TKEEP;
-    sc_out< sc_lv<3> > stream_passThrough_TSTRB;
-    sc_out< sc_lv<1> > stream_passThrough_TUSER;
-    sc_out< sc_lv<1> > stream_passThrough_TLAST;
-    sc_out< sc_lv<1> > stream_passThrough_TID;
-    sc_out< sc_lv<1> > stream_passThrough_TDEST;
+    sc_out< sc_lv<24> > stream_process_TDATA;
+    sc_out< sc_logic > stream_process_TVALID;
+    sc_in< sc_logic > stream_process_TREADY;
+    sc_out< sc_lv<3> > stream_process_TKEEP;
+    sc_out< sc_lv<3> > stream_process_TSTRB;
+    sc_out< sc_lv<1> > stream_process_TUSER;
+    sc_out< sc_lv<1> > stream_process_TLAST;
+    sc_out< sc_lv<1> > stream_process_TID;
+    sc_out< sc_lv<1> > stream_process_TDEST;
 
 
     // Module declarations
@@ -59,7 +59,7 @@ struct Mat2AXIvideo : public sc_module {
     sc_signal< sc_lv<1> > exitcond_reg_268;
     sc_signal< sc_logic > img_data_stream_1_V_blk_n;
     sc_signal< sc_logic > img_data_stream_2_V_blk_n;
-    sc_signal< sc_logic > stream_passThrough_TDATA_blk_n;
+    sc_signal< sc_logic > stream_process_TDATA_blk_n;
     sc_signal< sc_lv<11> > t_V_1_reg_186;
     sc_signal< sc_lv<1> > exitcond4_fu_202_p2;
     sc_signal< sc_logic > ap_CS_fsm_state2;
@@ -68,7 +68,7 @@ struct Mat2AXIvideo : public sc_module {
     sc_signal< sc_lv<1> > exitcond_fu_214_p2;
     sc_signal< bool > ap_block_state3_pp0_stage0_iter0;
     sc_signal< bool > ap_block_state4_pp0_stage0_iter1;
-    sc_signal< sc_logic > ap_sig_ioackin_stream_passThrough_TREADY;
+    sc_signal< sc_logic > ap_sig_ioackin_stream_process_TREADY;
     sc_signal< bool > ap_block_state4_io;
     sc_signal< bool > ap_block_pp0_stage0_11001;
     sc_signal< sc_lv<11> > j_V_fu_220_p2;
@@ -81,7 +81,7 @@ struct Mat2AXIvideo : public sc_module {
     sc_signal< sc_logic > ap_CS_fsm_state5;
     sc_signal< sc_lv<1> > tmp_user_V_fu_124;
     sc_signal< bool > ap_block_pp0_stage0_01001;
-    sc_signal< sc_logic > ap_reg_ioackin_stream_passThrough_TREADY;
+    sc_signal< sc_logic > ap_reg_ioackin_stream_process_TREADY;
     sc_signal< sc_lv<4> > ap_NS_fsm;
     sc_signal< sc_logic > ap_idle_pp0;
     sc_signal< sc_logic > ap_enable_pp0;
@@ -127,7 +127,7 @@ struct Mat2AXIvideo : public sc_module {
     void thread_ap_idle();
     void thread_ap_idle_pp0();
     void thread_ap_ready();
-    void thread_ap_sig_ioackin_stream_passThrough_TREADY();
+    void thread_ap_sig_ioackin_stream_process_TREADY();
     void thread_axi_last_V_fu_226_p2();
     void thread_exitcond4_fu_202_p2();
     void thread_exitcond_fu_214_p2();
@@ -139,15 +139,15 @@ struct Mat2AXIvideo : public sc_module {
     void thread_img_data_stream_2_V_blk_n();
     void thread_img_data_stream_2_V_read();
     void thread_j_V_fu_220_p2();
-    void thread_stream_passThrough_TDATA();
-    void thread_stream_passThrough_TDATA_blk_n();
-    void thread_stream_passThrough_TDEST();
-    void thread_stream_passThrough_TID();
-    void thread_stream_passThrough_TKEEP();
-    void thread_stream_passThrough_TLAST();
-    void thread_stream_passThrough_TSTRB();
-    void thread_stream_passThrough_TUSER();
-    void thread_stream_passThrough_TVALID();
+    void thread_stream_process_TDATA();
+    void thread_stream_process_TDATA_blk_n();
+    void thread_stream_process_TDEST();
+    void thread_stream_process_TID();
+    void thread_stream_process_TKEEP();
+    void thread_stream_process_TLAST();
+    void thread_stream_process_TSTRB();
+    void thread_stream_process_TUSER();
+    void thread_stream_process_TVALID();
     void thread_ap_NS_fsm();
 };
 

@@ -81,7 +81,7 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
 
     SC_METHOD(thread_ap_block_state4_io);
     sensitive << ( exitcond_reg_268 );
-    sensitive << ( ap_sig_ioackin_stream_passThrough_TREADY );
+    sensitive << ( ap_sig_ioackin_stream_process_TREADY );
 
     SC_METHOD(thread_ap_block_state4_pp0_stage0_iter1);
     sensitive << ( img_data_stream_0_V_empty_n );
@@ -118,9 +118,9 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( exitcond4_fu_202_p2 );
     sensitive << ( ap_CS_fsm_state2 );
 
-    SC_METHOD(thread_ap_sig_ioackin_stream_passThrough_TREADY);
-    sensitive << ( stream_passThrough_TREADY );
-    sensitive << ( ap_reg_ioackin_stream_passThrough_TREADY );
+    SC_METHOD(thread_ap_sig_ioackin_stream_process_TREADY);
+    sensitive << ( stream_process_TREADY );
+    sensitive << ( ap_reg_ioackin_stream_process_TREADY );
 
     SC_METHOD(thread_axi_last_V_fu_226_p2);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -184,7 +184,7 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_j_V_fu_220_p2);
     sensitive << ( t_V_1_reg_186 );
 
-    SC_METHOD(thread_stream_passThrough_TDATA);
+    SC_METHOD(thread_stream_process_TDATA);
     sensitive << ( img_data_stream_0_V_dout );
     sensitive << ( img_data_stream_1_V_dout );
     sensitive << ( img_data_stream_2_V_dout );
@@ -193,57 +193,57 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( exitcond_reg_268 );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
-    SC_METHOD(thread_stream_passThrough_TDATA_blk_n);
-    sensitive << ( stream_passThrough_TREADY );
+    SC_METHOD(thread_stream_process_TDATA_blk_n);
+    sensitive << ( stream_process_TREADY );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter1 );
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( exitcond_reg_268 );
 
-    SC_METHOD(thread_stream_passThrough_TDEST);
+    SC_METHOD(thread_stream_process_TDEST);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter1 );
     sensitive << ( exitcond_reg_268 );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
-    SC_METHOD(thread_stream_passThrough_TID);
+    SC_METHOD(thread_stream_process_TID);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter1 );
     sensitive << ( exitcond_reg_268 );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
-    SC_METHOD(thread_stream_passThrough_TKEEP);
+    SC_METHOD(thread_stream_process_TKEEP);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter1 );
     sensitive << ( exitcond_reg_268 );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
-    SC_METHOD(thread_stream_passThrough_TLAST);
+    SC_METHOD(thread_stream_process_TLAST);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter1 );
     sensitive << ( exitcond_reg_268 );
     sensitive << ( axi_last_V_reg_277 );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
-    SC_METHOD(thread_stream_passThrough_TSTRB);
+    SC_METHOD(thread_stream_process_TSTRB);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter1 );
     sensitive << ( exitcond_reg_268 );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
-    SC_METHOD(thread_stream_passThrough_TUSER);
+    SC_METHOD(thread_stream_process_TUSER);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter1 );
     sensitive << ( exitcond_reg_268 );
     sensitive << ( tmp_user_V_fu_124 );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
-    SC_METHOD(thread_stream_passThrough_TVALID);
+    SC_METHOD(thread_stream_process_TVALID);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter1 );
     sensitive << ( exitcond_reg_268 );
     sensitive << ( ap_block_pp0_stage0_01001 );
-    sensitive << ( ap_reg_ioackin_stream_passThrough_TREADY );
+    sensitive << ( ap_reg_ioackin_stream_process_TREADY );
 
     SC_METHOD(thread_ap_NS_fsm);
     sensitive << ( ap_start );
@@ -258,7 +258,7 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
     ap_CS_fsm = "0001";
     ap_enable_reg_pp0_iter1 = SC_LOGIC_0;
     ap_enable_reg_pp0_iter0 = SC_LOGIC_0;
-    ap_reg_ioackin_stream_passThrough_TREADY = SC_LOGIC_0;
+    ap_reg_ioackin_stream_process_TREADY = SC_LOGIC_0;
     static int apTFileNum = 0;
     stringstream apTFilenSS;
     apTFilenSS << "Mat2AXIvideo_sc_trace_" << apTFileNum ++;
@@ -282,15 +282,15 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, img_data_stream_2_V_dout, "(port)img_data_stream_2_V_dout");
     sc_trace(mVcdFile, img_data_stream_2_V_empty_n, "(port)img_data_stream_2_V_empty_n");
     sc_trace(mVcdFile, img_data_stream_2_V_read, "(port)img_data_stream_2_V_read");
-    sc_trace(mVcdFile, stream_passThrough_TDATA, "(port)stream_passThrough_TDATA");
-    sc_trace(mVcdFile, stream_passThrough_TVALID, "(port)stream_passThrough_TVALID");
-    sc_trace(mVcdFile, stream_passThrough_TREADY, "(port)stream_passThrough_TREADY");
-    sc_trace(mVcdFile, stream_passThrough_TKEEP, "(port)stream_passThrough_TKEEP");
-    sc_trace(mVcdFile, stream_passThrough_TSTRB, "(port)stream_passThrough_TSTRB");
-    sc_trace(mVcdFile, stream_passThrough_TUSER, "(port)stream_passThrough_TUSER");
-    sc_trace(mVcdFile, stream_passThrough_TLAST, "(port)stream_passThrough_TLAST");
-    sc_trace(mVcdFile, stream_passThrough_TID, "(port)stream_passThrough_TID");
-    sc_trace(mVcdFile, stream_passThrough_TDEST, "(port)stream_passThrough_TDEST");
+    sc_trace(mVcdFile, stream_process_TDATA, "(port)stream_process_TDATA");
+    sc_trace(mVcdFile, stream_process_TVALID, "(port)stream_process_TVALID");
+    sc_trace(mVcdFile, stream_process_TREADY, "(port)stream_process_TREADY");
+    sc_trace(mVcdFile, stream_process_TKEEP, "(port)stream_process_TKEEP");
+    sc_trace(mVcdFile, stream_process_TSTRB, "(port)stream_process_TSTRB");
+    sc_trace(mVcdFile, stream_process_TUSER, "(port)stream_process_TUSER");
+    sc_trace(mVcdFile, stream_process_TLAST, "(port)stream_process_TLAST");
+    sc_trace(mVcdFile, stream_process_TID, "(port)stream_process_TID");
+    sc_trace(mVcdFile, stream_process_TDEST, "(port)stream_process_TDEST");
 #endif
 #ifdef __HLS_TRACE_LEVEL_INT__
     sc_trace(mVcdFile, ap_CS_fsm, "ap_CS_fsm");
@@ -302,7 +302,7 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, exitcond_reg_268, "exitcond_reg_268");
     sc_trace(mVcdFile, img_data_stream_1_V_blk_n, "img_data_stream_1_V_blk_n");
     sc_trace(mVcdFile, img_data_stream_2_V_blk_n, "img_data_stream_2_V_blk_n");
-    sc_trace(mVcdFile, stream_passThrough_TDATA_blk_n, "stream_passThrough_TDATA_blk_n");
+    sc_trace(mVcdFile, stream_process_TDATA_blk_n, "stream_process_TDATA_blk_n");
     sc_trace(mVcdFile, t_V_1_reg_186, "t_V_1_reg_186");
     sc_trace(mVcdFile, exitcond4_fu_202_p2, "exitcond4_fu_202_p2");
     sc_trace(mVcdFile, ap_CS_fsm_state2, "ap_CS_fsm_state2");
@@ -311,7 +311,7 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, exitcond_fu_214_p2, "exitcond_fu_214_p2");
     sc_trace(mVcdFile, ap_block_state3_pp0_stage0_iter0, "ap_block_state3_pp0_stage0_iter0");
     sc_trace(mVcdFile, ap_block_state4_pp0_stage0_iter1, "ap_block_state4_pp0_stage0_iter1");
-    sc_trace(mVcdFile, ap_sig_ioackin_stream_passThrough_TREADY, "ap_sig_ioackin_stream_passThrough_TREADY");
+    sc_trace(mVcdFile, ap_sig_ioackin_stream_process_TREADY, "ap_sig_ioackin_stream_process_TREADY");
     sc_trace(mVcdFile, ap_block_state4_io, "ap_block_state4_io");
     sc_trace(mVcdFile, ap_block_pp0_stage0_11001, "ap_block_pp0_stage0_11001");
     sc_trace(mVcdFile, j_V_fu_220_p2, "j_V_fu_220_p2");
@@ -324,7 +324,7 @@ Mat2AXIvideo::Mat2AXIvideo(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, ap_CS_fsm_state5, "ap_CS_fsm_state5");
     sc_trace(mVcdFile, tmp_user_V_fu_124, "tmp_user_V_fu_124");
     sc_trace(mVcdFile, ap_block_pp0_stage0_01001, "ap_block_pp0_stage0_01001");
-    sc_trace(mVcdFile, ap_reg_ioackin_stream_passThrough_TREADY, "ap_reg_ioackin_stream_passThrough_TREADY");
+    sc_trace(mVcdFile, ap_reg_ioackin_stream_process_TREADY, "ap_reg_ioackin_stream_process_TREADY");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
     sc_trace(mVcdFile, ap_idle_pp0, "ap_idle_pp0");
     sc_trace(mVcdFile, ap_enable_pp0, "ap_enable_pp0");
@@ -372,14 +372,14 @@ void Mat2AXIvideo::thread_ap_clk_no_reset_() {
         }
     }
     if ( ap_rst.read() == ap_const_logic_1) {
-        ap_reg_ioackin_stream_passThrough_TREADY = ap_const_logic_0;
+        ap_reg_ioackin_stream_process_TREADY = ap_const_logic_0;
     } else {
         if (esl_seteq<1,1,1>(ap_condition_206.read(), ap_const_boolean_1)) {
             if (esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0)) {
-                ap_reg_ioackin_stream_passThrough_TREADY = ap_const_logic_0;
+                ap_reg_ioackin_stream_process_TREADY = ap_const_logic_0;
             } else if ((esl_seteq<1,1,1>(ap_block_pp0_stage0_01001.read(), ap_const_boolean_0) && 
-                        esl_seteq<1,1,1>(ap_const_logic_1, stream_passThrough_TREADY.read()))) {
-                ap_reg_ioackin_stream_passThrough_TREADY = ap_const_logic_1;
+                        esl_seteq<1,1,1>(ap_const_logic_1, stream_process_TREADY.read()))) {
+                ap_reg_ioackin_stream_process_TREADY = ap_const_logic_1;
             }
         }
     }
@@ -472,7 +472,7 @@ void Mat2AXIvideo::thread_ap_block_state3_pp0_stage0_iter0() {
 }
 
 void Mat2AXIvideo::thread_ap_block_state4_io() {
-    ap_block_state4_io = (esl_seteq<1,1,1>(exitcond_reg_268.read(), ap_const_lv1_0) && esl_seteq<1,1,1>(ap_const_logic_0, ap_sig_ioackin_stream_passThrough_TREADY.read()));
+    ap_block_state4_io = (esl_seteq<1,1,1>(exitcond_reg_268.read(), ap_const_lv1_0) && esl_seteq<1,1,1>(ap_const_logic_0, ap_sig_ioackin_stream_process_TREADY.read()));
 }
 
 void Mat2AXIvideo::thread_ap_block_state4_pp0_stage0_iter1() {
@@ -536,11 +536,11 @@ void Mat2AXIvideo::thread_ap_ready() {
     }
 }
 
-void Mat2AXIvideo::thread_ap_sig_ioackin_stream_passThrough_TREADY() {
-    if (esl_seteq<1,1,1>(ap_const_logic_0, ap_reg_ioackin_stream_passThrough_TREADY.read())) {
-        ap_sig_ioackin_stream_passThrough_TREADY = stream_passThrough_TREADY.read();
+void Mat2AXIvideo::thread_ap_sig_ioackin_stream_process_TREADY() {
+    if (esl_seteq<1,1,1>(ap_const_logic_0, ap_reg_ioackin_stream_process_TREADY.read())) {
+        ap_sig_ioackin_stream_process_TREADY = stream_process_TREADY.read();
     } else {
-        ap_sig_ioackin_stream_passThrough_TREADY = ap_const_logic_1;
+        ap_sig_ioackin_stream_process_TREADY = ap_const_logic_1;
     }
 }
 
@@ -630,54 +630,54 @@ void Mat2AXIvideo::thread_j_V_fu_220_p2() {
     j_V_fu_220_p2 = (!t_V_1_reg_186.read().is_01() || !ap_const_lv11_1.is_01())? sc_lv<11>(): (sc_biguint<11>(t_V_1_reg_186.read()) + sc_biguint<11>(ap_const_lv11_1));
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TDATA() {
-    stream_passThrough_TDATA = esl_concat<16,8>(esl_concat<8,8>(img_data_stream_2_V_dout.read(), img_data_stream_1_V_dout.read()), img_data_stream_0_V_dout.read());
+void Mat2AXIvideo::thread_stream_process_TDATA() {
+    stream_process_TDATA = esl_concat<16,8>(esl_concat<8,8>(img_data_stream_2_V_dout.read(), img_data_stream_1_V_dout.read()), img_data_stream_0_V_dout.read());
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TDATA_blk_n() {
+void Mat2AXIvideo::thread_stream_process_TDATA_blk_n() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter1.read()) && 
          esl_seteq<1,1,1>(ap_block_pp0_stage0.read(), ap_const_boolean_0) && 
          esl_seteq<1,1,1>(exitcond_reg_268.read(), ap_const_lv1_0))) {
-        stream_passThrough_TDATA_blk_n = stream_passThrough_TREADY.read();
+        stream_process_TDATA_blk_n = stream_process_TREADY.read();
     } else {
-        stream_passThrough_TDATA_blk_n = ap_const_logic_1;
+        stream_process_TDATA_blk_n = ap_const_logic_1;
     }
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TDEST() {
-    stream_passThrough_TDEST = ap_const_lv1_0;
+void Mat2AXIvideo::thread_stream_process_TDEST() {
+    stream_process_TDEST = ap_const_lv1_0;
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TID() {
-    stream_passThrough_TID = ap_const_lv1_0;
+void Mat2AXIvideo::thread_stream_process_TID() {
+    stream_process_TID = ap_const_lv1_0;
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TKEEP() {
-    stream_passThrough_TKEEP = ap_const_lv3_7;
+void Mat2AXIvideo::thread_stream_process_TKEEP() {
+    stream_process_TKEEP = ap_const_lv3_7;
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TLAST() {
-    stream_passThrough_TLAST = axi_last_V_reg_277.read();
+void Mat2AXIvideo::thread_stream_process_TLAST() {
+    stream_process_TLAST = axi_last_V_reg_277.read();
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TSTRB() {
-    stream_passThrough_TSTRB = ap_const_lv3_0;
+void Mat2AXIvideo::thread_stream_process_TSTRB() {
+    stream_process_TSTRB = ap_const_lv3_0;
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TUSER() {
-    stream_passThrough_TUSER = tmp_user_V_fu_124.read();
+void Mat2AXIvideo::thread_stream_process_TUSER() {
+    stream_process_TUSER = tmp_user_V_fu_124.read();
 }
 
-void Mat2AXIvideo::thread_stream_passThrough_TVALID() {
+void Mat2AXIvideo::thread_stream_process_TVALID() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter1.read()) && 
          esl_seteq<1,1,1>(exitcond_reg_268.read(), ap_const_lv1_0) && 
          esl_seteq<1,1,1>(ap_block_pp0_stage0_01001.read(), ap_const_boolean_0) && 
-         esl_seteq<1,1,1>(ap_const_logic_0, ap_reg_ioackin_stream_passThrough_TREADY.read()))) {
-        stream_passThrough_TVALID = ap_const_logic_1;
+         esl_seteq<1,1,1>(ap_const_logic_0, ap_reg_ioackin_stream_process_TREADY.read()))) {
+        stream_process_TVALID = ap_const_logic_1;
     } else {
-        stream_passThrough_TVALID = ap_const_logic_0;
+        stream_process_TVALID = ap_const_logic_0;
     }
 }
 

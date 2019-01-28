@@ -136,7 +136,7 @@ AXIvideo2Mat::AXIvideo2Mat(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_ap_done);
     sensitive << ( ap_start );
     sensitive << ( ap_CS_fsm_state1 );
-    sensitive << ( exitcond6_fu_321_p2 );
+    sensitive << ( exitcond5_fu_321_p2 );
     sensitive << ( ap_CS_fsm_state4 );
 
     SC_METHOD(thread_ap_enable_pp1);
@@ -193,14 +193,14 @@ AXIvideo2Mat::AXIvideo2Mat(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( brmerge_fu_348_p2 );
 
     SC_METHOD(thread_ap_ready);
-    sensitive << ( exitcond6_fu_321_p2 );
+    sensitive << ( exitcond5_fu_321_p2 );
     sensitive << ( ap_CS_fsm_state4 );
 
     SC_METHOD(thread_brmerge_fu_348_p2);
     sensitive << ( ap_phi_mux_eol_phi_fu_235_p4 );
     sensitive << ( sof_1_fu_124 );
 
-    SC_METHOD(thread_exitcond6_fu_321_p2);
+    SC_METHOD(thread_exitcond5_fu_321_p2);
     sensitive << ( ap_CS_fsm_state4 );
     sensitive << ( t_V_reg_187 );
 
@@ -313,7 +313,7 @@ AXIvideo2Mat::AXIvideo2Mat(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( exitcond_fu_333_p2 );
     sensitive << ( ap_CS_fsm_state8 );
     sensitive << ( ap_phi_mux_eol_2_phi_fu_295_p4 );
-    sensitive << ( exitcond6_fu_321_p2 );
+    sensitive << ( exitcond5_fu_321_p2 );
     sensitive << ( ap_CS_fsm_state4 );
     sensitive << ( ap_block_pp1_stage0_subdone );
     sensitive << ( eol_2_reg_292 );
@@ -380,7 +380,7 @@ AXIvideo2Mat::AXIvideo2Mat(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, p_Val2_s_reg_256, "p_Val2_s_reg_256");
     sc_trace(mVcdFile, tmp_data_V_reg_383, "tmp_data_V_reg_383");
     sc_trace(mVcdFile, tmp_last_V_reg_391, "tmp_last_V_reg_391");
-    sc_trace(mVcdFile, exitcond6_fu_321_p2, "exitcond6_fu_321_p2");
+    sc_trace(mVcdFile, exitcond5_fu_321_p2, "exitcond5_fu_321_p2");
     sc_trace(mVcdFile, ap_CS_fsm_state4, "ap_CS_fsm_state4");
     sc_trace(mVcdFile, i_V_fu_327_p2, "i_V_fu_327_p2");
     sc_trace(mVcdFile, i_V_reg_407, "i_V_reg_407");
@@ -443,7 +443,7 @@ void AXIvideo2Mat::thread_ap_clk_no_reset_() {
              esl_seteq<1,1,1>(ap_const_logic_1, ap_condition_pp1_exit_iter0_state5.read()) && 
              esl_seteq<1,1,1>(ap_const_boolean_0, ap_block_pp1_stage0_subdone.read()))) {
             ap_enable_reg_pp1_iter0 = ap_const_logic_0;
-        } else if ((esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_0) && 
+        } else if ((esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_0) && 
                     esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()))) {
             ap_enable_reg_pp1_iter0 = ap_const_logic_1;
         }
@@ -456,7 +456,7 @@ void AXIvideo2Mat::thread_ap_clk_no_reset_() {
             ap_enable_reg_pp1_iter1 = (ap_condition_pp1_exit_iter0_state5.read() ^ ap_const_logic_1);
         } else if (esl_seteq<1,1,1>(ap_const_boolean_0, ap_block_pp1_stage0_subdone.read())) {
             ap_enable_reg_pp1_iter1 = ap_enable_reg_pp1_iter0.read();
-        } else if ((esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_0) && 
+        } else if ((esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_0) && 
                     esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()))) {
             ap_enable_reg_pp1_iter1 = ap_const_logic_0;
         }
@@ -471,7 +471,7 @@ void AXIvideo2Mat::thread_ap_clk_no_reset_() {
          esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_reg_412.read()) && 
          esl_seteq<1,1,1>(ap_block_pp1_stage0_11001.read(), ap_const_boolean_0))) {
         axi_data_V_1_reg_209 = p_Val2_s_reg_256.read();
-    } else if ((esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_0) && 
+    } else if ((esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_0) && 
                 esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()))) {
         axi_data_V_1_reg_209 = axi_data_V1_reg_177.read();
     }
@@ -510,7 +510,7 @@ void AXIvideo2Mat::thread_ap_clk_no_reset_() {
          esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_reg_412.read()) && 
          esl_seteq<1,1,1>(ap_block_pp1_stage0_11001.read(), ap_const_boolean_0))) {
         eol_1_reg_198 = axi_last_V_2_reg_243.read();
-    } else if ((esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_0) && 
+    } else if ((esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_0) && 
                 esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()))) {
         eol_1_reg_198 = axi_last_V1_reg_167.read();
     }
@@ -526,7 +526,7 @@ void AXIvideo2Mat::thread_ap_clk_no_reset_() {
          esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_reg_412.read()) && 
          esl_seteq<1,1,1>(ap_block_pp1_stage0_11001.read(), ap_const_boolean_0))) {
         eol_reg_231 = axi_last_V_2_reg_243.read();
-    } else if ((esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_0) && 
+    } else if ((esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_0) && 
                 esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()))) {
         eol_reg_231 = ap_const_lv1_0;
     }
@@ -554,7 +554,7 @@ void AXIvideo2Mat::thread_ap_clk_no_reset_() {
          esl_seteq<1,1,1>(exitcond_fu_333_p2.read(), ap_const_lv1_0) && 
          esl_seteq<1,1,1>(ap_block_pp1_stage0_11001.read(), ap_const_boolean_0))) {
         t_V_3_reg_220 = j_V_fu_339_p2.read();
-    } else if ((esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_0) && 
+    } else if ((esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_0) && 
                 esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()))) {
         t_V_3_reg_220 = ap_const_lv11_0;
     }
@@ -687,7 +687,7 @@ void AXIvideo2Mat::thread_ap_done() {
     if (((esl_seteq<1,1,1>(ap_const_logic_0, ap_start.read()) && 
           esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state1.read())) || 
          (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()) && 
-          esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_1)))) {
+          esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_1)))) {
         ap_done = ap_const_logic_1;
     } else {
         ap_done = ap_const_logic_0;
@@ -781,7 +781,7 @@ void AXIvideo2Mat::thread_ap_predicate_op50_read_state5() {
 
 void AXIvideo2Mat::thread_ap_ready() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()) && 
-         esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_1))) {
+         esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_1))) {
         ap_ready = ap_const_logic_1;
     } else {
         ap_ready = ap_const_logic_0;
@@ -792,8 +792,8 @@ void AXIvideo2Mat::thread_brmerge_fu_348_p2() {
     brmerge_fu_348_p2 = (sof_1_fu_124.read() | ap_phi_mux_eol_phi_fu_235_p4.read());
 }
 
-void AXIvideo2Mat::thread_exitcond6_fu_321_p2() {
-    exitcond6_fu_321_p2 = (!t_V_reg_187.read().is_01() || !ap_const_lv11_41A.is_01())? sc_lv<1>(): sc_lv<1>(t_V_reg_187.read() == ap_const_lv11_41A);
+void AXIvideo2Mat::thread_exitcond5_fu_321_p2() {
+    exitcond5_fu_321_p2 = (!t_V_reg_187.read().is_01() || !ap_const_lv11_41A.is_01())? sc_lv<1>(): sc_lv<1>(t_V_reg_187.read() == ap_const_lv11_41A);
 }
 
 void AXIvideo2Mat::thread_exitcond_fu_333_p2() {
@@ -947,7 +947,7 @@ void AXIvideo2Mat::thread_ap_NS_fsm() {
             ap_NS_fsm = ap_ST_fsm_state4;
             break;
         case 8 : 
-            if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()) && esl_seteq<1,1,1>(exitcond6_fu_321_p2.read(), ap_const_lv1_1))) {
+            if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state4.read()) && esl_seteq<1,1,1>(exitcond5_fu_321_p2.read(), ap_const_lv1_1))) {
                 ap_NS_fsm = ap_ST_fsm_state1;
             } else {
                 ap_NS_fsm = ap_ST_fsm_pp1_stage0;

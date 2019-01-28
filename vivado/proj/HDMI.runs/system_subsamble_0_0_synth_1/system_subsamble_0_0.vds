@@ -1,0 +1,1910 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Mon Jan 28 11:51:51 2019
+# Process ID: 28725
+# Current directory: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_subsamble_0_0_synth_1
+# Command line: vivado -log system_subsamble_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_subsamble_0_0.tcl
+# Log file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_subsamble_0_0_synth_1/system_subsamble_0_0.vds
+# Journal file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_subsamble_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_subsamble_0_0.tcl -notrace
+Command: synth_design -top system_subsamble_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 28805 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1358.348 ; gain = 86.859 ; free physical = 5939 ; free virtual = 25649
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'system_subsamble_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_subsamble_0_0/synth/system_subsamble_0_0.vhd:154]
+	Parameter C_S_AXI_AXILITES_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_AXILITES_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_AXILITES_R_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_AXILITES_R_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MAXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MAXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MAXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_M_AXI_MAXI_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_M_AXI_MAXI_CACHE_VALUE bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:12' bound to instance 'U0' of component 'subsamble' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_subsamble_0_0/synth/system_subsamble_0_0.vhd:402]
+INFO: [Synth 8-638] synthesizing module 'subsamble' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:136]
+	Parameter C_M_AXI_MAXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MAXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MAXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_MAXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXI_AXILITES_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_AXILITES_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_AXILITES_R_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_AXILITES_R_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MAXI_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_M_AXI_MAXI_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_M_AXI_MAXI_CACHE_VALUE bound to: 3 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:207]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:210]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:411]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:414]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:417]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:420]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:423]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:425]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:427]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:429]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:461]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:469]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:551]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:554]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:573]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:582]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:587]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:602]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:607]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_AXILiteS_s_axi' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_AXILiteS_s_axi.vhd:12' bound to instance 'subsamble_AXILiteS_s_axi_U' of component 'subsamble_AXILiteS_s_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:936]
+INFO: [Synth 8-638] synthesizing module 'subsamble_AXILiteS_s_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_AXILiteS_s_axi.vhd:53]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'subsamble_AXILiteS_s_axi' (1#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_AXILiteS_s_axi.vhd:53]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_AXILiteS_r_s_axi' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_AXILiteS_r_s_axi.vhd:12' bound to instance 'subsamble_AXILiteS_r_s_axi_U' of component 'subsamble_AXILiteS_r_s_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:963]
+INFO: [Synth 8-638] synthesizing module 'subsamble_AXILiteS_r_s_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_AXILiteS_r_s_axi.vhd:53]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'subsamble_AXILiteS_r_s_axi' (2#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_AXILiteS_r_s_axi.vhd:53]
+	Parameter CONSERVATIVE bound to: 0 - type: integer 
+	Parameter USER_DW bound to: 32 - type: integer 
+	Parameter USER_AW bound to: 32 - type: integer 
+	Parameter USER_MAXREQS bound to: 5 - type: integer 
+	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
+	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:12' bound to instance 'subsamble_MAXI_m_axi_U' of component 'subsamble_MAXI_m_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:990]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:143]
+	Parameter CONSERVATIVE bound to: 0 - type: integer 
+	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
+	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_TARGET_ADDR bound to: 0 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+	Parameter USER_DW bound to: 32 - type: integer 
+	Parameter USER_AW bound to: 32 - type: integer 
+	Parameter USER_MAXREQS bound to: 5 - type: integer 
+	Parameter USED_FIX bound to: 0 - type: bool 
+	Parameter FIX_VALUE bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+	Parameter USER_MAXREQS bound to: 16 - type: integer 
+	Parameter CONSERVATIVE bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_throttl' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:954' bound to instance 'wreq_throttl' of component 'subsamble_MAXI_m_axi_throttl' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_throttl' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1000]
+	Parameter USED_FIX bound to: 0 - type: bool 
+	Parameter FIX_VALUE bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+	Parameter USER_MAXREQS bound to: 16 - type: integer 
+	Parameter CONSERVATIVE bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_throttl' (3#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1000]
+	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_TARGET_ADDR bound to: 0 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+	Parameter USER_DW bound to: 32 - type: integer 
+	Parameter USER_AW bound to: 32 - type: integer 
+	Parameter USER_MAXREQS bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_write' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:2125' bound to instance 'bus_write' of component 'subsamble_MAXI_m_axi_write' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:347]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_write' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:2213]
+	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_TARGET_ADDR bound to: 0 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+	Parameter USER_DW bound to: 32 - type: integer 
+	Parameter USER_AW bound to: 32 - type: integer 
+	Parameter USER_MAXREQS bound to: 5 - type: integer 
+	Parameter N bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:471' bound to instance 'rs_wreq' of component 'subsamble_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:2349]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:488]
+	Parameter N bound to: 64 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_reg_slice' (4#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:488]
+	Parameter DATA_BITS bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+	Parameter DEPTH_BITS bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:595' bound to instance 'fifo_wreq' of component 'subsamble_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:2362]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:612]
+	Parameter DATA_BITS bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+	Parameter DEPTH_BITS bound to: 3 - type: integer 
+WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:705]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_fifo' (5#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:612]
+	Parameter MEM_STYLE bound to: block - type: string 
+	Parameter DATA_WIDTH bound to: 36 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_buffer' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:722' bound to instance 'buff_wdata' of component 'subsamble_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:2761]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:744]
+	Parameter MEM_STYLE bound to: block - type: string 
+	Parameter DATA_WIDTH bound to: 36 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_buffer' (6#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:744]
+	Parameter DATA_BITS bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+	Parameter DEPTH_BITS bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:595' bound to instance 'fifo_burst' of component 'subsamble_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:2793]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_fifo__parameterized1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:612]
+	Parameter DATA_BITS bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+	Parameter DEPTH_BITS bound to: 3 - type: integer 
+WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:705]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_fifo__parameterized1' (6#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:612]
+	Parameter DATA_BITS bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 15 - type: integer 
+	Parameter DEPTH_BITS bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:595' bound to instance 'fifo_resp' of component 'subsamble_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:3225]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_fifo__parameterized3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:612]
+	Parameter DATA_BITS bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 15 - type: integer 
+	Parameter DEPTH_BITS bound to: 4 - type: integer 
+WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:705]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_fifo__parameterized3' (6#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:612]
+	Parameter DATA_BITS bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+	Parameter DEPTH_BITS bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:595' bound to instance 'fifo_resp_to_user' of component 'subsamble_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:3241]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_fifo__parameterized5' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:612]
+	Parameter DATA_BITS bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+	Parameter DEPTH_BITS bound to: 3 - type: integer 
+WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:705]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_fifo__parameterized5' (6#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:612]
+WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:2574]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_write' (7#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:2213]
+	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_TARGET_ADDR bound to: 0 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+	Parameter USER_DW bound to: 32 - type: integer 
+	Parameter USER_AW bound to: 32 - type: integer 
+	Parameter USER_MAXREQS bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_read' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1182' bound to instance 'bus_read' of component 'subsamble_MAXI_m_axi_read' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:411]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_read' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1260]
+	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_TARGET_ADDR bound to: 0 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+	Parameter USER_DW bound to: 32 - type: integer 
+	Parameter USER_AW bound to: 32 - type: integer 
+	Parameter USER_MAXREQS bound to: 5 - type: integer 
+	Parameter N bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:471' bound to instance 'rs_rreq' of component 'subsamble_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1393]
+	Parameter DATA_BITS bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+	Parameter DEPTH_BITS bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:595' bound to instance 'fifo_rreq' of component 'subsamble_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1406]
+	Parameter MEM_STYLE bound to: block - type: string 
+	Parameter DATA_WIDTH bound to: 35 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_buffer' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:722' bound to instance 'fifo_rdata' of component 'subsamble_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1783]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_buffer__parameterized1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:744]
+	Parameter MEM_STYLE bound to: block - type: string 
+	Parameter DATA_WIDTH bound to: 35 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_buffer__parameterized1' (7#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:744]
+	Parameter N bound to: 34 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:471' bound to instance 'rs_rdata' of component 'subsamble_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1801]
+INFO: [Synth 8-638] synthesizing module 'subsamble_MAXI_m_axi_reg_slice__parameterized2' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:488]
+	Parameter N bound to: 34 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_reg_slice__parameterized2' (7#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:488]
+	Parameter DATA_BITS bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 15 - type: integer 
+	Parameter DEPTH_BITS bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:595' bound to instance 'fifo_rctl' of component 'subsamble_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1814]
+WARNING: [Synth 8-6014] Unused sequential element invalid_len_event_1_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1560]
+WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1614]
+WARNING: [Synth 8-6014] Unused sequential element invalid_len_event_2_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1628]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi_read' (8#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:1260]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_MAXI_m_axi' (9#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:143]
+INFO: [Synth 8-3491] module 'Filter2D' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:12' bound to instance 'grp_Filter2D_fu_485' of component 'Filter2D' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1106]
+INFO: [Synth 8-638] synthesizing module 'Filter2D' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:41]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:84]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:87]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:90]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:108]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:111]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:245]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_0_val_3_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:504]
+INFO: [Synth 8-638] synthesizing module 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:104]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg_ram' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:13' bound to instance 'Filter2D_k_buf_0_eOg_ram_U' of component 'Filter2D_k_buf_0_eOg_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:120]
+INFO: [Synth 8-638] synthesizing module 'Filter2D_k_buf_0_eOg_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:33]
+	Parameter MEM_TYPE bound to: block - type: string 
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 11 - type: integer 
+	Parameter MEM_SIZE bound to: 1680 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Filter2D_k_buf_0_eOg_ram' (10#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'Filter2D_k_buf_0_eOg' (11#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:104]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_0_val_4_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:520]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_0_val_5_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:536]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_1_val_3_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:552]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_1_val_4_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:568]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_1_val_5_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:584]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_2_val_3_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:600]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_2_val_4_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:616]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 1680 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Filter2D_k_buf_0_eOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd:87' bound to instance 'k_buf_2_val_5_U' of component 'Filter2D_k_buf_0_eOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:632]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U23' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:648]
+INFO: [Synth 8-638] synthesizing module 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:30]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'subsamble_mux_32_ncg' (12#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:30]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U24' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:664]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U25' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:680]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U26' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:696]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U27' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:712]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U28' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:728]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U29' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:744]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U30' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:760]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U31' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:776]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U32' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:792]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U33' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:808]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U34' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:824]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U35' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:840]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U36' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:856]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U37' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:872]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U38' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:888]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U39' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:904]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mux_32_ncg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mux_32_ncg.vhd:13' bound to instance 'subsamble_mux_32_ncg_U40' of component 'subsamble_mux_32_ncg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:920]
+INFO: [Synth 8-256] done synthesizing module 'Filter2D' (13#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:41]
+INFO: [Synth 8-3491] module 'AXIvideo2Mat' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:12' bound to instance 'grp_AXIvideo2Mat_fu_495' of component 'AXIvideo2Mat' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1133]
+INFO: [Synth 8-638] synthesizing module 'AXIvideo2Mat' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:41]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:73]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:76]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:79]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:81]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:87]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:104]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:122]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:124]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:135]
+INFO: [Synth 8-256] done synthesizing module 'AXIvideo2Mat' (14#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/AXIvideo2Mat.vhd:41]
+INFO: [Synth 8-3491] module 'CvtColor' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:12' bound to instance 'grp_CvtColor_fu_516' of component 'CvtColor' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1160]
+INFO: [Synth 8-638] synthesizing module 'CvtColor' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:41]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:69]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:72]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:75]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:89]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:120]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 22 - type: integer 
+	Parameter dout_WIDTH bound to: 29 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mul_mulbkb' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mul_mulbkb.vhd:32' bound to instance 'subsamble_mul_mulbkb_U11' of component 'subsamble_mul_mulbkb' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:194]
+INFO: [Synth 8-638] synthesizing module 'subsamble_mul_mulbkb' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mul_mulbkb.vhd:45]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 22 - type: integer 
+	Parameter dout_WIDTH bound to: 29 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mul_mulbkb_DSP48_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mul_mulbkb.vhd:6' bound to instance 'subsamble_mul_mulbkb_DSP48_0_U' of component 'subsamble_mul_mulbkb_DSP48_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mul_mulbkb.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'subsamble_mul_mulbkb_DSP48_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mul_mulbkb.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_mul_mulbkb_DSP48_0' (15#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mul_mulbkb.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_mul_mulbkb' (16#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mul_mulbkb.vhd:45]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 23 - type: integer 
+	Parameter din2_WIDTH bound to: 29 - type: integer 
+	Parameter dout_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mac_mulcud' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:42' bound to instance 'subsamble_mac_mulcud_U12' of component 'subsamble_mac_mulcud' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:206]
+INFO: [Synth 8-638] synthesizing module 'subsamble_mac_mulcud' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:57]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 23 - type: integer 
+	Parameter din2_WIDTH bound to: 29 - type: integer 
+	Parameter dout_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mac_mulcud_DSP48_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:12' bound to instance 'subsamble_mac_mulcud_DSP48_1_U' of component 'subsamble_mac_mulcud_DSP48_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'subsamble_mac_mulcud_DSP48_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_mac_mulcud_DSP48_1' (17#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_mac_mulcud' (18#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:57]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 20 - type: integer 
+	Parameter din2_WIDTH bound to: 29 - type: integer 
+	Parameter dout_WIDTH bound to: 29 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mac_muldEe' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:42' bound to instance 'subsamble_mac_muldEe_U13' of component 'subsamble_mac_muldEe' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:220]
+INFO: [Synth 8-638] synthesizing module 'subsamble_mac_muldEe' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:57]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 20 - type: integer 
+	Parameter din2_WIDTH bound to: 29 - type: integer 
+	Parameter dout_WIDTH bound to: 29 - type: integer 
+INFO: [Synth 8-3491] module 'subsamble_mac_muldEe_DSP48_2' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:12' bound to instance 'subsamble_mac_muldEe_DSP48_2_U' of component 'subsamble_mac_muldEe_DSP48_2' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'subsamble_mac_muldEe_DSP48_2' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_mac_muldEe_DSP48_2' (19#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'subsamble_mac_muldEe' (20#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'CvtColor' (21#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:41]
+INFO: [Synth 8-3491] module 'Mat2AXIvideo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Mat2AXIvideo.vhd:12' bound to instance 'grp_Mat2AXIvideo_fu_526' of component 'Mat2AXIvideo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1187]
+INFO: [Synth 8-638] synthesizing module 'Mat2AXIvideo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Mat2AXIvideo.vhd:41]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Mat2AXIvideo.vhd:64]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Mat2AXIvideo.vhd:67]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Mat2AXIvideo.vhd:70]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Mat2AXIvideo.vhd:80]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Mat2AXIvideo.vhd:97]
+INFO: [Synth 8-256] done synthesizing module 'Mat2AXIvideo' (22#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Mat2AXIvideo.vhd:41]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img0_data_stream_0_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1214]
+INFO: [Synth 8-638] synthesizing module 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:69]
+	Parameter MEM_STYLE bound to: auto - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A_shiftReg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:13' bound to instance 'U_fifo_w8_d1_A_shiftReg' of component 'fifo_w8_d1_A_shiftReg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'fifo_w8_d1_A_shiftReg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:26]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fifo_w8_d1_A_shiftReg' (23#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'fifo_w8_d1_A' (24#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:69]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img0_data_stream_1_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1227]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img0_data_stream_2_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1240]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img1_data_stream_0_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1253]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img1_data_stream_1_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1266]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img1_data_stream_2_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1279]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img2_data_stream_0_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1292]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img2_data_stream_1_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1305]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img2_data_stream_2_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1318]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img3_data_stream_0_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1331]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img3_data_stream_1_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1344]
+INFO: [Synth 8-3491] module 'fifo_w8_d1_A' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:50' bound to instance 'img3_data_stream_2_s_fifo_U' of component 'fifo_w8_d1_A' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:1357]
+INFO: [Synth 8-256] done synthesizing module 'subsamble' (25#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble.vhd:136]
+INFO: [Synth 8-256] done synthesizing module 'system_subsamble_0_0' (26#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_subsamble_0_0/synth/system_subsamble_0_0.vhd:154]
+WARNING: [Synth 8-3331] design fifo_w8_d1_A_shiftReg has unconnected port a[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TID[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TDEST[0]
+WARNING: [Synth 8-3331] design Filter2D_k_buf_0_eOg has unconnected port reset
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port RID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port RUSER[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port rreq_cache[3]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port rreq_cache[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port rreq_cache[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port rreq_cache[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port rreq_prot[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port rreq_prot[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port rreq_prot[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_read has unconnected port rreq_user[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port BID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port BUSER[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wreq_cache[3]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wreq_cache[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wreq_cache[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wreq_cache[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wreq_prot[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wreq_prot[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wreq_prot[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wreq_user[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi_write has unconnected port wdata_user[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWSIZE[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWSIZE[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWSIZE[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWBURST[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWBURST[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWLOCK[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWLOCK[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_WID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_WLAST
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARSIZE[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARSIZE[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARSIZE[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARBURST[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARBURST[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARLOCK[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARLOCK[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1428.973 ; gain = 157.484 ; free physical = 5890 ; free virtual = 25602
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1428.973 ; gain = 157.484 ; free physical = 5887 ; free virtual = 25598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1428.973 ; gain = 157.484 ; free physical = 5887 ; free virtual = 25598
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_subsamble_0_0/constraints/subsamble_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_subsamble_0_0/constraints/subsamble_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_subsamble_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_subsamble_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1765.777 ; gain = 0.000 ; free physical = 5389 ; free virtual = 25100
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1765.777 ; gain = 494.289 ; free physical = 5476 ; free virtual = 25187
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1765.777 ; gain = 494.289 ; free physical = 5476 ; free virtual = 25187
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_subsamble_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1765.777 ; gain = 494.289 ; free physical = 5475 ; free virtual = 25186
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'subsamble_AXILiteS_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'subsamble_AXILiteS_s_axi'
+INFO: [Synth 8-5546] ROM "rdata_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "BVALID" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "WREADY_t" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "AWREADY_t" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RVALID_t" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ARREADY_t" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'subsamble_AXILiteS_r_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'subsamble_AXILiteS_r_s_axi'
+INFO: [Synth 8-5546] ROM "rdata_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "BVALID" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "WREADY_t" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "AWREADY_t" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RVALID_t" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ARREADY_t" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "req_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'subsamble_MAXI_m_axi_reg_slice'
+INFO: [Synth 8-5544] ROM "load_p1_from_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_st" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_st" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_st" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:804]
+INFO: [Synth 8-5546] ROM "full_n" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "empty_n" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:696]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:804]
+INFO: [Synth 8-5546] ROM "full_n" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "empty_n" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'subsamble_MAXI_m_axi_reg_slice__parameterized2'
+INFO: [Synth 8-5544] ROM "load_p1_from_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_st" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_st" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_st" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-4471] merging register 'k_buf_0_val_4_addr_reg_2595_reg[10:0]' into 'k_buf_0_val_3_addr_reg_2589_reg[10:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:531]
+INFO: [Synth 8-4471] merging register 'k_buf_0_val_5_addr_reg_2601_reg[10:0]' into 'k_buf_0_val_3_addr_reg_2589_reg[10:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:547]
+INFO: [Synth 8-4471] merging register 'k_buf_1_val_3_addr_reg_2611_reg[10:0]' into 'k_buf_0_val_3_addr_reg_2589_reg[10:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:563]
+INFO: [Synth 8-4471] merging register 'k_buf_1_val_4_addr_reg_2617_reg[10:0]' into 'k_buf_0_val_3_addr_reg_2589_reg[10:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:579]
+INFO: [Synth 8-4471] merging register 'k_buf_1_val_5_addr_reg_2623_reg[10:0]' into 'k_buf_0_val_3_addr_reg_2589_reg[10:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:595]
+INFO: [Synth 8-4471] merging register 'k_buf_2_val_3_addr_reg_2629_reg[10:0]' into 'k_buf_0_val_3_addr_reg_2589_reg[10:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:611]
+INFO: [Synth 8-4471] merging register 'k_buf_2_val_4_addr_reg_2635_reg[10:0]' into 'k_buf_0_val_3_addr_reg_2589_reg[10:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:627]
+INFO: [Synth 8-4471] merging register 'k_buf_2_val_5_addr_reg_2641_reg[10:0]' into 'k_buf_0_val_3_addr_reg_2589_reg[10:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:643]
+WARNING: [Synth 8-6014] Unused sequential element k_buf_0_val_4_addr_reg_2595_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:531]
+WARNING: [Synth 8-6014] Unused sequential element k_buf_0_val_5_addr_reg_2601_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:547]
+WARNING: [Synth 8-6014] Unused sequential element k_buf_1_val_3_addr_reg_2611_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:563]
+WARNING: [Synth 8-6014] Unused sequential element k_buf_1_val_4_addr_reg_2617_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:579]
+WARNING: [Synth 8-6014] Unused sequential element k_buf_1_val_5_addr_reg_2623_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:595]
+WARNING: [Synth 8-6014] Unused sequential element k_buf_2_val_3_addr_reg_2629_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:611]
+WARNING: [Synth 8-6014] Unused sequential element k_buf_2_val_4_addr_reg_2635_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:627]
+WARNING: [Synth 8-6014] Unused sequential element k_buf_2_val_5_addr_reg_2641_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/Filter2D.vhd:643]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond1_fu_625_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "tmp_7_fu_615_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "exitcond_fu_955_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "icmp1_fu_977_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "icmp_fu_659_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_117_0_1_fu_671_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_8_fu_665_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "not_i_i_i1_fu_1932_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "not_i_i_i2_fu_2117_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "not_i_i_i_fu_1747_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond5_fu_321_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_333_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond1_fu_223_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_235_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond4_fu_202_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_214_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "axi_last_V_fu_226_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "exitcond1_fu_570_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_587_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "stream_in_V_data_V_0_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_in_V_dest_V_0_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_in_V_id_V_0_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_in_V_keep_V_0_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_in_V_last_V_0_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_in_V_strb_V_0_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_in_V_user_V_0_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_process_V_data_V_1_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_process_V_dest_V_1_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_process_V_id_V_1_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_process_V_keep_V_1_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_process_V_last_V_1_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_process_V_strb_V_1_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stream_process_V_user_V_1_state_cmp_full" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                              011
+*
+                  wridle |                             0010 |                              000
+                  wrdata |                             0100 |                              001
+                  wrresp |                             1000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'subsamble_AXILiteS_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                              110
+*
+                  rdidle |                              010 |                              100
+                  rddata |                              100 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'subsamble_AXILiteS_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                              011
+*
+                  wridle |                             0010 |                              000
+                  wrdata |                             0100 |                              001
+                  wrresp |                             1000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'subsamble_AXILiteS_r_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                              110
+*
+                  rdidle |                              010 |                              100
+                  rddata |                              100 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'subsamble_AXILiteS_r_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    zero |                               00 |                               10
+                     one |                               10 |                               11
+                     two |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'subsamble_MAXI_m_axi_reg_slice'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    zero |                               00 |                               10
+                     one |                               10 |                               11
+                     two |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'subsamble_MAXI_m_axi_reg_slice__parameterized2'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:31 . Memory (MB): peak = 1765.777 ; gain = 494.289 ; free physical = 5465 ; free virtual = 25177
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 7     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 9     
+	   2 Input     11 Bit       Adders := 10    
+	   5 Input     11 Bit       Adders := 3     
+	   3 Input     10 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 9     
+	   7 Input      8 Bit       Adders := 3     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 8     
+	   2 Input      2 Bit       Adders := 21    
++---XORs : 
+	   2 Input      2 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 7     
++---Registers : 
+	               64 Bit    Registers := 6     
+	               36 Bit    Registers := 3     
+	               35 Bit    Registers := 3     
+	               34 Bit    Registers := 2     
+	               32 Bit    Registers := 21    
+	               31 Bit    Registers := 2     
+	               30 Bit    Registers := 2     
+	               29 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 9     
+	               20 Bit    Registers := 2     
+	               11 Bit    Registers := 16    
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 87    
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 12    
+	                2 Bit    Registers := 40    
+	                1 Bit    Registers := 168   
++---RAMs : 
+	              13K Bit         RAMs := 9     
+	               9K Bit         RAMs := 1     
+	               8K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     36 Bit        Muxes := 1     
+	   2 Input     35 Bit        Muxes := 1     
+	   2 Input     34 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 12    
+	   2 Input     26 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 9     
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 3     
+	   2 Input     13 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 5     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 75    
+	   4 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 11    
+	   3 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 16    
+	   2 Input      2 Bit        Muxes := 64    
+	   3 Input      2 Bit        Muxes := 9     
+	   5 Input      2 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 191   
+	   3 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module subsamble_AXILiteS_s_axi 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module subsamble_AXILiteS_r_s_axi 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module subsamble_MAXI_m_axi_throttl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module subsamble_MAXI_m_axi_reg_slice 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 10    
+	   3 Input      2 Bit        Muxes := 3     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module subsamble_MAXI_m_axi_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module subsamble_MAXI_m_axi_buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 3     
++---Registers : 
+	               36 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---RAMs : 
+	               9K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     36 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 2     
+Module subsamble_MAXI_m_axi_fifo__parameterized3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module subsamble_MAXI_m_axi_fifo__parameterized5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module subsamble_MAXI_m_axi_fifo__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module subsamble_MAXI_m_axi_write 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 7     
+	               20 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     20 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 13    
+Module subsamble_MAXI_m_axi_buffer__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 3     
++---Registers : 
+	               35 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---RAMs : 
+	               8K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     35 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 2     
+Module subsamble_MAXI_m_axi_reg_slice__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	               34 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     34 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 10    
+	   3 Input      2 Bit        Muxes := 3     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module subsamble_MAXI_m_axi_read 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 7     
+	               20 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     20 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+Module Filter2D_k_buf_0_eOg_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	              13K Bit         RAMs := 1     
+Module subsamble_mux_32_ncg 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+Module Filter2D 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 7     
+	   2 Input     11 Bit       Adders := 2     
+	   5 Input     11 Bit       Adders := 3     
+	   3 Input     10 Bit       Adders := 3     
+	   7 Input      8 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 9     
++---XORs : 
+	   2 Input      2 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 6     
++---Registers : 
+	               11 Bit    Registers := 4     
+	                8 Bit    Registers := 48    
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 27    
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 13    
+Module AXIvideo2Mat 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 5     
+	               11 Bit    Registers := 3     
+	                8 Bit    Registers := 4     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 7     
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+Module CvtColor 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               30 Bit    Registers := 1     
+	               29 Bit    Registers := 1     
+	               11 Bit    Registers := 3     
+	                8 Bit    Registers := 6     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module Mat2AXIvideo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+Module fifo_w8_d1_A_shiftReg 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module fifo_w8_d1_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module subsamble 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               31 Bit    Registers := 2     
+	               30 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 4     
+	               11 Bit    Registers := 3     
+	                3 Bit    Registers := 8     
+	                2 Bit    Registers := 14    
+	                1 Bit    Registers := 54    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     26 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 15    
+	   4 Input      2 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 52    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element bus_read/fifo_rctl/q_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_MAXI_m_axi.vhd:638]
+INFO: [Synth 8-5546] ROM "wreq_throttl/req_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "icmp_fu_659_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_955_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "icmp1_fu_977_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond1_fu_625_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_8_fu_665_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_117_0_1_fu_671_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond5_fu_321_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_333_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond1_fu_223_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_235_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element r_V_reg_378_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:231]
+WARNING: [Synth 8-6014] Unused sequential element tmp_94_reg_368_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:364]
+WARNING: [Synth 8-6014] Unused sequential element tmp_94_reg_368_pp0_iter2_reg_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:364]
+WARNING: [Synth 8-6014] Unused sequential element tmp_95_reg_373_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:365]
+WARNING: [Synth 8-6014] Unused sequential element tmp_95_reg_373_pp0_iter2_reg_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:365]
+WARNING: [Synth 8-6014] Unused sequential element tmp_93_reg_363_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/CvtColor.vhd:406]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:32]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_muldEe.vhd:32]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:32]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/subsamble_mac_mulcud.vhd:32]
+DSP Report: Generating DSP r_V_reg_378_reg, operation Mode is: ((A:0x1322d0)*B2)'.
+DSP Report: register tmp_93_reg_363_reg is absorbed into DSP r_V_reg_378_reg.
+DSP Report: register r_V_reg_378_reg is absorbed into DSP r_V_reg_378_reg.
+DSP Report: operator subsamble_mul_mulbkb_U11/subsamble_mul_mulbkb_DSP48_0_U/p_cvt is absorbed into DSP r_V_reg_378_reg.
+DSP Report: Generating DSP subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p, operation Mode is: PCIN+(A:0x74bc6)*B''.
+DSP Report: register B is absorbed into DSP subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p.
+DSP Report: register B is absorbed into DSP subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p.
+DSP Report: operator subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p is absorbed into DSP subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p.
+DSP Report: operator subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/m is absorbed into DSP subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p.
+DSP Report: Generating DSP subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p, operation Mode is: C+(A:0x259168)*B''.
+DSP Report: register B is absorbed into DSP subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p.
+DSP Report: register B is absorbed into DSP subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p.
+DSP Report: operator subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p is absorbed into DSP subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p.
+DSP Report: operator subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/m is absorbed into DSP subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p.
+INFO: [Synth 8-5546] ROM "exitcond_fu_214_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond4_fu_202_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "axi_last_V_fu_226_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element img2_data_stream_1_s_fifo_U/U_fifo_w8_d1_A_shiftReg/SRL_SIG_reg[0] was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:36]
+WARNING: [Synth 8-6014] Unused sequential element img2_data_stream_2_s_fifo_U/U_fifo_w8_d1_A_shiftReg/SRL_SIG_reg[0] was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/4cf5/hdl/vhdl/fifo_w8_d1_A.vhd:36]
+INFO: [Synth 8-5546] ROM "exitcond1_fu_570_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "exitcond_fu_587_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TID[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TDEST[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port BID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port BUSER[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port RID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port RUSER[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWSIZE[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWSIZE[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWSIZE[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWBURST[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWBURST[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWLOCK[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWLOCK[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWCACHE[3]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWCACHE[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWCACHE[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWCACHE[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWPROT[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWPROT[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWPROT[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_AWUSER[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_WID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_WLAST
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_WUSER[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARID[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARSIZE[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARSIZE[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARSIZE[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARBURST[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARBURST[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARLOCK[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARLOCK[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARCACHE[3]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARCACHE[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARCACHE[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARCACHE[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARPROT[2]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARPROT[1]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARPROT[0]
+WARNING: [Synth 8-3331] design subsamble_MAXI_m_axi has unconnected port I_ARUSER[0]
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[62]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[61]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[60]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[59]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[58]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[57]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[56]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[55]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[54]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[53]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[52]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[51]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[50]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[49]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[48]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[47]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[46]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[45]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[44]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[43]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[42]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[41]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[40]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[39]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[38]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[37]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[36]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[35]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[34]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p2_reg[63]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_read/rs_rreq/data_p2_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_read/rs_rreq/data_p2_reg[63] )
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[62]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[61]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[60]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[59]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[58]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[57]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[56]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[55]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[54]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[53]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[52]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[51]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[50]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[49]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[48]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[47]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[46]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[45]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[44]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[43]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[42]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[41]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[40]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[39]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[38]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[37]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[36]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[35]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[34]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/rs_wreq/data_p2_reg[63]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_write/rs_wreq/data_p2_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_write/rs_wreq/data_p2_reg[63] )
+INFO: [Synth 8-3886] merging instance 'U0/grp_Filter2D_fu_485/k_buf_0_val_3_addr_reg_2589_reg[0]' (FDE) to 'U0/grp_Filter2D_fu_485/tmp_67_reg_2571_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U0/grp_Filter2D_fu_485/k_buf_0_val_3_addr_reg_2589_reg[1]' (FDE) to 'U0/grp_Filter2D_fu_485/tmp_67_reg_2571_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/grp_Filter2D_fu_485/row_assign_9_reg_2533_reg[0]' (FDE) to 'U0/grp_Filter2D_fu_485/row_assign_9_0_2_t_reg_2545_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/start_addr_reg[0]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/start_addr_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_read/start_addr_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/start_addr_reg[0]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/start_addr_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_write/start_addr_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/q_tmp_reg[32]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/q_tmp_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/q_tmp_reg[33]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/q_tmp_reg[34]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/q_tmp_reg[34]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/q_tmp_reg[35]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\stream_process_V_dest_V_1_payload_B_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\stream_process_V_dest_V_1_payload_A_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\stream_process_V_id_V_1_payload_B_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\stream_process_V_id_V_1_payload_A_reg[0] )
+INFO: [Synth 8-3886] merging instance 'U0/stream_process_V_strb_V_1_payload_B_reg[0]' (FDE) to 'U0/stream_process_V_strb_V_1_payload_B_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/stream_process_V_strb_V_1_payload_A_reg[0]' (FDE) to 'U0/stream_process_V_strb_V_1_payload_A_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/stream_process_V_strb_V_1_payload_B_reg[1]' (FDE) to 'U0/stream_process_V_strb_V_1_payload_B_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/stream_process_V_strb_V_1_payload_A_reg[1]' (FDE) to 'U0/stream_process_V_strb_V_1_payload_A_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\stream_process_V_strb_V_1_payload_B_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\stream_process_V_strb_V_1_payload_A_reg[2] )
+INFO: [Synth 8-3886] merging instance 'U0/stream_process_V_keep_V_1_payload_B_reg[0]' (FDE) to 'U0/stream_process_V_keep_V_1_payload_B_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/stream_process_V_keep_V_1_payload_A_reg[0]' (FDE) to 'U0/stream_process_V_keep_V_1_payload_A_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/stream_process_V_keep_V_1_payload_B_reg[1]' (FDE) to 'U0/stream_process_V_keep_V_1_payload_B_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/stream_process_V_keep_V_1_payload_A_reg[1]' (FDE) to 'U0/stream_process_V_keep_V_1_payload_A_reg[2]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/\stream_process_V_keep_V_1_payload_B_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/\stream_process_V_keep_V_1_payload_A_reg[2] )
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/could_multi_bursts.arlen_buf_reg[4]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/could_multi_bursts.arlen_buf_reg[5]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/could_multi_bursts.arlen_buf_reg[5]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/could_multi_bursts.arlen_buf_reg[6]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/could_multi_bursts.arlen_buf_reg[6]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/could_multi_bursts.arlen_buf_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_read/could_multi_bursts.arlen_buf_reg[7] )
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/could_multi_bursts.araddr_buf_reg[0]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/could_multi_bursts.araddr_buf_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_read/could_multi_bursts.araddr_buf_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_write/could_multi_bursts.awaddr_buf_reg[0]' (FDRE) to 'U0/subsamble_MAXI_m_axi_U/bus_write/could_multi_bursts.awaddr_buf_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_write/could_multi_bursts.awaddr_buf_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[62]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[61]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[60]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[59]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[58]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[57]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[56]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[55]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[54]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[53]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[52]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[51]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[50]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[49]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[48]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[47]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[46]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[45]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[44]' (FDE) to 'U0/subsamble_MAXI_m_axi_U/bus_read/rs_rreq/data_p1_reg[33]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_read/rs_rreq/data_p1_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_read/rs_rreq/data_p1_reg[63] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_write/rs_wreq/data_p1_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_write/rs_wreq/data_p1_reg[63] )
+WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p2_reg[63]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p2_reg[32]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p2_reg[31]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p2_reg[30]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p1_reg[63]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p1_reg[32]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p1_reg[31]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p1_reg[30]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/fifo_wreq/q_reg[31]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/fifo_wreq/q_reg[30]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/fifo_resp_to_user/q_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/fifo_resp_to_user/q_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/align_len_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/align_len_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/start_addr_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/end_addr_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/end_addr_buf_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/start_addr_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/start_addr_buf_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/sect_addr_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/sect_addr_buf_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/could_multi_bursts.awaddr_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/bresp_tmp_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_write/bresp_tmp_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rreq/data_p2_reg[63]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rreq/data_p2_reg[32]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rreq/data_p2_reg[31]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rreq/data_p2_reg[30]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rreq/data_p1_reg[63]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rreq/data_p1_reg[32]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rreq/data_p1_reg[31]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rreq/data_p1_reg[30]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/fifo_rreq/q_reg[31]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/fifo_rreq/q_reg[30]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/fifo_rdata/q_tmp_reg[33]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/fifo_rdata/q_tmp_reg[32]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/fifo_rdata/dout_buf_reg[33]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/fifo_rdata/dout_buf_reg[32]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/bus_equal_gen.resp_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/bus_equal_gen.resp_buf_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rdata/data_p2_reg[33]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rdata/data_p2_reg[32]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rdata/data_p1_reg[33]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/rs_rdata/data_p1_reg[32]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/start_addr_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/start_addr_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/start_addr_buf_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/align_len_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/align_len_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/end_addr_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/end_addr_buf_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/could_multi_bursts.arlen_buf_reg[7]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/sect_addr_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/sect_addr_buf_reg[0]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (bus_read/could_multi_bursts.araddr_buf_reg[1]) is unused and will be removed from module subsamble_MAXI_m_axi.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_2_fu_354_reg[7]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_2_fu_354_reg[6]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_2_fu_354_reg[5]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_2_fu_354_reg[4]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_2_fu_354_reg[3]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_2_fu_354_reg[2]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_2_fu_354_reg[1]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_2_fu_354_reg[0]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_3_fu_358_reg[7]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_3_fu_358_reg[6]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_3_fu_358_reg[5]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_3_fu_358_reg[4]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_3_fu_358_reg[3]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_3_fu_358_reg[2]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_3_fu_358_reg[1]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_3_fu_358_reg[0]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_s_fu_342_reg[7]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_s_fu_342_reg[6]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_s_fu_342_reg[5]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_s_fu_342_reg[4]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_s_fu_342_reg[3]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_s_fu_342_reg[2]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_s_fu_342_reg[1]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_s_fu_342_reg[0]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_1_fu_346_reg[7]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_1_fu_346_reg[6]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_1_fu_346_reg[5]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_1_fu_346_reg[4]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_1_fu_346_reg[3]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_1_fu_346_reg[2]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_1_fu_346_reg[1]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_1_fu_346_reg[0]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_4_fu_366_reg[7]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_4_fu_366_reg[6]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_4_fu_366_reg[5]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_4_fu_366_reg[4]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_4_fu_366_reg[3]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_4_fu_366_reg[2]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_4_fu_366_reg[1]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_4_fu_366_reg[0]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_5_fu_370_reg[7]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_5_fu_370_reg[6]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_5_fu_370_reg[5]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_5_fu_370_reg[4]) is unused and will be removed from module Filter2D.
+WARNING: [Synth 8-3332] Sequential element (right_border_buf_1_5_fu_370_reg[3]) is unused and will be removed from module Filter2D.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_read/fifo_rreq/q_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_write/fifo_wreq/q_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/subsamble_MAXI_m_axi_U/\bus_write/bus_equal_gen.fifo_burst/q_reg[5] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:39 . Memory (MB): peak = 1765.777 ; gain = 494.289 ; free physical = 5432 ; free virtual = 25150
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                  | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|subsamble_MAXI_m_axi_buffer:                 | mem_reg    | 256 x 36(READ_FIRST)   | W |   | 256 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|subsamble_MAXI_m_axi_buffer__parameterized1: | mem_reg    | 256 x 35(READ_FIRST)   | W |   | 256 x 35(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|Filter2D_k_buf_0_eOg_ram:                    | ram_reg    | 2 K x 8(READ_FIRST)    | W |   | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Filter2D_k_buf_0_eOg_ram:                    | ram_reg    | 2 K x 8(READ_FIRST)    | W |   | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Filter2D_k_buf_0_eOg_ram:                    | ram_reg    | 2 K x 8(READ_FIRST)    | W |   | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping          | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|CvtColor    | ((A:0x1322d0)*B2)'   | 21     | 8      | -      | -      | 29     | 0    | 1    | -    | -    | -     | 1    | 0    | 
+|CvtColor    | PCIN+(A:0x74bc6)*B'' | 20     | 9      | -      | -      | 29     | 0    | 2    | -    | -    | -     | 0    | 0    | 
+|CvtColor    | C+(A:0x259168)*B''   | 23     | 9      | 30     | -      | 30     | 0    | 2    | 0    | -    | -     | 0    | 0    | 
++------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance U0/subsamble_MAXI_m_axi_U/i_2_1/bus_write/buff_wdata/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance U0/subsamble_MAXI_m_axi_U/i_2_6/bus_read/fifo_rdata/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance U0/grp_Filter2D_fu_485/i_2_0/k_buf_0_val_3_U/Filter2D_k_buf_0_eOg_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance U0/grp_Filter2D_fu_485/i_2_1/k_buf_0_val_4_U/Filter2D_k_buf_0_eOg_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance U0/grp_Filter2D_fu_485/i_2_3/k_buf_0_val_5_U/Filter2D_k_buf_0_eOg_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:49 . Memory (MB): peak = 1772.777 ; gain = 501.289 ; free physical = 5270 ; free virtual = 24988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:50 . Memory (MB): peak = 1798.809 ; gain = 527.320 ; free physical = 5263 ; free virtual = 24981
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                  | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|subsamble_MAXI_m_axi_buffer:                 | mem_reg    | 256 x 36(READ_FIRST)   | W |   | 256 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|subsamble_MAXI_m_axi_buffer__parameterized1: | mem_reg    | 256 x 35(READ_FIRST)   | W |   | 256 x 35(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|Filter2D_k_buf_0_eOg_ram:                    | ram_reg    | 2 K x 8(READ_FIRST)    | W |   | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Filter2D_k_buf_0_eOg_ram:                    | ram_reg    | 2 K x 8(READ_FIRST)    | W |   | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|Filter2D_k_buf_0_eOg_ram:                    | ram_reg    | 2 K x 8(READ_FIRST)    | W |   | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance U0/subsamble_MAXI_m_axi_U/bus_read/fifo_rdata/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance U0/grp_Filter2D_fu_485/k_buf_0_val_3_U/Filter2D_k_buf_0_eOg_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance U0/grp_Filter2D_fu_485/k_buf_0_val_4_U/Filter2D_k_buf_0_eOg_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance U0/grp_Filter2D_fu_485/k_buf_0_val_5_U/Filter2D_k_buf_0_eOg_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:52 . Memory (MB): peak = 1810.832 ; gain = 539.344 ; free physical = 5257 ; free virtual = 24975
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:52 . Memory (MB): peak = 1810.832 ; gain = 539.344 ; free physical = 5256 ; free virtual = 24974
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:52 . Memory (MB): peak = 1810.832 ; gain = 539.344 ; free physical = 5256 ; free virtual = 24974
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:53 . Memory (MB): peak = 1810.832 ; gain = 539.344 ; free physical = 5262 ; free virtual = 24980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:53 . Memory (MB): peak = 1810.832 ; gain = 539.344 ; free physical = 5262 ; free virtual = 24980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:53 . Memory (MB): peak = 1810.832 ; gain = 539.344 ; free physical = 5262 ; free virtual = 24980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:53 . Memory (MB): peak = 1810.832 ; gain = 539.344 ; free physical = 5262 ; free virtual = 24980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|subsamble   | ap_CS_fsm_reg[17] | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+-------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name    | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+-------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | mem_reg[4]  | 64     | 64         | 64     | 0       | 0      | 0      | 0      | 
+|dsrl__1     | mem_reg[14] | 2      | 2          | 2      | 0       | 0      | 0      | 0      | 
+|dsrl__2     | mem_reg[4]  | 2      | 2          | 2      | 0       | 0      | 0      | 0      | 
+|dsrl__3     | mem_reg[4]  | 8      | 8          | 8      | 0       | 0      | 0      | 0      | 
++------------+-------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |CARRY4     |    88|
+|2     |DSP48E1_1  |     1|
+|3     |DSP48E1_2  |     1|
+|4     |DSP48E1_3  |     1|
+|5     |LUT1       |    27|
+|6     |LUT2       |   223|
+|7     |LUT3       |   534|
+|8     |LUT4       |   253|
+|9     |LUT5       |   285|
+|10    |LUT6       |   388|
+|11    |RAMB18E1   |     2|
+|12    |RAMB18E1_1 |     3|
+|13    |SRL16E     |    69|
+|14    |FDRE       |  2050|
+|15    |FDSE       |    38|
++------+-----------+------+
+
+Report Instance Areas: 
++------+---------------------------------------+-----------------------------------------------+------+
+|      |Instance                               |Module                                         |Cells |
++------+---------------------------------------+-----------------------------------------------+------+
+|1     |top                                    |                                               |  3963|
+|2     |  U0                                   |subsamble                                      |  3963|
+|3     |    grp_AXIvideo2Mat_fu_495            |AXIvideo2Mat                                   |   424|
+|4     |    grp_CvtColor_fu_516                |CvtColor                                       |   138|
+|5     |      subsamble_mac_mulcud_U12         |subsamble_mac_mulcud                           |     6|
+|6     |        subsamble_mac_mulcud_DSP48_1_U |subsamble_mac_mulcud_DSP48_1                   |     6|
+|7     |      subsamble_mac_muldEe_U13         |subsamble_mac_muldEe                           |     1|
+|8     |        subsamble_mac_muldEe_DSP48_2_U |subsamble_mac_muldEe_DSP48_2                   |     1|
+|9     |    grp_Filter2D_fu_485                |Filter2D                                       |   544|
+|10    |      k_buf_0_val_3_U                  |Filter2D_k_buf_0_eOg                           |    17|
+|11    |        Filter2D_k_buf_0_eOg_ram_U     |Filter2D_k_buf_0_eOg_ram_22                    |    17|
+|12    |      k_buf_0_val_4_U                  |Filter2D_k_buf_0_eOg_19                        |    21|
+|13    |        Filter2D_k_buf_0_eOg_ram_U     |Filter2D_k_buf_0_eOg_ram_21                    |    21|
+|14    |      k_buf_0_val_5_U                  |Filter2D_k_buf_0_eOg_20                        |    89|
+|15    |        Filter2D_k_buf_0_eOg_ram_U     |Filter2D_k_buf_0_eOg_ram                       |    89|
+|16    |    grp_Mat2AXIvideo_fu_526            |Mat2AXIvideo                                   |   124|
+|17    |    img0_data_stream_0_s_fifo_U        |fifo_w8_d1_A                                   |    17|
+|18    |      U_fifo_w8_d1_A_shiftReg          |fifo_w8_d1_A_shiftReg_18                       |     9|
+|19    |    img0_data_stream_1_s_fifo_U        |fifo_w8_d1_A_0                                 |    17|
+|20    |      U_fifo_w8_d1_A_shiftReg          |fifo_w8_d1_A_shiftReg_17                       |     9|
+|21    |    img0_data_stream_2_s_fifo_U        |fifo_w8_d1_A_1                                 |    17|
+|22    |      U_fifo_w8_d1_A_shiftReg          |fifo_w8_d1_A_shiftReg_16                       |     9|
+|23    |    img1_data_stream_0_s_fifo_U        |fifo_w8_d1_A_2                                 |    16|
+|24    |      U_fifo_w8_d1_A_shiftReg          |fifo_w8_d1_A_shiftReg_15                       |     8|
+|25    |    img1_data_stream_1_s_fifo_U        |fifo_w8_d1_A_3                                 |     8|
+|26    |    img1_data_stream_2_s_fifo_U        |fifo_w8_d1_A_4                                 |     8|
+|27    |    img2_data_stream_0_s_fifo_U        |fifo_w8_d1_A_5                                 |    16|
+|28    |      U_fifo_w8_d1_A_shiftReg          |fifo_w8_d1_A_shiftReg_14                       |     8|
+|29    |    img2_data_stream_1_s_fifo_U        |fifo_w8_d1_A_6                                 |    19|
+|30    |    img2_data_stream_2_s_fifo_U        |fifo_w8_d1_A_7                                 |     8|
+|31    |    img3_data_stream_0_s_fifo_U        |fifo_w8_d1_A_8                                 |     9|
+|32    |    img3_data_stream_1_s_fifo_U        |fifo_w8_d1_A_9                                 |     9|
+|33    |    img3_data_stream_2_s_fifo_U        |fifo_w8_d1_A_10                                |    17|
+|34    |      U_fifo_w8_d1_A_shiftReg          |fifo_w8_d1_A_shiftReg                          |     8|
+|35    |    subsamble_AXILiteS_r_s_axi_U       |subsamble_AXILiteS_r_s_axi                     |   118|
+|36    |    subsamble_AXILiteS_s_axi_U         |subsamble_AXILiteS_s_axi                       |   118|
+|37    |    subsamble_MAXI_m_axi_U             |subsamble_MAXI_m_axi                           |  1895|
+|38    |      bus_read                         |subsamble_MAXI_m_axi_read                      |   914|
+|39    |        fifo_rctl                      |subsamble_MAXI_m_axi_fifo__parameterized3_11   |    55|
+|40    |        fifo_rdata                     |subsamble_MAXI_m_axi_buffer__parameterized1    |   175|
+|41    |        fifo_rreq                      |subsamble_MAXI_m_axi_fifo_12                   |    90|
+|42    |        rs_rdata                       |subsamble_MAXI_m_axi_reg_slice__parameterized2 |   112|
+|43    |        rs_rreq                        |subsamble_MAXI_m_axi_reg_slice_13              |   104|
+|44    |      bus_write                        |subsamble_MAXI_m_axi_write                     |   962|
+|45    |        buff_wdata                     |subsamble_MAXI_m_axi_buffer                    |   217|
+|46    |        \bus_equal_gen.fifo_burst      |subsamble_MAXI_m_axi_fifo__parameterized1      |    45|
+|47    |        fifo_resp                      |subsamble_MAXI_m_axi_fifo__parameterized3      |    28|
+|48    |        fifo_resp_to_user              |subsamble_MAXI_m_axi_fifo__parameterized5      |    18|
+|49    |        fifo_wreq                      |subsamble_MAXI_m_axi_fifo                      |   108|
+|50    |        rs_wreq                        |subsamble_MAXI_m_axi_reg_slice                 |   137|
+|51    |      wreq_throttl                     |subsamble_MAXI_m_axi_throttl                   |    19|
++------+---------------------------------------+-----------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:53 . Memory (MB): peak = 1810.832 ; gain = 539.344 ; free physical = 5262 ; free virtual = 24980
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 478 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 1810.832 ; gain = 202.539 ; free physical = 5336 ; free virtual = 25054
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:53 . Memory (MB): peak = 1810.840 ; gain = 539.344 ; free physical = 5347 ; free virtual = 25065
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 96 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+433 Infos, 225 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 1810.840 ; gain = 550.945 ; free physical = 5357 ; free virtual = 25075
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_subsamble_0_0_synth_1/system_subsamble_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_subsamble_0_0/system_subsamble_0_0.xci
+INFO: [Coretcl 2-1174] Renamed 50 cell refs.
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_subsamble_0_0_synth_1/system_subsamble_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_subsamble_0_0_utilization_synth.rpt -pb system_subsamble_0_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1834.844 ; gain = 0.000 ; free physical = 5356 ; free virtual = 25078
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 28 11:53:15 2019...

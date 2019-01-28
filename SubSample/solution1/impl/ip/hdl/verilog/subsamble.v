@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="subsamble,hls_ip_2018_2_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z010clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.400000,HLS_SYN_LAT=10615742,HLS_SYN_TPT=none,HLS_SYN_MEM=9,HLS_SYN_DSP=3,HLS_SYN_FF=1641,HLS_SYN_LUT=4119,HLS_VERSION=2018_2_1}" *)
+(* CORE_GENERATION_INFO="subsamble,hls_ip_2018_2_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z010clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.400000,HLS_SYN_LAT=8848606,HLS_SYN_TPT=none,HLS_SYN_MEM=11,HLS_SYN_DSP=3,HLS_SYN_FF=2284,HLS_SYN_LUT=4471,HLS_VERSION=2018_2_1}" *)
 
 module subsamble (
         ap_clk,
@@ -16,6 +16,51 @@ module subsamble (
         ap_done,
         ap_idle,
         ap_ready,
+        m_axi_MAXI_AWVALID,
+        m_axi_MAXI_AWREADY,
+        m_axi_MAXI_AWADDR,
+        m_axi_MAXI_AWID,
+        m_axi_MAXI_AWLEN,
+        m_axi_MAXI_AWSIZE,
+        m_axi_MAXI_AWBURST,
+        m_axi_MAXI_AWLOCK,
+        m_axi_MAXI_AWCACHE,
+        m_axi_MAXI_AWPROT,
+        m_axi_MAXI_AWQOS,
+        m_axi_MAXI_AWREGION,
+        m_axi_MAXI_AWUSER,
+        m_axi_MAXI_WVALID,
+        m_axi_MAXI_WREADY,
+        m_axi_MAXI_WDATA,
+        m_axi_MAXI_WSTRB,
+        m_axi_MAXI_WLAST,
+        m_axi_MAXI_WID,
+        m_axi_MAXI_WUSER,
+        m_axi_MAXI_ARVALID,
+        m_axi_MAXI_ARREADY,
+        m_axi_MAXI_ARADDR,
+        m_axi_MAXI_ARID,
+        m_axi_MAXI_ARLEN,
+        m_axi_MAXI_ARSIZE,
+        m_axi_MAXI_ARBURST,
+        m_axi_MAXI_ARLOCK,
+        m_axi_MAXI_ARCACHE,
+        m_axi_MAXI_ARPROT,
+        m_axi_MAXI_ARQOS,
+        m_axi_MAXI_ARREGION,
+        m_axi_MAXI_ARUSER,
+        m_axi_MAXI_RVALID,
+        m_axi_MAXI_RREADY,
+        m_axi_MAXI_RDATA,
+        m_axi_MAXI_RLAST,
+        m_axi_MAXI_RID,
+        m_axi_MAXI_RUSER,
+        m_axi_MAXI_RRESP,
+        m_axi_MAXI_BVALID,
+        m_axi_MAXI_BREADY,
+        m_axi_MAXI_BRESP,
+        m_axi_MAXI_BID,
+        m_axi_MAXI_BUSER,
         stream_in_TDATA,
         stream_in_TVALID,
         stream_in_TREADY,
@@ -34,31 +79,91 @@ module subsamble (
         stream_process_TLAST,
         stream_process_TID,
         stream_process_TDEST,
-        stream_passThrough_TDATA,
-        stream_passThrough_TVALID,
-        stream_passThrough_TREADY,
-        stream_passThrough_TKEEP,
-        stream_passThrough_TSTRB,
-        stream_passThrough_TUSER,
-        stream_passThrough_TLAST,
-        stream_passThrough_TID,
-        stream_passThrough_TDEST
+        s_axi_AXILiteS_AWVALID,
+        s_axi_AXILiteS_AWREADY,
+        s_axi_AXILiteS_AWADDR,
+        s_axi_AXILiteS_WVALID,
+        s_axi_AXILiteS_WREADY,
+        s_axi_AXILiteS_WDATA,
+        s_axi_AXILiteS_WSTRB,
+        s_axi_AXILiteS_ARVALID,
+        s_axi_AXILiteS_ARREADY,
+        s_axi_AXILiteS_ARADDR,
+        s_axi_AXILiteS_RVALID,
+        s_axi_AXILiteS_RREADY,
+        s_axi_AXILiteS_RDATA,
+        s_axi_AXILiteS_RRESP,
+        s_axi_AXILiteS_BVALID,
+        s_axi_AXILiteS_BREADY,
+        s_axi_AXILiteS_BRESP,
+        s_axi_AXILiteS_r_AWVALID,
+        s_axi_AXILiteS_r_AWREADY,
+        s_axi_AXILiteS_r_AWADDR,
+        s_axi_AXILiteS_r_WVALID,
+        s_axi_AXILiteS_r_WREADY,
+        s_axi_AXILiteS_r_WDATA,
+        s_axi_AXILiteS_r_WSTRB,
+        s_axi_AXILiteS_r_ARVALID,
+        s_axi_AXILiteS_r_ARREADY,
+        s_axi_AXILiteS_r_ARADDR,
+        s_axi_AXILiteS_r_RVALID,
+        s_axi_AXILiteS_r_RREADY,
+        s_axi_AXILiteS_r_RDATA,
+        s_axi_AXILiteS_r_RRESP,
+        s_axi_AXILiteS_r_BVALID,
+        s_axi_AXILiteS_r_BREADY,
+        s_axi_AXILiteS_r_BRESP
 );
 
-parameter    ap_ST_fsm_state1 = 14'd1;
-parameter    ap_ST_fsm_state2 = 14'd2;
-parameter    ap_ST_fsm_state3 = 14'd4;
-parameter    ap_ST_fsm_state4 = 14'd8;
-parameter    ap_ST_fsm_pp0_stage0 = 14'd16;
-parameter    ap_ST_fsm_state7 = 14'd32;
-parameter    ap_ST_fsm_state8 = 14'd64;
-parameter    ap_ST_fsm_state9 = 14'd128;
-parameter    ap_ST_fsm_state10 = 14'd256;
-parameter    ap_ST_fsm_state11 = 14'd512;
-parameter    ap_ST_fsm_pp1_stage0 = 14'd1024;
-parameter    ap_ST_fsm_state14 = 14'd2048;
-parameter    ap_ST_fsm_state15 = 14'd4096;
-parameter    ap_ST_fsm_state16 = 14'd8192;
+parameter    ap_ST_fsm_state1 = 26'd1;
+parameter    ap_ST_fsm_state2 = 26'd2;
+parameter    ap_ST_fsm_state3 = 26'd4;
+parameter    ap_ST_fsm_state4 = 26'd8;
+parameter    ap_ST_fsm_state5 = 26'd16;
+parameter    ap_ST_fsm_state6 = 26'd32;
+parameter    ap_ST_fsm_state7 = 26'd64;
+parameter    ap_ST_fsm_state8 = 26'd128;
+parameter    ap_ST_fsm_state9 = 26'd256;
+parameter    ap_ST_fsm_pp0_stage0 = 26'd512;
+parameter    ap_ST_fsm_state12 = 26'd1024;
+parameter    ap_ST_fsm_state13 = 26'd2048;
+parameter    ap_ST_fsm_state14 = 26'd4096;
+parameter    ap_ST_fsm_state15 = 26'd8192;
+parameter    ap_ST_fsm_state16 = 26'd16384;
+parameter    ap_ST_fsm_state17 = 26'd32768;
+parameter    ap_ST_fsm_state18 = 26'd65536;
+parameter    ap_ST_fsm_state19 = 26'd131072;
+parameter    ap_ST_fsm_state20 = 26'd262144;
+parameter    ap_ST_fsm_state21 = 26'd524288;
+parameter    ap_ST_fsm_state22 = 26'd1048576;
+parameter    ap_ST_fsm_state23 = 26'd2097152;
+parameter    ap_ST_fsm_state24 = 26'd4194304;
+parameter    ap_ST_fsm_state25 = 26'd8388608;
+parameter    ap_ST_fsm_state26 = 26'd16777216;
+parameter    ap_ST_fsm_state27 = 26'd33554432;
+parameter    C_S_AXI_AXILITES_DATA_WIDTH = 32;
+parameter    C_S_AXI_AXILITES_ADDR_WIDTH = 5;
+parameter    C_S_AXI_DATA_WIDTH = 32;
+parameter    C_S_AXI_AXILITES_R_DATA_WIDTH = 32;
+parameter    C_S_AXI_AXILITES_R_ADDR_WIDTH = 5;
+parameter    C_M_AXI_MAXI_ID_WIDTH = 1;
+parameter    C_M_AXI_MAXI_ADDR_WIDTH = 32;
+parameter    C_M_AXI_MAXI_DATA_WIDTH = 32;
+parameter    C_M_AXI_MAXI_AWUSER_WIDTH = 1;
+parameter    C_M_AXI_MAXI_ARUSER_WIDTH = 1;
+parameter    C_M_AXI_MAXI_WUSER_WIDTH = 1;
+parameter    C_M_AXI_MAXI_RUSER_WIDTH = 1;
+parameter    C_M_AXI_MAXI_BUSER_WIDTH = 1;
+parameter    C_M_AXI_MAXI_USER_VALUE = 0;
+parameter    C_M_AXI_MAXI_PROT_VALUE = 0;
+parameter    C_M_AXI_MAXI_CACHE_VALUE = 3;
+parameter    C_M_AXI_DATA_WIDTH = 32;
+
+parameter C_S_AXI_AXILITES_WSTRB_WIDTH = (32 / 8);
+parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
+parameter C_S_AXI_AXILITES_R_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_MAXI_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 
 input   ap_clk;
 input   ap_rst_n;
@@ -66,6 +171,51 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
+output   m_axi_MAXI_AWVALID;
+input   m_axi_MAXI_AWREADY;
+output  [C_M_AXI_MAXI_ADDR_WIDTH - 1:0] m_axi_MAXI_AWADDR;
+output  [C_M_AXI_MAXI_ID_WIDTH - 1:0] m_axi_MAXI_AWID;
+output  [7:0] m_axi_MAXI_AWLEN;
+output  [2:0] m_axi_MAXI_AWSIZE;
+output  [1:0] m_axi_MAXI_AWBURST;
+output  [1:0] m_axi_MAXI_AWLOCK;
+output  [3:0] m_axi_MAXI_AWCACHE;
+output  [2:0] m_axi_MAXI_AWPROT;
+output  [3:0] m_axi_MAXI_AWQOS;
+output  [3:0] m_axi_MAXI_AWREGION;
+output  [C_M_AXI_MAXI_AWUSER_WIDTH - 1:0] m_axi_MAXI_AWUSER;
+output   m_axi_MAXI_WVALID;
+input   m_axi_MAXI_WREADY;
+output  [C_M_AXI_MAXI_DATA_WIDTH - 1:0] m_axi_MAXI_WDATA;
+output  [C_M_AXI_MAXI_WSTRB_WIDTH - 1:0] m_axi_MAXI_WSTRB;
+output   m_axi_MAXI_WLAST;
+output  [C_M_AXI_MAXI_ID_WIDTH - 1:0] m_axi_MAXI_WID;
+output  [C_M_AXI_MAXI_WUSER_WIDTH - 1:0] m_axi_MAXI_WUSER;
+output   m_axi_MAXI_ARVALID;
+input   m_axi_MAXI_ARREADY;
+output  [C_M_AXI_MAXI_ADDR_WIDTH - 1:0] m_axi_MAXI_ARADDR;
+output  [C_M_AXI_MAXI_ID_WIDTH - 1:0] m_axi_MAXI_ARID;
+output  [7:0] m_axi_MAXI_ARLEN;
+output  [2:0] m_axi_MAXI_ARSIZE;
+output  [1:0] m_axi_MAXI_ARBURST;
+output  [1:0] m_axi_MAXI_ARLOCK;
+output  [3:0] m_axi_MAXI_ARCACHE;
+output  [2:0] m_axi_MAXI_ARPROT;
+output  [3:0] m_axi_MAXI_ARQOS;
+output  [3:0] m_axi_MAXI_ARREGION;
+output  [C_M_AXI_MAXI_ARUSER_WIDTH - 1:0] m_axi_MAXI_ARUSER;
+input   m_axi_MAXI_RVALID;
+output   m_axi_MAXI_RREADY;
+input  [C_M_AXI_MAXI_DATA_WIDTH - 1:0] m_axi_MAXI_RDATA;
+input   m_axi_MAXI_RLAST;
+input  [C_M_AXI_MAXI_ID_WIDTH - 1:0] m_axi_MAXI_RID;
+input  [C_M_AXI_MAXI_RUSER_WIDTH - 1:0] m_axi_MAXI_RUSER;
+input  [1:0] m_axi_MAXI_RRESP;
+input   m_axi_MAXI_BVALID;
+output   m_axi_MAXI_BREADY;
+input  [1:0] m_axi_MAXI_BRESP;
+input  [C_M_AXI_MAXI_ID_WIDTH - 1:0] m_axi_MAXI_BID;
+input  [C_M_AXI_MAXI_BUSER_WIDTH - 1:0] m_axi_MAXI_BUSER;
 input  [23:0] stream_in_TDATA;
 input   stream_in_TVALID;
 output   stream_in_TREADY;
@@ -84,22 +234,47 @@ output  [0:0] stream_process_TUSER;
 output  [0:0] stream_process_TLAST;
 output  [0:0] stream_process_TID;
 output  [0:0] stream_process_TDEST;
-output  [23:0] stream_passThrough_TDATA;
-output   stream_passThrough_TVALID;
-input   stream_passThrough_TREADY;
-output  [2:0] stream_passThrough_TKEEP;
-output  [2:0] stream_passThrough_TSTRB;
-output  [0:0] stream_passThrough_TUSER;
-output  [0:0] stream_passThrough_TLAST;
-output  [0:0] stream_passThrough_TID;
-output  [0:0] stream_passThrough_TDEST;
+input   s_axi_AXILiteS_AWVALID;
+output   s_axi_AXILiteS_AWREADY;
+input  [C_S_AXI_AXILITES_ADDR_WIDTH - 1:0] s_axi_AXILiteS_AWADDR;
+input   s_axi_AXILiteS_WVALID;
+output   s_axi_AXILiteS_WREADY;
+input  [C_S_AXI_AXILITES_DATA_WIDTH - 1:0] s_axi_AXILiteS_WDATA;
+input  [C_S_AXI_AXILITES_WSTRB_WIDTH - 1:0] s_axi_AXILiteS_WSTRB;
+input   s_axi_AXILiteS_ARVALID;
+output   s_axi_AXILiteS_ARREADY;
+input  [C_S_AXI_AXILITES_ADDR_WIDTH - 1:0] s_axi_AXILiteS_ARADDR;
+output   s_axi_AXILiteS_RVALID;
+input   s_axi_AXILiteS_RREADY;
+output  [C_S_AXI_AXILITES_DATA_WIDTH - 1:0] s_axi_AXILiteS_RDATA;
+output  [1:0] s_axi_AXILiteS_RRESP;
+output   s_axi_AXILiteS_BVALID;
+input   s_axi_AXILiteS_BREADY;
+output  [1:0] s_axi_AXILiteS_BRESP;
+input   s_axi_AXILiteS_r_AWVALID;
+output   s_axi_AXILiteS_r_AWREADY;
+input  [C_S_AXI_AXILITES_R_ADDR_WIDTH - 1:0] s_axi_AXILiteS_r_AWADDR;
+input   s_axi_AXILiteS_r_WVALID;
+output   s_axi_AXILiteS_r_WREADY;
+input  [C_S_AXI_AXILITES_R_DATA_WIDTH - 1:0] s_axi_AXILiteS_r_WDATA;
+input  [C_S_AXI_AXILITES_R_WSTRB_WIDTH - 1:0] s_axi_AXILiteS_r_WSTRB;
+input   s_axi_AXILiteS_r_ARVALID;
+output   s_axi_AXILiteS_r_ARREADY;
+input  [C_S_AXI_AXILITES_R_ADDR_WIDTH - 1:0] s_axi_AXILiteS_r_ARADDR;
+output   s_axi_AXILiteS_r_RVALID;
+input   s_axi_AXILiteS_r_RREADY;
+output  [C_S_AXI_AXILITES_R_DATA_WIDTH - 1:0] s_axi_AXILiteS_r_RDATA;
+output  [1:0] s_axi_AXILiteS_r_RRESP;
+output   s_axi_AXILiteS_r_BVALID;
+input   s_axi_AXILiteS_r_BREADY;
+output  [1:0] s_axi_AXILiteS_r_BRESP;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
 
  reg    ap_rst_n_inv;
-(* fsm_encoding = "none" *) reg   [13:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [25:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg   [23:0] stream_in_V_data_V_0_data_out;
 wire    stream_in_V_data_V_0_vld_in;
@@ -297,250 +472,60 @@ wire    stream_process_V_dest_V_1_load_A;
 wire    stream_process_V_dest_V_1_load_B;
 reg   [1:0] stream_process_V_dest_V_1_state;
 wire    stream_process_V_dest_V_1_state_cmp_full;
-reg   [23:0] stream_passThrough_V_data_V_1_data_out;
-wire    stream_passThrough_V_data_V_1_vld_in;
-wire    stream_passThrough_V_data_V_1_vld_out;
-wire    stream_passThrough_V_data_V_1_ack_in;
-wire    stream_passThrough_V_data_V_1_ack_out;
-reg   [23:0] stream_passThrough_V_data_V_1_payload_A;
-reg   [23:0] stream_passThrough_V_data_V_1_payload_B;
-reg    stream_passThrough_V_data_V_1_sel_rd;
-reg    stream_passThrough_V_data_V_1_sel_wr;
-wire    stream_passThrough_V_data_V_1_sel;
-wire    stream_passThrough_V_data_V_1_load_A;
-wire    stream_passThrough_V_data_V_1_load_B;
-reg   [1:0] stream_passThrough_V_data_V_1_state;
-wire    stream_passThrough_V_data_V_1_state_cmp_full;
-reg   [2:0] stream_passThrough_V_keep_V_1_data_out;
-wire    stream_passThrough_V_keep_V_1_vld_in;
-wire    stream_passThrough_V_keep_V_1_vld_out;
-wire    stream_passThrough_V_keep_V_1_ack_in;
-wire    stream_passThrough_V_keep_V_1_ack_out;
-reg   [2:0] stream_passThrough_V_keep_V_1_payload_A;
-reg   [2:0] stream_passThrough_V_keep_V_1_payload_B;
-reg    stream_passThrough_V_keep_V_1_sel_rd;
-reg    stream_passThrough_V_keep_V_1_sel_wr;
-wire    stream_passThrough_V_keep_V_1_sel;
-wire    stream_passThrough_V_keep_V_1_load_A;
-wire    stream_passThrough_V_keep_V_1_load_B;
-reg   [1:0] stream_passThrough_V_keep_V_1_state;
-wire    stream_passThrough_V_keep_V_1_state_cmp_full;
-reg   [2:0] stream_passThrough_V_strb_V_1_data_out;
-wire    stream_passThrough_V_strb_V_1_vld_in;
-wire    stream_passThrough_V_strb_V_1_vld_out;
-wire    stream_passThrough_V_strb_V_1_ack_in;
-wire    stream_passThrough_V_strb_V_1_ack_out;
-reg   [2:0] stream_passThrough_V_strb_V_1_payload_A;
-reg   [2:0] stream_passThrough_V_strb_V_1_payload_B;
-reg    stream_passThrough_V_strb_V_1_sel_rd;
-reg    stream_passThrough_V_strb_V_1_sel_wr;
-wire    stream_passThrough_V_strb_V_1_sel;
-wire    stream_passThrough_V_strb_V_1_load_A;
-wire    stream_passThrough_V_strb_V_1_load_B;
-reg   [1:0] stream_passThrough_V_strb_V_1_state;
-wire    stream_passThrough_V_strb_V_1_state_cmp_full;
-reg   [0:0] stream_passThrough_V_user_V_1_data_out;
-wire    stream_passThrough_V_user_V_1_vld_in;
-wire    stream_passThrough_V_user_V_1_vld_out;
-wire    stream_passThrough_V_user_V_1_ack_in;
-wire    stream_passThrough_V_user_V_1_ack_out;
-reg   [0:0] stream_passThrough_V_user_V_1_payload_A;
-reg   [0:0] stream_passThrough_V_user_V_1_payload_B;
-reg    stream_passThrough_V_user_V_1_sel_rd;
-reg    stream_passThrough_V_user_V_1_sel_wr;
-wire    stream_passThrough_V_user_V_1_sel;
-wire    stream_passThrough_V_user_V_1_load_A;
-wire    stream_passThrough_V_user_V_1_load_B;
-reg   [1:0] stream_passThrough_V_user_V_1_state;
-wire    stream_passThrough_V_user_V_1_state_cmp_full;
-reg   [0:0] stream_passThrough_V_last_V_1_data_out;
-wire    stream_passThrough_V_last_V_1_vld_in;
-wire    stream_passThrough_V_last_V_1_vld_out;
-wire    stream_passThrough_V_last_V_1_ack_in;
-wire    stream_passThrough_V_last_V_1_ack_out;
-reg   [0:0] stream_passThrough_V_last_V_1_payload_A;
-reg   [0:0] stream_passThrough_V_last_V_1_payload_B;
-reg    stream_passThrough_V_last_V_1_sel_rd;
-reg    stream_passThrough_V_last_V_1_sel_wr;
-wire    stream_passThrough_V_last_V_1_sel;
-wire    stream_passThrough_V_last_V_1_load_A;
-wire    stream_passThrough_V_last_V_1_load_B;
-reg   [1:0] stream_passThrough_V_last_V_1_state;
-wire    stream_passThrough_V_last_V_1_state_cmp_full;
-reg   [0:0] stream_passThrough_V_id_V_1_data_out;
-wire    stream_passThrough_V_id_V_1_vld_in;
-wire    stream_passThrough_V_id_V_1_vld_out;
-wire    stream_passThrough_V_id_V_1_ack_in;
-wire    stream_passThrough_V_id_V_1_ack_out;
-reg   [0:0] stream_passThrough_V_id_V_1_payload_A;
-reg   [0:0] stream_passThrough_V_id_V_1_payload_B;
-reg    stream_passThrough_V_id_V_1_sel_rd;
-reg    stream_passThrough_V_id_V_1_sel_wr;
-wire    stream_passThrough_V_id_V_1_sel;
-wire    stream_passThrough_V_id_V_1_load_A;
-wire    stream_passThrough_V_id_V_1_load_B;
-reg   [1:0] stream_passThrough_V_id_V_1_state;
-wire    stream_passThrough_V_id_V_1_state_cmp_full;
-reg   [0:0] stream_passThrough_V_dest_V_1_data_out;
-wire    stream_passThrough_V_dest_V_1_vld_in;
-wire    stream_passThrough_V_dest_V_1_vld_out;
-wire    stream_passThrough_V_dest_V_1_ack_in;
-wire    stream_passThrough_V_dest_V_1_ack_out;
-reg   [0:0] stream_passThrough_V_dest_V_1_payload_A;
-reg   [0:0] stream_passThrough_V_dest_V_1_payload_B;
-reg    stream_passThrough_V_dest_V_1_sel_rd;
-reg    stream_passThrough_V_dest_V_1_sel_wr;
-wire    stream_passThrough_V_dest_V_1_sel;
-wire    stream_passThrough_V_dest_V_1_load_A;
-wire    stream_passThrough_V_dest_V_1_load_B;
-reg   [1:0] stream_passThrough_V_dest_V_1_state;
-wire    stream_passThrough_V_dest_V_1_state_cmp_full;
-reg   [10:0] t_V_1_reg_582;
-reg   [10:0] j_i_reg_604;
-wire   [0:0] exitcond5_i_fu_698_p2;
-wire    ap_CS_fsm_state4;
-wire   [10:0] i_V_fu_704_p2;
-reg   [10:0] i_V_reg_858;
-wire   [0:0] exitcond_i_fu_710_p2;
-reg   [0:0] exitcond_i_reg_863;
-wire    ap_CS_fsm_pp0_stage0;
-wire    ap_block_state5_pp0_stage0_iter0;
-wire   [7:0] img0_data_stream_0_s_dout;
-wire    img0_data_stream_0_s_empty_n;
-reg    img0_data_stream_0_s_read;
-wire   [7:0] img0_data_stream_1_s_dout;
-wire    img0_data_stream_1_s_empty_n;
-reg    img0_data_stream_1_s_read;
-wire   [7:0] img0_data_stream_2_s_dout;
-wire    img0_data_stream_2_s_empty_n;
-reg    img0_data_stream_2_s_read;
-wire    img1_data_stream_0_s_full_n;
-reg    img1_data_stream_0_s_write;
-wire    img1_data_stream_1_s_full_n;
-reg    img1_data_stream_1_s_write;
-wire    img1_data_stream_2_s_full_n;
-reg    img1_data_stream_2_s_write;
-wire    imgDuplicate_data_st_full_n;
-reg    imgDuplicate_data_st_write;
-wire    imgDuplicate_data_st_1_full_n;
-reg    imgDuplicate_data_st_1_write;
-wire    imgDuplicate_data_st_2_full_n;
-reg    imgDuplicate_data_st_2_write;
-reg    ap_block_state6_pp0_stage0_iter1;
-reg    ap_enable_reg_pp0_iter1;
-reg    ap_block_pp0_stage0_11001;
-wire   [10:0] j_V_fu_716_p2;
-reg    ap_enable_reg_pp0_iter0;
-wire   [0:0] exitcond1_fu_722_p2;
-wire    ap_CS_fsm_state11;
-wire   [10:0] i_fu_728_p2;
-reg   [10:0] i_reg_876;
-wire   [0:0] exitcond_fu_734_p2;
-reg   [0:0] exitcond_reg_881;
-wire    ap_CS_fsm_pp1_stage0;
-wire    ap_block_state12_pp1_stage0_iter0;
-wire   [7:0] img3_data_stream_0_s_dout;
-wire    img3_data_stream_0_s_empty_n;
-reg    img3_data_stream_0_s_read;
-wire   [7:0] img3_data_stream_1_s_dout;
-wire    img3_data_stream_1_s_empty_n;
-reg    img3_data_stream_1_s_read;
-wire   [7:0] img3_data_stream_2_s_dout;
-wire    img3_data_stream_2_s_empty_n;
-reg    img3_data_stream_2_s_read;
-wire    img4_data_stream_0_s_full_n;
-reg    img4_data_stream_0_s_write;
-wire    img4_data_stream_1_s_full_n;
-reg    img4_data_stream_1_s_write;
-wire    img4_data_stream_2_s_full_n;
-reg    img4_data_stream_2_s_write;
-reg    ap_block_state13_pp1_stage0_iter1;
-reg    ap_enable_reg_pp1_iter1;
-reg    ap_block_pp1_stage0_11001;
-wire   [10:0] j_fu_740_p2;
-reg    ap_enable_reg_pp1_iter0;
-reg    ap_block_pp0_stage0_subdone;
-reg    ap_condition_pp0_exit_iter0_state5;
-reg    ap_block_pp1_stage0_subdone;
-reg    ap_condition_pp1_exit_iter0_state12;
-wire    grp_Filter2D_fu_615_ap_start;
-wire    grp_Filter2D_fu_615_ap_done;
-wire    grp_Filter2D_fu_615_ap_idle;
-wire    grp_Filter2D_fu_615_ap_ready;
-wire    grp_Filter2D_fu_615_p_src_data_stream_0_V_read;
-wire    grp_Filter2D_fu_615_p_src_data_stream_1_V_read;
-wire    grp_Filter2D_fu_615_p_src_data_stream_2_V_read;
-wire   [7:0] grp_Filter2D_fu_615_p_dst_data_stream_0_V_din;
-wire    grp_Filter2D_fu_615_p_dst_data_stream_0_V_write;
-wire   [7:0] grp_Filter2D_fu_615_p_dst_data_stream_1_V_din;
-wire    grp_Filter2D_fu_615_p_dst_data_stream_1_V_write;
-wire   [7:0] grp_Filter2D_fu_615_p_dst_data_stream_2_V_din;
-wire    grp_Filter2D_fu_615_p_dst_data_stream_2_V_write;
-wire    grp_AXIvideo2Mat_fu_625_ap_start;
-wire    grp_AXIvideo2Mat_fu_625_ap_done;
-wire    grp_AXIvideo2Mat_fu_625_ap_idle;
-wire    grp_AXIvideo2Mat_fu_625_ap_ready;
-wire    grp_AXIvideo2Mat_fu_625_stream_in_TVALID;
-wire    grp_AXIvideo2Mat_fu_625_stream_in_TREADY;
-wire   [7:0] grp_AXIvideo2Mat_fu_625_img_data_stream_0_V_din;
-wire    grp_AXIvideo2Mat_fu_625_img_data_stream_0_V_write;
-wire   [7:0] grp_AXIvideo2Mat_fu_625_img_data_stream_1_V_din;
-wire    grp_AXIvideo2Mat_fu_625_img_data_stream_1_V_write;
-wire   [7:0] grp_AXIvideo2Mat_fu_625_img_data_stream_2_V_din;
-wire    grp_AXIvideo2Mat_fu_625_img_data_stream_2_V_write;
-wire    grp_CvtColor_fu_646_ap_start;
-wire    grp_CvtColor_fu_646_ap_done;
-wire    grp_CvtColor_fu_646_ap_idle;
-wire    grp_CvtColor_fu_646_ap_ready;
-wire    grp_CvtColor_fu_646_p_src_data_stream_0_V_read;
-wire    grp_CvtColor_fu_646_p_src_data_stream_1_V_read;
-wire    grp_CvtColor_fu_646_p_src_data_stream_2_V_read;
-wire   [7:0] grp_CvtColor_fu_646_p_dst_data_stream_0_V_din;
-wire    grp_CvtColor_fu_646_p_dst_data_stream_0_V_write;
-wire   [7:0] grp_CvtColor_fu_646_p_dst_data_stream_1_V_din;
-wire    grp_CvtColor_fu_646_p_dst_data_stream_1_V_write;
-wire   [7:0] grp_CvtColor_fu_646_p_dst_data_stream_2_V_din;
-wire    grp_CvtColor_fu_646_p_dst_data_stream_2_V_write;
-wire    grp_Mat2AXIvideo_fu_656_ap_start;
-wire    grp_Mat2AXIvideo_fu_656_ap_done;
-wire    grp_Mat2AXIvideo_fu_656_ap_idle;
-wire    grp_Mat2AXIvideo_fu_656_ap_ready;
-wire    grp_Mat2AXIvideo_fu_656_img_data_stream_0_V_read;
-wire    grp_Mat2AXIvideo_fu_656_img_data_stream_1_V_read;
-wire    grp_Mat2AXIvideo_fu_656_img_data_stream_2_V_read;
-wire   [23:0] grp_Mat2AXIvideo_fu_656_stream_passThrough_TDATA;
-wire    grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID;
-wire    grp_Mat2AXIvideo_fu_656_stream_passThrough_TREADY;
-wire   [2:0] grp_Mat2AXIvideo_fu_656_stream_passThrough_TKEEP;
-wire   [2:0] grp_Mat2AXIvideo_fu_656_stream_passThrough_TSTRB;
-wire   [0:0] grp_Mat2AXIvideo_fu_656_stream_passThrough_TUSER;
-wire   [0:0] grp_Mat2AXIvideo_fu_656_stream_passThrough_TLAST;
-wire   [0:0] grp_Mat2AXIvideo_fu_656_stream_passThrough_TID;
-wire   [0:0] grp_Mat2AXIvideo_fu_656_stream_passThrough_TDEST;
-wire    grp_Mat2AXIvideo_fu_677_ap_start;
-wire    grp_Mat2AXIvideo_fu_677_ap_done;
-wire    grp_Mat2AXIvideo_fu_677_ap_idle;
-wire    grp_Mat2AXIvideo_fu_677_ap_ready;
-wire    grp_Mat2AXIvideo_fu_677_img_data_stream_0_V_read;
-wire    grp_Mat2AXIvideo_fu_677_img_data_stream_1_V_read;
-wire    grp_Mat2AXIvideo_fu_677_img_data_stream_2_V_read;
-wire   [23:0] grp_Mat2AXIvideo_fu_677_stream_passThrough_TDATA;
-wire    grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID;
-wire    grp_Mat2AXIvideo_fu_677_stream_passThrough_TREADY;
-wire   [2:0] grp_Mat2AXIvideo_fu_677_stream_passThrough_TKEEP;
-wire   [2:0] grp_Mat2AXIvideo_fu_677_stream_passThrough_TSTRB;
-wire   [0:0] grp_Mat2AXIvideo_fu_677_stream_passThrough_TUSER;
-wire   [0:0] grp_Mat2AXIvideo_fu_677_stream_passThrough_TLAST;
-wire   [0:0] grp_Mat2AXIvideo_fu_677_stream_passThrough_TID;
-wire   [0:0] grp_Mat2AXIvideo_fu_677_stream_passThrough_TDEST;
-reg   [10:0] t_V_reg_571;
+wire   [31:0] n;
+wire   [31:0] ram;
+reg    MAXI_blk_n_AW;
+wire    ap_CS_fsm_state2;
+reg    MAXI_blk_n_W;
 wire    ap_CS_fsm_state3;
-wire    ap_CS_fsm_state7;
-reg   [10:0] i_i_reg_593;
-wire    ap_CS_fsm_state10;
-wire    ap_CS_fsm_state14;
-reg    grp_Filter2D_fu_615_ap_start_reg;
+reg    MAXI_blk_n_B;
+wire    ap_CS_fsm_state8;
+reg    MAXI_blk_n_AR;
+wire    ap_CS_fsm_state13;
+reg    MAXI_blk_n_R;
+wire    ap_CS_fsm_state20;
+wire    ap_CS_fsm_state21;
+wire    ap_CS_fsm_state22;
+wire    ap_CS_fsm_state27;
+reg    MAXI_AWVALID;
+wire    MAXI_AWREADY;
+reg   [31:0] MAXI_AWADDR;
+reg    MAXI_WVALID;
+wire    MAXI_WREADY;
+reg   [31:0] MAXI_WDATA;
+reg    MAXI_ARVALID;
+wire    MAXI_ARREADY;
+wire   [31:0] MAXI_ARADDR;
+wire    MAXI_RVALID;
+reg    MAXI_RREADY;
+wire   [31:0] MAXI_RDATA;
+wire    MAXI_RLAST;
+wire   [0:0] MAXI_RID;
+wire   [0:0] MAXI_RUSER;
+wire   [1:0] MAXI_RRESP;
+wire    MAXI_BVALID;
+reg    MAXI_BREADY;
+wire   [1:0] MAXI_BRESP;
+wire   [0:0] MAXI_BID;
+wire   [0:0] MAXI_BUSER;
+reg   [10:0] j_i_reg_474;
+reg   [29:0] ram1_reg_614;
+reg    ap_sig_ioackin_MAXI_AWREADY;
+wire   [30:0] tmp_3_cast_fu_567_p1;
+reg   [30:0] tmp_3_cast_reg_698;
+wire    grp_Filter2D_fu_485_ap_idle;
+wire    grp_Filter2D_fu_485_ap_ready;
+wire    grp_Filter2D_fu_485_ap_done;
+wire   [0:0] exitcond1_fu_570_p2;
 wire    ap_CS_fsm_state9;
+wire   [10:0] i_fu_576_p2;
+reg   [10:0] i_reg_707;
+wire   [30:0] ram2_sum_fu_582_p2;
+reg   [30:0] ram2_sum_reg_712;
+wire   [0:0] exitcond_fu_587_p2;
+reg   [0:0] exitcond_reg_717;
+wire    ap_CS_fsm_pp0_stage0;
+wire    ap_block_state10_pp0_stage0_iter0;
 wire   [7:0] img2_data_stream_0_s_dout;
 wire    img2_data_stream_0_s_empty_n;
 reg    img2_data_stream_0_s_read;
@@ -556,19 +541,76 @@ wire    img3_data_stream_1_s_full_n;
 reg    img3_data_stream_1_s_write;
 wire    img3_data_stream_2_s_full_n;
 reg    img3_data_stream_2_s_write;
-reg    grp_AXIvideo2Mat_fu_625_ap_start_reg;
-wire    ap_CS_fsm_state2;
-wire    img0_data_stream_0_s_full_n;
-reg    img0_data_stream_0_s_write;
-wire    img0_data_stream_1_s_full_n;
-reg    img0_data_stream_1_s_write;
-wire    img0_data_stream_2_s_full_n;
-reg    img0_data_stream_2_s_write;
-reg    grp_CvtColor_fu_646_ap_start_reg;
+reg    ap_block_state11_pp0_stage0_iter1;
+reg    ap_enable_reg_pp0_iter1;
+reg    ap_block_pp0_stage0_11001;
+wire   [10:0] j_fu_593_p2;
+reg    ap_enable_reg_pp0_iter0;
+reg   [31:0] MAXI_addr_1_reg_726;
+reg    ap_sig_ioackin_MAXI_ARREADY;
+reg   [31:0] MAXI_addr_1_read_reg_733;
+wire   [31:0] tmp_fu_609_p2;
+reg   [31:0] tmp_reg_738;
+reg    ap_block_pp0_stage0_subdone;
+reg    ap_condition_pp0_exit_iter0_state10;
+wire    grp_Filter2D_fu_485_ap_start;
+wire    grp_Filter2D_fu_485_p_src_data_stream_0_V_read;
+wire    grp_Filter2D_fu_485_p_src_data_stream_1_V_read;
+wire    grp_Filter2D_fu_485_p_src_data_stream_2_V_read;
+wire   [7:0] grp_Filter2D_fu_485_p_dst_data_stream_0_V_din;
+wire    grp_Filter2D_fu_485_p_dst_data_stream_0_V_write;
+wire   [7:0] grp_Filter2D_fu_485_p_dst_data_stream_1_V_din;
+wire    grp_Filter2D_fu_485_p_dst_data_stream_1_V_write;
+wire   [7:0] grp_Filter2D_fu_485_p_dst_data_stream_2_V_din;
+wire    grp_Filter2D_fu_485_p_dst_data_stream_2_V_write;
+wire    grp_AXIvideo2Mat_fu_495_ap_start;
+wire    grp_AXIvideo2Mat_fu_495_ap_done;
+wire    grp_AXIvideo2Mat_fu_495_ap_idle;
+wire    grp_AXIvideo2Mat_fu_495_ap_ready;
+wire    grp_AXIvideo2Mat_fu_495_stream_in_TVALID;
+wire    grp_AXIvideo2Mat_fu_495_stream_in_TREADY;
+wire   [7:0] grp_AXIvideo2Mat_fu_495_img_data_stream_0_V_din;
+wire    grp_AXIvideo2Mat_fu_495_img_data_stream_0_V_write;
+wire   [7:0] grp_AXIvideo2Mat_fu_495_img_data_stream_1_V_din;
+wire    grp_AXIvideo2Mat_fu_495_img_data_stream_1_V_write;
+wire   [7:0] grp_AXIvideo2Mat_fu_495_img_data_stream_2_V_din;
+wire    grp_AXIvideo2Mat_fu_495_img_data_stream_2_V_write;
+wire    grp_CvtColor_fu_516_ap_start;
+wire    grp_CvtColor_fu_516_ap_done;
+wire    grp_CvtColor_fu_516_ap_idle;
+wire    grp_CvtColor_fu_516_ap_ready;
+wire    grp_CvtColor_fu_516_p_src_data_stream_0_V_read;
+wire    grp_CvtColor_fu_516_p_src_data_stream_1_V_read;
+wire    grp_CvtColor_fu_516_p_src_data_stream_2_V_read;
+wire   [7:0] grp_CvtColor_fu_516_p_dst_data_stream_0_V_din;
+wire    grp_CvtColor_fu_516_p_dst_data_stream_0_V_write;
+wire   [7:0] grp_CvtColor_fu_516_p_dst_data_stream_1_V_din;
+wire    grp_CvtColor_fu_516_p_dst_data_stream_1_V_write;
+wire   [7:0] grp_CvtColor_fu_516_p_dst_data_stream_2_V_din;
+wire    grp_CvtColor_fu_516_p_dst_data_stream_2_V_write;
+wire    grp_Mat2AXIvideo_fu_526_ap_start;
+wire    grp_Mat2AXIvideo_fu_526_ap_done;
+wire    grp_Mat2AXIvideo_fu_526_ap_idle;
+wire    grp_Mat2AXIvideo_fu_526_ap_ready;
+wire    grp_Mat2AXIvideo_fu_526_img_data_stream_0_V_read;
+wire    grp_Mat2AXIvideo_fu_526_img_data_stream_1_V_read;
+wire    grp_Mat2AXIvideo_fu_526_img_data_stream_2_V_read;
+wire   [23:0] grp_Mat2AXIvideo_fu_526_stream_process_TDATA;
+wire    grp_Mat2AXIvideo_fu_526_stream_process_TVALID;
+wire    grp_Mat2AXIvideo_fu_526_stream_process_TREADY;
+wire   [2:0] grp_Mat2AXIvideo_fu_526_stream_process_TKEEP;
+wire   [2:0] grp_Mat2AXIvideo_fu_526_stream_process_TSTRB;
+wire   [0:0] grp_Mat2AXIvideo_fu_526_stream_process_TUSER;
+wire   [0:0] grp_Mat2AXIvideo_fu_526_stream_process_TLAST;
+wire   [0:0] grp_Mat2AXIvideo_fu_526_stream_process_TID;
+wire   [0:0] grp_Mat2AXIvideo_fu_526_stream_process_TDEST;
+reg   [10:0] i_i_reg_463;
+wire    ap_CS_fsm_state12;
+reg    grp_Filter2D_fu_485_ap_start_reg;
+wire    ap_CS_fsm_state7;
 wire   [7:0] img1_data_stream_0_s_dout;
 wire    img1_data_stream_0_s_empty_n;
 reg    img1_data_stream_0_s_read;
-wire    ap_CS_fsm_state8;
 wire   [7:0] img1_data_stream_1_s_dout;
 wire    img1_data_stream_1_s_empty_n;
 reg    img1_data_stream_1_s_read;
@@ -581,43 +623,60 @@ wire    img2_data_stream_1_s_full_n;
 reg    img2_data_stream_1_s_write;
 wire    img2_data_stream_2_s_full_n;
 reg    img2_data_stream_2_s_write;
-reg    grp_Mat2AXIvideo_fu_656_ap_start_reg;
-wire   [7:0] img4_data_stream_0_s_dout;
-wire    img4_data_stream_0_s_empty_n;
-reg    img4_data_stream_0_s_read;
-wire    ap_CS_fsm_state15;
-wire   [7:0] img4_data_stream_1_s_dout;
-wire    img4_data_stream_1_s_empty_n;
-reg    img4_data_stream_1_s_read;
-wire   [7:0] img4_data_stream_2_s_dout;
-wire    img4_data_stream_2_s_empty_n;
-reg    img4_data_stream_2_s_read;
-reg    grp_Mat2AXIvideo_fu_677_ap_start_reg;
-wire   [7:0] imgDuplicate_data_st_dout;
-wire    imgDuplicate_data_st_empty_n;
-reg    imgDuplicate_data_st_read;
-wire   [7:0] imgDuplicate_data_st_1_dout;
-wire    imgDuplicate_data_st_1_empty_n;
-reg    imgDuplicate_data_st_1_read;
-wire   [7:0] imgDuplicate_data_st_2_dout;
-wire    imgDuplicate_data_st_2_empty_n;
-reg    imgDuplicate_data_st_2_read;
+reg    grp_AXIvideo2Mat_fu_495_ap_start_reg;
+reg    ap_sig_ioackin_MAXI_WREADY;
+wire    ap_CS_fsm_state4;
+wire    img0_data_stream_0_s_full_n;
+reg    img0_data_stream_0_s_write;
+wire    img0_data_stream_1_s_full_n;
+reg    img0_data_stream_1_s_write;
+wire    img0_data_stream_2_s_full_n;
+reg    img0_data_stream_2_s_write;
+reg    grp_CvtColor_fu_516_ap_start_reg;
+wire    ap_CS_fsm_state5;
+wire   [7:0] img0_data_stream_0_s_dout;
+wire    img0_data_stream_0_s_empty_n;
+reg    img0_data_stream_0_s_read;
+wire    ap_CS_fsm_state6;
+wire   [7:0] img0_data_stream_1_s_dout;
+wire    img0_data_stream_1_s_empty_n;
+reg    img0_data_stream_1_s_read;
+wire   [7:0] img0_data_stream_2_s_dout;
+wire    img0_data_stream_2_s_empty_n;
+reg    img0_data_stream_2_s_read;
+wire    img1_data_stream_0_s_full_n;
+reg    img1_data_stream_0_s_write;
+wire    img1_data_stream_1_s_full_n;
+reg    img1_data_stream_1_s_write;
+wire    img1_data_stream_2_s_full_n;
+reg    img1_data_stream_2_s_write;
+reg    grp_Mat2AXIvideo_fu_526_ap_start_reg;
+wire    ap_CS_fsm_state25;
+wire   [7:0] img3_data_stream_0_s_dout;
+wire    img3_data_stream_0_s_empty_n;
+reg    img3_data_stream_0_s_read;
+wire    ap_CS_fsm_state26;
+wire   [7:0] img3_data_stream_1_s_dout;
+wire    img3_data_stream_1_s_empty_n;
+reg    img3_data_stream_1_s_read;
+wire   [7:0] img3_data_stream_2_s_dout;
+wire    img3_data_stream_2_s_empty_n;
+reg    img3_data_stream_2_s_read;
+wire   [63:0] tmp_3_fu_557_p1;
+wire   [63:0] ram2_sum_cast_fu_599_p1;
+reg    ap_reg_ioackin_MAXI_AWREADY;
+reg    ap_reg_ioackin_MAXI_WREADY;
+reg    ap_reg_ioackin_MAXI_ARREADY;
+reg    ap_block_state27;
 reg    ap_block_pp0_stage0_01001;
-reg    ap_block_pp1_stage0_01001;
 wire    ap_block_pp0_stage0;
-wire    ap_block_pp1_stage0;
-wire    ap_CS_fsm_state16;
-reg    ap_block_state16;
-reg   [13:0] ap_NS_fsm;
-reg    ap_block_state15_on_subcall_done;
+reg   [25:0] ap_NS_fsm;
 reg    ap_idle_pp0;
 wire    ap_enable_pp0;
-reg    ap_idle_pp1;
-wire    ap_enable_pp1;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 14'd1;
+#0 ap_CS_fsm = 26'd1;
 #0 stream_in_V_data_V_0_sel_rd = 1'b0;
 #0 stream_in_V_data_V_0_sel_wr = 1'b0;
 #0 stream_in_V_data_V_0_state = 2'd0;
@@ -660,171 +719,293 @@ initial begin
 #0 stream_process_V_dest_V_1_sel_rd = 1'b0;
 #0 stream_process_V_dest_V_1_sel_wr = 1'b0;
 #0 stream_process_V_dest_V_1_state = 2'd0;
-#0 stream_passThrough_V_data_V_1_sel_rd = 1'b0;
-#0 stream_passThrough_V_data_V_1_sel_wr = 1'b0;
-#0 stream_passThrough_V_data_V_1_state = 2'd0;
-#0 stream_passThrough_V_keep_V_1_sel_rd = 1'b0;
-#0 stream_passThrough_V_keep_V_1_sel_wr = 1'b0;
-#0 stream_passThrough_V_keep_V_1_state = 2'd0;
-#0 stream_passThrough_V_strb_V_1_sel_rd = 1'b0;
-#0 stream_passThrough_V_strb_V_1_sel_wr = 1'b0;
-#0 stream_passThrough_V_strb_V_1_state = 2'd0;
-#0 stream_passThrough_V_user_V_1_sel_rd = 1'b0;
-#0 stream_passThrough_V_user_V_1_sel_wr = 1'b0;
-#0 stream_passThrough_V_user_V_1_state = 2'd0;
-#0 stream_passThrough_V_last_V_1_sel_rd = 1'b0;
-#0 stream_passThrough_V_last_V_1_sel_wr = 1'b0;
-#0 stream_passThrough_V_last_V_1_state = 2'd0;
-#0 stream_passThrough_V_id_V_1_sel_rd = 1'b0;
-#0 stream_passThrough_V_id_V_1_sel_wr = 1'b0;
-#0 stream_passThrough_V_id_V_1_state = 2'd0;
-#0 stream_passThrough_V_dest_V_1_sel_rd = 1'b0;
-#0 stream_passThrough_V_dest_V_1_sel_wr = 1'b0;
-#0 stream_passThrough_V_dest_V_1_state = 2'd0;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter0 = 1'b0;
-#0 ap_enable_reg_pp1_iter1 = 1'b0;
-#0 ap_enable_reg_pp1_iter0 = 1'b0;
-#0 grp_Filter2D_fu_615_ap_start_reg = 1'b0;
-#0 grp_AXIvideo2Mat_fu_625_ap_start_reg = 1'b0;
-#0 grp_CvtColor_fu_646_ap_start_reg = 1'b0;
-#0 grp_Mat2AXIvideo_fu_656_ap_start_reg = 1'b0;
-#0 grp_Mat2AXIvideo_fu_677_ap_start_reg = 1'b0;
+#0 grp_Filter2D_fu_485_ap_start_reg = 1'b0;
+#0 grp_AXIvideo2Mat_fu_495_ap_start_reg = 1'b0;
+#0 grp_CvtColor_fu_516_ap_start_reg = 1'b0;
+#0 grp_Mat2AXIvideo_fu_526_ap_start_reg = 1'b0;
+#0 ap_reg_ioackin_MAXI_AWREADY = 1'b0;
+#0 ap_reg_ioackin_MAXI_WREADY = 1'b0;
+#0 ap_reg_ioackin_MAXI_ARREADY = 1'b0;
 end
 
-Filter2D grp_Filter2D_fu_615(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_Filter2D_fu_615_ap_start),
-    .ap_done(grp_Filter2D_fu_615_ap_done),
-    .ap_idle(grp_Filter2D_fu_615_ap_idle),
-    .ap_ready(grp_Filter2D_fu_615_ap_ready),
-    .p_src_data_stream_0_V_dout(img2_data_stream_0_s_dout),
-    .p_src_data_stream_0_V_empty_n(img2_data_stream_0_s_empty_n),
-    .p_src_data_stream_0_V_read(grp_Filter2D_fu_615_p_src_data_stream_0_V_read),
-    .p_src_data_stream_1_V_dout(img2_data_stream_1_s_dout),
-    .p_src_data_stream_1_V_empty_n(img2_data_stream_1_s_empty_n),
-    .p_src_data_stream_1_V_read(grp_Filter2D_fu_615_p_src_data_stream_1_V_read),
-    .p_src_data_stream_2_V_dout(img2_data_stream_2_s_dout),
-    .p_src_data_stream_2_V_empty_n(img2_data_stream_2_s_empty_n),
-    .p_src_data_stream_2_V_read(grp_Filter2D_fu_615_p_src_data_stream_2_V_read),
-    .p_dst_data_stream_0_V_din(grp_Filter2D_fu_615_p_dst_data_stream_0_V_din),
-    .p_dst_data_stream_0_V_full_n(img3_data_stream_0_s_full_n),
-    .p_dst_data_stream_0_V_write(grp_Filter2D_fu_615_p_dst_data_stream_0_V_write),
-    .p_dst_data_stream_1_V_din(grp_Filter2D_fu_615_p_dst_data_stream_1_V_din),
-    .p_dst_data_stream_1_V_full_n(img3_data_stream_1_s_full_n),
-    .p_dst_data_stream_1_V_write(grp_Filter2D_fu_615_p_dst_data_stream_1_V_write),
-    .p_dst_data_stream_2_V_din(grp_Filter2D_fu_615_p_dst_data_stream_2_V_din),
-    .p_dst_data_stream_2_V_full_n(img3_data_stream_2_s_full_n),
-    .p_dst_data_stream_2_V_write(grp_Filter2D_fu_615_p_dst_data_stream_2_V_write)
+subsamble_AXILiteS_s_axi #(
+    .C_S_AXI_ADDR_WIDTH( C_S_AXI_AXILITES_ADDR_WIDTH ),
+    .C_S_AXI_DATA_WIDTH( C_S_AXI_AXILITES_DATA_WIDTH ))
+subsamble_AXILiteS_s_axi_U(
+    .AWVALID(s_axi_AXILiteS_AWVALID),
+    .AWREADY(s_axi_AXILiteS_AWREADY),
+    .AWADDR(s_axi_AXILiteS_AWADDR),
+    .WVALID(s_axi_AXILiteS_WVALID),
+    .WREADY(s_axi_AXILiteS_WREADY),
+    .WDATA(s_axi_AXILiteS_WDATA),
+    .WSTRB(s_axi_AXILiteS_WSTRB),
+    .ARVALID(s_axi_AXILiteS_ARVALID),
+    .ARREADY(s_axi_AXILiteS_ARREADY),
+    .ARADDR(s_axi_AXILiteS_ARADDR),
+    .RVALID(s_axi_AXILiteS_RVALID),
+    .RREADY(s_axi_AXILiteS_RREADY),
+    .RDATA(s_axi_AXILiteS_RDATA),
+    .RRESP(s_axi_AXILiteS_RRESP),
+    .BVALID(s_axi_AXILiteS_BVALID),
+    .BREADY(s_axi_AXILiteS_BREADY),
+    .BRESP(s_axi_AXILiteS_BRESP),
+    .ACLK(ap_clk),
+    .ARESET(ap_rst_n_inv),
+    .ACLK_EN(1'b1),
+    .ram(ram)
 );
 
-AXIvideo2Mat grp_AXIvideo2Mat_fu_625(
+subsamble_AXILiteS_r_s_axi #(
+    .C_S_AXI_ADDR_WIDTH( C_S_AXI_AXILITES_R_ADDR_WIDTH ),
+    .C_S_AXI_DATA_WIDTH( C_S_AXI_AXILITES_R_DATA_WIDTH ))
+subsamble_AXILiteS_r_s_axi_U(
+    .AWVALID(s_axi_AXILiteS_r_AWVALID),
+    .AWREADY(s_axi_AXILiteS_r_AWREADY),
+    .AWADDR(s_axi_AXILiteS_r_AWADDR),
+    .WVALID(s_axi_AXILiteS_r_WVALID),
+    .WREADY(s_axi_AXILiteS_r_WREADY),
+    .WDATA(s_axi_AXILiteS_r_WDATA),
+    .WSTRB(s_axi_AXILiteS_r_WSTRB),
+    .ARVALID(s_axi_AXILiteS_r_ARVALID),
+    .ARREADY(s_axi_AXILiteS_r_ARREADY),
+    .ARADDR(s_axi_AXILiteS_r_ARADDR),
+    .RVALID(s_axi_AXILiteS_r_RVALID),
+    .RREADY(s_axi_AXILiteS_r_RREADY),
+    .RDATA(s_axi_AXILiteS_r_RDATA),
+    .RRESP(s_axi_AXILiteS_r_RRESP),
+    .BVALID(s_axi_AXILiteS_r_BVALID),
+    .BREADY(s_axi_AXILiteS_r_BREADY),
+    .BRESP(s_axi_AXILiteS_r_BRESP),
+    .ACLK(ap_clk),
+    .ARESET(ap_rst_n_inv),
+    .ACLK_EN(1'b1),
+    .n(n)
+);
+
+subsamble_MAXI_m_axi #(
+    .CONSERVATIVE( 0 ),
+    .USER_DW( 32 ),
+    .USER_AW( 32 ),
+    .USER_MAXREQS( 5 ),
+    .NUM_READ_OUTSTANDING( 16 ),
+    .NUM_WRITE_OUTSTANDING( 16 ),
+    .MAX_READ_BURST_LENGTH( 16 ),
+    .MAX_WRITE_BURST_LENGTH( 16 ),
+    .C_M_AXI_ID_WIDTH( C_M_AXI_MAXI_ID_WIDTH ),
+    .C_M_AXI_ADDR_WIDTH( C_M_AXI_MAXI_ADDR_WIDTH ),
+    .C_M_AXI_DATA_WIDTH( C_M_AXI_MAXI_DATA_WIDTH ),
+    .C_M_AXI_AWUSER_WIDTH( C_M_AXI_MAXI_AWUSER_WIDTH ),
+    .C_M_AXI_ARUSER_WIDTH( C_M_AXI_MAXI_ARUSER_WIDTH ),
+    .C_M_AXI_WUSER_WIDTH( C_M_AXI_MAXI_WUSER_WIDTH ),
+    .C_M_AXI_RUSER_WIDTH( C_M_AXI_MAXI_RUSER_WIDTH ),
+    .C_M_AXI_BUSER_WIDTH( C_M_AXI_MAXI_BUSER_WIDTH ),
+    .C_USER_VALUE( C_M_AXI_MAXI_USER_VALUE ),
+    .C_PROT_VALUE( C_M_AXI_MAXI_PROT_VALUE ),
+    .C_CACHE_VALUE( C_M_AXI_MAXI_CACHE_VALUE ))
+subsamble_MAXI_m_axi_U(
+    .AWVALID(m_axi_MAXI_AWVALID),
+    .AWREADY(m_axi_MAXI_AWREADY),
+    .AWADDR(m_axi_MAXI_AWADDR),
+    .AWID(m_axi_MAXI_AWID),
+    .AWLEN(m_axi_MAXI_AWLEN),
+    .AWSIZE(m_axi_MAXI_AWSIZE),
+    .AWBURST(m_axi_MAXI_AWBURST),
+    .AWLOCK(m_axi_MAXI_AWLOCK),
+    .AWCACHE(m_axi_MAXI_AWCACHE),
+    .AWPROT(m_axi_MAXI_AWPROT),
+    .AWQOS(m_axi_MAXI_AWQOS),
+    .AWREGION(m_axi_MAXI_AWREGION),
+    .AWUSER(m_axi_MAXI_AWUSER),
+    .WVALID(m_axi_MAXI_WVALID),
+    .WREADY(m_axi_MAXI_WREADY),
+    .WDATA(m_axi_MAXI_WDATA),
+    .WSTRB(m_axi_MAXI_WSTRB),
+    .WLAST(m_axi_MAXI_WLAST),
+    .WID(m_axi_MAXI_WID),
+    .WUSER(m_axi_MAXI_WUSER),
+    .ARVALID(m_axi_MAXI_ARVALID),
+    .ARREADY(m_axi_MAXI_ARREADY),
+    .ARADDR(m_axi_MAXI_ARADDR),
+    .ARID(m_axi_MAXI_ARID),
+    .ARLEN(m_axi_MAXI_ARLEN),
+    .ARSIZE(m_axi_MAXI_ARSIZE),
+    .ARBURST(m_axi_MAXI_ARBURST),
+    .ARLOCK(m_axi_MAXI_ARLOCK),
+    .ARCACHE(m_axi_MAXI_ARCACHE),
+    .ARPROT(m_axi_MAXI_ARPROT),
+    .ARQOS(m_axi_MAXI_ARQOS),
+    .ARREGION(m_axi_MAXI_ARREGION),
+    .ARUSER(m_axi_MAXI_ARUSER),
+    .RVALID(m_axi_MAXI_RVALID),
+    .RREADY(m_axi_MAXI_RREADY),
+    .RDATA(m_axi_MAXI_RDATA),
+    .RLAST(m_axi_MAXI_RLAST),
+    .RID(m_axi_MAXI_RID),
+    .RUSER(m_axi_MAXI_RUSER),
+    .RRESP(m_axi_MAXI_RRESP),
+    .BVALID(m_axi_MAXI_BVALID),
+    .BREADY(m_axi_MAXI_BREADY),
+    .BRESP(m_axi_MAXI_BRESP),
+    .BID(m_axi_MAXI_BID),
+    .BUSER(m_axi_MAXI_BUSER),
+    .ACLK(ap_clk),
+    .ARESET(ap_rst_n_inv),
+    .ACLK_EN(1'b1),
+    .I_ARVALID(MAXI_ARVALID),
+    .I_ARREADY(MAXI_ARREADY),
+    .I_ARADDR(MAXI_ARADDR),
+    .I_ARID(1'd0),
+    .I_ARLEN(32'd1),
+    .I_ARSIZE(3'd0),
+    .I_ARLOCK(2'd0),
+    .I_ARCACHE(4'd0),
+    .I_ARQOS(4'd0),
+    .I_ARPROT(3'd0),
+    .I_ARUSER(1'd0),
+    .I_ARBURST(2'd0),
+    .I_ARREGION(4'd0),
+    .I_RVALID(MAXI_RVALID),
+    .I_RREADY(MAXI_RREADY),
+    .I_RDATA(MAXI_RDATA),
+    .I_RID(MAXI_RID),
+    .I_RUSER(MAXI_RUSER),
+    .I_RRESP(MAXI_RRESP),
+    .I_RLAST(MAXI_RLAST),
+    .I_AWVALID(MAXI_AWVALID),
+    .I_AWREADY(MAXI_AWREADY),
+    .I_AWADDR(MAXI_AWADDR),
+    .I_AWID(1'd0),
+    .I_AWLEN(32'd1),
+    .I_AWSIZE(3'd0),
+    .I_AWLOCK(2'd0),
+    .I_AWCACHE(4'd0),
+    .I_AWQOS(4'd0),
+    .I_AWPROT(3'd0),
+    .I_AWUSER(1'd0),
+    .I_AWBURST(2'd0),
+    .I_AWREGION(4'd0),
+    .I_WVALID(MAXI_WVALID),
+    .I_WREADY(MAXI_WREADY),
+    .I_WDATA(MAXI_WDATA),
+    .I_WID(1'd0),
+    .I_WUSER(1'd0),
+    .I_WLAST(1'b0),
+    .I_WSTRB(4'd15),
+    .I_BVALID(MAXI_BVALID),
+    .I_BREADY(MAXI_BREADY),
+    .I_BRESP(MAXI_BRESP),
+    .I_BID(MAXI_BID),
+    .I_BUSER(MAXI_BUSER)
+);
+
+Filter2D grp_Filter2D_fu_485(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_AXIvideo2Mat_fu_625_ap_start),
-    .ap_done(grp_AXIvideo2Mat_fu_625_ap_done),
-    .ap_idle(grp_AXIvideo2Mat_fu_625_ap_idle),
-    .ap_ready(grp_AXIvideo2Mat_fu_625_ap_ready),
+    .ap_start(grp_Filter2D_fu_485_ap_start),
+    .ap_done(grp_Filter2D_fu_485_ap_done),
+    .ap_idle(grp_Filter2D_fu_485_ap_idle),
+    .ap_ready(grp_Filter2D_fu_485_ap_ready),
+    .p_src_data_stream_0_V_dout(img1_data_stream_0_s_dout),
+    .p_src_data_stream_0_V_empty_n(img1_data_stream_0_s_empty_n),
+    .p_src_data_stream_0_V_read(grp_Filter2D_fu_485_p_src_data_stream_0_V_read),
+    .p_src_data_stream_1_V_dout(img1_data_stream_1_s_dout),
+    .p_src_data_stream_1_V_empty_n(img1_data_stream_1_s_empty_n),
+    .p_src_data_stream_1_V_read(grp_Filter2D_fu_485_p_src_data_stream_1_V_read),
+    .p_src_data_stream_2_V_dout(img1_data_stream_2_s_dout),
+    .p_src_data_stream_2_V_empty_n(img1_data_stream_2_s_empty_n),
+    .p_src_data_stream_2_V_read(grp_Filter2D_fu_485_p_src_data_stream_2_V_read),
+    .p_dst_data_stream_0_V_din(grp_Filter2D_fu_485_p_dst_data_stream_0_V_din),
+    .p_dst_data_stream_0_V_full_n(img2_data_stream_0_s_full_n),
+    .p_dst_data_stream_0_V_write(grp_Filter2D_fu_485_p_dst_data_stream_0_V_write),
+    .p_dst_data_stream_1_V_din(grp_Filter2D_fu_485_p_dst_data_stream_1_V_din),
+    .p_dst_data_stream_1_V_full_n(img2_data_stream_1_s_full_n),
+    .p_dst_data_stream_1_V_write(grp_Filter2D_fu_485_p_dst_data_stream_1_V_write),
+    .p_dst_data_stream_2_V_din(grp_Filter2D_fu_485_p_dst_data_stream_2_V_din),
+    .p_dst_data_stream_2_V_full_n(img2_data_stream_2_s_full_n),
+    .p_dst_data_stream_2_V_write(grp_Filter2D_fu_485_p_dst_data_stream_2_V_write)
+);
+
+AXIvideo2Mat grp_AXIvideo2Mat_fu_495(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_AXIvideo2Mat_fu_495_ap_start),
+    .ap_done(grp_AXIvideo2Mat_fu_495_ap_done),
+    .ap_idle(grp_AXIvideo2Mat_fu_495_ap_idle),
+    .ap_ready(grp_AXIvideo2Mat_fu_495_ap_ready),
     .stream_in_TDATA(stream_in_V_data_V_0_data_out),
-    .stream_in_TVALID(grp_AXIvideo2Mat_fu_625_stream_in_TVALID),
-    .stream_in_TREADY(grp_AXIvideo2Mat_fu_625_stream_in_TREADY),
+    .stream_in_TVALID(grp_AXIvideo2Mat_fu_495_stream_in_TVALID),
+    .stream_in_TREADY(grp_AXIvideo2Mat_fu_495_stream_in_TREADY),
     .stream_in_TKEEP(stream_in_V_keep_V_0_data_out),
     .stream_in_TSTRB(stream_in_V_strb_V_0_data_out),
     .stream_in_TUSER(stream_in_V_user_V_0_data_out),
     .stream_in_TLAST(stream_in_V_last_V_0_data_out),
     .stream_in_TID(stream_in_V_id_V_0_data_out),
     .stream_in_TDEST(stream_in_V_dest_V_0_data_out),
-    .img_data_stream_0_V_din(grp_AXIvideo2Mat_fu_625_img_data_stream_0_V_din),
+    .img_data_stream_0_V_din(grp_AXIvideo2Mat_fu_495_img_data_stream_0_V_din),
     .img_data_stream_0_V_full_n(img0_data_stream_0_s_full_n),
-    .img_data_stream_0_V_write(grp_AXIvideo2Mat_fu_625_img_data_stream_0_V_write),
-    .img_data_stream_1_V_din(grp_AXIvideo2Mat_fu_625_img_data_stream_1_V_din),
+    .img_data_stream_0_V_write(grp_AXIvideo2Mat_fu_495_img_data_stream_0_V_write),
+    .img_data_stream_1_V_din(grp_AXIvideo2Mat_fu_495_img_data_stream_1_V_din),
     .img_data_stream_1_V_full_n(img0_data_stream_1_s_full_n),
-    .img_data_stream_1_V_write(grp_AXIvideo2Mat_fu_625_img_data_stream_1_V_write),
-    .img_data_stream_2_V_din(grp_AXIvideo2Mat_fu_625_img_data_stream_2_V_din),
+    .img_data_stream_1_V_write(grp_AXIvideo2Mat_fu_495_img_data_stream_1_V_write),
+    .img_data_stream_2_V_din(grp_AXIvideo2Mat_fu_495_img_data_stream_2_V_din),
     .img_data_stream_2_V_full_n(img0_data_stream_2_s_full_n),
-    .img_data_stream_2_V_write(grp_AXIvideo2Mat_fu_625_img_data_stream_2_V_write)
+    .img_data_stream_2_V_write(grp_AXIvideo2Mat_fu_495_img_data_stream_2_V_write)
 );
 
-CvtColor grp_CvtColor_fu_646(
+CvtColor grp_CvtColor_fu_516(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_CvtColor_fu_646_ap_start),
-    .ap_done(grp_CvtColor_fu_646_ap_done),
-    .ap_idle(grp_CvtColor_fu_646_ap_idle),
-    .ap_ready(grp_CvtColor_fu_646_ap_ready),
-    .p_src_data_stream_0_V_dout(img1_data_stream_0_s_dout),
-    .p_src_data_stream_0_V_empty_n(img1_data_stream_0_s_empty_n),
-    .p_src_data_stream_0_V_read(grp_CvtColor_fu_646_p_src_data_stream_0_V_read),
-    .p_src_data_stream_1_V_dout(img1_data_stream_1_s_dout),
-    .p_src_data_stream_1_V_empty_n(img1_data_stream_1_s_empty_n),
-    .p_src_data_stream_1_V_read(grp_CvtColor_fu_646_p_src_data_stream_1_V_read),
-    .p_src_data_stream_2_V_dout(img1_data_stream_2_s_dout),
-    .p_src_data_stream_2_V_empty_n(img1_data_stream_2_s_empty_n),
-    .p_src_data_stream_2_V_read(grp_CvtColor_fu_646_p_src_data_stream_2_V_read),
-    .p_dst_data_stream_0_V_din(grp_CvtColor_fu_646_p_dst_data_stream_0_V_din),
-    .p_dst_data_stream_0_V_full_n(img2_data_stream_0_s_full_n),
-    .p_dst_data_stream_0_V_write(grp_CvtColor_fu_646_p_dst_data_stream_0_V_write),
-    .p_dst_data_stream_1_V_din(grp_CvtColor_fu_646_p_dst_data_stream_1_V_din),
-    .p_dst_data_stream_1_V_full_n(img2_data_stream_1_s_full_n),
-    .p_dst_data_stream_1_V_write(grp_CvtColor_fu_646_p_dst_data_stream_1_V_write),
-    .p_dst_data_stream_2_V_din(grp_CvtColor_fu_646_p_dst_data_stream_2_V_din),
-    .p_dst_data_stream_2_V_full_n(img2_data_stream_2_s_full_n),
-    .p_dst_data_stream_2_V_write(grp_CvtColor_fu_646_p_dst_data_stream_2_V_write)
+    .ap_start(grp_CvtColor_fu_516_ap_start),
+    .ap_done(grp_CvtColor_fu_516_ap_done),
+    .ap_idle(grp_CvtColor_fu_516_ap_idle),
+    .ap_ready(grp_CvtColor_fu_516_ap_ready),
+    .p_src_data_stream_0_V_dout(img0_data_stream_0_s_dout),
+    .p_src_data_stream_0_V_empty_n(img0_data_stream_0_s_empty_n),
+    .p_src_data_stream_0_V_read(grp_CvtColor_fu_516_p_src_data_stream_0_V_read),
+    .p_src_data_stream_1_V_dout(img0_data_stream_1_s_dout),
+    .p_src_data_stream_1_V_empty_n(img0_data_stream_1_s_empty_n),
+    .p_src_data_stream_1_V_read(grp_CvtColor_fu_516_p_src_data_stream_1_V_read),
+    .p_src_data_stream_2_V_dout(img0_data_stream_2_s_dout),
+    .p_src_data_stream_2_V_empty_n(img0_data_stream_2_s_empty_n),
+    .p_src_data_stream_2_V_read(grp_CvtColor_fu_516_p_src_data_stream_2_V_read),
+    .p_dst_data_stream_0_V_din(grp_CvtColor_fu_516_p_dst_data_stream_0_V_din),
+    .p_dst_data_stream_0_V_full_n(img1_data_stream_0_s_full_n),
+    .p_dst_data_stream_0_V_write(grp_CvtColor_fu_516_p_dst_data_stream_0_V_write),
+    .p_dst_data_stream_1_V_din(grp_CvtColor_fu_516_p_dst_data_stream_1_V_din),
+    .p_dst_data_stream_1_V_full_n(img1_data_stream_1_s_full_n),
+    .p_dst_data_stream_1_V_write(grp_CvtColor_fu_516_p_dst_data_stream_1_V_write),
+    .p_dst_data_stream_2_V_din(grp_CvtColor_fu_516_p_dst_data_stream_2_V_din),
+    .p_dst_data_stream_2_V_full_n(img1_data_stream_2_s_full_n),
+    .p_dst_data_stream_2_V_write(grp_CvtColor_fu_516_p_dst_data_stream_2_V_write)
 );
 
-Mat2AXIvideo grp_Mat2AXIvideo_fu_656(
+Mat2AXIvideo grp_Mat2AXIvideo_fu_526(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_Mat2AXIvideo_fu_656_ap_start),
-    .ap_done(grp_Mat2AXIvideo_fu_656_ap_done),
-    .ap_idle(grp_Mat2AXIvideo_fu_656_ap_idle),
-    .ap_ready(grp_Mat2AXIvideo_fu_656_ap_ready),
-    .img_data_stream_0_V_dout(img4_data_stream_0_s_dout),
-    .img_data_stream_0_V_empty_n(img4_data_stream_0_s_empty_n),
-    .img_data_stream_0_V_read(grp_Mat2AXIvideo_fu_656_img_data_stream_0_V_read),
-    .img_data_stream_1_V_dout(img4_data_stream_1_s_dout),
-    .img_data_stream_1_V_empty_n(img4_data_stream_1_s_empty_n),
-    .img_data_stream_1_V_read(grp_Mat2AXIvideo_fu_656_img_data_stream_1_V_read),
-    .img_data_stream_2_V_dout(img4_data_stream_2_s_dout),
-    .img_data_stream_2_V_empty_n(img4_data_stream_2_s_empty_n),
-    .img_data_stream_2_V_read(grp_Mat2AXIvideo_fu_656_img_data_stream_2_V_read),
-    .stream_passThrough_TDATA(grp_Mat2AXIvideo_fu_656_stream_passThrough_TDATA),
-    .stream_passThrough_TVALID(grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID),
-    .stream_passThrough_TREADY(grp_Mat2AXIvideo_fu_656_stream_passThrough_TREADY),
-    .stream_passThrough_TKEEP(grp_Mat2AXIvideo_fu_656_stream_passThrough_TKEEP),
-    .stream_passThrough_TSTRB(grp_Mat2AXIvideo_fu_656_stream_passThrough_TSTRB),
-    .stream_passThrough_TUSER(grp_Mat2AXIvideo_fu_656_stream_passThrough_TUSER),
-    .stream_passThrough_TLAST(grp_Mat2AXIvideo_fu_656_stream_passThrough_TLAST),
-    .stream_passThrough_TID(grp_Mat2AXIvideo_fu_656_stream_passThrough_TID),
-    .stream_passThrough_TDEST(grp_Mat2AXIvideo_fu_656_stream_passThrough_TDEST)
-);
-
-Mat2AXIvideo grp_Mat2AXIvideo_fu_677(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_Mat2AXIvideo_fu_677_ap_start),
-    .ap_done(grp_Mat2AXIvideo_fu_677_ap_done),
-    .ap_idle(grp_Mat2AXIvideo_fu_677_ap_idle),
-    .ap_ready(grp_Mat2AXIvideo_fu_677_ap_ready),
-    .img_data_stream_0_V_dout(imgDuplicate_data_st_dout),
-    .img_data_stream_0_V_empty_n(imgDuplicate_data_st_empty_n),
-    .img_data_stream_0_V_read(grp_Mat2AXIvideo_fu_677_img_data_stream_0_V_read),
-    .img_data_stream_1_V_dout(imgDuplicate_data_st_1_dout),
-    .img_data_stream_1_V_empty_n(imgDuplicate_data_st_1_empty_n),
-    .img_data_stream_1_V_read(grp_Mat2AXIvideo_fu_677_img_data_stream_1_V_read),
-    .img_data_stream_2_V_dout(imgDuplicate_data_st_2_dout),
-    .img_data_stream_2_V_empty_n(imgDuplicate_data_st_2_empty_n),
-    .img_data_stream_2_V_read(grp_Mat2AXIvideo_fu_677_img_data_stream_2_V_read),
-    .stream_passThrough_TDATA(grp_Mat2AXIvideo_fu_677_stream_passThrough_TDATA),
-    .stream_passThrough_TVALID(grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID),
-    .stream_passThrough_TREADY(grp_Mat2AXIvideo_fu_677_stream_passThrough_TREADY),
-    .stream_passThrough_TKEEP(grp_Mat2AXIvideo_fu_677_stream_passThrough_TKEEP),
-    .stream_passThrough_TSTRB(grp_Mat2AXIvideo_fu_677_stream_passThrough_TSTRB),
-    .stream_passThrough_TUSER(grp_Mat2AXIvideo_fu_677_stream_passThrough_TUSER),
-    .stream_passThrough_TLAST(grp_Mat2AXIvideo_fu_677_stream_passThrough_TLAST),
-    .stream_passThrough_TID(grp_Mat2AXIvideo_fu_677_stream_passThrough_TID),
-    .stream_passThrough_TDEST(grp_Mat2AXIvideo_fu_677_stream_passThrough_TDEST)
+    .ap_start(grp_Mat2AXIvideo_fu_526_ap_start),
+    .ap_done(grp_Mat2AXIvideo_fu_526_ap_done),
+    .ap_idle(grp_Mat2AXIvideo_fu_526_ap_idle),
+    .ap_ready(grp_Mat2AXIvideo_fu_526_ap_ready),
+    .img_data_stream_0_V_dout(img3_data_stream_0_s_dout),
+    .img_data_stream_0_V_empty_n(img3_data_stream_0_s_empty_n),
+    .img_data_stream_0_V_read(grp_Mat2AXIvideo_fu_526_img_data_stream_0_V_read),
+    .img_data_stream_1_V_dout(img3_data_stream_1_s_dout),
+    .img_data_stream_1_V_empty_n(img3_data_stream_1_s_empty_n),
+    .img_data_stream_1_V_read(grp_Mat2AXIvideo_fu_526_img_data_stream_1_V_read),
+    .img_data_stream_2_V_dout(img3_data_stream_2_s_dout),
+    .img_data_stream_2_V_empty_n(img3_data_stream_2_s_empty_n),
+    .img_data_stream_2_V_read(grp_Mat2AXIvideo_fu_526_img_data_stream_2_V_read),
+    .stream_process_TDATA(grp_Mat2AXIvideo_fu_526_stream_process_TDATA),
+    .stream_process_TVALID(grp_Mat2AXIvideo_fu_526_stream_process_TVALID),
+    .stream_process_TREADY(grp_Mat2AXIvideo_fu_526_stream_process_TREADY),
+    .stream_process_TKEEP(grp_Mat2AXIvideo_fu_526_stream_process_TKEEP),
+    .stream_process_TSTRB(grp_Mat2AXIvideo_fu_526_stream_process_TSTRB),
+    .stream_process_TUSER(grp_Mat2AXIvideo_fu_526_stream_process_TUSER),
+    .stream_process_TLAST(grp_Mat2AXIvideo_fu_526_stream_process_TLAST),
+    .stream_process_TID(grp_Mat2AXIvideo_fu_526_stream_process_TID),
+    .stream_process_TDEST(grp_Mat2AXIvideo_fu_526_stream_process_TDEST)
 );
 
 fifo_w8_d1_A img0_data_stream_0_s_fifo_U(
@@ -832,7 +1013,7 @@ fifo_w8_d1_A img0_data_stream_0_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_AXIvideo2Mat_fu_625_img_data_stream_0_V_din),
+    .if_din(grp_AXIvideo2Mat_fu_495_img_data_stream_0_V_din),
     .if_full_n(img0_data_stream_0_s_full_n),
     .if_write(img0_data_stream_0_s_write),
     .if_dout(img0_data_stream_0_s_dout),
@@ -845,7 +1026,7 @@ fifo_w8_d1_A img0_data_stream_1_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_AXIvideo2Mat_fu_625_img_data_stream_1_V_din),
+    .if_din(grp_AXIvideo2Mat_fu_495_img_data_stream_1_V_din),
     .if_full_n(img0_data_stream_1_s_full_n),
     .if_write(img0_data_stream_1_s_write),
     .if_dout(img0_data_stream_1_s_dout),
@@ -858,7 +1039,7 @@ fifo_w8_d1_A img0_data_stream_2_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_AXIvideo2Mat_fu_625_img_data_stream_2_V_din),
+    .if_din(grp_AXIvideo2Mat_fu_495_img_data_stream_2_V_din),
     .if_full_n(img0_data_stream_2_s_full_n),
     .if_write(img0_data_stream_2_s_write),
     .if_dout(img0_data_stream_2_s_dout),
@@ -871,7 +1052,7 @@ fifo_w8_d1_A img1_data_stream_0_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(img0_data_stream_0_s_dout),
+    .if_din(grp_CvtColor_fu_516_p_dst_data_stream_0_V_din),
     .if_full_n(img1_data_stream_0_s_full_n),
     .if_write(img1_data_stream_0_s_write),
     .if_dout(img1_data_stream_0_s_dout),
@@ -884,7 +1065,7 @@ fifo_w8_d1_A img1_data_stream_1_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(img0_data_stream_1_s_dout),
+    .if_din(grp_CvtColor_fu_516_p_dst_data_stream_1_V_din),
     .if_full_n(img1_data_stream_1_s_full_n),
     .if_write(img1_data_stream_1_s_write),
     .if_dout(img1_data_stream_1_s_dout),
@@ -897,7 +1078,7 @@ fifo_w8_d1_A img1_data_stream_2_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(img0_data_stream_2_s_dout),
+    .if_din(grp_CvtColor_fu_516_p_dst_data_stream_2_V_din),
     .if_full_n(img1_data_stream_2_s_full_n),
     .if_write(img1_data_stream_2_s_write),
     .if_dout(img1_data_stream_2_s_dout),
@@ -910,7 +1091,7 @@ fifo_w8_d1_A img2_data_stream_0_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_CvtColor_fu_646_p_dst_data_stream_0_V_din),
+    .if_din(grp_Filter2D_fu_485_p_dst_data_stream_0_V_din),
     .if_full_n(img2_data_stream_0_s_full_n),
     .if_write(img2_data_stream_0_s_write),
     .if_dout(img2_data_stream_0_s_dout),
@@ -923,7 +1104,7 @@ fifo_w8_d1_A img2_data_stream_1_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_CvtColor_fu_646_p_dst_data_stream_1_V_din),
+    .if_din(grp_Filter2D_fu_485_p_dst_data_stream_1_V_din),
     .if_full_n(img2_data_stream_1_s_full_n),
     .if_write(img2_data_stream_1_s_write),
     .if_dout(img2_data_stream_1_s_dout),
@@ -936,7 +1117,7 @@ fifo_w8_d1_A img2_data_stream_2_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_CvtColor_fu_646_p_dst_data_stream_2_V_din),
+    .if_din(grp_Filter2D_fu_485_p_dst_data_stream_2_V_din),
     .if_full_n(img2_data_stream_2_s_full_n),
     .if_write(img2_data_stream_2_s_write),
     .if_dout(img2_data_stream_2_s_dout),
@@ -949,7 +1130,7 @@ fifo_w8_d1_A img3_data_stream_0_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_Filter2D_fu_615_p_dst_data_stream_0_V_din),
+    .if_din(img2_data_stream_0_s_dout),
     .if_full_n(img3_data_stream_0_s_full_n),
     .if_write(img3_data_stream_0_s_write),
     .if_dout(img3_data_stream_0_s_dout),
@@ -962,7 +1143,7 @@ fifo_w8_d1_A img3_data_stream_1_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_Filter2D_fu_615_p_dst_data_stream_1_V_din),
+    .if_din(img2_data_stream_0_s_dout),
     .if_full_n(img3_data_stream_1_s_full_n),
     .if_write(img3_data_stream_1_s_write),
     .if_dout(img3_data_stream_1_s_dout),
@@ -975,90 +1156,12 @@ fifo_w8_d1_A img3_data_stream_2_s_fifo_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(grp_Filter2D_fu_615_p_dst_data_stream_2_V_din),
+    .if_din(img2_data_stream_0_s_dout),
     .if_full_n(img3_data_stream_2_s_full_n),
     .if_write(img3_data_stream_2_s_write),
     .if_dout(img3_data_stream_2_s_dout),
     .if_empty_n(img3_data_stream_2_s_empty_n),
     .if_read(img3_data_stream_2_s_read)
-);
-
-fifo_w8_d1_A img4_data_stream_0_s_fifo_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(img3_data_stream_0_s_dout),
-    .if_full_n(img4_data_stream_0_s_full_n),
-    .if_write(img4_data_stream_0_s_write),
-    .if_dout(img4_data_stream_0_s_dout),
-    .if_empty_n(img4_data_stream_0_s_empty_n),
-    .if_read(img4_data_stream_0_s_read)
-);
-
-fifo_w8_d1_A img4_data_stream_1_s_fifo_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(img3_data_stream_0_s_dout),
-    .if_full_n(img4_data_stream_1_s_full_n),
-    .if_write(img4_data_stream_1_s_write),
-    .if_dout(img4_data_stream_1_s_dout),
-    .if_empty_n(img4_data_stream_1_s_empty_n),
-    .if_read(img4_data_stream_1_s_read)
-);
-
-fifo_w8_d1_A img4_data_stream_2_s_fifo_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(img3_data_stream_0_s_dout),
-    .if_full_n(img4_data_stream_2_s_full_n),
-    .if_write(img4_data_stream_2_s_write),
-    .if_dout(img4_data_stream_2_s_dout),
-    .if_empty_n(img4_data_stream_2_s_empty_n),
-    .if_read(img4_data_stream_2_s_read)
-);
-
-fifo_w8_d1_A imgDuplicate_data_st_fifo_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(img0_data_stream_0_s_dout),
-    .if_full_n(imgDuplicate_data_st_full_n),
-    .if_write(imgDuplicate_data_st_write),
-    .if_dout(imgDuplicate_data_st_dout),
-    .if_empty_n(imgDuplicate_data_st_empty_n),
-    .if_read(imgDuplicate_data_st_read)
-);
-
-fifo_w8_d1_A imgDuplicate_data_st_1_fifo_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(img0_data_stream_1_s_dout),
-    .if_full_n(imgDuplicate_data_st_1_full_n),
-    .if_write(imgDuplicate_data_st_1_write),
-    .if_dout(imgDuplicate_data_st_1_dout),
-    .if_empty_n(imgDuplicate_data_st_1_empty_n),
-    .if_read(imgDuplicate_data_st_1_read)
-);
-
-fifo_w8_d1_A imgDuplicate_data_st_2_fifo_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(img0_data_stream_2_s_dout),
-    .if_full_n(imgDuplicate_data_st_2_full_n),
-    .if_write(imgDuplicate_data_st_2_write),
-    .if_dout(imgDuplicate_data_st_2_dout),
-    .if_empty_n(imgDuplicate_data_st_2_empty_n),
-    .if_read(imgDuplicate_data_st_2_read)
 );
 
 always @ (posedge ap_clk) begin
@@ -1073,9 +1176,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp0_iter0 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_condition_pp0_exit_iter0_state5) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+        if (((1'b1 == ap_condition_pp0_exit_iter0_state10) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
             ap_enable_reg_pp0_iter0 <= 1'b0;
-        end else if (((exitcond5_i_fu_698_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        end else if (((1'b1 == ap_CS_fsm_state9) & (exitcond1_fu_570_p2 == 1'd0))) begin
             ap_enable_reg_pp0_iter0 <= 1'b1;
         end
     end
@@ -1085,11 +1188,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_condition_pp0_exit_iter0_state5) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
-            ap_enable_reg_pp0_iter1 <= (1'b1 ^ ap_condition_pp0_exit_iter0_state5);
+        if (((1'b1 == ap_condition_pp0_exit_iter0_state10) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+            ap_enable_reg_pp0_iter1 <= (1'b1 ^ ap_condition_pp0_exit_iter0_state10);
         end else if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
             ap_enable_reg_pp0_iter1 <= ap_enable_reg_pp0_iter0;
-        end else if (((exitcond5_i_fu_698_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        end else if (((1'b1 == ap_CS_fsm_state9) & (exitcond1_fu_570_p2 == 1'd0))) begin
             ap_enable_reg_pp0_iter1 <= 1'b0;
         end
     end
@@ -1097,86 +1200,86 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_enable_reg_pp1_iter0 <= 1'b0;
+        ap_reg_ioackin_MAXI_ARREADY <= 1'b0;
     end else begin
-        if (((1'b1 == ap_condition_pp1_exit_iter0_state12) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_subdone))) begin
-            ap_enable_reg_pp1_iter0 <= 1'b0;
-        end else if (((exitcond1_fu_722_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state11))) begin
-            ap_enable_reg_pp1_iter0 <= 1'b1;
+        if ((1'b1 == ap_CS_fsm_state13)) begin
+            if ((ap_sig_ioackin_MAXI_ARREADY == 1'b1)) begin
+                ap_reg_ioackin_MAXI_ARREADY <= 1'b0;
+            end else if ((1'b1 == MAXI_ARREADY)) begin
+                ap_reg_ioackin_MAXI_ARREADY <= 1'b1;
+            end
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_enable_reg_pp1_iter1 <= 1'b0;
+        ap_reg_ioackin_MAXI_AWREADY <= 1'b0;
     end else begin
-        if (((1'b1 == ap_condition_pp1_exit_iter0_state12) & (1'b0 == ap_block_pp1_stage0_subdone))) begin
-            ap_enable_reg_pp1_iter1 <= (1'b1 ^ ap_condition_pp1_exit_iter0_state12);
-        end else if ((1'b0 == ap_block_pp1_stage0_subdone)) begin
-            ap_enable_reg_pp1_iter1 <= ap_enable_reg_pp1_iter0;
-        end else if (((exitcond1_fu_722_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state11))) begin
-            ap_enable_reg_pp1_iter1 <= 1'b0;
+        if ((((1'b1 == ap_CS_fsm_state21) & (ap_sig_ioackin_MAXI_AWREADY == 1'b1)) | ((1'b1 == ap_CS_fsm_state2) & (ap_sig_ioackin_MAXI_AWREADY == 1'b1)))) begin
+            ap_reg_ioackin_MAXI_AWREADY <= 1'b0;
+        end else if ((((1'b1 == ap_CS_fsm_state21) & (1'b1 == MAXI_AWREADY)) | ((1'b1 == ap_CS_fsm_state2) & (1'b1 == MAXI_AWREADY)))) begin
+            ap_reg_ioackin_MAXI_AWREADY <= 1'b1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_AXIvideo2Mat_fu_625_ap_start_reg <= 1'b0;
+        ap_reg_ioackin_MAXI_WREADY <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state2)) begin
-            grp_AXIvideo2Mat_fu_625_ap_start_reg <= 1'b1;
-        end else if ((grp_AXIvideo2Mat_fu_625_ap_ready == 1'b1)) begin
-            grp_AXIvideo2Mat_fu_625_ap_start_reg <= 1'b0;
+        if ((((1'b1 == ap_CS_fsm_state22) & (ap_sig_ioackin_MAXI_WREADY == 1'b1)) | ((1'b1 == ap_CS_fsm_state3) & (ap_sig_ioackin_MAXI_WREADY == 1'b1)))) begin
+            ap_reg_ioackin_MAXI_WREADY <= 1'b0;
+        end else if ((((1'b1 == ap_CS_fsm_state22) & (1'b1 == MAXI_WREADY)) | ((1'b1 == ap_CS_fsm_state3) & (1'b1 == MAXI_WREADY)))) begin
+            ap_reg_ioackin_MAXI_WREADY <= 1'b1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_CvtColor_fu_646_ap_start_reg <= 1'b0;
+        grp_AXIvideo2Mat_fu_495_ap_start_reg <= 1'b0;
     end else begin
-        if (((exitcond5_i_fu_698_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state4))) begin
-            grp_CvtColor_fu_646_ap_start_reg <= 1'b1;
-        end else if ((grp_CvtColor_fu_646_ap_ready == 1'b1)) begin
-            grp_CvtColor_fu_646_ap_start_reg <= 1'b0;
+        if (((1'b1 == ap_CS_fsm_state3) & (ap_sig_ioackin_MAXI_WREADY == 1'b1))) begin
+            grp_AXIvideo2Mat_fu_495_ap_start_reg <= 1'b1;
+        end else if ((grp_AXIvideo2Mat_fu_495_ap_ready == 1'b1)) begin
+            grp_AXIvideo2Mat_fu_495_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_Filter2D_fu_615_ap_start_reg <= 1'b0;
+        grp_CvtColor_fu_516_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state9)) begin
-            grp_Filter2D_fu_615_ap_start_reg <= 1'b1;
-        end else if ((grp_Filter2D_fu_615_ap_ready == 1'b1)) begin
-            grp_Filter2D_fu_615_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state5)) begin
+            grp_CvtColor_fu_516_ap_start_reg <= 1'b1;
+        end else if ((grp_CvtColor_fu_516_ap_ready == 1'b1)) begin
+            grp_CvtColor_fu_516_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_Mat2AXIvideo_fu_656_ap_start_reg <= 1'b0;
+        grp_Filter2D_fu_485_ap_start_reg <= 1'b0;
     end else begin
-        if (((exitcond1_fu_722_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state11))) begin
-            grp_Mat2AXIvideo_fu_656_ap_start_reg <= 1'b1;
-        end else if ((grp_Mat2AXIvideo_fu_656_ap_ready == 1'b1)) begin
-            grp_Mat2AXIvideo_fu_656_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state7)) begin
+            grp_Filter2D_fu_485_ap_start_reg <= 1'b1;
+        end else if ((grp_Filter2D_fu_485_ap_ready == 1'b1)) begin
+            grp_Filter2D_fu_485_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_Mat2AXIvideo_fu_677_ap_start_reg <= 1'b0;
+        grp_Mat2AXIvideo_fu_526_ap_start_reg <= 1'b0;
     end else begin
-        if (((exitcond1_fu_722_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state11))) begin
-            grp_Mat2AXIvideo_fu_677_ap_start_reg <= 1'b1;
-        end else if ((grp_Mat2AXIvideo_fu_677_ap_ready == 1'b1)) begin
-            grp_Mat2AXIvideo_fu_677_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state25)) begin
+            grp_Mat2AXIvideo_fu_526_ap_start_reg <= 1'b1;
+        end else if ((grp_Mat2AXIvideo_fu_526_ap_ready == 1'b1)) begin
+            grp_Mat2AXIvideo_fu_526_ap_start_reg <= 1'b0;
         end
     end
 end
@@ -1205,11 +1308,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_in_V_data_V_0_state <= 2'd0;
     end else begin
-        if ((((stream_in_V_data_V_0_state == 2'd2) & (stream_in_V_data_V_0_vld_in == 1'b0)) | ((stream_in_V_data_V_0_state == 2'd3) & (stream_in_V_data_V_0_vld_in == 1'b0) & (stream_in_V_data_V_0_ack_out == 1'b1)))) begin
+        if ((((stream_in_V_data_V_0_vld_in == 1'b0) & (stream_in_V_data_V_0_state == 2'd2)) | ((stream_in_V_data_V_0_vld_in == 1'b0) & (stream_in_V_data_V_0_ack_out == 1'b1) & (stream_in_V_data_V_0_state == 2'd3)))) begin
             stream_in_V_data_V_0_state <= 2'd2;
-        end else if ((((stream_in_V_data_V_0_state == 2'd1) & (stream_in_V_data_V_0_ack_out == 1'b0)) | ((stream_in_V_data_V_0_state == 2'd3) & (stream_in_V_data_V_0_ack_out == 1'b0) & (stream_in_V_data_V_0_vld_in == 1'b1)))) begin
+        end else if ((((stream_in_V_data_V_0_ack_out == 1'b0) & (stream_in_V_data_V_0_state == 2'd1)) | ((stream_in_V_data_V_0_ack_out == 1'b0) & (stream_in_V_data_V_0_vld_in == 1'b1) & (stream_in_V_data_V_0_state == 2'd3)))) begin
             stream_in_V_data_V_0_state <= 2'd1;
-        end else if (((~((stream_in_V_data_V_0_vld_in == 1'b0) & (stream_in_V_data_V_0_ack_out == 1'b1)) & ~((stream_in_V_data_V_0_ack_out == 1'b0) & (stream_in_V_data_V_0_vld_in == 1'b1)) & (stream_in_V_data_V_0_state == 2'd3)) | ((stream_in_V_data_V_0_state == 2'd1) & (stream_in_V_data_V_0_ack_out == 1'b1)) | ((stream_in_V_data_V_0_state == 2'd2) & (stream_in_V_data_V_0_vld_in == 1'b1)))) begin
+        end else if (((~((stream_in_V_data_V_0_vld_in == 1'b0) & (stream_in_V_data_V_0_ack_out == 1'b1)) & ~((stream_in_V_data_V_0_ack_out == 1'b0) & (stream_in_V_data_V_0_vld_in == 1'b1)) & (stream_in_V_data_V_0_state == 2'd3)) | ((stream_in_V_data_V_0_ack_out == 1'b1) & (stream_in_V_data_V_0_state == 2'd1)) | ((stream_in_V_data_V_0_vld_in == 1'b1) & (stream_in_V_data_V_0_state == 2'd2)))) begin
             stream_in_V_data_V_0_state <= 2'd3;
         end else begin
             stream_in_V_data_V_0_state <= 2'd2;
@@ -1241,11 +1344,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_in_V_dest_V_0_state <= 2'd0;
     end else begin
-        if ((((stream_in_V_dest_V_0_state == 2'd2) & (stream_in_V_dest_V_0_vld_in == 1'b0)) | ((stream_in_V_dest_V_0_state == 2'd3) & (stream_in_V_dest_V_0_vld_in == 1'b0) & (stream_in_V_dest_V_0_ack_out == 1'b1)))) begin
+        if ((((stream_in_V_dest_V_0_vld_in == 1'b0) & (stream_in_V_dest_V_0_state == 2'd2)) | ((stream_in_V_dest_V_0_vld_in == 1'b0) & (stream_in_V_dest_V_0_ack_out == 1'b1) & (stream_in_V_dest_V_0_state == 2'd3)))) begin
             stream_in_V_dest_V_0_state <= 2'd2;
-        end else if ((((stream_in_V_dest_V_0_state == 2'd1) & (stream_in_V_dest_V_0_ack_out == 1'b0)) | ((stream_in_V_dest_V_0_state == 2'd3) & (stream_in_V_dest_V_0_ack_out == 1'b0) & (stream_in_V_dest_V_0_vld_in == 1'b1)))) begin
+        end else if ((((stream_in_V_dest_V_0_ack_out == 1'b0) & (stream_in_V_dest_V_0_state == 2'd1)) | ((stream_in_V_dest_V_0_ack_out == 1'b0) & (stream_in_V_dest_V_0_vld_in == 1'b1) & (stream_in_V_dest_V_0_state == 2'd3)))) begin
             stream_in_V_dest_V_0_state <= 2'd1;
-        end else if (((~((stream_in_V_dest_V_0_vld_in == 1'b0) & (stream_in_V_dest_V_0_ack_out == 1'b1)) & ~((stream_in_V_dest_V_0_ack_out == 1'b0) & (stream_in_V_dest_V_0_vld_in == 1'b1)) & (stream_in_V_dest_V_0_state == 2'd3)) | ((stream_in_V_dest_V_0_state == 2'd1) & (stream_in_V_dest_V_0_ack_out == 1'b1)) | ((stream_in_V_dest_V_0_state == 2'd2) & (stream_in_V_dest_V_0_vld_in == 1'b1)))) begin
+        end else if (((~((stream_in_V_dest_V_0_vld_in == 1'b0) & (stream_in_V_dest_V_0_ack_out == 1'b1)) & ~((stream_in_V_dest_V_0_ack_out == 1'b0) & (stream_in_V_dest_V_0_vld_in == 1'b1)) & (stream_in_V_dest_V_0_state == 2'd3)) | ((stream_in_V_dest_V_0_ack_out == 1'b1) & (stream_in_V_dest_V_0_state == 2'd1)) | ((stream_in_V_dest_V_0_vld_in == 1'b1) & (stream_in_V_dest_V_0_state == 2'd2)))) begin
             stream_in_V_dest_V_0_state <= 2'd3;
         end else begin
             stream_in_V_dest_V_0_state <= 2'd2;
@@ -1277,11 +1380,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_in_V_id_V_0_state <= 2'd0;
     end else begin
-        if ((((stream_in_V_id_V_0_state == 2'd2) & (stream_in_V_id_V_0_vld_in == 1'b0)) | ((stream_in_V_id_V_0_state == 2'd3) & (stream_in_V_id_V_0_vld_in == 1'b0) & (stream_in_V_id_V_0_ack_out == 1'b1)))) begin
+        if ((((stream_in_V_id_V_0_vld_in == 1'b0) & (stream_in_V_id_V_0_state == 2'd2)) | ((stream_in_V_id_V_0_vld_in == 1'b0) & (stream_in_V_id_V_0_ack_out == 1'b1) & (stream_in_V_id_V_0_state == 2'd3)))) begin
             stream_in_V_id_V_0_state <= 2'd2;
-        end else if ((((stream_in_V_id_V_0_state == 2'd1) & (stream_in_V_id_V_0_ack_out == 1'b0)) | ((stream_in_V_id_V_0_state == 2'd3) & (stream_in_V_id_V_0_ack_out == 1'b0) & (stream_in_V_id_V_0_vld_in == 1'b1)))) begin
+        end else if ((((stream_in_V_id_V_0_ack_out == 1'b0) & (stream_in_V_id_V_0_state == 2'd1)) | ((stream_in_V_id_V_0_ack_out == 1'b0) & (stream_in_V_id_V_0_vld_in == 1'b1) & (stream_in_V_id_V_0_state == 2'd3)))) begin
             stream_in_V_id_V_0_state <= 2'd1;
-        end else if (((~((stream_in_V_id_V_0_vld_in == 1'b0) & (stream_in_V_id_V_0_ack_out == 1'b1)) & ~((stream_in_V_id_V_0_ack_out == 1'b0) & (stream_in_V_id_V_0_vld_in == 1'b1)) & (stream_in_V_id_V_0_state == 2'd3)) | ((stream_in_V_id_V_0_state == 2'd1) & (stream_in_V_id_V_0_ack_out == 1'b1)) | ((stream_in_V_id_V_0_state == 2'd2) & (stream_in_V_id_V_0_vld_in == 1'b1)))) begin
+        end else if (((~((stream_in_V_id_V_0_vld_in == 1'b0) & (stream_in_V_id_V_0_ack_out == 1'b1)) & ~((stream_in_V_id_V_0_ack_out == 1'b0) & (stream_in_V_id_V_0_vld_in == 1'b1)) & (stream_in_V_id_V_0_state == 2'd3)) | ((stream_in_V_id_V_0_ack_out == 1'b1) & (stream_in_V_id_V_0_state == 2'd1)) | ((stream_in_V_id_V_0_vld_in == 1'b1) & (stream_in_V_id_V_0_state == 2'd2)))) begin
             stream_in_V_id_V_0_state <= 2'd3;
         end else begin
             stream_in_V_id_V_0_state <= 2'd2;
@@ -1313,11 +1416,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_in_V_keep_V_0_state <= 2'd0;
     end else begin
-        if ((((stream_in_V_keep_V_0_state == 2'd2) & (stream_in_V_keep_V_0_vld_in == 1'b0)) | ((stream_in_V_keep_V_0_state == 2'd3) & (stream_in_V_keep_V_0_vld_in == 1'b0) & (stream_in_V_keep_V_0_ack_out == 1'b1)))) begin
+        if ((((stream_in_V_keep_V_0_vld_in == 1'b0) & (stream_in_V_keep_V_0_state == 2'd2)) | ((stream_in_V_keep_V_0_vld_in == 1'b0) & (stream_in_V_keep_V_0_ack_out == 1'b1) & (stream_in_V_keep_V_0_state == 2'd3)))) begin
             stream_in_V_keep_V_0_state <= 2'd2;
-        end else if ((((stream_in_V_keep_V_0_state == 2'd1) & (stream_in_V_keep_V_0_ack_out == 1'b0)) | ((stream_in_V_keep_V_0_state == 2'd3) & (stream_in_V_keep_V_0_ack_out == 1'b0) & (stream_in_V_keep_V_0_vld_in == 1'b1)))) begin
+        end else if ((((stream_in_V_keep_V_0_ack_out == 1'b0) & (stream_in_V_keep_V_0_state == 2'd1)) | ((stream_in_V_keep_V_0_ack_out == 1'b0) & (stream_in_V_keep_V_0_vld_in == 1'b1) & (stream_in_V_keep_V_0_state == 2'd3)))) begin
             stream_in_V_keep_V_0_state <= 2'd1;
-        end else if (((~((stream_in_V_keep_V_0_vld_in == 1'b0) & (stream_in_V_keep_V_0_ack_out == 1'b1)) & ~((stream_in_V_keep_V_0_ack_out == 1'b0) & (stream_in_V_keep_V_0_vld_in == 1'b1)) & (stream_in_V_keep_V_0_state == 2'd3)) | ((stream_in_V_keep_V_0_state == 2'd1) & (stream_in_V_keep_V_0_ack_out == 1'b1)) | ((stream_in_V_keep_V_0_state == 2'd2) & (stream_in_V_keep_V_0_vld_in == 1'b1)))) begin
+        end else if (((~((stream_in_V_keep_V_0_vld_in == 1'b0) & (stream_in_V_keep_V_0_ack_out == 1'b1)) & ~((stream_in_V_keep_V_0_ack_out == 1'b0) & (stream_in_V_keep_V_0_vld_in == 1'b1)) & (stream_in_V_keep_V_0_state == 2'd3)) | ((stream_in_V_keep_V_0_ack_out == 1'b1) & (stream_in_V_keep_V_0_state == 2'd1)) | ((stream_in_V_keep_V_0_vld_in == 1'b1) & (stream_in_V_keep_V_0_state == 2'd2)))) begin
             stream_in_V_keep_V_0_state <= 2'd3;
         end else begin
             stream_in_V_keep_V_0_state <= 2'd2;
@@ -1349,11 +1452,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_in_V_last_V_0_state <= 2'd0;
     end else begin
-        if ((((stream_in_V_last_V_0_state == 2'd2) & (stream_in_V_last_V_0_vld_in == 1'b0)) | ((stream_in_V_last_V_0_state == 2'd3) & (stream_in_V_last_V_0_vld_in == 1'b0) & (stream_in_V_last_V_0_ack_out == 1'b1)))) begin
+        if ((((stream_in_V_last_V_0_vld_in == 1'b0) & (stream_in_V_last_V_0_state == 2'd2)) | ((stream_in_V_last_V_0_vld_in == 1'b0) & (stream_in_V_last_V_0_ack_out == 1'b1) & (stream_in_V_last_V_0_state == 2'd3)))) begin
             stream_in_V_last_V_0_state <= 2'd2;
-        end else if ((((stream_in_V_last_V_0_state == 2'd1) & (stream_in_V_last_V_0_ack_out == 1'b0)) | ((stream_in_V_last_V_0_state == 2'd3) & (stream_in_V_last_V_0_ack_out == 1'b0) & (stream_in_V_last_V_0_vld_in == 1'b1)))) begin
+        end else if ((((stream_in_V_last_V_0_ack_out == 1'b0) & (stream_in_V_last_V_0_state == 2'd1)) | ((stream_in_V_last_V_0_ack_out == 1'b0) & (stream_in_V_last_V_0_vld_in == 1'b1) & (stream_in_V_last_V_0_state == 2'd3)))) begin
             stream_in_V_last_V_0_state <= 2'd1;
-        end else if (((~((stream_in_V_last_V_0_vld_in == 1'b0) & (stream_in_V_last_V_0_ack_out == 1'b1)) & ~((stream_in_V_last_V_0_ack_out == 1'b0) & (stream_in_V_last_V_0_vld_in == 1'b1)) & (stream_in_V_last_V_0_state == 2'd3)) | ((stream_in_V_last_V_0_state == 2'd1) & (stream_in_V_last_V_0_ack_out == 1'b1)) | ((stream_in_V_last_V_0_state == 2'd2) & (stream_in_V_last_V_0_vld_in == 1'b1)))) begin
+        end else if (((~((stream_in_V_last_V_0_vld_in == 1'b0) & (stream_in_V_last_V_0_ack_out == 1'b1)) & ~((stream_in_V_last_V_0_ack_out == 1'b0) & (stream_in_V_last_V_0_vld_in == 1'b1)) & (stream_in_V_last_V_0_state == 2'd3)) | ((stream_in_V_last_V_0_ack_out == 1'b1) & (stream_in_V_last_V_0_state == 2'd1)) | ((stream_in_V_last_V_0_vld_in == 1'b1) & (stream_in_V_last_V_0_state == 2'd2)))) begin
             stream_in_V_last_V_0_state <= 2'd3;
         end else begin
             stream_in_V_last_V_0_state <= 2'd2;
@@ -1385,11 +1488,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_in_V_strb_V_0_state <= 2'd0;
     end else begin
-        if ((((stream_in_V_strb_V_0_state == 2'd2) & (stream_in_V_strb_V_0_vld_in == 1'b0)) | ((stream_in_V_strb_V_0_state == 2'd3) & (stream_in_V_strb_V_0_vld_in == 1'b0) & (stream_in_V_strb_V_0_ack_out == 1'b1)))) begin
+        if ((((stream_in_V_strb_V_0_vld_in == 1'b0) & (stream_in_V_strb_V_0_state == 2'd2)) | ((stream_in_V_strb_V_0_vld_in == 1'b0) & (stream_in_V_strb_V_0_ack_out == 1'b1) & (stream_in_V_strb_V_0_state == 2'd3)))) begin
             stream_in_V_strb_V_0_state <= 2'd2;
-        end else if ((((stream_in_V_strb_V_0_state == 2'd1) & (stream_in_V_strb_V_0_ack_out == 1'b0)) | ((stream_in_V_strb_V_0_state == 2'd3) & (stream_in_V_strb_V_0_ack_out == 1'b0) & (stream_in_V_strb_V_0_vld_in == 1'b1)))) begin
+        end else if ((((stream_in_V_strb_V_0_ack_out == 1'b0) & (stream_in_V_strb_V_0_state == 2'd1)) | ((stream_in_V_strb_V_0_ack_out == 1'b0) & (stream_in_V_strb_V_0_vld_in == 1'b1) & (stream_in_V_strb_V_0_state == 2'd3)))) begin
             stream_in_V_strb_V_0_state <= 2'd1;
-        end else if (((~((stream_in_V_strb_V_0_vld_in == 1'b0) & (stream_in_V_strb_V_0_ack_out == 1'b1)) & ~((stream_in_V_strb_V_0_ack_out == 1'b0) & (stream_in_V_strb_V_0_vld_in == 1'b1)) & (stream_in_V_strb_V_0_state == 2'd3)) | ((stream_in_V_strb_V_0_state == 2'd1) & (stream_in_V_strb_V_0_ack_out == 1'b1)) | ((stream_in_V_strb_V_0_state == 2'd2) & (stream_in_V_strb_V_0_vld_in == 1'b1)))) begin
+        end else if (((~((stream_in_V_strb_V_0_vld_in == 1'b0) & (stream_in_V_strb_V_0_ack_out == 1'b1)) & ~((stream_in_V_strb_V_0_ack_out == 1'b0) & (stream_in_V_strb_V_0_vld_in == 1'b1)) & (stream_in_V_strb_V_0_state == 2'd3)) | ((stream_in_V_strb_V_0_ack_out == 1'b1) & (stream_in_V_strb_V_0_state == 2'd1)) | ((stream_in_V_strb_V_0_vld_in == 1'b1) & (stream_in_V_strb_V_0_state == 2'd2)))) begin
             stream_in_V_strb_V_0_state <= 2'd3;
         end else begin
             stream_in_V_strb_V_0_state <= 2'd2;
@@ -1421,266 +1524,14 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_in_V_user_V_0_state <= 2'd0;
     end else begin
-        if ((((stream_in_V_user_V_0_state == 2'd2) & (stream_in_V_user_V_0_vld_in == 1'b0)) | ((stream_in_V_user_V_0_state == 2'd3) & (stream_in_V_user_V_0_vld_in == 1'b0) & (stream_in_V_user_V_0_ack_out == 1'b1)))) begin
+        if ((((stream_in_V_user_V_0_vld_in == 1'b0) & (stream_in_V_user_V_0_state == 2'd2)) | ((stream_in_V_user_V_0_vld_in == 1'b0) & (stream_in_V_user_V_0_ack_out == 1'b1) & (stream_in_V_user_V_0_state == 2'd3)))) begin
             stream_in_V_user_V_0_state <= 2'd2;
-        end else if ((((stream_in_V_user_V_0_state == 2'd1) & (stream_in_V_user_V_0_ack_out == 1'b0)) | ((stream_in_V_user_V_0_state == 2'd3) & (stream_in_V_user_V_0_ack_out == 1'b0) & (stream_in_V_user_V_0_vld_in == 1'b1)))) begin
+        end else if ((((stream_in_V_user_V_0_ack_out == 1'b0) & (stream_in_V_user_V_0_state == 2'd1)) | ((stream_in_V_user_V_0_ack_out == 1'b0) & (stream_in_V_user_V_0_vld_in == 1'b1) & (stream_in_V_user_V_0_state == 2'd3)))) begin
             stream_in_V_user_V_0_state <= 2'd1;
-        end else if (((~((stream_in_V_user_V_0_vld_in == 1'b0) & (stream_in_V_user_V_0_ack_out == 1'b1)) & ~((stream_in_V_user_V_0_ack_out == 1'b0) & (stream_in_V_user_V_0_vld_in == 1'b1)) & (stream_in_V_user_V_0_state == 2'd3)) | ((stream_in_V_user_V_0_state == 2'd1) & (stream_in_V_user_V_0_ack_out == 1'b1)) | ((stream_in_V_user_V_0_state == 2'd2) & (stream_in_V_user_V_0_vld_in == 1'b1)))) begin
+        end else if (((~((stream_in_V_user_V_0_vld_in == 1'b0) & (stream_in_V_user_V_0_ack_out == 1'b1)) & ~((stream_in_V_user_V_0_ack_out == 1'b0) & (stream_in_V_user_V_0_vld_in == 1'b1)) & (stream_in_V_user_V_0_state == 2'd3)) | ((stream_in_V_user_V_0_ack_out == 1'b1) & (stream_in_V_user_V_0_state == 2'd1)) | ((stream_in_V_user_V_0_vld_in == 1'b1) & (stream_in_V_user_V_0_state == 2'd2)))) begin
             stream_in_V_user_V_0_state <= 2'd3;
         end else begin
             stream_in_V_user_V_0_state <= 2'd2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_data_V_1_sel_rd <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_data_V_1_ack_out == 1'b1) & (stream_passThrough_V_data_V_1_vld_out == 1'b1))) begin
-            stream_passThrough_V_data_V_1_sel_rd <= ~stream_passThrough_V_data_V_1_sel_rd;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_data_V_1_sel_wr <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_data_V_1_ack_in == 1'b1) & (stream_passThrough_V_data_V_1_vld_in == 1'b1))) begin
-            stream_passThrough_V_data_V_1_sel_wr <= ~stream_passThrough_V_data_V_1_sel_wr;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_data_V_1_state <= 2'd0;
-    end else begin
-        if ((((stream_passThrough_V_data_V_1_state == 2'd2) & (stream_passThrough_V_data_V_1_vld_in == 1'b0)) | ((stream_passThrough_V_data_V_1_state == 2'd3) & (stream_passThrough_V_data_V_1_vld_in == 1'b0) & (stream_passThrough_V_data_V_1_ack_out == 1'b1)))) begin
-            stream_passThrough_V_data_V_1_state <= 2'd2;
-        end else if ((((stream_passThrough_V_data_V_1_state == 2'd1) & (stream_passThrough_V_data_V_1_ack_out == 1'b0)) | ((stream_passThrough_V_data_V_1_state == 2'd3) & (stream_passThrough_V_data_V_1_ack_out == 1'b0) & (stream_passThrough_V_data_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_data_V_1_state <= 2'd1;
-        end else if (((~((stream_passThrough_V_data_V_1_vld_in == 1'b0) & (stream_passThrough_V_data_V_1_ack_out == 1'b1)) & ~((stream_passThrough_V_data_V_1_ack_out == 1'b0) & (stream_passThrough_V_data_V_1_vld_in == 1'b1)) & (stream_passThrough_V_data_V_1_state == 2'd3)) | ((stream_passThrough_V_data_V_1_state == 2'd1) & (stream_passThrough_V_data_V_1_ack_out == 1'b1)) | ((stream_passThrough_V_data_V_1_state == 2'd2) & (stream_passThrough_V_data_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_data_V_1_state <= 2'd3;
-        end else begin
-            stream_passThrough_V_data_V_1_state <= 2'd2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_dest_V_1_sel_rd <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_dest_V_1_ack_out == 1'b1) & (stream_passThrough_V_dest_V_1_vld_out == 1'b1))) begin
-            stream_passThrough_V_dest_V_1_sel_rd <= ~stream_passThrough_V_dest_V_1_sel_rd;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_dest_V_1_sel_wr <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_dest_V_1_ack_in == 1'b1) & (stream_passThrough_V_dest_V_1_vld_in == 1'b1))) begin
-            stream_passThrough_V_dest_V_1_sel_wr <= ~stream_passThrough_V_dest_V_1_sel_wr;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_dest_V_1_state <= 2'd0;
-    end else begin
-        if ((((stream_passThrough_V_dest_V_1_state == 2'd2) & (stream_passThrough_V_dest_V_1_vld_in == 1'b0)) | ((stream_passThrough_V_dest_V_1_state == 2'd3) & (stream_passThrough_V_dest_V_1_vld_in == 1'b0) & (stream_passThrough_V_dest_V_1_ack_out == 1'b1)))) begin
-            stream_passThrough_V_dest_V_1_state <= 2'd2;
-        end else if ((((stream_passThrough_V_dest_V_1_state == 2'd1) & (stream_passThrough_V_dest_V_1_ack_out == 1'b0)) | ((stream_passThrough_V_dest_V_1_state == 2'd3) & (stream_passThrough_V_dest_V_1_ack_out == 1'b0) & (stream_passThrough_V_dest_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_dest_V_1_state <= 2'd1;
-        end else if (((~((stream_passThrough_V_dest_V_1_vld_in == 1'b0) & (stream_passThrough_V_dest_V_1_ack_out == 1'b1)) & ~((stream_passThrough_V_dest_V_1_ack_out == 1'b0) & (stream_passThrough_V_dest_V_1_vld_in == 1'b1)) & (stream_passThrough_V_dest_V_1_state == 2'd3)) | ((stream_passThrough_V_dest_V_1_state == 2'd1) & (stream_passThrough_V_dest_V_1_ack_out == 1'b1)) | ((stream_passThrough_V_dest_V_1_state == 2'd2) & (stream_passThrough_V_dest_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_dest_V_1_state <= 2'd3;
-        end else begin
-            stream_passThrough_V_dest_V_1_state <= 2'd2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_id_V_1_sel_rd <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_id_V_1_ack_out == 1'b1) & (stream_passThrough_V_id_V_1_vld_out == 1'b1))) begin
-            stream_passThrough_V_id_V_1_sel_rd <= ~stream_passThrough_V_id_V_1_sel_rd;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_id_V_1_sel_wr <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_id_V_1_ack_in == 1'b1) & (stream_passThrough_V_id_V_1_vld_in == 1'b1))) begin
-            stream_passThrough_V_id_V_1_sel_wr <= ~stream_passThrough_V_id_V_1_sel_wr;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_id_V_1_state <= 2'd0;
-    end else begin
-        if ((((stream_passThrough_V_id_V_1_state == 2'd2) & (stream_passThrough_V_id_V_1_vld_in == 1'b0)) | ((stream_passThrough_V_id_V_1_state == 2'd3) & (stream_passThrough_V_id_V_1_vld_in == 1'b0) & (stream_passThrough_V_id_V_1_ack_out == 1'b1)))) begin
-            stream_passThrough_V_id_V_1_state <= 2'd2;
-        end else if ((((stream_passThrough_V_id_V_1_state == 2'd1) & (stream_passThrough_V_id_V_1_ack_out == 1'b0)) | ((stream_passThrough_V_id_V_1_state == 2'd3) & (stream_passThrough_V_id_V_1_ack_out == 1'b0) & (stream_passThrough_V_id_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_id_V_1_state <= 2'd1;
-        end else if (((~((stream_passThrough_V_id_V_1_vld_in == 1'b0) & (stream_passThrough_V_id_V_1_ack_out == 1'b1)) & ~((stream_passThrough_V_id_V_1_ack_out == 1'b0) & (stream_passThrough_V_id_V_1_vld_in == 1'b1)) & (stream_passThrough_V_id_V_1_state == 2'd3)) | ((stream_passThrough_V_id_V_1_state == 2'd1) & (stream_passThrough_V_id_V_1_ack_out == 1'b1)) | ((stream_passThrough_V_id_V_1_state == 2'd2) & (stream_passThrough_V_id_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_id_V_1_state <= 2'd3;
-        end else begin
-            stream_passThrough_V_id_V_1_state <= 2'd2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_keep_V_1_sel_rd <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_keep_V_1_ack_out == 1'b1) & (stream_passThrough_V_keep_V_1_vld_out == 1'b1))) begin
-            stream_passThrough_V_keep_V_1_sel_rd <= ~stream_passThrough_V_keep_V_1_sel_rd;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_keep_V_1_sel_wr <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_keep_V_1_ack_in == 1'b1) & (stream_passThrough_V_keep_V_1_vld_in == 1'b1))) begin
-            stream_passThrough_V_keep_V_1_sel_wr <= ~stream_passThrough_V_keep_V_1_sel_wr;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_keep_V_1_state <= 2'd0;
-    end else begin
-        if ((((stream_passThrough_V_keep_V_1_state == 2'd2) & (stream_passThrough_V_keep_V_1_vld_in == 1'b0)) | ((stream_passThrough_V_keep_V_1_state == 2'd3) & (stream_passThrough_V_keep_V_1_vld_in == 1'b0) & (stream_passThrough_V_keep_V_1_ack_out == 1'b1)))) begin
-            stream_passThrough_V_keep_V_1_state <= 2'd2;
-        end else if ((((stream_passThrough_V_keep_V_1_state == 2'd1) & (stream_passThrough_V_keep_V_1_ack_out == 1'b0)) | ((stream_passThrough_V_keep_V_1_state == 2'd3) & (stream_passThrough_V_keep_V_1_ack_out == 1'b0) & (stream_passThrough_V_keep_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_keep_V_1_state <= 2'd1;
-        end else if (((~((stream_passThrough_V_keep_V_1_vld_in == 1'b0) & (stream_passThrough_V_keep_V_1_ack_out == 1'b1)) & ~((stream_passThrough_V_keep_V_1_ack_out == 1'b0) & (stream_passThrough_V_keep_V_1_vld_in == 1'b1)) & (stream_passThrough_V_keep_V_1_state == 2'd3)) | ((stream_passThrough_V_keep_V_1_state == 2'd1) & (stream_passThrough_V_keep_V_1_ack_out == 1'b1)) | ((stream_passThrough_V_keep_V_1_state == 2'd2) & (stream_passThrough_V_keep_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_keep_V_1_state <= 2'd3;
-        end else begin
-            stream_passThrough_V_keep_V_1_state <= 2'd2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_last_V_1_sel_rd <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_last_V_1_ack_out == 1'b1) & (stream_passThrough_V_last_V_1_vld_out == 1'b1))) begin
-            stream_passThrough_V_last_V_1_sel_rd <= ~stream_passThrough_V_last_V_1_sel_rd;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_last_V_1_sel_wr <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_last_V_1_ack_in == 1'b1) & (stream_passThrough_V_last_V_1_vld_in == 1'b1))) begin
-            stream_passThrough_V_last_V_1_sel_wr <= ~stream_passThrough_V_last_V_1_sel_wr;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_last_V_1_state <= 2'd0;
-    end else begin
-        if ((((stream_passThrough_V_last_V_1_state == 2'd2) & (stream_passThrough_V_last_V_1_vld_in == 1'b0)) | ((stream_passThrough_V_last_V_1_state == 2'd3) & (stream_passThrough_V_last_V_1_vld_in == 1'b0) & (stream_passThrough_V_last_V_1_ack_out == 1'b1)))) begin
-            stream_passThrough_V_last_V_1_state <= 2'd2;
-        end else if ((((stream_passThrough_V_last_V_1_state == 2'd1) & (stream_passThrough_V_last_V_1_ack_out == 1'b0)) | ((stream_passThrough_V_last_V_1_state == 2'd3) & (stream_passThrough_V_last_V_1_ack_out == 1'b0) & (stream_passThrough_V_last_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_last_V_1_state <= 2'd1;
-        end else if (((~((stream_passThrough_V_last_V_1_vld_in == 1'b0) & (stream_passThrough_V_last_V_1_ack_out == 1'b1)) & ~((stream_passThrough_V_last_V_1_ack_out == 1'b0) & (stream_passThrough_V_last_V_1_vld_in == 1'b1)) & (stream_passThrough_V_last_V_1_state == 2'd3)) | ((stream_passThrough_V_last_V_1_state == 2'd1) & (stream_passThrough_V_last_V_1_ack_out == 1'b1)) | ((stream_passThrough_V_last_V_1_state == 2'd2) & (stream_passThrough_V_last_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_last_V_1_state <= 2'd3;
-        end else begin
-            stream_passThrough_V_last_V_1_state <= 2'd2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_strb_V_1_sel_rd <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_strb_V_1_ack_out == 1'b1) & (stream_passThrough_V_strb_V_1_vld_out == 1'b1))) begin
-            stream_passThrough_V_strb_V_1_sel_rd <= ~stream_passThrough_V_strb_V_1_sel_rd;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_strb_V_1_sel_wr <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_strb_V_1_ack_in == 1'b1) & (stream_passThrough_V_strb_V_1_vld_in == 1'b1))) begin
-            stream_passThrough_V_strb_V_1_sel_wr <= ~stream_passThrough_V_strb_V_1_sel_wr;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_strb_V_1_state <= 2'd0;
-    end else begin
-        if ((((stream_passThrough_V_strb_V_1_state == 2'd2) & (stream_passThrough_V_strb_V_1_vld_in == 1'b0)) | ((stream_passThrough_V_strb_V_1_state == 2'd3) & (stream_passThrough_V_strb_V_1_vld_in == 1'b0) & (stream_passThrough_V_strb_V_1_ack_out == 1'b1)))) begin
-            stream_passThrough_V_strb_V_1_state <= 2'd2;
-        end else if ((((stream_passThrough_V_strb_V_1_state == 2'd1) & (stream_passThrough_V_strb_V_1_ack_out == 1'b0)) | ((stream_passThrough_V_strb_V_1_state == 2'd3) & (stream_passThrough_V_strb_V_1_ack_out == 1'b0) & (stream_passThrough_V_strb_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_strb_V_1_state <= 2'd1;
-        end else if (((~((stream_passThrough_V_strb_V_1_vld_in == 1'b0) & (stream_passThrough_V_strb_V_1_ack_out == 1'b1)) & ~((stream_passThrough_V_strb_V_1_ack_out == 1'b0) & (stream_passThrough_V_strb_V_1_vld_in == 1'b1)) & (stream_passThrough_V_strb_V_1_state == 2'd3)) | ((stream_passThrough_V_strb_V_1_state == 2'd1) & (stream_passThrough_V_strb_V_1_ack_out == 1'b1)) | ((stream_passThrough_V_strb_V_1_state == 2'd2) & (stream_passThrough_V_strb_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_strb_V_1_state <= 2'd3;
-        end else begin
-            stream_passThrough_V_strb_V_1_state <= 2'd2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_user_V_1_sel_rd <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_user_V_1_ack_out == 1'b1) & (stream_passThrough_V_user_V_1_vld_out == 1'b1))) begin
-            stream_passThrough_V_user_V_1_sel_rd <= ~stream_passThrough_V_user_V_1_sel_rd;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_user_V_1_sel_wr <= 1'b0;
-    end else begin
-        if (((stream_passThrough_V_user_V_1_ack_in == 1'b1) & (stream_passThrough_V_user_V_1_vld_in == 1'b1))) begin
-            stream_passThrough_V_user_V_1_sel_wr <= ~stream_passThrough_V_user_V_1_sel_wr;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        stream_passThrough_V_user_V_1_state <= 2'd0;
-    end else begin
-        if ((((stream_passThrough_V_user_V_1_state == 2'd2) & (stream_passThrough_V_user_V_1_vld_in == 1'b0)) | ((stream_passThrough_V_user_V_1_state == 2'd3) & (stream_passThrough_V_user_V_1_vld_in == 1'b0) & (stream_passThrough_V_user_V_1_ack_out == 1'b1)))) begin
-            stream_passThrough_V_user_V_1_state <= 2'd2;
-        end else if ((((stream_passThrough_V_user_V_1_state == 2'd1) & (stream_passThrough_V_user_V_1_ack_out == 1'b0)) | ((stream_passThrough_V_user_V_1_state == 2'd3) & (stream_passThrough_V_user_V_1_ack_out == 1'b0) & (stream_passThrough_V_user_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_user_V_1_state <= 2'd1;
-        end else if (((~((stream_passThrough_V_user_V_1_vld_in == 1'b0) & (stream_passThrough_V_user_V_1_ack_out == 1'b1)) & ~((stream_passThrough_V_user_V_1_ack_out == 1'b0) & (stream_passThrough_V_user_V_1_vld_in == 1'b1)) & (stream_passThrough_V_user_V_1_state == 2'd3)) | ((stream_passThrough_V_user_V_1_state == 2'd1) & (stream_passThrough_V_user_V_1_ack_out == 1'b1)) | ((stream_passThrough_V_user_V_1_state == 2'd2) & (stream_passThrough_V_user_V_1_vld_in == 1'b1)))) begin
-            stream_passThrough_V_user_V_1_state <= 2'd3;
-        end else begin
-            stream_passThrough_V_user_V_1_state <= 2'd2;
         end
     end
 end
@@ -1709,11 +1560,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_process_V_data_V_1_state <= 2'd0;
     end else begin
-        if ((((stream_process_V_data_V_1_state == 2'd2) & (stream_process_V_data_V_1_vld_in == 1'b0)) | ((stream_process_V_data_V_1_state == 2'd3) & (stream_process_V_data_V_1_vld_in == 1'b0) & (stream_process_V_data_V_1_ack_out == 1'b1)))) begin
+        if ((((stream_process_V_data_V_1_vld_in == 1'b0) & (stream_process_V_data_V_1_state == 2'd2)) | ((stream_process_V_data_V_1_vld_in == 1'b0) & (stream_process_V_data_V_1_ack_out == 1'b1) & (stream_process_V_data_V_1_state == 2'd3)))) begin
             stream_process_V_data_V_1_state <= 2'd2;
-        end else if ((((stream_process_V_data_V_1_state == 2'd1) & (stream_process_V_data_V_1_ack_out == 1'b0)) | ((stream_process_V_data_V_1_state == 2'd3) & (stream_process_V_data_V_1_ack_out == 1'b0) & (stream_process_V_data_V_1_vld_in == 1'b1)))) begin
+        end else if ((((stream_process_V_data_V_1_ack_out == 1'b0) & (stream_process_V_data_V_1_state == 2'd1)) | ((stream_process_V_data_V_1_ack_out == 1'b0) & (stream_process_V_data_V_1_vld_in == 1'b1) & (stream_process_V_data_V_1_state == 2'd3)))) begin
             stream_process_V_data_V_1_state <= 2'd1;
-        end else if (((~((stream_process_V_data_V_1_vld_in == 1'b0) & (stream_process_V_data_V_1_ack_out == 1'b1)) & ~((stream_process_V_data_V_1_ack_out == 1'b0) & (stream_process_V_data_V_1_vld_in == 1'b1)) & (stream_process_V_data_V_1_state == 2'd3)) | ((stream_process_V_data_V_1_state == 2'd1) & (stream_process_V_data_V_1_ack_out == 1'b1)) | ((stream_process_V_data_V_1_state == 2'd2) & (stream_process_V_data_V_1_vld_in == 1'b1)))) begin
+        end else if (((~((stream_process_V_data_V_1_vld_in == 1'b0) & (stream_process_V_data_V_1_ack_out == 1'b1)) & ~((stream_process_V_data_V_1_ack_out == 1'b0) & (stream_process_V_data_V_1_vld_in == 1'b1)) & (stream_process_V_data_V_1_state == 2'd3)) | ((stream_process_V_data_V_1_ack_out == 1'b1) & (stream_process_V_data_V_1_state == 2'd1)) | ((stream_process_V_data_V_1_vld_in == 1'b1) & (stream_process_V_data_V_1_state == 2'd2)))) begin
             stream_process_V_data_V_1_state <= 2'd3;
         end else begin
             stream_process_V_data_V_1_state <= 2'd2;
@@ -1745,11 +1596,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_process_V_dest_V_1_state <= 2'd0;
     end else begin
-        if ((((stream_process_V_dest_V_1_state == 2'd2) & (stream_process_V_dest_V_1_vld_in == 1'b0)) | ((stream_process_V_dest_V_1_state == 2'd3) & (stream_process_V_dest_V_1_vld_in == 1'b0) & (stream_process_V_dest_V_1_ack_out == 1'b1)))) begin
+        if ((((stream_process_V_dest_V_1_vld_in == 1'b0) & (stream_process_V_dest_V_1_state == 2'd2)) | ((stream_process_V_dest_V_1_vld_in == 1'b0) & (stream_process_V_dest_V_1_ack_out == 1'b1) & (stream_process_V_dest_V_1_state == 2'd3)))) begin
             stream_process_V_dest_V_1_state <= 2'd2;
-        end else if ((((stream_process_V_dest_V_1_state == 2'd1) & (stream_process_V_dest_V_1_ack_out == 1'b0)) | ((stream_process_V_dest_V_1_state == 2'd3) & (stream_process_V_dest_V_1_ack_out == 1'b0) & (stream_process_V_dest_V_1_vld_in == 1'b1)))) begin
+        end else if ((((stream_process_V_dest_V_1_ack_out == 1'b0) & (stream_process_V_dest_V_1_state == 2'd1)) | ((stream_process_V_dest_V_1_ack_out == 1'b0) & (stream_process_V_dest_V_1_vld_in == 1'b1) & (stream_process_V_dest_V_1_state == 2'd3)))) begin
             stream_process_V_dest_V_1_state <= 2'd1;
-        end else if (((~((stream_process_V_dest_V_1_vld_in == 1'b0) & (stream_process_V_dest_V_1_ack_out == 1'b1)) & ~((stream_process_V_dest_V_1_ack_out == 1'b0) & (stream_process_V_dest_V_1_vld_in == 1'b1)) & (stream_process_V_dest_V_1_state == 2'd3)) | ((stream_process_V_dest_V_1_state == 2'd1) & (stream_process_V_dest_V_1_ack_out == 1'b1)) | ((stream_process_V_dest_V_1_state == 2'd2) & (stream_process_V_dest_V_1_vld_in == 1'b1)))) begin
+        end else if (((~((stream_process_V_dest_V_1_vld_in == 1'b0) & (stream_process_V_dest_V_1_ack_out == 1'b1)) & ~((stream_process_V_dest_V_1_ack_out == 1'b0) & (stream_process_V_dest_V_1_vld_in == 1'b1)) & (stream_process_V_dest_V_1_state == 2'd3)) | ((stream_process_V_dest_V_1_ack_out == 1'b1) & (stream_process_V_dest_V_1_state == 2'd1)) | ((stream_process_V_dest_V_1_vld_in == 1'b1) & (stream_process_V_dest_V_1_state == 2'd2)))) begin
             stream_process_V_dest_V_1_state <= 2'd3;
         end else begin
             stream_process_V_dest_V_1_state <= 2'd2;
@@ -1781,11 +1632,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_process_V_id_V_1_state <= 2'd0;
     end else begin
-        if ((((stream_process_V_id_V_1_state == 2'd2) & (stream_process_V_id_V_1_vld_in == 1'b0)) | ((stream_process_V_id_V_1_state == 2'd3) & (stream_process_V_id_V_1_vld_in == 1'b0) & (stream_process_V_id_V_1_ack_out == 1'b1)))) begin
+        if ((((stream_process_V_id_V_1_vld_in == 1'b0) & (stream_process_V_id_V_1_state == 2'd2)) | ((stream_process_V_id_V_1_vld_in == 1'b0) & (stream_process_V_id_V_1_ack_out == 1'b1) & (stream_process_V_id_V_1_state == 2'd3)))) begin
             stream_process_V_id_V_1_state <= 2'd2;
-        end else if ((((stream_process_V_id_V_1_state == 2'd1) & (stream_process_V_id_V_1_ack_out == 1'b0)) | ((stream_process_V_id_V_1_state == 2'd3) & (stream_process_V_id_V_1_ack_out == 1'b0) & (stream_process_V_id_V_1_vld_in == 1'b1)))) begin
+        end else if ((((stream_process_V_id_V_1_ack_out == 1'b0) & (stream_process_V_id_V_1_state == 2'd1)) | ((stream_process_V_id_V_1_ack_out == 1'b0) & (stream_process_V_id_V_1_vld_in == 1'b1) & (stream_process_V_id_V_1_state == 2'd3)))) begin
             stream_process_V_id_V_1_state <= 2'd1;
-        end else if (((~((stream_process_V_id_V_1_vld_in == 1'b0) & (stream_process_V_id_V_1_ack_out == 1'b1)) & ~((stream_process_V_id_V_1_ack_out == 1'b0) & (stream_process_V_id_V_1_vld_in == 1'b1)) & (stream_process_V_id_V_1_state == 2'd3)) | ((stream_process_V_id_V_1_state == 2'd1) & (stream_process_V_id_V_1_ack_out == 1'b1)) | ((stream_process_V_id_V_1_state == 2'd2) & (stream_process_V_id_V_1_vld_in == 1'b1)))) begin
+        end else if (((~((stream_process_V_id_V_1_vld_in == 1'b0) & (stream_process_V_id_V_1_ack_out == 1'b1)) & ~((stream_process_V_id_V_1_ack_out == 1'b0) & (stream_process_V_id_V_1_vld_in == 1'b1)) & (stream_process_V_id_V_1_state == 2'd3)) | ((stream_process_V_id_V_1_ack_out == 1'b1) & (stream_process_V_id_V_1_state == 2'd1)) | ((stream_process_V_id_V_1_vld_in == 1'b1) & (stream_process_V_id_V_1_state == 2'd2)))) begin
             stream_process_V_id_V_1_state <= 2'd3;
         end else begin
             stream_process_V_id_V_1_state <= 2'd2;
@@ -1817,11 +1668,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_process_V_keep_V_1_state <= 2'd0;
     end else begin
-        if ((((stream_process_V_keep_V_1_state == 2'd2) & (stream_process_V_keep_V_1_vld_in == 1'b0)) | ((stream_process_V_keep_V_1_state == 2'd3) & (stream_process_V_keep_V_1_vld_in == 1'b0) & (stream_process_V_keep_V_1_ack_out == 1'b1)))) begin
+        if ((((stream_process_V_keep_V_1_vld_in == 1'b0) & (stream_process_V_keep_V_1_state == 2'd2)) | ((stream_process_V_keep_V_1_vld_in == 1'b0) & (stream_process_V_keep_V_1_ack_out == 1'b1) & (stream_process_V_keep_V_1_state == 2'd3)))) begin
             stream_process_V_keep_V_1_state <= 2'd2;
-        end else if ((((stream_process_V_keep_V_1_state == 2'd1) & (stream_process_V_keep_V_1_ack_out == 1'b0)) | ((stream_process_V_keep_V_1_state == 2'd3) & (stream_process_V_keep_V_1_ack_out == 1'b0) & (stream_process_V_keep_V_1_vld_in == 1'b1)))) begin
+        end else if ((((stream_process_V_keep_V_1_ack_out == 1'b0) & (stream_process_V_keep_V_1_state == 2'd1)) | ((stream_process_V_keep_V_1_ack_out == 1'b0) & (stream_process_V_keep_V_1_vld_in == 1'b1) & (stream_process_V_keep_V_1_state == 2'd3)))) begin
             stream_process_V_keep_V_1_state <= 2'd1;
-        end else if (((~((stream_process_V_keep_V_1_vld_in == 1'b0) & (stream_process_V_keep_V_1_ack_out == 1'b1)) & ~((stream_process_V_keep_V_1_ack_out == 1'b0) & (stream_process_V_keep_V_1_vld_in == 1'b1)) & (stream_process_V_keep_V_1_state == 2'd3)) | ((stream_process_V_keep_V_1_state == 2'd1) & (stream_process_V_keep_V_1_ack_out == 1'b1)) | ((stream_process_V_keep_V_1_state == 2'd2) & (stream_process_V_keep_V_1_vld_in == 1'b1)))) begin
+        end else if (((~((stream_process_V_keep_V_1_vld_in == 1'b0) & (stream_process_V_keep_V_1_ack_out == 1'b1)) & ~((stream_process_V_keep_V_1_ack_out == 1'b0) & (stream_process_V_keep_V_1_vld_in == 1'b1)) & (stream_process_V_keep_V_1_state == 2'd3)) | ((stream_process_V_keep_V_1_ack_out == 1'b1) & (stream_process_V_keep_V_1_state == 2'd1)) | ((stream_process_V_keep_V_1_vld_in == 1'b1) & (stream_process_V_keep_V_1_state == 2'd2)))) begin
             stream_process_V_keep_V_1_state <= 2'd3;
         end else begin
             stream_process_V_keep_V_1_state <= 2'd2;
@@ -1853,11 +1704,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_process_V_last_V_1_state <= 2'd0;
     end else begin
-        if ((((stream_process_V_last_V_1_state == 2'd2) & (stream_process_V_last_V_1_vld_in == 1'b0)) | ((stream_process_V_last_V_1_state == 2'd3) & (stream_process_V_last_V_1_vld_in == 1'b0) & (stream_process_V_last_V_1_ack_out == 1'b1)))) begin
+        if ((((stream_process_V_last_V_1_vld_in == 1'b0) & (stream_process_V_last_V_1_state == 2'd2)) | ((stream_process_V_last_V_1_vld_in == 1'b0) & (stream_process_V_last_V_1_ack_out == 1'b1) & (stream_process_V_last_V_1_state == 2'd3)))) begin
             stream_process_V_last_V_1_state <= 2'd2;
-        end else if ((((stream_process_V_last_V_1_state == 2'd1) & (stream_process_V_last_V_1_ack_out == 1'b0)) | ((stream_process_V_last_V_1_state == 2'd3) & (stream_process_V_last_V_1_ack_out == 1'b0) & (stream_process_V_last_V_1_vld_in == 1'b1)))) begin
+        end else if ((((stream_process_V_last_V_1_ack_out == 1'b0) & (stream_process_V_last_V_1_state == 2'd1)) | ((stream_process_V_last_V_1_ack_out == 1'b0) & (stream_process_V_last_V_1_vld_in == 1'b1) & (stream_process_V_last_V_1_state == 2'd3)))) begin
             stream_process_V_last_V_1_state <= 2'd1;
-        end else if (((~((stream_process_V_last_V_1_vld_in == 1'b0) & (stream_process_V_last_V_1_ack_out == 1'b1)) & ~((stream_process_V_last_V_1_ack_out == 1'b0) & (stream_process_V_last_V_1_vld_in == 1'b1)) & (stream_process_V_last_V_1_state == 2'd3)) | ((stream_process_V_last_V_1_state == 2'd1) & (stream_process_V_last_V_1_ack_out == 1'b1)) | ((stream_process_V_last_V_1_state == 2'd2) & (stream_process_V_last_V_1_vld_in == 1'b1)))) begin
+        end else if (((~((stream_process_V_last_V_1_vld_in == 1'b0) & (stream_process_V_last_V_1_ack_out == 1'b1)) & ~((stream_process_V_last_V_1_ack_out == 1'b0) & (stream_process_V_last_V_1_vld_in == 1'b1)) & (stream_process_V_last_V_1_state == 2'd3)) | ((stream_process_V_last_V_1_ack_out == 1'b1) & (stream_process_V_last_V_1_state == 2'd1)) | ((stream_process_V_last_V_1_vld_in == 1'b1) & (stream_process_V_last_V_1_state == 2'd2)))) begin
             stream_process_V_last_V_1_state <= 2'd3;
         end else begin
             stream_process_V_last_V_1_state <= 2'd2;
@@ -1889,11 +1740,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_process_V_strb_V_1_state <= 2'd0;
     end else begin
-        if ((((stream_process_V_strb_V_1_state == 2'd2) & (stream_process_V_strb_V_1_vld_in == 1'b0)) | ((stream_process_V_strb_V_1_state == 2'd3) & (stream_process_V_strb_V_1_vld_in == 1'b0) & (stream_process_V_strb_V_1_ack_out == 1'b1)))) begin
+        if ((((stream_process_V_strb_V_1_vld_in == 1'b0) & (stream_process_V_strb_V_1_state == 2'd2)) | ((stream_process_V_strb_V_1_vld_in == 1'b0) & (stream_process_V_strb_V_1_ack_out == 1'b1) & (stream_process_V_strb_V_1_state == 2'd3)))) begin
             stream_process_V_strb_V_1_state <= 2'd2;
-        end else if ((((stream_process_V_strb_V_1_state == 2'd1) & (stream_process_V_strb_V_1_ack_out == 1'b0)) | ((stream_process_V_strb_V_1_state == 2'd3) & (stream_process_V_strb_V_1_ack_out == 1'b0) & (stream_process_V_strb_V_1_vld_in == 1'b1)))) begin
+        end else if ((((stream_process_V_strb_V_1_ack_out == 1'b0) & (stream_process_V_strb_V_1_state == 2'd1)) | ((stream_process_V_strb_V_1_ack_out == 1'b0) & (stream_process_V_strb_V_1_vld_in == 1'b1) & (stream_process_V_strb_V_1_state == 2'd3)))) begin
             stream_process_V_strb_V_1_state <= 2'd1;
-        end else if (((~((stream_process_V_strb_V_1_vld_in == 1'b0) & (stream_process_V_strb_V_1_ack_out == 1'b1)) & ~((stream_process_V_strb_V_1_ack_out == 1'b0) & (stream_process_V_strb_V_1_vld_in == 1'b1)) & (stream_process_V_strb_V_1_state == 2'd3)) | ((stream_process_V_strb_V_1_state == 2'd1) & (stream_process_V_strb_V_1_ack_out == 1'b1)) | ((stream_process_V_strb_V_1_state == 2'd2) & (stream_process_V_strb_V_1_vld_in == 1'b1)))) begin
+        end else if (((~((stream_process_V_strb_V_1_vld_in == 1'b0) & (stream_process_V_strb_V_1_ack_out == 1'b1)) & ~((stream_process_V_strb_V_1_ack_out == 1'b0) & (stream_process_V_strb_V_1_vld_in == 1'b1)) & (stream_process_V_strb_V_1_state == 2'd3)) | ((stream_process_V_strb_V_1_ack_out == 1'b1) & (stream_process_V_strb_V_1_state == 2'd1)) | ((stream_process_V_strb_V_1_vld_in == 1'b1) & (stream_process_V_strb_V_1_state == 2'd2)))) begin
             stream_process_V_strb_V_1_state <= 2'd3;
         end else begin
             stream_process_V_strb_V_1_state <= 2'd2;
@@ -1925,11 +1776,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         stream_process_V_user_V_1_state <= 2'd0;
     end else begin
-        if ((((stream_process_V_user_V_1_state == 2'd2) & (stream_process_V_user_V_1_vld_in == 1'b0)) | ((stream_process_V_user_V_1_state == 2'd3) & (stream_process_V_user_V_1_vld_in == 1'b0) & (stream_process_V_user_V_1_ack_out == 1'b1)))) begin
+        if ((((stream_process_V_user_V_1_vld_in == 1'b0) & (stream_process_V_user_V_1_state == 2'd2)) | ((stream_process_V_user_V_1_vld_in == 1'b0) & (stream_process_V_user_V_1_ack_out == 1'b1) & (stream_process_V_user_V_1_state == 2'd3)))) begin
             stream_process_V_user_V_1_state <= 2'd2;
-        end else if ((((stream_process_V_user_V_1_state == 2'd1) & (stream_process_V_user_V_1_ack_out == 1'b0)) | ((stream_process_V_user_V_1_state == 2'd3) & (stream_process_V_user_V_1_ack_out == 1'b0) & (stream_process_V_user_V_1_vld_in == 1'b1)))) begin
+        end else if ((((stream_process_V_user_V_1_ack_out == 1'b0) & (stream_process_V_user_V_1_state == 2'd1)) | ((stream_process_V_user_V_1_ack_out == 1'b0) & (stream_process_V_user_V_1_vld_in == 1'b1) & (stream_process_V_user_V_1_state == 2'd3)))) begin
             stream_process_V_user_V_1_state <= 2'd1;
-        end else if (((~((stream_process_V_user_V_1_vld_in == 1'b0) & (stream_process_V_user_V_1_ack_out == 1'b1)) & ~((stream_process_V_user_V_1_ack_out == 1'b0) & (stream_process_V_user_V_1_vld_in == 1'b1)) & (stream_process_V_user_V_1_state == 2'd3)) | ((stream_process_V_user_V_1_state == 2'd1) & (stream_process_V_user_V_1_ack_out == 1'b1)) | ((stream_process_V_user_V_1_state == 2'd2) & (stream_process_V_user_V_1_vld_in == 1'b1)))) begin
+        end else if (((~((stream_process_V_user_V_1_vld_in == 1'b0) & (stream_process_V_user_V_1_ack_out == 1'b1)) & ~((stream_process_V_user_V_1_ack_out == 1'b0) & (stream_process_V_user_V_1_vld_in == 1'b1)) & (stream_process_V_user_V_1_state == 2'd3)) | ((stream_process_V_user_V_1_ack_out == 1'b1) & (stream_process_V_user_V_1_state == 2'd1)) | ((stream_process_V_user_V_1_vld_in == 1'b1) & (stream_process_V_user_V_1_state == 2'd2)))) begin
             stream_process_V_user_V_1_state <= 2'd3;
         end else begin
             stream_process_V_user_V_1_state <= 2'd2;
@@ -1938,58 +1789,54 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state14)) begin
-        i_i_reg_593 <= i_reg_876;
-    end else if (((1'b1 == ap_CS_fsm_state10) & (grp_Filter2D_fu_615_ap_done == 1'b1))) begin
-        i_i_reg_593 <= 11'd0;
+    if ((1'b1 == ap_CS_fsm_state12)) begin
+        i_i_reg_463 <= i_reg_707;
+    end else if ((~((grp_Filter2D_fu_485_ap_done == 1'b0) | (1'b0 == MAXI_BVALID)) & (1'b1 == ap_CS_fsm_state8))) begin
+        i_i_reg_463 <= 11'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((exitcond_fu_734_p2 == 1'd0) & (ap_enable_reg_pp1_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
-        j_i_reg_604 <= j_fu_740_p2;
-    end else if (((exitcond1_fu_722_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state11))) begin
-        j_i_reg_604 <= 11'd0;
+    if (((ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001) & (exitcond_fu_587_p2 == 1'd0))) begin
+        j_i_reg_474 <= j_fu_593_p2;
+    end else if (((1'b1 == ap_CS_fsm_state9) & (exitcond1_fu_570_p2 == 1'd0))) begin
+        j_i_reg_474 <= 11'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((exitcond_i_fu_710_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        t_V_1_reg_582 <= j_V_fu_716_p2;
-    end else if (((exitcond5_i_fu_698_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
-        t_V_1_reg_582 <= 11'd0;
+    if (((1'b1 == ap_CS_fsm_state20) & (1'b1 == MAXI_RVALID))) begin
+        MAXI_addr_1_read_reg_733 <= MAXI_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state7)) begin
-        t_V_reg_571 <= i_V_reg_858;
-    end else if (((1'b1 == ap_CS_fsm_state3) & (grp_AXIvideo2Mat_fu_625_ap_done == 1'b1))) begin
-        t_V_reg_571 <= 11'd0;
+    if (((1'b1 == ap_CS_fsm_state13) & (ap_sig_ioackin_MAXI_ARREADY == 1'b1))) begin
+        MAXI_addr_1_reg_726[30 : 0] <= ram2_sum_cast_fu_599_p1[30 : 0];
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        exitcond_i_reg_863 <= exitcond_i_fu_710_p2;
+        exitcond_reg_717 <= exitcond_fu_587_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
-        exitcond_reg_881 <= exitcond_fu_734_p2;
+    if ((1'b1 == ap_CS_fsm_state9)) begin
+        i_reg_707 <= i_fu_576_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        i_V_reg_858 <= i_V_fu_704_p2;
+    if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        ram1_reg_614 <= {{ram[31:2]}};
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state11)) begin
-        i_reg_876 <= i_fu_728_p2;
+    if (((1'b1 == ap_CS_fsm_state9) & (exitcond1_fu_570_p2 == 1'd1))) begin
+        ram2_sum_reg_712 <= ram2_sum_fu_582_p2;
     end
 end
 
@@ -2078,191 +1925,219 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_data_V_1_load_A == 1'b1)) begin
-        stream_passThrough_V_data_V_1_payload_A <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_data_V_1_load_B == 1'b1)) begin
-        stream_passThrough_V_data_V_1_payload_B <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_dest_V_1_load_A == 1'b1)) begin
-        stream_passThrough_V_dest_V_1_payload_A <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TDEST;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_dest_V_1_load_B == 1'b1)) begin
-        stream_passThrough_V_dest_V_1_payload_B <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TDEST;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_id_V_1_load_A == 1'b1)) begin
-        stream_passThrough_V_id_V_1_payload_A <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TID;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_id_V_1_load_B == 1'b1)) begin
-        stream_passThrough_V_id_V_1_payload_B <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TID;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_keep_V_1_load_A == 1'b1)) begin
-        stream_passThrough_V_keep_V_1_payload_A <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TKEEP;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_keep_V_1_load_B == 1'b1)) begin
-        stream_passThrough_V_keep_V_1_payload_B <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TKEEP;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_last_V_1_load_A == 1'b1)) begin
-        stream_passThrough_V_last_V_1_payload_A <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TLAST;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_last_V_1_load_B == 1'b1)) begin
-        stream_passThrough_V_last_V_1_payload_B <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TLAST;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_strb_V_1_load_A == 1'b1)) begin
-        stream_passThrough_V_strb_V_1_payload_A <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TSTRB;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_strb_V_1_load_B == 1'b1)) begin
-        stream_passThrough_V_strb_V_1_payload_B <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TSTRB;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_user_V_1_load_A == 1'b1)) begin
-        stream_passThrough_V_user_V_1_payload_A <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TUSER;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((stream_passThrough_V_user_V_1_load_B == 1'b1)) begin
-        stream_passThrough_V_user_V_1_payload_B <= grp_Mat2AXIvideo_fu_677_stream_passThrough_TUSER;
-    end
-end
-
-always @ (posedge ap_clk) begin
     if ((stream_process_V_data_V_1_load_A == 1'b1)) begin
-        stream_process_V_data_V_1_payload_A <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TDATA;
+        stream_process_V_data_V_1_payload_A <= grp_Mat2AXIvideo_fu_526_stream_process_TDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_data_V_1_load_B == 1'b1)) begin
-        stream_process_V_data_V_1_payload_B <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TDATA;
+        stream_process_V_data_V_1_payload_B <= grp_Mat2AXIvideo_fu_526_stream_process_TDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_dest_V_1_load_A == 1'b1)) begin
-        stream_process_V_dest_V_1_payload_A <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TDEST;
+        stream_process_V_dest_V_1_payload_A <= grp_Mat2AXIvideo_fu_526_stream_process_TDEST;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_dest_V_1_load_B == 1'b1)) begin
-        stream_process_V_dest_V_1_payload_B <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TDEST;
+        stream_process_V_dest_V_1_payload_B <= grp_Mat2AXIvideo_fu_526_stream_process_TDEST;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_id_V_1_load_A == 1'b1)) begin
-        stream_process_V_id_V_1_payload_A <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TID;
+        stream_process_V_id_V_1_payload_A <= grp_Mat2AXIvideo_fu_526_stream_process_TID;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_id_V_1_load_B == 1'b1)) begin
-        stream_process_V_id_V_1_payload_B <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TID;
+        stream_process_V_id_V_1_payload_B <= grp_Mat2AXIvideo_fu_526_stream_process_TID;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_keep_V_1_load_A == 1'b1)) begin
-        stream_process_V_keep_V_1_payload_A <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TKEEP;
+        stream_process_V_keep_V_1_payload_A <= grp_Mat2AXIvideo_fu_526_stream_process_TKEEP;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_keep_V_1_load_B == 1'b1)) begin
-        stream_process_V_keep_V_1_payload_B <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TKEEP;
+        stream_process_V_keep_V_1_payload_B <= grp_Mat2AXIvideo_fu_526_stream_process_TKEEP;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_last_V_1_load_A == 1'b1)) begin
-        stream_process_V_last_V_1_payload_A <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TLAST;
+        stream_process_V_last_V_1_payload_A <= grp_Mat2AXIvideo_fu_526_stream_process_TLAST;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_last_V_1_load_B == 1'b1)) begin
-        stream_process_V_last_V_1_payload_B <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TLAST;
+        stream_process_V_last_V_1_payload_B <= grp_Mat2AXIvideo_fu_526_stream_process_TLAST;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_strb_V_1_load_A == 1'b1)) begin
-        stream_process_V_strb_V_1_payload_A <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TSTRB;
+        stream_process_V_strb_V_1_payload_A <= grp_Mat2AXIvideo_fu_526_stream_process_TSTRB;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_strb_V_1_load_B == 1'b1)) begin
-        stream_process_V_strb_V_1_payload_B <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TSTRB;
+        stream_process_V_strb_V_1_payload_B <= grp_Mat2AXIvideo_fu_526_stream_process_TSTRB;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_user_V_1_load_A == 1'b1)) begin
-        stream_process_V_user_V_1_payload_A <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TUSER;
+        stream_process_V_user_V_1_payload_A <= grp_Mat2AXIvideo_fu_526_stream_process_TUSER;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((stream_process_V_user_V_1_load_B == 1'b1)) begin
-        stream_process_V_user_V_1_payload_B <= grp_Mat2AXIvideo_fu_656_stream_passThrough_TUSER;
+        stream_process_V_user_V_1_payload_B <= grp_Mat2AXIvideo_fu_526_stream_process_TUSER;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((~((grp_Filter2D_fu_485_ap_done == 1'b0) | (1'b0 == MAXI_BVALID)) & (1'b1 == ap_CS_fsm_state8))) begin
+        tmp_3_cast_reg_698[29 : 0] <= tmp_3_cast_fu_567_p1[29 : 0];
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b1 == ap_CS_fsm_state21) & (ap_sig_ioackin_MAXI_AWREADY == 1'b1))) begin
+        tmp_reg_738 <= tmp_fu_609_p2;
     end
 end
 
 always @ (*) begin
-    if ((exitcond_i_fu_710_p2 == 1'd1)) begin
-        ap_condition_pp0_exit_iter0_state5 = 1'b1;
+    if (((ap_reg_ioackin_MAXI_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state13))) begin
+        MAXI_ARVALID = 1'b1;
     end else begin
-        ap_condition_pp0_exit_iter0_state5 = 1'b0;
+        MAXI_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((exitcond_fu_734_p2 == 1'd1)) begin
-        ap_condition_pp1_exit_iter0_state12 = 1'b1;
+    if ((ap_reg_ioackin_MAXI_AWREADY == 1'b0)) begin
+        if ((1'b1 == ap_CS_fsm_state21)) begin
+            MAXI_AWADDR = MAXI_addr_1_reg_726;
+        end else if ((1'b1 == ap_CS_fsm_state2)) begin
+            MAXI_AWADDR = tmp_3_fu_557_p1;
+        end else begin
+            MAXI_AWADDR = 'bx;
+        end
     end else begin
-        ap_condition_pp1_exit_iter0_state12 = 1'b0;
+        MAXI_AWADDR = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((~((stream_passThrough_V_strb_V_1_ack_in == 1'b0) | (stream_passThrough_V_keep_V_1_ack_in == 1'b0) | (stream_passThrough_V_data_V_1_ack_in == 1'b0) | (stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (stream_passThrough_V_dest_V_1_ack_in == 1'b0) | (stream_passThrough_V_id_V_1_ack_in == 1'b0) | (stream_passThrough_V_last_V_1_ack_in == 1'b0) | (stream_passThrough_V_user_V_1_ack_in == 1'b0)) & (1'b1 == ap_CS_fsm_state16))) begin
+    if ((((ap_reg_ioackin_MAXI_AWREADY == 1'b0) & (1'b1 == ap_CS_fsm_state21)) | ((ap_reg_ioackin_MAXI_AWREADY == 1'b0) & (1'b1 == ap_CS_fsm_state2)))) begin
+        MAXI_AWVALID = 1'b1;
+    end else begin
+        MAXI_AWVALID = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((~((stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (1'b0 == MAXI_BVALID)) & (1'b1 == ap_CS_fsm_state27)) | (~((grp_Filter2D_fu_485_ap_done == 1'b0) | (1'b0 == MAXI_BVALID)) & (1'b1 == ap_CS_fsm_state8)))) begin
+        MAXI_BREADY = 1'b1;
+    end else begin
+        MAXI_BREADY = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state20) & (1'b1 == MAXI_RVALID))) begin
+        MAXI_RREADY = 1'b1;
+    end else begin
+        MAXI_RREADY = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((ap_reg_ioackin_MAXI_WREADY == 1'b0)) begin
+        if ((1'b1 == ap_CS_fsm_state22)) begin
+            MAXI_WDATA = tmp_reg_738;
+        end else if ((1'b1 == ap_CS_fsm_state3)) begin
+            MAXI_WDATA = 32'd1;
+        end else begin
+            MAXI_WDATA = 'bx;
+        end
+    end else begin
+        MAXI_WDATA = 'bx;
+    end
+end
+
+always @ (*) begin
+    if ((((ap_reg_ioackin_MAXI_WREADY == 1'b0) & (1'b1 == ap_CS_fsm_state22)) | ((ap_reg_ioackin_MAXI_WREADY == 1'b0) & (1'b1 == ap_CS_fsm_state3)))) begin
+        MAXI_WVALID = 1'b1;
+    end else begin
+        MAXI_WVALID = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state13)) begin
+        MAXI_blk_n_AR = m_axi_MAXI_ARREADY;
+    end else begin
+        MAXI_blk_n_AR = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state21) | (1'b1 == ap_CS_fsm_state2))) begin
+        MAXI_blk_n_AW = m_axi_MAXI_AWREADY;
+    end else begin
+        MAXI_blk_n_AW = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state8))) begin
+        MAXI_blk_n_B = m_axi_MAXI_BVALID;
+    end else begin
+        MAXI_blk_n_B = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state20)) begin
+        MAXI_blk_n_R = m_axi_MAXI_RVALID;
+    end else begin
+        MAXI_blk_n_R = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state3))) begin
+        MAXI_blk_n_W = m_axi_MAXI_WREADY;
+    end else begin
+        MAXI_blk_n_W = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((exitcond_fu_587_p2 == 1'd1)) begin
+        ap_condition_pp0_exit_iter0_state10 = 1'b1;
+    end else begin
+        ap_condition_pp0_exit_iter0_state10 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((~((stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (1'b0 == MAXI_BVALID)) & (1'b1 == ap_CS_fsm_state27))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -2286,15 +2161,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_enable_reg_pp1_iter0 == 1'b0) & (ap_enable_reg_pp1_iter1 == 1'b0))) begin
-        ap_idle_pp1 = 1'b1;
-    end else begin
-        ap_idle_pp1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((~((stream_passThrough_V_strb_V_1_ack_in == 1'b0) | (stream_passThrough_V_keep_V_1_ack_in == 1'b0) | (stream_passThrough_V_data_V_1_ack_in == 1'b0) | (stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (stream_passThrough_V_dest_V_1_ack_in == 1'b0) | (stream_passThrough_V_id_V_1_ack_in == 1'b0) | (stream_passThrough_V_last_V_1_ack_in == 1'b0) | (stream_passThrough_V_user_V_1_ack_in == 1'b0)) & (1'b1 == ap_CS_fsm_state16))) begin
+    if ((~((stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (1'b0 == MAXI_BVALID)) & (1'b1 == ap_CS_fsm_state27))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -2302,48 +2169,72 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        img0_data_stream_0_s_read = 1'b1;
+    if ((ap_reg_ioackin_MAXI_ARREADY == 1'b0)) begin
+        ap_sig_ioackin_MAXI_ARREADY = MAXI_ARREADY;
+    end else begin
+        ap_sig_ioackin_MAXI_ARREADY = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((ap_reg_ioackin_MAXI_AWREADY == 1'b0)) begin
+        ap_sig_ioackin_MAXI_AWREADY = MAXI_AWREADY;
+    end else begin
+        ap_sig_ioackin_MAXI_AWREADY = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((ap_reg_ioackin_MAXI_WREADY == 1'b0)) begin
+        ap_sig_ioackin_MAXI_WREADY = MAXI_WREADY;
+    end else begin
+        ap_sig_ioackin_MAXI_WREADY = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        img0_data_stream_0_s_read = grp_CvtColor_fu_516_p_src_data_stream_0_V_read;
     end else begin
         img0_data_stream_0_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        img0_data_stream_0_s_write = grp_AXIvideo2Mat_fu_625_img_data_stream_0_V_write;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        img0_data_stream_0_s_write = grp_AXIvideo2Mat_fu_495_img_data_stream_0_V_write;
     end else begin
         img0_data_stream_0_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        img0_data_stream_1_s_read = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        img0_data_stream_1_s_read = grp_CvtColor_fu_516_p_src_data_stream_1_V_read;
     end else begin
         img0_data_stream_1_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        img0_data_stream_1_s_write = grp_AXIvideo2Mat_fu_625_img_data_stream_1_V_write;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        img0_data_stream_1_s_write = grp_AXIvideo2Mat_fu_495_img_data_stream_1_V_write;
     end else begin
         img0_data_stream_1_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        img0_data_stream_2_s_read = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        img0_data_stream_2_s_read = grp_CvtColor_fu_516_p_src_data_stream_2_V_read;
     end else begin
         img0_data_stream_2_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        img0_data_stream_2_s_write = grp_AXIvideo2Mat_fu_625_img_data_stream_2_V_write;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        img0_data_stream_2_s_write = grp_AXIvideo2Mat_fu_495_img_data_stream_2_V_write;
     end else begin
         img0_data_stream_2_s_write = 1'b0;
     end
@@ -2351,15 +2242,15 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        img1_data_stream_0_s_read = grp_CvtColor_fu_646_p_src_data_stream_0_V_read;
+        img1_data_stream_0_s_read = grp_Filter2D_fu_485_p_src_data_stream_0_V_read;
     end else begin
         img1_data_stream_0_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        img1_data_stream_0_s_write = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        img1_data_stream_0_s_write = grp_CvtColor_fu_516_p_dst_data_stream_0_V_write;
     end else begin
         img1_data_stream_0_s_write = 1'b0;
     end
@@ -2367,15 +2258,15 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        img1_data_stream_1_s_read = grp_CvtColor_fu_646_p_src_data_stream_1_V_read;
+        img1_data_stream_1_s_read = grp_Filter2D_fu_485_p_src_data_stream_1_V_read;
     end else begin
         img1_data_stream_1_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        img1_data_stream_1_s_write = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        img1_data_stream_1_s_write = grp_CvtColor_fu_516_p_dst_data_stream_1_V_write;
     end else begin
         img1_data_stream_1_s_write = 1'b0;
     end
@@ -2383,23 +2274,23 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        img1_data_stream_2_s_read = grp_CvtColor_fu_646_p_src_data_stream_2_V_read;
+        img1_data_stream_2_s_read = grp_Filter2D_fu_485_p_src_data_stream_2_V_read;
     end else begin
         img1_data_stream_2_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        img1_data_stream_2_s_write = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        img1_data_stream_2_s_write = grp_CvtColor_fu_516_p_dst_data_stream_2_V_write;
     end else begin
         img1_data_stream_2_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
-        img2_data_stream_0_s_read = grp_Filter2D_fu_615_p_src_data_stream_0_V_read;
+    if (((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_717 == 1'd0))) begin
+        img2_data_stream_0_s_read = 1'b1;
     end else begin
         img2_data_stream_0_s_read = 1'b0;
     end
@@ -2407,15 +2298,15 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        img2_data_stream_0_s_write = grp_CvtColor_fu_646_p_dst_data_stream_0_V_write;
+        img2_data_stream_0_s_write = grp_Filter2D_fu_485_p_dst_data_stream_0_V_write;
     end else begin
         img2_data_stream_0_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
-        img2_data_stream_1_s_read = grp_Filter2D_fu_615_p_src_data_stream_1_V_read;
+    if (((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_717 == 1'd0))) begin
+        img2_data_stream_1_s_read = 1'b1;
     end else begin
         img2_data_stream_1_s_read = 1'b0;
     end
@@ -2423,15 +2314,15 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        img2_data_stream_1_s_write = grp_CvtColor_fu_646_p_dst_data_stream_1_V_write;
+        img2_data_stream_1_s_write = grp_Filter2D_fu_485_p_dst_data_stream_1_V_write;
     end else begin
         img2_data_stream_1_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
-        img2_data_stream_2_s_read = grp_Filter2D_fu_615_p_src_data_stream_2_V_read;
+    if (((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_717 == 1'd0))) begin
+        img2_data_stream_2_s_read = 1'b1;
     end else begin
         img2_data_stream_2_s_read = 1'b0;
     end
@@ -2439,159 +2330,63 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        img2_data_stream_2_s_write = grp_CvtColor_fu_646_p_dst_data_stream_2_V_write;
+        img2_data_stream_2_s_write = grp_Filter2D_fu_485_p_dst_data_stream_2_V_write;
     end else begin
         img2_data_stream_2_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_reg_881 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
-        img3_data_stream_0_s_read = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        img3_data_stream_0_s_read = grp_Mat2AXIvideo_fu_526_img_data_stream_0_V_read;
     end else begin
         img3_data_stream_0_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
-        img3_data_stream_0_s_write = grp_Filter2D_fu_615_p_dst_data_stream_0_V_write;
+    if (((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_717 == 1'd0))) begin
+        img3_data_stream_0_s_write = 1'b1;
     end else begin
         img3_data_stream_0_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_reg_881 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
-        img3_data_stream_1_s_read = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        img3_data_stream_1_s_read = grp_Mat2AXIvideo_fu_526_img_data_stream_1_V_read;
     end else begin
         img3_data_stream_1_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
-        img3_data_stream_1_s_write = grp_Filter2D_fu_615_p_dst_data_stream_1_V_write;
+    if (((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_717 == 1'd0))) begin
+        img3_data_stream_1_s_write = 1'b1;
     end else begin
         img3_data_stream_1_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_reg_881 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
-        img3_data_stream_2_s_read = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        img3_data_stream_2_s_read = grp_Mat2AXIvideo_fu_526_img_data_stream_2_V_read;
     end else begin
         img3_data_stream_2_s_read = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
-        img3_data_stream_2_s_write = grp_Filter2D_fu_615_p_dst_data_stream_2_V_write;
+    if (((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_717 == 1'd0))) begin
+        img3_data_stream_2_s_write = 1'b1;
     end else begin
         img3_data_stream_2_s_write = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state15)) begin
-        img4_data_stream_0_s_read = grp_Mat2AXIvideo_fu_656_img_data_stream_0_V_read;
-    end else begin
-        img4_data_stream_0_s_read = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((exitcond_reg_881 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
-        img4_data_stream_0_s_write = 1'b1;
-    end else begin
-        img4_data_stream_0_s_write = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state15)) begin
-        img4_data_stream_1_s_read = grp_Mat2AXIvideo_fu_656_img_data_stream_1_V_read;
-    end else begin
-        img4_data_stream_1_s_read = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((exitcond_reg_881 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
-        img4_data_stream_1_s_write = 1'b1;
-    end else begin
-        img4_data_stream_1_s_write = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state15)) begin
-        img4_data_stream_2_s_read = grp_Mat2AXIvideo_fu_656_img_data_stream_2_V_read;
-    end else begin
-        img4_data_stream_2_s_read = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((exitcond_reg_881 == 1'd0) & (ap_enable_reg_pp1_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == ap_block_pp1_stage0_11001))) begin
-        img4_data_stream_2_s_write = 1'b1;
-    end else begin
-        img4_data_stream_2_s_write = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state15)) begin
-        imgDuplicate_data_st_1_read = grp_Mat2AXIvideo_fu_677_img_data_stream_1_V_read;
-    end else begin
-        imgDuplicate_data_st_1_read = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        imgDuplicate_data_st_1_write = 1'b1;
-    end else begin
-        imgDuplicate_data_st_1_write = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state15)) begin
-        imgDuplicate_data_st_2_read = grp_Mat2AXIvideo_fu_677_img_data_stream_2_V_read;
-    end else begin
-        imgDuplicate_data_st_2_read = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        imgDuplicate_data_st_2_write = 1'b1;
-    end else begin
-        imgDuplicate_data_st_2_write = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state15)) begin
-        imgDuplicate_data_st_read = grp_Mat2AXIvideo_fu_677_img_data_stream_0_V_read;
-    end else begin
-        imgDuplicate_data_st_read = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((exitcond_i_reg_863 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        imgDuplicate_data_st_write = 1'b1;
-    end else begin
-        imgDuplicate_data_st_write = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        stream_in_V_data_V_0_ack_out = grp_AXIvideo2Mat_fu_625_stream_in_TREADY;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        stream_in_V_data_V_0_ack_out = grp_AXIvideo2Mat_fu_495_stream_in_TREADY;
     end else begin
         stream_in_V_data_V_0_ack_out = 1'b0;
     end
@@ -2606,8 +2401,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        stream_in_V_dest_V_0_ack_out = grp_AXIvideo2Mat_fu_625_stream_in_TREADY;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        stream_in_V_dest_V_0_ack_out = grp_AXIvideo2Mat_fu_495_stream_in_TREADY;
     end else begin
         stream_in_V_dest_V_0_ack_out = 1'b0;
     end
@@ -2622,8 +2417,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        stream_in_V_id_V_0_ack_out = grp_AXIvideo2Mat_fu_625_stream_in_TREADY;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        stream_in_V_id_V_0_ack_out = grp_AXIvideo2Mat_fu_495_stream_in_TREADY;
     end else begin
         stream_in_V_id_V_0_ack_out = 1'b0;
     end
@@ -2638,8 +2433,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        stream_in_V_keep_V_0_ack_out = grp_AXIvideo2Mat_fu_625_stream_in_TREADY;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        stream_in_V_keep_V_0_ack_out = grp_AXIvideo2Mat_fu_495_stream_in_TREADY;
     end else begin
         stream_in_V_keep_V_0_ack_out = 1'b0;
     end
@@ -2654,8 +2449,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        stream_in_V_last_V_0_ack_out = grp_AXIvideo2Mat_fu_625_stream_in_TREADY;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        stream_in_V_last_V_0_ack_out = grp_AXIvideo2Mat_fu_495_stream_in_TREADY;
     end else begin
         stream_in_V_last_V_0_ack_out = 1'b0;
     end
@@ -2670,8 +2465,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        stream_in_V_strb_V_0_ack_out = grp_AXIvideo2Mat_fu_625_stream_in_TREADY;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        stream_in_V_strb_V_0_ack_out = grp_AXIvideo2Mat_fu_495_stream_in_TREADY;
     end else begin
         stream_in_V_strb_V_0_ack_out = 1'b0;
     end
@@ -2686,8 +2481,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        stream_in_V_user_V_0_ack_out = grp_AXIvideo2Mat_fu_625_stream_in_TREADY;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        stream_in_V_user_V_0_ack_out = grp_AXIvideo2Mat_fu_495_stream_in_TREADY;
     end else begin
         stream_in_V_user_V_0_ack_out = 1'b0;
     end
@@ -2698,62 +2493,6 @@ always @ (*) begin
         stream_in_V_user_V_0_data_out = stream_in_V_user_V_0_payload_B;
     end else begin
         stream_in_V_user_V_0_data_out = stream_in_V_user_V_0_payload_A;
-    end
-end
-
-always @ (*) begin
-    if ((stream_passThrough_V_data_V_1_sel == 1'b1)) begin
-        stream_passThrough_V_data_V_1_data_out = stream_passThrough_V_data_V_1_payload_B;
-    end else begin
-        stream_passThrough_V_data_V_1_data_out = stream_passThrough_V_data_V_1_payload_A;
-    end
-end
-
-always @ (*) begin
-    if ((stream_passThrough_V_dest_V_1_sel == 1'b1)) begin
-        stream_passThrough_V_dest_V_1_data_out = stream_passThrough_V_dest_V_1_payload_B;
-    end else begin
-        stream_passThrough_V_dest_V_1_data_out = stream_passThrough_V_dest_V_1_payload_A;
-    end
-end
-
-always @ (*) begin
-    if ((stream_passThrough_V_id_V_1_sel == 1'b1)) begin
-        stream_passThrough_V_id_V_1_data_out = stream_passThrough_V_id_V_1_payload_B;
-    end else begin
-        stream_passThrough_V_id_V_1_data_out = stream_passThrough_V_id_V_1_payload_A;
-    end
-end
-
-always @ (*) begin
-    if ((stream_passThrough_V_keep_V_1_sel == 1'b1)) begin
-        stream_passThrough_V_keep_V_1_data_out = stream_passThrough_V_keep_V_1_payload_B;
-    end else begin
-        stream_passThrough_V_keep_V_1_data_out = stream_passThrough_V_keep_V_1_payload_A;
-    end
-end
-
-always @ (*) begin
-    if ((stream_passThrough_V_last_V_1_sel == 1'b1)) begin
-        stream_passThrough_V_last_V_1_data_out = stream_passThrough_V_last_V_1_payload_B;
-    end else begin
-        stream_passThrough_V_last_V_1_data_out = stream_passThrough_V_last_V_1_payload_A;
-    end
-end
-
-always @ (*) begin
-    if ((stream_passThrough_V_strb_V_1_sel == 1'b1)) begin
-        stream_passThrough_V_strb_V_1_data_out = stream_passThrough_V_strb_V_1_payload_B;
-    end else begin
-        stream_passThrough_V_strb_V_1_data_out = stream_passThrough_V_strb_V_1_payload_A;
-    end
-end
-
-always @ (*) begin
-    if ((stream_passThrough_V_user_V_1_sel == 1'b1)) begin
-        stream_passThrough_V_user_V_1_data_out = stream_passThrough_V_user_V_1_payload_B;
-    end else begin
-        stream_passThrough_V_user_V_1_data_out = stream_passThrough_V_user_V_1_payload_A;
     end
 end
 
@@ -2823,82 +2562,132 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            ap_NS_fsm = ap_ST_fsm_state3;
+            if (((1'b1 == ap_CS_fsm_state2) & (ap_sig_ioackin_MAXI_AWREADY == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state2;
+            end
         end
         ap_ST_fsm_state3 : begin
-            if (((1'b1 == ap_CS_fsm_state3) & (grp_AXIvideo2Mat_fu_625_ap_done == 1'b1))) begin
+            if (((1'b1 == ap_CS_fsm_state3) & (ap_sig_ioackin_MAXI_WREADY == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state4;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
             end
         end
         ap_ST_fsm_state4 : begin
-            if (((exitcond5_i_fu_698_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
-                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            if (((1'b1 == ap_CS_fsm_state4) & (grp_AXIvideo2Mat_fu_495_ap_done == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_state5;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state8;
+                ap_NS_fsm = ap_ST_fsm_state4;
             end
         end
-        ap_ST_fsm_pp0_stage0 : begin
-            if (~((exitcond_i_fu_710_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
-                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
-            end else if (((exitcond_i_fu_710_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+        ap_ST_fsm_state5 : begin
+            ap_NS_fsm = ap_ST_fsm_state6;
+        end
+        ap_ST_fsm_state6 : begin
+            if (((1'b1 == ap_CS_fsm_state6) & (grp_CvtColor_fu_516_ap_done == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state7;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+                ap_NS_fsm = ap_ST_fsm_state6;
             end
         end
         ap_ST_fsm_state7 : begin
-            ap_NS_fsm = ap_ST_fsm_state4;
+            ap_NS_fsm = ap_ST_fsm_state8;
         end
         ap_ST_fsm_state8 : begin
-            if (((1'b1 == ap_CS_fsm_state8) & (grp_CvtColor_fu_646_ap_done == 1'b1))) begin
+            if ((~((grp_Filter2D_fu_485_ap_done == 1'b0) | (1'b0 == MAXI_BVALID)) & (1'b1 == ap_CS_fsm_state8))) begin
                 ap_NS_fsm = ap_ST_fsm_state9;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state8;
             end
         end
         ap_ST_fsm_state9 : begin
-            ap_NS_fsm = ap_ST_fsm_state10;
-        end
-        ap_ST_fsm_state10 : begin
-            if (((1'b1 == ap_CS_fsm_state10) & (grp_Filter2D_fu_615_ap_done == 1'b1))) begin
-                ap_NS_fsm = ap_ST_fsm_state11;
+            if (((1'b1 == ap_CS_fsm_state9) & (exitcond1_fu_570_p2 == 1'd0))) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state10;
+                ap_NS_fsm = ap_ST_fsm_state13;
             end
         end
-        ap_ST_fsm_state11 : begin
-            if (((exitcond1_fu_722_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state11))) begin
-                ap_NS_fsm = ap_ST_fsm_pp1_stage0;
+        ap_ST_fsm_pp0_stage0 : begin
+            if (~((ap_enable_reg_pp0_iter0 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (exitcond_fu_587_p2 == 1'd1))) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end else if (((ap_enable_reg_pp0_iter0 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (exitcond_fu_587_p2 == 1'd1))) begin
+                ap_NS_fsm = ap_ST_fsm_state12;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state15;
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
             end
         end
-        ap_ST_fsm_pp1_stage0 : begin
-            if (~((exitcond_fu_734_p2 == 1'd1) & (ap_enable_reg_pp1_iter0 == 1'b1) & (1'b0 == ap_block_pp1_stage0_subdone))) begin
-                ap_NS_fsm = ap_ST_fsm_pp1_stage0;
-            end else if (((exitcond_fu_734_p2 == 1'd1) & (ap_enable_reg_pp1_iter0 == 1'b1) & (1'b0 == ap_block_pp1_stage0_subdone))) begin
+        ap_ST_fsm_state12 : begin
+            ap_NS_fsm = ap_ST_fsm_state9;
+        end
+        ap_ST_fsm_state13 : begin
+            if (((1'b1 == ap_CS_fsm_state13) & (ap_sig_ioackin_MAXI_ARREADY == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state14;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_pp1_stage0;
+                ap_NS_fsm = ap_ST_fsm_state13;
             end
         end
         ap_ST_fsm_state14 : begin
-            ap_NS_fsm = ap_ST_fsm_state11;
+            ap_NS_fsm = ap_ST_fsm_state15;
         end
         ap_ST_fsm_state15 : begin
-            if (((1'b1 == ap_CS_fsm_state15) & (1'b0 == ap_block_state15_on_subcall_done))) begin
-                ap_NS_fsm = ap_ST_fsm_state16;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state15;
-            end
+            ap_NS_fsm = ap_ST_fsm_state16;
         end
         ap_ST_fsm_state16 : begin
-            if ((~((stream_passThrough_V_strb_V_1_ack_in == 1'b0) | (stream_passThrough_V_keep_V_1_ack_in == 1'b0) | (stream_passThrough_V_data_V_1_ack_in == 1'b0) | (stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (stream_passThrough_V_dest_V_1_ack_in == 1'b0) | (stream_passThrough_V_id_V_1_ack_in == 1'b0) | (stream_passThrough_V_last_V_1_ack_in == 1'b0) | (stream_passThrough_V_user_V_1_ack_in == 1'b0)) & (1'b1 == ap_CS_fsm_state16))) begin
+            ap_NS_fsm = ap_ST_fsm_state17;
+        end
+        ap_ST_fsm_state17 : begin
+            ap_NS_fsm = ap_ST_fsm_state18;
+        end
+        ap_ST_fsm_state18 : begin
+            ap_NS_fsm = ap_ST_fsm_state19;
+        end
+        ap_ST_fsm_state19 : begin
+            ap_NS_fsm = ap_ST_fsm_state20;
+        end
+        ap_ST_fsm_state20 : begin
+            if (((1'b1 == ap_CS_fsm_state20) & (1'b1 == MAXI_RVALID))) begin
+                ap_NS_fsm = ap_ST_fsm_state21;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state20;
+            end
+        end
+        ap_ST_fsm_state21 : begin
+            if (((1'b1 == ap_CS_fsm_state21) & (ap_sig_ioackin_MAXI_AWREADY == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_state22;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state21;
+            end
+        end
+        ap_ST_fsm_state22 : begin
+            if (((1'b1 == ap_CS_fsm_state22) & (ap_sig_ioackin_MAXI_WREADY == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_state23;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state22;
+            end
+        end
+        ap_ST_fsm_state23 : begin
+            ap_NS_fsm = ap_ST_fsm_state24;
+        end
+        ap_ST_fsm_state24 : begin
+            ap_NS_fsm = ap_ST_fsm_state25;
+        end
+        ap_ST_fsm_state25 : begin
+            ap_NS_fsm = ap_ST_fsm_state26;
+        end
+        ap_ST_fsm_state26 : begin
+            if (((1'b1 == ap_CS_fsm_state26) & (grp_Mat2AXIvideo_fu_526_ap_done == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_state27;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state26;
+            end
+        end
+        ap_ST_fsm_state27 : begin
+            if ((~((stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (1'b0 == MAXI_BVALID)) & (1'b1 == ap_CS_fsm_state27))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state16;
+                ap_NS_fsm = ap_ST_fsm_state27;
             end
         end
         default : begin
@@ -2907,121 +2696,97 @@ always @ (*) begin
     endcase
 end
 
-assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd4];
+assign MAXI_ARADDR = ram2_sum_cast_fu_599_p1;
 
-assign ap_CS_fsm_pp1_stage0 = ap_CS_fsm[32'd10];
+assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd9];
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
-assign ap_CS_fsm_state10 = ap_CS_fsm[32'd8];
+assign ap_CS_fsm_state12 = ap_CS_fsm[32'd10];
 
-assign ap_CS_fsm_state11 = ap_CS_fsm[32'd9];
-
-assign ap_CS_fsm_state14 = ap_CS_fsm[32'd11];
-
-assign ap_CS_fsm_state15 = ap_CS_fsm[32'd12];
-
-assign ap_CS_fsm_state16 = ap_CS_fsm[32'd13];
+assign ap_CS_fsm_state13 = ap_CS_fsm[32'd11];
 
 assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+
+assign ap_CS_fsm_state20 = ap_CS_fsm[32'd18];
+
+assign ap_CS_fsm_state21 = ap_CS_fsm[32'd19];
+
+assign ap_CS_fsm_state22 = ap_CS_fsm[32'd20];
+
+assign ap_CS_fsm_state25 = ap_CS_fsm[32'd23];
+
+assign ap_CS_fsm_state26 = ap_CS_fsm[32'd24];
+
+assign ap_CS_fsm_state27 = ap_CS_fsm[32'd25];
 
 assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
 assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
-assign ap_CS_fsm_state7 = ap_CS_fsm[32'd5];
+assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
 
-assign ap_CS_fsm_state8 = ap_CS_fsm[32'd6];
+assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
 
-assign ap_CS_fsm_state9 = ap_CS_fsm[32'd7];
+assign ap_CS_fsm_state7 = ap_CS_fsm[32'd6];
+
+assign ap_CS_fsm_state8 = ap_CS_fsm[32'd7];
+
+assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
 
 assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_block_pp0_stage0_01001 = ((ap_enable_reg_pp0_iter1 == 1'b1) & (((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_2_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_1_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_2_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_1_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_0_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_2_s_empty_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_1_s_empty_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_0_s_empty_n == 1'b0))));
+    ap_block_pp0_stage0_01001 = ((ap_enable_reg_pp0_iter1 == 1'b1) & (((img3_data_stream_2_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img3_data_stream_1_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img3_data_stream_0_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_2_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_1_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_0_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0))));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_11001 = ((ap_enable_reg_pp0_iter1 == 1'b1) & (((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_2_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_1_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_2_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_1_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_0_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_2_s_empty_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_1_s_empty_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_0_s_empty_n == 1'b0))));
+    ap_block_pp0_stage0_11001 = ((ap_enable_reg_pp0_iter1 == 1'b1) & (((img3_data_stream_2_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img3_data_stream_1_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img3_data_stream_0_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_2_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_1_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_0_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0))));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_subdone = ((ap_enable_reg_pp0_iter1 == 1'b1) & (((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_2_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_1_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_2_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_1_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_0_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_2_s_empty_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_1_s_empty_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_0_s_empty_n == 1'b0))));
+    ap_block_pp0_stage0_subdone = ((ap_enable_reg_pp0_iter1 == 1'b1) & (((img3_data_stream_2_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img3_data_stream_1_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img3_data_stream_0_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_2_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_1_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_0_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0))));
 end
 
-assign ap_block_pp1_stage0 = ~(1'b1 == 1'b1);
+assign ap_block_state10_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_block_pp1_stage0_01001 = ((ap_enable_reg_pp1_iter1 == 1'b1) & (((exitcond_reg_881 == 1'd0) & (img4_data_stream_2_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img4_data_stream_1_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img4_data_stream_0_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_2_s_empty_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_1_s_empty_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_0_s_empty_n == 1'b0))));
-end
-
-always @ (*) begin
-    ap_block_pp1_stage0_11001 = ((ap_enable_reg_pp1_iter1 == 1'b1) & (((exitcond_reg_881 == 1'd0) & (img4_data_stream_2_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img4_data_stream_1_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img4_data_stream_0_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_2_s_empty_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_1_s_empty_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_0_s_empty_n == 1'b0))));
+    ap_block_state11_pp0_stage0_iter1 = (((img3_data_stream_2_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img3_data_stream_1_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img3_data_stream_0_s_full_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_2_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_1_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)) | ((img2_data_stream_0_s_empty_n == 1'b0) & (exitcond_reg_717 == 1'd0)));
 end
 
 always @ (*) begin
-    ap_block_pp1_stage0_subdone = ((ap_enable_reg_pp1_iter1 == 1'b1) & (((exitcond_reg_881 == 1'd0) & (img4_data_stream_2_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img4_data_stream_1_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img4_data_stream_0_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_2_s_empty_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_1_s_empty_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_0_s_empty_n == 1'b0))));
-end
-
-assign ap_block_state12_pp1_stage0_iter0 = ~(1'b1 == 1'b1);
-
-always @ (*) begin
-    ap_block_state13_pp1_stage0_iter1 = (((exitcond_reg_881 == 1'd0) & (img4_data_stream_2_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img4_data_stream_1_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img4_data_stream_0_s_full_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_2_s_empty_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_1_s_empty_n == 1'b0)) | ((exitcond_reg_881 == 1'd0) & (img3_data_stream_0_s_empty_n == 1'b0)));
-end
-
-always @ (*) begin
-    ap_block_state15_on_subcall_done = ((grp_Mat2AXIvideo_fu_677_ap_done == 1'b0) | (grp_Mat2AXIvideo_fu_656_ap_done == 1'b0));
-end
-
-always @ (*) begin
-    ap_block_state16 = ((stream_passThrough_V_strb_V_1_ack_in == 1'b0) | (stream_passThrough_V_keep_V_1_ack_in == 1'b0) | (stream_passThrough_V_data_V_1_ack_in == 1'b0) | (stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (stream_passThrough_V_dest_V_1_ack_in == 1'b0) | (stream_passThrough_V_id_V_1_ack_in == 1'b0) | (stream_passThrough_V_last_V_1_ack_in == 1'b0) | (stream_passThrough_V_user_V_1_ack_in == 1'b0));
-end
-
-assign ap_block_state5_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
-
-always @ (*) begin
-    ap_block_state6_pp0_stage0_iter1 = (((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_2_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_1_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (imgDuplicate_data_st_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_2_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_1_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img1_data_stream_0_s_full_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_2_s_empty_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_1_s_empty_n == 1'b0)) | ((exitcond_i_reg_863 == 1'd0) & (img0_data_stream_0_s_empty_n == 1'b0)));
+    ap_block_state27 = ((stream_process_V_dest_V_1_ack_in == 1'b0) | (stream_process_V_id_V_1_ack_in == 1'b0) | (stream_process_V_last_V_1_ack_in == 1'b0) | (stream_process_V_user_V_1_ack_in == 1'b0) | (stream_process_V_strb_V_1_ack_in == 1'b0) | (stream_process_V_keep_V_1_ack_in == 1'b0) | (stream_process_V_data_V_1_ack_in == 1'b0) | (1'b0 == MAXI_BVALID));
 end
 
 assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
-
-assign ap_enable_pp1 = (ap_idle_pp1 ^ 1'b1);
 
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign exitcond1_fu_722_p2 = ((i_i_reg_593 == 11'd1050) ? 1'b1 : 1'b0);
+assign exitcond1_fu_570_p2 = ((i_i_reg_463 == 11'd1050) ? 1'b1 : 1'b0);
 
-assign exitcond5_i_fu_698_p2 = ((t_V_reg_571 == 11'd1050) ? 1'b1 : 1'b0);
+assign exitcond_fu_587_p2 = ((j_i_reg_474 == 11'd1680) ? 1'b1 : 1'b0);
 
-assign exitcond_fu_734_p2 = ((j_i_reg_604 == 11'd1680) ? 1'b1 : 1'b0);
+assign grp_AXIvideo2Mat_fu_495_ap_start = grp_AXIvideo2Mat_fu_495_ap_start_reg;
 
-assign exitcond_i_fu_710_p2 = ((t_V_1_reg_582 == 11'd1680) ? 1'b1 : 1'b0);
+assign grp_AXIvideo2Mat_fu_495_stream_in_TVALID = stream_in_V_dest_V_0_state[1'd0];
 
-assign grp_AXIvideo2Mat_fu_625_ap_start = grp_AXIvideo2Mat_fu_625_ap_start_reg;
+assign grp_CvtColor_fu_516_ap_start = grp_CvtColor_fu_516_ap_start_reg;
 
-assign grp_AXIvideo2Mat_fu_625_stream_in_TVALID = stream_in_V_dest_V_0_state[1'd0];
+assign grp_Filter2D_fu_485_ap_start = grp_Filter2D_fu_485_ap_start_reg;
 
-assign grp_CvtColor_fu_646_ap_start = grp_CvtColor_fu_646_ap_start_reg;
+assign grp_Mat2AXIvideo_fu_526_ap_start = grp_Mat2AXIvideo_fu_526_ap_start_reg;
 
-assign grp_Filter2D_fu_615_ap_start = grp_Filter2D_fu_615_ap_start_reg;
+assign grp_Mat2AXIvideo_fu_526_stream_process_TREADY = stream_process_V_dest_V_1_state[1'd1];
 
-assign grp_Mat2AXIvideo_fu_656_ap_start = grp_Mat2AXIvideo_fu_656_ap_start_reg;
+assign i_fu_576_p2 = (i_i_reg_463 + 11'd1);
 
-assign grp_Mat2AXIvideo_fu_656_stream_passThrough_TREADY = stream_process_V_dest_V_1_state[1'd1];
+assign j_fu_593_p2 = (j_i_reg_474 + 11'd1);
 
-assign grp_Mat2AXIvideo_fu_677_ap_start = grp_Mat2AXIvideo_fu_677_ap_start_reg;
+assign ram2_sum_cast_fu_599_p1 = ram2_sum_reg_712;
 
-assign grp_Mat2AXIvideo_fu_677_stream_passThrough_TREADY = stream_passThrough_V_dest_V_1_state[1'd1];
-
-assign i_V_fu_704_p2 = (t_V_reg_571 + 11'd1);
-
-assign i_fu_728_p2 = (i_i_reg_593 + 11'd1);
-
-assign j_V_fu_716_p2 = (t_V_1_reg_582 + 11'd1);
-
-assign j_fu_740_p2 = (j_i_reg_604 + 11'd1);
+assign ram2_sum_fu_582_p2 = (tmp_3_cast_reg_698 + 31'd1);
 
 assign stream_in_TREADY = stream_in_V_dest_V_0_state[1'd1];
 
@@ -3123,134 +2888,6 @@ assign stream_in_V_user_V_0_vld_in = stream_in_TVALID;
 
 assign stream_in_V_user_V_0_vld_out = stream_in_V_user_V_0_state[1'd0];
 
-assign stream_passThrough_TDATA = stream_passThrough_V_data_V_1_data_out;
-
-assign stream_passThrough_TDEST = stream_passThrough_V_dest_V_1_data_out;
-
-assign stream_passThrough_TID = stream_passThrough_V_id_V_1_data_out;
-
-assign stream_passThrough_TKEEP = stream_passThrough_V_keep_V_1_data_out;
-
-assign stream_passThrough_TLAST = stream_passThrough_V_last_V_1_data_out;
-
-assign stream_passThrough_TSTRB = stream_passThrough_V_strb_V_1_data_out;
-
-assign stream_passThrough_TUSER = stream_passThrough_V_user_V_1_data_out;
-
-assign stream_passThrough_TVALID = stream_passThrough_V_dest_V_1_state[1'd0];
-
-assign stream_passThrough_V_data_V_1_ack_in = stream_passThrough_V_data_V_1_state[1'd1];
-
-assign stream_passThrough_V_data_V_1_ack_out = stream_passThrough_TREADY;
-
-assign stream_passThrough_V_data_V_1_load_A = (stream_passThrough_V_data_V_1_state_cmp_full & ~stream_passThrough_V_data_V_1_sel_wr);
-
-assign stream_passThrough_V_data_V_1_load_B = (stream_passThrough_V_data_V_1_state_cmp_full & stream_passThrough_V_data_V_1_sel_wr);
-
-assign stream_passThrough_V_data_V_1_sel = stream_passThrough_V_data_V_1_sel_rd;
-
-assign stream_passThrough_V_data_V_1_state_cmp_full = ((stream_passThrough_V_data_V_1_state != 2'd1) ? 1'b1 : 1'b0);
-
-assign stream_passThrough_V_data_V_1_vld_in = grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID;
-
-assign stream_passThrough_V_data_V_1_vld_out = stream_passThrough_V_data_V_1_state[1'd0];
-
-assign stream_passThrough_V_dest_V_1_ack_in = stream_passThrough_V_dest_V_1_state[1'd1];
-
-assign stream_passThrough_V_dest_V_1_ack_out = stream_passThrough_TREADY;
-
-assign stream_passThrough_V_dest_V_1_load_A = (stream_passThrough_V_dest_V_1_state_cmp_full & ~stream_passThrough_V_dest_V_1_sel_wr);
-
-assign stream_passThrough_V_dest_V_1_load_B = (stream_passThrough_V_dest_V_1_state_cmp_full & stream_passThrough_V_dest_V_1_sel_wr);
-
-assign stream_passThrough_V_dest_V_1_sel = stream_passThrough_V_dest_V_1_sel_rd;
-
-assign stream_passThrough_V_dest_V_1_state_cmp_full = ((stream_passThrough_V_dest_V_1_state != 2'd1) ? 1'b1 : 1'b0);
-
-assign stream_passThrough_V_dest_V_1_vld_in = grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID;
-
-assign stream_passThrough_V_dest_V_1_vld_out = stream_passThrough_V_dest_V_1_state[1'd0];
-
-assign stream_passThrough_V_id_V_1_ack_in = stream_passThrough_V_id_V_1_state[1'd1];
-
-assign stream_passThrough_V_id_V_1_ack_out = stream_passThrough_TREADY;
-
-assign stream_passThrough_V_id_V_1_load_A = (stream_passThrough_V_id_V_1_state_cmp_full & ~stream_passThrough_V_id_V_1_sel_wr);
-
-assign stream_passThrough_V_id_V_1_load_B = (stream_passThrough_V_id_V_1_state_cmp_full & stream_passThrough_V_id_V_1_sel_wr);
-
-assign stream_passThrough_V_id_V_1_sel = stream_passThrough_V_id_V_1_sel_rd;
-
-assign stream_passThrough_V_id_V_1_state_cmp_full = ((stream_passThrough_V_id_V_1_state != 2'd1) ? 1'b1 : 1'b0);
-
-assign stream_passThrough_V_id_V_1_vld_in = grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID;
-
-assign stream_passThrough_V_id_V_1_vld_out = stream_passThrough_V_id_V_1_state[1'd0];
-
-assign stream_passThrough_V_keep_V_1_ack_in = stream_passThrough_V_keep_V_1_state[1'd1];
-
-assign stream_passThrough_V_keep_V_1_ack_out = stream_passThrough_TREADY;
-
-assign stream_passThrough_V_keep_V_1_load_A = (stream_passThrough_V_keep_V_1_state_cmp_full & ~stream_passThrough_V_keep_V_1_sel_wr);
-
-assign stream_passThrough_V_keep_V_1_load_B = (stream_passThrough_V_keep_V_1_state_cmp_full & stream_passThrough_V_keep_V_1_sel_wr);
-
-assign stream_passThrough_V_keep_V_1_sel = stream_passThrough_V_keep_V_1_sel_rd;
-
-assign stream_passThrough_V_keep_V_1_state_cmp_full = ((stream_passThrough_V_keep_V_1_state != 2'd1) ? 1'b1 : 1'b0);
-
-assign stream_passThrough_V_keep_V_1_vld_in = grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID;
-
-assign stream_passThrough_V_keep_V_1_vld_out = stream_passThrough_V_keep_V_1_state[1'd0];
-
-assign stream_passThrough_V_last_V_1_ack_in = stream_passThrough_V_last_V_1_state[1'd1];
-
-assign stream_passThrough_V_last_V_1_ack_out = stream_passThrough_TREADY;
-
-assign stream_passThrough_V_last_V_1_load_A = (stream_passThrough_V_last_V_1_state_cmp_full & ~stream_passThrough_V_last_V_1_sel_wr);
-
-assign stream_passThrough_V_last_V_1_load_B = (stream_passThrough_V_last_V_1_state_cmp_full & stream_passThrough_V_last_V_1_sel_wr);
-
-assign stream_passThrough_V_last_V_1_sel = stream_passThrough_V_last_V_1_sel_rd;
-
-assign stream_passThrough_V_last_V_1_state_cmp_full = ((stream_passThrough_V_last_V_1_state != 2'd1) ? 1'b1 : 1'b0);
-
-assign stream_passThrough_V_last_V_1_vld_in = grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID;
-
-assign stream_passThrough_V_last_V_1_vld_out = stream_passThrough_V_last_V_1_state[1'd0];
-
-assign stream_passThrough_V_strb_V_1_ack_in = stream_passThrough_V_strb_V_1_state[1'd1];
-
-assign stream_passThrough_V_strb_V_1_ack_out = stream_passThrough_TREADY;
-
-assign stream_passThrough_V_strb_V_1_load_A = (stream_passThrough_V_strb_V_1_state_cmp_full & ~stream_passThrough_V_strb_V_1_sel_wr);
-
-assign stream_passThrough_V_strb_V_1_load_B = (stream_passThrough_V_strb_V_1_state_cmp_full & stream_passThrough_V_strb_V_1_sel_wr);
-
-assign stream_passThrough_V_strb_V_1_sel = stream_passThrough_V_strb_V_1_sel_rd;
-
-assign stream_passThrough_V_strb_V_1_state_cmp_full = ((stream_passThrough_V_strb_V_1_state != 2'd1) ? 1'b1 : 1'b0);
-
-assign stream_passThrough_V_strb_V_1_vld_in = grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID;
-
-assign stream_passThrough_V_strb_V_1_vld_out = stream_passThrough_V_strb_V_1_state[1'd0];
-
-assign stream_passThrough_V_user_V_1_ack_in = stream_passThrough_V_user_V_1_state[1'd1];
-
-assign stream_passThrough_V_user_V_1_ack_out = stream_passThrough_TREADY;
-
-assign stream_passThrough_V_user_V_1_load_A = (stream_passThrough_V_user_V_1_state_cmp_full & ~stream_passThrough_V_user_V_1_sel_wr);
-
-assign stream_passThrough_V_user_V_1_load_B = (stream_passThrough_V_user_V_1_state_cmp_full & stream_passThrough_V_user_V_1_sel_wr);
-
-assign stream_passThrough_V_user_V_1_sel = stream_passThrough_V_user_V_1_sel_rd;
-
-assign stream_passThrough_V_user_V_1_state_cmp_full = ((stream_passThrough_V_user_V_1_state != 2'd1) ? 1'b1 : 1'b0);
-
-assign stream_passThrough_V_user_V_1_vld_in = grp_Mat2AXIvideo_fu_677_stream_passThrough_TVALID;
-
-assign stream_passThrough_V_user_V_1_vld_out = stream_passThrough_V_user_V_1_state[1'd0];
-
 assign stream_process_TDATA = stream_process_V_data_V_1_data_out;
 
 assign stream_process_TDEST = stream_process_V_dest_V_1_data_out;
@@ -3279,7 +2916,7 @@ assign stream_process_V_data_V_1_sel = stream_process_V_data_V_1_sel_rd;
 
 assign stream_process_V_data_V_1_state_cmp_full = ((stream_process_V_data_V_1_state != 2'd1) ? 1'b1 : 1'b0);
 
-assign stream_process_V_data_V_1_vld_in = grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID;
+assign stream_process_V_data_V_1_vld_in = grp_Mat2AXIvideo_fu_526_stream_process_TVALID;
 
 assign stream_process_V_data_V_1_vld_out = stream_process_V_data_V_1_state[1'd0];
 
@@ -3295,7 +2932,7 @@ assign stream_process_V_dest_V_1_sel = stream_process_V_dest_V_1_sel_rd;
 
 assign stream_process_V_dest_V_1_state_cmp_full = ((stream_process_V_dest_V_1_state != 2'd1) ? 1'b1 : 1'b0);
 
-assign stream_process_V_dest_V_1_vld_in = grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID;
+assign stream_process_V_dest_V_1_vld_in = grp_Mat2AXIvideo_fu_526_stream_process_TVALID;
 
 assign stream_process_V_dest_V_1_vld_out = stream_process_V_dest_V_1_state[1'd0];
 
@@ -3311,7 +2948,7 @@ assign stream_process_V_id_V_1_sel = stream_process_V_id_V_1_sel_rd;
 
 assign stream_process_V_id_V_1_state_cmp_full = ((stream_process_V_id_V_1_state != 2'd1) ? 1'b1 : 1'b0);
 
-assign stream_process_V_id_V_1_vld_in = grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID;
+assign stream_process_V_id_V_1_vld_in = grp_Mat2AXIvideo_fu_526_stream_process_TVALID;
 
 assign stream_process_V_id_V_1_vld_out = stream_process_V_id_V_1_state[1'd0];
 
@@ -3327,7 +2964,7 @@ assign stream_process_V_keep_V_1_sel = stream_process_V_keep_V_1_sel_rd;
 
 assign stream_process_V_keep_V_1_state_cmp_full = ((stream_process_V_keep_V_1_state != 2'd1) ? 1'b1 : 1'b0);
 
-assign stream_process_V_keep_V_1_vld_in = grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID;
+assign stream_process_V_keep_V_1_vld_in = grp_Mat2AXIvideo_fu_526_stream_process_TVALID;
 
 assign stream_process_V_keep_V_1_vld_out = stream_process_V_keep_V_1_state[1'd0];
 
@@ -3343,7 +2980,7 @@ assign stream_process_V_last_V_1_sel = stream_process_V_last_V_1_sel_rd;
 
 assign stream_process_V_last_V_1_state_cmp_full = ((stream_process_V_last_V_1_state != 2'd1) ? 1'b1 : 1'b0);
 
-assign stream_process_V_last_V_1_vld_in = grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID;
+assign stream_process_V_last_V_1_vld_in = grp_Mat2AXIvideo_fu_526_stream_process_TVALID;
 
 assign stream_process_V_last_V_1_vld_out = stream_process_V_last_V_1_state[1'd0];
 
@@ -3359,7 +2996,7 @@ assign stream_process_V_strb_V_1_sel = stream_process_V_strb_V_1_sel_rd;
 
 assign stream_process_V_strb_V_1_state_cmp_full = ((stream_process_V_strb_V_1_state != 2'd1) ? 1'b1 : 1'b0);
 
-assign stream_process_V_strb_V_1_vld_in = grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID;
+assign stream_process_V_strb_V_1_vld_in = grp_Mat2AXIvideo_fu_526_stream_process_TVALID;
 
 assign stream_process_V_strb_V_1_vld_out = stream_process_V_strb_V_1_state[1'd0];
 
@@ -3375,8 +3012,19 @@ assign stream_process_V_user_V_1_sel = stream_process_V_user_V_1_sel_rd;
 
 assign stream_process_V_user_V_1_state_cmp_full = ((stream_process_V_user_V_1_state != 2'd1) ? 1'b1 : 1'b0);
 
-assign stream_process_V_user_V_1_vld_in = grp_Mat2AXIvideo_fu_656_stream_passThrough_TVALID;
+assign stream_process_V_user_V_1_vld_in = grp_Mat2AXIvideo_fu_526_stream_process_TVALID;
 
 assign stream_process_V_user_V_1_vld_out = stream_process_V_user_V_1_state[1'd0];
+
+assign tmp_3_cast_fu_567_p1 = ram1_reg_614;
+
+assign tmp_3_fu_557_p1 = ram1_reg_614;
+
+assign tmp_fu_609_p2 = (MAXI_addr_1_read_reg_733 + 32'd1);
+
+always @ (posedge ap_clk) begin
+    tmp_3_cast_reg_698[30] <= 1'b0;
+    MAXI_addr_1_reg_726[31] <= 1'b0;
+end
 
 endmodule //subsamble

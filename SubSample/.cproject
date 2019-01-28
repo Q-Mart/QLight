@@ -29,6 +29,7 @@
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/etc"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/userfs/q/qj544/w2k/QLight"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/auto_cc/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.300314059" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -46,6 +47,7 @@
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/etc"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/userfs/q/qj544/w2k/QLight"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/auto_cc/include"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.499234043" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -129,6 +131,7 @@
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/etc"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/userfs/q/qj544/w2k/QLight"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/auto_cc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1678298411" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -141,6 +144,7 @@
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/include/etc"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/userfs/q/qj544/w2k/QLight"/>
 									<listOptionValue builtIn="false" value="/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/auto_cc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.389738310" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>

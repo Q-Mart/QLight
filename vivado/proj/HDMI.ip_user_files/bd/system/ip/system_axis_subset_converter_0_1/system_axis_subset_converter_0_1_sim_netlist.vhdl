@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
--- Date        : Tue Jan 15 14:53:57 2019
+-- Date        : Tue Jan 15 14:53:56 2019
 -- Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_axis_subset_converter_0_1 -prefix
+--               system_axis_subset_converter_0_1_ system_axis_subset_converter_0_1_sim_netlist.vhdl
 -- Design      : system_axis_subset_converter_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -102,8 +102,6 @@ entity system_axis_subset_converter_0_1_top_system_axis_subset_converter_0_1 is
   attribute G_TASK_SEVERITY_INFO of system_axis_subset_converter_0_1_top_system_axis_subset_converter_0_1 : entity is 0;
   attribute G_TASK_SEVERITY_WARNING : integer;
   attribute G_TASK_SEVERITY_WARNING of system_axis_subset_converter_0_1_top_system_axis_subset_converter_0_1 : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_axis_subset_converter_0_1_top_system_axis_subset_converter_0_1 : entity is "top_system_axis_subset_converter_0_1";
 end system_axis_subset_converter_0_1_top_system_axis_subset_converter_0_1;
 
 architecture STRUCTURE of system_axis_subset_converter_0_1_top_system_axis_subset_converter_0_1 is

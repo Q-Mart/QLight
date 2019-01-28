@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
--- Date        : Tue Jan 15 14:55:15 2019
+-- Date        : Tue Jan 15 14:55:14 2019
 -- Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/userfs/q/qj544/w2k/QLight/src/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_xbar_0 -prefix
+--               system_xbar_0_ system_xbar_0_sim_netlist.vhdl
 -- Design      : system_xbar_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -77,8 +77,6 @@ entity system_xbar_0_axi_crossbar_v2_1_18_addr_arbiter_sasd is
     mi_wready : in STD_LOGIC_VECTOR ( 0 to 0 );
     mi_bvalid : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_xbar_0_axi_crossbar_v2_1_18_addr_arbiter_sasd : entity is "axi_crossbar_v2_1_18_addr_arbiter_sasd";
 end system_xbar_0_axi_crossbar_v2_1_18_addr_arbiter_sasd;
 
 architecture STRUCTURE of system_xbar_0_axi_crossbar_v2_1_18_addr_arbiter_sasd is
@@ -1749,8 +1747,6 @@ entity system_xbar_0_axi_crossbar_v2_1_18_decerr_slave is
     m_axi_awready : in STD_LOGIC_VECTOR ( 0 to 0 );
     aa_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_xbar_0_axi_crossbar_v2_1_18_decerr_slave : entity is "axi_crossbar_v2_1_18_decerr_slave";
 end system_xbar_0_axi_crossbar_v2_1_18_decerr_slave;
 
 architecture STRUCTURE of system_xbar_0_axi_crossbar_v2_1_18_decerr_slave is
@@ -1968,8 +1964,6 @@ entity system_xbar_0_axi_crossbar_v2_1_18_splitter is
     m_ready_d0 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_xbar_0_axi_crossbar_v2_1_18_splitter : entity is "axi_crossbar_v2_1_18_splitter";
 end system_xbar_0_axi_crossbar_v2_1_18_splitter;
 
 architecture STRUCTURE of system_xbar_0_axi_crossbar_v2_1_18_splitter is
@@ -2245,8 +2239,6 @@ entity system_xbar_0_axi_register_slice_v2_1_17_axic_register_slice is
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_xbar_0_axi_register_slice_v2_1_17_axic_register_slice : entity is "axi_register_slice_v2_1_17_axic_register_slice";
 end system_xbar_0_axi_register_slice_v2_1_17_axic_register_slice;
 
 architecture STRUCTURE of system_xbar_0_axi_register_slice_v2_1_17_axic_register_slice is
@@ -4485,8 +4477,6 @@ entity system_xbar_0_axi_crossbar_v2_1_18_crossbar_sasd is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_xbar_0_axi_crossbar_v2_1_18_crossbar_sasd : entity is "axi_crossbar_v2_1_18_crossbar_sasd";
 end system_xbar_0_axi_crossbar_v2_1_18_crossbar_sasd;
 
 architecture STRUCTURE of system_xbar_0_axi_crossbar_v2_1_18_crossbar_sasd is
@@ -4928,8 +4918,6 @@ entity system_xbar_0_axi_crossbar_v2_1_18_axi_crossbar is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_xbar_0_axi_crossbar_v2_1_18_axi_crossbar : entity is "axi_crossbar_v2_1_18_axi_crossbar";
 end system_xbar_0_axi_crossbar_v2_1_18_axi_crossbar;
 
 architecture STRUCTURE of system_xbar_0_axi_crossbar_v2_1_18_axi_crossbar is

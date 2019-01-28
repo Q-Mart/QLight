@@ -890,7 +890,7 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>tmp_8</name>
+						<name>tmp_7</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>
@@ -950,7 +950,7 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>tmp_9</name>
+						<name>tmp_8</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>
@@ -1010,7 +1010,7 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>tmp_7</name>
+						<name>tmp_6</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>
@@ -3249,7 +3249,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_7_read_fu_140</first>
+			<first>tmp_6_read_fu_140</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3257,7 +3257,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_8_read_fu_128</first>
+			<first>tmp_7_read_fu_128</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3265,7 +3265,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_9_read_fu_134</first>
+			<first>tmp_8_read_fu_134</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
