@@ -50,6 +50,9 @@ entity bd_d5b8 is
     SLOT_5_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     SLOT_5_AXIS_tvalid : in STD_LOGIC;
     clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
@@ -62,45 +65,48 @@ architecture STRUCTURE of bd_d5b8 is
   component bd_d5b8_ila_lib_0 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe7 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe8 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe9 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe9 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     probe10 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe11 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe11 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe12 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe13 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe14 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe14 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     probe15 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe16 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe16 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe17 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe18 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe19 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe20 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe19 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe20 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe21 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe22 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe23 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe22 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe23 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     probe24 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe25 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe25 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe26 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe27 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe28 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe29 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe28 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe29 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe30 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe31 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe32 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe31 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe32 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     probe33 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe34 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe34 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe35 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe36 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe37 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe38 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    probe37 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe38 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe39 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe40 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe41 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component bd_d5b8_ila_lib_0;
   component bd_d5b8_g_inst_0 is
@@ -266,6 +272,9 @@ architecture STRUCTURE of bd_d5b8 is
   signal net_slot_5_axis_tready : STD_LOGIC;
   signal net_slot_5_axis_tuser : STD_LOGIC_VECTOR ( 0 to 0 );
   signal net_slot_5_axis_tvalid : STD_LOGIC;
+  signal probe0_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal probe1_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal probe2_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal resetn_1 : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of SLOT_0_AXIS_tlast : signal is "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TLAST";
@@ -309,7 +318,7 @@ architecture STRUCTURE of bd_d5b8 is
   attribute X_INTERFACE_INFO of SLOT_3_AXIS_tstrb : signal is "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TSTRB";
   attribute X_INTERFACE_INFO of SLOT_3_AXIS_tuser : signal is "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TUSER";
   attribute X_INTERFACE_INFO of SLOT_4_AXIS_tdata : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TDATA";
-  attribute X_INTERFACE_PARAMETER of SLOT_4_AXIS_tdata : signal is "XIL_INTERFACENAME SLOT_4_AXIS, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, FREQ_HZ 1.33333e+08, HAS_TKEEP 1, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 1, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, PHASE 0.000, TDATA_NUM_BYTES 3, TDEST_WIDTH 1, TID_WIDTH 1, TUSER_WIDTH 1";
+  attribute X_INTERFACE_PARAMETER of SLOT_4_AXIS_tdata : signal is "XIL_INTERFACENAME SLOT_4_AXIS, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, FREQ_HZ 1.33333e+08, HAS_TKEEP 1, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 1, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 24 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TUSER_WIDTH 1}, PHASE 0.000, TDATA_NUM_BYTES 3, TDEST_WIDTH 1, TID_WIDTH 1, TUSER_WIDTH 1";
   attribute X_INTERFACE_INFO of SLOT_4_AXIS_tdest : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TDEST";
   attribute X_INTERFACE_INFO of SLOT_4_AXIS_tid : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TID";
   attribute X_INTERFACE_INFO of SLOT_4_AXIS_tkeep : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TKEEP";
@@ -359,6 +368,9 @@ begin
   Conn_TUSER(0) <= SLOT_0_AXIS_tuser(0);
   Conn_TVALID <= SLOT_0_AXIS_tvalid;
   clk_1 <= clk;
+  probe0_1(0) <= probe0(0);
+  probe1_1(0) <= probe1(0);
+  probe2_1(0) <= probe2(0);
   resetn_1 <= resetn;
 g_inst: component bd_d5b8_g_inst_0
      port map (
@@ -446,44 +458,47 @@ g_inst: component bd_d5b8_g_inst_0
 ila_lib: component bd_d5b8_ila_lib_0
      port map (
       clk => clk_1,
-      probe0(23 downto 0) => net_slot_0_axis_tdata(23 downto 0),
-      probe1(2 downto 0) => net_slot_0_axis_tkeep(2 downto 0),
-      probe10(0) => net_slot_1_axis_tlast,
-      probe11(23 downto 0) => net_slot_2_axis_tdata(23 downto 0),
-      probe12(0) => net_slot_2_axis_tuser(0),
-      probe13(0) => net_slot_2_axis_tvalid,
-      probe14(0) => net_slot_2_axis_tready,
-      probe15(0) => net_slot_2_axis_tlast,
-      probe16(23 downto 0) => net_slot_3_axis_tdata(23 downto 0),
-      probe17(0) => net_slot_3_axis_tdest(0),
-      probe18(0) => net_slot_3_axis_tid(0),
-      probe19(2 downto 0) => net_slot_3_axis_tkeep(2 downto 0),
-      probe2(0) => net_slot_0_axis_tuser(0),
-      probe20(2 downto 0) => net_slot_3_axis_tstrb(2 downto 0),
-      probe21(0) => net_slot_3_axis_tuser(0),
-      probe22(0) => net_slot_3_axis_tvalid,
-      probe23(0) => net_slot_3_axis_tready,
-      probe24(0) => net_slot_3_axis_tlast,
-      probe25(23 downto 0) => net_slot_4_axis_tdata(23 downto 0),
-      probe26(0) => net_slot_4_axis_tdest(0),
-      probe27(0) => net_slot_4_axis_tid(0),
-      probe28(2 downto 0) => net_slot_4_axis_tkeep(2 downto 0),
-      probe29(2 downto 0) => net_slot_4_axis_tstrb(2 downto 0),
-      probe3(0) => net_slot_0_axis_tvalid,
-      probe30(0) => net_slot_4_axis_tuser(0),
-      probe31(0) => net_slot_4_axis_tvalid,
-      probe32(0) => net_slot_4_axis_tready,
-      probe33(0) => net_slot_4_axis_tlast,
-      probe34(23 downto 0) => net_slot_5_axis_tdata(23 downto 0),
-      probe35(0) => net_slot_5_axis_tuser(0),
-      probe36(0) => net_slot_5_axis_tvalid,
-      probe37(0) => net_slot_5_axis_tready,
-      probe38(0) => net_slot_5_axis_tlast,
-      probe4(0) => net_slot_0_axis_tready,
-      probe5(0) => net_slot_0_axis_tlast,
-      probe6(23 downto 0) => net_slot_1_axis_tdata(23 downto 0),
-      probe7(0) => net_slot_1_axis_tuser(0),
-      probe8(0) => net_slot_1_axis_tvalid,
-      probe9(0) => net_slot_1_axis_tready
+      probe0(0) => probe0_1(0),
+      probe1(0) => probe1_1(0),
+      probe10(0) => net_slot_1_axis_tuser(0),
+      probe11(0) => net_slot_1_axis_tvalid,
+      probe12(0) => net_slot_1_axis_tready,
+      probe13(0) => net_slot_1_axis_tlast,
+      probe14(23 downto 0) => net_slot_2_axis_tdata(23 downto 0),
+      probe15(0) => net_slot_2_axis_tuser(0),
+      probe16(0) => net_slot_2_axis_tvalid,
+      probe17(0) => net_slot_2_axis_tready,
+      probe18(0) => net_slot_2_axis_tlast,
+      probe19(23 downto 0) => net_slot_3_axis_tdata(23 downto 0),
+      probe2(0) => probe2_1(0),
+      probe20(0) => net_slot_3_axis_tdest(0),
+      probe21(0) => net_slot_3_axis_tid(0),
+      probe22(2 downto 0) => net_slot_3_axis_tkeep(2 downto 0),
+      probe23(2 downto 0) => net_slot_3_axis_tstrb(2 downto 0),
+      probe24(0) => net_slot_3_axis_tuser(0),
+      probe25(0) => net_slot_3_axis_tvalid,
+      probe26(0) => net_slot_3_axis_tready,
+      probe27(0) => net_slot_3_axis_tlast,
+      probe28(23 downto 0) => net_slot_4_axis_tdata(23 downto 0),
+      probe29(0) => net_slot_4_axis_tdest(0),
+      probe3(23 downto 0) => net_slot_0_axis_tdata(23 downto 0),
+      probe30(0) => net_slot_4_axis_tid(0),
+      probe31(2 downto 0) => net_slot_4_axis_tkeep(2 downto 0),
+      probe32(2 downto 0) => net_slot_4_axis_tstrb(2 downto 0),
+      probe33(0) => net_slot_4_axis_tuser(0),
+      probe34(0) => net_slot_4_axis_tvalid,
+      probe35(0) => net_slot_4_axis_tready,
+      probe36(0) => net_slot_4_axis_tlast,
+      probe37(23 downto 0) => net_slot_5_axis_tdata(23 downto 0),
+      probe38(0) => net_slot_5_axis_tuser(0),
+      probe39(0) => net_slot_5_axis_tvalid,
+      probe4(2 downto 0) => net_slot_0_axis_tkeep(2 downto 0),
+      probe40(0) => net_slot_5_axis_tready,
+      probe41(0) => net_slot_5_axis_tlast,
+      probe5(0) => net_slot_0_axis_tuser(0),
+      probe6(0) => net_slot_0_axis_tvalid,
+      probe7(0) => net_slot_0_axis_tready,
+      probe8(0) => net_slot_0_axis_tlast,
+      probe9(23 downto 0) => net_slot_1_axis_tdata(23 downto 0)
     );
 end STRUCTURE;

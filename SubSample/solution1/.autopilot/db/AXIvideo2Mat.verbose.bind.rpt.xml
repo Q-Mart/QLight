@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'AXIvideo2Mat'" level="0">
-<item name = "Date">Mon Jan 28 11:41:14 2019
+<item name = "Date">Thu Jan 31 14:03:36 2019
 </item>
 <item name = "Version">2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)</item>
 <item name = "Project">SubSample</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 3.634, 1.25</column>
+<column name="ap_clk">10.00, 5.403, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1769253, 1769253, 1769253, 1769253, none</column>
+<column name="">1771353, 1771353, 1771353, 1771353, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,9 +36,9 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- loop_wait_for_start">0, 0, 1, 1, 1, 0, yes</column>
-<column name="- loop_height">1769250, 1769250, 1685, -, -, 1050, no</column>
-<column name=" + loop_width">1680, 1680, 2, 1, 1, 1680, yes</column>
-<column name=" + loop_wait_for_eol">0, 0, 1, 1, 1, 0, yes</column>
+<column name="- loop_height">1771350, 1771350, 1687, -, -, 1050, no</column>
+<column name=" + loop_width">1681, 1681, 2, 1, 1, 1680, yes</column>
+<column name=" + loop_wait_for_eol">1, 1, 2, 1, 1, 0, yes</column>
 </table>
 </item>
 </section>

@@ -265,8 +265,8 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>17</id>
-						<name>exitcond1</name>
+						<id>16</id>
+						<name>tmp_s</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1946</lineNumber>
@@ -311,7 +311,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>18</id>
+						<id>17</id>
 						<name>i_1</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
@@ -483,8 +483,8 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>27</id>
-						<name>exitcond</name>
+						<id>26</id>
+						<name>tmp_19</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1947</lineNumber>
@@ -529,7 +529,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>28</id>
+						<id>27</id>
 						<name>j_1</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
@@ -623,7 +623,7 @@
 					<Obj>
 						<type>0</type>
 						<id>36</id>
-						<name>tmp_93</name>
+						<name>tmp_101</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>
@@ -683,7 +683,7 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>tmp_94</name>
+						<name>tmp_102</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>
@@ -743,7 +743,7 @@
 					<Obj>
 						<type>0</type>
 						<id>38</id>
-						<name>tmp_95</name>
+						<name>tmp_103</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>
@@ -803,7 +803,7 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>OP2_V_cast</name>
+						<name>OP2_V_i_cast</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1477</lineNumber>
@@ -862,7 +862,7 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>r_V</name>
+						<name>r_V_i</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1477</lineNumber>
@@ -922,7 +922,7 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>OP2_V_1_cast</name>
+						<name>OP2_V_1_i_cast</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1477</lineNumber>
@@ -981,7 +981,7 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>r_V_3</name>
+						<name>r_V_3_i</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1477</lineNumber>
@@ -1041,7 +1041,7 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>OP2_V_2_cast</name>
+						<name>OP2_V_2_i_cast</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1475</lineNumber>
@@ -1100,7 +1100,7 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>r_V_4</name>
+						<name>r_V</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1475</lineNumber>
@@ -1338,7 +1338,7 @@
 					<Obj>
 						<type>0</type>
 						<id>49</id>
-						<name>r_V_5</name>
+						<name>r_V_1</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_imgproc.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>1477</lineNumber>
@@ -1474,7 +1474,7 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>tmp_89</name>
+						<name>tmp_97</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_types.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>409</lineNumber>
@@ -1622,7 +1622,7 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>tmp_90</name>
+						<name>tmp_98</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_types.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>409</lineNumber>
@@ -1771,7 +1771,7 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>tmp_91</name>
+						<name>tmp_99</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_types.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>409</lineNumber>
@@ -2732,8 +2732,8 @@
 					<count>4</count>
 					<item_version>0</item_version>
 					<item>15</item>
+					<item>16</item>
 					<item>17</item>
-					<item>18</item>
 					<item>19</item>
 				</node_objs>
 			</item>
@@ -2781,8 +2781,8 @@
 					<count>4</count>
 					<item_version>0</item_version>
 					<item>25</item>
+					<item>26</item>
 					<item>27</item>
-					<item>28</item>
 					<item>29</item>
 				</node_objs>
 			</item>
@@ -2908,7 +2908,7 @@
 			<item class_id_reference="20" object_id="_68">
 				<id>77</id>
 				<edge_type>1</edge_type>
-				<source_obj>18</source_obj>
+				<source_obj>17</source_obj>
 				<sink_obj>15</sink_obj>
 				<is_back_edge>1</is_back_edge>
 			</item>
@@ -2923,48 +2923,48 @@
 				<id>79</id>
 				<edge_type>1</edge_type>
 				<source_obj>15</source_obj>
-				<sink_obj>17</sink_obj>
+				<sink_obj>16</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_71">
 				<id>81</id>
 				<edge_type>1</edge_type>
 				<source_obj>80</source_obj>
-				<sink_obj>17</sink_obj>
+				<sink_obj>16</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_72">
 				<id>82</id>
 				<edge_type>1</edge_type>
 				<source_obj>15</source_obj>
-				<sink_obj>18</sink_obj>
+				<sink_obj>17</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_73">
 				<id>84</id>
 				<edge_type>1</edge_type>
 				<source_obj>83</source_obj>
-				<sink_obj>18</sink_obj>
+				<sink_obj>17</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_74">
 				<id>85</id>
 				<edge_type>1</edge_type>
-				<source_obj>17</source_obj>
+				<source_obj>16</source_obj>
 				<sink_obj>19</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_75">
 				<id>86</id>
 				<edge_type>2</edge_type>
-				<source_obj>24</source_obj>
+				<source_obj>72</source_obj>
 				<sink_obj>19</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_76">
 				<id>87</id>
 				<edge_type>2</edge_type>
-				<source_obj>72</source_obj>
+				<source_obj>24</source_obj>
 				<sink_obj>19</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -2992,7 +2992,7 @@
 			<item class_id_reference="20" object_id="_80">
 				<id>91</id>
 				<edge_type>1</edge_type>
-				<source_obj>28</source_obj>
+				<source_obj>27</source_obj>
 				<sink_obj>25</sink_obj>
 				<is_back_edge>1</is_back_edge>
 			</item>
@@ -3007,48 +3007,48 @@
 				<id>93</id>
 				<edge_type>1</edge_type>
 				<source_obj>25</source_obj>
-				<sink_obj>27</sink_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_83">
 				<id>95</id>
 				<edge_type>1</edge_type>
 				<source_obj>94</source_obj>
-				<sink_obj>27</sink_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_84">
 				<id>96</id>
 				<edge_type>1</edge_type>
 				<source_obj>25</source_obj>
-				<sink_obj>28</sink_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_85">
 				<id>97</id>
 				<edge_type>1</edge_type>
 				<source_obj>83</source_obj>
-				<sink_obj>28</sink_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_86">
 				<id>98</id>
 				<edge_type>1</edge_type>
-				<source_obj>27</source_obj>
+				<source_obj>26</source_obj>
 				<sink_obj>29</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_87">
 				<id>99</id>
 				<edge_type>2</edge_type>
-				<source_obj>67</source_obj>
+				<source_obj>70</source_obj>
 				<sink_obj>29</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_88">
 				<id>100</id>
 				<edge_type>2</edge_type>
-				<source_obj>70</source_obj>
+				<source_obj>67</source_obj>
 				<sink_obj>29</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -3167,14 +3167,14 @@
 			<item class_id_reference="20" object_id="_105">
 				<id>124</id>
 				<edge_type>1</edge_type>
-				<source_obj>48</source_obj>
+				<source_obj>43</source_obj>
 				<sink_obj>49</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_106">
 				<id>125</id>
 				<edge_type>1</edge_type>
-				<source_obj>43</source_obj>
+				<source_obj>48</source_obj>
 				<sink_obj>49</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -3368,56 +3368,56 @@
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_134">
-				<id>373</id>
+				<id>336</id>
 				<edge_type>2</edge_type>
 				<source_obj>14</source_obj>
 				<sink_obj>20</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_135">
-				<id>374</id>
-				<edge_type>2</edge_type>
-				<source_obj>20</source_obj>
-				<sink_obj>72</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_136">
-				<id>375</id>
+				<id>337</id>
 				<edge_type>2</edge_type>
 				<source_obj>20</source_obj>
 				<sink_obj>24</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
+			<item class_id_reference="20" object_id="_136">
+				<id>338</id>
+				<edge_type>2</edge_type>
+				<source_obj>20</source_obj>
+				<sink_obj>72</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
 			<item class_id_reference="20" object_id="_137">
-				<id>376</id>
+				<id>339</id>
 				<edge_type>2</edge_type>
 				<source_obj>24</source_obj>
 				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_138">
-				<id>377</id>
-				<edge_type>2</edge_type>
-				<source_obj>30</source_obj>
-				<sink_obj>70</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_139">
-				<id>378</id>
+				<id>340</id>
 				<edge_type>2</edge_type>
 				<source_obj>30</source_obj>
 				<sink_obj>67</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
+			<item class_id_reference="20" object_id="_139">
+				<id>341</id>
+				<edge_type>2</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>70</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
 			<item class_id_reference="20" object_id="_140">
-				<id>379</id>
+				<id>342</id>
 				<edge_type>2</edge_type>
 				<source_obj>67</source_obj>
 				<sink_obj>30</sink_obj>
 				<is_back_edge>1</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_141">
-				<id>380</id>
+				<id>343</id>
 				<edge_type>2</edge_type>
 				<source_obj>70</source_obj>
 				<sink_obj>20</sink_obj>
@@ -3609,14 +3609,14 @@
 			</second>
 		</item>
 		<item>
-			<first>17</first>
+			<first>16</first>
 			<second>
 				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
-			<first>18</first>
+			<first>17</first>
 			<second>
 				<first>1</first>
 				<second>0</second>
@@ -3644,14 +3644,14 @@
 			</second>
 		</item>
 		<item>
-			<first>27</first>
+			<first>26</first>
 			<second>
 				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
-			<first>28</first>
+			<first>27</first>
 			<second>
 				<first>2</first>
 				<second>0</second>

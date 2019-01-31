@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-| Date         : Mon Jan 28 12:00:42 2019
+| Date         : Thu Jan 31 14:14:08 2019
 | Host         : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_drc -file system_wrapper_drc_opted.rpt -pb system_wrapper_drc_opted.pb -rpx system_wrapper_drc_opted.rpx
 | Design       : system_wrapper
@@ -24,83 +24,42 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 17
-+-----------+----------+----------------------------+------------+
-| Rule      | Severity | Description                | Violations |
-+-----------+----------+----------------------------+------------+
-| DPIP-1    | Warning  | Input pipelining           | 1          |
-| DPOP-1    | Warning  | PREG Output pipelining     | 2          |
-| DPOP-2    | Warning  | MREG Output pipelining     | 2          |
-| REQP-1840 | Warning  | RAMB18 async control check | 8          |
-| REQP-165  | Advisory | writefirst                 | 2          |
-| REQP-181  | Advisory | writefirst                 | 2          |
-+-----------+----------+----------------------------+------------+
+             Violations found: 9
++----------+----------+------------------------+------------+
+| Rule     | Severity | Description            | Violations |
++----------+----------+------------------------+------------+
+| DPIP-1   | Warning  | Input pipelining       | 1          |
+| DPOP-1   | Warning  | PREG Output pipelining | 2          |
+| DPOP-2   | Warning  | MREG Output pipelining | 2          |
+| REQP-165 | Advisory | writefirst             | 2          |
+| REQP-181 | Advisory | writefirst             | 2          |
++----------+----------+------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 DPIP-1#1 Warning
 Input pipelining  
-DSP system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p input system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p input system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning
 PREG Output pipelining  
-DSP system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p output system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p output system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#2 Warning
 PREG Output pipelining  
-DSP system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p output system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p output system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-2#1 Warning
 MREG Output pipelining  
-DSP system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p multiplier stage system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p multiplier stage system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_mulcud_U12/subsamble_mac_mulcud_DSP48_1_U/p/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#2 Warning
 MREG Output pipelining  
-DSP system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p multiplier stage system_i/subsamble_0/U0/grp_CvtColor_fu_516/subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-REQP-1840#1 Warning
-RAMB18 async control check  
-The RAMB18E1 system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[10] (net: system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg_i_3_n_2) which is driven by a register (system_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#2 Warning
-RAMB18 async control check  
-The RAMB18E1 system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[11] (net: system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg_i_2_n_2) which is driven by a register (system_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#3 Warning
-RAMB18 async control check  
-The RAMB18E1 system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[12] (net: system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg_i_1_n_2) which is driven by a register (system_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#4 Warning
-RAMB18 async control check  
-The RAMB18E1 system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[5] (net: system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg_i_8_n_2) which is driven by a register (system_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#5 Warning
-RAMB18 async control check  
-The RAMB18E1 system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[6] (net: system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg_i_7_n_2) which is driven by a register (system_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#6 Warning
-RAMB18 async control check  
-The RAMB18E1 system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[7] (net: system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg_i_6_n_2) which is driven by a register (system_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#7 Warning
-RAMB18 async control check  
-The RAMB18E1 system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[8] (net: system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg_i_5_n_2) which is driven by a register (system_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#8 Warning
-RAMB18 async control check  
-The RAMB18E1 system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[9] (net: system_i/subsamble_0/U0/subsamble_MAXI_m_axi_U/bus_write/buff_wdata/mem_reg_i_4_n_2) which is driven by a register (system_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+DSP system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p multiplier stage system_i/subsamble_0/U0/CvtColor_U0/subsamble_mac_muldEe_U13/subsamble_mac_muldEe_DSP48_2_U/p/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 REQP-165#1 Advisory

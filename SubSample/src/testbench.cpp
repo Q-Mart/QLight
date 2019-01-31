@@ -8,10 +8,10 @@ int main() {
 	cv::Mat dst = src;
 	stream_t stream_in, stream_process, stream_passThrough;
 
-	uint32 ram[10000];
-	uint32 n = 0;
-
-	ram[1] = 0;
+//	uint32 ram[10000];
+//	uint32 n = 0;
+//
+//	ram[1] = 0;
 
 //	cvMat2AXIvideo(src, stream_in);
 //	subsamble(stream_in, stream_process, stream_passThrough);
@@ -23,13 +23,13 @@ int main() {
 //	cv::imwrite("test1_passThrough.bmp", dst);
 
 	cvMat2AXIvideo(src, stream_in);
-	subsamble(stream_in, stream_process, &n, ram);
+	subsamble(stream_in, stream_process);
 
 	AXIvideo2cvMat(stream_process, dst);
 	cv::imwrite("test1_process.bmp", dst);
 
-	printf("Version number: %d\r\n", ram[0]);
-	printf("Completed Sobel operation: %d\r\n", ram[1]);
+//	printf("Version number: %d\r\n", ram[0]);
+//	printf("Completed Sobel operation: %d\r\n", ram[1]);
 
 	return 0;
 }

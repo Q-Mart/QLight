@@ -12,6 +12,7 @@ module Mat2AXIvideo (
         ap_rst,
         ap_start,
         ap_done,
+        ap_continue,
         ap_idle,
         ap_ready,
         img_data_stream_0_V_dout,
@@ -37,12 +38,13 @@ module Mat2AXIvideo (
 parameter    ap_ST_fsm_state1 = 4'd1;
 parameter    ap_ST_fsm_state2 = 4'd2;
 parameter    ap_ST_fsm_pp0_stage0 = 4'd4;
-parameter    ap_ST_fsm_state5 = 4'd8;
+parameter    ap_ST_fsm_state6 = 4'd8;
 
 input   ap_clk;
 input   ap_rst;
 input   ap_start;
 output   ap_done;
+input   ap_continue;
 output   ap_idle;
 output   ap_ready;
 input  [7:0] img_data_stream_0_V_dout;
@@ -70,51 +72,359 @@ reg ap_ready;
 reg img_data_stream_0_V_read;
 reg img_data_stream_1_V_read;
 reg img_data_stream_2_V_read;
-reg stream_process_TVALID;
 
+reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [3:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
+reg   [23:0] AXI_video_strm_V_data_V_1_data_out;
+reg    AXI_video_strm_V_data_V_1_vld_in;
+wire    AXI_video_strm_V_data_V_1_vld_out;
+wire    AXI_video_strm_V_data_V_1_ack_in;
+wire    AXI_video_strm_V_data_V_1_ack_out;
+reg   [23:0] AXI_video_strm_V_data_V_1_payload_A;
+reg   [23:0] AXI_video_strm_V_data_V_1_payload_B;
+reg    AXI_video_strm_V_data_V_1_sel_rd;
+reg    AXI_video_strm_V_data_V_1_sel_wr;
+wire    AXI_video_strm_V_data_V_1_sel;
+wire    AXI_video_strm_V_data_V_1_load_A;
+wire    AXI_video_strm_V_data_V_1_load_B;
+reg   [1:0] AXI_video_strm_V_data_V_1_state;
+wire    AXI_video_strm_V_data_V_1_state_cmp_full;
+wire   [2:0] AXI_video_strm_V_keep_V_1_data_out;
+reg    AXI_video_strm_V_keep_V_1_vld_in;
+wire    AXI_video_strm_V_keep_V_1_vld_out;
+wire    AXI_video_strm_V_keep_V_1_ack_in;
+wire    AXI_video_strm_V_keep_V_1_ack_out;
+reg    AXI_video_strm_V_keep_V_1_sel_rd;
+wire    AXI_video_strm_V_keep_V_1_sel;
+reg   [1:0] AXI_video_strm_V_keep_V_1_state;
+wire   [2:0] AXI_video_strm_V_strb_V_1_data_out;
+reg    AXI_video_strm_V_strb_V_1_vld_in;
+wire    AXI_video_strm_V_strb_V_1_vld_out;
+wire    AXI_video_strm_V_strb_V_1_ack_in;
+wire    AXI_video_strm_V_strb_V_1_ack_out;
+reg    AXI_video_strm_V_strb_V_1_sel_rd;
+wire    AXI_video_strm_V_strb_V_1_sel;
+reg   [1:0] AXI_video_strm_V_strb_V_1_state;
+reg   [0:0] AXI_video_strm_V_user_V_1_data_out;
+reg    AXI_video_strm_V_user_V_1_vld_in;
+wire    AXI_video_strm_V_user_V_1_vld_out;
+wire    AXI_video_strm_V_user_V_1_ack_in;
+wire    AXI_video_strm_V_user_V_1_ack_out;
+reg   [0:0] AXI_video_strm_V_user_V_1_payload_A;
+reg   [0:0] AXI_video_strm_V_user_V_1_payload_B;
+reg    AXI_video_strm_V_user_V_1_sel_rd;
+reg    AXI_video_strm_V_user_V_1_sel_wr;
+wire    AXI_video_strm_V_user_V_1_sel;
+wire    AXI_video_strm_V_user_V_1_load_A;
+wire    AXI_video_strm_V_user_V_1_load_B;
+reg   [1:0] AXI_video_strm_V_user_V_1_state;
+wire    AXI_video_strm_V_user_V_1_state_cmp_full;
+reg   [0:0] AXI_video_strm_V_last_V_1_data_out;
+reg    AXI_video_strm_V_last_V_1_vld_in;
+wire    AXI_video_strm_V_last_V_1_vld_out;
+wire    AXI_video_strm_V_last_V_1_ack_in;
+wire    AXI_video_strm_V_last_V_1_ack_out;
+reg   [0:0] AXI_video_strm_V_last_V_1_payload_A;
+reg   [0:0] AXI_video_strm_V_last_V_1_payload_B;
+reg    AXI_video_strm_V_last_V_1_sel_rd;
+reg    AXI_video_strm_V_last_V_1_sel_wr;
+wire    AXI_video_strm_V_last_V_1_sel;
+wire    AXI_video_strm_V_last_V_1_load_A;
+wire    AXI_video_strm_V_last_V_1_load_B;
+reg   [1:0] AXI_video_strm_V_last_V_1_state;
+wire    AXI_video_strm_V_last_V_1_state_cmp_full;
+wire   [0:0] AXI_video_strm_V_id_V_1_data_out;
+reg    AXI_video_strm_V_id_V_1_vld_in;
+wire    AXI_video_strm_V_id_V_1_vld_out;
+wire    AXI_video_strm_V_id_V_1_ack_in;
+wire    AXI_video_strm_V_id_V_1_ack_out;
+reg    AXI_video_strm_V_id_V_1_sel_rd;
+wire    AXI_video_strm_V_id_V_1_sel;
+reg   [1:0] AXI_video_strm_V_id_V_1_state;
+wire   [0:0] AXI_video_strm_V_dest_V_1_data_out;
+reg    AXI_video_strm_V_dest_V_1_vld_in;
+wire    AXI_video_strm_V_dest_V_1_vld_out;
+wire    AXI_video_strm_V_dest_V_1_ack_in;
+wire    AXI_video_strm_V_dest_V_1_ack_out;
+reg    AXI_video_strm_V_dest_V_1_sel_rd;
+wire    AXI_video_strm_V_dest_V_1_sel;
+reg   [1:0] AXI_video_strm_V_dest_V_1_state;
 reg    img_data_stream_0_V_blk_n;
 wire    ap_CS_fsm_pp0_stage0;
 reg    ap_enable_reg_pp0_iter1;
 wire    ap_block_pp0_stage0;
-reg   [0:0] exitcond_reg_268;
+reg   [0:0] exitcond_reg_230;
 reg    img_data_stream_1_V_blk_n;
 reg    img_data_stream_2_V_blk_n;
 reg    stream_process_TDATA_blk_n;
-reg   [10:0] t_V_1_reg_186;
-wire   [0:0] exitcond4_fu_202_p2;
+reg    ap_enable_reg_pp0_iter2;
+reg   [0:0] exitcond_reg_230_pp0_iter1_reg;
+reg   [10:0] t_V_1_reg_148;
+wire   [0:0] exitcond4_fu_164_p2;
 wire    ap_CS_fsm_state2;
-wire   [10:0] i_V_fu_208_p2;
-reg   [10:0] i_V_reg_263;
-wire   [0:0] exitcond_fu_214_p2;
+reg    ap_block_state2;
+wire   [10:0] i_V_fu_170_p2;
+reg   [10:0] i_V_reg_225;
+wire   [0:0] exitcond_fu_176_p2;
 wire    ap_block_state3_pp0_stage0_iter0;
 reg    ap_block_state4_pp0_stage0_iter1;
-reg    ap_sig_ioackin_stream_process_TREADY;
 reg    ap_block_state4_io;
+wire    ap_block_state5_pp0_stage0_iter2;
+reg    ap_block_state5_io;
 reg    ap_block_pp0_stage0_11001;
-wire   [10:0] j_V_fu_220_p2;
+wire   [10:0] j_V_fu_182_p2;
 reg    ap_enable_reg_pp0_iter0;
-wire   [0:0] axi_last_V_fu_226_p2;
-reg   [0:0] axi_last_V_reg_277;
+wire   [0:0] axi_last_V_fu_188_p2;
+reg   [0:0] axi_last_V_reg_239;
+wire   [23:0] tmp_data_V_fu_198_p4;
 reg    ap_block_pp0_stage0_subdone;
 reg    ap_condition_pp0_exit_iter0_state3;
-reg   [10:0] t_V_reg_175;
-wire    ap_CS_fsm_state5;
-reg   [0:0] tmp_user_V_fu_124;
+reg   [10:0] t_V_reg_137;
+wire    ap_CS_fsm_state6;
+reg    ap_block_state1;
+reg   [0:0] tmp_user_V_fu_86;
 reg    ap_block_pp0_stage0_01001;
-reg    ap_reg_ioackin_stream_process_TREADY;
 reg   [3:0] ap_NS_fsm;
 reg    ap_idle_pp0;
 wire    ap_enable_pp0;
-reg    ap_condition_206;
 
 // power-on initialization
 initial begin
+#0 ap_done_reg = 1'b0;
 #0 ap_CS_fsm = 4'd1;
+#0 AXI_video_strm_V_data_V_1_sel_rd = 1'b0;
+#0 AXI_video_strm_V_data_V_1_sel_wr = 1'b0;
+#0 AXI_video_strm_V_data_V_1_state = 2'd0;
+#0 AXI_video_strm_V_keep_V_1_sel_rd = 1'b0;
+#0 AXI_video_strm_V_keep_V_1_state = 2'd0;
+#0 AXI_video_strm_V_strb_V_1_sel_rd = 1'b0;
+#0 AXI_video_strm_V_strb_V_1_state = 2'd0;
+#0 AXI_video_strm_V_user_V_1_sel_rd = 1'b0;
+#0 AXI_video_strm_V_user_V_1_sel_wr = 1'b0;
+#0 AXI_video_strm_V_user_V_1_state = 2'd0;
+#0 AXI_video_strm_V_last_V_1_sel_rd = 1'b0;
+#0 AXI_video_strm_V_last_V_1_sel_wr = 1'b0;
+#0 AXI_video_strm_V_last_V_1_state = 2'd0;
+#0 AXI_video_strm_V_id_V_1_sel_rd = 1'b0;
+#0 AXI_video_strm_V_id_V_1_state = 2'd0;
+#0 AXI_video_strm_V_dest_V_1_sel_rd = 1'b0;
+#0 AXI_video_strm_V_dest_V_1_state = 2'd0;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
+#0 ap_enable_reg_pp0_iter2 = 1'b0;
 #0 ap_enable_reg_pp0_iter0 = 1'b0;
-#0 ap_reg_ioackin_stream_process_TREADY = 1'b0;
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_data_V_1_sel_rd <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_data_V_1_ack_out) & (1'b1 == AXI_video_strm_V_data_V_1_vld_out))) begin
+            AXI_video_strm_V_data_V_1_sel_rd <= ~AXI_video_strm_V_data_V_1_sel_rd;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_data_V_1_sel_wr <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_data_V_1_ack_in) & (1'b1 == AXI_video_strm_V_data_V_1_vld_in))) begin
+            AXI_video_strm_V_data_V_1_sel_wr <= ~AXI_video_strm_V_data_V_1_sel_wr;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_data_V_1_state <= 2'd0;
+    end else begin
+        if ((((2'd2 == AXI_video_strm_V_data_V_1_state) & (1'b0 == AXI_video_strm_V_data_V_1_vld_in)) | ((2'd3 == AXI_video_strm_V_data_V_1_state) & (1'b0 == AXI_video_strm_V_data_V_1_vld_in) & (1'b1 == AXI_video_strm_V_data_V_1_ack_out)))) begin
+            AXI_video_strm_V_data_V_1_state <= 2'd2;
+        end else if ((((2'd1 == AXI_video_strm_V_data_V_1_state) & (1'b0 == AXI_video_strm_V_data_V_1_ack_out)) | ((2'd3 == AXI_video_strm_V_data_V_1_state) & (1'b0 == AXI_video_strm_V_data_V_1_ack_out) & (1'b1 == AXI_video_strm_V_data_V_1_vld_in)))) begin
+            AXI_video_strm_V_data_V_1_state <= 2'd1;
+        end else if (((~((1'b0 == AXI_video_strm_V_data_V_1_vld_in) & (1'b1 == AXI_video_strm_V_data_V_1_ack_out)) & ~((1'b0 == AXI_video_strm_V_data_V_1_ack_out) & (1'b1 == AXI_video_strm_V_data_V_1_vld_in)) & (2'd3 == AXI_video_strm_V_data_V_1_state)) | ((2'd1 == AXI_video_strm_V_data_V_1_state) & (1'b1 == AXI_video_strm_V_data_V_1_ack_out)) | ((2'd2 == AXI_video_strm_V_data_V_1_state) & (1'b1 == AXI_video_strm_V_data_V_1_vld_in)))) begin
+            AXI_video_strm_V_data_V_1_state <= 2'd3;
+        end else begin
+            AXI_video_strm_V_data_V_1_state <= 2'd2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_dest_V_1_sel_rd <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_dest_V_1_ack_out) & (1'b1 == AXI_video_strm_V_dest_V_1_vld_out))) begin
+            AXI_video_strm_V_dest_V_1_sel_rd <= ~AXI_video_strm_V_dest_V_1_sel_rd;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_dest_V_1_state <= 2'd0;
+    end else begin
+        if ((((2'd2 == AXI_video_strm_V_dest_V_1_state) & (1'b0 == AXI_video_strm_V_dest_V_1_vld_in)) | ((2'd3 == AXI_video_strm_V_dest_V_1_state) & (1'b0 == AXI_video_strm_V_dest_V_1_vld_in) & (1'b1 == AXI_video_strm_V_dest_V_1_ack_out)))) begin
+            AXI_video_strm_V_dest_V_1_state <= 2'd2;
+        end else if ((((2'd1 == AXI_video_strm_V_dest_V_1_state) & (1'b0 == AXI_video_strm_V_dest_V_1_ack_out)) | ((2'd3 == AXI_video_strm_V_dest_V_1_state) & (1'b0 == AXI_video_strm_V_dest_V_1_ack_out) & (1'b1 == AXI_video_strm_V_dest_V_1_vld_in)))) begin
+            AXI_video_strm_V_dest_V_1_state <= 2'd1;
+        end else if (((~((1'b0 == AXI_video_strm_V_dest_V_1_vld_in) & (1'b1 == AXI_video_strm_V_dest_V_1_ack_out)) & ~((1'b0 == AXI_video_strm_V_dest_V_1_ack_out) & (1'b1 == AXI_video_strm_V_dest_V_1_vld_in)) & (2'd3 == AXI_video_strm_V_dest_V_1_state)) | ((2'd1 == AXI_video_strm_V_dest_V_1_state) & (1'b1 == AXI_video_strm_V_dest_V_1_ack_out)) | ((2'd2 == AXI_video_strm_V_dest_V_1_state) & (1'b1 == AXI_video_strm_V_dest_V_1_vld_in)))) begin
+            AXI_video_strm_V_dest_V_1_state <= 2'd3;
+        end else begin
+            AXI_video_strm_V_dest_V_1_state <= 2'd2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_id_V_1_sel_rd <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_id_V_1_ack_out) & (1'b1 == AXI_video_strm_V_id_V_1_vld_out))) begin
+            AXI_video_strm_V_id_V_1_sel_rd <= ~AXI_video_strm_V_id_V_1_sel_rd;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_id_V_1_state <= 2'd0;
+    end else begin
+        if ((((2'd2 == AXI_video_strm_V_id_V_1_state) & (1'b0 == AXI_video_strm_V_id_V_1_vld_in)) | ((2'd3 == AXI_video_strm_V_id_V_1_state) & (1'b0 == AXI_video_strm_V_id_V_1_vld_in) & (1'b1 == AXI_video_strm_V_id_V_1_ack_out)))) begin
+            AXI_video_strm_V_id_V_1_state <= 2'd2;
+        end else if ((((2'd1 == AXI_video_strm_V_id_V_1_state) & (1'b0 == AXI_video_strm_V_id_V_1_ack_out)) | ((2'd3 == AXI_video_strm_V_id_V_1_state) & (1'b0 == AXI_video_strm_V_id_V_1_ack_out) & (1'b1 == AXI_video_strm_V_id_V_1_vld_in)))) begin
+            AXI_video_strm_V_id_V_1_state <= 2'd1;
+        end else if (((~((1'b0 == AXI_video_strm_V_id_V_1_vld_in) & (1'b1 == AXI_video_strm_V_id_V_1_ack_out)) & ~((1'b0 == AXI_video_strm_V_id_V_1_ack_out) & (1'b1 == AXI_video_strm_V_id_V_1_vld_in)) & (2'd3 == AXI_video_strm_V_id_V_1_state)) | ((2'd1 == AXI_video_strm_V_id_V_1_state) & (1'b1 == AXI_video_strm_V_id_V_1_ack_out)) | ((2'd2 == AXI_video_strm_V_id_V_1_state) & (1'b1 == AXI_video_strm_V_id_V_1_vld_in)))) begin
+            AXI_video_strm_V_id_V_1_state <= 2'd3;
+        end else begin
+            AXI_video_strm_V_id_V_1_state <= 2'd2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_keep_V_1_sel_rd <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_keep_V_1_ack_out) & (1'b1 == AXI_video_strm_V_keep_V_1_vld_out))) begin
+            AXI_video_strm_V_keep_V_1_sel_rd <= ~AXI_video_strm_V_keep_V_1_sel_rd;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_keep_V_1_state <= 2'd0;
+    end else begin
+        if ((((2'd2 == AXI_video_strm_V_keep_V_1_state) & (1'b0 == AXI_video_strm_V_keep_V_1_vld_in)) | ((2'd3 == AXI_video_strm_V_keep_V_1_state) & (1'b0 == AXI_video_strm_V_keep_V_1_vld_in) & (1'b1 == AXI_video_strm_V_keep_V_1_ack_out)))) begin
+            AXI_video_strm_V_keep_V_1_state <= 2'd2;
+        end else if ((((2'd1 == AXI_video_strm_V_keep_V_1_state) & (1'b0 == AXI_video_strm_V_keep_V_1_ack_out)) | ((2'd3 == AXI_video_strm_V_keep_V_1_state) & (1'b0 == AXI_video_strm_V_keep_V_1_ack_out) & (1'b1 == AXI_video_strm_V_keep_V_1_vld_in)))) begin
+            AXI_video_strm_V_keep_V_1_state <= 2'd1;
+        end else if (((~((1'b0 == AXI_video_strm_V_keep_V_1_vld_in) & (1'b1 == AXI_video_strm_V_keep_V_1_ack_out)) & ~((1'b0 == AXI_video_strm_V_keep_V_1_ack_out) & (1'b1 == AXI_video_strm_V_keep_V_1_vld_in)) & (2'd3 == AXI_video_strm_V_keep_V_1_state)) | ((2'd1 == AXI_video_strm_V_keep_V_1_state) & (1'b1 == AXI_video_strm_V_keep_V_1_ack_out)) | ((2'd2 == AXI_video_strm_V_keep_V_1_state) & (1'b1 == AXI_video_strm_V_keep_V_1_vld_in)))) begin
+            AXI_video_strm_V_keep_V_1_state <= 2'd3;
+        end else begin
+            AXI_video_strm_V_keep_V_1_state <= 2'd2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_last_V_1_sel_rd <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_last_V_1_ack_out) & (1'b1 == AXI_video_strm_V_last_V_1_vld_out))) begin
+            AXI_video_strm_V_last_V_1_sel_rd <= ~AXI_video_strm_V_last_V_1_sel_rd;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_last_V_1_sel_wr <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_last_V_1_ack_in) & (1'b1 == AXI_video_strm_V_last_V_1_vld_in))) begin
+            AXI_video_strm_V_last_V_1_sel_wr <= ~AXI_video_strm_V_last_V_1_sel_wr;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_last_V_1_state <= 2'd0;
+    end else begin
+        if ((((2'd2 == AXI_video_strm_V_last_V_1_state) & (1'b0 == AXI_video_strm_V_last_V_1_vld_in)) | ((2'd3 == AXI_video_strm_V_last_V_1_state) & (1'b0 == AXI_video_strm_V_last_V_1_vld_in) & (1'b1 == AXI_video_strm_V_last_V_1_ack_out)))) begin
+            AXI_video_strm_V_last_V_1_state <= 2'd2;
+        end else if ((((2'd1 == AXI_video_strm_V_last_V_1_state) & (1'b0 == AXI_video_strm_V_last_V_1_ack_out)) | ((2'd3 == AXI_video_strm_V_last_V_1_state) & (1'b0 == AXI_video_strm_V_last_V_1_ack_out) & (1'b1 == AXI_video_strm_V_last_V_1_vld_in)))) begin
+            AXI_video_strm_V_last_V_1_state <= 2'd1;
+        end else if (((~((1'b0 == AXI_video_strm_V_last_V_1_vld_in) & (1'b1 == AXI_video_strm_V_last_V_1_ack_out)) & ~((1'b0 == AXI_video_strm_V_last_V_1_ack_out) & (1'b1 == AXI_video_strm_V_last_V_1_vld_in)) & (2'd3 == AXI_video_strm_V_last_V_1_state)) | ((2'd1 == AXI_video_strm_V_last_V_1_state) & (1'b1 == AXI_video_strm_V_last_V_1_ack_out)) | ((2'd2 == AXI_video_strm_V_last_V_1_state) & (1'b1 == AXI_video_strm_V_last_V_1_vld_in)))) begin
+            AXI_video_strm_V_last_V_1_state <= 2'd3;
+        end else begin
+            AXI_video_strm_V_last_V_1_state <= 2'd2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_strb_V_1_sel_rd <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_strb_V_1_ack_out) & (1'b1 == AXI_video_strm_V_strb_V_1_vld_out))) begin
+            AXI_video_strm_V_strb_V_1_sel_rd <= ~AXI_video_strm_V_strb_V_1_sel_rd;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_strb_V_1_state <= 2'd0;
+    end else begin
+        if ((((2'd2 == AXI_video_strm_V_strb_V_1_state) & (1'b0 == AXI_video_strm_V_strb_V_1_vld_in)) | ((2'd3 == AXI_video_strm_V_strb_V_1_state) & (1'b0 == AXI_video_strm_V_strb_V_1_vld_in) & (1'b1 == AXI_video_strm_V_strb_V_1_ack_out)))) begin
+            AXI_video_strm_V_strb_V_1_state <= 2'd2;
+        end else if ((((2'd1 == AXI_video_strm_V_strb_V_1_state) & (1'b0 == AXI_video_strm_V_strb_V_1_ack_out)) | ((2'd3 == AXI_video_strm_V_strb_V_1_state) & (1'b0 == AXI_video_strm_V_strb_V_1_ack_out) & (1'b1 == AXI_video_strm_V_strb_V_1_vld_in)))) begin
+            AXI_video_strm_V_strb_V_1_state <= 2'd1;
+        end else if (((~((1'b0 == AXI_video_strm_V_strb_V_1_vld_in) & (1'b1 == AXI_video_strm_V_strb_V_1_ack_out)) & ~((1'b0 == AXI_video_strm_V_strb_V_1_ack_out) & (1'b1 == AXI_video_strm_V_strb_V_1_vld_in)) & (2'd3 == AXI_video_strm_V_strb_V_1_state)) | ((2'd1 == AXI_video_strm_V_strb_V_1_state) & (1'b1 == AXI_video_strm_V_strb_V_1_ack_out)) | ((2'd2 == AXI_video_strm_V_strb_V_1_state) & (1'b1 == AXI_video_strm_V_strb_V_1_vld_in)))) begin
+            AXI_video_strm_V_strb_V_1_state <= 2'd3;
+        end else begin
+            AXI_video_strm_V_strb_V_1_state <= 2'd2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_user_V_1_sel_rd <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_user_V_1_ack_out) & (1'b1 == AXI_video_strm_V_user_V_1_vld_out))) begin
+            AXI_video_strm_V_user_V_1_sel_rd <= ~AXI_video_strm_V_user_V_1_sel_rd;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_user_V_1_sel_wr <= 1'b0;
+    end else begin
+        if (((1'b1 == AXI_video_strm_V_user_V_1_ack_in) & (1'b1 == AXI_video_strm_V_user_V_1_vld_in))) begin
+            AXI_video_strm_V_user_V_1_sel_wr <= ~AXI_video_strm_V_user_V_1_sel_wr;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        AXI_video_strm_V_user_V_1_state <= 2'd0;
+    end else begin
+        if ((((2'd2 == AXI_video_strm_V_user_V_1_state) & (1'b0 == AXI_video_strm_V_user_V_1_vld_in)) | ((2'd3 == AXI_video_strm_V_user_V_1_state) & (1'b0 == AXI_video_strm_V_user_V_1_vld_in) & (1'b1 == AXI_video_strm_V_user_V_1_ack_out)))) begin
+            AXI_video_strm_V_user_V_1_state <= 2'd2;
+        end else if ((((2'd1 == AXI_video_strm_V_user_V_1_state) & (1'b0 == AXI_video_strm_V_user_V_1_ack_out)) | ((2'd3 == AXI_video_strm_V_user_V_1_state) & (1'b0 == AXI_video_strm_V_user_V_1_ack_out) & (1'b1 == AXI_video_strm_V_user_V_1_vld_in)))) begin
+            AXI_video_strm_V_user_V_1_state <= 2'd1;
+        end else if (((~((1'b0 == AXI_video_strm_V_user_V_1_vld_in) & (1'b1 == AXI_video_strm_V_user_V_1_ack_out)) & ~((1'b0 == AXI_video_strm_V_user_V_1_ack_out) & (1'b1 == AXI_video_strm_V_user_V_1_vld_in)) & (2'd3 == AXI_video_strm_V_user_V_1_state)) | ((2'd1 == AXI_video_strm_V_user_V_1_state) & (1'b1 == AXI_video_strm_V_user_V_1_ack_out)) | ((2'd2 == AXI_video_strm_V_user_V_1_state) & (1'b1 == AXI_video_strm_V_user_V_1_vld_in)))) begin
+            AXI_video_strm_V_user_V_1_state <= 2'd3;
+        end else begin
+            AXI_video_strm_V_user_V_1_state <= 2'd2;
+        end
+    end
 end
 
 always @ (posedge ap_clk) begin
@@ -127,11 +437,23 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
+        ap_done_reg <= 1'b0;
+    end else begin
+        if ((ap_continue == 1'b1)) begin
+            ap_done_reg <= 1'b0;
+        end else if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (exitcond4_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+            ap_done_reg <= 1'b1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
         ap_enable_reg_pp0_iter0 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b1 == ap_condition_pp0_exit_iter0_state3) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+        if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_condition_pp0_exit_iter0_state3) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
             ap_enable_reg_pp0_iter0 <= 1'b0;
-        end else if (((exitcond4_fu_202_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+        end else if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (exitcond4_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
             ap_enable_reg_pp0_iter0 <= 1'b1;
         end
     end
@@ -141,74 +463,189 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_condition_pp0_exit_iter0_state3) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
-            ap_enable_reg_pp0_iter1 <= (1'b1 ^ ap_condition_pp0_exit_iter0_state3);
-        end else if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
-            ap_enable_reg_pp0_iter1 <= ap_enable_reg_pp0_iter0;
-        end else if (((exitcond4_fu_202_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
-            ap_enable_reg_pp0_iter1 <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_reg_ioackin_stream_process_TREADY <= 1'b0;
-    end else begin
-        if ((1'b1 == ap_condition_206)) begin
-            if ((1'b0 == ap_block_pp0_stage0_11001)) begin
-                ap_reg_ioackin_stream_process_TREADY <= 1'b0;
-            end else if (((stream_process_TREADY == 1'b1) & (1'b0 == ap_block_pp0_stage0_01001))) begin
-                ap_reg_ioackin_stream_process_TREADY <= 1'b1;
+        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
+            if ((1'b1 == ap_condition_pp0_exit_iter0_state3)) begin
+                ap_enable_reg_pp0_iter1 <= (1'b1 ^ ap_condition_pp0_exit_iter0_state3);
+            end else if ((1'b1 == 1'b1)) begin
+                ap_enable_reg_pp0_iter1 <= ap_enable_reg_pp0_iter0;
             end
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (exitcond_fu_214_p2 == 1'd0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-        t_V_1_reg_186 <= j_V_fu_220_p2;
-    end else if (((exitcond4_fu_202_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
-        t_V_1_reg_186 <= 11'd0;
+    if (ap_rst == 1'b1) begin
+        ap_enable_reg_pp0_iter2 <= 1'b0;
+    end else begin
+        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
+            ap_enable_reg_pp0_iter2 <= ap_enable_reg_pp0_iter1;
+        end else if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (exitcond4_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+            ap_enable_reg_pp0_iter2 <= 1'b0;
+        end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        t_V_reg_175 <= 11'd0;
-    end else if ((1'b1 == ap_CS_fsm_state5)) begin
-        t_V_reg_175 <= i_V_reg_263;
+    if (((exitcond_fu_176_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        t_V_1_reg_148 <= j_V_fu_182_p2;
+    end else if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (exitcond4_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+        t_V_1_reg_148 <= 11'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_268 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        tmp_user_V_fu_124 <= 1'd0;
-    end else if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        tmp_user_V_fu_124 <= 1'd1;
+    if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+        t_V_reg_137 <= 11'd0;
+    end else if ((1'b1 == ap_CS_fsm_state6)) begin
+        t_V_reg_137 <= i_V_reg_225;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (exitcond_fu_214_p2 == 1'd0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        axi_last_V_reg_277 <= axi_last_V_fu_226_p2;
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        tmp_user_V_fu_86 <= 1'd0;
+    end else if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+        tmp_user_V_fu_86 <= 1'd1;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == AXI_video_strm_V_data_V_1_load_A)) begin
+        AXI_video_strm_V_data_V_1_payload_A <= tmp_data_V_fu_198_p4;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == AXI_video_strm_V_data_V_1_load_B)) begin
+        AXI_video_strm_V_data_V_1_payload_B <= tmp_data_V_fu_198_p4;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == AXI_video_strm_V_last_V_1_load_A)) begin
+        AXI_video_strm_V_last_V_1_payload_A <= axi_last_V_reg_239;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == AXI_video_strm_V_last_V_1_load_B)) begin
+        AXI_video_strm_V_last_V_1_payload_B <= axi_last_V_reg_239;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == AXI_video_strm_V_user_V_1_load_A)) begin
+        AXI_video_strm_V_user_V_1_payload_A <= tmp_user_V_fu_86;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == AXI_video_strm_V_user_V_1_load_B)) begin
+        AXI_video_strm_V_user_V_1_payload_B <= tmp_user_V_fu_86;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((exitcond_fu_176_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        axi_last_V_reg_239 <= axi_last_V_fu_188_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        exitcond_reg_268 <= exitcond_fu_214_p2;
+        exitcond_reg_230 <= exitcond_fu_176_p2;
+        exitcond_reg_230_pp0_iter1_reg <= exitcond_reg_230;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        i_V_reg_263 <= i_V_fu_208_p2;
+    if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (1'b1 == ap_CS_fsm_state2))) begin
+        i_V_reg_225 <= i_V_fu_170_p2;
     end
 end
 
 always @ (*) begin
-    if ((exitcond_fu_214_p2 == 1'd1)) begin
+    if ((1'b1 == AXI_video_strm_V_data_V_1_sel)) begin
+        AXI_video_strm_V_data_V_1_data_out = AXI_video_strm_V_data_V_1_payload_B;
+    end else begin
+        AXI_video_strm_V_data_V_1_data_out = AXI_video_strm_V_data_V_1_payload_A;
+    end
+end
+
+always @ (*) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        AXI_video_strm_V_data_V_1_vld_in = 1'b1;
+    end else begin
+        AXI_video_strm_V_data_V_1_vld_in = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        AXI_video_strm_V_dest_V_1_vld_in = 1'b1;
+    end else begin
+        AXI_video_strm_V_dest_V_1_vld_in = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        AXI_video_strm_V_id_V_1_vld_in = 1'b1;
+    end else begin
+        AXI_video_strm_V_id_V_1_vld_in = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        AXI_video_strm_V_keep_V_1_vld_in = 1'b1;
+    end else begin
+        AXI_video_strm_V_keep_V_1_vld_in = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == AXI_video_strm_V_last_V_1_sel)) begin
+        AXI_video_strm_V_last_V_1_data_out = AXI_video_strm_V_last_V_1_payload_B;
+    end else begin
+        AXI_video_strm_V_last_V_1_data_out = AXI_video_strm_V_last_V_1_payload_A;
+    end
+end
+
+always @ (*) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        AXI_video_strm_V_last_V_1_vld_in = 1'b1;
+    end else begin
+        AXI_video_strm_V_last_V_1_vld_in = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        AXI_video_strm_V_strb_V_1_vld_in = 1'b1;
+    end else begin
+        AXI_video_strm_V_strb_V_1_vld_in = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == AXI_video_strm_V_user_V_1_sel)) begin
+        AXI_video_strm_V_user_V_1_data_out = AXI_video_strm_V_user_V_1_payload_B;
+    end else begin
+        AXI_video_strm_V_user_V_1_data_out = AXI_video_strm_V_user_V_1_payload_A;
+    end
+end
+
+always @ (*) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        AXI_video_strm_V_user_V_1_vld_in = 1'b1;
+    end else begin
+        AXI_video_strm_V_user_V_1_vld_in = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((exitcond_fu_176_p2 == 1'd1)) begin
         ap_condition_pp0_exit_iter0_state3 = 1'b1;
     end else begin
         ap_condition_pp0_exit_iter0_state3 = 1'b0;
@@ -216,10 +653,10 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((exitcond4_fu_202_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2)) | ((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)))) begin
+    if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (exitcond4_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_done = 1'b1;
     end else begin
-        ap_done = 1'b0;
+        ap_done = ap_done_reg;
     end
 end
 
@@ -232,7 +669,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
+    if (((ap_enable_reg_pp0_iter0 == 1'b0) & (ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0))) begin
         ap_idle_pp0 = 1'b1;
     end else begin
         ap_idle_pp0 = 1'b0;
@@ -240,7 +677,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond4_fu_202_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (exitcond4_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -248,15 +685,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((ap_reg_ioackin_stream_process_TREADY == 1'b0)) begin
-        ap_sig_ioackin_stream_process_TREADY = stream_process_TREADY;
-    end else begin
-        ap_sig_ioackin_stream_process_TREADY = 1'b1;
-    end
-end
-
-always @ (*) begin
-    if (((exitcond_reg_268 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         img_data_stream_0_V_blk_n = img_data_stream_0_V_empty_n;
     end else begin
         img_data_stream_0_V_blk_n = 1'b1;
@@ -264,7 +693,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_268 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         img_data_stream_0_V_read = 1'b1;
     end else begin
         img_data_stream_0_V_read = 1'b0;
@@ -272,7 +701,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond_reg_268 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         img_data_stream_1_V_blk_n = img_data_stream_1_V_empty_n;
     end else begin
         img_data_stream_1_V_blk_n = 1'b1;
@@ -280,7 +709,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_268 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         img_data_stream_1_V_read = 1'b1;
     end else begin
         img_data_stream_1_V_read = 1'b0;
@@ -288,7 +717,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond_reg_268 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         img_data_stream_2_V_blk_n = img_data_stream_2_V_empty_n;
     end else begin
         img_data_stream_2_V_blk_n = 1'b1;
@@ -296,7 +725,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (exitcond_reg_268 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         img_data_stream_2_V_read = 1'b1;
     end else begin
         img_data_stream_2_V_read = 1'b0;
@@ -304,47 +733,41 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond_reg_268 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        stream_process_TDATA_blk_n = stream_process_TREADY;
+    if ((((exitcond_reg_230_pp0_iter1_reg == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter2 == 1'b1)) | ((exitcond_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0)))) begin
+        stream_process_TDATA_blk_n = AXI_video_strm_V_data_V_1_state[1'd1];
     end else begin
         stream_process_TDATA_blk_n = 1'b1;
     end
 end
 
 always @ (*) begin
-    if (((exitcond_reg_268 == 1'd0) & (ap_reg_ioackin_stream_process_TREADY == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_01001))) begin
-        stream_process_TVALID = 1'b1;
-    end else begin
-        stream_process_TVALID = 1'b0;
-    end
-end
-
-always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((exitcond4_fu_202_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+            if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (exitcond4_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
-            end else begin
+            end else if ((~((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in)) & (exitcond4_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state2;
             end
         end
         ap_ST_fsm_pp0_stage0 : begin
-            if (~((exitcond_fu_214_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+            if ((~((exitcond_fu_176_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b1)) & ~((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter2 == 1'b1)))) begin
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
-            end else if (((exitcond_fu_214_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
-                ap_NS_fsm = ap_ST_fsm_state5;
+            end else if ((((exitcond_fu_176_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b1)) | ((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter2 == 1'b1)))) begin
+                ap_NS_fsm = ap_ST_fsm_state6;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
             end
         end
-        ap_ST_fsm_state5 : begin
+        ap_ST_fsm_state6 : begin
             ap_NS_fsm = ap_ST_fsm_state2;
         end
         default : begin
@@ -353,66 +776,162 @@ always @ (*) begin
     endcase
 end
 
+assign AXI_video_strm_V_data_V_1_ack_in = AXI_video_strm_V_data_V_1_state[1'd1];
+
+assign AXI_video_strm_V_data_V_1_ack_out = stream_process_TREADY;
+
+assign AXI_video_strm_V_data_V_1_load_A = (~AXI_video_strm_V_data_V_1_sel_wr & AXI_video_strm_V_data_V_1_state_cmp_full);
+
+assign AXI_video_strm_V_data_V_1_load_B = (AXI_video_strm_V_data_V_1_state_cmp_full & AXI_video_strm_V_data_V_1_sel_wr);
+
+assign AXI_video_strm_V_data_V_1_sel = AXI_video_strm_V_data_V_1_sel_rd;
+
+assign AXI_video_strm_V_data_V_1_state_cmp_full = ((AXI_video_strm_V_data_V_1_state != 2'd1) ? 1'b1 : 1'b0);
+
+assign AXI_video_strm_V_data_V_1_vld_out = AXI_video_strm_V_data_V_1_state[1'd0];
+
+assign AXI_video_strm_V_dest_V_1_ack_in = AXI_video_strm_V_dest_V_1_state[1'd1];
+
+assign AXI_video_strm_V_dest_V_1_ack_out = stream_process_TREADY;
+
+assign AXI_video_strm_V_dest_V_1_data_out = 1'd0;
+
+assign AXI_video_strm_V_dest_V_1_sel = AXI_video_strm_V_dest_V_1_sel_rd;
+
+assign AXI_video_strm_V_dest_V_1_vld_out = AXI_video_strm_V_dest_V_1_state[1'd0];
+
+assign AXI_video_strm_V_id_V_1_ack_in = AXI_video_strm_V_id_V_1_state[1'd1];
+
+assign AXI_video_strm_V_id_V_1_ack_out = stream_process_TREADY;
+
+assign AXI_video_strm_V_id_V_1_data_out = 1'd0;
+
+assign AXI_video_strm_V_id_V_1_sel = AXI_video_strm_V_id_V_1_sel_rd;
+
+assign AXI_video_strm_V_id_V_1_vld_out = AXI_video_strm_V_id_V_1_state[1'd0];
+
+assign AXI_video_strm_V_keep_V_1_ack_in = AXI_video_strm_V_keep_V_1_state[1'd1];
+
+assign AXI_video_strm_V_keep_V_1_ack_out = stream_process_TREADY;
+
+assign AXI_video_strm_V_keep_V_1_data_out = 3'd7;
+
+assign AXI_video_strm_V_keep_V_1_sel = AXI_video_strm_V_keep_V_1_sel_rd;
+
+assign AXI_video_strm_V_keep_V_1_vld_out = AXI_video_strm_V_keep_V_1_state[1'd0];
+
+assign AXI_video_strm_V_last_V_1_ack_in = AXI_video_strm_V_last_V_1_state[1'd1];
+
+assign AXI_video_strm_V_last_V_1_ack_out = stream_process_TREADY;
+
+assign AXI_video_strm_V_last_V_1_load_A = (~AXI_video_strm_V_last_V_1_sel_wr & AXI_video_strm_V_last_V_1_state_cmp_full);
+
+assign AXI_video_strm_V_last_V_1_load_B = (AXI_video_strm_V_last_V_1_state_cmp_full & AXI_video_strm_V_last_V_1_sel_wr);
+
+assign AXI_video_strm_V_last_V_1_sel = AXI_video_strm_V_last_V_1_sel_rd;
+
+assign AXI_video_strm_V_last_V_1_state_cmp_full = ((AXI_video_strm_V_last_V_1_state != 2'd1) ? 1'b1 : 1'b0);
+
+assign AXI_video_strm_V_last_V_1_vld_out = AXI_video_strm_V_last_V_1_state[1'd0];
+
+assign AXI_video_strm_V_strb_V_1_ack_in = AXI_video_strm_V_strb_V_1_state[1'd1];
+
+assign AXI_video_strm_V_strb_V_1_ack_out = stream_process_TREADY;
+
+assign AXI_video_strm_V_strb_V_1_data_out = 3'd0;
+
+assign AXI_video_strm_V_strb_V_1_sel = AXI_video_strm_V_strb_V_1_sel_rd;
+
+assign AXI_video_strm_V_strb_V_1_vld_out = AXI_video_strm_V_strb_V_1_state[1'd0];
+
+assign AXI_video_strm_V_user_V_1_ack_in = AXI_video_strm_V_user_V_1_state[1'd1];
+
+assign AXI_video_strm_V_user_V_1_ack_out = stream_process_TREADY;
+
+assign AXI_video_strm_V_user_V_1_load_A = (~AXI_video_strm_V_user_V_1_sel_wr & AXI_video_strm_V_user_V_1_state_cmp_full);
+
+assign AXI_video_strm_V_user_V_1_load_B = (AXI_video_strm_V_user_V_1_state_cmp_full & AXI_video_strm_V_user_V_1_sel_wr);
+
+assign AXI_video_strm_V_user_V_1_sel = AXI_video_strm_V_user_V_1_sel_rd;
+
+assign AXI_video_strm_V_user_V_1_state_cmp_full = ((AXI_video_strm_V_user_V_1_state != 2'd1) ? 1'b1 : 1'b0);
+
+assign AXI_video_strm_V_user_V_1_vld_out = AXI_video_strm_V_user_V_1_state[1'd0];
+
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd2];
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
 assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 
-assign ap_CS_fsm_state5 = ap_CS_fsm[32'd3];
+assign ap_CS_fsm_state6 = ap_CS_fsm[32'd3];
 
 assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_block_pp0_stage0_01001 = ((ap_enable_reg_pp0_iter1 == 1'b1) & (((exitcond_reg_268 == 1'd0) & (img_data_stream_2_V_empty_n == 1'b0)) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_1_V_empty_n == 1'b0)) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_0_V_empty_n == 1'b0))));
+    ap_block_pp0_stage0_01001 = ((ap_enable_reg_pp0_iter1 == 1'b1) & (((exitcond_reg_230 == 1'd0) & (img_data_stream_2_V_empty_n == 1'b0)) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_1_V_empty_n == 1'b0)) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_0_V_empty_n == 1'b0))));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_11001 = ((ap_enable_reg_pp0_iter1 == 1'b1) & ((1'b1 == ap_block_state4_io) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_2_V_empty_n == 1'b0)) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_1_V_empty_n == 1'b0)) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_0_V_empty_n == 1'b0))));
+    ap_block_pp0_stage0_11001 = (((1'b1 == ap_block_state5_io) & (ap_enable_reg_pp0_iter2 == 1'b1)) | ((ap_enable_reg_pp0_iter1 == 1'b1) & ((1'b1 == ap_block_state4_io) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_2_V_empty_n == 1'b0)) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_1_V_empty_n == 1'b0)) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_0_V_empty_n == 1'b0)))));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_subdone = ((ap_enable_reg_pp0_iter1 == 1'b1) & ((1'b1 == ap_block_state4_io) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_2_V_empty_n == 1'b0)) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_1_V_empty_n == 1'b0)) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_0_V_empty_n == 1'b0))));
+    ap_block_pp0_stage0_subdone = (((1'b1 == ap_block_state5_io) & (ap_enable_reg_pp0_iter2 == 1'b1)) | ((ap_enable_reg_pp0_iter1 == 1'b1) & ((1'b1 == ap_block_state4_io) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_2_V_empty_n == 1'b0)) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_1_V_empty_n == 1'b0)) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_0_V_empty_n == 1'b0)))));
+end
+
+always @ (*) begin
+    ap_block_state1 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
+
+always @ (*) begin
+    ap_block_state2 = ((1'b0 == AXI_video_strm_V_data_V_1_ack_in) | (1'b0 == AXI_video_strm_V_dest_V_1_ack_in) | (1'b0 == AXI_video_strm_V_id_V_1_ack_in) | (1'b0 == AXI_video_strm_V_last_V_1_ack_in) | (1'b0 == AXI_video_strm_V_user_V_1_ack_in) | (1'b0 == AXI_video_strm_V_strb_V_1_ack_in) | (1'b0 == AXI_video_strm_V_keep_V_1_ack_in));
 end
 
 assign ap_block_state3_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_block_state4_io = ((exitcond_reg_268 == 1'd0) & (ap_sig_ioackin_stream_process_TREADY == 1'b0));
+    ap_block_state4_io = ((exitcond_reg_230 == 1'd0) & (1'b0 == AXI_video_strm_V_data_V_1_ack_in));
 end
 
 always @ (*) begin
-    ap_block_state4_pp0_stage0_iter1 = (((exitcond_reg_268 == 1'd0) & (img_data_stream_2_V_empty_n == 1'b0)) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_1_V_empty_n == 1'b0)) | ((exitcond_reg_268 == 1'd0) & (img_data_stream_0_V_empty_n == 1'b0)));
+    ap_block_state4_pp0_stage0_iter1 = (((exitcond_reg_230 == 1'd0) & (img_data_stream_2_V_empty_n == 1'b0)) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_1_V_empty_n == 1'b0)) | ((exitcond_reg_230 == 1'd0) & (img_data_stream_0_V_empty_n == 1'b0)));
 end
 
 always @ (*) begin
-    ap_condition_206 = ((exitcond_reg_268 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
+    ap_block_state5_io = ((exitcond_reg_230_pp0_iter1_reg == 1'd0) & (1'b0 == AXI_video_strm_V_data_V_1_ack_in));
 end
+
+assign ap_block_state5_pp0_stage0_iter2 = ~(1'b1 == 1'b1);
 
 assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 
-assign axi_last_V_fu_226_p2 = ((t_V_1_reg_186 == 11'd1679) ? 1'b1 : 1'b0);
+assign axi_last_V_fu_188_p2 = ((t_V_1_reg_148 == 11'd1679) ? 1'b1 : 1'b0);
 
-assign exitcond4_fu_202_p2 = ((t_V_reg_175 == 11'd1050) ? 1'b1 : 1'b0);
+assign exitcond4_fu_164_p2 = ((t_V_reg_137 == 11'd1050) ? 1'b1 : 1'b0);
 
-assign exitcond_fu_214_p2 = ((t_V_1_reg_186 == 11'd1680) ? 1'b1 : 1'b0);
+assign exitcond_fu_176_p2 = ((t_V_1_reg_148 == 11'd1680) ? 1'b1 : 1'b0);
 
-assign i_V_fu_208_p2 = (t_V_reg_175 + 11'd1);
+assign i_V_fu_170_p2 = (t_V_reg_137 + 11'd1);
 
-assign j_V_fu_220_p2 = (t_V_1_reg_186 + 11'd1);
+assign j_V_fu_182_p2 = (t_V_1_reg_148 + 11'd1);
 
-assign stream_process_TDATA = {{{img_data_stream_2_V_dout}, {img_data_stream_1_V_dout}}, {img_data_stream_0_V_dout}};
+assign stream_process_TDATA = AXI_video_strm_V_data_V_1_data_out;
 
-assign stream_process_TDEST = 1'd0;
+assign stream_process_TDEST = AXI_video_strm_V_dest_V_1_data_out;
 
-assign stream_process_TID = 1'd0;
+assign stream_process_TID = AXI_video_strm_V_id_V_1_data_out;
 
-assign stream_process_TKEEP = 3'd7;
+assign stream_process_TKEEP = AXI_video_strm_V_keep_V_1_data_out;
 
-assign stream_process_TLAST = axi_last_V_reg_277;
+assign stream_process_TLAST = AXI_video_strm_V_last_V_1_data_out;
 
-assign stream_process_TSTRB = 3'd0;
+assign stream_process_TSTRB = AXI_video_strm_V_strb_V_1_data_out;
 
-assign stream_process_TUSER = tmp_user_V_fu_124;
+assign stream_process_TUSER = AXI_video_strm_V_user_V_1_data_out;
+
+assign stream_process_TVALID = AXI_video_strm_V_dest_V_1_state[1'd0];
+
+assign tmp_data_V_fu_198_p4 = {{{img_data_stream_2_V_dout}, {img_data_stream_1_V_dout}}, {img_data_stream_0_V_dout}};
 
 endmodule //Mat2AXIvideo

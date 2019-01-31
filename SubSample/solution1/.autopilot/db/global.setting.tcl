@@ -5,7 +5,7 @@ set ClockList {ap_clk}
 set multiClockList {}
 set PortClockMap {}
 set CombLogicFlag 0
-set PipelineFlag 0
+set PipelineFlag 1
 set DataflowTaskPipelineFlag  1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
@@ -44,7 +44,7 @@ set TargetInfo "xc7z010:clg400:-1"
 set SourceFiles {sc {} c ../src/subsample.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/userfs/q/qj544/w2k/QLight/SubSample/solution1/solution1.directive}
-set TBFiles {verilog {../src/testbench.cpp ../src/test1.bmp} bc {../src/testbench.cpp ../src/test1.bmp} sc {../src/testbench.cpp ../src/test1.bmp} vhdl {../src/testbench.cpp ../src/test1.bmp} c {} cas {../src/testbench.cpp ../src/test1.bmp}}
+set TBFiles {verilog {../src/test1.bmp ../src/testbench.cpp} bc {../src/test1.bmp ../src/testbench.cpp} sc {../src/test1.bmp ../src/testbench.cpp} vhdl {../src/test1.bmp ../src/testbench.cpp} c {} cas {../src/test1.bmp ../src/testbench.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

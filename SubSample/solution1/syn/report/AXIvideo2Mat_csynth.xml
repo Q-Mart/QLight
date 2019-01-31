@@ -17,15 +17,15 @@
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>3.634</EstimatedClockPeriod>
+<EstimatedClockPeriod>5.403</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>1769253</Best-caseLatency>
-<Average-caseLatency>1769253</Average-caseLatency>
-<Worst-caseLatency>1769253</Worst-caseLatency>
-<Interval-min>1769253</Interval-min>
-<Interval-max>1769253</Interval-max>
+<Best-caseLatency>1771353</Best-caseLatency>
+<Average-caseLatency>1771353</Average-caseLatency>
+<Worst-caseLatency>1771353</Worst-caseLatency>
+<Interval-min>1771353</Interval-min>
+<Interval-max>1771353</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <loop_wait_for_start>
@@ -36,19 +36,19 @@
 </loop_wait_for_start>
 <loop_height>
 <TripCount>1050</TripCount>
-<Latency>1769250</Latency>
-<IterationLatency>1685</IterationLatency>
+<Latency>1771350</Latency>
+<IterationLatency>1687</IterationLatency>
 <loop_width>
 <TripCount>1680</TripCount>
-<Latency>1680</Latency>
+<Latency>1681</Latency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>2</PipelineDepth>
 </loop_width>
 <loop_wait_for_eol>
 <TripCount>0</TripCount>
-<Latency>0</Latency>
+<Latency>1</Latency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>1</PipelineDepth>
+<PipelineDepth>2</PipelineDepth>
 </loop_wait_for_eol>
 </loop_height>
 </SummaryOfLoopLatency>
@@ -56,8 +56,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>196</FF>
-<LUT>329</LUT>
+<FF>218</FF>
+<LUT>449</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP48E>0</DSP48E>
 </Resources>
@@ -104,6 +104,17 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
+<name>start_full_n</name>
+<Object>AXIvideo2Mat</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>unknown</Attribute>
+</RtlPorts>
+<RtlPorts>
 <name>ap_done</name>
 <Object>AXIvideo2Mat</Object>
 <Type>return value</Type>
@@ -111,6 +122,17 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_continue</name>
+<Object>AXIvideo2Mat</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
@@ -137,23 +159,45 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
+<name>start_out</name>
+<Object>AXIvideo2Mat</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>unknown</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>start_write</name>
+<Object>AXIvideo2Mat</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>unknown</Attribute>
+</RtlPorts>
+<RtlPorts>
 <name>stream_in_TDATA</name>
 <Object>AXI_video_strm_V_data_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
 <Bits>24</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>stream_in_TVALID</name>
-<Object>AXI_video_strm_V_data_V</Object>
+<Object>AXI_video_strm_V_dest_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
@@ -164,7 +208,7 @@
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
@@ -175,7 +219,7 @@
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>data</Attribute>
@@ -186,7 +230,7 @@
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
 <Bits>3</Bits>
 <Attribute>data</Attribute>
@@ -197,7 +241,7 @@
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
 <Bits>3</Bits>
 <Attribute>data</Attribute>
@@ -208,7 +252,7 @@
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>data</Attribute>
@@ -219,7 +263,7 @@
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>data</Attribute>
@@ -230,7 +274,7 @@
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
+<IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>data</Attribute>

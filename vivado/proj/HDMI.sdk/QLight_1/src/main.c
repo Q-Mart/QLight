@@ -4,6 +4,8 @@
 #include "intc/intc.h"
 #include "timer_ps/timer_ps.h"
 #include <stdio.h>
+//#include "xsubsamble.h"
+#include "xparameters.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
@@ -146,11 +148,24 @@ void printGreeting() {
 }
 
 int main() {
+//	XSubsamble subsampler;
+
 	printGreeting();
 	init();
 	printf("Initialisation complete\r\n");
+
+//	u32 ram[2];
+//	uint32_t n = 0;
+
+//	XSubsamble_Initialize(&subsampler, XPA)
+//	XSubsamble_Set_ram(&subsampler, ram);
+//	XSubsamble_Set_n(&subsampler, n);
+
+
 	while (1) {
 		VideoStart(&videoCapt);
+//		printf("Version number: %d\r\n", ram[0]);
+//		printf("Doing sobel for operation %d\r\n", ram[1]);
 	}
 
 }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'subsamble'" level="0">
-<item name = "Date">Mon Jan 28 11:41:17 2019
+<item name = "Date">Thu Jan 31 14:03:40 2019
 </item>
 <item name = "Version">2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)</item>
 <item name = "Project">SubSample</item>
@@ -24,23 +24,22 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">8848606, 8848606, 8848606, 8848606, none</column>
+<column name="">1775786, 1775786, 1775782, 1775782, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_Filter2D_fu_485">Filter2D, 1774728, 1774728, 1774728, 1774728, none</column>
-<column name="grp_AXIvideo2Mat_fu_495">AXIvideo2Mat, 1769253, 1769253, 1769253, 1769253, none</column>
-<column name="grp_CvtColor_fu_516">CvtColor, 1770301, 1770301, 1770301, 1770301, none</column>
-<column name="grp_Mat2AXIvideo_fu_526">Mat2AXIvideo, 1767151, 1767151, 1767151, 1767151, none</column>
+<column name="grp_Sobel_fu_142">Sobel, 1775781, 1775781, 1775781, 1775781, none</column>
+<column name="grp_AXIvideo2Mat_fu_152">AXIvideo2Mat, 1771353, 1771353, 1771353, 1771353, none</column>
+<column name="grp_CvtColor_fu_173">CvtColor, 1770301, 1770301, 1770301, 1770301, none</column>
+<column name="grp_Mat2AXIvideo_fu_183">Mat2AXIvideo, 1768201, 1768201, 1768201, 1768201, none</column>
+<column name="grp_CvtColor_1_fu_204">CvtColor_1, 1767151, 1767151, 1767151, 1767151, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- loop_height">1767150, 1767150, 1683, -, -, 1050, no</column>
-<column name=" + loop_width">1680, 1680, 2, 1, 1, 1680, yes</column>
 </table>
 </item>
 </section>

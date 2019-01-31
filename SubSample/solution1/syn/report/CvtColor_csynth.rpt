@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'CvtColor'
 ================================================================
-* Date:           Mon Jan 28 11:41:18 2019
+* Date:           Thu Jan 31 14:03:41 2019
 
 * Version:        2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)
 * Project:        SubSample
@@ -55,14 +55,14 @@
 |       Name      | BRAM_18K| DSP48E|   FF  |  LUT  |
 +-----------------+---------+-------+-------+-------+
 |DSP              |        -|      3|      -|      -|
-|Expression       |        -|      -|      0|     89|
+|Expression       |        -|      -|      0|     91|
 |FIFO             |        -|      -|      -|      -|
 |Instance         |        -|      -|      -|      -|
 |Memory           |        -|      -|      -|      -|
-|Multiplexer      |        -|      -|      -|    117|
-|Register         |        0|      -|    215|     32|
+|Multiplexer      |        -|      -|      -|    135|
+|Register         |        0|      -|    217|     32|
 +-----------------+---------+-------+-------+-------+
-|Total            |        0|      3|    215|    238|
+|Total            |        0|      3|    217|    258|
 +-----------------+---------+-------+-------+-------+
 |Available        |      120|     80|  35200|  17600|
 +-----------------+---------+-------+-------+-------+
@@ -77,7 +77,7 @@
     +--------------------------+----------------------+--------------+
     |         Instance         |        Module        |  Expression  |
     +--------------------------+----------------------+--------------+
-    |subsamble_mac_mulcud_U12  |subsamble_mac_mulcud  | i0 + i1 * i2 |
+    |subsamble_mac_mulcud_U12  |subsamble_mac_mulcud  | i0 * i1 + i2 |
     |subsamble_mac_muldEe_U13  |subsamble_mac_muldEe  | i0 + i1 * i2 |
     |subsamble_mul_mulbkb_U11  |subsamble_mul_mulbkb  |    i0 * i1   |
     +--------------------------+----------------------+--------------+
@@ -92,21 +92,22 @@
     +----------------------------------+----------+-------+---+----+------------+------------+
     |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------------------+----------+-------+---+----+------------+------------+
-    |i_1_fu_229_p2                     |     +    |      0|  0|  13|          11|           1|
-    |j_1_fu_241_p2                     |     +    |      0|  0|  13|          11|           1|
-    |p_Val2_15_fu_285_p2               |     +    |      0|  0|  15|           8|           8|
-    |exitcond1_fu_223_p2               |   icmp   |      0|  0|  13|          11|          11|
-    |exitcond_fu_235_p2                |   icmp   |      0|  0|  13|          11|          10|
+    |i_1_fu_155_p2                     |     +    |      0|  0|  13|          11|           1|
+    |j_1_fu_167_p2                     |     +    |      0|  0|  13|          11|           1|
+    |p_Val2_15_fu_211_p2               |     +    |      0|  0|  15|           8|           8|
+    |tmp_19_fu_161_p2                  |   icmp   |      0|  0|  13|          11|          10|
+    |tmp_s_fu_149_p2                   |   icmp   |      0|  0|  13|          11|          11|
     |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1                   |    or    |      0|  0|   2|           1|           1|
     |ap_block_state4_pp0_stage0_iter1  |    or    |      0|  0|   2|           1|           1|
     |ap_block_state7_pp0_stage0_iter4  |    or    |      0|  0|   2|           1|           1|
-    |not_carry_fu_304_p2               |    or    |      0|  0|   2|           1|           1|
-    |p_Val2_s_fu_310_p3                |  select  |      0|  0|   8|           1|           8|
+    |not_carry_fu_230_p2               |    or    |      0|  0|   2|           1|           1|
+    |p_Val2_s_fu_236_p3                |  select  |      0|  0|   8|           1|           8|
     |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
     |ap_enable_reg_pp0_iter1           |    xor   |      0|  0|   2|           2|           1|
-    |p_Result_2_i_i_i_n_fu_298_p2      |    xor   |      0|  0|   2|           1|           2|
+    |p_Result_2_i_i_i_n_fu_224_p2      |    xor   |      0|  0|   2|           1|           2|
     +----------------------------------+----------+-------+---+----+------------+------------+
-    |Total                             |          |      0|  0|  89|          61|          48|
+    |Total                             |          |      0|  0|  91|          62|          49|
     +----------------------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
@@ -114,47 +115,51 @@
     |             Name            | LUT| Input Size| Bits| Total Bits|
     +-----------------------------+----+-----------+-----+-----------+
     |ap_NS_fsm                    |  27|          5|    1|          5|
+    |ap_done                      |   9|          2|    1|          2|
     |ap_enable_reg_pp0_iter1      |   9|          2|    1|          2|
     |ap_enable_reg_pp0_iter4      |   9|          2|    1|          2|
-    |i_reg_201                    |   9|          2|   11|         22|
-    |j_reg_212                    |   9|          2|   11|         22|
+    |i_reg_127                    |   9|          2|   11|         22|
+    |j_reg_138                    |   9|          2|   11|         22|
     |p_dst_data_stream_0_V_blk_n  |   9|          2|    1|          2|
     |p_dst_data_stream_1_V_blk_n  |   9|          2|    1|          2|
     |p_dst_data_stream_2_V_blk_n  |   9|          2|    1|          2|
     |p_src_data_stream_0_V_blk_n  |   9|          2|    1|          2|
     |p_src_data_stream_1_V_blk_n  |   9|          2|    1|          2|
     |p_src_data_stream_2_V_blk_n  |   9|          2|    1|          2|
+    |real_start                   |   9|          2|    1|          2|
     +-----------------------------+----+-----------+-----+-----------+
-    |Total                        | 117|         25|   31|         65|
+    |Total                        | 135|         29|   33|         69|
     +-----------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +------------------------------+----+----+-----+-----------+
-    |             Name             | FF | LUT| Bits| Const Bits|
-    +------------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                     |   4|   0|    4|          0|
-    |ap_enable_reg_pp0_iter0       |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter1       |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter2       |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter3       |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter4       |   1|   0|    1|          0|
-    |exitcond_reg_354              |   1|   0|    1|          0|
-    |i_1_reg_349                   |  11|   0|   11|          0|
-    |i_reg_201                     |  11|   0|   11|          0|
-    |j_reg_212                     |  11|   0|   11|          0|
-    |p_Val2_14_reg_388             |   8|   0|    8|          0|
-    |r_V_5_reg_383                 |  30|   0|   30|          0|
-    |r_V_reg_378                   |  29|   0|   29|          0|
-    |tmp_89_reg_393                |   1|   0|    1|          0|
-    |tmp_93_reg_363                |   8|   0|    8|          0|
-    |tmp_94_reg_368                |   8|   0|    8|          0|
-    |tmp_94_reg_368_pp0_iter2_reg  |   8|   0|    8|          0|
-    |tmp_95_reg_373                |   8|   0|    8|          0|
-    |tmp_95_reg_373_pp0_iter2_reg  |   8|   0|    8|          0|
-    |exitcond_reg_354              |  64|  32|    1|          0|
-    +------------------------------+----+----+-----+-----------+
-    |Total                         | 215|  32|  152|          0|
-    +------------------------------+----+----+-----+-----------+
+    +-------------------------------+----+----+-----+-----------+
+    |              Name             | FF | LUT| Bits| Const Bits|
+    +-------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                      |   4|   0|    4|          0|
+    |ap_done_reg                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0        |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1        |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2        |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3        |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4        |   1|   0|    1|          0|
+    |i_1_reg_275                    |  11|   0|   11|          0|
+    |i_reg_127                      |  11|   0|   11|          0|
+    |j_reg_138                      |  11|   0|   11|          0|
+    |p_Val2_14_reg_314              |   8|   0|    8|          0|
+    |r_V_1_reg_309                  |  30|   0|   30|          0|
+    |r_V_i_reg_304                  |  29|   0|   29|          0|
+    |start_once_reg                 |   1|   0|    1|          0|
+    |tmp_101_reg_289                |   8|   0|    8|          0|
+    |tmp_102_reg_294                |   8|   0|    8|          0|
+    |tmp_102_reg_294_pp0_iter2_reg  |   8|   0|    8|          0|
+    |tmp_103_reg_299                |   8|   0|    8|          0|
+    |tmp_103_reg_299_pp0_iter2_reg  |   8|   0|    8|          0|
+    |tmp_19_reg_280                 |   1|   0|    1|          0|
+    |tmp_97_reg_319                 |   1|   0|    1|          0|
+    |tmp_19_reg_280                 |  64|  32|    1|          0|
+    +-------------------------------+----+----+-----+-----------+
+    |Total                          | 217|  32|  154|          0|
+    +-------------------------------+----+----+-----+-----------+
 
 
 
@@ -168,9 +173,13 @@
 |ap_clk                         |  in |    1| ap_ctrl_hs |        CvtColor       | return value |
 |ap_rst                         |  in |    1| ap_ctrl_hs |        CvtColor       | return value |
 |ap_start                       |  in |    1| ap_ctrl_hs |        CvtColor       | return value |
+|start_full_n                   |  in |    1| ap_ctrl_hs |        CvtColor       | return value |
 |ap_done                        | out |    1| ap_ctrl_hs |        CvtColor       | return value |
+|ap_continue                    |  in |    1| ap_ctrl_hs |        CvtColor       | return value |
 |ap_idle                        | out |    1| ap_ctrl_hs |        CvtColor       | return value |
 |ap_ready                       | out |    1| ap_ctrl_hs |        CvtColor       | return value |
+|start_out                      | out |    1| ap_ctrl_hs |        CvtColor       | return value |
+|start_write                    | out |    1| ap_ctrl_hs |        CvtColor       | return value |
 |p_src_data_stream_0_V_dout     |  in |    8|   ap_fifo  | p_src_data_stream_0_V |    pointer   |
 |p_src_data_stream_0_V_empty_n  |  in |    1|   ap_fifo  | p_src_data_stream_0_V |    pointer   |
 |p_src_data_stream_0_V_read     | out |    1|   ap_fifo  | p_src_data_stream_0_V |    pointer   |

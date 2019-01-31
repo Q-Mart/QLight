@@ -18,6 +18,6 @@ typedef hls::stream<interface_t> stream_t;
 typedef hls::Mat<MAX_HEIGHT, MAX_WIDTH, HLS_8UC3> rgb_img_t;
 
 //void subsamble(stream_t &stream_in, stream_t &stream_process, stream_t &stream_passThrough);
-void subsamble(stream_t &stream_in, stream_t &stream_process, uint32 *n, uint32* ram);
+void subsamble(stream_t &stream_in, stream_t &stream_process);
 
 #endif

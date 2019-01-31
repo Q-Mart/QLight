@@ -86,12 +86,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_sub
 # IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_system_ila_0_0/system_system_ila_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_system_ila_0_0 || ORIG_REF_NAME==system_system_ila_0_0} -quiet] -quiet
 
-# IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_cc_1/system_auto_cc_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_cc_1 || ORIG_REF_NAME==system_auto_cc_1} -quiet] -quiet
-
-# IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_cc_0/system_auto_cc_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_cc_0 || ORIG_REF_NAME==system_auto_cc_0} -quiet] -quiet
-
 # IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_1/system_auto_pc_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_1 || ORIG_REF_NAME==system_auto_pc_1} -quiet] -quiet
 
@@ -100,9 +94,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_m00_regs
 
 # IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_0/system_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_0 || ORIG_REF_NAME==system_auto_pc_0} -quiet] -quiet
-
-# IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_us_0/system_auto_us_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_us_0 || ORIG_REF_NAME==system_auto_us_0} -quiet] -quiet
 
 # IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s01_regslice_0/system_s01_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_s01_regslice_0 || ORIG_REF_NAME==system_s01_regslice_0} -quiet] -quiet

@@ -49746,21 +49746,22 @@ typedef hls::stream<interface_t> stream_t;
 typedef hls::Mat<1050, 1680, (((0) & ((1 << 11) - 1)) + (((3)-1) << 11))> rgb_img_t;
 
 
-void subsamble(stream_t &stream_in, stream_t &stream_process, uint32 *n, uint32* ram);
+void subsamble(stream_t &stream_in, stream_t &stream_process);
 # 2 "SubSample/src/subsample.cpp" 2
 
 
-void subsamble(stream_t &stream_in, stream_t &stream_process, uint32 *n, uint32* ram) {
+void subsamble(stream_t &stream_in, stream_t &stream_process) {
+_ssdm_op_SpecDataflowPipeline(-1, "");
 _ssdm_op_SpecInterface(&stream_in, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(&stream_process, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
-_ssdm_op_SpecInterface(n, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(ram, "m_axi", 0, 0, "", 0, 0, "MAXI", "slave", "", 16, 16, 16, 16, "", "");
+
+
 
  int const rows = 1050;
  int const cols = 1680;
 
- ram[0] = 1;
+
 
  rgb_img_t img0(rows, cols);
 _ssdm_SpecStream( &img0, 1, 1, "");
@@ -49770,7 +49771,7 @@ _ssdm_SpecStream( &img1, 1, 1, "");
 _ssdm_SpecStream( &img2, 1, 1, "");
  rgb_img_t img3(rows, cols);
 _ssdm_SpecStream( &img3, 1, 1, "");
-# 40 "SubSample/src/subsample.cpp"
+# 41 "SubSample/src/subsample.cpp"
  hls::AXIvideo2Mat(stream_in, img0);
 
 
@@ -49783,7 +49784,7 @@ _ssdm_SpecStream( &img3, 1, 1, "");
  hls::Sobel<1,0,3>(img1, img2);
  hls::CvtColor<HLS_GRAY2RGB>(img2, img3);
  hls::Mat2AXIvideo(img3, stream_process);
- ram[1]++;
+
 
 
 

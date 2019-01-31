@@ -56,6 +56,9 @@ USE ieee.numeric_std.ALL;
 ENTITY system_system_ila_0_0 IS
   PORT (
     clk : IN STD_LOGIC;
+    probe0 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     SLOT_0_AXIS_tdata : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
     SLOT_0_AXIS_tkeep : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     SLOT_0_AXIS_tlast : IN STD_LOGIC;
@@ -105,6 +108,9 @@ ARCHITECTURE system_system_ila_0_0_arch OF system_system_ila_0_0 IS
   COMPONENT bd_d5b8 IS
     PORT (
       clk : IN STD_LOGIC;
+      probe0 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+      probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+      probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       SLOT_0_AXIS_tdata : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
       SLOT_0_AXIS_tkeep : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       SLOT_0_AXIS_tlast : IN STD_LOGIC;
@@ -166,7 +172,8 @@ ARCHITECTURE system_system_ila_0_0_arch OF system_system_ila_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF SLOT_4_AXIS_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TDATA";
   ATTRIBUTE X_INTERFACE_INFO OF SLOT_4_AXIS_tdest: SIGNAL IS "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TDEST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF SLOT_4_AXIS_tid: SIGNAL IS "XIL_INTERFACENAME SLOT_4_AXIS, TDATA_NUM_BYTES 3, TDEST_WIDTH 1, TID_WIDTH 1, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 1.33333e+08, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} b" & 
-"itoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}";
+"itoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minim" & 
+"um {} maximum {}} value false}}}} TDATA_WIDTH 24 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TUSER_WIDTH 1}";
   ATTRIBUTE X_INTERFACE_INFO OF SLOT_4_AXIS_tid: SIGNAL IS "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TID";
   ATTRIBUTE X_INTERFACE_INFO OF SLOT_3_AXIS_tready: SIGNAL IS "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TREADY";
   ATTRIBUTE X_INTERFACE_INFO OF SLOT_3_AXIS_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TVALID";
@@ -210,6 +217,9 @@ BEGIN
   U0 : bd_d5b8
     PORT MAP (
       clk => clk,
+      probe0 => probe0,
+      probe1 => probe1,
+      probe2 => probe2,
       SLOT_0_AXIS_tdata => SLOT_0_AXIS_tdata,
       SLOT_0_AXIS_tkeep => SLOT_0_AXIS_tkeep,
       SLOT_0_AXIS_tlast => SLOT_0_AXIS_tlast,

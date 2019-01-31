@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-// Date        : Mon Jan 28 10:13:12 2019
+// Date        : Mon Jan 28 10:13:11 2019
 // Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_in_0/system_axis_subset_converter_in_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top system_axis_subset_converter_in_0 -prefix
+//               system_axis_subset_converter_in_0_ system_axis_subset_converter_in_0_sim_netlist.v
 // Design      : system_axis_subset_converter_in_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -134,7 +134,7 @@ endmodule
 (* G_MASK_SS_TDEST = "64" *) (* G_MASK_SS_TID = "32" *) (* G_MASK_SS_TKEEP = "8" *) 
 (* G_MASK_SS_TLAST = "16" *) (* G_MASK_SS_TREADY = "1" *) (* G_MASK_SS_TSTRB = "4" *) 
 (* G_MASK_SS_TUSER = "128" *) (* G_TASK_SEVERITY_ERR = "2" *) (* G_TASK_SEVERITY_INFO = "0" *) 
-(* G_TASK_SEVERITY_WARNING = "1" *) (* ORIG_REF_NAME = "top_system_axis_subset_converter_in_0" *) 
+(* G_TASK_SEVERITY_WARNING = "1" *) 
 module system_axis_subset_converter_in_0_top_system_axis_subset_converter_in_0
    (aclk,
     aresetn,

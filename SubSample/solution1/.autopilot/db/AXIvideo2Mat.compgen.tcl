@@ -18,7 +18,7 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     corename {stream_in} \
     metadata {  } \
     op interface \
-    ports { stream_in_TDATA { I 24 vector } stream_in_TVALID { I 1 bit } } \
+    ports { stream_in_TDATA { I 24 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_data_V'"
@@ -132,7 +132,7 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     corename {stream_in} \
     metadata {  } \
     op interface \
-    ports { stream_in_TREADY { O 1 bit } stream_in_TDEST { I 1 vector } } \
+    ports { stream_in_TVALID { I 1 bit } stream_in_TREADY { O 1 bit } stream_in_TDEST { I 1 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'AXI_video_strm_V_dest_V'"
@@ -195,7 +195,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+    ports { ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
 } "
 }
 

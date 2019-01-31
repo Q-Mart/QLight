@@ -7093,7 +7093,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI_HP0.SUPPORTS_NARROW_BURST">0</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI_HP0.SUPPORTS_NARROW_BURST">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -14041,11 +14041,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 25 14:22:08 UTC 2019</spirit:value>
+            <spirit:value>Thu Jan 31 13:27:05 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:c6e209ed</spirit:value>
+            <spirit:value>8:b3c1dae4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14060,11 +14060,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 25 14:21:55 UTC 2019</spirit:value>
+            <spirit:value>Thu Jan 31 13:26:43 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:c6e209ed</spirit:value>
+            <spirit:value>8:b3c1dae4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14080,11 +14080,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 25 14:21:55 UTC 2019</spirit:value>
+            <spirit:value>Thu Jan 31 13:26:43 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:c6e209ed</spirit:value>
+            <spirit:value>8:b3c1dae4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14111,7 +14111,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:2e0f025f</spirit:value>
+            <spirit:value>8:5b2cd156</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14126,11 +14126,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 25 14:21:55 UTC 2019</spirit:value>
+            <spirit:value>Thu Jan 31 13:26:43 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:2e0f025f</spirit:value>
+            <spirit:value>8:5b2cd156</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -14153,11 +14153,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 25 14:21:56 UTC 2019</spirit:value>
+            <spirit:value>Thu Jan 31 13:26:44 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:2e0f025f</spirit:value>
+            <spirit:value>8:5b2cd156</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14172,11 +14172,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 25 14:21:59 UTC 2019</spirit:value>
+            <spirit:value>Thu Jan 31 13:26:46 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:2e0f025f</spirit:value>
+            <spirit:value>8:5b2cd156</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'AXIvideo2Mat'" level="0">
-<item name = "Date">Mon Jan 28 11:41:18 2019
+<item name = "Date">Thu Jan 31 14:03:41 2019
 </item>
 <item name = "Version">2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)</item>
 <item name = "Project">SubSample</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 3.634, 1.25</column>
+<column name="ap_clk">10.00, 5.403, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1769253, 1769253, 1769253, 1769253, none</column>
+<column name="">1771353, 1771353, 1771353, 1771353, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,9 +36,9 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- loop_wait_for_start">0, 0, 1, 1, 1, 0, yes</column>
-<column name="- loop_height">1769250, 1769250, 1685, -, -, 1050, no</column>
-<column name=" + loop_width">1680, 1680, 2, 1, 1, 1680, yes</column>
-<column name=" + loop_wait_for_eol">0, 0, 1, 1, 1, 0, yes</column>
+<column name="- loop_height">1771350, 1771350, 1687, -, -, 1050, no</column>
+<column name=" + loop_width">1681, 1681, 2, 1, 1, 1680, yes</column>
+<column name=" + loop_wait_for_eol">1, 1, 2, 1, 1, 0, yes</column>
 </table>
 </item>
 </section>
@@ -51,14 +51,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 72</column>
+<column name="Expression">-, -, 0, 108</column>
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">-, -, -, -</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 257</column>
-<column name="Register">-, -, 196, -</column>
+<column name="Multiplexer">-, -, -, 341</column>
+<column name="Register">-, -, 218, -</column>
 <specialColumn name="Available">120, 80, 35200, 17600</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, ~0, 1</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, 2</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -81,73 +81,106 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_V_fu_327_p2">+, 0, 0, 13, 11, 1</column>
-<column name="j_V_fu_339_p2">+, 0, 0, 13, 11, 1</column>
-<column name="ap_block_state5_pp1_stage0_iter0">and, 0, 0, 2, 1, 1</column>
-<column name="ap_block_state8">and, 0, 0, 2, 1, 1</column>
-<column name="ap_condition_145">and, 0, 0, 2, 1, 1</column>
-<column name="ap_condition_225">and, 0, 0, 2, 1, 1</column>
-<column name="ap_predicate_op50_read_state5">and, 0, 0, 2, 1, 1</column>
-<column name="exitcond5_fu_321_p2">icmp, 0, 0, 13, 11, 11</column>
-<column name="exitcond_fu_333_p2">icmp, 0, 0, 13, 11, 10</column>
-<column name="ap_block_pp1_stage0_01001">or, 0, 0, 2, 1, 1</column>
+<column name="i_V_fu_292_p2">+, 0, 0, 13, 11, 1</column>
+<column name="j_V_fu_304_p2">+, 0, 0, 13, 11, 1</column>
+<column name="AXI_video_strm_V_data_V_0_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="AXI_video_strm_V_data_V_0_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="AXI_video_strm_V_last_V_0_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="AXI_video_strm_V_last_V_0_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="AXI_video_strm_V_user_V_0_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="AXI_video_strm_V_user_V_0_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_pp1_stage0_01001">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_pp2_stage0_11001">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state9_pp2_stage0_iter1">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_507">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op56_read_state6">and, 0, 0, 2, 1, 1</column>
+<column name="AXI_video_strm_V_data_V_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="AXI_video_strm_V_last_V_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="AXI_video_strm_V_user_V_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="exitcond5_fu_286_p2">icmp, 0, 0, 13, 11, 11</column>
+<column name="exitcond_fu_298_p2">icmp, 0, 0, 13, 11, 10</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state6_pp1_stage0_iter1">or, 0, 0, 2, 1, 1</column>
-<column name="brmerge_fu_348_p2">or, 0, 0, 2, 1, 1</column>
+<column name="brmerge_fu_313_p2">or, 0, 0, 2, 1, 1</column>
 <column name="ap_enable_pp1">xor, 0, 0, 2, 1, 2</column>
-<column name="ap_enable_reg_pp1_iter1">xor, 0, 0, 2, 2, 1</column>
+<column name="ap_enable_pp2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="AXI_video_strm_V_data_V_0_data_out">9, 2, 24, 48</column>
+<column name="AXI_video_strm_V_data_V_0_state">15, 3, 2, 6</column>
+<column name="AXI_video_strm_V_dest_V_0_state">15, 3, 2, 6</column>
+<column name="AXI_video_strm_V_last_V_0_data_out">9, 2, 1, 2</column>
+<column name="AXI_video_strm_V_last_V_0_state">15, 3, 2, 6</column>
+<column name="AXI_video_strm_V_user_V_0_data_out">9, 2, 1, 2</column>
+<column name="AXI_video_strm_V_user_V_0_state">15, 3, 2, 6</column>
 <column name="ap_NS_fsm">44, 9, 1, 9</column>
-<column name="ap_enable_reg_pp1_iter1">15, 3, 1, 3</column>
-<column name="ap_phi_mux_axi_data_V_1_phi_fu_212_p4">9, 2, 24, 48</column>
-<column name="ap_phi_mux_eol_1_phi_fu_201_p4">9, 2, 1, 2</column>
-<column name="ap_phi_mux_eol_phi_fu_235_p4">9, 2, 1, 2</column>
-<column name="ap_phi_mux_p_Val2_s_phi_fu_260_p4">15, 3, 24, 72</column>
-<column name="axi_data_V1_reg_177">9, 2, 24, 48</column>
-<column name="axi_data_V_1_reg_209">9, 2, 24, 48</column>
-<column name="axi_data_V_3_reg_280">9, 2, 24, 48</column>
-<column name="axi_last_V1_reg_167">9, 2, 1, 2</column>
-<column name="axi_last_V_2_reg_243">15, 3, 1, 3</column>
-<column name="axi_last_V_3_reg_268">9, 2, 1, 2</column>
-<column name="eol_1_reg_198">9, 2, 1, 2</column>
-<column name="eol_2_reg_292">9, 2, 1, 2</column>
-<column name="eol_reg_231">9, 2, 1, 2</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp1_iter1">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp2_iter1">9, 2, 1, 2</column>
+<column name="ap_phi_mux_axi_last_V_2_phi_fu_212_p4">15, 3, 1, 3</column>
+<column name="ap_phi_mux_eol_2_phi_fu_235_p4">9, 2, 1, 2</column>
+<column name="ap_phi_mux_eol_phi_fu_177_p4">9, 2, 1, 2</column>
+<column name="ap_phi_mux_p_Val2_s_phi_fu_224_p4">15, 3, 24, 72</column>
+<column name="axi_data_V1_reg_141">9, 2, 24, 48</column>
+<column name="axi_data_V_1_reg_196">9, 2, 24, 48</column>
+<column name="axi_data_V_3_reg_255">9, 2, 24, 48</column>
+<column name="axi_last_V1_reg_131">9, 2, 1, 2</column>
+<column name="axi_last_V_3_reg_243">9, 2, 1, 2</column>
+<column name="eol_1_reg_185">9, 2, 1, 2</column>
+<column name="eol_2_reg_232">9, 2, 1, 2</column>
+<column name="eol_reg_173">9, 2, 1, 2</column>
 <column name="img_data_stream_0_V_blk_n">9, 2, 1, 2</column>
 <column name="img_data_stream_1_V_blk_n">9, 2, 1, 2</column>
 <column name="img_data_stream_2_V_blk_n">9, 2, 1, 2</column>
-<column name="p_Val2_s_reg_256">15, 3, 24, 72</column>
+<column name="real_start">9, 2, 1, 2</column>
 <column name="stream_in_TDATA_blk_n">9, 2, 1, 2</column>
-<column name="t_V_3_reg_220">9, 2, 11, 22</column>
-<column name="t_V_reg_187">9, 2, 11, 22</column>
+<column name="t_V_3_reg_162">9, 2, 11, 22</column>
+<column name="t_V_reg_151">9, 2, 11, 22</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="AXI_video_strm_V_data_V_0_payload_A">24, 0, 24, 0</column>
+<column name="AXI_video_strm_V_data_V_0_payload_B">24, 0, 24, 0</column>
+<column name="AXI_video_strm_V_data_V_0_sel_rd">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_data_V_0_sel_wr">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_data_V_0_state">2, 0, 2, 0</column>
+<column name="AXI_video_strm_V_dest_V_0_state">2, 0, 2, 0</column>
+<column name="AXI_video_strm_V_last_V_0_payload_A">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_last_V_0_payload_B">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_last_V_0_sel_rd">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_last_V_0_sel_wr">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_last_V_0_state">2, 0, 2, 0</column>
+<column name="AXI_video_strm_V_user_V_0_payload_A">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_user_V_0_payload_B">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_user_V_0_sel_rd">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_user_V_0_sel_wr">1, 0, 1, 0</column>
+<column name="AXI_video_strm_V_user_V_0_state">2, 0, 2, 0</column>
 <column name="ap_CS_fsm">8, 0, 8, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp1_iter0">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp1_iter1">1, 0, 1, 0</column>
-<column name="axi_data_V1_reg_177">24, 0, 24, 0</column>
-<column name="axi_data_V_1_reg_209">24, 0, 24, 0</column>
-<column name="axi_data_V_3_reg_280">24, 0, 24, 0</column>
-<column name="axi_last_V1_reg_167">1, 0, 1, 0</column>
-<column name="axi_last_V_2_reg_243">1, 0, 1, 0</column>
-<column name="axi_last_V_3_reg_268">1, 0, 1, 0</column>
-<column name="eol_1_reg_198">1, 0, 1, 0</column>
-<column name="eol_2_reg_292">1, 0, 1, 0</column>
-<column name="eol_reg_231">1, 0, 1, 0</column>
-<column name="exitcond_reg_412">1, 0, 1, 0</column>
-<column name="i_V_reg_407">11, 0, 11, 0</column>
-<column name="p_Val2_s_reg_256">24, 0, 24, 0</column>
-<column name="sof_1_fu_124">1, 0, 1, 0</column>
-<column name="t_V_3_reg_220">11, 0, 11, 0</column>
-<column name="t_V_reg_187">11, 0, 11, 0</column>
-<column name="tmp_32_reg_430">8, 0, 8, 0</column>
-<column name="tmp_33_reg_435">8, 0, 8, 0</column>
-<column name="tmp_96_reg_425">8, 0, 8, 0</column>
-<column name="tmp_data_V_reg_383">24, 0, 24, 0</column>
-<column name="tmp_last_V_reg_391">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp2_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp2_iter1">1, 0, 1, 0</column>
+<column name="axi_data_V1_reg_141">24, 0, 24, 0</column>
+<column name="axi_data_V_1_reg_196">24, 0, 24, 0</column>
+<column name="axi_data_V_3_reg_255">24, 0, 24, 0</column>
+<column name="axi_last_V1_reg_131">1, 0, 1, 0</column>
+<column name="axi_last_V_3_reg_243">1, 0, 1, 0</column>
+<column name="brmerge_reg_389">1, 0, 1, 0</column>
+<column name="eol_1_reg_185">1, 0, 1, 0</column>
+<column name="eol_2_reg_232">1, 0, 1, 0</column>
+<column name="eol_reg_173">1, 0, 1, 0</column>
+<column name="exitcond_reg_380">1, 0, 1, 0</column>
+<column name="i_V_reg_375">11, 0, 11, 0</column>
+<column name="sof_1_fu_88">1, 0, 1, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+<column name="t_V_3_reg_162">11, 0, 11, 0</column>
+<column name="t_V_reg_151">11, 0, 11, 0</column>
+<column name="tmp_data_V_reg_351">24, 0, 24, 0</column>
+<column name="tmp_last_V_reg_359">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -160,11 +193,15 @@
 <column name="ap_clk">in, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
 <column name="ap_rst">in, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
 <column name="ap_start">in, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
 <column name="ap_done">out, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, AXIvideo2Mat, return value</column>
 <column name="stream_in_TDATA">in, 24, axis, AXI_video_strm_V_data_V, pointer</column>
-<column name="stream_in_TVALID">in, 1, axis, AXI_video_strm_V_data_V, pointer</column>
+<column name="stream_in_TVALID">in, 1, axis, AXI_video_strm_V_dest_V, pointer</column>
 <column name="stream_in_TREADY">out, 1, axis, AXI_video_strm_V_dest_V, pointer</column>
 <column name="stream_in_TDEST">in, 1, axis, AXI_video_strm_V_dest_V, pointer</column>
 <column name="stream_in_TKEEP">in, 3, axis, AXI_video_strm_V_keep_V, pointer</column>

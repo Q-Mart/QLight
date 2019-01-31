@@ -1,17 +1,18 @@
 #include "subsample.h"
 
 //void subsamble(stream_t &stream_in, stream_t &stream_process, stream_t &stream_passThrough) {
-void subsamble(stream_t &stream_in, stream_t &stream_process, uint32 *n, uint32* ram) {
+void subsamble(stream_t &stream_in, stream_t &stream_process) {
+#pragma HLS DATAFLOW
 #pragma HLS INTERFACE axis port=stream_in
 #pragma HLS INTERFACE axis port=stream_process
 //#pragma HLS INTERFACE axis port=stream_passThrough
-#pragma HLS INTERFACE s_axilite port=n bundle=AXILiteS register
-#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI
+//#pragma HLS INTERFACE s_axilite port=n bundle=AXILiteS register
+//#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI
 
 	int const rows = MAX_HEIGHT;
 	int const cols = MAX_WIDTH;
 
-	ram[0] = VERSION;
+//	ram[0] = VERSION;
 
 	rgb_img_t img0(rows, cols);
 #pragma HLS STREAM variable=img0 depth=1 dim=1
@@ -49,7 +50,7 @@ void subsamble(stream_t &stream_in, stream_t &stream_process, uint32 *n, uint32*
 	hls::Sobel<1,0,3>(img1, img2);
 	hls::CvtColor<HLS_GRAY2RGB>(img2, img3);
 	hls::Mat2AXIvideo(img3, stream_process);
-	ram[1]++;
+//	ram[1]++;
 
 
 //	hls::Mat2AXIvideo(img4, stream_process);

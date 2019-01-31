@@ -1119,10 +1119,14 @@ proc create_root_design { parentCell } {
   # Create instance: system_ila_0, and set properties
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
-   CONFIG.C_BRAM_CNT {4} \
+   CONFIG.C_BRAM_CNT {11} \
    CONFIG.C_DATA_DEPTH {2048} \
-   CONFIG.C_MON_TYPE {INTERFACE} \
+   CONFIG.C_MON_TYPE {MIX} \
    CONFIG.C_NUM_MONITOR_SLOTS {6} \
+   CONFIG.C_NUM_OF_PROBES {3} \
+   CONFIG.C_PROBE0_TYPE {0} \
+   CONFIG.C_PROBE1_TYPE {0} \
+   CONFIG.C_PROBE2_TYPE {0} \
    CONFIG.C_SLOT_0_APC_EN {0} \
    CONFIG.C_SLOT_0_AXI_DATA_SEL {1} \
    CONFIG.C_SLOT_0_AXI_TRIG_SEL {1} \
@@ -1231,10 +1235,7 @@ HDL_ATTRIBUTE.DEBUG {true} \
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins axi_vdma_0/S_AXI_LITE] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins axi_dynclk_0/s00_axi] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins ps7_0_axi_periph/M04_AXI] [get_bd_intf_pins v_tc_in/ctrl]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M05_AXI [get_bd_intf_pins ps7_0_axi_periph/M05_AXI] [get_bd_intf_pins subsamble_0/s_axi_AXILiteS]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M06_AXI [get_bd_intf_pins ps7_0_axi_periph/M06_AXI] [get_bd_intf_pins subsamble_0/s_axi_AXILiteS_r]
   connect_bd_intf_net -intf_net rgb2dvi_0_TMDS [get_bd_intf_ports hdmi_out] [get_bd_intf_pins rgb2dvi_0/TMDS]
-  connect_bd_intf_net -intf_net subsamble_0_m_axi_MAXI [get_bd_intf_pins axi_interconnect_0/S02_AXI] [get_bd_intf_pins subsamble_0/m_axi_MAXI]
   connect_bd_intf_net -intf_net subsamble_0_stream_process [get_bd_intf_pins axis_subset_converter_in2/S_AXIS] [get_bd_intf_pins subsamble_0/stream_process]
 connect_bd_intf_net -intf_net [get_bd_intf_nets subsamble_0_stream_process] [get_bd_intf_pins axis_subset_converter_in2/S_AXIS] [get_bd_intf_pins system_ila_0/SLOT_4_AXIS]
   set_property -dict [ list \
@@ -1251,6 +1252,18 @@ HDL_ATTRIBUTE.DEBUG {true} \
 
   # Create port connections
   connect_bd_net -net ACLK_1 [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins axis_subset_converter_in/aclk] [get_bd_pins axis_subset_converter_in1/aclk] [get_bd_pins axis_subset_converter_in2/aclk] [get_bd_pins axis_subset_converter_out/aclk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins subsamble_0/ap_clk] [get_bd_pins system_ila_0/clk] [get_bd_pins v_axi4s_vid_out_0/aclk] [get_bd_pins v_vid_in_axi4s_0/aclk]
+  connect_bd_net -net ap_done [get_bd_pins subsamble_0/ap_done] [get_bd_pins system_ila_0/probe0]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_nets ap_done]
+  connect_bd_net -net ap_idle [get_bd_pins subsamble_0/ap_idle] [get_bd_pins system_ila_0/probe2]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_nets ap_idle]
+  connect_bd_net -net ap_ready [get_bd_pins subsamble_0/ap_ready] [get_bd_pins system_ila_0/probe1]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_nets ap_ready]
   connect_bd_net -net axi_dynclk_0_LOCKED_O [get_bd_pins axi_dynclk_0/LOCKED_O] [get_bd_pins rgb2dvi_0/aRst_n]
   connect_bd_net -net axi_dynclk_0_PXL_CLK_5X_O [get_bd_pins axi_dynclk_0/PXL_CLK_5X_O] [get_bd_pins rgb2dvi_0/SerialClk]
   connect_bd_net -net axi_dynclk_0_PXL_CLK_O [get_bd_pins axi_dynclk_0/PXL_CLK_O] [get_bd_pins rgb2dvi_0/PixelClk] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_out/clk]
@@ -1281,11 +1294,8 @@ HDL_ATTRIBUTE.DEBUG {true} \
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_dynclk_0/s00_axi/reg0] SEG_axi_dynclk_0_reg0
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_video/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_vdma_0/S_AXI_LITE/Reg] SEG_axi_vdma_0_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs subsamble_0/s_axi_AXILiteS/Reg] SEG_subsamble_0_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs subsamble_0/s_axi_AXILiteS_r/Reg] SEG_subsamble_0_Reg1
   create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs v_tc_in/ctrl/Reg] SEG_v_tc_in_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs v_tc_out/ctrl/Reg] SEG_v_tc_out_Reg
-  create_bd_addr_seg -range 0x40000000 -offset 0x00000000 [get_bd_addr_spaces subsamble_0/Data_m_axi_MAXI] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
 
 
   # Restore current instance
