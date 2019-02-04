@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
---Date        : Thu Jan 31 13:26:29 2019
+--Date        : Thu Jan 31 14:08:24 2019
 --Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
 --Command     : generate_target system.bd
 --Design      : system
@@ -5376,30 +5376,30 @@ architecture STRUCTURE of system is
   end component system_system_ila_0_0;
   component system_subsamble_0_0 is
   port (
-    ap_clk : in STD_LOGIC;
-    ap_rst_n : in STD_LOGIC;
-    ap_start : in STD_LOGIC;
-    ap_done : out STD_LOGIC;
-    ap_idle : out STD_LOGIC;
-    ap_ready : out STD_LOGIC;
     stream_in_TVALID : in STD_LOGIC;
     stream_in_TREADY : out STD_LOGIC;
     stream_in_TDATA : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    stream_in_TDEST : in STD_LOGIC_VECTOR ( 0 to 0 );
     stream_in_TKEEP : in STD_LOGIC_VECTOR ( 2 downto 0 );
     stream_in_TSTRB : in STD_LOGIC_VECTOR ( 2 downto 0 );
     stream_in_TUSER : in STD_LOGIC_VECTOR ( 0 to 0 );
     stream_in_TLAST : in STD_LOGIC_VECTOR ( 0 to 0 );
     stream_in_TID : in STD_LOGIC_VECTOR ( 0 to 0 );
+    stream_in_TDEST : in STD_LOGIC_VECTOR ( 0 to 0 );
     stream_process_TVALID : out STD_LOGIC;
     stream_process_TREADY : in STD_LOGIC;
     stream_process_TDATA : out STD_LOGIC_VECTOR ( 23 downto 0 );
-    stream_process_TDEST : out STD_LOGIC_VECTOR ( 0 to 0 );
     stream_process_TKEEP : out STD_LOGIC_VECTOR ( 2 downto 0 );
     stream_process_TSTRB : out STD_LOGIC_VECTOR ( 2 downto 0 );
     stream_process_TUSER : out STD_LOGIC_VECTOR ( 0 to 0 );
     stream_process_TLAST : out STD_LOGIC_VECTOR ( 0 to 0 );
-    stream_process_TID : out STD_LOGIC_VECTOR ( 0 to 0 )
+    stream_process_TID : out STD_LOGIC_VECTOR ( 0 to 0 );
+    stream_process_TDEST : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ap_clk : in STD_LOGIC;
+    ap_rst_n : in STD_LOGIC;
+    ap_done : out STD_LOGIC;
+    ap_start : in STD_LOGIC;
+    ap_ready : out STD_LOGIC;
+    ap_idle : out STD_LOGIC
   );
   end component system_subsamble_0_0;
   signal ACLK_1 : STD_LOGIC;

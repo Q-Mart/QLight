@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1548943737">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1549278231">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="system_wrapper.drc"/>
   <File Type="BG-BGN" Name="system_wrapper.bgn"/>
@@ -125,6 +125,5 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="system_subsamble_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_system_ila_0_0"/>
 </GenRun>

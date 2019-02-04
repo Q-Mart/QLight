@@ -14,7 +14,7 @@ set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 1
+set HasDSPModule 0
 set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
@@ -44,7 +44,7 @@ set TargetInfo "xc7z010:clg400:-1"
 set SourceFiles {sc {} c ../src/subsample.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/userfs/q/qj544/w2k/QLight/SubSample/solution1/solution1.directive}
-set TBFiles {verilog {../src/test1.bmp ../src/testbench.cpp} bc {../src/test1.bmp ../src/testbench.cpp} sc {../src/test1.bmp ../src/testbench.cpp} vhdl {../src/test1.bmp ../src/testbench.cpp} c {} cas {../src/test1.bmp ../src/testbench.cpp}}
+set TBFiles {verilog {../src/testbench.cpp ../src/test1.bmp} bc {../src/testbench.cpp ../src/test1.bmp} sc {../src/testbench.cpp ../src/test1.bmp} vhdl {../src/testbench.cpp ../src/test1.bmp} c {} cas {../src/testbench.cpp ../src/test1.bmp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

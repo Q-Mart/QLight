@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'subsamble'
 ================================================================
-* Date:           Thu Jan 31 14:03:40 2019
+* Date:           Mon Feb  4 10:59:12 2019
 
 * Version:        2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)
 * Project:        SubSample
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|     9.400|        1.25|
+    |ap_clk  |  10.00|     8.258|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |      Latency      |      Interval     | Pipeline |
     |   min   |   max   |   min   |   max   |   Type   |
     +---------+---------+---------+---------+----------+
-    |  1775786|  1775786|  1775782|  1775782| dataflow |
+    |  1771353|  1771353|  1771354|  1771354| dataflow |
     +---------+---------+---------+---------+----------+
 
     + Detail: 
@@ -65,10 +65,10 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 12
+* Number of FSM states : 8
 * Pipeline : 0
 * Dataflow Pipeline: 1
-  DF-Pipeline-0: Size = 12, States = { 1 2 3 4 5 6 7 8 9 10 11 12 }
+  DF-Pipeline-0: Size = 8, States = { 1 2 3 4 5 6 7 8 }
 
 * FSM state transitions: 
 1 --> 
@@ -86,105 +86,67 @@ IsGatedGlobalClock: 0
 7 --> 
 	8  / true
 8 --> 
-	9  / true
-9 --> 
-	10  / true
-10 --> 
-	11  / true
-11 --> 
-	12  / true
-12 --> 
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%img0_data_stream_0_s = alloca i8, align 1" [SubSample/src/subsample.cpp:17]   --->   Operation 13 'alloca' 'img0_data_stream_0_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%img0_data_stream_1_s = alloca i8, align 1" [SubSample/src/subsample.cpp:17]   --->   Operation 14 'alloca' 'img0_data_stream_1_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%img0_data_stream_2_s = alloca i8, align 1" [SubSample/src/subsample.cpp:17]   --->   Operation 15 'alloca' 'img0_data_stream_2_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%img1_data_stream_0_s = alloca i8, align 1" [SubSample/src/subsample.cpp:19]   --->   Operation 16 'alloca' 'img1_data_stream_0_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%img1_data_stream_1_s = alloca i8, align 1" [SubSample/src/subsample.cpp:19]   --->   Operation 17 'alloca' 'img1_data_stream_1_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%img1_data_stream_2_s = alloca i8, align 1" [SubSample/src/subsample.cpp:19]   --->   Operation 18 'alloca' 'img1_data_stream_2_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%img2_data_stream_0_s = alloca i8, align 1" [SubSample/src/subsample.cpp:21]   --->   Operation 19 'alloca' 'img2_data_stream_0_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%img2_data_stream_1_s = alloca i8, align 1" [SubSample/src/subsample.cpp:21]   --->   Operation 20 'alloca' 'img2_data_stream_1_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%img2_data_stream_2_s = alloca i8, align 1" [SubSample/src/subsample.cpp:21]   --->   Operation 21 'alloca' 'img2_data_stream_2_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%img3_data_stream_0_s = alloca i8, align 1" [SubSample/src/subsample.cpp:23]   --->   Operation 22 'alloca' 'img3_data_stream_0_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%img3_data_stream_1_s = alloca i8, align 1" [SubSample/src/subsample.cpp:23]   --->   Operation 23 'alloca' 'img3_data_stream_1_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
-ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%img3_data_stream_2_s = alloca i8, align 1" [SubSample/src/subsample.cpp:23]   --->   Operation 24 'alloca' 'img3_data_stream_2_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%img0_data_stream_0_s = alloca i8, align 1" [SubSample/src/subsample.cpp:17]   --->   Operation 9 'alloca' 'img0_data_stream_0_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%img0_data_stream_1_s = alloca i8, align 1" [SubSample/src/subsample.cpp:17]   --->   Operation 10 'alloca' 'img0_data_stream_1_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%img0_data_stream_2_s = alloca i8, align 1" [SubSample/src/subsample.cpp:17]   --->   Operation 11 'alloca' 'img0_data_stream_2_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%img1_data_stream_0_s = alloca i8, align 1" [SubSample/src/subsample.cpp:19]   --->   Operation 12 'alloca' 'img1_data_stream_0_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%img1_data_stream_1_s = alloca i8, align 1" [SubSample/src/subsample.cpp:19]   --->   Operation 13 'alloca' 'img1_data_stream_1_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%img1_data_stream_2_s = alloca i8, align 1" [SubSample/src/subsample.cpp:19]   --->   Operation 14 'alloca' 'img1_data_stream_2_s' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 1> <FIFO>
 
 State 2 <SV = 1> <Delay = 0.00>
-ST_2 : Operation 25 [2/2] (0.00ns)   --->   "call fastcc void @AXIvideo2Mat(i24* %stream_in_V_data_V, i3* %stream_in_V_keep_V, i3* %stream_in_V_strb_V, i1* %stream_in_V_user_V, i1* %stream_in_V_last_V, i1* %stream_in_V_id_V, i1* %stream_in_V_dest_V, i8* %img0_data_stream_0_s, i8* %img0_data_stream_1_s, i8* %img0_data_stream_2_s)" [SubSample/src/subsample.cpp:41]   --->   Operation 25 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 15 [2/2] (0.00ns)   --->   "call fastcc void @AXIvideo2Mat(i24* %stream_in_V_data_V, i3* %stream_in_V_keep_V, i3* %stream_in_V_strb_V, i1* %stream_in_V_user_V, i1* %stream_in_V_last_V, i1* %stream_in_V_id_V, i1* %stream_in_V_dest_V, i8* %img0_data_stream_0_s, i8* %img0_data_stream_1_s, i8* %img0_data_stream_2_s)" [SubSample/src/subsample.cpp:41]   --->   Operation 15 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 26 [1/2] (0.00ns)   --->   "call fastcc void @AXIvideo2Mat(i24* %stream_in_V_data_V, i3* %stream_in_V_keep_V, i3* %stream_in_V_strb_V, i1* %stream_in_V_user_V, i1* %stream_in_V_last_V, i1* %stream_in_V_id_V, i1* %stream_in_V_dest_V, i8* %img0_data_stream_0_s, i8* %img0_data_stream_1_s, i8* %img0_data_stream_2_s)" [SubSample/src/subsample.cpp:41]   --->   Operation 26 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 16 [1/2] (0.00ns)   --->   "call fastcc void @AXIvideo2Mat(i24* %stream_in_V_data_V, i3* %stream_in_V_keep_V, i3* %stream_in_V_strb_V, i1* %stream_in_V_user_V, i1* %stream_in_V_last_V, i1* %stream_in_V_id_V, i1* %stream_in_V_dest_V, i8* %img0_data_stream_0_s, i8* %img0_data_stream_1_s, i8* %img0_data_stream_2_s)" [SubSample/src/subsample.cpp:41]   --->   Operation 16 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 27 [2/2] (0.00ns)   --->   "call fastcc void @CvtColor(i8* %img0_data_stream_0_s, i8* %img0_data_stream_1_s, i8* %img0_data_stream_2_s, i8* %img1_data_stream_0_s, i8* %img1_data_stream_1_s, i8* %img1_data_stream_2_s)" [SubSample/src/subsample.cpp:49]   --->   Operation 27 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 17 [2/2] (0.00ns)   --->   "call fastcc void @Not(i8* %img0_data_stream_0_s, i8* %img0_data_stream_1_s, i8* %img0_data_stream_2_s, i8* %img1_data_stream_0_s, i8* %img1_data_stream_1_s, i8* %img1_data_stream_2_s)" [SubSample/src/subsample.cpp:49]   --->   Operation 17 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 5 <SV = 4> <Delay = 0.00>
-ST_5 : Operation 28 [1/2] (0.00ns)   --->   "call fastcc void @CvtColor(i8* %img0_data_stream_0_s, i8* %img0_data_stream_1_s, i8* %img0_data_stream_2_s, i8* %img1_data_stream_0_s, i8* %img1_data_stream_1_s, i8* %img1_data_stream_2_s)" [SubSample/src/subsample.cpp:49]   --->   Operation 28 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 18 [1/2] (0.00ns)   --->   "call fastcc void @Not(i8* %img0_data_stream_0_s, i8* %img0_data_stream_1_s, i8* %img0_data_stream_2_s, i8* %img1_data_stream_0_s, i8* %img1_data_stream_1_s, i8* %img1_data_stream_2_s)" [SubSample/src/subsample.cpp:49]   --->   Operation 18 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 6 <SV = 5> <Delay = 0.00>
-ST_6 : Operation 29 [2/2] (0.00ns)   --->   "call fastcc void @Sobel(i8* %img1_data_stream_0_s, i8* %img1_data_stream_1_s, i8* %img1_data_stream_2_s, i8* %img2_data_stream_0_s, i8* %img2_data_stream_1_s, i8* %img2_data_stream_2_s)" [SubSample/src/subsample.cpp:50]   --->   Operation 29 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 19 [2/2] (0.00ns)   --->   "call fastcc void @Mat2AXIvideo(i8* %img1_data_stream_0_s, i8* %img1_data_stream_1_s, i8* %img1_data_stream_2_s, i24* %stream_process_V_data_V, i3* %stream_process_V_keep_V, i3* %stream_process_V_strb_V, i1* %stream_process_V_user_V, i1* %stream_process_V_last_V, i1* %stream_process_V_id_V, i1* %stream_process_V_dest_V)" [SubSample/src/subsample.cpp:50]   --->   Operation 19 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 7 <SV = 6> <Delay = 0.00>
-ST_7 : Operation 30 [1/2] (0.00ns)   --->   "call fastcc void @Sobel(i8* %img1_data_stream_0_s, i8* %img1_data_stream_1_s, i8* %img1_data_stream_2_s, i8* %img2_data_stream_0_s, i8* %img2_data_stream_1_s, i8* %img2_data_stream_2_s)" [SubSample/src/subsample.cpp:50]   --->   Operation 30 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 20 [1/2] (0.00ns)   --->   "call fastcc void @Mat2AXIvideo(i8* %img1_data_stream_0_s, i8* %img1_data_stream_1_s, i8* %img1_data_stream_2_s, i24* %stream_process_V_data_V, i3* %stream_process_V_keep_V, i3* %stream_process_V_strb_V, i1* %stream_process_V_user_V, i1* %stream_process_V_last_V, i1* %stream_process_V_id_V, i1* %stream_process_V_dest_V)" [SubSample/src/subsample.cpp:50]   --->   Operation 20 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 8 <SV = 7> <Delay = 0.00>
-ST_8 : Operation 31 [2/2] (0.00ns)   --->   "call fastcc void @CvtColor.1(i8* %img2_data_stream_0_s, i8* %img2_data_stream_1_s, i8* %img2_data_stream_2_s, i8* %img3_data_stream_0_s, i8* %img3_data_stream_1_s, i8* %img3_data_stream_2_s)" [SubSample/src/subsample.cpp:51]   --->   Operation 31 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-
-State 9 <SV = 8> <Delay = 0.00>
-ST_9 : Operation 32 [1/2] (0.00ns)   --->   "call fastcc void @CvtColor.1(i8* %img2_data_stream_0_s, i8* %img2_data_stream_1_s, i8* %img2_data_stream_2_s, i8* %img3_data_stream_0_s, i8* %img3_data_stream_1_s, i8* %img3_data_stream_2_s)" [SubSample/src/subsample.cpp:51]   --->   Operation 32 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-
-State 10 <SV = 9> <Delay = 0.00>
-ST_10 : Operation 33 [2/2] (0.00ns)   --->   "call fastcc void @Mat2AXIvideo(i8* %img3_data_stream_0_s, i8* %img3_data_stream_1_s, i8* %img3_data_stream_2_s, i24* %stream_process_V_data_V, i3* %stream_process_V_keep_V, i3* %stream_process_V_strb_V, i1* %stream_process_V_user_V, i1* %stream_process_V_last_V, i1* %stream_process_V_id_V, i1* %stream_process_V_dest_V)" [SubSample/src/subsample.cpp:52]   --->   Operation 33 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-
-State 11 <SV = 10> <Delay = 0.00>
-ST_11 : Operation 34 [1/2] (0.00ns)   --->   "call fastcc void @Mat2AXIvideo(i8* %img3_data_stream_0_s, i8* %img3_data_stream_1_s, i8* %img3_data_stream_2_s, i24* %stream_process_V_data_V, i3* %stream_process_V_keep_V, i3* %stream_process_V_strb_V, i1* %stream_process_V_user_V, i1* %stream_process_V_last_V, i1* %stream_process_V_id_V, i1* %stream_process_V_dest_V)" [SubSample/src/subsample.cpp:52]   --->   Operation 34 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-
-State 12 <SV = 11> <Delay = 0.00>
-ST_12 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str) nounwind" [SubSample/src/subsample.cpp:5]   --->   Operation 35 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i24* %stream_in_V_data_V), !map !293"   --->   Operation 36 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %stream_in_V_keep_V), !map !297"   --->   Operation 37 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %stream_in_V_strb_V), !map !301"   --->   Operation 38 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_in_V_user_V), !map !305"   --->   Operation 39 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_in_V_last_V), !map !309"   --->   Operation 40 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_in_V_id_V), !map !313"   --->   Operation 41 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_in_V_dest_V), !map !317"   --->   Operation 42 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i24* %stream_process_V_data_V), !map !321"   --->   Operation 43 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %stream_process_V_keep_V), !map !325"   --->   Operation 44 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %stream_process_V_strb_V), !map !329"   --->   Operation 45 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_process_V_user_V), !map !333"   --->   Operation 46 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_process_V_last_V), !map !337"   --->   Operation 47 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_process_V_id_V), !map !341"   --->   Operation 48 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_process_V_dest_V), !map !345"   --->   Operation 49 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([10 x i8]* @subsamble_str) nounwind"   --->   Operation 50 'spectopmodule' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 51 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img0_OC_data_stream_2, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img0_data_stream_0_s, i8* %img0_data_stream_0_s)"   --->   Operation 51 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img0_data_stream_0_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 52 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 53 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img0_OC_data_stream_1, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img0_data_stream_1_s, i8* %img0_data_stream_1_s)"   --->   Operation 53 'specchannel' 'empty_10' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img0_data_stream_1_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 54 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 55 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img0_OC_data_stream_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img0_data_stream_2_s, i8* %img0_data_stream_2_s)"   --->   Operation 55 'specchannel' 'empty_11' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 56 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img0_data_stream_2_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 56 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 57 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img1_OC_data_stream_2, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img1_data_stream_0_s, i8* %img1_data_stream_0_s)"   --->   Operation 57 'specchannel' 'empty_12' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 58 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img1_data_stream_0_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 58 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 59 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img1_OC_data_stream_1, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img1_data_stream_1_s, i8* %img1_data_stream_1_s)"   --->   Operation 59 'specchannel' 'empty_13' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 60 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img1_data_stream_1_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 60 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 61 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img1_OC_data_stream_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img1_data_stream_2_s, i8* %img1_data_stream_2_s)"   --->   Operation 61 'specchannel' 'empty_14' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 62 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img1_data_stream_2_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 62 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 63 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img2_OC_data_stream_2, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img2_data_stream_0_s, i8* %img2_data_stream_0_s)"   --->   Operation 63 'specchannel' 'empty_15' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 64 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img2_data_stream_0_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 64 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 65 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img2_OC_data_stream_1, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img2_data_stream_1_s, i8* %img2_data_stream_1_s)"   --->   Operation 65 'specchannel' 'empty_16' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 66 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img2_data_stream_1_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 66 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 67 [1/1] (0.00ns)   --->   "%empty_17 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img2_OC_data_stream_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img2_data_stream_2_s, i8* %img2_data_stream_2_s)"   --->   Operation 67 'specchannel' 'empty_17' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 68 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img2_data_stream_2_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 68 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 69 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img3_OC_data_stream_2, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img3_data_stream_0_s, i8* %img3_data_stream_0_s)"   --->   Operation 69 'specchannel' 'empty_18' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 70 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img3_data_stream_0_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 70 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 71 [1/1] (0.00ns)   --->   "%empty_19 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img3_OC_data_stream_1, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img3_data_stream_1_s, i8* %img3_data_stream_1_s)"   --->   Operation 71 'specchannel' 'empty_19' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 72 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img3_data_stream_1_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 72 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 73 [1/1] (0.00ns)   --->   "%empty_20 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img3_OC_data_stream_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img3_data_stream_2_s, i8* %img3_data_stream_2_s)"   --->   Operation 73 'specchannel' 'empty_20' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 74 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img3_data_stream_2_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 74 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 75 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* %stream_in_V_data_V, i3* %stream_in_V_keep_V, i3* %stream_in_V_strb_V, i1* %stream_in_V_user_V, i1* %stream_in_V_last_V, i1* %stream_in_V_id_V, i1* %stream_in_V_dest_V, [5 x i8]* @p_str2, i32 1, i32 1, [5 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [SubSample/src/subsample.cpp:6]   --->   Operation 75 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 76 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* %stream_process_V_data_V, i3* %stream_process_V_keep_V, i3* %stream_process_V_strb_V, i1* %stream_process_V_user_V, i1* %stream_process_V_last_V, i1* %stream_process_V_id_V, i1* %stream_process_V_dest_V, [5 x i8]* @p_str2, i32 1, i32 1, [5 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [SubSample/src/subsample.cpp:7]   --->   Operation 76 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 77 [1/1] (0.00ns)   --->   "ret void" [SubSample/src/subsample.cpp:58]   --->   Operation 77 'ret' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str) nounwind" [SubSample/src/subsample.cpp:5]   --->   Operation 21 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i24* %stream_in_V_data_V), !map !152"   --->   Operation 22 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %stream_in_V_keep_V), !map !156"   --->   Operation 23 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %stream_in_V_strb_V), !map !160"   --->   Operation 24 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_in_V_user_V), !map !164"   --->   Operation 25 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_in_V_last_V), !map !168"   --->   Operation 26 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_in_V_id_V), !map !172"   --->   Operation 27 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_in_V_dest_V), !map !176"   --->   Operation 28 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i24* %stream_process_V_data_V), !map !180"   --->   Operation 29 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %stream_process_V_keep_V), !map !184"   --->   Operation 30 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3* %stream_process_V_strb_V), !map !188"   --->   Operation 31 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_process_V_user_V), !map !192"   --->   Operation 32 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_process_V_last_V), !map !196"   --->   Operation 33 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_process_V_id_V), !map !200"   --->   Operation 34 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %stream_process_V_dest_V), !map !204"   --->   Operation 35 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([10 x i8]* @subsamble_str) nounwind"   --->   Operation 36 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 37 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img0_OC_data_stream_2, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img0_data_stream_0_s, i8* %img0_data_stream_0_s)"   --->   Operation 37 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img0_data_stream_0_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 38 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img0_OC_data_stream_1, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img0_data_stream_1_s, i8* %img0_data_stream_1_s)"   --->   Operation 39 'specchannel' 'empty_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img0_data_stream_1_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 40 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img0_OC_data_stream_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img0_data_stream_2_s, i8* %img0_data_stream_2_s)"   --->   Operation 41 'specchannel' 'empty_7' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img0_data_stream_2_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 42 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img1_OC_data_stream_2, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img1_data_stream_0_s, i8* %img1_data_stream_0_s)"   --->   Operation 43 'specchannel' 'empty_8' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img1_data_stream_0_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 44 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img1_OC_data_stream_1, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img1_data_stream_1_s, i8* %img1_data_stream_1_s)"   --->   Operation 45 'specchannel' 'empty_9' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img1_data_stream_1_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 46 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @img1_OC_data_stream_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %img1_data_stream_2_s, i8* %img1_data_stream_2_s)"   --->   Operation 47 'specchannel' 'empty_10' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %img1_data_stream_2_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 48 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* %stream_in_V_data_V, i3* %stream_in_V_keep_V, i3* %stream_in_V_strb_V, i1* %stream_in_V_user_V, i1* %stream_in_V_last_V, i1* %stream_in_V_id_V, i1* %stream_in_V_dest_V, [5 x i8]* @p_str2, i32 1, i32 1, [5 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [SubSample/src/subsample.cpp:6]   --->   Operation 49 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* %stream_process_V_data_V, i3* %stream_process_V_keep_V, i3* %stream_process_V_strb_V, i1* %stream_process_V_user_V, i1* %stream_process_V_last_V, i1* %stream_process_V_id_V, i1* %stream_process_V_dest_V, [5 x i8]* @p_str2, i32 1, i32 1, [5 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [SubSample/src/subsample.cpp:7]   --->   Operation 50 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 51 [1/1] (0.00ns)   --->   "ret void" [SubSample/src/subsample.cpp:61]   --->   Operation 51 'ret' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -216,18 +178,6 @@ The critical path consists of the following:
  <State 8>: 0ns
 The critical path consists of the following:
 
- <State 9>: 0ns
-The critical path consists of the following:
-
- <State 10>: 0ns
-The critical path consists of the following:
-
- <State 11>: 0ns
-The critical path consists of the following:
-
- <State 12>: 0ns
-The critical path consists of the following:
-
 
 ============================================================
 + Verbose Summary: Binding
@@ -245,10 +195,6 @@ N/A
 	State 6
 	State 7
 	State 8
-	State 9
-	State 10
-	State 11
-	State 12
 
 
 ============================================================

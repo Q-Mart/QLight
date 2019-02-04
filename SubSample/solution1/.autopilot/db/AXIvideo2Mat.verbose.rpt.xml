@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'AXIvideo2Mat'" level="0">
-<item name = "Date">Thu Jan 31 14:03:41 2019
+<item name = "Date">Mon Feb  4 10:59:13 2019
 </item>
 <item name = "Version">2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)</item>
 <item name = "Project">SubSample</item>
@@ -97,7 +97,7 @@
 <column name="AXI_video_strm_V_data_V_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
 <column name="AXI_video_strm_V_last_V_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
 <column name="AXI_video_strm_V_user_V_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
-<column name="exitcond5_fu_286_p2">icmp, 0, 0, 13, 11, 11</column>
+<column name="exitcond3_fu_286_p2">icmp, 0, 0, 13, 11, 11</column>
 <column name="exitcond_fu_298_p2">icmp, 0, 0, 13, 11, 10</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state6_pp1_stage0_iter1">or, 0, 0, 2, 1, 1</column>

@@ -3,9 +3,9 @@ set C_TypeInfoList {{
 "0": [ "stream_t", {"typedef": [[[],"1"],""]}], 
 "1": [ "stream<ap_axiu<24, 1, 1, 1> >", {"hls_type": {"stream": [[[[],"2"]],"3"]}}], 
 "2": [ "ap_axiu<24, 1, 1, 1>", {"struct": [[],[{"D":[[], {"scalar": { "int": 24}}]},{"U":[[], {"scalar": { "int": 1}}]},{"TI":[[], {"scalar": { "int": 1}}]},{"TD":[[], {"scalar": { "int": 1}}]}],[{ "data": [[], "4"]},{ "keep": [[], "5"]},{ "strb": [[], "5"]},{ "user": [[], "6"]},{ "last": [[], "6"]},{ "id": [[], "6"]},{ "dest": [[], "6"]}],""]}], 
-"6": [ "ap_uint<1>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 1}}]],""]}}], 
 "4": [ "ap_uint<24>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 24}}]],""]}}], 
-"5": [ "ap_uint<3>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 3}}]],""]}}],
+"5": [ "ap_uint<3>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 3}}]],""]}}], 
+"6": [ "ap_uint<1>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 1}}]],""]}}],
 "3": ["hls", ""]
 }}
 set moduleName subsamble
@@ -107,13 +107,13 @@ set NewPortList {[
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "6", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
 		"CDFG" : "subsamble",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "Dataflow", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "1",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1775786", "EstimateLatencyMax" : "1775786",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1771353", "EstimateLatencyMax" : "1771353",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -123,7 +123,7 @@ set RtlHierarchyInfo {[
 		"InputProcess" : [
 			{"ID" : "1", "Name" : "AXIvideo2Mat_U0"}],
 		"OutputProcess" : [
-			{"ID" : "36", "Name" : "Mat2AXIvideo_U0"}],
+			{"ID" : "3", "Name" : "Mat2AXIvideo_U0"}],
 		"Port" : [
 			{"Name" : "stream_in_V_data_V", "Type" : "Axis", "Direction" : "I",
 				"SubConnect" : [
@@ -148,25 +148,25 @@ set RtlHierarchyInfo {[
 					{"ID" : "1", "SubInstance" : "AXIvideo2Mat_U0", "Port" : "AXI_video_strm_V_dest_V"}]},
 			{"Name" : "stream_process_V_data_V", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "36", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_data_V"}]},
+					{"ID" : "3", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_data_V"}]},
 			{"Name" : "stream_process_V_keep_V", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "36", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_keep_V"}]},
+					{"ID" : "3", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_keep_V"}]},
 			{"Name" : "stream_process_V_strb_V", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "36", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_strb_V"}]},
+					{"ID" : "3", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_strb_V"}]},
 			{"Name" : "stream_process_V_user_V", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "36", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_user_V"}]},
+					{"ID" : "3", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_user_V"}]},
 			{"Name" : "stream_process_V_last_V", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "36", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_last_V"}]},
+					{"ID" : "3", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_last_V"}]},
 			{"Name" : "stream_process_V_id_V", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "36", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_id_V"}]},
+					{"ID" : "3", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_id_V"}]},
 			{"Name" : "stream_process_V_dest_V", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "36", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_dest_V"}]}]},
+					{"ID" : "3", "SubInstance" : "Mat2AXIvideo_U0", "Port" : "AXI_video_strm_V_dest_V"}]}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.AXIvideo2Mat_U0", "Parent" : "0",
 		"CDFG" : "AXIvideo2Mat",
 		"Protocol" : "ap_ctrl_hs",
@@ -190,149 +190,17 @@ set RtlHierarchyInfo {[
 			{"Name" : "AXI_video_strm_V_last_V", "Type" : "Axis", "Direction" : "I"},
 			{"Name" : "AXI_video_strm_V_id_V", "Type" : "Axis", "Direction" : "I"},
 			{"Name" : "AXI_video_strm_V_dest_V", "Type" : "Axis", "Direction" : "I"},
-			{"Name" : "img_data_stream_0_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "2", "DependentChan" : "37",
+			{"Name" : "img_data_stream_0_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "2", "DependentChan" : "4",
 				"BlockSignal" : [
 					{"Name" : "img_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "img_data_stream_1_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "2", "DependentChan" : "38",
+			{"Name" : "img_data_stream_1_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "2", "DependentChan" : "5",
 				"BlockSignal" : [
 					{"Name" : "img_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "img_data_stream_2_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "2", "DependentChan" : "39",
+			{"Name" : "img_data_stream_2_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "2", "DependentChan" : "6",
 				"BlockSignal" : [
 					{"Name" : "img_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]}]},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.CvtColor_U0", "Parent" : "0", "Child" : ["3", "4", "5"],
-		"CDFG" : "CvtColor",
-		"Protocol" : "ap_ctrl_hs",
-		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
-		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1770301", "EstimateLatencyMax" : "1770301",
-		"Combinational" : "0",
-		"Datapath" : "0",
-		"ClockEnable" : "0",
-		"HasSubDataflow" : "0",
-		"InDataflowNetwork" : "1",
-		"HasNonBlockingOperation" : "0",
-		"StartSource" : "1",
-		"StartFifo" : "start_for_CvtColoocq_U",
-		"Port" : [
-			{"Name" : "p_src_data_stream_0_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "37",
-				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_src_data_stream_1_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "38",
-				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_src_data_stream_2_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "39",
-				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_0_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "6", "DependentChan" : "40",
-				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_1_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "6", "DependentChan" : "41",
-				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_2_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "6", "DependentChan" : "42",
-				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]}]},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.CvtColor_U0.subsamble_mul_mulbkb_U11", "Parent" : "2"},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.CvtColor_U0.subsamble_mac_mulcud_U12", "Parent" : "2"},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.CvtColor_U0.subsamble_mac_muldEe_U13", "Parent" : "2"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Sobel_U0", "Parent" : "0", "Child" : ["7"],
-		"CDFG" : "Sobel",
-		"Protocol" : "ap_ctrl_hs",
-		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
-		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1775781", "EstimateLatencyMax" : "1775781",
-		"Combinational" : "0",
-		"Datapath" : "0",
-		"ClockEnable" : "0",
-		"HasSubDataflow" : "0",
-		"InDataflowNetwork" : "1",
-		"HasNonBlockingOperation" : "0",
-		"StartSource" : "2",
-		"StartFifo" : "start_for_Sobel_U0_U",
-		"WaitState" : [
-			{"State" : "ap_ST_fsm_state2", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_Filter2D_fu_26"}],
-		"Port" : [
-			{"Name" : "p_src_data_stream_0_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "2", "DependentChan" : "40",
-				"SubConnect" : [
-					{"ID" : "7", "SubInstance" : "grp_Filter2D_fu_26", "Port" : "p_src_data_stream_0_V"}]},
-			{"Name" : "p_src_data_stream_1_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "2", "DependentChan" : "41",
-				"SubConnect" : [
-					{"ID" : "7", "SubInstance" : "grp_Filter2D_fu_26", "Port" : "p_src_data_stream_1_V"}]},
-			{"Name" : "p_src_data_stream_2_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "2", "DependentChan" : "42",
-				"SubConnect" : [
-					{"ID" : "7", "SubInstance" : "grp_Filter2D_fu_26", "Port" : "p_src_data_stream_2_V"}]},
-			{"Name" : "p_dst_data_stream_0_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "35", "DependentChan" : "43",
-				"SubConnect" : [
-					{"ID" : "7", "SubInstance" : "grp_Filter2D_fu_26", "Port" : "p_dst_data_stream_0_V"}]},
-			{"Name" : "p_dst_data_stream_1_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "35", "DependentChan" : "44",
-				"SubConnect" : [
-					{"ID" : "7", "SubInstance" : "grp_Filter2D_fu_26", "Port" : "p_dst_data_stream_1_V"}]},
-			{"Name" : "p_dst_data_stream_2_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "35", "DependentChan" : "45",
-				"SubConnect" : [
-					{"ID" : "7", "SubInstance" : "grp_Filter2D_fu_26", "Port" : "p_dst_data_stream_2_V"}]}]},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26", "Parent" : "6", "Child" : ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34"],
-		"CDFG" : "Filter2D",
-		"Protocol" : "ap_ctrl_hs",
-		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
-		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1775780", "EstimateLatencyMax" : "1775780",
-		"Combinational" : "0",
-		"Datapath" : "0",
-		"ClockEnable" : "0",
-		"HasSubDataflow" : "0",
-		"InDataflowNetwork" : "0",
-		"HasNonBlockingOperation" : "0",
-		"Port" : [
-			{"Name" : "p_src_data_stream_0_V", "Type" : "Fifo", "Direction" : "I",
-				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_src_data_stream_1_V", "Type" : "Fifo", "Direction" : "I",
-				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_src_data_stream_2_V", "Type" : "Fifo", "Direction" : "I",
-				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_0_V", "Type" : "Fifo", "Direction" : "O",
-				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_1_V", "Type" : "Fifo", "Direction" : "O",
-				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_2_V", "Type" : "Fifo", "Direction" : "O",
-				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]}]},
-	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_0_val_3_U", "Parent" : "7"},
-	{"ID" : "9", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_0_val_4_U", "Parent" : "7"},
-	{"ID" : "10", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_0_val_5_U", "Parent" : "7"},
-	{"ID" : "11", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_1_val_3_U", "Parent" : "7"},
-	{"ID" : "12", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_1_val_4_U", "Parent" : "7"},
-	{"ID" : "13", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_1_val_5_U", "Parent" : "7"},
-	{"ID" : "14", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_2_val_3_U", "Parent" : "7"},
-	{"ID" : "15", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_2_val_4_U", "Parent" : "7"},
-	{"ID" : "16", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.k_buf_2_val_5_U", "Parent" : "7"},
-	{"ID" : "17", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U23", "Parent" : "7"},
-	{"ID" : "18", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U24", "Parent" : "7"},
-	{"ID" : "19", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U25", "Parent" : "7"},
-	{"ID" : "20", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U26", "Parent" : "7"},
-	{"ID" : "21", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U27", "Parent" : "7"},
-	{"ID" : "22", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U28", "Parent" : "7"},
-	{"ID" : "23", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U29", "Parent" : "7"},
-	{"ID" : "24", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U30", "Parent" : "7"},
-	{"ID" : "25", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U31", "Parent" : "7"},
-	{"ID" : "26", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U32", "Parent" : "7"},
-	{"ID" : "27", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U33", "Parent" : "7"},
-	{"ID" : "28", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U34", "Parent" : "7"},
-	{"ID" : "29", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U35", "Parent" : "7"},
-	{"ID" : "30", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U36", "Parent" : "7"},
-	{"ID" : "31", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U37", "Parent" : "7"},
-	{"ID" : "32", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U38", "Parent" : "7"},
-	{"ID" : "33", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U39", "Parent" : "7"},
-	{"ID" : "34", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Sobel_U0.grp_Filter2D_fu_26.subsamble_mux_32_ncg_U40", "Parent" : "7"},
-	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.CvtColor_1_U0", "Parent" : "0",
-		"CDFG" : "CvtColor_1",
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Not_U0", "Parent" : "0",
+		"CDFG" : "Not_r",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -344,28 +212,28 @@ set RtlHierarchyInfo {[
 		"HasSubDataflow" : "0",
 		"InDataflowNetwork" : "1",
 		"HasNonBlockingOperation" : "0",
-		"StartSource" : "6",
-		"StartFifo" : "start_for_CvtColopcA_U",
+		"StartSource" : "1",
+		"StartFifo" : "start_for_Not_U0_U",
 		"Port" : [
-			{"Name" : "p_src_data_stream_0_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "6", "DependentChan" : "43",
+			{"Name" : "src_data_stream_0_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "4",
 				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_src_data_stream_1_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "6", "DependentChan" : "44",
+					{"Name" : "src_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "src_data_stream_1_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "5",
 				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_src_data_stream_2_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "6", "DependentChan" : "45",
+					{"Name" : "src_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "src_data_stream_2_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "1", "DependentChan" : "6",
 				"BlockSignal" : [
-					{"Name" : "p_src_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_0_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "36", "DependentChan" : "46",
+					{"Name" : "src_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "dst_data_stream_0_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "3", "DependentChan" : "7",
 				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_1_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "36", "DependentChan" : "47",
+					{"Name" : "dst_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "dst_data_stream_1_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "3", "DependentChan" : "8",
 				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_dst_data_stream_2_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "36", "DependentChan" : "48",
+					{"Name" : "dst_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "dst_data_stream_2_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "3", "DependentChan" : "9",
 				"BlockSignal" : [
-					{"Name" : "p_dst_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]}]},
-	{"ID" : "36", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Mat2AXIvideo_U0", "Parent" : "0",
+					{"Name" : "dst_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]}]},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Mat2AXIvideo_U0", "Parent" : "0",
 		"CDFG" : "Mat2AXIvideo",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
@@ -378,16 +246,16 @@ set RtlHierarchyInfo {[
 		"HasSubDataflow" : "0",
 		"InDataflowNetwork" : "1",
 		"HasNonBlockingOperation" : "0",
-		"StartSource" : "35",
-		"StartFifo" : "start_for_Mat2AXIqcK_U",
+		"StartSource" : "2",
+		"StartFifo" : "start_for_Mat2AXIbkb_U",
 		"Port" : [
-			{"Name" : "img_data_stream_0_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "35", "DependentChan" : "46",
+			{"Name" : "img_data_stream_0_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "2", "DependentChan" : "7",
 				"BlockSignal" : [
 					{"Name" : "img_data_stream_0_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "img_data_stream_1_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "35", "DependentChan" : "47",
+			{"Name" : "img_data_stream_1_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "2", "DependentChan" : "8",
 				"BlockSignal" : [
 					{"Name" : "img_data_stream_1_V_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "img_data_stream_2_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "35", "DependentChan" : "48",
+			{"Name" : "img_data_stream_2_V", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "2", "DependentChan" : "9",
 				"BlockSignal" : [
 					{"Name" : "img_data_stream_2_V_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "AXI_video_strm_V_data_V", "Type" : "Axis", "Direction" : "O",
@@ -399,22 +267,14 @@ set RtlHierarchyInfo {[
 			{"Name" : "AXI_video_strm_V_last_V", "Type" : "Axis", "Direction" : "O"},
 			{"Name" : "AXI_video_strm_V_id_V", "Type" : "Axis", "Direction" : "O"},
 			{"Name" : "AXI_video_strm_V_dest_V", "Type" : "Axis", "Direction" : "O"}]},
-	{"ID" : "37", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img0_data_stream_0_s_U", "Parent" : "0"},
-	{"ID" : "38", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img0_data_stream_1_s_U", "Parent" : "0"},
-	{"ID" : "39", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img0_data_stream_2_s_U", "Parent" : "0"},
-	{"ID" : "40", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img1_data_stream_0_s_U", "Parent" : "0"},
-	{"ID" : "41", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img1_data_stream_1_s_U", "Parent" : "0"},
-	{"ID" : "42", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img1_data_stream_2_s_U", "Parent" : "0"},
-	{"ID" : "43", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img2_data_stream_0_s_U", "Parent" : "0"},
-	{"ID" : "44", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img2_data_stream_1_s_U", "Parent" : "0"},
-	{"ID" : "45", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img2_data_stream_2_s_U", "Parent" : "0"},
-	{"ID" : "46", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img3_data_stream_0_s_U", "Parent" : "0"},
-	{"ID" : "47", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img3_data_stream_1_s_U", "Parent" : "0"},
-	{"ID" : "48", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img3_data_stream_2_s_U", "Parent" : "0"},
-	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_CvtColoocq_U", "Parent" : "0"},
-	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_Sobel_U0_U", "Parent" : "0"},
-	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_CvtColopcA_U", "Parent" : "0"},
-	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_Mat2AXIqcK_U", "Parent" : "0"}]}
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img0_data_stream_0_s_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img0_data_stream_1_s_U", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img0_data_stream_2_s_U", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img1_data_stream_0_s_U", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img1_data_stream_1_s_U", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.img1_data_stream_2_s_U", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_Not_U0_U", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.start_for_Mat2AXIbkb_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -444,34 +304,13 @@ set ArgLastReadFirstWriteLatency {
 		img_data_stream_0_V {Type O LastRead -1 FirstWrite 5}
 		img_data_stream_1_V {Type O LastRead -1 FirstWrite 5}
 		img_data_stream_2_V {Type O LastRead -1 FirstWrite 5}}
-	CvtColor {
-		p_src_data_stream_0_V {Type I LastRead 3 FirstWrite -1}
-		p_src_data_stream_1_V {Type I LastRead 3 FirstWrite -1}
-		p_src_data_stream_2_V {Type I LastRead 3 FirstWrite -1}
-		p_dst_data_stream_0_V {Type O LastRead -1 FirstWrite 6}
-		p_dst_data_stream_1_V {Type O LastRead -1 FirstWrite 6}
-		p_dst_data_stream_2_V {Type O LastRead -1 FirstWrite 6}}
-	Sobel {
-		p_src_data_stream_0_V {Type I LastRead 5 FirstWrite -1}
-		p_src_data_stream_1_V {Type I LastRead 5 FirstWrite -1}
-		p_src_data_stream_2_V {Type I LastRead 5 FirstWrite -1}
-		p_dst_data_stream_0_V {Type O LastRead -1 FirstWrite 7}
-		p_dst_data_stream_1_V {Type O LastRead -1 FirstWrite 7}
-		p_dst_data_stream_2_V {Type O LastRead -1 FirstWrite 7}}
-	Filter2D {
-		p_src_data_stream_0_V {Type I LastRead 5 FirstWrite -1}
-		p_src_data_stream_1_V {Type I LastRead 5 FirstWrite -1}
-		p_src_data_stream_2_V {Type I LastRead 5 FirstWrite -1}
-		p_dst_data_stream_0_V {Type O LastRead -1 FirstWrite 7}
-		p_dst_data_stream_1_V {Type O LastRead -1 FirstWrite 7}
-		p_dst_data_stream_2_V {Type O LastRead -1 FirstWrite 7}}
-	CvtColor_1 {
-		p_src_data_stream_0_V {Type I LastRead 3 FirstWrite -1}
-		p_src_data_stream_1_V {Type I LastRead 3 FirstWrite -1}
-		p_src_data_stream_2_V {Type I LastRead 3 FirstWrite -1}
-		p_dst_data_stream_0_V {Type O LastRead -1 FirstWrite 3}
-		p_dst_data_stream_1_V {Type O LastRead -1 FirstWrite 3}
-		p_dst_data_stream_2_V {Type O LastRead -1 FirstWrite 3}}
+	Not_r {
+		src_data_stream_0_V {Type I LastRead 3 FirstWrite -1}
+		src_data_stream_1_V {Type I LastRead 3 FirstWrite -1}
+		src_data_stream_2_V {Type I LastRead 3 FirstWrite -1}
+		dst_data_stream_0_V {Type O LastRead -1 FirstWrite 3}
+		dst_data_stream_1_V {Type O LastRead -1 FirstWrite 3}
+		dst_data_stream_2_V {Type O LastRead -1 FirstWrite 3}}
 	Mat2AXIvideo {
 		img_data_stream_0_V {Type I LastRead 3 FirstWrite -1}
 		img_data_stream_1_V {Type I LastRead 3 FirstWrite -1}
@@ -487,8 +326,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "1775786", "Max" : "1775786"}
-	, {"Name" : "Interval", "Min" : "1775782", "Max" : "1775782"}
+	{"Name" : "Latency", "Min" : "1771353", "Max" : "1771353"}
+	, {"Name" : "Interval", "Min" : "1771354", "Max" : "1771354"}
 ]}
 
 set PipelineEnableSignalInfo {[

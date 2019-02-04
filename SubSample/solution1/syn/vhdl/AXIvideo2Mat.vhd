@@ -157,7 +157,7 @@ architecture behav of AXIvideo2Mat is
     signal axi_data_V_3_reg_255 : STD_LOGIC_VECTOR (23 downto 0);
     signal tmp_data_V_reg_351 : STD_LOGIC_VECTOR (23 downto 0);
     signal tmp_last_V_reg_359 : STD_LOGIC_VECTOR (0 downto 0);
-    signal exitcond5_fu_286_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal exitcond3_fu_286_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state4 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
     signal i_V_fu_292_p2 : STD_LOGIC_VECTOR (10 downto 0);
@@ -392,7 +392,7 @@ begin
             else
                 if ((ap_continue = ap_const_logic_1)) then 
                     ap_done_reg <= ap_const_logic_0;
-                elsif (((exitcond5_fu_286_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+                elsif (((exitcond3_fu_286_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                     ap_done_reg <= ap_const_logic_1;
                 end if; 
             end if;
@@ -408,7 +408,7 @@ begin
             else
                 if (((exitcond_fu_298_p2 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp1_stage0_subdone) and (ap_const_logic_1 = ap_CS_fsm_pp1_stage0))) then 
                     ap_enable_reg_pp1_iter0 <= ap_const_logic_0;
-                elsif (((exitcond5_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+                elsif (((exitcond3_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                     ap_enable_reg_pp1_iter0 <= ap_const_logic_1;
                 end if; 
             end if;
@@ -424,7 +424,7 @@ begin
             else
                 if ((ap_const_boolean_0 = ap_block_pp1_stage0_subdone)) then 
                     ap_enable_reg_pp1_iter1 <= ap_enable_reg_pp1_iter0;
-                elsif (((exitcond5_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+                elsif (((exitcond3_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                     ap_enable_reg_pp1_iter1 <= ap_const_logic_0;
                 end if; 
             end if;
@@ -496,7 +496,7 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((exitcond_reg_380 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp1_stage0_11001) and (ap_enable_reg_pp1_iter1 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp1_stage0))) then 
                 axi_data_V_1_reg_196 <= ap_phi_mux_p_Val2_s_phi_fu_224_p4;
-            elsif (((exitcond5_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+            elsif (((exitcond3_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                 axi_data_V_1_reg_196 <= axi_data_V1_reg_141;
             end if; 
         end if;
@@ -540,7 +540,7 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((exitcond_reg_380 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp1_stage0_11001) and (ap_enable_reg_pp1_iter1 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp1_stage0))) then 
                 eol_1_reg_185 <= ap_phi_mux_axi_last_V_2_phi_fu_212_p4;
-            elsif (((exitcond5_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+            elsif (((exitcond3_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                 eol_1_reg_185 <= axi_last_V1_reg_131;
             end if; 
         end if;
@@ -562,7 +562,7 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((exitcond_reg_380 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp1_stage0_11001) and (ap_enable_reg_pp1_iter1 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp1_stage0))) then 
                 eol_reg_173 <= ap_phi_mux_axi_last_V_2_phi_fu_212_p4;
-            elsif (((exitcond5_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+            elsif (((exitcond3_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                 eol_reg_173 <= ap_const_lv1_0;
             end if; 
         end if;
@@ -584,7 +584,7 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((exitcond_fu_298_p2 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp1_stage0_11001) and (ap_enable_reg_pp1_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp1_stage0))) then 
                 t_V_3_reg_162 <= j_V_fu_304_p2;
-            elsif (((exitcond5_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+            elsif (((exitcond3_fu_286_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                 t_V_3_reg_162 <= ap_const_lv11_0;
             end if; 
         end if;
@@ -682,7 +682,7 @@ begin
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (real_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, AXI_video_strm_V_data_V_0_vld_out, ap_CS_fsm_state2, ap_CS_fsm_pp1_stage0, ap_enable_reg_pp1_iter1, ap_CS_fsm_pp2_stage0, ap_enable_reg_pp2_iter1, exitcond5_fu_286_p2, ap_CS_fsm_state4, ap_enable_reg_pp1_iter0, ap_block_pp1_stage0_subdone, ap_enable_reg_pp2_iter0, ap_block_pp2_stage0_subdone, tmp_user_V_fu_277_p1)
+    ap_NS_fsm_assign_proc : process (real_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, AXI_video_strm_V_data_V_0_vld_out, ap_CS_fsm_state2, ap_CS_fsm_pp1_stage0, ap_enable_reg_pp1_iter1, ap_CS_fsm_pp2_stage0, ap_enable_reg_pp2_iter1, exitcond3_fu_286_p2, ap_CS_fsm_state4, ap_enable_reg_pp1_iter0, ap_block_pp1_stage0_subdone, ap_enable_reg_pp2_iter0, ap_block_pp2_stage0_subdone, tmp_user_V_fu_277_p1)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -702,7 +702,7 @@ begin
             when ap_ST_fsm_state3 => 
                 ap_NS_fsm <= ap_ST_fsm_state4;
             when ap_ST_fsm_state4 => 
-                if (((exitcond5_fu_286_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then
+                if (((exitcond3_fu_286_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_pp1_stage0;
@@ -890,9 +890,9 @@ begin
     end process;
 
 
-    ap_done_assign_proc : process(ap_done_reg, exitcond5_fu_286_p2, ap_CS_fsm_state4)
+    ap_done_assign_proc : process(ap_done_reg, exitcond3_fu_286_p2, ap_CS_fsm_state4)
     begin
-        if (((exitcond5_fu_286_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+        if (((exitcond3_fu_286_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_done_reg;
@@ -993,7 +993,7 @@ begin
 
     ap_ready <= internal_ap_ready;
     brmerge_fu_313_p2 <= (sof_1_fu_88 or ap_phi_mux_eol_phi_fu_177_p4);
-    exitcond5_fu_286_p2 <= "1" when (t_V_reg_151 = ap_const_lv11_41A) else "0";
+    exitcond3_fu_286_p2 <= "1" when (t_V_reg_151 = ap_const_lv11_41A) else "0";
     exitcond_fu_298_p2 <= "1" when (t_V_3_reg_162 = ap_const_lv11_690) else "0";
     i_V_fu_292_p2 <= std_logic_vector(unsigned(t_V_reg_151) + unsigned(ap_const_lv11_1));
 
@@ -1060,9 +1060,9 @@ begin
     end process;
 
 
-    internal_ap_ready_assign_proc : process(exitcond5_fu_286_p2, ap_CS_fsm_state4)
+    internal_ap_ready_assign_proc : process(exitcond3_fu_286_p2, ap_CS_fsm_state4)
     begin
-        if (((exitcond5_fu_286_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+        if (((exitcond3_fu_286_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
             internal_ap_ready <= ap_const_logic_1;
         else 
             internal_ap_ready <= ap_const_logic_0;

@@ -441,7 +441,7 @@
 					<Obj>
 						<type>0</type>
 						<id>20</id>
-						<name>exitcond4</name>
+						<name>exitcond2</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_io.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>125</lineNumber>
@@ -625,7 +625,7 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>t_V_1</name>
+						<name>t_V_2</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -890,7 +890,7 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>tmp_6</name>
+						<name>tmp_10</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>
@@ -950,7 +950,7 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>tmp_7</name>
+						<name>tmp_11</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>
@@ -1010,7 +1010,7 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>tmp_5</name>
+						<name>tmp_8</name>
 						<fileName>/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/hls/hls_video_core.h</fileName>
 						<fileDirectory>/home/userfs/q/qj544/w2k/QLight</fileDirectory>
 						<lineNumber>624</lineNumber>

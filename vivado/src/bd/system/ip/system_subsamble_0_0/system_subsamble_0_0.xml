@@ -483,11 +483,11 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 31 14:08:25 UTC 2019</spirit:value>
+            <spirit:value>Mon Feb 04 11:03:21 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:0b66606a</spirit:value>
+            <spirit:value>8:4eb953b3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -503,11 +503,11 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 31 14:08:25 UTC 2019</spirit:value>
+            <spirit:value>Mon Feb 04 11:03:21 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:0b66606a</spirit:value>
+            <spirit:value>8:4eb953b3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -523,11 +523,11 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 31 14:08:25 UTC 2019</spirit:value>
+            <spirit:value>Mon Feb 04 11:03:21 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:88de2f43</spirit:value>
+            <spirit:value>8:cc85017c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -543,11 +543,11 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 31 14:08:25 UTC 2019</spirit:value>
+            <spirit:value>Mon Feb 04 11:03:21 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:88de2f43</spirit:value>
+            <spirit:value>8:cc85017c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -561,11 +561,11 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 31 14:10:16 UTC 2019</spirit:value>
+            <spirit:value>Mon Feb 04 11:03:37 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:0b66606a</spirit:value>
+            <spirit:value>8:4eb953b3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -968,71 +968,31 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/AXIvideo2Mat.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/AXIvideo2Mat.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/CvtColor.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/fifo_w8_d1_A.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/CvtColor_1.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/Mat2AXIvideo.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/fifo_w8_d1_A.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/Not_r.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/Filter2D.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/start_for_Mat2AXIbkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/start_for_Not_U0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/Mat2AXIvideo.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/Sobel.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/start_for_CvtColoocq.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/start_for_CvtColopcA.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/start_for_Mat2AXIqcK.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/start_for_Sobel_U0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble_mac_mulcud.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble_mac_muldEe.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble_mul_mulbkb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble_mux_32_ncg.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/subsamble.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1047,87 +1007,37 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/AXIvideo2Mat.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/AXIvideo2Mat.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/CvtColor.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/fifo_w8_d1_A.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/CvtColor_1.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/Mat2AXIvideo.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/fifo_w8_d1_A.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/Not_r.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/Filter2D.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/start_for_Mat2AXIbkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/Filter2D_k_buf_0_eOg.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/start_for_Not_U0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/Mat2AXIvideo.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/Sobel.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/start_for_CvtColoocq.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/start_for_CvtColopcA.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/start_for_Mat2AXIqcK.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/start_for_Sobel_U0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble_mac_mulcud.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble_mac_muldEe.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble_mul_mulbkb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble_mux_32_ncg.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/ac4b/hdl/vhdl/subsamble.vhd</spirit:name>
+        <spirit:name>../../ipshared/95e5/hdl/vhdl/subsamble.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1143,16 +1053,16 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
     <spirit:fileSet>
       <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>system_subsamble_0_0_stub.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>system_subsamble_0_0.dcp</spirit:name>
         <spirit:userFileType>dcp</spirit:userFileType>
         <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
         <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>system_subsamble_0_0_stub.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
@@ -1218,7 +1128,7 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">1775786</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">1771353</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1243,7 +1153,7 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
     <xilinx:coreExtensions>
       <xilinx:displayName>SubSampler</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1901311405</xilinx:coreRevision>
+      <xilinx:coreRevision>1902041100</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
@@ -1271,9 +1181,9 @@ tatype {name {attribs {resolve_type immediate dependency {} format string minimu
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7eb1c5b5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="97ac75c0"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="40ba1982"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="09cb8f9b"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="464624e8"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="e0706394"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

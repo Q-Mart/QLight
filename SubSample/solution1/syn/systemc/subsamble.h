@@ -12,15 +12,11 @@
 #include "AESL_pkg.h"
 
 #include "AXIvideo2Mat.h"
-#include "CvtColor.h"
-#include "Sobel.h"
-#include "CvtColor_1.h"
+#include "Not_r.h"
 #include "Mat2AXIvideo.h"
 #include "fifo_w8_d1_A.h"
-#include "start_for_CvtColoocq.h"
-#include "start_for_Sobel_U0.h"
-#include "start_for_CvtColopcA.h"
-#include "start_for_Mat2AXIqcK.h"
+#include "start_for_Not_U0.h"
+#include "start_for_Mat2AXIbkb.h"
 
 namespace ap_rtl {
 
@@ -64,9 +60,7 @@ struct subsamble : public sc_module {
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
     AXIvideo2Mat* AXIvideo2Mat_U0;
-    CvtColor* CvtColor_U0;
-    Sobel* Sobel_U0;
-    CvtColor_1* CvtColor_1_U0;
+    Not_r* Not_U0;
     Mat2AXIvideo* Mat2AXIvideo_U0;
     fifo_w8_d1_A* img0_data_stream_0_s_U;
     fifo_w8_d1_A* img0_data_stream_1_s_U;
@@ -74,16 +68,8 @@ struct subsamble : public sc_module {
     fifo_w8_d1_A* img1_data_stream_0_s_U;
     fifo_w8_d1_A* img1_data_stream_1_s_U;
     fifo_w8_d1_A* img1_data_stream_2_s_U;
-    fifo_w8_d1_A* img2_data_stream_0_s_U;
-    fifo_w8_d1_A* img2_data_stream_1_s_U;
-    fifo_w8_d1_A* img2_data_stream_2_s_U;
-    fifo_w8_d1_A* img3_data_stream_0_s_U;
-    fifo_w8_d1_A* img3_data_stream_1_s_U;
-    fifo_w8_d1_A* img3_data_stream_2_s_U;
-    start_for_CvtColoocq* start_for_CvtColoocq_U;
-    start_for_Sobel_U0* start_for_Sobel_U0_U;
-    start_for_CvtColopcA* start_for_CvtColopcA_U;
-    start_for_Mat2AXIqcK* start_for_Mat2AXIqcK_U;
+    start_for_Not_U0* start_for_Not_U0_U;
+    start_for_Mat2AXIbkb* start_for_Mat2AXIbkb_U;
     sc_signal< sc_logic > ap_rst_n_inv;
     sc_signal< sc_logic > AXIvideo2Mat_U0_ap_start;
     sc_signal< sc_logic > AXIvideo2Mat_U0_ap_done;
@@ -99,54 +85,22 @@ struct subsamble : public sc_module {
     sc_signal< sc_logic > AXIvideo2Mat_U0_img_data_stream_1_V_write;
     sc_signal< sc_lv<8> > AXIvideo2Mat_U0_img_data_stream_2_V_din;
     sc_signal< sc_logic > AXIvideo2Mat_U0_img_data_stream_2_V_write;
-    sc_signal< sc_logic > CvtColor_U0_ap_start;
-    sc_signal< sc_logic > CvtColor_U0_ap_done;
-    sc_signal< sc_logic > CvtColor_U0_ap_continue;
-    sc_signal< sc_logic > CvtColor_U0_ap_idle;
-    sc_signal< sc_logic > CvtColor_U0_ap_ready;
-    sc_signal< sc_logic > CvtColor_U0_start_out;
-    sc_signal< sc_logic > CvtColor_U0_start_write;
-    sc_signal< sc_logic > CvtColor_U0_p_src_data_stream_0_V_read;
-    sc_signal< sc_logic > CvtColor_U0_p_src_data_stream_1_V_read;
-    sc_signal< sc_logic > CvtColor_U0_p_src_data_stream_2_V_read;
-    sc_signal< sc_lv<8> > CvtColor_U0_p_dst_data_stream_0_V_din;
-    sc_signal< sc_logic > CvtColor_U0_p_dst_data_stream_0_V_write;
-    sc_signal< sc_lv<8> > CvtColor_U0_p_dst_data_stream_1_V_din;
-    sc_signal< sc_logic > CvtColor_U0_p_dst_data_stream_1_V_write;
-    sc_signal< sc_lv<8> > CvtColor_U0_p_dst_data_stream_2_V_din;
-    sc_signal< sc_logic > CvtColor_U0_p_dst_data_stream_2_V_write;
-    sc_signal< sc_logic > Sobel_U0_ap_start;
-    sc_signal< sc_logic > Sobel_U0_ap_done;
-    sc_signal< sc_logic > Sobel_U0_ap_continue;
-    sc_signal< sc_logic > Sobel_U0_ap_idle;
-    sc_signal< sc_logic > Sobel_U0_ap_ready;
-    sc_signal< sc_logic > Sobel_U0_start_out;
-    sc_signal< sc_logic > Sobel_U0_start_write;
-    sc_signal< sc_logic > Sobel_U0_p_src_data_stream_0_V_read;
-    sc_signal< sc_logic > Sobel_U0_p_src_data_stream_1_V_read;
-    sc_signal< sc_logic > Sobel_U0_p_src_data_stream_2_V_read;
-    sc_signal< sc_lv<8> > Sobel_U0_p_dst_data_stream_0_V_din;
-    sc_signal< sc_logic > Sobel_U0_p_dst_data_stream_0_V_write;
-    sc_signal< sc_lv<8> > Sobel_U0_p_dst_data_stream_1_V_din;
-    sc_signal< sc_logic > Sobel_U0_p_dst_data_stream_1_V_write;
-    sc_signal< sc_lv<8> > Sobel_U0_p_dst_data_stream_2_V_din;
-    sc_signal< sc_logic > Sobel_U0_p_dst_data_stream_2_V_write;
-    sc_signal< sc_logic > CvtColor_1_U0_ap_start;
-    sc_signal< sc_logic > CvtColor_1_U0_ap_done;
-    sc_signal< sc_logic > CvtColor_1_U0_ap_continue;
-    sc_signal< sc_logic > CvtColor_1_U0_ap_idle;
-    sc_signal< sc_logic > CvtColor_1_U0_ap_ready;
-    sc_signal< sc_logic > CvtColor_1_U0_start_out;
-    sc_signal< sc_logic > CvtColor_1_U0_start_write;
-    sc_signal< sc_logic > CvtColor_1_U0_p_src_data_stream_0_V_read;
-    sc_signal< sc_logic > CvtColor_1_U0_p_src_data_stream_1_V_read;
-    sc_signal< sc_logic > CvtColor_1_U0_p_src_data_stream_2_V_read;
-    sc_signal< sc_lv<8> > CvtColor_1_U0_p_dst_data_stream_0_V_din;
-    sc_signal< sc_logic > CvtColor_1_U0_p_dst_data_stream_0_V_write;
-    sc_signal< sc_lv<8> > CvtColor_1_U0_p_dst_data_stream_1_V_din;
-    sc_signal< sc_logic > CvtColor_1_U0_p_dst_data_stream_1_V_write;
-    sc_signal< sc_lv<8> > CvtColor_1_U0_p_dst_data_stream_2_V_din;
-    sc_signal< sc_logic > CvtColor_1_U0_p_dst_data_stream_2_V_write;
+    sc_signal< sc_logic > Not_U0_ap_start;
+    sc_signal< sc_logic > Not_U0_ap_done;
+    sc_signal< sc_logic > Not_U0_ap_continue;
+    sc_signal< sc_logic > Not_U0_ap_idle;
+    sc_signal< sc_logic > Not_U0_ap_ready;
+    sc_signal< sc_logic > Not_U0_start_out;
+    sc_signal< sc_logic > Not_U0_start_write;
+    sc_signal< sc_logic > Not_U0_src_data_stream_0_V_read;
+    sc_signal< sc_logic > Not_U0_src_data_stream_1_V_read;
+    sc_signal< sc_logic > Not_U0_src_data_stream_2_V_read;
+    sc_signal< sc_lv<8> > Not_U0_dst_data_stream_0_V_din;
+    sc_signal< sc_logic > Not_U0_dst_data_stream_0_V_write;
+    sc_signal< sc_lv<8> > Not_U0_dst_data_stream_1_V_din;
+    sc_signal< sc_logic > Not_U0_dst_data_stream_1_V_write;
+    sc_signal< sc_lv<8> > Not_U0_dst_data_stream_2_V_din;
+    sc_signal< sc_logic > Not_U0_dst_data_stream_2_V_write;
     sc_signal< sc_logic > Mat2AXIvideo_U0_ap_start;
     sc_signal< sc_logic > Mat2AXIvideo_U0_ap_done;
     sc_signal< sc_logic > Mat2AXIvideo_U0_ap_continue;
@@ -182,38 +136,12 @@ struct subsamble : public sc_module {
     sc_signal< sc_logic > img1_data_stream_2_s_full_n;
     sc_signal< sc_lv<8> > img1_data_stream_2_s_dout;
     sc_signal< sc_logic > img1_data_stream_2_s_empty_n;
-    sc_signal< sc_logic > img2_data_stream_0_s_full_n;
-    sc_signal< sc_lv<8> > img2_data_stream_0_s_dout;
-    sc_signal< sc_logic > img2_data_stream_0_s_empty_n;
-    sc_signal< sc_logic > img2_data_stream_1_s_full_n;
-    sc_signal< sc_lv<8> > img2_data_stream_1_s_dout;
-    sc_signal< sc_logic > img2_data_stream_1_s_empty_n;
-    sc_signal< sc_logic > img2_data_stream_2_s_full_n;
-    sc_signal< sc_lv<8> > img2_data_stream_2_s_dout;
-    sc_signal< sc_logic > img2_data_stream_2_s_empty_n;
-    sc_signal< sc_logic > img3_data_stream_0_s_full_n;
-    sc_signal< sc_lv<8> > img3_data_stream_0_s_dout;
-    sc_signal< sc_logic > img3_data_stream_0_s_empty_n;
-    sc_signal< sc_logic > img3_data_stream_1_s_full_n;
-    sc_signal< sc_lv<8> > img3_data_stream_1_s_dout;
-    sc_signal< sc_logic > img3_data_stream_1_s_empty_n;
-    sc_signal< sc_logic > img3_data_stream_2_s_full_n;
-    sc_signal< sc_lv<8> > img3_data_stream_2_s_dout;
-    sc_signal< sc_logic > img3_data_stream_2_s_empty_n;
     sc_signal< sc_logic > ap_sync_done;
     sc_signal< sc_logic > ap_sync_ready;
-    sc_signal< sc_lv<1> > start_for_CvtColor_U0_din;
-    sc_signal< sc_logic > start_for_CvtColor_U0_full_n;
-    sc_signal< sc_lv<1> > start_for_CvtColor_U0_dout;
-    sc_signal< sc_logic > start_for_CvtColor_U0_empty_n;
-    sc_signal< sc_lv<1> > start_for_Sobel_U0_din;
-    sc_signal< sc_logic > start_for_Sobel_U0_full_n;
-    sc_signal< sc_lv<1> > start_for_Sobel_U0_dout;
-    sc_signal< sc_logic > start_for_Sobel_U0_empty_n;
-    sc_signal< sc_lv<1> > start_for_CvtColor_1_U0_din;
-    sc_signal< sc_logic > start_for_CvtColor_1_U0_full_n;
-    sc_signal< sc_lv<1> > start_for_CvtColor_1_U0_dout;
-    sc_signal< sc_logic > start_for_CvtColor_1_U0_empty_n;
+    sc_signal< sc_lv<1> > start_for_Not_U0_din;
+    sc_signal< sc_logic > start_for_Not_U0_full_n;
+    sc_signal< sc_lv<1> > start_for_Not_U0_dout;
+    sc_signal< sc_logic > start_for_Not_U0_empty_n;
     sc_signal< sc_lv<1> > start_for_Mat2AXIvideo_U0_din;
     sc_signal< sc_logic > start_for_Mat2AXIvideo_U0_full_n;
     sc_signal< sc_lv<1> > start_for_Mat2AXIvideo_U0_dout;
@@ -229,16 +157,12 @@ struct subsamble : public sc_module {
     void thread_ap_var_for_const0();
     void thread_AXIvideo2Mat_U0_ap_continue();
     void thread_AXIvideo2Mat_U0_ap_start();
-    void thread_CvtColor_1_U0_ap_continue();
-    void thread_CvtColor_1_U0_ap_start();
-    void thread_CvtColor_U0_ap_continue();
-    void thread_CvtColor_U0_ap_start();
     void thread_Mat2AXIvideo_U0_ap_continue();
     void thread_Mat2AXIvideo_U0_ap_start();
     void thread_Mat2AXIvideo_U0_start_full_n();
     void thread_Mat2AXIvideo_U0_start_write();
-    void thread_Sobel_U0_ap_continue();
-    void thread_Sobel_U0_ap_start();
+    void thread_Not_U0_ap_continue();
+    void thread_Not_U0_ap_start();
     void thread_ap_done();
     void thread_ap_idle();
     void thread_ap_ready();
@@ -246,10 +170,8 @@ struct subsamble : public sc_module {
     void thread_ap_sync_continue();
     void thread_ap_sync_done();
     void thread_ap_sync_ready();
-    void thread_start_for_CvtColor_1_U0_din();
-    void thread_start_for_CvtColor_U0_din();
     void thread_start_for_Mat2AXIvideo_U0_din();
-    void thread_start_for_Sobel_U0_din();
+    void thread_start_for_Not_U0_din();
     void thread_stream_in_TREADY();
     void thread_stream_process_TDATA();
     void thread_stream_process_TDEST();

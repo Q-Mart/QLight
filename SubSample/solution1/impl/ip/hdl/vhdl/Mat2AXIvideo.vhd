@@ -157,8 +157,8 @@ architecture behav of Mat2AXIvideo is
     signal stream_process_TDATA_blk_n : STD_LOGIC;
     signal ap_enable_reg_pp0_iter2 : STD_LOGIC := '0';
     signal exitcond_reg_230_pp0_iter1_reg : STD_LOGIC_VECTOR (0 downto 0);
-    signal t_V_1_reg_148 : STD_LOGIC_VECTOR (10 downto 0);
-    signal exitcond4_fu_164_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal t_V_2_reg_148 : STD_LOGIC_VECTOR (10 downto 0);
+    signal exitcond2_fu_164_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
     signal ap_block_state2 : BOOLEAN;
@@ -494,7 +494,7 @@ begin
             else
                 if ((ap_continue = ap_const_logic_1)) then 
                     ap_done_reg <= ap_const_logic_0;
-                elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond4_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+                elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond2_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
                     ap_done_reg <= ap_const_logic_1;
                 end if; 
             end if;
@@ -510,7 +510,7 @@ begin
             else
                 if (((ap_const_boolean_0 = ap_block_pp0_stage0_subdone) and (ap_const_logic_1 = ap_condition_pp0_exit_iter0_state3) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
                     ap_enable_reg_pp0_iter0 <= ap_const_logic_0;
-                elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond4_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+                elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond2_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
                     ap_enable_reg_pp0_iter0 <= ap_const_logic_1;
                 end if; 
             end if;
@@ -544,7 +544,7 @@ begin
             else
                 if ((ap_const_boolean_0 = ap_block_pp0_stage0_subdone)) then 
                     ap_enable_reg_pp0_iter2 <= ap_enable_reg_pp0_iter1;
-                elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond4_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+                elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond2_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
                     ap_enable_reg_pp0_iter2 <= ap_const_logic_0;
                 end if; 
             end if;
@@ -552,13 +552,13 @@ begin
     end process;
 
 
-    t_V_1_reg_148_assign_proc : process (ap_clk)
+    t_V_2_reg_148_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((exitcond_fu_176_p2 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
-                t_V_1_reg_148 <= j_V_fu_182_p2;
-            elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond4_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-                t_V_1_reg_148 <= ap_const_lv11_0;
+                t_V_2_reg_148 <= j_V_fu_182_p2;
+            elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond2_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+                t_V_2_reg_148 <= ap_const_lv11_0;
             end if; 
         end if;
     end process;
@@ -658,7 +658,7 @@ begin
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, AXI_video_strm_V_data_V_1_ack_in, AXI_video_strm_V_keep_V_1_ack_in, AXI_video_strm_V_strb_V_1_ack_in, AXI_video_strm_V_user_V_1_ack_in, AXI_video_strm_V_last_V_1_ack_in, AXI_video_strm_V_id_V_1_ack_in, AXI_video_strm_V_dest_V_1_ack_in, ap_enable_reg_pp0_iter1, ap_enable_reg_pp0_iter2, exitcond4_fu_164_p2, ap_CS_fsm_state2, exitcond_fu_176_p2, ap_enable_reg_pp0_iter0, ap_block_pp0_stage0_subdone)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, AXI_video_strm_V_data_V_1_ack_in, AXI_video_strm_V_keep_V_1_ack_in, AXI_video_strm_V_strb_V_1_ack_in, AXI_video_strm_V_user_V_1_ack_in, AXI_video_strm_V_last_V_1_ack_in, AXI_video_strm_V_id_V_1_ack_in, AXI_video_strm_V_dest_V_1_ack_in, ap_enable_reg_pp0_iter1, ap_enable_reg_pp0_iter2, exitcond2_fu_164_p2, ap_CS_fsm_state2, exitcond_fu_176_p2, ap_enable_reg_pp0_iter0, ap_block_pp0_stage0_subdone)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -668,9 +668,9 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                if ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond4_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
+                if ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond2_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
-                elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond4_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
+                elsif ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond2_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_pp0_stage0;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state2;
@@ -896,9 +896,9 @@ begin
     end process;
 
 
-    ap_done_assign_proc : process(ap_done_reg, AXI_video_strm_V_data_V_1_ack_in, AXI_video_strm_V_keep_V_1_ack_in, AXI_video_strm_V_strb_V_1_ack_in, AXI_video_strm_V_user_V_1_ack_in, AXI_video_strm_V_last_V_1_ack_in, AXI_video_strm_V_id_V_1_ack_in, AXI_video_strm_V_dest_V_1_ack_in, exitcond4_fu_164_p2, ap_CS_fsm_state2)
+    ap_done_assign_proc : process(ap_done_reg, AXI_video_strm_V_data_V_1_ack_in, AXI_video_strm_V_keep_V_1_ack_in, AXI_video_strm_V_strb_V_1_ack_in, AXI_video_strm_V_user_V_1_ack_in, AXI_video_strm_V_last_V_1_ack_in, AXI_video_strm_V_id_V_1_ack_in, AXI_video_strm_V_dest_V_1_ack_in, exitcond2_fu_164_p2, ap_CS_fsm_state2)
     begin
-        if ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond4_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+        if ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond2_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_done_reg;
@@ -927,18 +927,18 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(AXI_video_strm_V_data_V_1_ack_in, AXI_video_strm_V_keep_V_1_ack_in, AXI_video_strm_V_strb_V_1_ack_in, AXI_video_strm_V_user_V_1_ack_in, AXI_video_strm_V_last_V_1_ack_in, AXI_video_strm_V_id_V_1_ack_in, AXI_video_strm_V_dest_V_1_ack_in, exitcond4_fu_164_p2, ap_CS_fsm_state2)
+    ap_ready_assign_proc : process(AXI_video_strm_V_data_V_1_ack_in, AXI_video_strm_V_keep_V_1_ack_in, AXI_video_strm_V_strb_V_1_ack_in, AXI_video_strm_V_user_V_1_ack_in, AXI_video_strm_V_last_V_1_ack_in, AXI_video_strm_V_id_V_1_ack_in, AXI_video_strm_V_dest_V_1_ack_in, exitcond2_fu_164_p2, ap_CS_fsm_state2)
     begin
-        if ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond4_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+        if ((not(((ap_const_logic_0 = AXI_video_strm_V_data_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_dest_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_id_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_last_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_user_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_strb_V_1_ack_in) or (ap_const_logic_0 = AXI_video_strm_V_keep_V_1_ack_in))) and (exitcond2_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
         end if; 
     end process;
 
-    axi_last_V_fu_188_p2 <= "1" when (t_V_1_reg_148 = ap_const_lv11_68F) else "0";
-    exitcond4_fu_164_p2 <= "1" when (t_V_reg_137 = ap_const_lv11_41A) else "0";
-    exitcond_fu_176_p2 <= "1" when (t_V_1_reg_148 = ap_const_lv11_690) else "0";
+    axi_last_V_fu_188_p2 <= "1" when (t_V_2_reg_148 = ap_const_lv11_68F) else "0";
+    exitcond2_fu_164_p2 <= "1" when (t_V_reg_137 = ap_const_lv11_41A) else "0";
+    exitcond_fu_176_p2 <= "1" when (t_V_2_reg_148 = ap_const_lv11_690) else "0";
     i_V_fu_170_p2 <= std_logic_vector(unsigned(t_V_reg_137) + unsigned(ap_const_lv11_1));
 
     img_data_stream_0_V_blk_n_assign_proc : process(img_data_stream_0_V_empty_n, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0, exitcond_reg_230)
@@ -1000,7 +1000,7 @@ begin
         end if; 
     end process;
 
-    j_V_fu_182_p2 <= std_logic_vector(unsigned(t_V_1_reg_148) + unsigned(ap_const_lv11_1));
+    j_V_fu_182_p2 <= std_logic_vector(unsigned(t_V_2_reg_148) + unsigned(ap_const_lv11_1));
     stream_process_TDATA <= AXI_video_strm_V_data_V_1_data_out;
 
     stream_process_TDATA_blk_n_assign_proc : process(AXI_video_strm_V_data_V_1_state, ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0, exitcond_reg_230, ap_enable_reg_pp0_iter2, exitcond_reg_230_pp0_iter1_reg)

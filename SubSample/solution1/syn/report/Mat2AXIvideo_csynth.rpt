@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'Mat2AXIvideo'
 ================================================================
-* Date:           Thu Jan 31 14:03:44 2019
+* Date:           Mon Feb  4 10:59:13 2019
 
 * Version:        2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)
 * Project:        SubSample
@@ -101,7 +101,7 @@
     |AXI_video_strm_V_last_V_1_state_cmp_full  |   icmp   |      0|  0|   8|           2|           1|
     |AXI_video_strm_V_user_V_1_state_cmp_full  |   icmp   |      0|  0|   8|           2|           1|
     |axi_last_V_fu_188_p2                      |   icmp   |      0|  0|  13|          11|          10|
-    |exitcond4_fu_164_p2                       |   icmp   |      0|  0|  13|          11|          11|
+    |exitcond2_fu_164_p2                       |   icmp   |      0|  0|  13|          11|          11|
     |exitcond_fu_176_p2                        |   icmp   |      0|  0|  13|          11|          10|
     |ap_block_pp0_stage0_11001                 |    or    |      0|  0|   2|           1|           1|
     |ap_block_state1                           |    or    |      0|  0|   2|           1|           1|
@@ -135,7 +135,7 @@
     |img_data_stream_1_V_blk_n           |   9|          2|    1|          2|
     |img_data_stream_2_V_blk_n           |   9|          2|    1|          2|
     |stream_process_TDATA_blk_n          |   9|          2|    1|          2|
-    |t_V_1_reg_148                       |   9|          2|   11|         22|
+    |t_V_2_reg_148                       |   9|          2|   11|         22|
     |t_V_reg_137                         |   9|          2|   11|         22|
     +------------------------------------+----+-----------+-----+-----------+
     |Total                               | 240|         50|   70|        157|
@@ -177,7 +177,7 @@
     |exitcond_reg_230                     |   1|   0|    1|          0|
     |exitcond_reg_230_pp0_iter1_reg       |   1|   0|    1|          0|
     |i_V_reg_225                          |  11|   0|   11|          0|
-    |t_V_1_reg_148                        |  11|   0|   11|          0|
+    |t_V_2_reg_148                        |  11|   0|   11|          0|
     |t_V_reg_137                          |  11|   0|   11|          0|
     |tmp_user_V_fu_86                     |   1|   0|    1|          0|
     +-------------------------------------+----+----+-----+-----------+

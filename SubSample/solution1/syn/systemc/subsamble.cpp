@@ -23,7 +23,7 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     AXIvideo2Mat_U0->ap_clk(ap_clk);
     AXIvideo2Mat_U0->ap_rst(ap_rst_n_inv);
     AXIvideo2Mat_U0->ap_start(AXIvideo2Mat_U0_ap_start);
-    AXIvideo2Mat_U0->start_full_n(start_for_CvtColor_U0_full_n);
+    AXIvideo2Mat_U0->start_full_n(start_for_Not_U0_full_n);
     AXIvideo2Mat_U0->ap_done(AXIvideo2Mat_U0_ap_done);
     AXIvideo2Mat_U0->ap_continue(AXIvideo2Mat_U0_ap_continue);
     AXIvideo2Mat_U0->ap_idle(AXIvideo2Mat_U0_ap_idle);
@@ -48,93 +48,35 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     AXIvideo2Mat_U0->img_data_stream_2_V_din(AXIvideo2Mat_U0_img_data_stream_2_V_din);
     AXIvideo2Mat_U0->img_data_stream_2_V_full_n(img0_data_stream_2_s_full_n);
     AXIvideo2Mat_U0->img_data_stream_2_V_write(AXIvideo2Mat_U0_img_data_stream_2_V_write);
-    CvtColor_U0 = new CvtColor("CvtColor_U0");
-    CvtColor_U0->ap_clk(ap_clk);
-    CvtColor_U0->ap_rst(ap_rst_n_inv);
-    CvtColor_U0->ap_start(CvtColor_U0_ap_start);
-    CvtColor_U0->start_full_n(start_for_Sobel_U0_full_n);
-    CvtColor_U0->ap_done(CvtColor_U0_ap_done);
-    CvtColor_U0->ap_continue(CvtColor_U0_ap_continue);
-    CvtColor_U0->ap_idle(CvtColor_U0_ap_idle);
-    CvtColor_U0->ap_ready(CvtColor_U0_ap_ready);
-    CvtColor_U0->start_out(CvtColor_U0_start_out);
-    CvtColor_U0->start_write(CvtColor_U0_start_write);
-    CvtColor_U0->p_src_data_stream_0_V_dout(img0_data_stream_0_s_dout);
-    CvtColor_U0->p_src_data_stream_0_V_empty_n(img0_data_stream_0_s_empty_n);
-    CvtColor_U0->p_src_data_stream_0_V_read(CvtColor_U0_p_src_data_stream_0_V_read);
-    CvtColor_U0->p_src_data_stream_1_V_dout(img0_data_stream_1_s_dout);
-    CvtColor_U0->p_src_data_stream_1_V_empty_n(img0_data_stream_1_s_empty_n);
-    CvtColor_U0->p_src_data_stream_1_V_read(CvtColor_U0_p_src_data_stream_1_V_read);
-    CvtColor_U0->p_src_data_stream_2_V_dout(img0_data_stream_2_s_dout);
-    CvtColor_U0->p_src_data_stream_2_V_empty_n(img0_data_stream_2_s_empty_n);
-    CvtColor_U0->p_src_data_stream_2_V_read(CvtColor_U0_p_src_data_stream_2_V_read);
-    CvtColor_U0->p_dst_data_stream_0_V_din(CvtColor_U0_p_dst_data_stream_0_V_din);
-    CvtColor_U0->p_dst_data_stream_0_V_full_n(img1_data_stream_0_s_full_n);
-    CvtColor_U0->p_dst_data_stream_0_V_write(CvtColor_U0_p_dst_data_stream_0_V_write);
-    CvtColor_U0->p_dst_data_stream_1_V_din(CvtColor_U0_p_dst_data_stream_1_V_din);
-    CvtColor_U0->p_dst_data_stream_1_V_full_n(img1_data_stream_1_s_full_n);
-    CvtColor_U0->p_dst_data_stream_1_V_write(CvtColor_U0_p_dst_data_stream_1_V_write);
-    CvtColor_U0->p_dst_data_stream_2_V_din(CvtColor_U0_p_dst_data_stream_2_V_din);
-    CvtColor_U0->p_dst_data_stream_2_V_full_n(img1_data_stream_2_s_full_n);
-    CvtColor_U0->p_dst_data_stream_2_V_write(CvtColor_U0_p_dst_data_stream_2_V_write);
-    Sobel_U0 = new Sobel("Sobel_U0");
-    Sobel_U0->ap_clk(ap_clk);
-    Sobel_U0->ap_rst(ap_rst_n_inv);
-    Sobel_U0->ap_start(Sobel_U0_ap_start);
-    Sobel_U0->start_full_n(start_for_CvtColor_1_U0_full_n);
-    Sobel_U0->ap_done(Sobel_U0_ap_done);
-    Sobel_U0->ap_continue(Sobel_U0_ap_continue);
-    Sobel_U0->ap_idle(Sobel_U0_ap_idle);
-    Sobel_U0->ap_ready(Sobel_U0_ap_ready);
-    Sobel_U0->start_out(Sobel_U0_start_out);
-    Sobel_U0->start_write(Sobel_U0_start_write);
-    Sobel_U0->p_src_data_stream_0_V_dout(img1_data_stream_0_s_dout);
-    Sobel_U0->p_src_data_stream_0_V_empty_n(img1_data_stream_0_s_empty_n);
-    Sobel_U0->p_src_data_stream_0_V_read(Sobel_U0_p_src_data_stream_0_V_read);
-    Sobel_U0->p_src_data_stream_1_V_dout(img1_data_stream_1_s_dout);
-    Sobel_U0->p_src_data_stream_1_V_empty_n(img1_data_stream_1_s_empty_n);
-    Sobel_U0->p_src_data_stream_1_V_read(Sobel_U0_p_src_data_stream_1_V_read);
-    Sobel_U0->p_src_data_stream_2_V_dout(img1_data_stream_2_s_dout);
-    Sobel_U0->p_src_data_stream_2_V_empty_n(img1_data_stream_2_s_empty_n);
-    Sobel_U0->p_src_data_stream_2_V_read(Sobel_U0_p_src_data_stream_2_V_read);
-    Sobel_U0->p_dst_data_stream_0_V_din(Sobel_U0_p_dst_data_stream_0_V_din);
-    Sobel_U0->p_dst_data_stream_0_V_full_n(img2_data_stream_0_s_full_n);
-    Sobel_U0->p_dst_data_stream_0_V_write(Sobel_U0_p_dst_data_stream_0_V_write);
-    Sobel_U0->p_dst_data_stream_1_V_din(Sobel_U0_p_dst_data_stream_1_V_din);
-    Sobel_U0->p_dst_data_stream_1_V_full_n(img2_data_stream_1_s_full_n);
-    Sobel_U0->p_dst_data_stream_1_V_write(Sobel_U0_p_dst_data_stream_1_V_write);
-    Sobel_U0->p_dst_data_stream_2_V_din(Sobel_U0_p_dst_data_stream_2_V_din);
-    Sobel_U0->p_dst_data_stream_2_V_full_n(img2_data_stream_2_s_full_n);
-    Sobel_U0->p_dst_data_stream_2_V_write(Sobel_U0_p_dst_data_stream_2_V_write);
-    CvtColor_1_U0 = new CvtColor_1("CvtColor_1_U0");
-    CvtColor_1_U0->ap_clk(ap_clk);
-    CvtColor_1_U0->ap_rst(ap_rst_n_inv);
-    CvtColor_1_U0->ap_start(CvtColor_1_U0_ap_start);
-    CvtColor_1_U0->start_full_n(start_for_Mat2AXIvideo_U0_full_n);
-    CvtColor_1_U0->ap_done(CvtColor_1_U0_ap_done);
-    CvtColor_1_U0->ap_continue(CvtColor_1_U0_ap_continue);
-    CvtColor_1_U0->ap_idle(CvtColor_1_U0_ap_idle);
-    CvtColor_1_U0->ap_ready(CvtColor_1_U0_ap_ready);
-    CvtColor_1_U0->start_out(CvtColor_1_U0_start_out);
-    CvtColor_1_U0->start_write(CvtColor_1_U0_start_write);
-    CvtColor_1_U0->p_src_data_stream_0_V_dout(img2_data_stream_0_s_dout);
-    CvtColor_1_U0->p_src_data_stream_0_V_empty_n(img2_data_stream_0_s_empty_n);
-    CvtColor_1_U0->p_src_data_stream_0_V_read(CvtColor_1_U0_p_src_data_stream_0_V_read);
-    CvtColor_1_U0->p_src_data_stream_1_V_dout(img2_data_stream_1_s_dout);
-    CvtColor_1_U0->p_src_data_stream_1_V_empty_n(img2_data_stream_1_s_empty_n);
-    CvtColor_1_U0->p_src_data_stream_1_V_read(CvtColor_1_U0_p_src_data_stream_1_V_read);
-    CvtColor_1_U0->p_src_data_stream_2_V_dout(img2_data_stream_2_s_dout);
-    CvtColor_1_U0->p_src_data_stream_2_V_empty_n(img2_data_stream_2_s_empty_n);
-    CvtColor_1_U0->p_src_data_stream_2_V_read(CvtColor_1_U0_p_src_data_stream_2_V_read);
-    CvtColor_1_U0->p_dst_data_stream_0_V_din(CvtColor_1_U0_p_dst_data_stream_0_V_din);
-    CvtColor_1_U0->p_dst_data_stream_0_V_full_n(img3_data_stream_0_s_full_n);
-    CvtColor_1_U0->p_dst_data_stream_0_V_write(CvtColor_1_U0_p_dst_data_stream_0_V_write);
-    CvtColor_1_U0->p_dst_data_stream_1_V_din(CvtColor_1_U0_p_dst_data_stream_1_V_din);
-    CvtColor_1_U0->p_dst_data_stream_1_V_full_n(img3_data_stream_1_s_full_n);
-    CvtColor_1_U0->p_dst_data_stream_1_V_write(CvtColor_1_U0_p_dst_data_stream_1_V_write);
-    CvtColor_1_U0->p_dst_data_stream_2_V_din(CvtColor_1_U0_p_dst_data_stream_2_V_din);
-    CvtColor_1_U0->p_dst_data_stream_2_V_full_n(img3_data_stream_2_s_full_n);
-    CvtColor_1_U0->p_dst_data_stream_2_V_write(CvtColor_1_U0_p_dst_data_stream_2_V_write);
+    Not_U0 = new Not_r("Not_U0");
+    Not_U0->ap_clk(ap_clk);
+    Not_U0->ap_rst(ap_rst_n_inv);
+    Not_U0->ap_start(Not_U0_ap_start);
+    Not_U0->start_full_n(start_for_Mat2AXIvideo_U0_full_n);
+    Not_U0->ap_done(Not_U0_ap_done);
+    Not_U0->ap_continue(Not_U0_ap_continue);
+    Not_U0->ap_idle(Not_U0_ap_idle);
+    Not_U0->ap_ready(Not_U0_ap_ready);
+    Not_U0->start_out(Not_U0_start_out);
+    Not_U0->start_write(Not_U0_start_write);
+    Not_U0->src_data_stream_0_V_dout(img0_data_stream_0_s_dout);
+    Not_U0->src_data_stream_0_V_empty_n(img0_data_stream_0_s_empty_n);
+    Not_U0->src_data_stream_0_V_read(Not_U0_src_data_stream_0_V_read);
+    Not_U0->src_data_stream_1_V_dout(img0_data_stream_1_s_dout);
+    Not_U0->src_data_stream_1_V_empty_n(img0_data_stream_1_s_empty_n);
+    Not_U0->src_data_stream_1_V_read(Not_U0_src_data_stream_1_V_read);
+    Not_U0->src_data_stream_2_V_dout(img0_data_stream_2_s_dout);
+    Not_U0->src_data_stream_2_V_empty_n(img0_data_stream_2_s_empty_n);
+    Not_U0->src_data_stream_2_V_read(Not_U0_src_data_stream_2_V_read);
+    Not_U0->dst_data_stream_0_V_din(Not_U0_dst_data_stream_0_V_din);
+    Not_U0->dst_data_stream_0_V_full_n(img1_data_stream_0_s_full_n);
+    Not_U0->dst_data_stream_0_V_write(Not_U0_dst_data_stream_0_V_write);
+    Not_U0->dst_data_stream_1_V_din(Not_U0_dst_data_stream_1_V_din);
+    Not_U0->dst_data_stream_1_V_full_n(img1_data_stream_1_s_full_n);
+    Not_U0->dst_data_stream_1_V_write(Not_U0_dst_data_stream_1_V_write);
+    Not_U0->dst_data_stream_2_V_din(Not_U0_dst_data_stream_2_V_din);
+    Not_U0->dst_data_stream_2_V_full_n(img1_data_stream_2_s_full_n);
+    Not_U0->dst_data_stream_2_V_write(Not_U0_dst_data_stream_2_V_write);
     Mat2AXIvideo_U0 = new Mat2AXIvideo("Mat2AXIvideo_U0");
     Mat2AXIvideo_U0->ap_clk(ap_clk);
     Mat2AXIvideo_U0->ap_rst(ap_rst_n_inv);
@@ -143,14 +85,14 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     Mat2AXIvideo_U0->ap_continue(Mat2AXIvideo_U0_ap_continue);
     Mat2AXIvideo_U0->ap_idle(Mat2AXIvideo_U0_ap_idle);
     Mat2AXIvideo_U0->ap_ready(Mat2AXIvideo_U0_ap_ready);
-    Mat2AXIvideo_U0->img_data_stream_0_V_dout(img3_data_stream_0_s_dout);
-    Mat2AXIvideo_U0->img_data_stream_0_V_empty_n(img3_data_stream_0_s_empty_n);
+    Mat2AXIvideo_U0->img_data_stream_0_V_dout(img1_data_stream_0_s_dout);
+    Mat2AXIvideo_U0->img_data_stream_0_V_empty_n(img1_data_stream_0_s_empty_n);
     Mat2AXIvideo_U0->img_data_stream_0_V_read(Mat2AXIvideo_U0_img_data_stream_0_V_read);
-    Mat2AXIvideo_U0->img_data_stream_1_V_dout(img3_data_stream_1_s_dout);
-    Mat2AXIvideo_U0->img_data_stream_1_V_empty_n(img3_data_stream_1_s_empty_n);
+    Mat2AXIvideo_U0->img_data_stream_1_V_dout(img1_data_stream_1_s_dout);
+    Mat2AXIvideo_U0->img_data_stream_1_V_empty_n(img1_data_stream_1_s_empty_n);
     Mat2AXIvideo_U0->img_data_stream_1_V_read(Mat2AXIvideo_U0_img_data_stream_1_V_read);
-    Mat2AXIvideo_U0->img_data_stream_2_V_dout(img3_data_stream_2_s_dout);
-    Mat2AXIvideo_U0->img_data_stream_2_V_empty_n(img3_data_stream_2_s_empty_n);
+    Mat2AXIvideo_U0->img_data_stream_2_V_dout(img1_data_stream_2_s_dout);
+    Mat2AXIvideo_U0->img_data_stream_2_V_empty_n(img1_data_stream_2_s_empty_n);
     Mat2AXIvideo_U0->img_data_stream_2_V_read(Mat2AXIvideo_U0_img_data_stream_2_V_read);
     Mat2AXIvideo_U0->stream_process_TDATA(Mat2AXIvideo_U0_stream_process_TDATA);
     Mat2AXIvideo_U0->stream_process_TVALID(Mat2AXIvideo_U0_stream_process_TVALID);
@@ -171,7 +113,7 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     img0_data_stream_0_s_U->if_write(AXIvideo2Mat_U0_img_data_stream_0_V_write);
     img0_data_stream_0_s_U->if_dout(img0_data_stream_0_s_dout);
     img0_data_stream_0_s_U->if_empty_n(img0_data_stream_0_s_empty_n);
-    img0_data_stream_0_s_U->if_read(CvtColor_U0_p_src_data_stream_0_V_read);
+    img0_data_stream_0_s_U->if_read(Not_U0_src_data_stream_0_V_read);
     img0_data_stream_1_s_U = new fifo_w8_d1_A("img0_data_stream_1_s_U");
     img0_data_stream_1_s_U->clk(ap_clk);
     img0_data_stream_1_s_U->reset(ap_rst_n_inv);
@@ -182,7 +124,7 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     img0_data_stream_1_s_U->if_write(AXIvideo2Mat_U0_img_data_stream_1_V_write);
     img0_data_stream_1_s_U->if_dout(img0_data_stream_1_s_dout);
     img0_data_stream_1_s_U->if_empty_n(img0_data_stream_1_s_empty_n);
-    img0_data_stream_1_s_U->if_read(CvtColor_U0_p_src_data_stream_1_V_read);
+    img0_data_stream_1_s_U->if_read(Not_U0_src_data_stream_1_V_read);
     img0_data_stream_2_s_U = new fifo_w8_d1_A("img0_data_stream_2_s_U");
     img0_data_stream_2_s_U->clk(ap_clk);
     img0_data_stream_2_s_U->reset(ap_rst_n_inv);
@@ -193,165 +135,67 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     img0_data_stream_2_s_U->if_write(AXIvideo2Mat_U0_img_data_stream_2_V_write);
     img0_data_stream_2_s_U->if_dout(img0_data_stream_2_s_dout);
     img0_data_stream_2_s_U->if_empty_n(img0_data_stream_2_s_empty_n);
-    img0_data_stream_2_s_U->if_read(CvtColor_U0_p_src_data_stream_2_V_read);
+    img0_data_stream_2_s_U->if_read(Not_U0_src_data_stream_2_V_read);
     img1_data_stream_0_s_U = new fifo_w8_d1_A("img1_data_stream_0_s_U");
     img1_data_stream_0_s_U->clk(ap_clk);
     img1_data_stream_0_s_U->reset(ap_rst_n_inv);
     img1_data_stream_0_s_U->if_read_ce(ap_var_for_const0);
     img1_data_stream_0_s_U->if_write_ce(ap_var_for_const0);
-    img1_data_stream_0_s_U->if_din(CvtColor_U0_p_dst_data_stream_0_V_din);
+    img1_data_stream_0_s_U->if_din(Not_U0_dst_data_stream_0_V_din);
     img1_data_stream_0_s_U->if_full_n(img1_data_stream_0_s_full_n);
-    img1_data_stream_0_s_U->if_write(CvtColor_U0_p_dst_data_stream_0_V_write);
+    img1_data_stream_0_s_U->if_write(Not_U0_dst_data_stream_0_V_write);
     img1_data_stream_0_s_U->if_dout(img1_data_stream_0_s_dout);
     img1_data_stream_0_s_U->if_empty_n(img1_data_stream_0_s_empty_n);
-    img1_data_stream_0_s_U->if_read(Sobel_U0_p_src_data_stream_0_V_read);
+    img1_data_stream_0_s_U->if_read(Mat2AXIvideo_U0_img_data_stream_0_V_read);
     img1_data_stream_1_s_U = new fifo_w8_d1_A("img1_data_stream_1_s_U");
     img1_data_stream_1_s_U->clk(ap_clk);
     img1_data_stream_1_s_U->reset(ap_rst_n_inv);
     img1_data_stream_1_s_U->if_read_ce(ap_var_for_const0);
     img1_data_stream_1_s_U->if_write_ce(ap_var_for_const0);
-    img1_data_stream_1_s_U->if_din(CvtColor_U0_p_dst_data_stream_1_V_din);
+    img1_data_stream_1_s_U->if_din(Not_U0_dst_data_stream_1_V_din);
     img1_data_stream_1_s_U->if_full_n(img1_data_stream_1_s_full_n);
-    img1_data_stream_1_s_U->if_write(CvtColor_U0_p_dst_data_stream_1_V_write);
+    img1_data_stream_1_s_U->if_write(Not_U0_dst_data_stream_1_V_write);
     img1_data_stream_1_s_U->if_dout(img1_data_stream_1_s_dout);
     img1_data_stream_1_s_U->if_empty_n(img1_data_stream_1_s_empty_n);
-    img1_data_stream_1_s_U->if_read(Sobel_U0_p_src_data_stream_1_V_read);
+    img1_data_stream_1_s_U->if_read(Mat2AXIvideo_U0_img_data_stream_1_V_read);
     img1_data_stream_2_s_U = new fifo_w8_d1_A("img1_data_stream_2_s_U");
     img1_data_stream_2_s_U->clk(ap_clk);
     img1_data_stream_2_s_U->reset(ap_rst_n_inv);
     img1_data_stream_2_s_U->if_read_ce(ap_var_for_const0);
     img1_data_stream_2_s_U->if_write_ce(ap_var_for_const0);
-    img1_data_stream_2_s_U->if_din(CvtColor_U0_p_dst_data_stream_2_V_din);
+    img1_data_stream_2_s_U->if_din(Not_U0_dst_data_stream_2_V_din);
     img1_data_stream_2_s_U->if_full_n(img1_data_stream_2_s_full_n);
-    img1_data_stream_2_s_U->if_write(CvtColor_U0_p_dst_data_stream_2_V_write);
+    img1_data_stream_2_s_U->if_write(Not_U0_dst_data_stream_2_V_write);
     img1_data_stream_2_s_U->if_dout(img1_data_stream_2_s_dout);
     img1_data_stream_2_s_U->if_empty_n(img1_data_stream_2_s_empty_n);
-    img1_data_stream_2_s_U->if_read(Sobel_U0_p_src_data_stream_2_V_read);
-    img2_data_stream_0_s_U = new fifo_w8_d1_A("img2_data_stream_0_s_U");
-    img2_data_stream_0_s_U->clk(ap_clk);
-    img2_data_stream_0_s_U->reset(ap_rst_n_inv);
-    img2_data_stream_0_s_U->if_read_ce(ap_var_for_const0);
-    img2_data_stream_0_s_U->if_write_ce(ap_var_for_const0);
-    img2_data_stream_0_s_U->if_din(Sobel_U0_p_dst_data_stream_0_V_din);
-    img2_data_stream_0_s_U->if_full_n(img2_data_stream_0_s_full_n);
-    img2_data_stream_0_s_U->if_write(Sobel_U0_p_dst_data_stream_0_V_write);
-    img2_data_stream_0_s_U->if_dout(img2_data_stream_0_s_dout);
-    img2_data_stream_0_s_U->if_empty_n(img2_data_stream_0_s_empty_n);
-    img2_data_stream_0_s_U->if_read(CvtColor_1_U0_p_src_data_stream_0_V_read);
-    img2_data_stream_1_s_U = new fifo_w8_d1_A("img2_data_stream_1_s_U");
-    img2_data_stream_1_s_U->clk(ap_clk);
-    img2_data_stream_1_s_U->reset(ap_rst_n_inv);
-    img2_data_stream_1_s_U->if_read_ce(ap_var_for_const0);
-    img2_data_stream_1_s_U->if_write_ce(ap_var_for_const0);
-    img2_data_stream_1_s_U->if_din(Sobel_U0_p_dst_data_stream_1_V_din);
-    img2_data_stream_1_s_U->if_full_n(img2_data_stream_1_s_full_n);
-    img2_data_stream_1_s_U->if_write(Sobel_U0_p_dst_data_stream_1_V_write);
-    img2_data_stream_1_s_U->if_dout(img2_data_stream_1_s_dout);
-    img2_data_stream_1_s_U->if_empty_n(img2_data_stream_1_s_empty_n);
-    img2_data_stream_1_s_U->if_read(CvtColor_1_U0_p_src_data_stream_1_V_read);
-    img2_data_stream_2_s_U = new fifo_w8_d1_A("img2_data_stream_2_s_U");
-    img2_data_stream_2_s_U->clk(ap_clk);
-    img2_data_stream_2_s_U->reset(ap_rst_n_inv);
-    img2_data_stream_2_s_U->if_read_ce(ap_var_for_const0);
-    img2_data_stream_2_s_U->if_write_ce(ap_var_for_const0);
-    img2_data_stream_2_s_U->if_din(Sobel_U0_p_dst_data_stream_2_V_din);
-    img2_data_stream_2_s_U->if_full_n(img2_data_stream_2_s_full_n);
-    img2_data_stream_2_s_U->if_write(Sobel_U0_p_dst_data_stream_2_V_write);
-    img2_data_stream_2_s_U->if_dout(img2_data_stream_2_s_dout);
-    img2_data_stream_2_s_U->if_empty_n(img2_data_stream_2_s_empty_n);
-    img2_data_stream_2_s_U->if_read(CvtColor_1_U0_p_src_data_stream_2_V_read);
-    img3_data_stream_0_s_U = new fifo_w8_d1_A("img3_data_stream_0_s_U");
-    img3_data_stream_0_s_U->clk(ap_clk);
-    img3_data_stream_0_s_U->reset(ap_rst_n_inv);
-    img3_data_stream_0_s_U->if_read_ce(ap_var_for_const0);
-    img3_data_stream_0_s_U->if_write_ce(ap_var_for_const0);
-    img3_data_stream_0_s_U->if_din(CvtColor_1_U0_p_dst_data_stream_0_V_din);
-    img3_data_stream_0_s_U->if_full_n(img3_data_stream_0_s_full_n);
-    img3_data_stream_0_s_U->if_write(CvtColor_1_U0_p_dst_data_stream_0_V_write);
-    img3_data_stream_0_s_U->if_dout(img3_data_stream_0_s_dout);
-    img3_data_stream_0_s_U->if_empty_n(img3_data_stream_0_s_empty_n);
-    img3_data_stream_0_s_U->if_read(Mat2AXIvideo_U0_img_data_stream_0_V_read);
-    img3_data_stream_1_s_U = new fifo_w8_d1_A("img3_data_stream_1_s_U");
-    img3_data_stream_1_s_U->clk(ap_clk);
-    img3_data_stream_1_s_U->reset(ap_rst_n_inv);
-    img3_data_stream_1_s_U->if_read_ce(ap_var_for_const0);
-    img3_data_stream_1_s_U->if_write_ce(ap_var_for_const0);
-    img3_data_stream_1_s_U->if_din(CvtColor_1_U0_p_dst_data_stream_1_V_din);
-    img3_data_stream_1_s_U->if_full_n(img3_data_stream_1_s_full_n);
-    img3_data_stream_1_s_U->if_write(CvtColor_1_U0_p_dst_data_stream_1_V_write);
-    img3_data_stream_1_s_U->if_dout(img3_data_stream_1_s_dout);
-    img3_data_stream_1_s_U->if_empty_n(img3_data_stream_1_s_empty_n);
-    img3_data_stream_1_s_U->if_read(Mat2AXIvideo_U0_img_data_stream_1_V_read);
-    img3_data_stream_2_s_U = new fifo_w8_d1_A("img3_data_stream_2_s_U");
-    img3_data_stream_2_s_U->clk(ap_clk);
-    img3_data_stream_2_s_U->reset(ap_rst_n_inv);
-    img3_data_stream_2_s_U->if_read_ce(ap_var_for_const0);
-    img3_data_stream_2_s_U->if_write_ce(ap_var_for_const0);
-    img3_data_stream_2_s_U->if_din(CvtColor_1_U0_p_dst_data_stream_2_V_din);
-    img3_data_stream_2_s_U->if_full_n(img3_data_stream_2_s_full_n);
-    img3_data_stream_2_s_U->if_write(CvtColor_1_U0_p_dst_data_stream_2_V_write);
-    img3_data_stream_2_s_U->if_dout(img3_data_stream_2_s_dout);
-    img3_data_stream_2_s_U->if_empty_n(img3_data_stream_2_s_empty_n);
-    img3_data_stream_2_s_U->if_read(Mat2AXIvideo_U0_img_data_stream_2_V_read);
-    start_for_CvtColoocq_U = new start_for_CvtColoocq("start_for_CvtColoocq_U");
-    start_for_CvtColoocq_U->clk(ap_clk);
-    start_for_CvtColoocq_U->reset(ap_rst_n_inv);
-    start_for_CvtColoocq_U->if_read_ce(ap_var_for_const0);
-    start_for_CvtColoocq_U->if_write_ce(ap_var_for_const0);
-    start_for_CvtColoocq_U->if_din(start_for_CvtColor_U0_din);
-    start_for_CvtColoocq_U->if_full_n(start_for_CvtColor_U0_full_n);
-    start_for_CvtColoocq_U->if_write(AXIvideo2Mat_U0_start_write);
-    start_for_CvtColoocq_U->if_dout(start_for_CvtColor_U0_dout);
-    start_for_CvtColoocq_U->if_empty_n(start_for_CvtColor_U0_empty_n);
-    start_for_CvtColoocq_U->if_read(CvtColor_U0_ap_ready);
-    start_for_Sobel_U0_U = new start_for_Sobel_U0("start_for_Sobel_U0_U");
-    start_for_Sobel_U0_U->clk(ap_clk);
-    start_for_Sobel_U0_U->reset(ap_rst_n_inv);
-    start_for_Sobel_U0_U->if_read_ce(ap_var_for_const0);
-    start_for_Sobel_U0_U->if_write_ce(ap_var_for_const0);
-    start_for_Sobel_U0_U->if_din(start_for_Sobel_U0_din);
-    start_for_Sobel_U0_U->if_full_n(start_for_Sobel_U0_full_n);
-    start_for_Sobel_U0_U->if_write(CvtColor_U0_start_write);
-    start_for_Sobel_U0_U->if_dout(start_for_Sobel_U0_dout);
-    start_for_Sobel_U0_U->if_empty_n(start_for_Sobel_U0_empty_n);
-    start_for_Sobel_U0_U->if_read(Sobel_U0_ap_ready);
-    start_for_CvtColopcA_U = new start_for_CvtColopcA("start_for_CvtColopcA_U");
-    start_for_CvtColopcA_U->clk(ap_clk);
-    start_for_CvtColopcA_U->reset(ap_rst_n_inv);
-    start_for_CvtColopcA_U->if_read_ce(ap_var_for_const0);
-    start_for_CvtColopcA_U->if_write_ce(ap_var_for_const0);
-    start_for_CvtColopcA_U->if_din(start_for_CvtColor_1_U0_din);
-    start_for_CvtColopcA_U->if_full_n(start_for_CvtColor_1_U0_full_n);
-    start_for_CvtColopcA_U->if_write(Sobel_U0_start_write);
-    start_for_CvtColopcA_U->if_dout(start_for_CvtColor_1_U0_dout);
-    start_for_CvtColopcA_U->if_empty_n(start_for_CvtColor_1_U0_empty_n);
-    start_for_CvtColopcA_U->if_read(CvtColor_1_U0_ap_ready);
-    start_for_Mat2AXIqcK_U = new start_for_Mat2AXIqcK("start_for_Mat2AXIqcK_U");
-    start_for_Mat2AXIqcK_U->clk(ap_clk);
-    start_for_Mat2AXIqcK_U->reset(ap_rst_n_inv);
-    start_for_Mat2AXIqcK_U->if_read_ce(ap_var_for_const0);
-    start_for_Mat2AXIqcK_U->if_write_ce(ap_var_for_const0);
-    start_for_Mat2AXIqcK_U->if_din(start_for_Mat2AXIvideo_U0_din);
-    start_for_Mat2AXIqcK_U->if_full_n(start_for_Mat2AXIvideo_U0_full_n);
-    start_for_Mat2AXIqcK_U->if_write(CvtColor_1_U0_start_write);
-    start_for_Mat2AXIqcK_U->if_dout(start_for_Mat2AXIvideo_U0_dout);
-    start_for_Mat2AXIqcK_U->if_empty_n(start_for_Mat2AXIvideo_U0_empty_n);
-    start_for_Mat2AXIqcK_U->if_read(Mat2AXIvideo_U0_ap_ready);
+    img1_data_stream_2_s_U->if_read(Mat2AXIvideo_U0_img_data_stream_2_V_read);
+    start_for_Not_U0_U = new start_for_Not_U0("start_for_Not_U0_U");
+    start_for_Not_U0_U->clk(ap_clk);
+    start_for_Not_U0_U->reset(ap_rst_n_inv);
+    start_for_Not_U0_U->if_read_ce(ap_var_for_const0);
+    start_for_Not_U0_U->if_write_ce(ap_var_for_const0);
+    start_for_Not_U0_U->if_din(start_for_Not_U0_din);
+    start_for_Not_U0_U->if_full_n(start_for_Not_U0_full_n);
+    start_for_Not_U0_U->if_write(AXIvideo2Mat_U0_start_write);
+    start_for_Not_U0_U->if_dout(start_for_Not_U0_dout);
+    start_for_Not_U0_U->if_empty_n(start_for_Not_U0_empty_n);
+    start_for_Not_U0_U->if_read(Not_U0_ap_ready);
+    start_for_Mat2AXIbkb_U = new start_for_Mat2AXIbkb("start_for_Mat2AXIbkb_U");
+    start_for_Mat2AXIbkb_U->clk(ap_clk);
+    start_for_Mat2AXIbkb_U->reset(ap_rst_n_inv);
+    start_for_Mat2AXIbkb_U->if_read_ce(ap_var_for_const0);
+    start_for_Mat2AXIbkb_U->if_write_ce(ap_var_for_const0);
+    start_for_Mat2AXIbkb_U->if_din(start_for_Mat2AXIvideo_U0_din);
+    start_for_Mat2AXIbkb_U->if_full_n(start_for_Mat2AXIvideo_U0_full_n);
+    start_for_Mat2AXIbkb_U->if_write(Not_U0_start_write);
+    start_for_Mat2AXIbkb_U->if_dout(start_for_Mat2AXIvideo_U0_dout);
+    start_for_Mat2AXIbkb_U->if_empty_n(start_for_Mat2AXIvideo_U0_empty_n);
+    start_for_Mat2AXIbkb_U->if_read(Mat2AXIvideo_U0_ap_ready);
 
     SC_METHOD(thread_AXIvideo2Mat_U0_ap_continue);
 
     SC_METHOD(thread_AXIvideo2Mat_U0_ap_start);
     sensitive << ( ap_start );
-
-    SC_METHOD(thread_CvtColor_1_U0_ap_continue);
-
-    SC_METHOD(thread_CvtColor_1_U0_ap_start);
-    sensitive << ( start_for_CvtColor_1_U0_empty_n );
-
-    SC_METHOD(thread_CvtColor_U0_ap_continue);
-
-    SC_METHOD(thread_CvtColor_U0_ap_start);
-    sensitive << ( start_for_CvtColor_U0_empty_n );
 
     SC_METHOD(thread_Mat2AXIvideo_U0_ap_continue);
 
@@ -362,19 +206,17 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
 
     SC_METHOD(thread_Mat2AXIvideo_U0_start_write);
 
-    SC_METHOD(thread_Sobel_U0_ap_continue);
+    SC_METHOD(thread_Not_U0_ap_continue);
 
-    SC_METHOD(thread_Sobel_U0_ap_start);
-    sensitive << ( start_for_Sobel_U0_empty_n );
+    SC_METHOD(thread_Not_U0_ap_start);
+    sensitive << ( start_for_Not_U0_empty_n );
 
     SC_METHOD(thread_ap_done);
     sensitive << ( Mat2AXIvideo_U0_ap_done );
 
     SC_METHOD(thread_ap_idle);
     sensitive << ( AXIvideo2Mat_U0_ap_idle );
-    sensitive << ( CvtColor_U0_ap_idle );
-    sensitive << ( Sobel_U0_ap_idle );
-    sensitive << ( CvtColor_1_U0_ap_idle );
+    sensitive << ( Not_U0_ap_idle );
     sensitive << ( Mat2AXIvideo_U0_ap_idle );
 
     SC_METHOD(thread_ap_ready);
@@ -391,13 +233,9 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_ap_sync_ready);
     sensitive << ( AXIvideo2Mat_U0_ap_ready );
 
-    SC_METHOD(thread_start_for_CvtColor_1_U0_din);
-
-    SC_METHOD(thread_start_for_CvtColor_U0_din);
-
     SC_METHOD(thread_start_for_Mat2AXIvideo_U0_din);
 
-    SC_METHOD(thread_start_for_Sobel_U0_din);
+    SC_METHOD(thread_start_for_Not_U0_din);
 
     SC_METHOD(thread_stream_in_TREADY);
     sensitive << ( AXIvideo2Mat_U0_stream_in_TREADY );
@@ -480,54 +318,22 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, AXIvideo2Mat_U0_img_data_stream_1_V_write, "AXIvideo2Mat_U0_img_data_stream_1_V_write");
     sc_trace(mVcdFile, AXIvideo2Mat_U0_img_data_stream_2_V_din, "AXIvideo2Mat_U0_img_data_stream_2_V_din");
     sc_trace(mVcdFile, AXIvideo2Mat_U0_img_data_stream_2_V_write, "AXIvideo2Mat_U0_img_data_stream_2_V_write");
-    sc_trace(mVcdFile, CvtColor_U0_ap_start, "CvtColor_U0_ap_start");
-    sc_trace(mVcdFile, CvtColor_U0_ap_done, "CvtColor_U0_ap_done");
-    sc_trace(mVcdFile, CvtColor_U0_ap_continue, "CvtColor_U0_ap_continue");
-    sc_trace(mVcdFile, CvtColor_U0_ap_idle, "CvtColor_U0_ap_idle");
-    sc_trace(mVcdFile, CvtColor_U0_ap_ready, "CvtColor_U0_ap_ready");
-    sc_trace(mVcdFile, CvtColor_U0_start_out, "CvtColor_U0_start_out");
-    sc_trace(mVcdFile, CvtColor_U0_start_write, "CvtColor_U0_start_write");
-    sc_trace(mVcdFile, CvtColor_U0_p_src_data_stream_0_V_read, "CvtColor_U0_p_src_data_stream_0_V_read");
-    sc_trace(mVcdFile, CvtColor_U0_p_src_data_stream_1_V_read, "CvtColor_U0_p_src_data_stream_1_V_read");
-    sc_trace(mVcdFile, CvtColor_U0_p_src_data_stream_2_V_read, "CvtColor_U0_p_src_data_stream_2_V_read");
-    sc_trace(mVcdFile, CvtColor_U0_p_dst_data_stream_0_V_din, "CvtColor_U0_p_dst_data_stream_0_V_din");
-    sc_trace(mVcdFile, CvtColor_U0_p_dst_data_stream_0_V_write, "CvtColor_U0_p_dst_data_stream_0_V_write");
-    sc_trace(mVcdFile, CvtColor_U0_p_dst_data_stream_1_V_din, "CvtColor_U0_p_dst_data_stream_1_V_din");
-    sc_trace(mVcdFile, CvtColor_U0_p_dst_data_stream_1_V_write, "CvtColor_U0_p_dst_data_stream_1_V_write");
-    sc_trace(mVcdFile, CvtColor_U0_p_dst_data_stream_2_V_din, "CvtColor_U0_p_dst_data_stream_2_V_din");
-    sc_trace(mVcdFile, CvtColor_U0_p_dst_data_stream_2_V_write, "CvtColor_U0_p_dst_data_stream_2_V_write");
-    sc_trace(mVcdFile, Sobel_U0_ap_start, "Sobel_U0_ap_start");
-    sc_trace(mVcdFile, Sobel_U0_ap_done, "Sobel_U0_ap_done");
-    sc_trace(mVcdFile, Sobel_U0_ap_continue, "Sobel_U0_ap_continue");
-    sc_trace(mVcdFile, Sobel_U0_ap_idle, "Sobel_U0_ap_idle");
-    sc_trace(mVcdFile, Sobel_U0_ap_ready, "Sobel_U0_ap_ready");
-    sc_trace(mVcdFile, Sobel_U0_start_out, "Sobel_U0_start_out");
-    sc_trace(mVcdFile, Sobel_U0_start_write, "Sobel_U0_start_write");
-    sc_trace(mVcdFile, Sobel_U0_p_src_data_stream_0_V_read, "Sobel_U0_p_src_data_stream_0_V_read");
-    sc_trace(mVcdFile, Sobel_U0_p_src_data_stream_1_V_read, "Sobel_U0_p_src_data_stream_1_V_read");
-    sc_trace(mVcdFile, Sobel_U0_p_src_data_stream_2_V_read, "Sobel_U0_p_src_data_stream_2_V_read");
-    sc_trace(mVcdFile, Sobel_U0_p_dst_data_stream_0_V_din, "Sobel_U0_p_dst_data_stream_0_V_din");
-    sc_trace(mVcdFile, Sobel_U0_p_dst_data_stream_0_V_write, "Sobel_U0_p_dst_data_stream_0_V_write");
-    sc_trace(mVcdFile, Sobel_U0_p_dst_data_stream_1_V_din, "Sobel_U0_p_dst_data_stream_1_V_din");
-    sc_trace(mVcdFile, Sobel_U0_p_dst_data_stream_1_V_write, "Sobel_U0_p_dst_data_stream_1_V_write");
-    sc_trace(mVcdFile, Sobel_U0_p_dst_data_stream_2_V_din, "Sobel_U0_p_dst_data_stream_2_V_din");
-    sc_trace(mVcdFile, Sobel_U0_p_dst_data_stream_2_V_write, "Sobel_U0_p_dst_data_stream_2_V_write");
-    sc_trace(mVcdFile, CvtColor_1_U0_ap_start, "CvtColor_1_U0_ap_start");
-    sc_trace(mVcdFile, CvtColor_1_U0_ap_done, "CvtColor_1_U0_ap_done");
-    sc_trace(mVcdFile, CvtColor_1_U0_ap_continue, "CvtColor_1_U0_ap_continue");
-    sc_trace(mVcdFile, CvtColor_1_U0_ap_idle, "CvtColor_1_U0_ap_idle");
-    sc_trace(mVcdFile, CvtColor_1_U0_ap_ready, "CvtColor_1_U0_ap_ready");
-    sc_trace(mVcdFile, CvtColor_1_U0_start_out, "CvtColor_1_U0_start_out");
-    sc_trace(mVcdFile, CvtColor_1_U0_start_write, "CvtColor_1_U0_start_write");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_src_data_stream_0_V_read, "CvtColor_1_U0_p_src_data_stream_0_V_read");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_src_data_stream_1_V_read, "CvtColor_1_U0_p_src_data_stream_1_V_read");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_src_data_stream_2_V_read, "CvtColor_1_U0_p_src_data_stream_2_V_read");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_dst_data_stream_0_V_din, "CvtColor_1_U0_p_dst_data_stream_0_V_din");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_dst_data_stream_0_V_write, "CvtColor_1_U0_p_dst_data_stream_0_V_write");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_dst_data_stream_1_V_din, "CvtColor_1_U0_p_dst_data_stream_1_V_din");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_dst_data_stream_1_V_write, "CvtColor_1_U0_p_dst_data_stream_1_V_write");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_dst_data_stream_2_V_din, "CvtColor_1_U0_p_dst_data_stream_2_V_din");
-    sc_trace(mVcdFile, CvtColor_1_U0_p_dst_data_stream_2_V_write, "CvtColor_1_U0_p_dst_data_stream_2_V_write");
+    sc_trace(mVcdFile, Not_U0_ap_start, "Not_U0_ap_start");
+    sc_trace(mVcdFile, Not_U0_ap_done, "Not_U0_ap_done");
+    sc_trace(mVcdFile, Not_U0_ap_continue, "Not_U0_ap_continue");
+    sc_trace(mVcdFile, Not_U0_ap_idle, "Not_U0_ap_idle");
+    sc_trace(mVcdFile, Not_U0_ap_ready, "Not_U0_ap_ready");
+    sc_trace(mVcdFile, Not_U0_start_out, "Not_U0_start_out");
+    sc_trace(mVcdFile, Not_U0_start_write, "Not_U0_start_write");
+    sc_trace(mVcdFile, Not_U0_src_data_stream_0_V_read, "Not_U0_src_data_stream_0_V_read");
+    sc_trace(mVcdFile, Not_U0_src_data_stream_1_V_read, "Not_U0_src_data_stream_1_V_read");
+    sc_trace(mVcdFile, Not_U0_src_data_stream_2_V_read, "Not_U0_src_data_stream_2_V_read");
+    sc_trace(mVcdFile, Not_U0_dst_data_stream_0_V_din, "Not_U0_dst_data_stream_0_V_din");
+    sc_trace(mVcdFile, Not_U0_dst_data_stream_0_V_write, "Not_U0_dst_data_stream_0_V_write");
+    sc_trace(mVcdFile, Not_U0_dst_data_stream_1_V_din, "Not_U0_dst_data_stream_1_V_din");
+    sc_trace(mVcdFile, Not_U0_dst_data_stream_1_V_write, "Not_U0_dst_data_stream_1_V_write");
+    sc_trace(mVcdFile, Not_U0_dst_data_stream_2_V_din, "Not_U0_dst_data_stream_2_V_din");
+    sc_trace(mVcdFile, Not_U0_dst_data_stream_2_V_write, "Not_U0_dst_data_stream_2_V_write");
     sc_trace(mVcdFile, Mat2AXIvideo_U0_ap_start, "Mat2AXIvideo_U0_ap_start");
     sc_trace(mVcdFile, Mat2AXIvideo_U0_ap_done, "Mat2AXIvideo_U0_ap_done");
     sc_trace(mVcdFile, Mat2AXIvideo_U0_ap_continue, "Mat2AXIvideo_U0_ap_continue");
@@ -563,38 +369,12 @@ subsamble::subsamble(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, img1_data_stream_2_s_full_n, "img1_data_stream_2_s_full_n");
     sc_trace(mVcdFile, img1_data_stream_2_s_dout, "img1_data_stream_2_s_dout");
     sc_trace(mVcdFile, img1_data_stream_2_s_empty_n, "img1_data_stream_2_s_empty_n");
-    sc_trace(mVcdFile, img2_data_stream_0_s_full_n, "img2_data_stream_0_s_full_n");
-    sc_trace(mVcdFile, img2_data_stream_0_s_dout, "img2_data_stream_0_s_dout");
-    sc_trace(mVcdFile, img2_data_stream_0_s_empty_n, "img2_data_stream_0_s_empty_n");
-    sc_trace(mVcdFile, img2_data_stream_1_s_full_n, "img2_data_stream_1_s_full_n");
-    sc_trace(mVcdFile, img2_data_stream_1_s_dout, "img2_data_stream_1_s_dout");
-    sc_trace(mVcdFile, img2_data_stream_1_s_empty_n, "img2_data_stream_1_s_empty_n");
-    sc_trace(mVcdFile, img2_data_stream_2_s_full_n, "img2_data_stream_2_s_full_n");
-    sc_trace(mVcdFile, img2_data_stream_2_s_dout, "img2_data_stream_2_s_dout");
-    sc_trace(mVcdFile, img2_data_stream_2_s_empty_n, "img2_data_stream_2_s_empty_n");
-    sc_trace(mVcdFile, img3_data_stream_0_s_full_n, "img3_data_stream_0_s_full_n");
-    sc_trace(mVcdFile, img3_data_stream_0_s_dout, "img3_data_stream_0_s_dout");
-    sc_trace(mVcdFile, img3_data_stream_0_s_empty_n, "img3_data_stream_0_s_empty_n");
-    sc_trace(mVcdFile, img3_data_stream_1_s_full_n, "img3_data_stream_1_s_full_n");
-    sc_trace(mVcdFile, img3_data_stream_1_s_dout, "img3_data_stream_1_s_dout");
-    sc_trace(mVcdFile, img3_data_stream_1_s_empty_n, "img3_data_stream_1_s_empty_n");
-    sc_trace(mVcdFile, img3_data_stream_2_s_full_n, "img3_data_stream_2_s_full_n");
-    sc_trace(mVcdFile, img3_data_stream_2_s_dout, "img3_data_stream_2_s_dout");
-    sc_trace(mVcdFile, img3_data_stream_2_s_empty_n, "img3_data_stream_2_s_empty_n");
     sc_trace(mVcdFile, ap_sync_done, "ap_sync_done");
     sc_trace(mVcdFile, ap_sync_ready, "ap_sync_ready");
-    sc_trace(mVcdFile, start_for_CvtColor_U0_din, "start_for_CvtColor_U0_din");
-    sc_trace(mVcdFile, start_for_CvtColor_U0_full_n, "start_for_CvtColor_U0_full_n");
-    sc_trace(mVcdFile, start_for_CvtColor_U0_dout, "start_for_CvtColor_U0_dout");
-    sc_trace(mVcdFile, start_for_CvtColor_U0_empty_n, "start_for_CvtColor_U0_empty_n");
-    sc_trace(mVcdFile, start_for_Sobel_U0_din, "start_for_Sobel_U0_din");
-    sc_trace(mVcdFile, start_for_Sobel_U0_full_n, "start_for_Sobel_U0_full_n");
-    sc_trace(mVcdFile, start_for_Sobel_U0_dout, "start_for_Sobel_U0_dout");
-    sc_trace(mVcdFile, start_for_Sobel_U0_empty_n, "start_for_Sobel_U0_empty_n");
-    sc_trace(mVcdFile, start_for_CvtColor_1_U0_din, "start_for_CvtColor_1_U0_din");
-    sc_trace(mVcdFile, start_for_CvtColor_1_U0_full_n, "start_for_CvtColor_1_U0_full_n");
-    sc_trace(mVcdFile, start_for_CvtColor_1_U0_dout, "start_for_CvtColor_1_U0_dout");
-    sc_trace(mVcdFile, start_for_CvtColor_1_U0_empty_n, "start_for_CvtColor_1_U0_empty_n");
+    sc_trace(mVcdFile, start_for_Not_U0_din, "start_for_Not_U0_din");
+    sc_trace(mVcdFile, start_for_Not_U0_full_n, "start_for_Not_U0_full_n");
+    sc_trace(mVcdFile, start_for_Not_U0_dout, "start_for_Not_U0_dout");
+    sc_trace(mVcdFile, start_for_Not_U0_empty_n, "start_for_Not_U0_empty_n");
     sc_trace(mVcdFile, start_for_Mat2AXIvideo_U0_din, "start_for_Mat2AXIvideo_U0_din");
     sc_trace(mVcdFile, start_for_Mat2AXIvideo_U0_full_n, "start_for_Mat2AXIvideo_U0_full_n");
     sc_trace(mVcdFile, start_for_Mat2AXIvideo_U0_dout, "start_for_Mat2AXIvideo_U0_dout");
@@ -617,9 +397,7 @@ subsamble::~subsamble() {
     mHdltvinHandle.close();
     mHdltvoutHandle.close();
     delete AXIvideo2Mat_U0;
-    delete CvtColor_U0;
-    delete Sobel_U0;
-    delete CvtColor_1_U0;
+    delete Not_U0;
     delete Mat2AXIvideo_U0;
     delete img0_data_stream_0_s_U;
     delete img0_data_stream_1_s_U;
@@ -627,16 +405,8 @@ subsamble::~subsamble() {
     delete img1_data_stream_0_s_U;
     delete img1_data_stream_1_s_U;
     delete img1_data_stream_2_s_U;
-    delete img2_data_stream_0_s_U;
-    delete img2_data_stream_1_s_U;
-    delete img2_data_stream_2_s_U;
-    delete img3_data_stream_0_s_U;
-    delete img3_data_stream_1_s_U;
-    delete img3_data_stream_2_s_U;
-    delete start_for_CvtColoocq_U;
-    delete start_for_Sobel_U0_U;
-    delete start_for_CvtColopcA_U;
-    delete start_for_Mat2AXIqcK_U;
+    delete start_for_Not_U0_U;
+    delete start_for_Mat2AXIbkb_U;
 }
 
 void subsamble::thread_ap_var_for_const0() {
@@ -649,22 +419,6 @@ void subsamble::thread_AXIvideo2Mat_U0_ap_continue() {
 
 void subsamble::thread_AXIvideo2Mat_U0_ap_start() {
     AXIvideo2Mat_U0_ap_start = ap_start.read();
-}
-
-void subsamble::thread_CvtColor_1_U0_ap_continue() {
-    CvtColor_1_U0_ap_continue = ap_const_logic_1;
-}
-
-void subsamble::thread_CvtColor_1_U0_ap_start() {
-    CvtColor_1_U0_ap_start = start_for_CvtColor_1_U0_empty_n.read();
-}
-
-void subsamble::thread_CvtColor_U0_ap_continue() {
-    CvtColor_U0_ap_continue = ap_const_logic_1;
-}
-
-void subsamble::thread_CvtColor_U0_ap_start() {
-    CvtColor_U0_ap_start = start_for_CvtColor_U0_empty_n.read();
 }
 
 void subsamble::thread_Mat2AXIvideo_U0_ap_continue() {
@@ -683,12 +437,12 @@ void subsamble::thread_Mat2AXIvideo_U0_start_write() {
     Mat2AXIvideo_U0_start_write = ap_const_logic_0;
 }
 
-void subsamble::thread_Sobel_U0_ap_continue() {
-    Sobel_U0_ap_continue = ap_const_logic_1;
+void subsamble::thread_Not_U0_ap_continue() {
+    Not_U0_ap_continue = ap_const_logic_1;
 }
 
-void subsamble::thread_Sobel_U0_ap_start() {
-    Sobel_U0_ap_start = start_for_Sobel_U0_empty_n.read();
+void subsamble::thread_Not_U0_ap_start() {
+    Not_U0_ap_start = start_for_Not_U0_empty_n.read();
 }
 
 void subsamble::thread_ap_done() {
@@ -696,7 +450,7 @@ void subsamble::thread_ap_done() {
 }
 
 void subsamble::thread_ap_idle() {
-    ap_idle = (AXIvideo2Mat_U0_ap_idle.read() & CvtColor_U0_ap_idle.read() & Sobel_U0_ap_idle.read() & CvtColor_1_U0_ap_idle.read() & Mat2AXIvideo_U0_ap_idle.read());
+    ap_idle = (AXIvideo2Mat_U0_ap_idle.read() & Not_U0_ap_idle.read() & Mat2AXIvideo_U0_ap_idle.read());
 }
 
 void subsamble::thread_ap_ready() {
@@ -719,20 +473,12 @@ void subsamble::thread_ap_sync_ready() {
     ap_sync_ready = AXIvideo2Mat_U0_ap_ready.read();
 }
 
-void subsamble::thread_start_for_CvtColor_1_U0_din() {
-    start_for_CvtColor_1_U0_din =  (sc_lv<1>) (ap_const_logic_1);
-}
-
-void subsamble::thread_start_for_CvtColor_U0_din() {
-    start_for_CvtColor_U0_din =  (sc_lv<1>) (ap_const_logic_1);
-}
-
 void subsamble::thread_start_for_Mat2AXIvideo_U0_din() {
     start_for_Mat2AXIvideo_U0_din =  (sc_lv<1>) (ap_const_logic_1);
 }
 
-void subsamble::thread_start_for_Sobel_U0_din() {
-    start_for_Sobel_U0_din =  (sc_lv<1>) (ap_const_logic_1);
+void subsamble::thread_start_for_Not_U0_din() {
+    start_for_Not_U0_din =  (sc_lv<1>) (ap_const_logic_1);
 }
 
 void subsamble::thread_stream_in_TREADY() {
