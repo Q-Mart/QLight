@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Thu Feb  7 10:39:09 2019
+# Process ID: 18723
+# Current directory: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_0_synth_1
+# Command line: vivado -log system_axis_subset_converter_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_axis_subset_converter_0_0.tcl
+# Log file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_0_synth_1/system_axis_subset_converter_0_0.vds
+# Journal file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_axis_subset_converter_0_0.tcl -notrace

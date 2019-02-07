@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Thu Feb  7 10:36:21 2019
+# Process ID: 18068
+# Current directory: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_proc_sys_reset_0_0_synth_1
+# Command line: vivado -log system_proc_sys_reset_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_proc_sys_reset_0_0.tcl
+# Log file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_proc_sys_reset_0_0_synth_1/system_proc_sys_reset_0_0.vds
+# Journal file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_proc_sys_reset_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_proc_sys_reset_0_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_proc_sys_reset_0_0, cache-ID = ad637153691a6ea9.
+INFO: [Common 17-206] Exiting Vivado at Thu Feb  7 10:36:46 2019...

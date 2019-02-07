@@ -1,0 +1,474 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Thu Feb  7 10:40:04 2019
+# Process ID: 18900
+# Current directory: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_1_synth_1
+# Command line: vivado -log system_axis_subset_converter_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_axis_subset_converter_0_1.tcl
+# Log file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_1_synth_1/system_axis_subset_converter_0_1.vds
+# Journal file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_1_synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_axis_subset_converter_0_1.tcl -notrace
+Command: synth_design -top system_axis_subset_converter_0_1 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 18908 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1363.352 ; gain = 90.859 ; free physical = 7446 ; free virtual = 27162
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/synth/system_axis_subset_converter_0_1.v:58]
+INFO: [Synth 8-6157] synthesizing module 'top_system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/top_system_axis_subset_converter_0_1.v:60]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000010011011 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000010011011 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DEFAULT_TLAST bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_subset_converter_v1_1_17_core' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/5a7d/hdl/axis_subset_converter_v1_1_vl_rfs.v:62]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000010011011 
+	Parameter C_M_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000010011011 
+	Parameter C_DEFAULT_TLAST bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_SIGNAL_SET_XOR bound to: 32'b00000000000000000000000000000000 
+	Parameter P_SIGNAL_SET_ADD bound to: 32'b00000000000000000000000000000000 
+	Parameter P_SIGNAL_SET_REM bound to: 32'b00000000000000000000000000000000 
+	Parameter P_TLAST_CNTR_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_subset_converter_v1_1_17_core' (1#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/5a7d/hdl/axis_subset_converter_v1_1_vl_rfs.v:62]
+INFO: [Synth 8-6157] synthesizing module 'tdata_system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tdata_system_axis_subset_converter_0_1.v:48]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdata_system_axis_subset_converter_0_1' (2#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tdata_system_axis_subset_converter_0_1.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tuser_system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tuser_system_axis_subset_converter_0_1.v:48]
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tuser_system_axis_subset_converter_0_1' (3#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tuser_system_axis_subset_converter_0_1.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tid_system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tid_system_axis_subset_converter_0_1.v:48]
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TID_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tid_system_axis_subset_converter_0_1' (4#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tid_system_axis_subset_converter_0_1.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tdest_system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tdest_system_axis_subset_converter_0_1.v:48]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdest_system_axis_subset_converter_0_1' (5#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tdest_system_axis_subset_converter_0_1.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tstrb_system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tstrb_system_axis_subset_converter_0_1.v:48]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tstrb_system_axis_subset_converter_0_1' (6#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tstrb_system_axis_subset_converter_0_1.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tkeep_system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tkeep_system_axis_subset_converter_0_1.v:48]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tkeep_system_axis_subset_converter_0_1' (7#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tkeep_system_axis_subset_converter_0_1.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tlast_system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tlast_system_axis_subset_converter_0_1.v:48]
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tlast_system_axis_subset_converter_0_1' (8#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/tlast_system_axis_subset_converter_0_1.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'top_system_axis_subset_converter_0_1' (9#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/hdl/top_system_axis_subset_converter_0_1.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_subset_converter_0_1' (10#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/synth/system_axis_subset_converter_0_1.v:58]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tid[0]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[23]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[22]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[21]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[20]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[19]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[18]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[17]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[16]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[15]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[14]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[13]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[12]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[11]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[10]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[9]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[8]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[7]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[6]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[5]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[4]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[3]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[2]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[1]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdata[0]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tuser[0]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tdest[0]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tkeep[2]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tkeep[1]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tkeep[0]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tstrb[2]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tstrb[1]
+WARNING: [Synth 8-3331] design tlast_system_axis_subset_converter_0_1 has unconnected port tstrb[0]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[23]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[22]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[21]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[20]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[19]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[18]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[17]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[16]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[15]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[14]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[13]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[12]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[11]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[10]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[9]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[8]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[7]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[6]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[5]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[4]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[3]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[2]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[1]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdata[0]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tuser[0]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tid[0]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tdest[0]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tstrb[2]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tstrb[1]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tstrb[0]
+WARNING: [Synth 8-3331] design tkeep_system_axis_subset_converter_0_1 has unconnected port tlast
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[23]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[22]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[21]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[20]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[19]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[18]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[17]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[16]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[15]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[14]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[13]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[12]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[11]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[10]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[9]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[8]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[7]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[6]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[5]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[4]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[3]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[2]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[1]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdata[0]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tuser[0]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tid[0]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tdest[0]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tkeep[2]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tkeep[1]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tkeep[0]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tstrb[2]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tstrb[1]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tstrb[0]
+WARNING: [Synth 8-3331] design tstrb_system_axis_subset_converter_0_1 has unconnected port tlast
+WARNING: [Synth 8-3331] design tdest_system_axis_subset_converter_0_1 has unconnected port tdata[23]
+WARNING: [Synth 8-3331] design tdest_system_axis_subset_converter_0_1 has unconnected port tdata[22]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1407.977 ; gain = 135.484 ; free physical = 7460 ; free virtual = 27176
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1407.977 ; gain = 135.484 ; free physical = 7459 ; free virtual = 27176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1407.977 ; gain = 135.484 ; free physical = 7459 ; free virtual = 27176
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_1_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1642.812 ; gain = 0.000 ; free physical = 7224 ; free virtual = 26941
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1642.812 ; gain = 370.320 ; free physical = 7291 ; free virtual = 27008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1642.812 ; gain = 370.320 ; free physical = 7291 ; free virtual = 27007
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_1_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1642.812 ; gain = 370.320 ; free physical = 7293 ; free virtual = 27010
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1642.812 ; gain = 370.320 ; free physical = 7292 ; free virtual = 27009
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:26 . Memory (MB): peak = 1642.812 ; gain = 370.320 ; free physical = 7290 ; free virtual = 27009
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:34 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7164 ; free virtual = 26882
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:34 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7164 ; free virtual = 26882
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:34 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7164 ; free virtual = 26882
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7163 ; free virtual = 26882
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7163 ; free virtual = 26882
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7163 ; free virtual = 26882
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7163 ; free virtual = 26882
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7163 ; free virtual = 26882
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7163 ; free virtual = 26882
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------------------------------------+------+
+|      |Instance |Module                               |Cells |
++------+---------+-------------------------------------+------+
+|1     |top      |                                     |     0|
+|2     |  inst   |top_system_axis_subset_converter_0_1 |     0|
++------+---------+-------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1686.812 ; gain = 414.320 ; free physical = 7163 ; free virtual = 26882
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1686.812 ; gain = 179.484 ; free physical = 7222 ; free virtual = 26940
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1686.820 ; gain = 414.320 ; free physical = 7232 ; free virtual = 26951
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+30 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:36 . Memory (MB): peak = 1705.812 ; gain = 444.914 ; free physical = 7208 ; free virtual = 26926
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_1_synth_1/system_axis_subset_converter_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1.xci
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axis_subset_converter_0_1_synth_1/system_axis_subset_converter_0_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_axis_subset_converter_0_1_utilization_synth.rpt -pb system_axis_subset_converter_0_1_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1705.812 ; gain = 0.000 ; free physical = 7211 ; free virtual = 26929
+INFO: [Common 17-206] Exiting Vivado at Thu Feb  7 10:41:00 2019...

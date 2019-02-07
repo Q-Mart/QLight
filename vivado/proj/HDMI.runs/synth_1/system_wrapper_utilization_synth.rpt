@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-| Date         : Mon Feb  4 11:05:09 2019
+| Date         : Thu Feb  7 11:32:08 2019
 | Host         : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
 | Design       : system_wrapper
@@ -155,39 +155,35 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+------------------------------------+------+
-|              Ref Name              | Used |
-+------------------------------------+------+
-| system_xlconstant_0_2              |    1 |
-| system_xlconstant_0_0              |    1 |
-| system_xlconcat_0_0                |    1 |
-| system_xbar_1                      |    1 |
-| system_xbar_0                      |    1 |
-| system_v_vid_in_axi4s_0_0          |    1 |
-| system_v_tc_0_1                    |    1 |
-| system_v_tc_0_0                    |    1 |
-| system_v_axi4s_vid_out_0_0         |    1 |
-| system_system_ila_0_0              |    1 |
-| system_subsamble_0_0               |    1 |
-| system_s01_regslice_0              |    1 |
-| system_s00_regslice_0              |    1 |
-| system_rst_ps7_0_100M_0            |    1 |
-| system_rgb2dvi_0_0                 |    1 |
-| system_processing_system7_0_0      |    1 |
-| system_proc_sys_reset_1_0          |    1 |
-| system_proc_sys_reset_0_0          |    1 |
-| system_m00_regslice_0              |    1 |
-| system_dvi2rgb_0_0                 |    1 |
-| system_axis_subset_converter_in_0  |    1 |
-| system_axis_subset_converter_in1_0 |    1 |
-| system_axis_subset_converter_0_1   |    1 |
-| system_axis_subset_converter_0_0   |    1 |
-| system_axi_vdma_0_3                |    1 |
-| system_axi_gpio_0_0                |    1 |
-| system_axi_dynclk_0_0              |    1 |
-| system_auto_pc_1                   |    1 |
-| system_auto_pc_0                   |    1 |
-+------------------------------------+------+
++----------------------------------+------+
+|             Ref Name             | Used |
++----------------------------------+------+
+| system_xlconstant_0_2            |    1 |
+| system_xlconstant_0_0            |    1 |
+| system_xlconcat_0_0              |    1 |
+| system_xbar_1                    |    1 |
+| system_xbar_0                    |    1 |
+| system_v_vid_in_axi4s_0_0        |    1 |
+| system_v_tc_0_1                  |    1 |
+| system_v_tc_0_0                  |    1 |
+| system_v_axi4s_vid_out_0_0       |    1 |
+| system_s01_regslice_0            |    1 |
+| system_s00_regslice_0            |    1 |
+| system_rst_ps7_0_100M_0          |    1 |
+| system_rgb2dvi_0_0               |    1 |
+| system_processing_system7_0_0    |    1 |
+| system_proc_sys_reset_1_0        |    1 |
+| system_proc_sys_reset_0_0        |    1 |
+| system_m00_regslice_0            |    1 |
+| system_dvi2rgb_0_0               |    1 |
+| system_axis_subset_converter_0_1 |    1 |
+| system_axis_subset_converter_0_0 |    1 |
+| system_axi_vdma_0_3              |    1 |
+| system_axi_gpio_0_0              |    1 |
+| system_axi_dynclk_0_0            |    1 |
+| system_auto_pc_1                 |    1 |
+| system_auto_pc_0                 |    1 |
++----------------------------------+------+
 
 
 9. Instantiated Netlists

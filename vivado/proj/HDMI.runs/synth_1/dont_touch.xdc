@@ -74,18 +74,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xbar_1 |
 # IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xlconstant_0_2/system_xlconstant_0_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlconstant_0_2 || ORIG_REF_NAME==system_xlconstant_0_2} -quiet] -quiet
 
-# IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_in_0/system_axis_subset_converter_in_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_subset_converter_in_0 || ORIG_REF_NAME==system_axis_subset_converter_in_0} -quiet] -quiet
-
-# IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_subsamble_0_0/system_subsamble_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_subsamble_0_0 || ORIG_REF_NAME==system_subsamble_0_0} -quiet] -quiet
-
-# IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_in1_0/system_axis_subset_converter_in1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_subset_converter_in1_0 || ORIG_REF_NAME==system_axis_subset_converter_in1_0} -quiet] -quiet
-
-# IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_system_ila_0_0/system_system_ila_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_system_ila_0_0 || ORIG_REF_NAME==system_system_ila_0_0} -quiet] -quiet
-
 # IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_1/system_auto_pc_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_1 || ORIG_REF_NAME==system_auto_pc_1} -quiet] -quiet
 
