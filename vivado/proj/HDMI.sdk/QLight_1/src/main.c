@@ -7,6 +7,7 @@
 #include "xparameters.h"
 #include "sleep.h"
 #include "xil_cache.h"
+#include "section.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
@@ -43,14 +44,60 @@ const ivt_t ivt[] = {
 // Bool signifying whether there is a HDMI connection. 0 = disconnected
 int hdmiConnection = 0;
 
-void init() {
+// Sections of the frame which will be analysed
+Section sections[8];
+
+u8 frameToProcess[MAX_FRAME];
+
+void initSections() {
+	sections[0].startX = 0;
+	sections[0].startY = 0;
+	sections[0].length = 240;
+	sections[0].height = 525;
+
+	sections[1].startX = 240;
+	sections[1].startY = 0;
+	sections[1].length = 600;
+	sections[1].height = 240;
+
+	sections[2].startX = 840;
+	sections[2].startY = 0;
+	sections[2].length = 600;
+	sections[2].height = 240;
+
+	sections[3].startX = 1440;
+	sections[3].startY = 0;
+	sections[3].length = 240;
+	sections[3].height = 525;
+
+	sections[4].startX = 1440;
+	sections[4].startY = 525;
+	sections[4].length = 240;
+	sections[4].height = 525;
+
+	sections[5].startX = 840;
+	sections[5].startY = 810;
+	sections[5].length = 600;
+	sections[5].height = 240;
+
+	sections[6].startX = 240;
+	sections[6].startY = 810;
+	sections[6].length = 600;
+	sections[6].height = 240;
+
+	sections[0].startX = 0;
+	sections[0].startY = 525;
+	sections[0].length = 240;
+	sections[0].height = 525;
+}
+
+void initVideo() {
 	int Status;
 	XAxiVdma_Config *vdmaConfig;
 	int i;
 
 	/*
 	 * Initialize an array of pointers //		printf("Version number: %d\r\n", ram[0]);
-//		printf("Doing sobel for operation %d\r\n", ram[1]);to the 3 frame buffers
 	 */
 	for (i = 0; i < DISPLAY_NUM_FRAMES; i++)
 	{
@@ -190,31 +237,46 @@ void invertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
 	Xil_DCacheFlushRange((unsigned int) destFrame, MAX_FRAME);
 }
 
+void paintSectionBlack(u8 *destFrame, u32 stride, Section *s) {
+	for (u16 x=s->startX; x<s->length; x++) {
+		for (u16 y=s->startY; y<s->height; y++) {
+			destFrame[(x*3) + (stride*y)] = 0; // R
+			destFrame[(x*3) + (stride*y) + 1] = 0; // B
+			destFrame[(x*3) + (stride*y) + 2] = 0; // G
+		}
+	}
+}
+
 int main() {
 	printGreeting();
-	init();
-	printf("Initialisation complete\r\n");
+	initVideo();
+	printf("Video initialisation complete\r\n");
 
 	VideoStart(&videoCapt);
 	printf("Video streaming initialised\r\n");
 
-	u32 nextFrame;
-	while (1) {
-		nextFrame = videoCapt.curFrame + 1;
-		if (nextFrame >= DISPLAY_NUM_FRAMES)
-		{
-			nextFrame = 0;
-		}
-		invertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, STRIDE);
-		DisplayChangeFrame(&dispCtrl, nextFrame);
-		usleep(1000000);
+	initSections();
+	printf("Sections initialised\r\n");
 
+	u32 nextFrame;
+	int i = 0;
+	while (1) {
+//		if (i > 7) {
+//			i = 0;
+//		}
 		nextFrame = videoCapt.curFrame + 1;
 		if (nextFrame >= DISPLAY_NUM_FRAMES)
 		{
 			nextFrame = 0;
 		}
-		VideoChangeFrame(&videoCapt, nextFrame);
+//		invertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, STRIDE);
+		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
+		paintSectionBlack(frameToProcess, STRIDE, &sections[0]);
+		memcpy(pFrames[nextFrame], frameToProcess, sizeof(frameToProcess));
+		DisplayChangeFrame(&dispCtrl, nextFrame);
+
+//		i++;
+//		usleep(1000000);
 
 	}
 
