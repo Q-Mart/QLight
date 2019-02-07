@@ -4,8 +4,9 @@
 #include "intc/intc.h"
 #include "timer_ps/timer_ps.h"
 #include <stdio.h>
-//#include "xsubsamble.h"
 #include "xparameters.h"
+#include "sleep.h"
+#include "xil_cache.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
@@ -48,7 +49,8 @@ void init() {
 	int i;
 
 	/*
-	 * Initialize an array of pointers to the 3 frame buffers
+	 * Initialize an array of pointers //		printf("Version number: %d\r\n", ram[0]);
+//		printf("Doing sobel for operation %d\r\n", ram[1]);to the 3 frame buffers
 	 */
 	for (i = 0; i < DISPLAY_NUM_FRAMES; i++)
 	{
@@ -142,30 +144,79 @@ void ConnectedISR(void* callBackRef, void *pVideo) {
 	}
 }
 
+void resetTerminal() {
+	printf("\x1B[H"); //Set cursor to top left of terminal
+	printf("\x1B[2J"); //Clear terminal
+}
+
 void printGreeting() {
-	printf("#########################\r\n");
+	resetTerminal();
+
+	printf("  /$$$$$$  /$$       /$$           /$$         /$$    \r\n");
+	printf(" /$$__  $$| $$      |__/          | $$        | $$    \r\n");
+	printf("| $$  \ $$| $$       /$$  /$$$$$$ | $$$$$$$  /$$$$$$  \r\n");
+	printf("| $$  | $$| $$      | $$ /$$__  $$| $$__  $$|_  $$_/  \r\n");
+	printf("| $$  | $$| $$      | $$| $$  \ $$| $$  \ $$  | $$    \r\n");
+	printf("| $$/$$ $$| $$      | $$| $$  | $$| $$  | $$  | $$ /$$\r\n");
+	printf("|  $$$$$$/| $$$$$$$$| $$|  $$$$$$$| $$  | $$  |  $$$$/\r\n");
+	printf(" \____ $$$|________/|__/ \____  $$|__/  |__/   \___/  \r\n");
+	printf("      \__/               /$$  \ $$                    \r\n");
+	printf("                        |  $$$$$$/                    \r\n");
+	printf("                         \______/                     \r\n");
+	usleep(5000000);
+
+	resetTerminal();
 	printf("QLight Version %.1f\r\n", VERSION);
 }
 
-int main() {
-//	XSubsamble subsampler;
+void invertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 xcoi, ycoi;
+	u32 lineStart = 0;
+	for(ycoi = 0; ycoi < height; ycoi++)
+	{
+		for(xcoi = 0; xcoi < (width * 3); xcoi+=3)
+		{
+			destFrame[xcoi + lineStart] = ~srcFrame[xcoi + lineStart];         //Red
+			destFrame[xcoi + lineStart + 1] = ~srcFrame[xcoi + lineStart + 1]; //Blue
+			destFrame[xcoi + lineStart + 2] = ~srcFrame[xcoi + lineStart + 2]; //Green
+		}
+		lineStart += stride;
+	}
+	/*
+	 * Flush the framebuffer memory range to ensure changes are written to the
+	 * actual memory, and therefore accessible by the VDMA.
+	 */
+	Xil_DCacheFlushRange((unsigned int) destFrame, MAX_FRAME);
+}
 
+int main() {
 	printGreeting();
 	init();
 	printf("Initialisation complete\r\n");
 
-//	u32 ram[2];
-//	uint32_t n = 0;
+	VideoStart(&videoCapt);
+	printf("Video streaming initialised\r\n");
 
-//	XSubsamble_Initialize(&subsampler, XPA)
-//	XSubsamble_Set_ram(&subsampler, ram);
-//	XSubsamble_Set_n(&subsampler, n);
-
-
+	u32 nextFrame;
 	while (1) {
-		VideoStart(&videoCapt);
-//		printf("Version number: %d\r\n", ram[0]);
-//		printf("Doing sobel for operation %d\r\n", ram[1]);
+		nextFrame = videoCapt.curFrame + 1;
+		if (nextFrame >= DISPLAY_NUM_FRAMES)
+		{
+			nextFrame = 0;
+		}
+		invertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, STRIDE);
+		DisplayChangeFrame(&dispCtrl, nextFrame);
+		usleep(1000000);
+
+		nextFrame = videoCapt.curFrame + 1;
+		if (nextFrame >= DISPLAY_NUM_FRAMES)
+		{
+			nextFrame = 0;
+		}
+		VideoChangeFrame(&videoCapt, nextFrame);
+
 	}
+
 
 }
