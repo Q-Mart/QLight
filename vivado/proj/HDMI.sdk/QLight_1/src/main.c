@@ -8,6 +8,7 @@
 #include "sleep.h"
 #include "xil_cache.h"
 #include "section.h"
+#include "constants.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
@@ -85,10 +86,10 @@ void initSections() {
 	sections[6].length = 600;
 	sections[6].height = 240;
 
-	sections[0].startX = 0;
-	sections[0].startY = 525;
-	sections[0].length = 240;
-	sections[0].height = 525;
+	sections[7].startX = 0;
+	sections[7].startY = 525;
+	sections[7].length = 240;
+	sections[7].height = 525;
 }
 
 void initVideo() {
@@ -210,42 +211,12 @@ void printGreeting() {
 	printf("      \__/               /$$  \ $$                    \r\n");
 	printf("                        |  $$$$$$/                    \r\n");
 	printf("                         \______/                     \r\n");
-	usleep(5000000);
+	usleep(1000000);
 
 	resetTerminal();
 	printf("QLight Version %.1f\r\n", VERSION);
 }
 
-void invertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
-{
-	u32 xcoi, ycoi;
-	u32 lineStart = 0;
-	for(ycoi = 0; ycoi < height; ycoi++)
-	{
-		for(xcoi = 0; xcoi < (width * 3); xcoi+=3)
-		{
-			destFrame[xcoi + lineStart] = ~srcFrame[xcoi + lineStart];         //Red
-			destFrame[xcoi + lineStart + 1] = ~srcFrame[xcoi + lineStart + 1]; //Blue
-			destFrame[xcoi + lineStart + 2] = ~srcFrame[xcoi + lineStart + 2]; //Green
-		}
-		lineStart += stride;
-	}
-	/*
-	 * Flush the framebuffer memory range to ensure changes are written to the
-	 * actual memory, and therefore accessible by the VDMA.
-	 */
-	Xil_DCacheFlushRange((unsigned int) destFrame, MAX_FRAME);
-}
-
-void paintSectionBlack(u8 *destFrame, u32 stride, Section *s) {
-	for (u16 x=s->startX; x<s->length; x++) {
-		for (u16 y=s->startY; y<s->height; y++) {
-			destFrame[(x*3) + (stride*y)] = 0; // R
-			destFrame[(x*3) + (stride*y) + 1] = 0; // B
-			destFrame[(x*3) + (stride*y) + 2] = 0; // G
-		}
-	}
-}
 
 int main() {
 	printGreeting();
@@ -259,11 +230,7 @@ int main() {
 	printf("Sections initialised\r\n");
 
 	u32 nextFrame;
-	int i = 0;
 	while (1) {
-//		if (i > 7) {
-//			i = 0;
-//		}
 		nextFrame = videoCapt.curFrame + 1;
 		if (nextFrame >= DISPLAY_NUM_FRAMES)
 		{
@@ -271,12 +238,11 @@ int main() {
 		}
 //		invertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, STRIDE);
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
-		paintSectionBlack(frameToProcess, STRIDE, &sections[0]);
+		for (int i=0; i<8; i++) {
+			paintSectionBlack(frameToProcess, STRIDE, &sections[i]);
+		}
 		memcpy(pFrames[nextFrame], frameToProcess, sizeof(frameToProcess));
 		DisplayChangeFrame(&dispCtrl, nextFrame);
-
-//		i++;
-//		usleep(1000000);
 
 	}
 

@@ -1,0 +1,10 @@
+#ifndef CONSTANTS_H_
+#define CONSTANTS_H_
+
+#define MAX_WIDTH 1680
+#define MAX_HEIGHT 1050
+
+#define MAX_FRAME (MAX_WIDTH*MAX_HEIGHT*3)
+#define STRIDE (MAX_WIDTH*3)
+
+#endif
