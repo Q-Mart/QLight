@@ -58,7 +58,6 @@ u32 mode(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height) 
 			if (!inVisited(&sectionData[current])) {
 				visit(sectionData+current);
 				currentFreq = getFrequency(sectionData+current, stride, length, height);
-				printf("Frequency of (%d, %d, %d): %d\r\n", sectionData[current][0], sectionData[current][1], sectionData[current][2], currentFreq);
 
 				if (currentFreq >= modeFreq) {
 					modeFreq = currentFreq;
@@ -68,17 +67,6 @@ u32 mode(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height) 
 		}
 	}
 
-	u8 testPixels[2][3] = {
-			{0, 0, 0},
-			{125, 125, 125}
-	};
-
-	printf("%d\r\n", inVisited(testPixels[0]));
-	printf("%d\r\n", inVisited(testPixels[1]));
-
-	u8 mode[3];
-	memcpy(mode, modePixel, 3);
-	printf("Mode pixel is: (%d, %d, %d)\r\n", mode[0], mode[1], mode[2]);
 
 	return modePixel;
 }

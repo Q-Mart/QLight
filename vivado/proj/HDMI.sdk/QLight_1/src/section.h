@@ -11,6 +11,6 @@ typedef struct {
 } Section;
 
 void applyFuncToSection(u8 *destFrame, u32 stride, Section *s, void (*func)(u32 R, u32 B, u32 G, u8 *dst));
-void paintBlack(u32 R, u32 B, u32 G, u8 *dst);
+void paintSectionColour(u8 *destFrame, u32 stride, Section *s, u8 red, u8 blue, u8 green);
 void paintSectionBlack(u8 *destFrame, u32 stride, Section *s);
 #endif
