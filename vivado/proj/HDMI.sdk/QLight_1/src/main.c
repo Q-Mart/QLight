@@ -9,6 +9,7 @@
 #include "xil_cache.h"
 #include "section.h"
 #include "constants.h"
+#include "mode.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
@@ -229,6 +230,15 @@ int main() {
 	initSections();
 	printf("Sections initialised\r\n");
 
+	u8 testData[15] = {
+			255, 255, 255,
+			255, 255, 255,
+			255, 255, 255,
+			0, 0, 0,
+			0, 0, 0
+	};
+	mode(testData, 1, 0, 0, 1, 5);
+
 	u32 nextFrame;
 	while (1) {
 		nextFrame = videoCapt.curFrame + 1;
@@ -236,7 +246,6 @@ int main() {
 		{
 			nextFrame = 0;
 		}
-//		invertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, STRIDE);
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
 		for (int i=0; i<8; i++) {
 			paintSectionBlack(frameToProcess, STRIDE, &sections[i]);
