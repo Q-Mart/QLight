@@ -252,7 +252,7 @@ int main() {
 		u32 modePixel;
 		u8 modeRBG[3];
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
-		for (int i=0; i<8; i++) {
+		for (int i=0; i<1; i++) {
 //			modePixel = mode(frameToProcess, STRIDE, sections[i].startX, sections[i].startY, sections[i].length, sections[i].height);
 //			memcpy(modeRBG, modePixel, 3);
 //			printf("%d %d %d\r\n", modeRBG[0], modeRBG[1], modeRBG[2]);
@@ -263,6 +263,7 @@ int main() {
 		memcpy(pFrames[nextFrame], frameToProcess, sizeof(frameToProcess));
 		DisplayChangeFrame(&dispCtrl, nextFrame);
 
+		resetTerminal();
 	}
 
 

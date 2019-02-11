@@ -135,3 +135,10 @@ dismissDialog("Launch SDK"); // aa (ck)
 // HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 12:39:33 PM GMT
 // HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 1:09:33 PM GMT
 // HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 1:39:33 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 2:09:33 PM GMT
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2070 ms. Increasing delay to 4000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 2:39:33 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 3:09:34 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 3:39:34 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 4:09:34 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 41 MB. Current time: 2/11/19 4:39:34 PM GMT
