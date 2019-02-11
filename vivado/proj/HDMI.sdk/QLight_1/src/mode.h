@@ -1,11 +1,8 @@
 #ifndef MODE_H_
 #define MODE_H_
 
-#include "section.h"
-
-#define MAX_SECTION_WIDTH 600
-#define MAX_SECTION_HEIGHT 525
-#define MAX_ARRAY_SIZE MAX_SECTION_WIDTH*MAX_SECTION_HEIGHT
+#include "xbasic_types.h"
+#include "constants.h"
 
 u8 equal(u8 *pixel1, u8 *pixel2);
 u8 inVisited(u8 (*pixel)[3]);
