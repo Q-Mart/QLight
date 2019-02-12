@@ -59,41 +59,57 @@ void initSections() {
 	sections[0].startY = 0;
 	sections[0].length = 240;
 	sections[0].height = 525;
+	sections[0].scaledLength = 29;
+	sections[0].scaledHeight = 65;
 
 	sections[1].startX = 240;
 	sections[1].startY = 0;
 	sections[1].length = 600;
 	sections[1].height = 240;
+	sections[1].scaledLength = 74;
+	sections[1].scaledHeight = 29;
 
 	sections[2].startX = 840;
 	sections[2].startY = 0;
 	sections[2].length = 600;
 	sections[2].height = 240;
+	sections[2].scaledLength = 74;
+	sections[2].scaledHeight = 29;
 
 	sections[3].startX = 1440;
 	sections[3].startY = 0;
 	sections[3].length = 240;
 	sections[3].height = 525;
+	sections[3].scaledLength = 29;
+	sections[3].scaledHeight = 65;
 
 	sections[4].startX = 1440;
 	sections[4].startY = 525;
 	sections[4].length = 240;
 	sections[4].height = 525;
+	sections[4].scaledLength = 29;
+	sections[4].scaledHeight = 65;
 
 	sections[5].startX = 840;
 	sections[5].startY = 810;
 	sections[5].length = 600;
 	sections[5].height = 240;
+	sections[5].scaledLength = 74;
+	sections[5].scaledHeight = 29;
 
 	sections[6].startX = 240;
 	sections[6].startY = 810;
 	sections[6].length = 600;
 	sections[6].height = 240;
+	sections[6].scaledLength = 74;
+	sections[6].scaledHeight = 29;
 
 	sections[7].startX = 0;
 	sections[7].startY = 525;
 	sections[7].length = 240;
 	sections[7].height = 525;
+	sections[7].scaledLength = 29;
+	sections[7].scaledHeight = 65;
 }
 
 void initVideo() {
@@ -253,13 +269,11 @@ int main() {
 		u8 modeRBG[3];
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
 		for (int i=0; i<8; i++) {
-//			modePixel = mode(frameToProcess, STRIDE, sections[i].startX, sections[i].startY, sections[i].length, sections[i].height);
-//			memcpy(modeRBG, modePixel, 3);
-//			printf("%d %d %d\r\n", modeRBG[0], modeRBG[1], modeRBG[2]);
-//			paintSectionColour(frameToProcess, STRIDE, &sections[i], modeRBG[0], modeRBG[1], modeRBG[2]);
 			scale(frameToProcess, STRIDE, sections[i].startX, sections[i].startY, sections[i].length, sections[i].height);
+			modePixel = mode(frameToProcess, STRIDE, sections[i].startX, sections[i].startY, sections[i].scaledLength, sections[i].scaledHeight);
+			memcpy(modeRBG, modePixel, 3);
+			paintSectionColour(frameToProcess, STRIDE, &sections[i], modeRBG[0], modeRBG[1], modeRBG[2]);
 		}
-//		printf("Completed finding mode!\r\n");
 		memcpy(pFrames[nextFrame], frameToProcess, sizeof(frameToProcess));
 		DisplayChangeFrame(&dispCtrl, nextFrame);
 

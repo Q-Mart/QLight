@@ -8,6 +8,8 @@ typedef struct {
 	u16 startY;
 	u16 length;
 	u16 height;
+	u16 scaledLength;
+	u16 scaledHeight;
 } Section;
 
 void applyFuncToSection(u8 *destFrame, u32 stride, Section *s, void (*func)(u32 R, u32 B, u32 G, u8 *dst));

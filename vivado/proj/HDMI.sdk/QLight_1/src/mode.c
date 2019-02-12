@@ -1,7 +1,7 @@
 #include "mode.h"
 
-u8 sectionData[MAX_ARRAY_SIZE][3];
-u8 visited[MAX_ARRAY_SIZE][3];
+u8 sectionData[MAX_ARRAY_SIZE*3];
+u8 visited[MAX_ARRAY_SIZE*3];
 u16 numberOfPixelsVisted = 0;
 
 u8 equal(u8 *pixel1, u8 *pixel2) {
@@ -10,9 +10,9 @@ u8 equal(u8 *pixel1, u8 *pixel2) {
 			pixel1[2] == pixel2[2]);
 }
 
-u8 inVisited(u8 (*pixel)[3]) {
+u8 inVisited(u8 *pixel) {
 	for (int i=0; i<numberOfPixelsVisted; i++) {
-		if (equal(pixel, &visited[i])) {
+		if (equal(pixel, &visited[i*3])) {
 			return 1;
 		}
 	}
@@ -20,17 +20,17 @@ u8 inVisited(u8 (*pixel)[3]) {
 	return 0;
 }
 
-void visit(u8 (*pixel)[3]) {
-	memcpy(&visited[numberOfPixelsVisted], pixel, 3);
+void visit(u8 *pixel) {
+	memcpy(&visited[numberOfPixelsVisted*3], pixel, 3);
 	numberOfPixelsVisted++;
 }
 
-u16 getFrequency(u8 (*pixel)[3], u32 stride, u16 length, u16 height) {
+u16 getFrequency(u8 *pixel, u16 length, u16 height) {
 	u32 current;
 	u32 result = 0;
 	for (int x=0; x<length; x++) {
 		for (int y=0; y<height; y++) {
-			current = x + (stride * y);
+			current = (x*3) + (length * 3 * y);
 			if (equal(&sectionData[current], pixel)) {
 				result++;
 			}
@@ -45,7 +45,10 @@ u32 mode(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height) 
 	numberOfPixelsVisted = 0;
 
 	u32 startIndex = (startX*3) + (stride*startY);
-	memcpy(sectionData, &frame[startIndex], height*length*3);
+	for (u16 i=0; i<height; i++) {
+		memcpy(sectionData+(i*length*3), &frame[startIndex+(stride*i)], length*3);
+	}
+
 
 	u32 modePixel;
 	u16 modeFreq = 0;
@@ -57,7 +60,7 @@ u32 mode(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height) 
 			current = x + (stride * y);
 			if (!inVisited(&sectionData[current])) {
 				visit(sectionData+current);
-				currentFreq = getFrequency(sectionData+current, stride, length, height);
+				currentFreq = getFrequency(sectionData+current, length, height);
 
 				if (currentFreq >= modeFreq) {
 					modeFreq = currentFreq;

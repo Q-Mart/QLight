@@ -13,14 +13,13 @@ void scale(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height
 	// Can be 14 bits when converting to HLS
 	u16 rollingAverage[3] = {0, 0, 0};
 
-	// Can be 9 bits when converting to HLS
+	// Can be 7 bits when converting to HLS
 	u16 scaledX = 0;
 	u16 scaledY = 0;
 
 	u16 endX = startX+length;
 	u16 endY = startY+height;
 	u32 current;
-
 	for (u16 x=0; x<length; x+=SCALING_FACTOR) {
 		for (u16 y=0; y<height; y+=SCALING_FACTOR) {
 			for (u16 windowX=x; windowX<x+SCALING_FACTOR && windowX+SCALING_FACTOR<endX; windowX++) {
