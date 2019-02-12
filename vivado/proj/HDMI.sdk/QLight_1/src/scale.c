@@ -1,4 +1,6 @@
 #include "scale.h"
+#include "sleep.h"
+#include "inttypes.h"
 u8 sectionData[MAX_ARRAY_SIZE*3];
 
 void scale(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height) {
@@ -18,11 +20,12 @@ void scale(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height
 	u16 endX = startX+length;
 	u16 endY = startY+height;
 	u32 current;
+
 	for (u16 x=0; x<length; x+=SCALING_FACTOR) {
 		for (u16 y=0; y<height; y+=SCALING_FACTOR) {
 			for (u16 windowX=x; windowX<x+SCALING_FACTOR && windowX+SCALING_FACTOR<endX; windowX++) {
 				for (u16 windowY=y; windowY<y+SCALING_FACTOR && windowY+SCALING_FACTOR<endY; windowY++) {
-					current = (windowX*3) + (length*windowY);
+					current = (windowX*3) + (length*3*windowY);
 
 					rollingAverage[0] += sectionData[current];
 					rollingAverage[1] += sectionData[current+1];
