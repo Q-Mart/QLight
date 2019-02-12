@@ -34,9 +34,9 @@ void scale(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height
 			}
 
 			// Divide by SCALING_FACTOR squared
-			rollingAverage[0] = rollingAverage[0] >> 2;
-			rollingAverage[1] = rollingAverage[1] >> 2;
-			rollingAverage[2] = rollingAverage[2] >> 2;
+			rollingAverage[0] = rollingAverage[0] >> 6;
+			rollingAverage[1] = rollingAverage[1] >> 6;
+			rollingAverage[2] = rollingAverage[2] >> 6;
 
 			u32 index = ((startX+scaledX)*3)+(stride*(startY+scaledY));
 
