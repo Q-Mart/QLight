@@ -31,6 +31,17 @@
  
  
 /******************************************************************/
+/* Definitions for driver DIGILED */
+#define XPAR_DIGILED_NUM_INSTANCES 1
+
+/* Definitions for peripheral DIGILED_0 */
+#define XPAR_DIGILED_0_DEVICE_ID 0
+#define XPAR_DIGILED_0_S00_AXI_BASEADDR 0x43C30000
+#define XPAR_DIGILED_0_S00_AXI_HIGHADDR 0x43C3FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver AXIVDMA */
 #define XPAR_XAXIVDMA_NUM_INSTANCES 1U
 

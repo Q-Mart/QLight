@@ -10,6 +10,8 @@ typedef struct {
 	u16 height;
 	u16 scaledLength;
 	u16 scaledHeight;
+	u8 startLED;
+	u8 endLED;
 } Section;
 
 void applyFuncToSection(u8 *destFrame, u32 stride, Section *s, void (*func)(u32 R, u32 B, u32 G, u8 *dst));

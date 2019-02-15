@@ -31,6 +31,7 @@ set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
 set_property ip_repo_paths {
   /home/userfs/q/qj544/w2k/QLight/vivado/repo
+  /home/userfs/q/qj544/w2k/QLight/components
   /home/userfs/q/qj544/w2k/QLight/SubSample
 } [current_project]
 set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/cache [current_project]
@@ -66,6 +67,9 @@ set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_vdma_0_3/system_axi_vdma_0_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_0/system_axis_subset_converter_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/system_rst_axi_dynclk_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/system_rst_axi_dynclk_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/system_rst_axi_dynclk_0_100M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_1/system_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_m00_regslice_0/system_m00_regslice_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
@@ -81,11 +85,14 @@ set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/timing.xdc
-set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/timing.xdc]
+read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/imports/constraints/timing.xdc
+set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/imports/constraints/timing.xdc]
 
-read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/Zybo-Z7-Master.xdc
-set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/Zybo-Z7-Master.xdc]
+read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc
+set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc]
+
+read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/new/led.xdc
+set_property used_in_implementation false [get_files /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/new/led.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

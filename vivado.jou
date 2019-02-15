@@ -1,0 +1,169 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Thu Feb 14 10:08:33 2019
+# Process ID: 3415
+# Current directory: /home/userfs/q/qj544/w2k/QLight
+# Command line: vivado
+# Log file: /home/userfs/q/qj544/w2k/QLight/vivado.log
+# Journal file: /home/userfs/q/qj544/w2k/QLight/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd}
+startgroup
+set_property -dict [list CONFIG.C_S00_AXI_ADDR_WIDTH {7} CONFIG.NUMBER_OF_LEDS {24}] [get_bd_cells DigiLED_0]
+endgroup
+create_bd_port -dir O led_pin
+set_property location {2645 1727} [get_bd_ports led_pin]
+set_property location {1829 1507} [get_bd_ports led_pin]
+connect_bd_net [get_bd_ports led_pin] [get_bd_pins DigiLED_0/led_out]
+set_property location {3429 1434} [get_bd_ports led_pin]
+file mkdir /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1
+file mkdir /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/new
+close [ open /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/new/led.xdc w ]
+add_files -fileset constrs_1 /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/new/led.xdc
+import_files -fileset constrs_1 {/home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/timing.xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/Zybo-Z7-Master.xdc}
+make_wrapper -files [get_files /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd] -top
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M05_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/DigiLED_0/S00_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DigiLED_0/S00_AXI]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+delete_bd_objs [get_bd_nets DigiLED_0_led_out] [get_bd_intf_nets ps7_0_axi_periph_M05_AXI] [get_bd_cells DigiLED_0]
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:DigiLED:1.0 DigiLED_0
+endgroup
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins DigiLED_0/s00_axi_aclk]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK1 (133 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/DigiLED_0/S00_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DigiLED_0/S00_AXI]
+connect_bd_net [get_bd_ports led_pin] [get_bd_pins DigiLED_0/led_out]
+save_bd_design
+delete_bd_objs [get_bd_cells xlconstant_0]
+save_bd_design
+make_wrapper -files [get_files /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd] -top
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+apply_board_connection -board_interface "sws_4bits" -ip_intf "axi_gpio_0/GPIO" -diagram "system" 
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_0/S_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+undo
+undo
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+reset_run synth_1
+reset_run system_auto_cc_0_synth_1
+startgroup
+set_property -dict [list CONFIG.C_S00_AXI_ADDR_WIDTH {7} CONFIG.NUMBER_OF_LEDS {24}] [get_bd_cells DigiLED_0]
+endgroup
+save_bd_design
+reset_run system_DigiLED_0_1_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+startgroup
+set_property -dict [list CONFIG.COLOR_MODE {HSV}] [get_bd_cells DigiLED_0]
+endgroup
+save_bd_design
+reset_run synth_1
+reset_run system_DigiLED_0_1_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M05_AXI] [get_bd_nets DigiLED_0_led_out] [get_bd_cells DigiLED_0]
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:DigiLED:1.0 DigiLED_0
+endgroup
+set_property -dict [list CONFIG.C_S00_AXI_ADDR_WIDTH {7} CONFIG.NUMBER_OF_LEDS {24}] [get_bd_cells DigiLED_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {/axi_dynclk_0/PXL_CLK_5X_O (100 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/DigiLED_0/S00_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DigiLED_0/S00_AXI]
+save_bd_design
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto} rst_polarity {ACTIVE_LOW}}  [get_bd_pins rst_axi_dynclk_0_100M/ext_reset_in]
+connect_bd_net [get_bd_ports led_pin] [get_bd_pins DigiLED_0/led_out]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+delete_bd_objs [get_bd_nets DigiLED_0_led_out] [get_bd_nets rst_axi_dynclk_0_100M_peripheral_aresetn] [get_bd_intf_nets ps7_0_axi_periph_M05_AXI] [get_bd_cells DigiLED_0]
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:DigiLED:1.0 DigiLED_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+apply_board_connection -board_interface "btns_4bits" -ip_intf "axi_gpio_0/GPIO2" -diagram "system" 
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/DigiLED_0/S00_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DigiLED_0/S00_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_0/S_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_4bits ( 4 Buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]
+endgroup
+undo
+undo
+undo
+save_bd_design
+undo
+delete_bd_objs [get_bd_nets DigiLED_0_led_out] [get_bd_nets rst_axi_dynclk_0_100M_peripheral_aresetn] [get_bd_intf_nets ps7_0_axi_periph_M05_AXI] [get_bd_cells DigiLED_0]
+undo
+delete_bd_objs [get_bd_nets DigiLED_0_led_out] [get_bd_nets rst_axi_dynclk_0_100M_peripheral_aresetn] [get_bd_intf_nets ps7_0_axi_periph_M05_AXI] [get_bd_cells DigiLED_0]
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:DigiLED:1.0 DigiLED_0
+endgroup
+connect_bd_net [get_bd_ports led_pin] [get_bd_pins DigiLED_0/led_out]
+set_property location {8 3265 1453} [get_bd_cells DigiLED_0]
+set_property location {8 3278 1431} [get_bd_cells DigiLED_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/DigiLED_0/S00_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DigiLED_0/S00_AXI]
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+undo
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/DigiLED_0/S00_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DigiLED_0/S00_AXI]
+save_bd_design
+delete_bd_objs [get_bd_nets ACLK_1]
+undo
+disconnect_bd_net /ACLK_1 [get_bd_pins ps7_0_axi_periph/M05_ACLK]
+disconnect_bd_net /proc_sys_reset_0_peripheral_aresetn [get_bd_pins ps7_0_axi_periph/M05_ARESETN]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+startgroup
+set_property -dict [list CONFIG.C_S00_AXI_ADDR_WIDTH {7} CONFIG.NUMBER_OF_LEDS {24}] [get_bd_cells DigiLED_0]
+endgroup
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+disconnect_bd_net /rst_ps7_0_100M_peripheral_aresetn [get_bd_pins ps7_0_axi_periph/M05_ARESETN]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins ps7_0_axi_periph/M05_ACLK]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK1]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins DigiLED_0/s00_axi_aclk]
+connect_bd_net [get_bd_pins DigiLED_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK1]
+disconnect_bd_net /rst_ps7_0_100M_peripheral_aresetn [get_bd_pins DigiLED_0/s00_axi_aresetn]
+connect_bd_net [get_bd_pins DigiLED_0/s00_axi_aresetn] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+disconnect_bd_net /ACLK_1 [get_bd_pins ps7_0_axi_periph/M05_ACLK]
+disconnect_bd_net /proc_sys_reset_0_peripheral_aresetn [get_bd_pins ps7_0_axi_periph/M05_ARESETN]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+disconnect_bd_net /ACLK_1 [get_bd_pins DigiLED_0/s00_axi_aclk]
+connect_bd_net [get_bd_pins DigiLED_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+disconnect_bd_net /proc_sys_reset_0_peripheral_aresetn [get_bd_pins DigiLED_0/s00_axi_aresetn]
+connect_bd_net [get_bd_pins DigiLED_0/s00_axi_aresetn] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf

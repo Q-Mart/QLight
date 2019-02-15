@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-| Date         : Thu Feb  7 15:51:49 2019
-| Host         : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
+| Date         : Fri Feb 15 10:43:30 2019
+| Host         : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_drc -file system_wrapper_drc_opted.rpt -pb system_wrapper_drc_opted.pb -rpx system_wrapper_drc_opted.rpx
 | Design       : system_wrapper
 | Device       : xc7z010clg400-1
@@ -24,16 +24,123 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 4
-+----------+----------+-------------+------------+
-| Rule     | Severity | Description | Violations |
-+----------+----------+-------------+------------+
-| REQP-165 | Advisory | writefirst  | 2          |
-| REQP-181 | Advisory | writefirst  | 2          |
-+----------+----------+-------------+------------+
+             Violations found: 25
++-----------+----------+----------------------------+------------+
+| Rule      | Severity | Description                | Violations |
++-----------+----------+----------------------------+------------+
+| CHECK-3   | Warning  | Report rule limit reached  | 1          |
+| REQP-1840 | Warning  | RAMB18 async control check | 20         |
+| REQP-165  | Advisory | writefirst                 | 2          |
+| REQP-181  | Advisory | writefirst                 | 2          |
++-----------+----------+----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+CHECK-3#1 Warning
+Report rule limit reached  
+REQP-1840 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[10] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[5]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[10] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[5]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[10] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[5]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#4 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[10] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[5]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#5 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[11] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[6]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#6 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[11] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[6]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#7 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[11] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[6]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#8 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[11] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[6]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#9 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[11] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[6]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#10 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[11] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[6]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#11 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[11] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[6]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#12 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[11] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[6]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#13 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[12] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[7]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#14 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[12] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[7]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#15 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[12] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[7]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#16 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[12] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[7]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#17 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[12] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[7]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#18 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[12] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[7]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#19 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[12] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[7]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#20 Warning
+RAMB18 async control check  
+The RAMB18E1 system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg has an input control pin system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg/ADDRARDADDR[12] (net: system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_index[7]) which is driven by a register (system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_driver/led_counter_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
 REQP-165#1 Advisory
 writefirst  
 Synchronous clocking is detected for BRAM (system_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.

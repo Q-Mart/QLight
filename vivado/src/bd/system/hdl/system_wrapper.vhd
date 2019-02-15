@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
---Date        : Thu Feb  7 15:48:54 2019
---Host        : cse166pc-17 running 64-bit Ubuntu 18.04.1 LTS
+--Date        : Fri Feb 15 10:39:38 2019
+--Host        : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
 --Purpose     : IP block netlist
@@ -46,7 +46,9 @@ entity system_wrapper is
     hdmi_out_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
     hdmi_out_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
     hdmi_out_ddc_scl_io : inout STD_LOGIC;
-    hdmi_out_ddc_sda_io : inout STD_LOGIC
+    hdmi_out_ddc_sda_io : inout STD_LOGIC;
+    led_pin : out STD_LOGIC;
+    reset_rtl : in STD_LOGIC
   );
 end system_wrapper;
 
@@ -94,7 +96,9 @@ architecture STRUCTURE of system_wrapper is
     hdmi_out_ddc_scl_i : in STD_LOGIC;
     hdmi_out_ddc_scl_o : out STD_LOGIC;
     hdmi_out_ddc_scl_t : out STD_LOGIC;
-    hdmi_in_hpd : out STD_LOGIC_VECTOR ( 0 to 0 )
+    hdmi_in_hpd : out STD_LOGIC_VECTOR ( 0 to 0 );
+    reset_rtl : in STD_LOGIC;
+    led_pin : out STD_LOGIC
   );
   end component system;
   component IOBUF is
@@ -189,6 +193,8 @@ system_i: component system
       hdmi_out_ddc_scl_t => hdmi_out_ddc_scl_t,
       hdmi_out_ddc_sda_i => hdmi_out_ddc_sda_i,
       hdmi_out_ddc_sda_o => hdmi_out_ddc_sda_o,
-      hdmi_out_ddc_sda_t => hdmi_out_ddc_sda_t
+      hdmi_out_ddc_sda_t => hdmi_out_ddc_sda_t,
+      led_pin => led_pin,
+      reset_rtl => reset_rtl
     );
 end STRUCTURE;

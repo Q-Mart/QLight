@@ -8,8 +8,8 @@
 #include <stdio.h>
 #include "xparameters.h"
 #include "sleep.h"
+#include "DigiLED.h"
 
-#include "section.h"
 #include "constants.h"
 #include "mode.h"
 #include "scale.h"
@@ -54,6 +54,8 @@ Section sections[8];
 
 u8 frameToProcess[MAX_FRAME];
 
+XGpio Gpio;
+
 void initSections() {
 	sections[0].startX = 0;
 	sections[0].startY = 0;
@@ -61,6 +63,8 @@ void initSections() {
 	sections[0].height = 525;
 	sections[0].scaledLength = 29;
 	sections[0].scaledHeight = 65;
+	sections[0].startLED = 20;
+	sections[0].endLED = 23;
 
 	sections[1].startX = 240;
 	sections[1].startY = 0;
@@ -68,6 +72,8 @@ void initSections() {
 	sections[1].height = 240;
 	sections[1].scaledLength = 74;
 	sections[1].scaledHeight = 29;
+	sections[1].startLED = 14;
+	sections[1].endLED = 19;
 
 	sections[2].startX = 840;
 	sections[2].startY = 0;
@@ -75,6 +81,8 @@ void initSections() {
 	sections[2].height = 240;
 	sections[2].scaledLength = 74;
 	sections[2].scaledHeight = 29;
+	sections[2].startLED = 8;
+	sections[2].endLED = 13;
 
 	sections[3].startX = 1440;
 	sections[3].startY = 0;
@@ -82,6 +90,8 @@ void initSections() {
 	sections[3].height = 525;
 	sections[3].scaledLength = 29;
 	sections[3].scaledHeight = 65;
+	sections[3].startLED = 4;
+	sections[3].endLED = 7;
 
 	sections[4].startX = 1440;
 	sections[4].startY = 525;
@@ -89,6 +99,8 @@ void initSections() {
 	sections[4].height = 525;
 	sections[4].scaledLength = 29;
 	sections[4].scaledHeight = 65;
+	sections[4].startLED = 0;
+	sections[4].endLED = 3;
 
 	sections[5].startX = 840;
 	sections[5].startY = 810;
@@ -96,6 +108,8 @@ void initSections() {
 	sections[5].height = 240;
 	sections[5].scaledLength = 74;
 	sections[5].scaledHeight = 29;
+	sections[5].startLED = 34;
+	sections[5].endLED = 39;
 
 	sections[6].startX = 240;
 	sections[6].startY = 810;
@@ -103,6 +117,8 @@ void initSections() {
 	sections[6].height = 240;
 	sections[6].scaledLength = 74;
 	sections[6].scaledHeight = 29;
+	sections[6].startLED = 28;
+	sections[6].endLED = 33;
 
 	sections[7].startX = 0;
 	sections[7].startY = 525;
@@ -110,6 +126,8 @@ void initSections() {
 	sections[7].height = 525;
 	sections[7].scaledLength = 29;
 	sections[7].scaledHeight = 65;
+	sections[7].startLED = 24;
+	sections[7].endLED = 27;
 }
 
 void initVideo() {
@@ -212,6 +230,12 @@ void ConnectedISR(void* callBackRef, void *pVideo) {
 	}
 }
 
+void setSectionLEDColour(Section s, u8 r, u8 g, u8 b) {
+	for (int i=s.startLED; i<=s.endLED; i++) {
+		SetLEDColor(i, r, g, b);
+	}
+}
+
 void resetTerminal() {
 	printf("\x1B[H"); //Set cursor to top left of terminal
 	printf("\x1B[2J"); //Clear terminal
@@ -231,7 +255,7 @@ void printGreeting() {
 	printf("      \__/               /$$  \ $$                    \r\n");
 	printf("                        |  $$$$$$/                    \r\n");
 	printf("                         \______/                     \r\n");
-	usleep(1000000);
+	sleep(1);
 
 	resetTerminal();
 	printf("QLight Version %.1f\r\n", VERSION);
@@ -258,6 +282,10 @@ int main() {
 	};
 	mode(testData, 1, 0, 0, 1, 5);
 
+	clearLEDs(40);
+
+	enable_LEDs();
+
 	u32 nextFrame;
 	while (1) {
 		nextFrame = videoCapt.curFrame + 1;
@@ -266,17 +294,20 @@ int main() {
 			nextFrame = 0;
 		}
 		u32 modePixel;
-		u8 modeRBG[3];
+		u8 modeBGR[3];
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
 		for (int i=0; i<8; i++) {
 			scale(frameToProcess, STRIDE, sections[i].startX, sections[i].startY, sections[i].length, sections[i].height);
 			modePixel = mode(frameToProcess, STRIDE, sections[i].startX, sections[i].startY, sections[i].scaledLength, sections[i].scaledHeight);
-			memcpy(modeRBG, modePixel, 3);
-			paintSectionColour(frameToProcess, STRIDE, &sections[i], modeRBG[0], modeRBG[1], modeRBG[2]);
+			memcpy(modeBGR, modePixel, 3);
+//			paintSectionColour(frameToProcess, STRIDE, &sections[i], modeRBG[0], modeRBG[1], modeRBG[2]);
+			setSectionLEDColour(sections[i], modeBGR[2], modeBGR[1], modeBGR[0]);
+//			sleep(1);
+//			clearLEDs(40);
 		}
 		memcpy(pFrames[nextFrame], frameToProcess, sizeof(frameToProcess));
 		DisplayChangeFrame(&dispCtrl, nextFrame);
-
+//
 		resetTerminal();
 	}
 

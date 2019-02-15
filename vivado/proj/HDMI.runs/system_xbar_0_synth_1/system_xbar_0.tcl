@@ -33,12 +33,12 @@ set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
 set_property ip_repo_paths {
   /home/userfs/q/qj544/w2k/QLight/vivado/repo
+  /home/userfs/q/qj544/w2k/QLight/components
   /home/userfs/q/qj544/w2k/QLight/SubSample
 } [current_project]
 set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/cache [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_ip -quiet /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_0/system_xbar_0.xci
-set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -48,8 +48,6 @@ set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 0
 
 set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_xbar_0_synth_1 -new_name system_xbar_0 -ip [get_ips system_xbar_0]]

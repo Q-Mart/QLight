@@ -1,0 +1,463 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Fri Feb 15 10:39:54 2019
+# Process ID: 21875
+# Current directory: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_DigiLED_0_3_synth_1
+# Command line: vivado -log system_DigiLED_0_3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_DigiLED_0_3.tcl
+# Log file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_DigiLED_0_3_synth_1/system_DigiLED_0_3.vds
+# Journal file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_DigiLED_0_3_synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_DigiLED_0_3.tcl -notrace
+Command: synth_design -top system_DigiLED_0_3 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 21893 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1361.348 ; gain = 89.859 ; free physical = 9076 ; free virtual = 28248
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_DigiLED_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/synth/system_DigiLED_0_3.v:56]
+INFO: [Synth 8-6157] synthesizing module 'DigiLED_v1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0.v:3]
+	Parameter NUMBER_OF_LEDS bound to: 155 - type: integer 
+	Parameter REFRESH_DELAY bound to: 2000 - type: integer 
+	Parameter COLOR_MODE bound to: RGB - type: string 
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'DigiLED_v1_0_S00_AXI' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0_S00_AXI.v:4]
+	Parameter NUMBER_OF_LEDS bound to: 155 - type: integer 
+	Parameter REFRESH_DELAY bound to: 2000 - type: integer 
+	Parameter COLOR_MODE bound to: RGB - type: string 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 7 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'led_driver' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/led_driver.v:3]
+	Parameter number_of_leds bound to: 155 - type: integer 
+	Parameter time_to_delay bound to: 2000 - type: integer 
+	Parameter frame_counter_div_max bound to: 129 - type: integer 
+	Parameter frame_counter_max bound to: 23 - type: integer 
+	Parameter PMW0_counter_max bound to: 35 - type: integer 
+	Parameter PMW1_counter_max bound to: 70 - type: integer 
+	Parameter BITBANG0_ST bound to: 2'b00 
+	Parameter BITBANG1_ST bound to: 2'b01 
+	Parameter BITBANG2_ST bound to: 2'b10 
+	Parameter DELAY_ST bound to: 2'b11 
+WARNING: [Synth 8-5788] Register internal_color_reg in module led_driver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/led_driver.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'led_driver' (1#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/led_driver.v:3]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rgb_temp_reg' and it is trimmed from '32' to '24' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0_S00_AXI.v:367]
+INFO: [Synth 8-6155] done synthesizing module 'DigiLED_v1_0_S00_AXI' (2#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'DigiLED_v1_0' (3#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_DigiLED_0_3' (4#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/synth/system_DigiLED_0_3.v:56]
+WARNING: [Synth 8-3331] design DigiLED_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design DigiLED_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design DigiLED_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design DigiLED_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design DigiLED_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design DigiLED_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1405.973 ; gain = 134.484 ; free physical = 9101 ; free virtual = 28258
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1405.973 ; gain = 134.484 ; free physical = 9109 ; free virtual = 28258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1405.973 ; gain = 134.484 ; free physical = 9109 ; free virtual = 28258
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1727.793 ; gain = 2.000 ; free physical = 8862 ; free virtual = 28046
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8932 ; free virtual = 28117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8932 ; free virtual = 28117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8935 ; free virtual = 28119
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'led_driver'
+INFO: [Synth 8-5545] ROM "frame_counter_div_flag" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_color" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "delay_done_flag" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-4471] merging register 'slv_reg2_reg[31:0]' into 'slv_reg1_reg[31:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0_S00_AXI.v:213]
+INFO: [Synth 8-4471] merging register 'slv_reg3_reg[31:0]' into 'slv_reg1_reg[31:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0_S00_AXI.v:214]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0_S00_AXI.v:213]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0_S00_AXI.v:214]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                               00 |                               00
+                  iSTATE |                               01 |                               01
+                 iSTATE1 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'led_driver'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8926 ; free virtual = 28111
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               24 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 6     
++---RAMs : 
+	               4K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module led_driver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
+Module DigiLED_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               24 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---RAMs : 
+	               4K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "inst/DigiLED_v1_0_S00_AXI_inst/led_driver/frame_counter_div_flag" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3331] design system_DigiLED_0_3 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design system_DigiLED_0_3 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design system_DigiLED_0_3 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design system_DigiLED_0_3 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design system_DigiLED_0_3 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design system_DigiLED_0_3 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[0]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[1]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[2]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[3]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[4]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[5]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[6]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[7]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[8]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[9]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[10]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[11]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[12]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[13]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[14]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[15]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[16]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[16]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[17]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[18]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[18]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[19]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[20]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[21]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[22]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[23]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[24]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[25]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[26]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[27]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[28]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[29]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[30]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[31] )
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/DigiLED_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/DigiLED_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/DigiLED_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/DigiLED_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3332] Sequential element (inst/DigiLED_v1_0_S00_AXI_inst/axi_bresp_reg[1]) is unused and will be removed from module system_DigiLED_0_3.
+INFO: [Synth 8-3332] Sequential element (inst/DigiLED_v1_0_S00_AXI_inst/axi_awaddr_reg[1]) is unused and will be removed from module system_DigiLED_0_3.
+INFO: [Synth 8-3332] Sequential element (inst/DigiLED_v1_0_S00_AXI_inst/axi_awaddr_reg[0]) is unused and will be removed from module system_DigiLED_0_3.
+INFO: [Synth 8-3332] Sequential element (inst/DigiLED_v1_0_S00_AXI_inst/axi_araddr_reg[1]) is unused and will be removed from module system_DigiLED_0_3.
+INFO: [Synth 8-3332] Sequential element (inst/DigiLED_v1_0_S00_AXI_inst/axi_araddr_reg[0]) is unused and will be removed from module system_DigiLED_0_3.
+INFO: [Synth 8-3332] Sequential element (inst/DigiLED_v1_0_S00_AXI_inst/slv_reg1_reg[31]) is unused and will be removed from module system_DigiLED_0_3.
+INFO: [Synth 8-3332] Sequential element (inst/DigiLED_v1_0_S00_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module system_DigiLED_0_3.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:27 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8913 ; free virtual = 28100
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++----------------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|DigiLED_v1_0_S00_AXI: | led_data_reg | 256 x 32(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++----------------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:35 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8775 ; free virtual = 27967
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:35 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8775 ; free virtual = 27967
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++----------------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|DigiLED_v1_0_S00_AXI: | led_data_reg | 256 x 32(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++----------------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8773 ; free virtual = 27965
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8773 ; free virtual = 27965
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8773 ; free virtual = 27965
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8773 ; free virtual = 27965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8773 ; free virtual = 27965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8773 ; free virtual = 27965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8773 ; free virtual = 27965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |CARRY4     |    35|
+|2     |LUT1       |     8|
+|3     |LUT2       |    96|
+|4     |LUT3       |    19|
+|5     |LUT4       |    52|
+|6     |LUT5       |    13|
+|7     |LUT6       |    33|
+|8     |RAMB18E1_1 |     1|
+|9     |FDCE       |    12|
+|10    |FDRE       |   161|
++------+-----------+------+
+
+Report Instance Areas: 
++------+------------------------------+---------------------+------+
+|      |Instance                      |Module               |Cells |
++------+------------------------------+---------------------+------+
+|1     |top                           |                     |   430|
+|2     |  inst                        |DigiLED_v1_0         |   430|
+|3     |    DigiLED_v1_0_S00_AXI_inst |DigiLED_v1_0_S00_AXI |   430|
+|4     |      led_driver              |led_driver           |   286|
++------+------------------------------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.793 ; gain = 456.305 ; free physical = 8773 ; free virtual = 27965
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1727.793 ; gain = 134.484 ; free physical = 8831 ; free virtual = 28022
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.801 ; gain = 456.305 ; free physical = 8841 ; free virtual = 28033
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+73 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:37 . Memory (MB): peak = 1727.801 ; gain = 467.906 ; free physical = 8829 ; free virtual = 28021
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_DigiLED_0_3_synth_1/system_DigiLED_0_3.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/system_DigiLED_0_3.xci
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_DigiLED_0_3_synth_1/system_DigiLED_0_3.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_DigiLED_0_3_utilization_synth.rpt -pb system_DigiLED_0_3_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1751.805 ; gain = 0.000 ; free physical = 8830 ; free virtual = 28022
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 15 10:40:56 2019...

@@ -2,8 +2,8 @@
 # Vivado v2018.2.1 (64-bit)
 # SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
 # IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Thu Feb  7 10:41:02 2019
-# Process ID: 19036
+# Start of session at: Fri Feb 15 10:00:58 2019
+# Process ID: 6819
 # Current directory: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_xbar_0_synth_1
 # Command line: vivado -log system_xbar_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_xbar_0.tcl
 # Log file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_xbar_0_synth_1/system_xbar_0.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 19043 
+INFO: Helper process launched with PID 6871 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1369.371 ; gain = 91.859 ; free physical = 7427 ; free virtual = 27143
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1369.359 ; gain = 91.859 ; free physical = 9131 ; free virtual = 28158
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_xbar_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_0/synth/system_xbar_0.v:59]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_axi_crossbar' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
@@ -29,8 +29,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_axi_crossbar' [/h
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
-	Parameter C_M_AXI_BASE_ADDR bound to: 448'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000010000111100000100000000000000000000000000000000000000000000000001000011110000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000010000111100001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_M_AXI_ADDR_WIDTH bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000 
+	Parameter C_M_AXI_BASE_ADDR bound to: 448'b1111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000100001111000011000000000000000000000000000000000000000000000000010000111100000100000000000000000000000000000000000000000000000001000011110000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000010000111100001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 224'b00000000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000 
 	Parameter C_S_AXI_BASE_ID bound to: 0 - type: integer 
 	Parameter C_S_AXI_THREAD_ID_WIDTH bound to: 0 - type: integer 
 	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
@@ -78,8 +78,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_crossbar_sasd' [/
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
-	Parameter C_M_AXI_BASE_ADDR bound to: 448'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000010000111100000100000000000000000000000000000000000000000000000001000011110000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000010000111100001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_M_AXI_HIGH_ADDR bound to: 448'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000111100000111111111111111110000000000000000000000000000000001000011110000001111111111111111000000000000000000000000000000000100001100000000111111111111111100000000000000000000000000000000010000111100001011111111111111110000000000000000000000000000000001000001001000001111111111111111 
+	Parameter C_M_AXI_BASE_ADDR bound to: 448'b1111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000100001111000011000000000000000000000000000000000000000000000000010000111100000100000000000000000000000000000000000000000000000001000011110000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000010000111100001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
+	Parameter C_M_AXI_HIGH_ADDR bound to: 448'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100001111000011111111111111111100000000000000000000000000000000010000111100000111111111111111110000000000000000000000000000000001000011110000001111111111111111000000000000000000000000000000000100001100000000111111111111111100000000000000000000000000000000010000111100001011111111111111110000000000000000000000000000000001000001001000001111111111111111 
 	Parameter C_S_AXI_BASE_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_S_AXI_HIGH_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
@@ -131,8 +131,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_addr_decoder' [/h
 	Parameter C_TARGET_ENC bound to: 1 - type: integer 
 	Parameter C_TARGET_HOT bound to: 1 - type: integer 
 	Parameter C_REGION_ENC bound to: 1 - type: integer 
-	Parameter C_BASE_ADDR bound to: 448'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000010000111100000100000000000000000000000000000000000000000000000001000011110000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000010000111100001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_HIGH_ADDR bound to: 448'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000111100000111111111111111110000000000000000000000000000000001000011110000001111111111111111000000000000000000000000000000000100001100000000111111111111111100000000000000000000000000000000010000111100001011111111111111110000000000000000000000000000000001000001001000001111111111111111 
+	Parameter C_BASE_ADDR bound to: 448'b1111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000100001111000011000000000000000000000000000000000000000000000000010000111100000100000000000000000000000000000000000000000000000001000011110000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000010000111100001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
+	Parameter C_HIGH_ADDR bound to: 448'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100001111000011111111111111111100000000000000000000000000000000010000111100000111111111111111110000000000000000000000000000000001000011110000001111111111111111000000000000000000000000000000000100001100000000111111111111111100000000000000000000000000000000010000111100001011111111111111110000000000000000000000000000000001000001001000001111111111111111 
 	Parameter C_TARGET_QUAL bound to: 8'b01111111 
 	Parameter C_RESOLUTION bound to: 2 - type: integer 
 	Parameter C_COMPARATOR_THRESHOLD bound to: 6 - type: integer 
@@ -179,6 +179,14 @@ INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_s
 	Parameter C_NUM_LUT bound to: 5 - type: integer 
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized3' (2#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized4' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 30'b010000111100001100000000000000 
+	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 5 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized4' (2#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_18_addr_decoder' (3#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_decerr_slave' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -349,7 +357,7 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_rid[2]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:24 . Memory (MB): peak = 1499.996 ; gain = 222.484 ; free physical = 7436 ; free virtual = 27153
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:24 . Memory (MB): peak = 1500.984 ; gain = 223.484 ; free physical = 9047 ; free virtual = 28063
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -362,42 +370,38 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:24 . Memory (MB): peak = 1499.996 ; gain = 222.484 ; free physical = 7436 ; free virtual = 27153
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 1500.984 ; gain = 223.484 ; free physical = 9101 ; free virtual = 28118
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:24 . Memory (MB): peak = 1499.996 ; gain = 222.484 ; free physical = 7436 ; free virtual = 27153
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 1500.984 ; gain = 223.484 ; free physical = 9102 ; free virtual = 28119
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc] for cell 'inst'
-Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_xbar_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_xbar_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1747.223 ; gain = 0.000 ; free physical = 7110 ; free virtual = 26827
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1738.211 ; gain = 2.000 ; free physical = 9272 ; free virtual = 28324
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1747.223 ; gain = 469.711 ; free physical = 7157 ; free virtual = 26874
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:48 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9376 ; free virtual = 28428
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1747.223 ; gain = 469.711 ; free physical = 7157 ; free virtual = 26874
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:48 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9377 ; free virtual = 28428
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_xbar_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:47 . Memory (MB): peak = 1747.223 ; gain = 469.711 ; free physical = 7156 ; free virtual = 26873
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:48 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9378 ; free virtual = 28430
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4471] merging register 'gen_axilite.s_axi_wready_i_reg' into 'gen_axilite.s_axi_awready_i_reg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:3574]
 WARNING: [Synth 8-6014] Unused sequential element gen_axilite.s_axi_wready_i_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:3574]
@@ -426,7 +430,7 @@ INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because ad
 INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:47 . Memory (MB): peak = 1747.223 ; gain = 469.711 ; free physical = 7153 ; free virtual = 26871
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:49 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9370 ; free virtual = 28422
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -528,43 +532,42 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-6014] Unused sequential element gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_grant_enc_i_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:324]
-INFO: [Synth 8-3936] Found unconnected internal register 'gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg' and it is trimmed from '36' to '35' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:422]
-INFO: [Synth 8-3886] merging instance 'inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[5]' (FDR) to 'inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[6]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[6] )
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[63]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[62]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[61]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[60]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[59]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[58]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[57]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[56]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[55]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[54]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[53]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[52]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[51]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[50]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[49]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[45]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[44]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[43]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[42]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[41]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[40]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[39]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[38]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[37]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[36]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[35]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[34]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[33]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[0]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/reg_slice_r/skid_buffer_reg[35]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
-INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[6]) is unused and will be removed from module axi_crossbar_v2_1_18_axi_crossbar.
+WARNING: [Synth 8-6014] Unused sequential element inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_grant_enc_i_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:324]
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg' and it is trimmed from '36' to '35' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:422]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[6] )
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[63]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[62]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[61]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[60]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[59]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[58]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[57]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[56]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[55]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[54]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[53]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[52]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[51]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[50]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[49]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[45]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[44]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[43]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[42]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[41]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[40]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[39]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[38]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[37]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[36]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[35]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[34]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[33]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[0]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/reg_slice_r/skid_buffer_reg[35]) is unused and will be removed from module system_xbar_0.
+INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[6]) is unused and will be removed from module system_xbar_0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:48 . Memory (MB): peak = 1747.223 ; gain = 469.711 ; free physical = 7130 ; free virtual = 26850
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:50 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9322 ; free virtual = 28367
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -576,13 +579,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:56 . Memory (MB): peak = 1747.223 ; gain = 469.711 ; free physical = 6991 ; free virtual = 26711
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:57 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6979 ; free virtual = 26699
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -594,7 +597,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:57 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6979 ; free virtual = 26698
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9250 ; free virtual = 28295
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -618,7 +621,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6975 ; free virtual = 26694
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -631,7 +634,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6975 ; free virtual = 26694
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -643,25 +646,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6975 ; free virtual = 26694
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6974 ; free virtual = 26694
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6974 ; free virtual = 26694
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6974 ; free virtual = 26694
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -678,33 +681,33 @@ Report Cell Usage:
 |      |Cell |Count |
 +------+-----+------+
 |1     |LUT1 |     2|
-|2     |LUT2 |    16|
-|3     |LUT3 |    49|
-|4     |LUT4 |    54|
-|5     |LUT5 |    78|
-|6     |LUT6 |    89|
-|7     |FDRE |   134|
+|2     |LUT2 |    13|
+|3     |LUT3 |    46|
+|4     |LUT4 |    61|
+|5     |LUT5 |    82|
+|6     |LUT6 |    95|
+|7     |FDRE |   135|
 +------+-----+------+
 
 Report Instance Areas: 
 +------+-------------------------------------+-----------------------------------------------+------+
 |      |Instance                             |Module                                         |Cells |
 +------+-------------------------------------+-----------------------------------------------+------+
-|1     |top                                  |                                               |   422|
-|2     |  inst                               |axi_crossbar_v2_1_18_axi_crossbar              |   422|
-|3     |    \gen_sasd.crossbar_sasd_0        |axi_crossbar_v2_1_18_crossbar_sasd             |   422|
-|4     |      addr_arbiter_inst              |axi_crossbar_v2_1_18_addr_arbiter_sasd         |   146|
-|5     |      \gen_decerr.decerr_slave_inst  |axi_crossbar_v2_1_18_decerr_slave              |    13|
+|1     |top                                  |                                               |   434|
+|2     |  inst                               |axi_crossbar_v2_1_18_axi_crossbar              |   434|
+|3     |    \gen_sasd.crossbar_sasd_0        |axi_crossbar_v2_1_18_crossbar_sasd             |   434|
+|4     |      addr_arbiter_inst              |axi_crossbar_v2_1_18_addr_arbiter_sasd         |   155|
+|5     |      \gen_decerr.decerr_slave_inst  |axi_crossbar_v2_1_18_decerr_slave              |    16|
 |6     |      reg_slice_r                    |axi_register_slice_v2_1_17_axic_register_slice |   223|
-|7     |      splitter_ar                    |axi_crossbar_v2_1_18_splitter__parameterized0  |     6|
-|8     |      splitter_aw                    |axi_crossbar_v2_1_18_splitter                  |    18|
+|7     |      splitter_ar                    |axi_crossbar_v2_1_18_splitter__parameterized0  |     4|
+|8     |      splitter_aw                    |axi_crossbar_v2_1_18_splitter                  |    16|
 +------+-------------------------------------+-----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1748.223 ; gain = 470.711 ; free physical = 6974 ; free virtual = 26694
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1738.211 ; gain = 460.711 ; free physical = 9251 ; free virtual = 28296
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 88 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 1748.223 ; gain = 223.484 ; free physical = 7030 ; free virtual = 26750
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:58 . Memory (MB): peak = 1748.230 ; gain = 470.711 ; free physical = 7039 ; free virtual = 26759
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 1738.211 ; gain = 223.484 ; free physical = 9308 ; free virtual = 28353
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:59 . Memory (MB): peak = 1738.219 ; gain = 460.711 ; free physical = 9319 ; free virtual = 28364
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -712,9 +715,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-107 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+108 Infos, 107 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:59 . Memory (MB): peak = 1748.230 ; gain = 482.312 ; free physical = 7030 ; free virtual = 26750
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:01:00 . Memory (MB): peak = 1738.219 ; gain = 472.312 ; free physical = 9300 ; free virtual = 28345
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_xbar_0_synth_1/system_xbar_0.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_0/system_xbar_0.xci
@@ -722,5 +725,5 @@ INFO: [Coretcl 2-1174] Renamed 7 cell refs.
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_xbar_0_synth_1/system_xbar_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_xbar_0_utilization_synth.rpt -pb system_xbar_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1772.234 ; gain = 0.000 ; free physical = 7029 ; free virtual = 26750
-INFO: [Common 17-206] Exiting Vivado at Thu Feb  7 10:42:19 2019...
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1762.223 ; gain = 0.000 ; free physical = 9288 ; free virtual = 28348
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 15 10:02:22 2019...

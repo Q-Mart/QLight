@@ -1,0 +1,3 @@
+[submodule "components/DigiLED"]
+	path = components/DigiLED
+	url = git@github.com:mwingerson/DigiLED.git

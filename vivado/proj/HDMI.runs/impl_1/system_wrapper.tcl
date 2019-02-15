@@ -73,6 +73,7 @@ set rc [catch {
   set_property parent.project_path /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr [current_project]
   set_property ip_repo_paths {
   /home/userfs/q/qj544/w2k/QLight/vivado/repo
+  /home/userfs/q/qj544/w2k/QLight/components
   /home/userfs/q/qj544/w2k/QLight/SubSample
 } [current_project]
   set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/cache [current_project]
@@ -83,8 +84,9 @@ set rc [catch {
   set_param project.isImplRun true
   add_files /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd
   set_param project.isImplRun false
-  read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/timing.xdc
-  read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/src/constraints/Zybo-Z7-Master.xdc
+  read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/imports/constraints/timing.xdc
+  read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc
+  read_xdc /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.srcs/constrs_1/new/led.xdc
   set_param project.isImplRun true
   link_design -top system_wrapper -part xc7z010clg400-1
   set_param project.isImplRun false
