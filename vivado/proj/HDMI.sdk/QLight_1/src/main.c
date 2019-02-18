@@ -9,7 +9,9 @@
 #include "xparameters.h"
 #include "sleep.h"
 #include "DigiLED.h"
+#include "xgpio.h"
 
+#include "term.h"
 #include "constants.h"
 #include "mode.h"
 #include "scale.h"
@@ -18,6 +20,10 @@ DisplayCtrl dispCtrl;
 XAxiVdma vdma;
 VideoCapture videoCapt;
 INTC intc;
+
+XGpio gpio;
+
+u8 syncMode;
 
 /*
  * XPAR redefines
@@ -219,14 +225,19 @@ void initVideo() {
 	return;
 }
 
+void initGPIO() {
+	XGpio_Initialize(&gpio, XPAR_GPIO_0_DEVICE_ID);
+}
+
 void ConnectedISR(void* callBackRef, void *pVideo) {
 	int *hdmiConnected = (int*) callBackRef;
+	moveCursorTo(4, 7);
 	if (*hdmiConnected) {
 		*hdmiConnected = 0;
-		printf("HDMI disconnected\r\n");
+		printf("disconnected\r\n");
 	} else {
 		*hdmiConnected = 1;
-		printf("HDMI connected\r\n");
+		printf("connected   \r\n");
 	}
 }
 
@@ -234,11 +245,6 @@ void setSectionLEDColour(Section s, u8 r, u8 g, u8 b) {
 	for (int i=s.startLED; i<=s.endLED; i++) {
 		SetLEDColor(i, r, g, b);
 	}
-}
-
-void resetTerminal() {
-	printf("\x1B[H"); //Set cursor to top left of terminal
-	printf("\x1B[2J"); //Clear terminal
 }
 
 void printGreeting() {
@@ -261,11 +267,32 @@ void printGreeting() {
 	printf("QLight Version %.1f\r\n", VERSION);
 }
 
+void updateSyncModeOnTerm() {
+//	printf("\033[0;11H");
+	moveCursorTo(0, 11);
+	if (syncMode) {
+		printf("On \r\n");
+	} else {
+		printf("Off\r\n");
+	}
+}
+
+void getSyncMode() {
+	unsigned char switchVal = XGpio_DiscreteRead(&gpio, 1);
+	if (switchVal == 1) {
+		syncMode = 1;
+	} else {
+		syncMode = 0;
+	}
+}
 
 int main() {
 	printGreeting();
 	initVideo();
 	printf("Video initialisation complete\r\n");
+
+	initGPIO();
+	printf("GPIO initialisation complete\r\n");
 
 	VideoStart(&videoCapt);
 	printf("Video streaming initialised\r\n");
@@ -286,6 +313,21 @@ int main() {
 
 	enable_LEDs();
 
+	resetTerminal();
+
+	getSyncMode();
+
+	if (syncMode) {
+		printf("SyncMode: On\r\n");
+	} else {
+		printf("SyncMode: Off\r\n");
+	}
+
+	printf("Subsample delay (ns): %d\r\n", 0);
+	printf("\r\n");
+
+	printf("HDMI: disconnected");
+
 	u32 nextFrame;
 	while (1) {
 		nextFrame = videoCapt.curFrame + 1;
@@ -305,10 +347,22 @@ int main() {
 //			sleep(1);
 //			clearLEDs(40);
 		}
-		memcpy(pFrames[nextFrame], frameToProcess, sizeof(frameToProcess));
-		DisplayChangeFrame(&dispCtrl, nextFrame);
+
+		// Update sync mode
+		u8 previousSyncMode = syncMode;
+		getSyncMode();
+
+		if (syncMode) {
+			memcpy(pFrames[nextFrame], frameToProcess, sizeof(frameToProcess));
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+		} else  if (previousSyncMode == 1) {
+			VideoChangeFrame(&videoCapt, nextFrame);
+		}
+
+		updateSyncModeOnTerm();
+
 //
-		resetTerminal();
+//		resetTerminal();
 	}
 
 

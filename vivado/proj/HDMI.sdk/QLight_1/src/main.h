@@ -10,8 +10,10 @@
 #define START_ON_DET 1
 
 void initVideo();
+void initGPIO();
 void setSectionLEDColour(Section s, u8 r, u8 g, u8 b);
-void resetTerminal();
 void printGreeting();
+void updateSyncModeOnTerm();
+void getSyncMode();
 void ConnectedISR(void* callBackRef, void *pVideo);
 #endif

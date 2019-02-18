@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -70,6 +71,9 @@ set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/system_rst_axi_dynclk_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/system_rst_axi_dynclk_0_100M_0.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/system_rst_axi_dynclk_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_1/system_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_m00_regslice_0/system_m00_regslice_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]

@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-// Date        : Fri Feb 15 10:40:56 2019
+// Date        : Mon Feb 18 10:01:10 2019
 // Host        : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/system_DigiLED_0_3_sim_netlist.v
@@ -38,7 +38,7 @@ module system_DigiLED_0_3
     s00_axi_aclk,
     s00_axi_aresetn);
   output led_out;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [9:0]s00_axi_awaddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [7:0]s00_axi_awaddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWREADY" *) output s00_axi_awready;
@@ -49,25 +49,25 @@ module system_DigiLED_0_3
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BRESP" *) output [1:0]s00_axi_bresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BVALID" *) output s00_axi_bvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BREADY" *) input s00_axi_bready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR" *) input [9:0]s00_axi_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR" *) input [7:0]s00_axi_araddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARPROT" *) input [2:0]s00_axi_arprot;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARVALID" *) input s00_axi_arvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARREADY" *) output s00_axi_arready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RDATA" *) output [31:0]s00_axi_rdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RRESP" *) output [1:0]s00_axi_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RVALID" *) output s00_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 1e+08, ID_WIDTH 0, ADDR_WIDTH 10, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *) input s00_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 1e+08, ID_WIDTH 0, ADDR_WIDTH 8, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *) input s00_axi_rready;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0" *) input s00_axi_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW" *) input s00_axi_aresetn;
 
   wire \<const0> ;
   wire led_out;
   wire s00_axi_aclk;
-  wire [9:0]s00_axi_araddr;
+  wire [7:0]s00_axi_araddr;
   wire s00_axi_aresetn;
   wire s00_axi_arready;
   wire s00_axi_arvalid;
-  wire [9:0]s00_axi_awaddr;
+  wire [7:0]s00_axi_awaddr;
   wire s00_axi_awready;
   wire s00_axi_awvalid;
   wire s00_axi_bready;
@@ -92,10 +92,10 @@ module system_DigiLED_0_3
         .S_AXI_WREADY(s00_axi_wready),
         .led_out(led_out),
         .s00_axi_aclk(s00_axi_aclk),
-        .s00_axi_araddr(s00_axi_araddr[9:2]),
+        .s00_axi_araddr(s00_axi_araddr[7:2]),
         .s00_axi_aresetn(s00_axi_aresetn),
         .s00_axi_arvalid(s00_axi_arvalid),
-        .s00_axi_awaddr(s00_axi_awaddr[9:2]),
+        .s00_axi_awaddr(s00_axi_awaddr[7:2]),
         .s00_axi_awvalid(s00_axi_awvalid),
         .s00_axi_bready(s00_axi_bready),
         .s00_axi_bvalid(s00_axi_bvalid),
@@ -121,9 +121,9 @@ module system_DigiLED_0_3_DigiLED_v1_0
     s00_axi_aresetn,
     s00_axi_awaddr,
     s00_axi_araddr,
-    s00_axi_wstrb,
-    s00_axi_awvalid,
     s00_axi_wvalid,
+    s00_axi_awvalid,
+    s00_axi_wstrb,
     s00_axi_arvalid,
     s00_axi_bready,
     s00_axi_rready);
@@ -137,11 +137,11 @@ module system_DigiLED_0_3_DigiLED_v1_0
   input s00_axi_aclk;
   input [31:0]s00_axi_wdata;
   input s00_axi_aresetn;
-  input [7:0]s00_axi_awaddr;
-  input [7:0]s00_axi_araddr;
-  input [3:0]s00_axi_wstrb;
-  input s00_axi_awvalid;
+  input [5:0]s00_axi_awaddr;
+  input [5:0]s00_axi_araddr;
   input s00_axi_wvalid;
+  input s00_axi_awvalid;
+  input [3:0]s00_axi_wstrb;
   input s00_axi_arvalid;
   input s00_axi_bready;
   input s00_axi_rready;
@@ -151,10 +151,10 @@ module system_DigiLED_0_3_DigiLED_v1_0
   wire S_AXI_WREADY;
   wire led_out;
   wire s00_axi_aclk;
-  wire [7:0]s00_axi_araddr;
+  wire [5:0]s00_axi_araddr;
   wire s00_axi_aresetn;
   wire s00_axi_arvalid;
-  wire [7:0]s00_axi_awaddr;
+  wire [5:0]s00_axi_awaddr;
   wire s00_axi_awvalid;
   wire s00_axi_bready;
   wire s00_axi_bvalid;
@@ -200,9 +200,9 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
     s00_axi_aresetn,
     s00_axi_awaddr,
     s00_axi_araddr,
-    s00_axi_wstrb,
-    s00_axi_awvalid,
     s00_axi_wvalid,
+    s00_axi_awvalid,
+    s00_axi_wstrb,
     s00_axi_arvalid,
     s00_axi_bready,
     s00_axi_rready);
@@ -216,11 +216,11 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
   input s00_axi_aclk;
   input [31:0]s00_axi_wdata;
   input s00_axi_aresetn;
-  input [7:0]s00_axi_awaddr;
-  input [7:0]s00_axi_araddr;
-  input [3:0]s00_axi_wstrb;
-  input s00_axi_awvalid;
+  input [5:0]s00_axi_awaddr;
+  input [5:0]s00_axi_araddr;
   input s00_axi_wvalid;
+  input s00_axi_awvalid;
+  input [3:0]s00_axi_wstrb;
   input s00_axi_arvalid;
   input s00_axi_bready;
   input s00_axi_rready;
@@ -228,9 +228,9 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
   wire S_AXI_ARREADY;
   wire S_AXI_AWREADY;
   wire S_AXI_WREADY;
-  wire [9:2]axi_araddr;
+  wire [7:2]axi_araddr;
   wire axi_arready0;
-  wire [9:2]axi_awaddr;
+  wire [7:2]axi_awaddr;
   wire axi_awready0;
   wire axi_awready_i_1_n_0;
   wire axi_bvalid_i_1_n_0;
@@ -269,21 +269,18 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
   wire \axi_rdata[9]_i_1_n_0 ;
   wire axi_rvalid_i_1_n_0;
   wire axi_wready0;
-  wire led_data_reg_i_19_n_0;
+  wire led_data_reg_i_15_n_0;
   wire led_data_reg_i_1_n_0;
-  wire led_data_reg_i_20_n_0;
-  wire led_data_reg_i_21_n_0;
-  wire led_data_reg_i_23_n_0;
   wire led_driver_n_1;
-  wire [7:0]led_index;
+  wire [5:0]led_index;
   wire led_out;
-  wire [7:0]p_1_in;
+  wire [5:0]p_1_in;
   wire [23:0]rgb_temp;
   wire s00_axi_aclk;
-  wire [7:0]s00_axi_araddr;
+  wire [5:0]s00_axi_araddr;
   wire s00_axi_aresetn;
   wire s00_axi_arvalid;
-  wire [7:0]s00_axi_awaddr;
+  wire [5:0]s00_axi_awaddr;
   wire s00_axi_awvalid;
   wire s00_axi_bready;
   wire s00_axi_bvalid;
@@ -371,18 +368,6 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .D(s00_axi_araddr[5]),
         .Q(axi_araddr[7]),
         .R(axi_awready_i_1_n_0));
-  FDRE \axi_araddr_reg[8] 
-       (.C(s00_axi_aclk),
-        .CE(axi_arready0),
-        .D(s00_axi_araddr[6]),
-        .Q(axi_araddr[8]),
-        .R(axi_awready_i_1_n_0));
-  FDRE \axi_araddr_reg[9] 
-       (.C(s00_axi_aclk),
-        .CE(axi_arready0),
-        .D(s00_axi_araddr[7]),
-        .Q(axi_araddr[9]),
-        .R(axi_awready_i_1_n_0));
   LUT2 #(
     .INIT(4'h2)) 
     axi_arready_i_1
@@ -431,29 +416,17 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .D(s00_axi_awaddr[5]),
         .Q(axi_awaddr[7]),
         .R(axi_awready_i_1_n_0));
-  FDRE \axi_awaddr_reg[8] 
-       (.C(s00_axi_aclk),
-        .CE(axi_awready0),
-        .D(s00_axi_awaddr[6]),
-        .Q(axi_awaddr[8]),
-        .R(axi_awready_i_1_n_0));
-  FDRE \axi_awaddr_reg[9] 
-       (.C(s00_axi_aclk),
-        .CE(axi_awready0),
-        .D(s00_axi_awaddr[7]),
-        .Q(axi_awaddr[9]),
-        .R(axi_awready_i_1_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     axi_awready_i_1
        (.I0(s00_axi_aresetn),
         .O(axi_awready_i_1_n_0));
   LUT3 #(
-    .INIT(8'h08)) 
+    .INIT(8'h40)) 
     axi_awready_i_2
-       (.I0(s00_axi_awvalid),
+       (.I0(S_AXI_AWREADY),
         .I1(s00_axi_wvalid),
-        .I2(S_AXI_AWREADY),
+        .I2(s00_axi_awvalid),
         .O(axi_awready0));
   FDRE axi_awready_reg
        (.C(s00_axi_aclk),
@@ -462,14 +435,14 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .Q(S_AXI_AWREADY),
         .R(axi_awready_i_1_n_0));
   LUT6 #(
-    .INIT(64'h7444444444444444)) 
+    .INIT(64'h0000FFFF80008000)) 
     axi_bvalid_i_1
-       (.I0(s00_axi_bready),
-        .I1(s00_axi_bvalid),
-        .I2(S_AXI_AWREADY),
-        .I3(S_AXI_WREADY),
-        .I4(s00_axi_awvalid),
-        .I5(s00_axi_wvalid),
+       (.I0(S_AXI_AWREADY),
+        .I1(S_AXI_WREADY),
+        .I2(s00_axi_wvalid),
+        .I3(s00_axi_awvalid),
+        .I4(s00_axi_bready),
+        .I5(s00_axi_bvalid),
         .O(axi_bvalid_i_1_n_0));
   FDRE axi_bvalid_reg
        (.C(s00_axi_aclk),
@@ -477,7 +450,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .D(axi_bvalid_i_1_n_0),
         .Q(s00_axi_bvalid),
         .R(axi_awready_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[0]_i_1 
@@ -486,7 +459,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[10]_i_1 
@@ -495,7 +468,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[11]_i_1 
@@ -504,7 +477,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[12]_i_1 
@@ -513,7 +486,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[13]_i_1 
@@ -522,7 +495,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[14]_i_1 
@@ -531,7 +504,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[15]_i_1 
@@ -540,7 +513,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[16]_i_1 
@@ -549,7 +522,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[17]_i_1 
@@ -558,7 +531,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[17]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[18]_i_1 
@@ -567,7 +540,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[19]_i_1 
@@ -576,7 +549,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[1]_i_1 
@@ -585,7 +558,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[20]_i_1 
@@ -594,7 +567,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[21]_i_1 
@@ -603,7 +576,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[21]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[22]_i_1 
@@ -612,7 +585,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[23]_i_1 
@@ -621,7 +594,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[23]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[24]_i_1 
@@ -630,7 +603,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[24]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[25]_i_1 
@@ -639,7 +612,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[25]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[26]_i_1 
@@ -648,7 +621,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[26]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[27]_i_1 
@@ -657,7 +630,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[27]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[28]_i_1 
@@ -666,7 +639,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[28]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[29]_i_1 
@@ -675,7 +648,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[29]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[2]_i_1 
@@ -684,7 +657,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[30]_i_1 
@@ -693,7 +666,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[30]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[31]_i_1 
@@ -702,17 +675,15 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[31]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
+  LUT4 #(
+    .INIT(16'h0001)) 
     \axi_rdata[31]_i_2 
-       (.I0(axi_araddr[8]),
-        .I1(axi_araddr[7]),
-        .I2(axi_araddr[4]),
-        .I3(axi_araddr[9]),
-        .I4(axi_araddr[5]),
-        .I5(axi_araddr[6]),
+       (.I0(axi_araddr[7]),
+        .I1(axi_araddr[4]),
+        .I2(axi_araddr[6]),
+        .I3(axi_araddr[5]),
         .O(\axi_rdata[31]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[3]_i_1 
@@ -721,7 +692,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[4]_i_1 
@@ -730,7 +701,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[5]_i_1 
@@ -739,7 +710,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[6]_i_1 
@@ -748,7 +719,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[7]_i_1 
@@ -757,7 +728,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[8]_i_1 
@@ -766,7 +737,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
         .O(\axi_rdata[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \axi_rdata[9]_i_1 
@@ -981,13 +952,12 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .D(axi_rvalid_i_1_n_0),
         .Q(s00_axi_rvalid),
         .R(axi_awready_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT3 #(
-    .INIT(8'h08)) 
+    .INIT(8'h40)) 
     axi_wready_i_1
-       (.I0(s00_axi_awvalid),
+       (.I0(S_AXI_WREADY),
         .I1(s00_axi_wvalid),
-        .I2(S_AXI_WREADY),
+        .I2(s00_axi_awvalid),
         .O(axi_wready0));
   FDRE axi_wready_reg
        (.C(s00_axi_aclk),
@@ -998,7 +968,7 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
   (* \MEM.PORTA.DATA_BIT_LAYOUT  = "p0_d32" *) 
   (* \MEM.PORTB.DATA_BIT_LAYOUT  = "p0_d32" *) 
   (* METHODOLOGY_DRC_VIOS = "" *) 
-  (* RTL_RAM_BITS = "4960" *) 
+  (* RTL_RAM_BITS = "1280" *) 
   (* RTL_RAM_NAME = "led_data" *) 
   (* bram_addr_begin = "0" *) 
   (* bram_addr_end = "511" *) 
@@ -1096,8 +1066,8 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
     .WRITE_WIDTH_A(0),
     .WRITE_WIDTH_B(36)) 
     led_data_reg
-       (.ADDRARDADDR({1'b0,led_index,1'b1,1'b1,1'b1,1'b1,1'b1}),
-        .ADDRBWRADDR({1'b0,p_1_in,1'b1,1'b1,1'b1,1'b1,1'b1}),
+       (.ADDRARDADDR({1'b0,1'b0,1'b0,led_index,1'b1,1'b1,1'b1,1'b1,1'b1}),
+        .ADDRBWRADDR({1'b0,1'b0,1'b0,p_1_in,1'b1,1'b1,1'b1,1'b1,1'b1}),
         .CLKARDCLK(s00_axi_aclk),
         .CLKBWRCLK(s00_axi_aclk),
         .DIADI(s00_axi_wdata[15:0]),
@@ -1118,114 +1088,70 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .RSTREGB(1'b0),
         .WEA({1'b0,1'b0}),
         .WEBWE({s00_axi_aresetn,s00_axi_aresetn,s00_axi_aresetn,s00_axi_aresetn}));
-  LUT6 #(
-    .INIT(64'hFFFF000010000000)) 
+  LUT5 #(
+    .INIT(32'h80000000)) 
     led_data_reg_i_1
-       (.I0(axi_awaddr[7]),
-        .I1(axi_awaddr[8]),
-        .I2(axi_awaddr[4]),
-        .I3(led_data_reg_i_19_n_0),
-        .I4(led_data_reg_i_20_n_0),
-        .I5(led_data_reg_i_21_n_0),
+       (.I0(s00_axi_wvalid),
+        .I1(S_AXI_WREADY),
+        .I2(led_data_reg_i_15_n_0),
+        .I3(S_AXI_AWREADY),
+        .I4(s00_axi_awvalid),
         .O(led_data_reg_i_1_n_0));
   LUT5 #(
     .INIT(32'hAAAAAAA9)) 
-    led_data_reg_i_11
-       (.I0(axi_awaddr[9]),
-        .I1(led_data_reg_i_23_n_0),
+    led_data_reg_i_10
+       (.I0(axi_awaddr[6]),
+        .I1(axi_awaddr[3]),
         .I2(axi_awaddr[4]),
-        .I3(axi_awaddr[7]),
-        .I4(axi_awaddr[8]),
-        .O(p_1_in[7]));
-  LUT4 #(
-    .INIT(16'hCCC9)) 
-    led_data_reg_i_12
-       (.I0(led_data_reg_i_23_n_0),
-        .I1(axi_awaddr[8]),
-        .I2(axi_awaddr[7]),
-        .I3(axi_awaddr[4]),
-        .O(p_1_in[6]));
-  LUT6 #(
-    .INIT(64'hAAAAAAAAAAAAAAA9)) 
-    led_data_reg_i_13
-       (.I0(axi_awaddr[7]),
-        .I1(axi_awaddr[6]),
-        .I2(axi_awaddr[3]),
         .I3(axi_awaddr[2]),
         .I4(axi_awaddr[5]),
-        .I5(axi_awaddr[4]),
-        .O(p_1_in[5]));
-  LUT5 #(
-    .INIT(32'hFFFE0001)) 
-    led_data_reg_i_14
-       (.I0(axi_awaddr[4]),
-        .I1(axi_awaddr[5]),
-        .I2(axi_awaddr[2]),
-        .I3(axi_awaddr[3]),
-        .I4(axi_awaddr[6]),
         .O(p_1_in[4]));
   LUT4 #(
-    .INIT(16'hFE01)) 
-    led_data_reg_i_15
-       (.I0(axi_awaddr[4]),
-        .I1(axi_awaddr[3]),
-        .I2(axi_awaddr[2]),
-        .I3(axi_awaddr[5]),
+    .INIT(16'hAAA9)) 
+    led_data_reg_i_11
+       (.I0(axi_awaddr[5]),
+        .I1(axi_awaddr[2]),
+        .I2(axi_awaddr[4]),
+        .I3(axi_awaddr[3]),
         .O(p_1_in[3]));
   LUT3 #(
-    .INIT(8'hA9)) 
-    led_data_reg_i_16
-       (.I0(axi_awaddr[4]),
+    .INIT(8'hE1)) 
+    led_data_reg_i_12
+       (.I0(axi_awaddr[3]),
         .I1(axi_awaddr[2]),
-        .I2(axi_awaddr[3]),
+        .I2(axi_awaddr[4]),
         .O(p_1_in[2]));
   LUT2 #(
     .INIT(4'h9)) 
-    led_data_reg_i_17
+    led_data_reg_i_13
        (.I0(axi_awaddr[3]),
         .I1(axi_awaddr[2]),
         .O(p_1_in[1]));
   LUT1 #(
     .INIT(2'h1)) 
-    led_data_reg_i_18
+    led_data_reg_i_14
        (.I0(axi_awaddr[2]),
         .O(p_1_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    led_data_reg_i_19
+  LUT6 #(
+    .INIT(64'h11115555FFFFFFFE)) 
+    led_data_reg_i_15
        (.I0(axi_awaddr[6]),
         .I1(axi_awaddr[5]),
         .I2(axi_awaddr[3]),
         .I3(axi_awaddr[2]),
-        .O(led_data_reg_i_19_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT4 #(
-    .INIT(16'h8000)) 
-    led_data_reg_i_20
-       (.I0(S_AXI_AWREADY),
-        .I1(S_AXI_WREADY),
-        .I2(s00_axi_awvalid),
-        .I3(s00_axi_wvalid),
-        .O(led_data_reg_i_20_n_0));
-  LUT5 #(
-    .INIT(32'h0101FFFE)) 
-    led_data_reg_i_21
-       (.I0(axi_awaddr[8]),
-        .I1(axi_awaddr[7]),
-        .I2(axi_awaddr[4]),
-        .I3(led_data_reg_i_23_n_0),
-        .I4(axi_awaddr[9]),
-        .O(led_data_reg_i_21_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    led_data_reg_i_23
-       (.I0(axi_awaddr[5]),
-        .I1(axi_awaddr[2]),
-        .I2(axi_awaddr[3]),
-        .I3(axi_awaddr[6]),
-        .O(led_data_reg_i_23_n_0));
+        .I4(axi_awaddr[4]),
+        .I5(axi_awaddr[7]),
+        .O(led_data_reg_i_15_n_0));
+  LUT6 #(
+    .INIT(64'hF0F0F0F0F0F0F0E1)) 
+    led_data_reg_i_9
+       (.I0(axi_awaddr[6]),
+        .I1(axi_awaddr[5]),
+        .I2(axi_awaddr[7]),
+        .I3(axi_awaddr[2]),
+        .I4(axi_awaddr[4]),
+        .I5(axi_awaddr[3]),
+        .O(p_1_in[5]));
   system_DigiLED_0_3_led_driver led_driver
        (.ADDRARDADDR(led_index),
         .Q(\slv_reg0_reg_n_0_[0] ),
@@ -1233,39 +1159,55 @@ module system_DigiLED_0_3_DigiLED_v1_0_S00_AXI
         .led_out(led_out),
         .rgb_temp(rgb_temp),
         .s00_axi_aclk(s00_axi_aclk));
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
     \slv_reg0[15]_i_1 
-       (.I0(\slv_reg0[31]_i_2_n_0 ),
-        .I1(s00_axi_wstrb[1]),
+       (.I0(s00_axi_wvalid),
+        .I1(S_AXI_WREADY),
+        .I2(\slv_reg0[31]_i_2_n_0 ),
+        .I3(s00_axi_wstrb[1]),
+        .I4(S_AXI_AWREADY),
+        .I5(s00_axi_awvalid),
         .O(\slv_reg0[15]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
     \slv_reg0[23]_i_1 
-       (.I0(\slv_reg0[31]_i_2_n_0 ),
-        .I1(s00_axi_wstrb[2]),
+       (.I0(s00_axi_wvalid),
+        .I1(S_AXI_WREADY),
+        .I2(\slv_reg0[31]_i_2_n_0 ),
+        .I3(s00_axi_wstrb[2]),
+        .I4(S_AXI_AWREADY),
+        .I5(s00_axi_awvalid),
         .O(\slv_reg0[23]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
     \slv_reg0[31]_i_1 
-       (.I0(\slv_reg0[31]_i_2_n_0 ),
-        .I1(s00_axi_wstrb[3]),
+       (.I0(s00_axi_wvalid),
+        .I1(S_AXI_WREADY),
+        .I2(\slv_reg0[31]_i_2_n_0 ),
+        .I3(s00_axi_wstrb[3]),
+        .I4(S_AXI_AWREADY),
+        .I5(s00_axi_awvalid),
         .O(\slv_reg0[31]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000100)) 
+    .INIT(64'h0000000000000001)) 
     \slv_reg0[31]_i_2 
-       (.I0(axi_awaddr[8]),
-        .I1(axi_awaddr[7]),
+       (.I0(axi_awaddr[5]),
+        .I1(axi_awaddr[3]),
         .I2(axi_awaddr[4]),
-        .I3(led_data_reg_i_20_n_0),
-        .I4(axi_awaddr[9]),
-        .I5(led_data_reg_i_23_n_0),
+        .I3(axi_awaddr[2]),
+        .I4(axi_awaddr[7]),
+        .I5(axi_awaddr[6]),
         .O(\slv_reg0[31]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
     \slv_reg0[7]_i_1 
-       (.I0(\slv_reg0[31]_i_2_n_0 ),
-        .I1(s00_axi_wstrb[0]),
+       (.I0(s00_axi_wvalid),
+        .I1(S_AXI_WREADY),
+        .I2(\slv_reg0[31]_i_2_n_0 ),
+        .I3(s00_axi_wstrb[0]),
+        .I4(S_AXI_AWREADY),
+        .I5(s00_axi_awvalid),
         .O(\slv_reg0[7]_i_1_n_0 ));
   FDRE \slv_reg0_reg[0] 
        (.C(s00_axi_aclk),
@@ -1478,21 +1420,19 @@ module system_DigiLED_0_3_led_driver
     rgb_temp);
   output led_out;
   output led_data_reg;
-  output [7:0]ADDRARDADDR;
+  output [5:0]ADDRARDADDR;
   input s00_axi_aclk;
   input [0:0]Q;
   input [23:0]rgb_temp;
 
-  wire [7:0]ADDRARDADDR;
+  wire [5:0]ADDRARDADDR;
   wire \FSM_sequential_state[0]_i_1_n_0 ;
   wire \FSM_sequential_state[1]_i_10_n_0 ;
   wire \FSM_sequential_state[1]_i_11_n_0 ;
   wire \FSM_sequential_state[1]_i_12_n_0 ;
   wire \FSM_sequential_state[1]_i_13_n_0 ;
-  wire \FSM_sequential_state[1]_i_14_n_0 ;
-  wire \FSM_sequential_state[1]_i_15_n_0 ;
-  wire \FSM_sequential_state[1]_i_16_n_0 ;
   wire \FSM_sequential_state[1]_i_2_n_0 ;
+  wire \FSM_sequential_state[1]_i_3_n_0 ;
   wire \FSM_sequential_state[1]_i_4_n_0 ;
   wire \FSM_sequential_state[1]_i_5_n_0 ;
   wire \FSM_sequential_state[1]_i_6_n_0 ;
@@ -1796,28 +1736,24 @@ module system_DigiLED_0_3_led_driver
   wire i__carry_i_3_n_0;
   wire i__carry_i_4_n_0;
   wire internal_reset;
-  wire [7:0]led_counter;
+  wire [1:0]led_counter;
+  wire \led_counter[2]_i_1_n_0 ;
   wire \led_counter[3]_i_1_n_0 ;
   wire \led_counter[4]_i_1_n_0 ;
   wire \led_counter[5]_i_1_n_0 ;
-  wire \led_counter[6]_i_1_n_0 ;
-  wire \led_counter[6]_i_2_n_0 ;
-  wire \led_counter[7]_i_1_n_0 ;
-  wire \led_counter[7]_i_3_n_0 ;
+  wire \led_counter[5]_i_2_n_0 ;
+  wire \led_counter[5]_i_3_n_0 ;
   wire \led_counter_reg_n_0_[0] ;
   wire \led_counter_reg_n_0_[1] ;
   wire \led_counter_reg_n_0_[2] ;
   wire \led_counter_reg_n_0_[3] ;
   wire \led_counter_reg_n_0_[4] ;
   wire \led_counter_reg_n_0_[5] ;
-  wire \led_counter_reg_n_0_[6] ;
-  wire \led_counter_reg_n_0_[7] ;
   wire led_data_reg;
-  wire led_data_reg_i_22_n_0;
   wire led_out;
   wire led_out_INST_0_i_10_n_0;
+  wire led_out_INST_0_i_11_n_0;
   wire led_out_INST_0_i_1_n_0;
-  wire led_out_INST_0_i_2_n_0;
   wire led_out_INST_0_i_3_n_0;
   wire led_out_INST_0_i_4_n_0;
   wire led_out_INST_0_i_5_n_0;
@@ -1872,10 +1808,10 @@ module system_DigiLED_0_3_led_driver
     .INIT(64'h0F0F0F000F0F0F4F)) 
     \FSM_sequential_state[0]_i_1 
        (.I0(state20_in),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I1(\FSM_sequential_state[1]_i_3_n_0 ),
         .I2(state__0[1]),
-        .I3(\FSM_sequential_state[1]_i_5_n_0 ),
-        .I4(\FSM_sequential_state[1]_i_6_n_0 ),
+        .I3(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_5_n_0 ),
         .I5(state__0[0]),
         .O(\FSM_sequential_state[0]_i_1_n_0 ));
   LUT2 #(
@@ -1884,128 +1820,106 @@ module system_DigiLED_0_3_led_driver
        (.I0(state__0[1]),
         .I1(state__0[0]),
         .O(state));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
     \FSM_sequential_state[1]_i_10 
-       (.I0(frame_counter_div_reg[0]),
-        .I1(frame_counter_div_reg[1]),
-        .O(\FSM_sequential_state[1]_i_10_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \FSM_sequential_state[1]_i_11 
-       (.I0(frame_counter_div_reg[24]),
-        .I1(frame_counter_div_reg[25]),
-        .I2(frame_counter_div_reg[28]),
-        .I3(frame_counter_div_reg[29]),
-        .O(\FSM_sequential_state[1]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \FSM_sequential_state[1]_i_12 
-       (.I0(frame_counter_div_reg[10]),
-        .I1(frame_counter_div_reg[11]),
-        .I2(frame_counter_div_reg[30]),
-        .I3(frame_counter_div_reg[31]),
-        .O(\FSM_sequential_state[1]_i_12_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFEF)) 
-    \FSM_sequential_state[1]_i_13 
-       (.I0(frame_counter_div_reg[3]),
-        .I1(frame_counter_div_reg[2]),
-        .I2(frame_counter_div_reg[7]),
-        .I3(frame_counter_div_reg[6]),
-        .O(\FSM_sequential_state[1]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \FSM_sequential_state[1]_i_14 
-       (.I0(frame_counter_div_reg[15]),
-        .I1(frame_counter_div_reg[14]),
-        .O(\FSM_sequential_state[1]_i_14_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \FSM_sequential_state[1]_i_15 
        (.I0(frame_counter_div_reg[16]),
         .I1(frame_counter_div_reg[17]),
         .I2(frame_counter_div_reg[12]),
         .I3(frame_counter_div_reg[13]),
-        .O(\FSM_sequential_state[1]_i_15_n_0 ));
+        .O(\FSM_sequential_state[1]_i_10_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \FSM_sequential_state[1]_i_11 
+       (.I0(frame_counter_div_reg[15]),
+        .I1(frame_counter_div_reg[14]),
+        .O(\FSM_sequential_state[1]_i_11_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFEF)) 
+    \FSM_sequential_state[1]_i_12 
+       (.I0(frame_counter_div_reg[3]),
+        .I1(frame_counter_div_reg[2]),
+        .I2(frame_counter_div_reg[7]),
+        .I3(frame_counter_div_reg[6]),
+        .O(\FSM_sequential_state[1]_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \FSM_sequential_state[1]_i_16 
+    \FSM_sequential_state[1]_i_13 
        (.I0(frame_counter_div_reg[4]),
         .I1(frame_counter_div_reg[5]),
         .I2(frame_counter_div_reg[26]),
         .I3(frame_counter_div_reg[27]),
-        .O(\FSM_sequential_state[1]_i_16_n_0 ));
+        .O(\FSM_sequential_state[1]_i_13_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFE000A000A)) 
     \FSM_sequential_state[1]_i_2 
        (.I0(state__0[0]),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
-        .I2(\FSM_sequential_state[1]_i_5_n_0 ),
-        .I3(\FSM_sequential_state[1]_i_6_n_0 ),
+        .I1(\FSM_sequential_state[1]_i_3_n_0 ),
+        .I2(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I3(\FSM_sequential_state[1]_i_5_n_0 ),
         .I4(state20_in),
         .I5(state__0[1]),
         .O(\FSM_sequential_state[1]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'hB)) 
+  LUT3 #(
+    .INIT(8'hA8)) 
     \FSM_sequential_state[1]_i_3 
-       (.I0(delay_done_flag_reg_n_0),
-        .I1(Q),
-        .O(internal_reset));
-  LUT6 #(
-    .INIT(64'hAAAAAAAAAAAA00A8)) 
-    \FSM_sequential_state[1]_i_4 
-       (.I0(\led_counter_reg_n_0_[7] ),
-        .I1(\FSM_sequential_state[1]_i_7_n_0 ),
-        .I2(\led_counter_reg_n_0_[2] ),
-        .I3(\FSM_sequential_state[1]_i_8_n_0 ),
-        .I4(\led_counter_reg_n_0_[5] ),
-        .I5(\led_counter_reg_n_0_[6] ),
-        .O(\FSM_sequential_state[1]_i_4_n_0 ));
+       (.I0(\led_counter_reg_n_0_[5] ),
+        .I1(\led_counter_reg_n_0_[4] ),
+        .I2(\led_counter_reg_n_0_[3] ),
+        .O(\FSM_sequential_state[1]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFEFF)) 
-    \FSM_sequential_state[1]_i_5 
-       (.I0(\FSM_sequential_state[1]_i_9_n_0 ),
+    \FSM_sequential_state[1]_i_4 
+       (.I0(\FSM_sequential_state[1]_i_6_n_0 ),
         .I1(frame_counter_div_reg[20]),
         .I2(frame_counter_div_reg[21]),
-        .I3(\FSM_sequential_state[1]_i_10_n_0 ),
-        .I4(\FSM_sequential_state[1]_i_11_n_0 ),
-        .I5(\FSM_sequential_state[1]_i_12_n_0 ),
-        .O(\FSM_sequential_state[1]_i_5_n_0 ));
+        .I3(\FSM_sequential_state[1]_i_7_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_8_n_0 ),
+        .I5(\FSM_sequential_state[1]_i_9_n_0 ),
+        .O(\FSM_sequential_state[1]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \FSM_sequential_state[1]_i_6 
-       (.I0(\FSM_sequential_state[1]_i_13_n_0 ),
+    \FSM_sequential_state[1]_i_5 
+       (.I0(\FSM_sequential_state[1]_i_10_n_0 ),
         .I1(frame_counter_div_reg[8]),
         .I2(frame_counter_div_reg[9]),
-        .I3(\FSM_sequential_state[1]_i_14_n_0 ),
-        .I4(\FSM_sequential_state[1]_i_15_n_0 ),
-        .I5(\FSM_sequential_state[1]_i_16_n_0 ),
-        .O(\FSM_sequential_state[1]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \FSM_sequential_state[1]_i_7 
-       (.I0(\led_counter_reg_n_0_[0] ),
-        .I1(\led_counter_reg_n_0_[1] ),
-        .O(\FSM_sequential_state[1]_i_7_n_0 ));
-  LUT2 #(
-    .INIT(4'h7)) 
-    \FSM_sequential_state[1]_i_8 
-       (.I0(\led_counter_reg_n_0_[3] ),
-        .I1(\led_counter_reg_n_0_[4] ),
-        .O(\FSM_sequential_state[1]_i_8_n_0 ));
+        .I3(\FSM_sequential_state[1]_i_11_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_12_n_0 ),
+        .I5(\FSM_sequential_state[1]_i_13_n_0 ),
+        .O(\FSM_sequential_state[1]_i_5_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \FSM_sequential_state[1]_i_9 
+    \FSM_sequential_state[1]_i_6 
        (.I0(frame_counter_div_reg[18]),
         .I1(frame_counter_div_reg[19]),
         .I2(frame_counter_div_reg[22]),
         .I3(frame_counter_div_reg[23]),
+        .O(\FSM_sequential_state[1]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    \FSM_sequential_state[1]_i_7 
+       (.I0(frame_counter_div_reg[0]),
+        .I1(frame_counter_div_reg[1]),
+        .O(\FSM_sequential_state[1]_i_7_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \FSM_sequential_state[1]_i_8 
+       (.I0(frame_counter_div_reg[24]),
+        .I1(frame_counter_div_reg[25]),
+        .I2(frame_counter_div_reg[28]),
+        .I3(frame_counter_div_reg[29]),
+        .O(\FSM_sequential_state[1]_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \FSM_sequential_state[1]_i_9 
+       (.I0(frame_counter_div_reg[10]),
+        .I1(frame_counter_div_reg[11]),
+        .I2(frame_counter_div_reg[30]),
+        .I3(frame_counter_div_reg[31]),
         .O(\FSM_sequential_state[1]_i_9_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:01,iSTATE0:00,iSTATE1:10,iSTATE2:11" *) 
   (* KEEP = "yes" *) 
@@ -2345,14 +2259,14 @@ module system_DigiLED_0_3_led_driver
         .I4(delay_counter_reg__0[1]),
         .I5(delay_counter_reg__0[3]),
         .O(\delay_counter[10]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \delay_counter[1]_i_1 
        (.I0(delay_counter_reg__0[0]),
         .I1(delay_counter_reg__0[1]),
         .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \delay_counter[2]_i_1 
@@ -2360,7 +2274,7 @@ module system_DigiLED_0_3_led_driver
         .I1(delay_counter_reg__0[0]),
         .I2(delay_counter_reg__0[1]),
         .O(p_0_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \delay_counter[3]_i_1 
@@ -2369,7 +2283,7 @@ module system_DigiLED_0_3_led_driver
         .I2(delay_counter_reg__0[0]),
         .I3(delay_counter_reg__0[2]),
         .O(p_0_in[3]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \delay_counter[4]_i_1 
@@ -2404,7 +2318,7 @@ module system_DigiLED_0_3_led_driver
         .I1(\delay_counter[10]_i_4_n_0 ),
         .I2(delay_counter_reg__0[6]),
         .O(p_0_in[7]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \delay_counter[8]_i_1 
@@ -2413,7 +2327,7 @@ module system_DigiLED_0_3_led_driver
         .I2(\delay_counter[10]_i_4_n_0 ),
         .I3(delay_counter_reg__0[7]),
         .O(p_0_in[8]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \delay_counter[9]_i_1 
@@ -2522,22 +2436,22 @@ module system_DigiLED_0_3_led_driver
         .I5(delay_done_flag_i_3_n_0),
         .O(delay_done_flag_i_1_n_0));
   LUT4 #(
-    .INIT(16'h0002)) 
+    .INIT(16'h0010)) 
     delay_done_flag_i_2
-       (.I0(delay_counter_reg__0[4]),
-        .I1(delay_counter_reg__0[3]),
-        .I2(delay_counter_reg__0[5]),
-        .I3(delay_counter_reg__0[2]),
+       (.I0(delay_counter_reg__0[3]),
+        .I1(delay_counter_reg__0[2]),
+        .I2(delay_counter_reg__0[4]),
+        .I3(delay_counter_reg__0[5]),
         .O(delay_done_flag_i_2_n_0));
   LUT6 #(
     .INIT(64'h0008000000000000)) 
     delay_done_flag_i_3
-       (.I0(\state_reg_n_0_[1] ),
-        .I1(\state_reg_n_0_[0] ),
+       (.I0(delay_counter_reg__0[8]),
+        .I1(delay_counter_reg__0[7]),
         .I2(delay_counter_reg__0[0]),
         .I3(delay_counter_reg__0[1]),
-        .I4(delay_counter_reg__0[7]),
-        .I5(delay_counter_reg__0[8]),
+        .I4(\state_reg_n_0_[0] ),
+        .I5(\state_reg_n_0_[1] ),
         .O(delay_done_flag_i_3_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -2656,14 +2570,14 @@ module system_DigiLED_0_3_led_driver
   LUT2 #(
     .INIT(4'h1)) 
     frame_counter2_carry_i_2
-       (.I0(frame_counter_reg[3]),
-        .I1(frame_counter_reg[2]),
+       (.I0(frame_counter_reg[2]),
+        .I1(frame_counter_reg[3]),
         .O(frame_counter2_carry_i_2_n_0));
   LUT2 #(
     .INIT(4'h7)) 
     frame_counter2_carry_i_3
-       (.I0(frame_counter_reg[1]),
-        .I1(frame_counter_reg[0]),
+       (.I0(frame_counter_reg[0]),
+        .I1(frame_counter_reg[1]),
         .O(frame_counter2_carry_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
@@ -2686,8 +2600,8 @@ module system_DigiLED_0_3_led_driver
   LUT2 #(
     .INIT(4'h8)) 
     frame_counter2_carry_i_7
-       (.I0(frame_counter_reg[0]),
-        .I1(frame_counter_reg[1]),
+       (.I0(frame_counter_reg[1]),
+        .I1(frame_counter_reg[0]),
         .O(frame_counter2_carry_i_7_n_0));
   LUT6 #(
     .INIT(64'h0001000000010001)) 
@@ -2709,7 +2623,7 @@ module system_DigiLED_0_3_led_driver
         .I4(\frame_counter[0]_i_6_n_0 ),
         .I5(\frame_counter[0]_i_7_n_0 ),
         .O(frame_counter0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \frame_counter[0]_i_4 
@@ -2717,9 +2631,9 @@ module system_DigiLED_0_3_led_driver
         .I1(frame_counter_div_reg[14]),
         .I2(frame_counter_div_reg[9]),
         .I3(frame_counter_div_reg[8]),
-        .I4(\FSM_sequential_state[1]_i_13_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_10_n_0 ),
         .O(\frame_counter[0]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \frame_counter[0]_i_5 
@@ -2727,9 +2641,9 @@ module system_DigiLED_0_3_led_driver
         .I1(frame_counter_div_reg[26]),
         .I2(frame_counter_div_reg[5]),
         .I3(frame_counter_div_reg[4]),
-        .I4(\FSM_sequential_state[1]_i_15_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_12_n_0 ),
         .O(\frame_counter[0]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFD)) 
     \frame_counter[0]_i_6 
@@ -2737,9 +2651,9 @@ module system_DigiLED_0_3_led_driver
         .I1(frame_counter_div_reg[1]),
         .I2(frame_counter_div_reg[21]),
         .I3(frame_counter_div_reg[20]),
-        .I4(\FSM_sequential_state[1]_i_9_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_6_n_0 ),
         .O(\frame_counter[0]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \frame_counter[0]_i_7 
@@ -2747,9 +2661,8 @@ module system_DigiLED_0_3_led_driver
         .I1(frame_counter_div_reg[30]),
         .I2(frame_counter_div_reg[11]),
         .I3(frame_counter_div_reg[10]),
-        .I4(\FSM_sequential_state[1]_i_11_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_8_n_0 ),
         .O(\frame_counter[0]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \frame_counter[0]_i_8 
@@ -3606,9 +3519,9 @@ module system_DigiLED_0_3_led_driver
   LUT3 #(
     .INIT(8'h80)) 
     i__carry_i_4
-       (.I0(frame_counter_reg[2]),
-        .I1(frame_counter_reg[0]),
-        .I2(frame_counter_reg[1]),
+       (.I0(frame_counter_reg[0]),
+        .I1(frame_counter_reg[1]),
+        .I2(frame_counter_reg[2]),
         .O(i__carry_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
@@ -3624,92 +3537,63 @@ module system_DigiLED_0_3_led_driver
         .I2(state__0[1]),
         .O(led_counter[1]));
   LUT4 #(
-    .INIT(16'h0078)) 
+    .INIT(16'h1540)) 
     \led_counter[2]_i_1 
-       (.I0(\led_counter_reg_n_0_[0] ),
-        .I1(\led_counter_reg_n_0_[1] ),
-        .I2(\led_counter_reg_n_0_[2] ),
-        .I3(state__0[1]),
-        .O(led_counter[2]));
+       (.I0(state__0[1]),
+        .I1(\led_counter_reg_n_0_[0] ),
+        .I2(\led_counter_reg_n_0_[1] ),
+        .I3(\led_counter_reg_n_0_[2] ),
+        .O(\led_counter[2]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h15554000)) 
     \led_counter[3]_i_1 
        (.I0(state__0[1]),
-        .I1(\led_counter_reg_n_0_[2] ),
-        .I2(\led_counter_reg_n_0_[1] ),
-        .I3(\led_counter_reg_n_0_[0] ),
+        .I1(\led_counter_reg_n_0_[1] ),
+        .I2(\led_counter_reg_n_0_[0] ),
+        .I3(\led_counter_reg_n_0_[2] ),
         .I4(\led_counter_reg_n_0_[3] ),
         .O(\led_counter[3]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h1555555540000000)) 
     \led_counter[4]_i_1 
        (.I0(state__0[1]),
-        .I1(\led_counter_reg_n_0_[0] ),
-        .I2(\led_counter_reg_n_0_[1] ),
-        .I3(\led_counter_reg_n_0_[2] ),
+        .I1(\led_counter_reg_n_0_[2] ),
+        .I2(\led_counter_reg_n_0_[0] ),
+        .I3(\led_counter_reg_n_0_[1] ),
         .I4(\led_counter_reg_n_0_[3] ),
         .I5(\led_counter_reg_n_0_[4] ),
         .O(\led_counter[4]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h55150040)) 
-    \led_counter[5]_i_1 
-       (.I0(state__0[1]),
-        .I1(\led_counter_reg_n_0_[4] ),
-        .I2(\led_counter_reg_n_0_[3] ),
-        .I3(\led_counter[6]_i_2_n_0 ),
-        .I4(\led_counter_reg_n_0_[5] ),
-        .O(\led_counter[5]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h5155555504000000)) 
-    \led_counter[6]_i_1 
-       (.I0(state__0[1]),
-        .I1(\led_counter_reg_n_0_[5] ),
-        .I2(\led_counter[6]_i_2_n_0 ),
-        .I3(\led_counter_reg_n_0_[3] ),
-        .I4(\led_counter_reg_n_0_[4] ),
-        .I5(\led_counter_reg_n_0_[6] ),
-        .O(\led_counter[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
-    \led_counter[6]_i_2 
-       (.I0(\led_counter_reg_n_0_[2] ),
-        .I1(\led_counter_reg_n_0_[1] ),
-        .I2(\led_counter_reg_n_0_[0] ),
-        .O(\led_counter[6]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000010002020202)) 
-    \led_counter[7]_i_1 
+    \led_counter[5]_i_1 
        (.I0(state__0[0]),
-        .I1(\FSM_sequential_state[1]_i_6_n_0 ),
-        .I2(\FSM_sequential_state[1]_i_5_n_0 ),
-        .I3(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I1(\FSM_sequential_state[1]_i_5_n_0 ),
+        .I2(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I3(\FSM_sequential_state[1]_i_3_n_0 ),
         .I4(state20_in),
         .I5(state__0[1]),
-        .O(\led_counter[7]_i_1_n_0 ));
+        .O(\led_counter[5]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h0078)) 
-    \led_counter[7]_i_2 
-       (.I0(\led_counter[7]_i_3_n_0 ),
-        .I1(\led_counter_reg_n_0_[6] ),
-        .I2(\led_counter_reg_n_0_[7] ),
-        .I3(state__0[1]),
-        .O(led_counter[7]));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    \led_counter[7]_i_3 
-       (.I0(\led_counter_reg_n_0_[5] ),
-        .I1(\led_counter_reg_n_0_[2] ),
+    .INIT(16'h4510)) 
+    \led_counter[5]_i_2 
+       (.I0(state__0[1]),
+        .I1(\led_counter[5]_i_3_n_0 ),
+        .I2(\led_counter_reg_n_0_[4] ),
+        .I3(\led_counter_reg_n_0_[5] ),
+        .O(\led_counter[5]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \led_counter[5]_i_3 
+       (.I0(\led_counter_reg_n_0_[2] ),
+        .I1(\led_counter_reg_n_0_[0] ),
         .I2(\led_counter_reg_n_0_[1] ),
-        .I3(\led_counter_reg_n_0_[0] ),
-        .I4(\led_counter_reg_n_0_[3] ),
-        .I5(\led_counter_reg_n_0_[4] ),
-        .O(\led_counter[7]_i_3_n_0 ));
+        .I3(\led_counter_reg_n_0_[3] ),
+        .O(\led_counter[5]_i_3_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \led_counter_reg[0] 
        (.C(s00_axi_aclk),
-        .CE(\led_counter[7]_i_1_n_0 ),
+        .CE(\led_counter[5]_i_1_n_0 ),
         .CLR(internal_reset),
         .D(led_counter[0]),
         .Q(\led_counter_reg_n_0_[0] ));
@@ -3717,7 +3601,7 @@ module system_DigiLED_0_3_led_driver
     .INIT(1'b0)) 
     \led_counter_reg[1] 
        (.C(s00_axi_aclk),
-        .CE(\led_counter[7]_i_1_n_0 ),
+        .CE(\led_counter[5]_i_1_n_0 ),
         .CLR(internal_reset),
         .D(led_counter[1]),
         .Q(\led_counter_reg_n_0_[1] ));
@@ -3725,15 +3609,15 @@ module system_DigiLED_0_3_led_driver
     .INIT(1'b0)) 
     \led_counter_reg[2] 
        (.C(s00_axi_aclk),
-        .CE(\led_counter[7]_i_1_n_0 ),
+        .CE(\led_counter[5]_i_1_n_0 ),
         .CLR(internal_reset),
-        .D(led_counter[2]),
+        .D(\led_counter[2]_i_1_n_0 ),
         .Q(\led_counter_reg_n_0_[2] ));
   FDCE #(
     .INIT(1'b0)) 
     \led_counter_reg[3] 
        (.C(s00_axi_aclk),
-        .CE(\led_counter[7]_i_1_n_0 ),
+        .CE(\led_counter[5]_i_1_n_0 ),
         .CLR(internal_reset),
         .D(\led_counter[3]_i_1_n_0 ),
         .Q(\led_counter_reg_n_0_[3] ));
@@ -3741,7 +3625,7 @@ module system_DigiLED_0_3_led_driver
     .INIT(1'b0)) 
     \led_counter_reg[4] 
        (.C(s00_axi_aclk),
-        .CE(\led_counter[7]_i_1_n_0 ),
+        .CE(\led_counter[5]_i_1_n_0 ),
         .CLR(internal_reset),
         .D(\led_counter[4]_i_1_n_0 ),
         .Q(\led_counter_reg_n_0_[4] ));
@@ -3749,32 +3633,10 @@ module system_DigiLED_0_3_led_driver
     .INIT(1'b0)) 
     \led_counter_reg[5] 
        (.C(s00_axi_aclk),
-        .CE(\led_counter[7]_i_1_n_0 ),
+        .CE(\led_counter[5]_i_1_n_0 ),
         .CLR(internal_reset),
-        .D(\led_counter[5]_i_1_n_0 ),
+        .D(\led_counter[5]_i_2_n_0 ),
         .Q(\led_counter_reg_n_0_[5] ));
-  FDCE #(
-    .INIT(1'b0)) 
-    \led_counter_reg[6] 
-       (.C(s00_axi_aclk),
-        .CE(\led_counter[7]_i_1_n_0 ),
-        .CLR(internal_reset),
-        .D(\led_counter[6]_i_1_n_0 ),
-        .Q(\led_counter_reg_n_0_[6] ));
-  FDCE #(
-    .INIT(1'b0)) 
-    \led_counter_reg[7] 
-       (.C(s00_axi_aclk),
-        .CE(\led_counter[7]_i_1_n_0 ),
-        .CLR(internal_reset),
-        .D(led_counter[7]),
-        .Q(\led_counter_reg_n_0_[7] ));
-  LUT2 #(
-    .INIT(4'h2)) 
-    led_data_reg_i_10
-       (.I0(\led_counter_reg_n_0_[0] ),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
-        .O(ADDRARDADDR[0]));
   LUT4 #(
     .INIT(16'h0010)) 
     led_data_reg_i_2
@@ -3783,163 +3645,149 @@ module system_DigiLED_0_3_led_driver
         .I2(Q),
         .I3(delay_done_flag_reg_n_0),
         .O(led_data_reg));
-  LUT6 #(
-    .INIT(64'h0111011101111111)) 
-    led_data_reg_i_22
-       (.I0(\led_counter_reg_n_0_[6] ),
-        .I1(\led_counter_reg_n_0_[5] ),
-        .I2(\led_counter_reg_n_0_[3] ),
-        .I3(\led_counter_reg_n_0_[4] ),
-        .I4(\led_counter_reg_n_0_[2] ),
-        .I5(\FSM_sequential_state[1]_i_7_n_0 ),
-        .O(led_data_reg_i_22_n_0));
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT3 #(
+    .INIT(8'h02)) 
     led_data_reg_i_3
-       (.I0(\led_counter_reg_n_0_[7] ),
-        .I1(led_data_reg_i_22_n_0),
-        .O(ADDRARDADDR[7]));
-  LUT2 #(
-    .INIT(4'h2)) 
-    led_data_reg_i_4
-       (.I0(\led_counter_reg_n_0_[6] ),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
-        .O(ADDRARDADDR[6]));
-  LUT2 #(
-    .INIT(4'h2)) 
-    led_data_reg_i_5
        (.I0(\led_counter_reg_n_0_[5] ),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I1(\led_counter_reg_n_0_[4] ),
+        .I2(\led_counter_reg_n_0_[3] ),
         .O(ADDRARDADDR[5]));
   LUT2 #(
     .INIT(4'h2)) 
-    led_data_reg_i_6
+    led_data_reg_i_4
        (.I0(\led_counter_reg_n_0_[4] ),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I1(\led_counter_reg_n_0_[5] ),
         .O(ADDRARDADDR[4]));
   LUT2 #(
     .INIT(4'h2)) 
-    led_data_reg_i_7
+    led_data_reg_i_5
        (.I0(\led_counter_reg_n_0_[3] ),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I1(\led_counter_reg_n_0_[5] ),
         .O(ADDRARDADDR[3]));
-  LUT2 #(
-    .INIT(4'h2)) 
-    led_data_reg_i_8
+  LUT4 #(
+    .INIT(16'h02AA)) 
+    led_data_reg_i_6
        (.I0(\led_counter_reg_n_0_[2] ),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I1(\led_counter_reg_n_0_[3] ),
+        .I2(\led_counter_reg_n_0_[4] ),
+        .I3(\led_counter_reg_n_0_[5] ),
         .O(ADDRARDADDR[2]));
-  LUT2 #(
-    .INIT(4'h2)) 
-    led_data_reg_i_9
+  LUT4 #(
+    .INIT(16'h02AA)) 
+    led_data_reg_i_7
        (.I0(\led_counter_reg_n_0_[1] ),
-        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I1(\led_counter_reg_n_0_[3] ),
+        .I2(\led_counter_reg_n_0_[4] ),
+        .I3(\led_counter_reg_n_0_[5] ),
         .O(ADDRARDADDR[1]));
+  LUT4 #(
+    .INIT(16'h02AA)) 
+    led_data_reg_i_8
+       (.I0(\led_counter_reg_n_0_[0] ),
+        .I1(\led_counter_reg_n_0_[3] ),
+        .I2(\led_counter_reg_n_0_[4] ),
+        .I3(\led_counter_reg_n_0_[5] ),
+        .O(ADDRARDADDR[0]));
   LUT6 #(
-    .INIT(64'h00000000AAEFAA20)) 
+    .INIT(64'h000000B800B800B8)) 
     led_out_INST_0
-       (.I0(PWM0_out1),
+       (.I0(PWM1_out1),
         .I1(led_out_INST_0_i_1_n_0),
-        .I2(led_out_INST_0_i_2_n_0),
-        .I3(led_out_INST_0_i_3_n_0),
-        .I4(PWM1_out1),
-        .I5(led_out_INST_0_i_4_n_0),
+        .I2(PWM0_out1),
+        .I3(internal_reset),
+        .I4(\state_reg_n_0_[0] ),
+        .I5(\state_reg_n_0_[1] ),
         .O(led_out));
-  LUT5 #(
-    .INIT(32'hFEF20F0F)) 
+  LUT6 #(
+    .INIT(64'hBE8EB28200000000)) 
     led_out_INST_0_i_1
-       (.I0(led_out_INST_0_i_5_n_0),
-        .I1(frame_counter_reg[2]),
-        .I2(frame_counter_reg[3]),
-        .I3(led_out_INST_0_i_6_n_0),
-        .I4(frame_counter_reg[4]),
+       (.I0(led_out_INST_0_i_3_n_0),
+        .I1(frame_counter_reg[3]),
+        .I2(frame_counter_reg[4]),
+        .I3(led_out_INST_0_i_4_n_0),
+        .I4(led_out_INST_0_i_5_n_0),
+        .I5(Q),
         .O(led_out_INST_0_i_1_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     led_out_INST_0_i_10
-       (.I0(rgb_temp[8]),
-        .I1(rgb_temp[9]),
-        .I2(frame_counter_reg[1]),
-        .I3(rgb_temp[10]),
-        .I4(frame_counter_reg[0]),
-        .I5(rgb_temp[11]),
-        .O(led_out_INST_0_i_10_n_0));
-  LUT4 #(
-    .INIT(16'h57F7)) 
-    led_out_INST_0_i_2
-       (.I0(frame_counter_reg[3]),
-        .I1(led_out_INST_0_i_7_n_0),
-        .I2(frame_counter_reg[2]),
-        .I3(led_out_INST_0_i_8_n_0),
-        .O(led_out_INST_0_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h00099099FFFFFFFF)) 
-    led_out_INST_0_i_3
-       (.I0(frame_counter_reg[3]),
-        .I1(frame_counter_reg[4]),
-        .I2(frame_counter_reg[2]),
-        .I3(led_out_INST_0_i_9_n_0),
-        .I4(led_out_INST_0_i_10_n_0),
-        .I5(Q),
-        .O(led_out_INST_0_i_3_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'hFF8F)) 
-    led_out_INST_0_i_4
-       (.I0(\state_reg_n_0_[1] ),
-        .I1(\state_reg_n_0_[0] ),
-        .I2(Q),
-        .I3(delay_done_flag_reg_n_0),
-        .O(led_out_INST_0_i_4_n_0));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    led_out_INST_0_i_5
-       (.I0(rgb_temp[4]),
-        .I1(rgb_temp[5]),
-        .I2(frame_counter_reg[1]),
-        .I3(rgb_temp[6]),
-        .I4(frame_counter_reg[0]),
-        .I5(rgb_temp[7]),
-        .O(led_out_INST_0_i_5_n_0));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    led_out_INST_0_i_6
-       (.I0(rgb_temp[0]),
-        .I1(rgb_temp[1]),
-        .I2(frame_counter_reg[1]),
-        .I3(rgb_temp[2]),
-        .I4(frame_counter_reg[0]),
-        .I5(rgb_temp[3]),
-        .O(led_out_INST_0_i_6_n_0));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    led_out_INST_0_i_7
        (.I0(rgb_temp[20]),
         .I1(rgb_temp[21]),
         .I2(frame_counter_reg[1]),
         .I3(rgb_temp[22]),
         .I4(frame_counter_reg[0]),
         .I5(rgb_temp[23]),
-        .O(led_out_INST_0_i_7_n_0));
+        .O(led_out_INST_0_i_10_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    led_out_INST_0_i_8
+    led_out_INST_0_i_11
        (.I0(rgb_temp[16]),
         .I1(rgb_temp[17]),
         .I2(frame_counter_reg[1]),
         .I3(rgb_temp[18]),
         .I4(frame_counter_reg[0]),
         .I5(rgb_temp[19]),
-        .O(led_out_INST_0_i_8_n_0));
+        .O(led_out_INST_0_i_11_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    led_out_INST_0_i_2
+       (.I0(delay_done_flag_reg_n_0),
+        .I1(Q),
+        .O(internal_reset));
+  MUXF7 led_out_INST_0_i_3
+       (.I0(led_out_INST_0_i_6_n_0),
+        .I1(led_out_INST_0_i_7_n_0),
+        .O(led_out_INST_0_i_3_n_0),
+        .S(frame_counter_reg[2]));
+  MUXF7 led_out_INST_0_i_4
+       (.I0(led_out_INST_0_i_8_n_0),
+        .I1(led_out_INST_0_i_9_n_0),
+        .O(led_out_INST_0_i_4_n_0),
+        .S(frame_counter_reg[2]));
+  MUXF7 led_out_INST_0_i_5
+       (.I0(led_out_INST_0_i_10_n_0),
+        .I1(led_out_INST_0_i_11_n_0),
+        .O(led_out_INST_0_i_5_n_0),
+        .S(frame_counter_reg[2]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    led_out_INST_0_i_9
+    led_out_INST_0_i_6
        (.I0(rgb_temp[12]),
         .I1(rgb_temp[13]),
         .I2(frame_counter_reg[1]),
         .I3(rgb_temp[14]),
         .I4(frame_counter_reg[0]),
         .I5(rgb_temp[15]),
+        .O(led_out_INST_0_i_6_n_0));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    led_out_INST_0_i_7
+       (.I0(rgb_temp[8]),
+        .I1(rgb_temp[9]),
+        .I2(frame_counter_reg[1]),
+        .I3(rgb_temp[10]),
+        .I4(frame_counter_reg[0]),
+        .I5(rgb_temp[11]),
+        .O(led_out_INST_0_i_7_n_0));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    led_out_INST_0_i_8
+       (.I0(rgb_temp[4]),
+        .I1(rgb_temp[5]),
+        .I2(frame_counter_reg[1]),
+        .I3(rgb_temp[6]),
+        .I4(frame_counter_reg[0]),
+        .I5(rgb_temp[7]),
+        .O(led_out_INST_0_i_8_n_0));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    led_out_INST_0_i_9
+       (.I0(rgb_temp[0]),
+        .I1(rgb_temp[1]),
+        .I2(frame_counter_reg[1]),
+        .I3(rgb_temp[2]),
+        .I4(frame_counter_reg[0]),
+        .I5(rgb_temp[3]),
         .O(led_out_INST_0_i_9_n_0));
   CARRY4 \state2_inferred__0/i__carry 
        (.CI(1'b0),
@@ -3966,10 +3814,10 @@ module system_DigiLED_0_3_led_driver
     .INIT(64'h5454545455575555)) 
     \state[0]_i_1 
        (.I0(\state_reg_n_0_[1] ),
-        .I1(\FSM_sequential_state[1]_i_5_n_0 ),
-        .I2(\FSM_sequential_state[1]_i_6_n_0 ),
+        .I1(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I2(\FSM_sequential_state[1]_i_5_n_0 ),
         .I3(state20_in),
-        .I4(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_3_n_0 ),
         .I5(\state_reg_n_0_[0] ),
         .O(\state[0]_i_1_n_0 ));
   LUT6 #(
@@ -3977,9 +3825,9 @@ module system_DigiLED_0_3_led_driver
     \state[1]_i_1 
        (.I0(\state_reg_n_0_[1] ),
         .I1(\state_reg_n_0_[0] ),
-        .I2(\FSM_sequential_state[1]_i_4_n_0 ),
-        .I3(\FSM_sequential_state[1]_i_5_n_0 ),
-        .I4(\FSM_sequential_state[1]_i_6_n_0 ),
+        .I2(\FSM_sequential_state[1]_i_3_n_0 ),
+        .I3(\FSM_sequential_state[1]_i_4_n_0 ),
+        .I4(\FSM_sequential_state[1]_i_5_n_0 ),
         .I5(state20_in),
         .O(\state[1]_i_1_n_0 ));
   FDCE #(

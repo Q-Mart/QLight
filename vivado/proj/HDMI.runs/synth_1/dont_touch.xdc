@@ -79,6 +79,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_rst_axi_
 # IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/system_DigiLED_0_3.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_DigiLED_0_3 || ORIG_REF_NAME==system_DigiLED_0_3} -quiet] -quiet
 
+# IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axi_gpio_0_1 || ORIG_REF_NAME==system_axi_gpio_0_1} -quiet] -quiet
+
 # IP: /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_1/system_auto_pc_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_1 || ORIG_REF_NAME==system_auto_pc_1} -quiet] -quiet
 

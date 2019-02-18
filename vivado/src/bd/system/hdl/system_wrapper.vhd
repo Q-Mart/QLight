@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
---Date        : Fri Feb 15 10:39:38 2019
+--Date        : Mon Feb 18 09:59:51 2019
 --Host        : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -48,7 +48,8 @@ entity system_wrapper is
     hdmi_out_ddc_scl_io : inout STD_LOGIC;
     hdmi_out_ddc_sda_io : inout STD_LOGIC;
     led_pin : out STD_LOGIC;
-    reset_rtl : in STD_LOGIC
+    reset_rtl : in STD_LOGIC;
+    sws_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 end system_wrapper;
 
@@ -98,7 +99,8 @@ architecture STRUCTURE of system_wrapper is
     hdmi_out_ddc_scl_t : out STD_LOGIC;
     hdmi_in_hpd : out STD_LOGIC_VECTOR ( 0 to 0 );
     reset_rtl : in STD_LOGIC;
-    led_pin : out STD_LOGIC
+    led_pin : out STD_LOGIC;
+    sws_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component system;
   component IOBUF is
@@ -195,6 +197,7 @@ system_i: component system
       hdmi_out_ddc_sda_o => hdmi_out_ddc_sda_o,
       hdmi_out_ddc_sda_t => hdmi_out_ddc_sda_t,
       led_pin => led_pin,
-      reset_rtl => reset_rtl
+      reset_rtl => reset_rtl,
+      sws_4bits_tri_i(3 downto 0) => sws_4bits_tri_i(3 downto 0)
     );
 end STRUCTURE;
