@@ -1,23 +1,12 @@
 #include "scale.h"
 
-
 u8 sectionDataCopy[MAX_ARRAY_SIZE*3];
 u8 newSectionData[MAX_ARRAY_SIZE*3];
 
 void scale(u8 *sectionData, u32 stride, u16 startX, u16 startY, u16 length, u16 height, u16 scaledLength) {
-//	u32 startIndex = (startX*3) + (stride*startY);
-//
-//	for (u16 i=0; i<height; i++) {
-//		memcpy(sectionData+(i*length*3), &frame[startIndex+(stride*i)], length*3);
-//	}
 
 	// Pretending an AXI burst transaction happens here
 	memcpy(sectionDataCopy, sectionData, length*height*3);
-
-#ifdef SYSTEM_DEBUG
-	memcpy(newSectionData, sectionDataCopy, length*height*3);
-#endif
-
 
 	// Can be 14 bits when converting to HLS
 	u16 rollingAverage[3] = {0, 0, 0};
@@ -48,15 +37,9 @@ void scale(u8 *sectionData, u32 stride, u16 startX, u16 startY, u16 length, u16 
 
 			u32 index = ((scaledX)*3)+(scaledLength*(scaledY)*3);
 
-#ifdef SCALE_DEBUG
-			newSectionData[index] = 0;
-			newSectionData[index+1] = 255;
-			newSectionData[index+2] = 0;
-#else
 			newSectionData[index] = rollingAverage[0];
 			newSectionData[index+1] = rollingAverage[1];
 			newSectionData[index+2] = rollingAverage[2];
-#endif
 
 			rollingAverage[0] = 0;
 			rollingAverage[1] = 0;
@@ -67,5 +50,7 @@ void scale(u8 *sectionData, u32 stride, u16 startX, u16 startY, u16 length, u16 
 		scaledY = 0;
 		scaledX++;
 	}
+
+	// Pretending an AXI burst transaction happens here
 	memcpy(sectionData, newSectionData, scaledLength*height*3);
 }

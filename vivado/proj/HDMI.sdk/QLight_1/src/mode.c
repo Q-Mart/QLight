@@ -42,16 +42,12 @@ u16 getFrequency(u8 *pixel, u16 length, u16 height) {
 }
 
 
-u32 mode(u8 *sectionData, u32 stride, u16 startX, u16 startY, u16 length, u16 height) {
-	numberOfPixelsVisted = 0;
+u32 mode(u8 *sectionData, u16 startX, u16 startY, u16 length, u16 height) {
 
-//	u32 startIndex = (startX*3) + (stride*startY);
-//	for (u16 i=0; i<height; i++) {
-//		memcpy(sectionData+(i*length*3), &frame[startIndex+(stride*i)], length*3);
-//	}
+	// Pretending an AXI burst transaction happens here
 	memcpy(sectionDataCopy, sectionData, length*height*3);
 
-
+	numberOfPixelsVisted = 0;
 	u32 modePixel;
 	u16 modeFreq = 0;
 

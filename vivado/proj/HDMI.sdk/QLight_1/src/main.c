@@ -270,7 +270,6 @@ void printGreeting() {
 }
 
 void updateSyncModeOnTerm() {
-//	printf("\033[0;11H");
 	moveCursorTo(0, 11);
 	if (syncMode) {
 		printf("On \r\n");
@@ -314,16 +313,6 @@ int main() {
 	initSections();
 	printf("Sections initialised\r\n");
 
-	u8 testData[15] = {
-			255, 255, 255,
-			255, 255, 255,
-			255, 255, 255,
-			0, 0, 0,
-			0, 0, 0
-	};
-
-	u32 x = mode(testData, 1, 0, 0, 1, 5);
-
 	clearLEDs(40);
 
 	enable_LEDs();
@@ -356,6 +345,7 @@ int main() {
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
 		for (int i=0; i<8; i++) {
 
+			// Move section from frame into section data
 			u32 startIndex = (sections[i].startX*3) + (STRIDE*sections[i].startY);
 			for (u16 j=0; j<sections[i].height; j++) {
 				memcpy(sectionData+(j*sections[i].length*3), &frameToProcess[startIndex+(STRIDE*j)], sections[i].length*3);
@@ -369,13 +359,18 @@ int main() {
 				  sections[i].height,
 				  sections[i].scaledLength);
 
-			modePixel = mode(sectionData, STRIDE, sections[i].startX, sections[i].startY, sections[i].scaledLength, sections[i].scaledHeight);
+			modePixel = mode(sectionData,
+							 sections[i].startX,
+							 sections[i].startY,
+							 sections[i].scaledLength,
+							 sections[i].scaledHeight);
+
 			memcpy(modeBGR, modePixel, 3);
 			setSectionLEDColour(sections[i], modeBGR[2], modeBGR[1], modeBGR[0]);
 
-//#ifdef SYSTEM_DEBUG
+#ifdef SCALE_DEBUG
 			moveScaledSectionDataToFrame(&sections[i], sectionData, &frameToProcess[0], STRIDE);
-//#endif
+#endif
 		}
 
 		// Update sync mode
