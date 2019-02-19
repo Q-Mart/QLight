@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x1376EBC2F739AD2C" bd:device="xc7z010clg400-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2.1" bd:top="system" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x6232B1EC02C3269B" bd:device="xc7z010clg400-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2.1" bd:top="system" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -172,6 +172,12 @@
       </spirit:busInterface>
       <spirit:busInterface>
         <spirit:name>sws_4bits</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="gpio" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="gpio_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>btns_4bits</spirit:name>
         <spirit:master/>
         <spirit:busType spirit:library="interface" spirit:name="gpio" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="gpio_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
@@ -1039,6 +1045,7 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_axi_gpio_0_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="USE_BOARD_FLOW">true</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="GPIO_BOARD_INTERFACE">sws_4bits</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="GPIO2_BOARD_INTERFACE">btns_4bits</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -1158,6 +1165,7 @@
         <spirit:internalPortReference spirit:componentRef="v_tc_in" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="v_tc_out" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="DigiLED_0" spirit:portRef="s00_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ACLK"/>
@@ -1166,7 +1174,6 @@
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M04_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M05_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M06_ACLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1186,6 +1193,7 @@
         <spirit:internalPortReference spirit:componentRef="v_tc_in" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="v_tc_out" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="DigiLED_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
@@ -1193,7 +1201,6 @@
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M04_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M05_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M06_ARESETN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1351,6 +1358,9 @@
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="sws_4bits/axi_gpio_0_GPIO">
         <spirit:activeInterface spirit:busRef="GPIO" spirit:componentRef="axi_gpio_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="btns_4bits/axi_gpio_0_GPIO2">
+        <spirit:activeInterface spirit:busRef="GPIO2" spirit:componentRef="axi_gpio_0"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>

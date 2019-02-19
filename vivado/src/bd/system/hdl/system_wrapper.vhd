@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
---Date        : Mon Feb 18 09:59:51 2019
+--Date        : Tue Feb 19 11:55:18 2019
 --Host        : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -34,6 +34,7 @@ entity system_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    btns_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
     hdmi_in_clk_n : in STD_LOGIC;
     hdmi_in_clk_p : in STD_LOGIC;
     hdmi_in_data_n : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -97,10 +98,11 @@ architecture STRUCTURE of system_wrapper is
     hdmi_out_ddc_scl_i : in STD_LOGIC;
     hdmi_out_ddc_scl_o : out STD_LOGIC;
     hdmi_out_ddc_scl_t : out STD_LOGIC;
+    sws_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
     hdmi_in_hpd : out STD_LOGIC_VECTOR ( 0 to 0 );
     reset_rtl : in STD_LOGIC;
     led_pin : out STD_LOGIC;
-    sws_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    btns_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component system;
   component IOBUF is
@@ -175,6 +177,7 @@ system_i: component system
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      btns_4bits_tri_i(3 downto 0) => btns_4bits_tri_i(3 downto 0),
       hdmi_in_clk_n => hdmi_in_clk_n,
       hdmi_in_clk_p => hdmi_in_clk_p,
       hdmi_in_data_n(2 downto 0) => hdmi_in_data_n(2 downto 0),

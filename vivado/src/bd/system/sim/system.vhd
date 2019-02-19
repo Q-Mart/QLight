@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
---Date        : Mon Feb 18 09:59:51 2019
+--Date        : Tue Feb 19 11:55:17 2019
 --Host        : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target system.bd
 --Design      : system
@@ -4646,6 +4646,7 @@ entity system is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    btns_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
     hdmi_in_clk_n : in STD_LOGIC;
     hdmi_in_clk_p : in STD_LOGIC;
     hdmi_in_data_n : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -5261,7 +5262,8 @@ architecture STRUCTURE of system is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    gpio_io_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio2_io_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component system_axi_gpio_0_1;
   signal ACLK_1 : STD_LOGIC;
@@ -5269,6 +5271,7 @@ architecture STRUCTURE of system is
   signal axi_dynclk_0_LOCKED_O : STD_LOGIC;
   signal axi_dynclk_0_PXL_CLK_5X_O : STD_LOGIC;
   signal axi_dynclk_0_PXL_CLK_O : STD_LOGIC;
+  signal axi_gpio_0_GPIO2_TRI_I : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_gpio_0_GPIO_TRI_I : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_gpio_video_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_gpio_video_ip2intc_irpt : STD_LOGIC;
@@ -5691,12 +5694,14 @@ architecture STRUCTURE of system is
   attribute X_INTERFACE_INFO of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
   attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
   attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
+  attribute X_INTERFACE_INFO of btns_4bits_tri_i : signal is "xilinx.com:interface:gpio:1.0 btns_4bits TRI_I";
   attribute X_INTERFACE_INFO of hdmi_in_data_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in DATA_N";
   attribute X_INTERFACE_INFO of hdmi_in_data_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in DATA_P";
   attribute X_INTERFACE_INFO of hdmi_out_data_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out DATA_N";
   attribute X_INTERFACE_INFO of hdmi_out_data_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out DATA_P";
   attribute X_INTERFACE_INFO of sws_4bits_tri_i : signal is "xilinx.com:interface:gpio:1.0 sws_4bits TRI_I";
 begin
+  axi_gpio_0_GPIO2_TRI_I(3 downto 0) <= btns_4bits_tri_i(3 downto 0);
   axi_gpio_0_GPIO_TRI_I(3 downto 0) <= sws_4bits_tri_i(3 downto 0);
   dvi2rgb_0_DDC_SCL_I <= hdmi_in_ddc_scl_i;
   dvi2rgb_0_DDC_SDA_I <= hdmi_in_ddc_sda_i;
@@ -5776,6 +5781,7 @@ axi_dynclk_0: component system_axi_dynclk_0_0
     );
 axi_gpio_0: component system_axi_gpio_0_1
      port map (
+      gpio2_io_i(3 downto 0) => axi_gpio_0_GPIO2_TRI_I(3 downto 0),
       gpio_io_i(3 downto 0) => axi_gpio_0_GPIO_TRI_I(3 downto 0),
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => ps7_0_axi_periph_M06_AXI_ARADDR(8 downto 0),

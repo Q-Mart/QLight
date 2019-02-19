@@ -14,6 +14,8 @@ void initGPIO();
 void setSectionLEDColour(Section s, u8 r, u8 g, u8 b);
 void printGreeting();
 void updateSyncModeOnTerm();
+void updateSubsamplingRateOnTerm();
+void updateThresholdOnTerm();
 void getSyncMode();
 void moveScaledSectionDataToFrame(Section *s, u8 *sData, u8 *frame, u32 stride);
 void ConnectedISR(void* callBackRef, void *pVideo);

@@ -13,3 +13,13 @@ start_gui
 open_project /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr
 update_compile_order -fileset sources_1
 launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+open_bd_design {/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd}
+apply_board_connection -board_interface "btns_4bits" -ip_intf "/axi_gpio_0/GPIO2" -diagram "system" 
+save_bd_design
+reset_run synth_1
+reset_run system_axi_gpio_0_1_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf

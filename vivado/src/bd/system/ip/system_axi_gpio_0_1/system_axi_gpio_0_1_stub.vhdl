@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
--- Date        : Mon Feb 18 10:02:08 2019
+-- Date        : Tue Feb 19 11:56:45 2019
 -- Host        : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_stub.vhdl
@@ -33,7 +33,8 @@ entity system_axi_gpio_0_1 is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    gpio_io_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio2_io_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 
 end system_axi_gpio_0_1;
@@ -42,7 +43,7 @@ architecture stub of system_axi_gpio_0_1 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "s_axi_aclk,s_axi_aresetn,s_axi_awaddr[8:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[8:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,gpio_io_i[3:0]";
+attribute black_box_pad_pin of stub : architecture is "s_axi_aclk,s_axi_aresetn,s_axi_awaddr[8:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[8:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,gpio_io_i[3:0],gpio2_io_i[3:0]";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "axi_gpio,Vivado 2018.2.1";
 begin

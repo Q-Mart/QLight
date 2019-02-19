@@ -14,6 +14,8 @@ typedef struct {
 
 	u8 startLED;
 	u8 endLED;
+
+	u32 RGB;
 } Section;
 
 void applyFuncToSection(u8 *destFrame, u32 stride, Section *s, void (*func)(u32 R, u32 B, u32 G, u8 *dst));

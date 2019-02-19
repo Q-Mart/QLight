@@ -10,21 +10,20 @@
 #include "sleep.h"
 #include "DigiLED.h"
 #include "xgpio.h"
+#include "inttypes.h"
 
 #include "term.h"
 #include "constants.h"
 #include "mode.h"
 #include "scale.h"
 #include "debug.h"
+#include "colour_difference.h"
+#include "subsample.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
 VideoCapture videoCapt;
 INTC intc;
-
-XGpio gpio;
-
-u8 syncMode;
 
 /*
  * XPAR redefines
@@ -62,7 +61,13 @@ Section sections[8];
 u8 frameToProcess[MAX_FRAME];
 u8 sectionData[MAX_ARRAY_SIZE*3];
 
-XGpio Gpio;
+XGpio gpio;
+
+u8 syncMode;
+
+// 25 cubed
+u32 colourThreshold = 1000;
+u32 subsampleDelay = 0;
 
 void initSections() {
 	sections[0].startX = 0;
@@ -136,6 +141,10 @@ void initSections() {
 	sections[7].scaledHeight = 65;
 	sections[7].startLED = 24;
 	sections[7].endLED = 27;
+
+	for (u8 i=0; i<7; i++) {
+		sections[i].RGB = 0;
+	}
 }
 
 void initVideo() {
@@ -233,7 +242,7 @@ void initGPIO() {
 
 void ConnectedISR(void* callBackRef, void *pVideo) {
 	int *hdmiConnected = (int*) callBackRef;
-	moveCursorTo(4, 7);
+	moveCursorTo(5, 7);
 	if (*hdmiConnected) {
 		*hdmiConnected = 0;
 		printf("disconnected\r\n");
@@ -276,6 +285,16 @@ void updateSyncModeOnTerm() {
 	} else {
 		printf("Off\r\n");
 	}
+}
+
+void updateSubsamplingRateOnTerm() {
+	moveCursorTo(2, 23);
+	printf("%"PRIu32"                        \r\n", subsampleDelay);
+}
+
+void updateThresholdOnTerm() {
+	moveCursorTo(3, 12);
+	printf("%"PRIu32"                        \r\n", colourThreshold);
 }
 
 void getSyncMode() {
@@ -326,14 +345,16 @@ int main() {
 		printf("SyncMode: Off\r\n");
 	}
 
-	printf("Subsample delay (ns): %d\r\n", 0);
+	printf("Subsample delay (ns): %"PRIu32"\r\n", subsampleDelay);
+	printf("Threshold: %"PRIu32"\r\n", colourThreshold);
 	printf("\r\n");
 
 	printf("HDMI: disconnected\r\n");
 
-
+	u8 numberOfDifferencesDetected = 0;
 	u32 nextFrame;
 	while (1) {
+		numberOfDifferencesDetected = 0;
 
 		nextFrame = videoCapt.curFrame + 1;
 		if (nextFrame >= DISPLAY_NUM_FRAMES)
@@ -371,7 +392,12 @@ int main() {
 #ifdef SCALE_DEBUG
 			moveScaledSectionDataToFrame(&sections[i], sectionData, &frameToProcess[0], STRIDE);
 #endif
+			u32 newRGB = (modeBGR[2] << 16 | modeBGR[1] << 8 | modeBGR[0]);
+			numberOfDifferencesDetected += colourDifferenceAboveThreshold(newRGB, sections[i].RGB, colourThreshold);
+			sections[i].RGB = newRGB;
 		}
+
+		subsampleDelay = getNewSubsampleDelay(numberOfDifferencesDetected, subsampleDelay);
 
 		// Update sync mode
 		u8 previousSyncMode = syncMode;
@@ -385,6 +411,9 @@ int main() {
 		}
 
 		updateSyncModeOnTerm();
+		updateSubsamplingRateOnTerm();
+
+		usleep(subsampleDelay);
 	}
 
 

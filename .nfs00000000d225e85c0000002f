@@ -131,3 +131,261 @@ dismissDialog("Launch SDK"); // aa (ck)
 // HMemoryUtils.trashcanNow. Engine heap size: 1,110 MB. GUI used memory: 50 MB. Current time: 2/19/19 10:22:22 AM GMT
 // HMemoryUtils.trashcanNow. Engine heap size: 1,110 MB. GUI used memory: 50 MB. Current time: 2/19/19 10:52:22 AM GMT
 // HMemoryUtils.trashcanNow. Engine heap size: 1,110 MB. GUI used memory: 50 MB. Current time: 2/19/19 11:22:22 AM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,110 MB. GUI used memory: 50 MB. Current time: 2/19/19 11:52:22 AM GMT
+// Elapsed time: 9133 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// bx (ck):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_bd_design {/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd} 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Message: Adding cell -- digilentinc.com:ip:axi_dynclk:1.0 - axi_dynclk_0 Adding cell -- digilentinc.com:ip:dvi2rgb:1.7 - dvi2rgb_0 Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0 Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video 
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice Successfully read diagram <system> from BD file </home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd> 
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 1,179 MB (+50610kb) [02:33:50]
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 6878.801 ; gain = 0.000 ; free physical = 10741 ; free virtual = 29748 
+// 'bA' command handler elapsed time: 8 seconds
+dismissDialog("Open Block Design"); // bx (ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 56 MB. Current time: 2/19/19 11:54:47 AM GMT
+selectTab((HResource) null, (HResource) null, "Board", 3); // aE (Q, ck)
+selectTree(PAResourceAtoD.BoardTreePanel_BOARD_TREE_PANEL, "[Zybo Z7-10, GPIO, 4 Buttons]", 5, false); // aj (O, ck)
+selectTree(PAResourceAtoD.BoardTreePanel_BOARD_TREE_PANEL, "[Zybo Z7-10, GPIO, 4 Buttons]", 5, false, false, false, false, false, true); // aj (O, ck) - Double Click
+// Q (ck): Connect Board Component: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (Q)
+dismissDialog("Connect Board Component"); // Q (ck)
+// bx (ck):  Connect Board Component : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: apply_board_connection -board_interface "btns_4bits" -ip_intf "/axi_gpio_0/GPIO2" -diagram "system"  
+// Tcl Message: INFO: [board_interface 100-100] set_property CONFIG.GPIO2_BOARD_INTERFACE btns_4bits [get_bd_cells -quiet /axi_gpio_0] 
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: INFO: [board_interface 100-100] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 btns_4bits INFO: [board_interface 100-100] connect_bd_intf_net /btns_4bits /axi_gpio_0/GPIO2 
+dismissDialog("Connect Board Component"); // bx (ck)
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /v_axi4s_vid_out_0_vtg_ce 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_video_gpio_io_o 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /axi_gpio_video_gpio_io_o 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 1,273 MB (+36465kb) [02:34:06]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,274 MB. GUI used memory: 57 MB. Current time: 2/19/19 11:55:02 AM GMT
+// TclEventType: DG_GRAPH_GENERATED
+// Run Command: PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN
+// TclEventType: RSB_SAVE_DIAGRAM
+// CommandFailedException: ERROR: [BD 41-45] Cell path not found: /system 
+// bx (ck):  Save Design : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: save_bd_design 
+// Tcl Message: Wrote  : </home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd>  Wrote  : </home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ui/bd_c954508f.ui>  
+dismissDialog("Save Design"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run system_axi_gpio_0_1_synth_1 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: RSB_SCRIPT_TASK
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// bx (ck):  Generate Bitstream : addNotify
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 2 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// CommandFailedException: ERROR: [BD 41-45] Cell path not found: /system 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// CommandFailedException: ERROR: [BD 41-45] Cell path not found: /system 
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: Wrote  : </home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd>  
+// Tcl Message: VHDL Output written to : /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd 
+// Tcl Message: VHDL Output written to : /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/sim/system.vhd VHDL Output written to : /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 . 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/m00_regslice . 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/auto_pc . 
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,350 MB. GUI used memory: 56 MB. Current time: 2/19/19 11:55:22 AM GMT
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/s01_regslice . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/s00_regslice . 
+// Tcl Message: Exporting to file /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hw_handoff/system.hwh Generated Block Design Tcl file /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hw_handoff/system_bd.tcl Generated Hardware Definition File /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.hwdef 
+// [Engine Memory]: 1,350 MB (+14260kb) [02:34:28]
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_v_tc_0_0, cache-ID = f4a0172cf29022f7. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_v_tc_0_1, cache-ID = a44f4e83485d0440. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_xbar_1, cache-ID = b41b6394557cfd93. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_auto_pc_1, cache-ID = c527826559b8e38a. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_m00_regslice_0, cache-ID = 402fade6d9ecd10a. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 919a3a0dfd1b10dc. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_s01_regslice_0, cache-ID = f1199553e11012f4. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Tcl Message: INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_s00_regslice_0, cache-ID = ab57ef9fda7c59bb. 
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,394 MB. GUI used memory: 53 MB. Current time: 2/19/19 11:55:37 AM GMT
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Feb 19 11:55:38 2019] Launched system_axi_gpio_0_1_synth_1, synth_1... Run output will be captured here: system_axi_gpio_0_1_synth_1: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/system_axi_gpio_0_1_synth_1/runme.log synth_1: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/runme.log [Tue Feb 19 11:55:38 2019] Launched impl_1... Run output will be captured here: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 6883.867 ; gain = 0.000 ; free physical = 10588 ; free virtual = 29614 
+// Elapsed time: 29 seconds
+dismissDialog("Generate Bitstream"); // bx (ck)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 227ms to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 112 MB (+764kb) [02:37:51]
+// [GUI Memory]: 118 MB (+828kb) [02:38:11]
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah (ck): Bitstream Generation Completed: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,379 MB. GUI used memory: 65 MB. Current time: 2/19/19 12:25:37 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,379 MB. GUI used memory: 64 MB. Current time: 2/19/19 12:55:37 PM GMT
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1194 ms. Increasing delay to 3000 ms.
+// Elapsed time: 4803 seconds
+dismissDialog("Bitstream Generation Completed"); // ah (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V (q, ck)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // aa (ck)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ad (ck)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V (q, ck)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// X (ck): Export Hardware: addNotify
+selectCheckBox(PAResourceItoN.NewExportHardwareDialog_INCLUDE_BITSTREAM, "Include bitstream", true); // g (Q, X): TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (X)
+selectButton("PAResourceItoN.NewExportHardwareDialog_EXPORTED_FILE_FOR_THIS_MODULE_WAS_Yes", "Yes"); // JButton (A, H)
+dismissDialog("Export Hardware"); // X (ck)
+// Tcl Message: file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf  
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V (q, ck)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // aa (ck)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ad (ck)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V (q, ck)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa (ck): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+dismissDialog("Launch SDK"); // aa (ck)
+// Tcl Message: launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,411 MB. GUI used memory: 63 MB. Current time: 2/19/19 1:25:37 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,411 MB. GUI used memory: 63 MB. Current time: 2/19/19 1:55:37 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,411 MB. GUI used memory: 63 MB. Current time: 2/19/19 2:25:37 PM GMT

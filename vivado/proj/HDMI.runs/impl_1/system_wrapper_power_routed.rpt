@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-| Date             : Mon Feb 18 10:06:20 2019
+| Date             : Tue Feb 19 12:00:48 2019
 | Host             : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
 | Design           : system_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 2.005        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.873        |
+| Dynamic (W)              | 1.874        |
 | Device Static (W)        | 0.131        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 61.9         |
@@ -52,22 +52,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.055 |       12 |       --- |             --- |
-| Slice Logic              |     0.012 |    25496 |       --- |             --- |
-|   LUT as Logic           |     0.010 |     7618 |     17600 |           43.28 |
-|   Register               |     0.001 |    13994 |     35200 |           39.76 |
+| Clocks                   |     0.056 |       12 |       --- |             --- |
+| Slice Logic              |     0.013 |    25529 |       --- |             --- |
+|   LUT as Logic           |     0.010 |     7616 |     17600 |           43.27 |
+|   Register               |     0.001 |    14022 |     35200 |           39.84 |
 |   CARRY4                 |     0.001 |      473 |      4400 |           10.75 |
 |   F7/F8 Muxes            |    <0.001 |      287 |     17600 |            1.63 |
 |   LUT as Distributed RAM |    <0.001 |       42 |      6000 |            0.70 |
-|   Others                 |    <0.001 |      871 |       --- |             --- |
+|   Others                 |    <0.001 |      873 |       --- |             --- |
 |   LUT as Shift Register  |    <0.001 |      246 |      6000 |            4.10 |
-| Signals                  |     0.018 |    18264 |       --- |             --- |
+| Signals                  |     0.018 |    18300 |       --- |             --- |
 | Block RAM                |     0.009 |     14.5 |        60 |           24.17 |
 | MMCM                     |     0.200 |        2 |         2 |          100.00 |
-| I/O                      |     0.172 |       26 |       100 |           26.00 |
+| I/O                      |     0.172 |       30 |       100 |           30.00 |
 | PS7                      |     1.406 |        1 |       --- |             --- |
 | Static Power             |     0.131 |          |           |                 |
-| Total                    |     2.004 |          |           |                 |
+| Total                    |     2.005 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.110 |       0.101 |      0.009 |
+| Vccint    |       1.000 |     0.110 |       0.102 |      0.009 |
 | Vccaux    |       1.800 |     0.136 |       0.127 |      0.009 |
 | Vcco33    |       3.300 |     0.043 |       0.042 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -162,7 +162,7 @@ Table of Contents
 +-------------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                                  | Power (W) |
 +-------------------------------------------------------------------------------------------------------+-----------+
-| system_wrapper                                                                                        |     1.873 |
+| system_wrapper                                                                                        |     1.874 |
 |   hdmi_in_ddc_scl_iobuf                                                                               |     0.000 |
 |   hdmi_in_ddc_sda_iobuf                                                                               |     0.000 |
 |   hdmi_out_ddc_scl_iobuf                                                                              |     0.004 |
@@ -184,7 +184,8 @@ Table of Contents
 |               MEM_DECODE_GEN[0].PER_CE_GEN[0].MULTIPLE_CES_THIS_CS_GEN.CE_I                           |    <0.001 |
 |               MEM_DECODE_GEN[0].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I                           |    <0.001 |
 |         gpio_core_1                                                                                   |    <0.001 |
-|           Not_Dual.INPUT_DOUBLE_REGS3                                                                 |    <0.001 |
+|           Dual.INPUT_DOUBLE_REGS4                                                                     |    <0.001 |
+|           Dual.INPUT_DOUBLE_REGS5                                                                     |    <0.001 |
 |     axi_gpio_video                                                                                    |    <0.001 |
 |       U0                                                                                              |    <0.001 |
 |         AXI_LITE_IPIF_I                                                                               |    <0.001 |
@@ -194,7 +195,7 @@ Table of Contents
 |         gpio_core_1                                                                                   |    <0.001 |
 |           Dual.INPUT_DOUBLE_REGS4                                                                     |    <0.001 |
 |           Dual.INPUT_DOUBLE_REGS5                                                                     |    <0.001 |
-|     axi_interconnect_0                                                                                |     0.007 |
+|     axi_interconnect_0                                                                                |     0.008 |
 |       m00_couplers                                                                                    |     0.004 |
 |         auto_pc                                                                                       |     0.002 |
 |           inst                                                                                        |     0.002 |
@@ -361,7 +362,7 @@ Table of Contents
 |           I_DMA_REGISTER                                                                              |    <0.001 |
 |           LITE_READ_MUX_I                                                                             |     0.000 |
 |         GEN_SPRT_FOR_MM2S.MM2S_SOF_I                                                                  |    <0.001 |
-|         GEN_SPRT_FOR_S2MM.GEN_AXIS_S2MM_DWIDTH_CONV.AXIS_S2MM_DWIDTH_CONVERTER_I                      |     0.001 |
+|         GEN_SPRT_FOR_S2MM.GEN_AXIS_S2MM_DWIDTH_CONV.AXIS_S2MM_DWIDTH_CONVERTER_I                      |     0.002 |
 |           GEN_DWIDTH_FLUSH_SOF.S2MM_AXIS_DWIDTH_CONVERTER_I                                           |     0.001 |
 |             gen_downsizer_conversion.axisc_downsizer_0                                                |    <0.001 |
 |             gen_upsizer_conversion.axisc_upsizer_0                                                    |    <0.001 |
