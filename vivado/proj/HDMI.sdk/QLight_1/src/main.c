@@ -393,11 +393,16 @@ int main() {
 			moveScaledSectionDataToFrame(&sections[i], sectionData, &frameToProcess[0], STRIDE);
 #endif
 			u32 newRGB = (modeBGR[2] << 16 | modeBGR[1] << 8 | modeBGR[0]);
-			numberOfDifferencesDetected += colourDifferenceAboveThreshold(newRGB, sections[i].RGB, colourThreshold);
-			sections[i].RGB = newRGB;
+
+			if (!syncMode) {
+				numberOfDifferencesDetected += colourDifferenceAboveThreshold(newRGB, sections[i].RGB, colourThreshold);
+				sections[i].RGB = newRGB;
+			}
 		}
 
-		subsampleDelay = getNewSubsampleDelay(numberOfDifferencesDetected, subsampleDelay);
+		if (!syncMode) {
+			subsampleDelay = getNewSubsampleDelay(numberOfDifferencesDetected, subsampleDelay);
+		}
 
 		// Update sync mode
 		u8 previousSyncMode = syncMode;

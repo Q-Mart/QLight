@@ -23,3 +23,4 @@ wait_on_run impl_1
 file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
 
 launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf

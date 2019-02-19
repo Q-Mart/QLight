@@ -389,3 +389,20 @@ dismissDialog("Launch SDK"); // aa (ck)
 // HMemoryUtils.trashcanNow. Engine heap size: 1,411 MB. GUI used memory: 63 MB. Current time: 2/19/19 1:25:37 PM GMT
 // HMemoryUtils.trashcanNow. Engine heap size: 1,411 MB. GUI used memory: 63 MB. Current time: 2/19/19 1:55:37 PM GMT
 // HMemoryUtils.trashcanNow. Engine heap size: 1,411 MB. GUI used memory: 63 MB. Current time: 2/19/19 2:25:37 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,411 MB. GUI used memory: 63 MB. Current time: 2/19/19 2:55:37 PM GMT
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1964 ms. Increasing delay to 4000 ms.
+// Elapsed time: 7089 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V (q, ck)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // aa (ck)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // aa (ck)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ad (ck)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V (q, ck)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa (ck): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+dismissDialog("Launch SDK"); // aa (ck)
+// Tcl Message: launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 

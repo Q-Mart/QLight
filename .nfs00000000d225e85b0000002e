@@ -152,3 +152,7 @@ launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwsp
 INFO: [Vivado 12-393] Launching SDK...
 INFO: [Vivado 12-417] Running xsdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
