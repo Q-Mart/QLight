@@ -1,14 +1,23 @@
 #include "scale.h"
-#include "sleep.h"
-#include "inttypes.h"
-u8 sectionData[MAX_ARRAY_SIZE*3];
 
-void scale(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height) {
-	u32 startIndex = (startX*3) + (stride*startY);
 
-	for (u16 i=0; i<height; i++) {
-		memcpy(sectionData+(i*length*3), &frame[startIndex+(stride*i)], length*3);
-	}
+u8 sectionDataCopy[MAX_ARRAY_SIZE*3];
+u8 newSectionData[MAX_ARRAY_SIZE*3];
+
+void scale(u8 *sectionData, u32 stride, u16 startX, u16 startY, u16 length, u16 height, u16 scaledLength) {
+//	u32 startIndex = (startX*3) + (stride*startY);
+//
+//	for (u16 i=0; i<height; i++) {
+//		memcpy(sectionData+(i*length*3), &frame[startIndex+(stride*i)], length*3);
+//	}
+
+	// Pretending an AXI burst transaction happens here
+	memcpy(sectionDataCopy, sectionData, length*height*3);
+
+#ifdef SYSTEM_DEBUG
+	memcpy(newSectionData, sectionDataCopy, length*height*3);
+#endif
+
 
 	// Can be 14 bits when converting to HLS
 	u16 rollingAverage[3] = {0, 0, 0};
@@ -26,9 +35,9 @@ void scale(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height
 				for (u16 windowY=y; windowY<y+SCALING_FACTOR && windowY+SCALING_FACTOR<endY; windowY++) {
 					current = (windowX*3) + (length*3*windowY);
 
-					rollingAverage[0] += sectionData[current];
-					rollingAverage[1] += sectionData[current+1];
-					rollingAverage[2] += sectionData[current+2];
+					rollingAverage[0] += sectionDataCopy[current];
+					rollingAverage[1] += sectionDataCopy[current+1];
+					rollingAverage[2] += sectionDataCopy[current+2];
 				}
 			}
 
@@ -37,16 +46,16 @@ void scale(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height
 			rollingAverage[1] = rollingAverage[1] >> 6;
 			rollingAverage[2] = rollingAverage[2] >> 6;
 
-			u32 index = ((startX+scaledX)*3)+(stride*(startY+scaledY));
+			u32 index = ((scaledX)*3)+(scaledLength*(scaledY)*3);
 
 #ifdef SCALE_DEBUG
-			frame[index] = 0;
-			frame[index+1] = 255;
-			frame[index+2] = 0;
+			newSectionData[index] = 0;
+			newSectionData[index+1] = 255;
+			newSectionData[index+2] = 0;
 #else
-			frame[index] = rollingAverage[0];
-			frame[index+1] = rollingAverage[1];
-			frame[index+2] = rollingAverage[2];
+			newSectionData[index] = rollingAverage[0];
+			newSectionData[index+1] = rollingAverage[1];
+			newSectionData[index+2] = rollingAverage[2];
 #endif
 
 			rollingAverage[0] = 0;
@@ -58,4 +67,5 @@ void scale(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height
 		scaledY = 0;
 		scaledX++;
 	}
+	memcpy(sectionData, newSectionData, scaledLength*height*3);
 }

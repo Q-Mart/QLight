@@ -1,7 +1,8 @@
 #include "mode.h"
 
-u8 sectionData[MAX_ARRAY_SIZE*3];
-u8 visited[MAX_ARRAY_SIZE*3];
+u8 sectionDataCopy[MAX_SCALED_ARRAY_SIZE*3];
+
+u8 visited[MAX_SCALED_ARRAY_SIZE*3];
 u16 numberOfPixelsVisted = 0;
 
 u8 equal(u8 *pixel1, u8 *pixel2) {
@@ -31,7 +32,7 @@ u16 getFrequency(u8 *pixel, u16 length, u16 height) {
 	for (int x=0; x<length; x++) {
 		for (int y=0; y<height; y++) {
 			current = (x*3) + (length * 3 * y);
-			if (equal(&sectionData[current], pixel)) {
+			if (equal(&sectionDataCopy[current], pixel)) {
 				result++;
 			}
 		}
@@ -41,13 +42,14 @@ u16 getFrequency(u8 *pixel, u16 length, u16 height) {
 }
 
 
-u32 mode(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height) {
+u32 mode(u8 *sectionData, u32 stride, u16 startX, u16 startY, u16 length, u16 height) {
 	numberOfPixelsVisted = 0;
 
-	u32 startIndex = (startX*3) + (stride*startY);
-	for (u16 i=0; i<height; i++) {
-		memcpy(sectionData+(i*length*3), &frame[startIndex+(stride*i)], length*3);
-	}
+//	u32 startIndex = (startX*3) + (stride*startY);
+//	for (u16 i=0; i<height; i++) {
+//		memcpy(sectionData+(i*length*3), &frame[startIndex+(stride*i)], length*3);
+//	}
+	memcpy(sectionDataCopy, sectionData, length*height*3);
 
 
 	u32 modePixel;
@@ -55,16 +57,16 @@ u32 mode(u8 *frame, u32 stride, u16 startX, u16 startY, u16 length, u16 height) 
 
 	u16 currentFreq = 0;
 	u32 current;
-	for (int x=0; x<length; x++) {
-		for (int y=0; y<height; y++) {
-			current = x + (stride * y);
-			if (!inVisited(&sectionData[current])) {
-				visit(sectionData+current);
-				currentFreq = getFrequency(sectionData+current, length, height);
+	for (u16 x=0; x<length; x++) {
+		for (u16 y=0; y<height; y++) {
+			current = x*3 + (length * y * 3);
+			if (!inVisited(&sectionDataCopy[current])) {
+				visit(sectionDataCopy+current);
+				currentFreq = getFrequency(sectionDataCopy+current, length, height);
 
 				if (currentFreq >= modeFreq) {
 					modeFreq = currentFreq;
-					memcpy(modePixel, &sectionData[current], 3);
+					memcpy(modePixel, &sectionDataCopy[current], 3);
 				}
 			}
 		}

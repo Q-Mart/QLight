@@ -15,6 +15,7 @@
 #include "constants.h"
 #include "mode.h"
 #include "scale.h"
+#include "debug.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
@@ -59,6 +60,7 @@ int hdmiConnection = 0;
 Section sections[8];
 
 u8 frameToProcess[MAX_FRAME];
+u8 sectionData[MAX_ARRAY_SIZE*3];
 
 XGpio Gpio;
 
@@ -286,6 +288,18 @@ void getSyncMode() {
 	}
 }
 
+void moveScaledSectionDataToFrame(Section *s, u8 *sData, u8 *frame, u32 stride) {
+	u32 frameStartIndex;
+	u32 sectionStartIndex;
+
+	for (u16 i=0; i<s->scaledHeight; i++) {
+		frameStartIndex = (s->startX*3) + ((s->startY+i)*stride);
+		sectionStartIndex = s->scaledLength*i*3;
+		memcpy(frame+frameStartIndex, sData+sectionStartIndex, s->scaledLength*3);
+	}
+
+}
+
 int main() {
 	printGreeting();
 	initVideo();
@@ -307,7 +321,8 @@ int main() {
 			0, 0, 0,
 			0, 0, 0
 	};
-	mode(testData, 1, 0, 0, 1, 5);
+
+	u32 x = mode(testData, 1, 0, 0, 1, 5);
 
 	clearLEDs(40);
 
@@ -316,7 +331,6 @@ int main() {
 	resetTerminal();
 
 	getSyncMode();
-
 	if (syncMode) {
 		printf("SyncMode: On\r\n");
 	} else {
@@ -326,10 +340,12 @@ int main() {
 	printf("Subsample delay (ns): %d\r\n", 0);
 	printf("\r\n");
 
-	printf("HDMI: disconnected");
+	printf("HDMI: disconnected\r\n");
+
 
 	u32 nextFrame;
 	while (1) {
+
 		nextFrame = videoCapt.curFrame + 1;
 		if (nextFrame >= DISPLAY_NUM_FRAMES)
 		{
@@ -339,13 +355,27 @@ int main() {
 		u8 modeBGR[3];
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
 		for (int i=0; i<8; i++) {
-			scale(frameToProcess, STRIDE, sections[i].startX, sections[i].startY, sections[i].length, sections[i].height);
-			modePixel = mode(frameToProcess, STRIDE, sections[i].startX, sections[i].startY, sections[i].scaledLength, sections[i].scaledHeight);
+
+			u32 startIndex = (sections[i].startX*3) + (STRIDE*sections[i].startY);
+			for (u16 j=0; j<sections[i].height; j++) {
+				memcpy(sectionData+(j*sections[i].length*3), &frameToProcess[startIndex+(STRIDE*j)], sections[i].length*3);
+			}
+
+			scale(sectionData,
+				  STRIDE,
+				  sections[i].startX,
+				  sections[i].startY,
+				  sections[i].length,
+				  sections[i].height,
+				  sections[i].scaledLength);
+
+			modePixel = mode(sectionData, STRIDE, sections[i].startX, sections[i].startY, sections[i].scaledLength, sections[i].scaledHeight);
 			memcpy(modeBGR, modePixel, 3);
-//			paintSectionColour(frameToProcess, STRIDE, &sections[i], modeRBG[0], modeRBG[1], modeRBG[2]);
 			setSectionLEDColour(sections[i], modeBGR[2], modeBGR[1], modeBGR[0]);
-//			sleep(1);
-//			clearLEDs(40);
+
+//#ifdef SYSTEM_DEBUG
+			moveScaledSectionDataToFrame(&sections[i], sectionData, &frameToProcess[0], STRIDE);
+//#endif
 		}
 
 		// Update sync mode
@@ -360,9 +390,6 @@ int main() {
 		}
 
 		updateSyncModeOnTerm();
-
-//
-//		resetTerminal();
 	}
 
 

@@ -8,8 +8,10 @@ typedef struct {
 	u16 startY;
 	u16 length;
 	u16 height;
+
 	u16 scaledLength;
 	u16 scaledHeight;
+
 	u8 startLED;
 	u8 endLED;
 } Section;
