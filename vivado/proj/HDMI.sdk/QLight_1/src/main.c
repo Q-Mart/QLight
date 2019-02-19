@@ -242,7 +242,7 @@ void initGPIO() {
 
 void ConnectedISR(void* callBackRef, void *pVideo) {
 	int *hdmiConnected = (int*) callBackRef;
-	moveCursorTo(5, 7);
+	moveCursorTo(7, 7);
 	if (*hdmiConnected) {
 		*hdmiConnected = 0;
 		printf("disconnected\r\n");
@@ -274,12 +274,10 @@ void printGreeting() {
 	printf("                         \______/                     \r\n");
 	sleep(1);
 
-	resetTerminal();
-	printf("QLight Version %.1f\r\n", VERSION);
 }
 
 void updateSyncModeOnTerm() {
-	moveCursorTo(0, 11);
+	moveCursorTo(3, 11);
 	if (syncMode) {
 		printf("On \r\n");
 	} else {
@@ -288,12 +286,12 @@ void updateSyncModeOnTerm() {
 }
 
 void updateSubsamplingRateOnTerm() {
-	moveCursorTo(2, 23);
+	moveCursorTo(4, 23);
 	printf("%"PRIu32"                        \r\n", subsampleDelay);
 }
 
 void updateThresholdOnTerm() {
-	moveCursorTo(3, 12);
+	moveCursorTo(5, 12);
 	printf("%"PRIu32"                        \r\n", colourThreshold);
 }
 
@@ -338,13 +336,15 @@ int main() {
 
 	resetTerminal();
 
+	printf("QLight Version %.1f: CPU Only Implementation\r\n", VERSION);
+	printf("\r\n");
+
 	getSyncMode();
 	if (syncMode) {
 		printf("SyncMode: On\r\n");
 	} else {
 		printf("SyncMode: Off\r\n");
 	}
-
 	printf("Subsample delay (ns): %"PRIu32"\r\n", subsampleDelay);
 	printf("Threshold: %"PRIu32"\r\n", colourThreshold);
 	printf("\r\n");
