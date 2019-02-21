@@ -366,14 +366,15 @@ int main() {
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
 		for (int i=0; i<8; i++) {
 
+			// TODO: Change this to a 32 bit int
 			// Move section from frame into section data
 			u32 startIndex = (sections[i].startX*3) + (STRIDE*sections[i].startY);
 			for (u16 j=0; j<sections[i].height; j++) {
 				memcpy(sectionData+(j*sections[i].length*3), &frameToProcess[startIndex+(STRIDE*j)], sections[i].length*3);
 			}
 
+			// TODO: Change startX and startY to 0
 			scale(sectionData,
-				  STRIDE,
 				  sections[i].startX,
 				  sections[i].startY,
 				  sections[i].length,

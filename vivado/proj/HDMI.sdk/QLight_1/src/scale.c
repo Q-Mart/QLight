@@ -3,7 +3,7 @@
 u8 sectionDataCopy[MAX_ARRAY_SIZE*3];
 u8 newSectionData[MAX_ARRAY_SIZE*3];
 
-void scale(u8 *sectionData, u32 stride, u16 startX, u16 startY, u16 length, u16 height, u16 scaledLength) {
+void scale(u8 *sectionData, u16 startX, u16 startY, u16 length, u16 height, u16 scaledLength) {
 
 	// Pretending an AXI burst transaction happens here
 	memcpy(sectionDataCopy, sectionData, length*height*3);

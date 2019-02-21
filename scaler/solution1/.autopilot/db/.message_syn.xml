@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;scaler/src/toplevel.cpp&apos; ..."/>
+</Messages>
