@@ -1,0 +1,132 @@
+/*
+
+Xilinx Vivado v2018.2.1 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2288692 on Thu Jul 26 18:23:50 MDT 2018
+IP Build: 2289599 on Thu Jul 26 21:09:20 MDT 2018
+
+Process ID: 13699
+License: Customer
+
+Current time: 	Mon Feb 25 13:35:46 GMT 2019
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Ubuntu
+OS Version: 4.15.0-45-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 3360x1050
+Screen resolution (DPI): 96
+Available screens: 2
+Available disk space: 801 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/tps/lnx64/jre
+Java executable location: 	/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/tps/lnx64/jre/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	qj544
+User home directory: /home/userfs/q/qj544
+User working directory: /home/userfs/q/qj544/w2k/QLight/scaler/src
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado
+HDI_APPROOT: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2
+RDI_DATADIR: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/data
+RDI_BINDIR: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/bin
+
+Vivado preferences file location: /home/userfs/q/qj544/.Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: /home/userfs/q/qj544/.Xilinx/Vivado/2018.2/
+Vivado layouts directory: /home/userfs/q/qj544/.Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/userfs/q/qj544/w2k/QLight/scaler/src/vivado.log
+Vivado journal file location: 	/home/userfs/q/qj544/w2k/QLight/scaler/src/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-13699-cse166pc-17
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2
+XILINX_SDK: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/SDK/2018.2
+XILINX_VIVADO: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2
+XILINX_VIVADO_HLS: /opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2
+
+
+GUI allocated memory:	187 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 891 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 62 MB (+62532kb) [00:00:10]
+// [Engine Memory]: 881 MB (+772508kb) [00:00:10]
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr", 0); // q (O, ck)
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr. Version: Vivado v2018.2.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 934 MB. GUI used memory: 37 MB. Current time: 2/25/19 1:35:48 PM GMT
+// TclEventType: MSGMGR_MOVEMSG
+// [Engine Memory]: 934 MB (+9136kb) [00:00:16]
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 984 MB (+3762kb) [00:00:31]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,078 MB (+46529kb) [00:00:38]
+// [GUI Memory]: 66 MB (+1345kb) [00:00:41]
+// Tcl Message: open_project /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/userfs/q/qj544/w2k/QLight/vivado/repo'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/userfs/q/qj544/w2k/QLight/components'. 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,109 MB. GUI used memory: 46 MB. Current time: 2/25/19 1:36:16 PM GMT
+// Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 6246.422 ; gain = 208.488 ; free physical = 8344 ; free virtual = 27337 
+// Project name: HDMI; location: /home/userfs/q/qj544/w2k/QLight/vivado/proj; part: xc7z010clg400-1
+// Elapsed time: 31 seconds
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V (q, ck)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // aa (ck, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // aa (ck, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // aa (ck, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // aa (ck, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // aa (ck, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ad (ck, Popup.HeavyWeightWindow)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V (q, ck)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa (ck): Launch SDK: addNotify
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+// [Engine Memory]: 1,146 MB (+15136kb) [00:00:46]
+dismissDialog("Launch SDK"); // aa (ck)
+// Tcl Message: launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 70 MB (+593kb) [00:01:17]
+// [GUI Memory]: 74 MB (+268kb) [00:02:32]
+// [GUI Memory]: 80 MB (+2092kb) [00:07:57]
+// [GUI Memory]: 84 MB (+115kb) [00:14:27]
+// [GUI Memory]: 88 MB (+144kb) [00:18:12]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,142 MB. GUI used memory: 47 MB. Current time: 2/25/19 2:06:18 PM GMT
+// [GUI Memory]: 93 MB (+404kb) [00:37:12]
+// [GUI Memory]: 100 MB (+1944kb) [00:57:00]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,144 MB. GUI used memory: 44 MB. Current time: 2/25/19 2:36:18 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,144 MB. GUI used memory: 44 MB. Current time: 2/25/19 3:06:18 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,144 MB. GUI used memory: 44 MB. Current time: 2/25/19 3:36:19 PM GMT

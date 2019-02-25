@@ -1,1 +1,1 @@
-//#define SYSTEM_DEBUG
+#define SCALE_DEBUG

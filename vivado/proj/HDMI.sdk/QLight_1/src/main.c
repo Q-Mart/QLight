@@ -137,8 +137,8 @@ void initSections() {
 	sections[7].startY = 525;
 	sections[7].length = 240;
 	sections[7].height = 525;
-	sections[7].scaledLength = 29;
-	sections[7].scaledHeight = 65;
+	sections[7].scaledLength = 74;
+	sections[7].scaledHeight = 29;
 	sections[7].startLED = 24;
 	sections[7].endLED = 27;
 
@@ -375,8 +375,6 @@ int main() {
 
 			// TODO: Change startX and startY to 0
 			scale(sectionData,
-				  sections[i].startX,
-				  sections[i].startY,
 				  sections[i].length,
 				  sections[i].height,
 				  sections[i].scaledLength);

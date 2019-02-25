@@ -7,20 +7,23 @@
 #include "horizInputDataScaled.h"
 
 int main() {
-	uint32 startX = 0;
-	uint32 startY = 0;
 	uint32 length = 240;
 	uint32 height = 525;
 	uint32 scaledLength = 29;
 
-	uint32 version = toplevel(vertInputData, &startX, &startY, &length, &height, &scaledLength);
+	uint32 version = toplevel(vertInputData, &length, &height, &scaledLength);
 
-	for (uint32 i=0; i<5655; i++) {
-		if (vertInputData[i] != 127) {
-			printf("%d is not the same as %d at index %d\r\n", vertInputData[i], vertInputDataScaled[i], i);
-			return 1;
+	printf("Real\tTest\r\n");
+	for (uint32 i=0; i<5940; i+=3) {
+		for (uint32 j=0; j<3; j++) {
+			if (vertInputData[j] != vertInputDataScaled[j]) {
+				printf("%d is not the same as %d at index %d\r\n", vertInputData[j], vertInputDataScaled[j], j);
+				return 1;
+			}
 		}
-		printf("%d\r\n", vertInputData[i]);
+		printf("%d,%d,%d\t\t%d,%d,%d\r\n", vertInputData[i], vertInputData[i+1], vertInputData[i+2], vertInputDataScaled[i], vertInputDataScaled[i+1], vertInputDataScaled[i+2]);
 	}
+
+	printf("TEST SUCCESSFUL\r\n");
 
 }

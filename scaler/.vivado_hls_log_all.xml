@@ -7,6 +7,30 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="scaler" solutionName="solution1" date="2019-02-25T14:29:40.679+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T14:24:49.849+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T14:24:49.827+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T14:22:10.078+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T14:22:10.066+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T14:19:34.605+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T14:19:34.593+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="scaler" solutionName="solution1" date="2019-02-25T14:07:38.565+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="scaler" solutionName="solution1" date="2019-02-25T14:02:08.695+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="scaler" solutionName="solution1" date="2019-02-25T14:01:37.287+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T13:30:49.106+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T13:30:49.094+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T11:49:23.036+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T11:49:23.000+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T11:44:20.067+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T11:44:20.028+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T10:08:38.603+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T10:08:38.588+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T10:08:03.993+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T10:08:03.975+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T10:07:01.048+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T10:07:01.024+0000"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-25T10:05:20.088+0000"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-25T10:05:20.005+0000"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-21T16:23:50.742+0000"/>
         <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="scaler" solutionName="solution1" date="2019-02-21T16:23:50.680+0000"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="scaler" solutionName="solution1" date="2019-02-21T16:23:13.389+0000"/>

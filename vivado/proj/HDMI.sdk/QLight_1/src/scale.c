@@ -3,7 +3,7 @@
 u8 sectionDataCopy[MAX_ARRAY_SIZE*3];
 u8 newSectionData[MAX_ARRAY_SIZE*3];
 
-void scale(u8 *sectionData, u16 startX, u16 startY, u16 length, u16 height, u16 scaledLength) {
+void scale(u8 *sectionData, u16 length, u16 height, u16 scaledLength) {
 
 	// Pretending an AXI burst transaction happens here
 	memcpy(sectionDataCopy, sectionData, length*height*3);
@@ -15,8 +15,8 @@ void scale(u8 *sectionData, u16 startX, u16 startY, u16 length, u16 height, u16 
 	u16 scaledX = 0;
 	u16 scaledY = 0;
 
-	u16 endX = startX+length;
-	u16 endY = startY+height;
+	u16 endX = length;
+	u16 endY = height;
 	u32 current;
 	for (u16 x=0; x<length; x+=SCALING_FACTOR) {
 		for (u16 y=0; y<height; y+=SCALING_FACTOR) {
@@ -35,7 +35,7 @@ void scale(u8 *sectionData, u16 startX, u16 startY, u16 length, u16 height, u16 
 			rollingAverage[1] = rollingAverage[1] >> 6;
 			rollingAverage[2] = rollingAverage[2] >> 6;
 
-			u32 index = ((scaledX)*3)+(scaledLength*(scaledY)*3);
+			u32 index = ((scaledX)*3)+((scaledLength+1)*(scaledY)*3);
 
 			newSectionData[index] = rollingAverage[0];
 			newSectionData[index+1] = rollingAverage[1];
@@ -52,5 +52,5 @@ void scale(u8 *sectionData, u16 startX, u16 startY, u16 length, u16 height, u16 
 	}
 
 	// Pretending an AXI burst transaction happens here
-	memcpy(sectionData, newSectionData, scaledLength*height*3);
+	memcpy(sectionData, newSectionData, scaledX*height*3);
 }

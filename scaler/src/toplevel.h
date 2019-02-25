@@ -18,5 +18,5 @@ typedef unsigned int uint32;
 typedef int int32;
 typedef ap_uint<16> u16;
 
-uint32 toplevel(uint32 *ram, uint32 *startX, uint32 *startY, uint32 *length, uint32 *height, uint32 *scaledLength);
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *scaledLength);
 #endif
