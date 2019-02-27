@@ -42,7 +42,7 @@ u16 getFrequency(u8 *pixel, u16 length, u16 height) {
 }
 
 
-u32 mode(u8 *sectionData, u16 startX, u16 startY, u16 length, u16 height) {
+u32 mode(u8 *sectionData, u16 length, u16 height) {
 
 	// Pretending an AXI burst transaction happens here
 	memcpy(sectionDataCopy, sectionData, length*height*3);

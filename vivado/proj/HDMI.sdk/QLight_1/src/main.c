@@ -380,8 +380,6 @@ int main() {
 				  sections[i].scaledLength);
 
 			modePixel = mode(sectionData,
-							 sections[i].startX,
-							 sections[i].startY,
 							 sections[i].scaledLength,
 							 sections[i].scaledHeight);
 

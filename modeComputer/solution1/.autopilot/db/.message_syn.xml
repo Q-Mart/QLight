@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;modeComputer/src/toplevel.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 363.559 ; gain = 2.211 ; free physical = 7963 ; free virtual = 27287"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 363.559 ; gain = 2.211 ; free physical = 7963 ; free virtual = 27287"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 363.730 ; gain = 2.383 ; free physical = 7950 ; free virtual = 27278"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;equal&apos; into &apos;inVisited&apos; (modeComputer/src/toplevel.cpp:26) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;equal&apos; into &apos;getFrequency&apos; (modeComputer/src/toplevel.cpp:55) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;inVisited&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:92) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;visit&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:96) automatically."/>
+	<Message severity="WARNING" prefix="[SYNCHK 200-23]" key="SYNCHK_VAR_INDEX_RANGE_359" tag="" content="modeComputer/src/toplevel.cpp:88: variable-indexed range selection may cause suboptimal QoR."/>
+	<Message severity="INFO" prefix="[SYNCHK 200-10]" key="SYNCHK_SYNCHK_SUMMARY_377" tag="" content="0 error(s), 1 warning(s)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 363.730 ; gain = 2.383 ; free physical = 7945 ; free virtual = 27274"/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_310" tag="" content="Unrolling loop &apos;mainXLoop&apos; (modeComputer/src/toplevel.cpp:85) in function &apos;toplevel&apos; partially with a factor of 74."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_310" tag="" content="Unrolling loop &apos;mainYLoop&apos; (modeComputer/src/toplevel.cpp:88) in function &apos;toplevel&apos; partially with a factor of 65."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_310" tag="" content="Unrolling loop &apos;visitedLoop&apos; (modeComputer/src/toplevel.cpp:23) in function &apos;inVisited&apos; partially with a factor of 2146."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_310" tag="" content="Unrolling loop &apos;freqXLoop&apos; (modeComputer/src/toplevel.cpp:48) in function &apos;getFrequency&apos; partially with a factor of 74."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_310" tag="" content="Unrolling loop &apos;freqYLoop&apos; (modeComputer/src/toplevel.cpp:51) in function &apos;getFrequency&apos; partially with a factor of 65."/>
+</Messages>
