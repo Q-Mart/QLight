@@ -21,8 +21,8 @@ ap_uint<1> equal(uint_fast8_t pixel1B, uint_fast8_t pixel1G, uint_fast8_t pixel1
 
 ap_uint<1> inVisited(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t pixelR) {
 	visitedLoop: for (int i=0; i<numberOfPixelsVisted; i++) {
-#pragma HLS UNROLL factor=2146
 #pragma HLS LOOP_TRIPCOUNT
+#pragma HLS PIPELINE
 		if (equal(pixelB, pixelG, pixelR,
 				  visited[(i*3)], visited[(i*3)+1], visited[(i*3)+2])) {
 			return 1;
@@ -46,11 +46,11 @@ ap_uint<12> getFrequency(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t 
 	ap_uint<13> current;
 	ap_uint<12> result = 0;
 	freqXLoop: for (int x=0; x<length; x++) {
-#pragma HLS UNROLL factor=74
 #pragma HLS LOOP_TRIPCOUNT
+#pragma HLS PIPELINE
 		freqYLoop: for (int y=0; y<height; y++) {
-#pragma HLS UNROLL factor=65
 #pragma HLS LOOP_TRIPCOUNT
+#pragma HLS PIPELINE
 			current = (x*3) + (length * 3 * y);
 			if (equal(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+1],
 					  pixelB, pixelG, pixelR))
@@ -64,11 +64,11 @@ ap_uint<12> getFrequency(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t 
 }
 
 uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *version) {
-	#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI
-	#pragma HLS INTERFACE s_axilite port=length bundle=AXILiteS register
-	#pragma HLS INTERFACE s_axilite port=height bundle=AXILiteS register
-	#pragma HLS INTERFACE s_axilite port=version bundle=AXILiteS register
-	#pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS register
+#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI
+#pragma HLS INTERFACE s_axilite port=length bundle=AXILiteS register
+#pragma HLS INTERFACE s_axilite port=height bundle=AXILiteS register
+#pragma HLS INTERFACE s_axilite port=version bundle=AXILiteS register
+#pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS register
 
 	*version = VERSION;
 
@@ -83,11 +83,11 @@ uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *version) {
 	ap_uint<12> currentFreq = 0;
 	ap_uint<13> current;
 	mainXLoop: for (uint_fast16_t x=0; x<*length; x++) {
-#pragma HLS UNROLL factor=74
 #pragma HLS LOOP_TRIPCOUNT
+#pragma HLS PIPELINE
 		mainYLoop: for (uint_fast16_t y=0; y<*height; y++) {
-#pragma HLS UNROLL factor=65
 #pragma HLS LOOP_TRIPCOUNT
+#pragma HLS PIPELINE
 			current = x*3 + ((*length) * y * 3);
 			if (!inVisited(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+2])) {
 
@@ -103,7 +103,6 @@ uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *version) {
 
 				if (currentFreq >= modeFreq) {
 					modeFreq = currentFreq;
-//					memcpy(&modePixel, &sectionDataPtr[current], 3);
 					modePixel = sectionDataPtr[current+2] << 16 | sectionDataPtr[current+1] << 8 | sectionDataPtr[current];
 				}
 			}

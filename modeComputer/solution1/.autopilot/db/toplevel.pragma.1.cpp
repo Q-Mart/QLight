@@ -1654,13 +1654,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 1026 "/usr/include/stdlib.h" 3 4
 }
 # 5 "modeComputer/src/toplevel.h" 2
-
-
-
-
-
-
-
+# 14 "modeComputer/src/toplevel.h"
 typedef unsigned int uint32;
 typedef int int32;
 
@@ -30883,8 +30877,8 @@ ap_uint<1> equal(uint_fast8_t pixel1B, uint_fast8_t pixel1G, uint_fast8_t pixel1
 
 ap_uint<1> inVisited(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t pixelR) {
  visitedLoop: for (int i=0; i<numberOfPixelsVisted; i++) {
-_ssdm_Unroll(1, 0, 2146, "");
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  if (equal(pixelB, pixelG, pixelR,
       visited[(i*3)], visited[(i*3)+1], visited[(i*3)+2])) {
    return 1;
@@ -30908,11 +30902,11 @@ ap_uint<12> getFrequency(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t 
  ap_uint<13> current;
  ap_uint<12> result = 0;
  freqXLoop: for (int x=0; x<length; x++) {
-_ssdm_Unroll(1, 0, 74, "");
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  freqYLoop: for (int y=0; y<height; y++) {
-_ssdm_Unroll(1, 0, 65, "");
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  current = (x*3) + (length * 3 * y);
    if (equal(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+1],
        pixelB, pixelG, pixelR))
@@ -30945,11 +30939,11 @@ _ssdm_op_SpecInterface(0, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0,
  ap_uint<12> currentFreq = 0;
  ap_uint<13> current;
  mainXLoop: for (uint_fast16_t x=0; x<*length; x++) {
-_ssdm_Unroll(1, 0, 74, "");
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  mainYLoop: for (uint_fast16_t y=0; y<*height; y++) {
-_ssdm_Unroll(1, 0, 65, "");
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  current = x*3 + ((*length) * y * 3);
    if (!inVisited(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+2])) {
 
@@ -30965,7 +30959,6 @@ _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
 
     if (currentFreq >= modeFreq) {
      modeFreq = currentFreq;
-
      modePixel = sectionDataPtr[current+2] << 16 | sectionDataPtr[current+1] << 8 | sectionDataPtr[current];
     }
    }

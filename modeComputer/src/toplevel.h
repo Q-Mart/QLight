@@ -8,6 +8,8 @@
 #define MAX_SCALED_ARRAY_SIZE 75*30*3
 #define MAX_SCALED_ARRAY_SIZE_32 1688
 
+#define MAX_NUMBER_OF_PIXELS_IN_SECTION 2146
+
 //Typedefs
 typedef unsigned int uint32;
 typedef int int32;

@@ -5,8 +5,8 @@
     <originFiles name="toplevel.cpp" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/toplevel.cpp"/>
   </source>
   <testbench>
-    <originFiles name="blueGreenVert.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/blueGreenVert.h"/>
     <originFiles name="testbench.cpp" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/testbench.cpp"/>
     <originFiles name="blueHoriz.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/blueHoriz.h"/>
+    <originFiles name="blueGreenVert.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/blueGreenVert.h"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>
