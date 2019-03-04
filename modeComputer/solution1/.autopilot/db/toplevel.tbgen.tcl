@@ -1,12 +1,13 @@
 set C_TypeInfoList {{ 
-"toplevel" : [[], {"return": [[],"0"] }, [{"ExternC" : 0}], [ {"ram": [[],{ "pointer": "0"}] }, {"length": [[],{ "pointer": "0"}] }, {"height": [[],{ "pointer": "0"}] }, {"version": [[],{ "pointer": "0"}] }],["1","2","3","4"],""],
- "1": [ "visited", [[], {"array": ["5", [6750]]}],""],
- "2": [ "sectionDataPtr", [[],{ "pointer": "5"}],""],
- "3": [ "sectionData", [[], {"array": ["0", [1688]]}],""],
- "4": [ "numberOfPixelsVisted", [[],"6"],""], 
-"5": [ "uint_fast8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}], 
-"6": [ "ap_uint<12>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 12}}]],""]}}], 
-"0": [ "uint32", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
+"toplevel" : [[], {"return": [[],"0"] }, [{"ExternC" : 0}], [ {"ram": [[],{ "pointer": "0"}] }, {"length": [[],{ "pointer": "0"}] }, {"height": [[],{ "pointer": "0"}] }, {"version": [[],{ "pointer": "1"}] }],["2","3","4","5"],""],
+ "2": [ "visited", [[], {"array": ["6", [6750]]}],""],
+ "3": [ "sectionDataPtr", [[],{ "pointer": "6"}],""],
+ "4": [ "sectionData", [[], {"array": ["0", [1688]]}],""],
+ "5": [ "numberOfPixelsVisted", [[],"7"],""], 
+"1": [ "uint32", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
+"6": [ "u8", {"typedef": [[[], {"scalar": "unsigned char"}],""]}], 
+"0": [ "uint32", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
+"7": [ "uint_fast16_t", {"typedef": [[[], {"scalar": "long unsigned int"}],""]}]
 }}
 set moduleName toplevel
 set isTaskLevelControl 1
@@ -172,7 +173,7 @@ set NewPortList {[
  	{ "name": "m_axi_MAXI_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "MAXI", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8"],
 		"CDFG" : "toplevel",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -201,17 +202,19 @@ set RtlHierarchyInfo {[
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.visited_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_AXILiteS_s_axi_U", "Parent" : "0"},
 	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_MAXI_m_axi_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mac_mulacud_U1", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mac_mulacud_U2", "Parent" : "0"}]}
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32s_cud_U1", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32nsdEe_U2", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32nsdEe_U3", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32s_eOg_U4", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	toplevel {
-		MAXI {Type I LastRead 12 FirstWrite -1}
+		MAXI {Type I LastRead 14 FirstWrite -1}
 		ram {Type I LastRead 0 FirstWrite -1}
 		length_r {Type I LastRead 0 FirstWrite -1}
 		height {Type I LastRead 0 FirstWrite -1}
-		version {Type O LastRead -1 FirstWrite 9}
+		version {Type O LastRead -1 FirstWrite 11}
 		sectionData {Type IO LastRead -1 FirstWrite -1}
 		numberOfPixelsVisted {Type IO LastRead -1 FirstWrite -1}
 		visited {Type IO LastRead -1 FirstWrite -1}}}

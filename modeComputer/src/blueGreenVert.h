@@ -1,4 +1,4 @@
-uint_fast8_t blueGreenVert[5655] = {
+uint32 blueGreenVert[5655] = {
                                     255,0,0,
                                     255,0,0,
                                     255,0,0,

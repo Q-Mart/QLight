@@ -1,4 +1,4 @@
-uint_fast8_t blueHoriz[6438] = {
+uint32 blueHoriz[6438] = {
                                 255,0,0,
                                 255,0,0,
                                 255,0,0,

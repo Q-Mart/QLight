@@ -4,22 +4,22 @@
 #include <string.h>
 #include <ap_int.h>
 
-uint32 sectionData[MAX_SCALED_ARRAY_SIZE_32];
-uint_fast8_t *sectionDataPtr;
+uint32 sectionData[MAX_SCALED_ARRAY_SIZE];
+//u8 *sectionDataPtr;
 
-uint_fast8_t visited[MAX_SCALED_ARRAY_SIZE];
+uint32 visited[MAX_SCALED_ARRAY_SIZE];
 
 ap_uint<12> numberOfPixelsVisted;
 
-ap_uint<1> equal(uint_fast8_t pixel1B, uint_fast8_t pixel1G, uint_fast8_t pixel1R,
-				 uint_fast8_t pixel2B, uint_fast8_t pixel2G, uint_fast8_t pixel2R)
+ap_uint<1> equal(uint32 pixel1B, uint32 pixel1G, uint32 pixel1R,
+				 uint32 pixel2B, uint32 pixel2G, uint32 pixel2R)
 {
 	return (pixel1B == pixel2B &&
 			pixel1G == pixel2G &&
 			pixel1R == pixel2R);
 }
 
-ap_uint<1> inVisited(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t pixelR) {
+ap_uint<1> inVisited(uint32 pixelB, uint32 pixelG, uint32 pixelR) {
 	visitedLoop: for (int i=0; i<numberOfPixelsVisted; i++) {
 #pragma HLS LOOP_TRIPCOUNT
 #pragma HLS PIPELINE
@@ -32,7 +32,7 @@ ap_uint<1> inVisited(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t pixe
 	return 0;
 }
 
-void visit(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t pixelR) {
+void visit(uint32 pixelB, uint32 pixelG, uint32 pixelR) {
 	visited[(numberOfPixelsVisted*3)] = pixelB;
 	visited[(numberOfPixelsVisted*3)+1] = pixelG;
 	visited[(numberOfPixelsVisted*3)+2] = pixelR;
@@ -40,7 +40,7 @@ void visit(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t pixelR) {
 	numberOfPixelsVisted++;
 }
 
-ap_uint<12> getFrequency(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t pixelR,
+ap_uint<12> getFrequency(uint32 pixelB, uint32 pixelG, uint32 pixelR,
 						 uint_fast16_t length, uint_fast16_t height)
 {
 	ap_uint<13> current;
@@ -63,7 +63,7 @@ ap_uint<12> getFrequency(uint_fast8_t pixelB, uint_fast8_t pixelG, uint_fast8_t 
 	return result;
 }
 
-uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *version) {
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, volatile uint32 *version) {
 #pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI
 #pragma HLS INTERFACE s_axilite port=length bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=height bundle=AXILiteS register
@@ -72,9 +72,8 @@ uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *version) {
 
 	*version = VERSION;
 
-	// Pretending an AXI burst transaction happens here
-	memcpy(sectionData, ram, (*length)*(*height)*3);
-	sectionDataPtr = (uint_fast8_t*) sectionData;
+	memcpy(sectionData, ram, (*length)*(*height)*3*sizeof(uint32));
+//	sectionDataPtr = (u8*) sectionData;
 
 	numberOfPixelsVisted = 0;
 	uint32 modePixel;
@@ -90,6 +89,8 @@ uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *version) {
 #pragma HLS PIPELINE
 			current = x*3 + ((*length) * y * 3);
 			if (!inVisited(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+2])) {
+
+				*version = sectionDataPtr[current+2] << 16 | sectionDataPtr[current+1] << 8 | sectionDataPtr[current];
 
 				visit(sectionDataPtr[current],
 					  sectionDataPtr[current+1],

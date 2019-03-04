@@ -1,6 +1,6 @@
 
 set TopModule "toplevel"
-set ClockPeriod "10.000000"
+set ClockPeriod "7.500000"
 set ClockList {ap_clk}
 set multiClockList {}
 set PortClockMap {}
@@ -14,7 +14,7 @@ set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 1
+set HasDSPModule 0
 set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
@@ -44,7 +44,7 @@ set TargetInfo "xc7z010:clg400:-1"
 set SourceFiles {sc {} c ../src/toplevel.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/userfs/q/qj544/w2k/QLight/modeComputer/solution1/solution1.directive}
-set TBFiles {verilog {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} bc {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} vhdl {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} sc {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} cas {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} c {}}
+set TBFiles {verilog {../src/testbench.cpp ../src/blueHoriz.h ../src/blueGreenVert.h} bc {../src/testbench.cpp ../src/blueHoriz.h ../src/blueGreenVert.h} vhdl {../src/testbench.cpp ../src/blueHoriz.h ../src/blueGreenVert.h} sc {../src/testbench.cpp ../src/blueHoriz.h ../src/blueGreenVert.h} cas {../src/testbench.cpp ../src/blueHoriz.h ../src/blueGreenVert.h} c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

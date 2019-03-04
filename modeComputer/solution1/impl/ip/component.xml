@@ -1129,7 +1129,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>62cc0010</spirit:value>
+            <spirit:value>063c90dc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1145,7 +1145,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>72167e06</spirit:value>
+            <spirit:value>4f4b5a93</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1161,7 +1161,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>37ef0f36</spirit:value>
+            <spirit:value>411d3fc1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1177,7 +1177,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a01e81be</spirit:value>
+            <spirit:value>df925087</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2457,11 +2457,19 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/toplevel_mac_mulacud.v</spirit:name>
+        <spirit:name>hdl/verilog/toplevel_MAXI_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/toplevel_MAXI_m_axi.v</spirit:name>
+        <spirit:name>hdl/verilog/toplevel_mul_32nsdEe.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/toplevel_mul_32s_cud.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/toplevel_mul_32s_eOg.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2493,12 +2501,22 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/toplevel_mac_mulacud.v</spirit:name>
+        <spirit:name>hdl/verilog/toplevel_MAXI_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/toplevel_MAXI_m_axi.v</spirit:name>
+        <spirit:name>hdl/verilog/toplevel_mul_32nsdEe.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/toplevel_mul_32s_cud.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/toplevel_mul_32s_eOg.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2538,11 +2556,19 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/toplevel_mac_mulacud.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/toplevel_MAXI_m_axi.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/toplevel_MAXI_m_axi.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/toplevel_mul_32nsdEe.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/toplevel_mul_32s_cud.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/toplevel_mul_32s_eOg.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2556,7 +2582,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       <spirit:file>
         <spirit:name>hdl/vhdl/toplevel.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_53631d92</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_e837536e</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2567,12 +2593,22 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/toplevel_mac_mulacud.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/toplevel_MAXI_m_axi.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/toplevel_MAXI_m_axi.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/toplevel_mul_32nsdEe.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/toplevel_mul_32s_cud.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/toplevel_mul_32s_eOg.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2776,7 +2812,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>clk_period</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="14">10</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="14">7.5</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>machine</spirit:name>
@@ -2805,18 +2841,18 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>modeCalculator</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1902281624</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-02-28T16:25:26Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1903011631</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-03-01T16:32:14Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="63ea86ed"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="6e018b6b"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="9bb72d9b"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="381c7238"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="dcd98270"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="c692098e"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b9736f9c"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="90a86e00"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="e2bab88c"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

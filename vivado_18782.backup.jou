@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Fri Mar  1 15:02:47 2019
+# Process ID: 18782
+# Current directory: /home/userfs/q/qj544/w2k/QLight
+# Command line: vivado
+# Log file: /home/userfs/q/qj544/w2k/QLight/vivado.log
+# Journal file: /home/userfs/q/qj544/w2k/QLight/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd}
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:hls:toplevel:1.0 [get_ips  system_toplevel_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips system_toplevel_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd]
+export_ip_user_files -of_objects [get_files /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files /home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd] -directory /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.ip_user_files/sim_scripts -ip_user_files_dir /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.ip_user_files -ipstatic_source_dir /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.cache/compile_simlib/modelsim} {questa=/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.cache/compile_simlib/questa} {ies=/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.cache/compile_simlib/ies} {xcelium=/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.cache/compile_simlib/xcelium} {vcs=/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.cache/compile_simlib/vcs} {riviera=/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_run impl_1
+file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf

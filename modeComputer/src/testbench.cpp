@@ -12,9 +12,9 @@ int test1() {
 	uint32 height = 29;
 	uint32 version;
 
-	uint32 ram[MAX_SCALED_ARRAY_SIZE_32];
+	uint32 ram[MAX_SCALED_ARRAY_SIZE];
 
-	memcpy(ram, blueHoriz, MAX_SCALED_ARRAY_SIZE);
+	memcpy(ram, blueHoriz, MAX_SCALED_ARRAY_SIZE*sizeof(uint32));
 
 	uint32 mode = toplevel(ram, &length, &height, &version);
 
@@ -31,7 +31,7 @@ int test2() {
 
 	uint32 ram[MAX_SCALED_ARRAY_SIZE_32];
 
-	memcpy(ram, blueGreenVert, MAX_SCALED_ARRAY_SIZE);
+	memcpy(ram, blueGreenVert, MAX_SCALED_ARRAY_SIZE*sizeof(uint32));
 
 	uint32 mode = toplevel(ram, &length, &height, &version);
 

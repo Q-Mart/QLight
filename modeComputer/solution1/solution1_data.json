@@ -17,13 +17,13 @@
   },
   "ClockInfo": {
     "ClockName": "ap_clk",
-    "ClockPeriod": "10",
+    "ClockPeriod": "7.5",
     "IsCombLogic": "0",
     "II": "x",
     "Latency": "undef",
-    "Uncertainty": "1.25"
+    "Uncertainty": "0.9375"
   },
-  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 7.500 [get_ports ap_clk]"]},
   "Ipx": {
     "Vendor": "xilinx.com",
     "Library": "hls",
@@ -38,16 +38,20 @@
     "CSource": ["..\/src\/toplevel.cpp"],
     "Vhdl": [
       "impl\/vhdl\/toplevel_AXILiteS_s_axi.vhd",
-      "impl\/vhdl\/toplevel_mac_mulacud.vhd",
       "impl\/vhdl\/toplevel_MAXI_m_axi.vhd",
+      "impl\/vhdl\/toplevel_mul_32nsdEe.vhd",
+      "impl\/vhdl\/toplevel_mul_32s_cud.vhd",
+      "impl\/vhdl\/toplevel_mul_32s_eOg.vhd",
       "impl\/vhdl\/toplevel_sectionDbkb.vhd",
       "impl\/vhdl\/toplevel_visited.vhd",
       "impl\/vhdl\/toplevel.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/toplevel_AXILiteS_s_axi.v",
-      "impl\/verilog\/toplevel_mac_mulacud.v",
       "impl\/verilog\/toplevel_MAXI_m_axi.v",
+      "impl\/verilog\/toplevel_mul_32nsdEe.v",
+      "impl\/verilog\/toplevel_mul_32s_cud.v",
+      "impl\/verilog\/toplevel_mul_32s_eOg.v",
       "impl\/verilog\/toplevel_sectionDbkb.v",
       "impl\/verilog\/toplevel_sectionDbkb_ram.dat",
       "impl\/verilog\/toplevel_visited.v",
@@ -889,7 +893,7 @@
       "statusOffset": "52",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "9"
+      "firstOutLatency": "11"
     },
     "ap_return": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -921,9 +925,9 @@
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
-          "Estimate": "9.739"
+          "Target": "7.50",
+          "Uncertainty": "0.94",
+          "Estimate": "6.562"
         },
         "Loops": [
           {
@@ -938,9 +942,9 @@
             "TripCount": "0",
             "Latency": "0",
             "PipelineII": "",
-            "PipelineDepthMin": "11",
-            "PipelineDepthMax": "13",
-            "PipelineDepth": "11 ~ 13",
+            "PipelineDepthMin": "16",
+            "PipelineDepthMax": "18",
+            "PipelineDepth": "16 ~ 18",
             "Loops": [
               {
                 "Name": "visitedLoop",
@@ -954,16 +958,16 @@
                 "TripCount": "0",
                 "Latency": "0",
                 "PipelineII": "1",
-                "PipelineDepth": "5"
+                "PipelineDepth": "10"
               }
             ]
           }
         ],
         "Area": {
           "BRAM_18K": "10",
-          "DSP48E": "8",
-          "FF": "2267",
-          "LUT": "4445"
+          "DSP48E": "16",
+          "FF": "4096",
+          "LUT": "5915"
         }
       }}
   },
@@ -974,7 +978,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2019-02-28 16:24:59 GMT",
+    "Time": "2019-03-01 16:31:55 GMT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2.1"
   }

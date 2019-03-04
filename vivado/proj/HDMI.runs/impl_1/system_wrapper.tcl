@@ -73,8 +73,8 @@ set rc [catch {
   set_property parent.project_path /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr [current_project]
   set_property ip_repo_paths {
   /home/userfs/q/qj544/w2k/QLight/vivado/repo
+  /home/userfs/q/qj544/w2k/QLight/modeComputer
   /home/userfs/q/qj544/w2k/QLight/components
-  /home/userfs/q/qj544/w2k/QLight/SubSample
 } [current_project]
   set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/cache [current_project]
   set_property ip_cache_permissions {read write} [current_project]

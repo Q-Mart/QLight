@@ -9,15 +9,15 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z010clg400-1</Part>
 <TopModelName>toplevel</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>1.25</ClockUncertainty>
+<TargetClockPeriod>7.50</TargetClockPeriod>
+<ClockUncertainty>0.94</ClockUncertainty>
 </UserAssignments>
 
 <PerformanceEstimates>
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>9.739</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.562</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -39,8 +39,8 @@
 <Latency>0</Latency>
 <IterationLatency>
 <range>
-<min>11</min>
-<max>13</max>
+<min>16</min>
+<max>18</max>
 </range>
 </IterationLatency>
 <visitedLoop>
@@ -53,7 +53,7 @@
 <TripCount>0</TripCount>
 <Latency>0</Latency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>5</PipelineDepth>
+<PipelineDepth>10</PipelineDepth>
 </freqXLoop_freqYLoop>
 </mainXLoop_mainYLoop>
 </SummaryOfLoopLatency>
@@ -62,9 +62,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>10</BRAM_18K>
-<DSP48E>8</DSP48E>
-<FF>2267</FF>
-<LUT>4445</LUT>
+<DSP48E>16</DSP48E>
+<FF>4096</FF>
+<LUT>5915</LUT>
 </Resources>
 <AvailableResources>
 <BRAM_18K>120</BRAM_18K>

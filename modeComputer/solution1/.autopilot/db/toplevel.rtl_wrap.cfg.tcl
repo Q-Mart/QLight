@@ -49,7 +49,7 @@ set DataType7 "unsigned int"
 set Port7 [list $PortName7 $Interface7 $DataType7 $Pointer7 $Dims7 $Const7 $Volatile7 $ArrayOpt7 $Initializer7 $External7 $NameSpace7]
 lappend globalVariable $Port7
 set PortName8 "numberOfPixelsVisted"
-set BitWidth8 "16"
+set BitWidth8 "64"
 set ArrayOpt8 ""
 set Const8 "0"
 set Volatile8 "0"
@@ -60,7 +60,7 @@ set External8 0
 set Dims8 [list 0]
 set Interface8 "wire"
 set NameSpace8 [list ]
-set DataType8 "[list ap_uint 12 ]"
+set DataType8 "long unsigned int"
 set Port8 [list $PortName8 $Interface8 $DataType8 $Pointer8 $Dims8 $Const8 $Volatile8 $ArrayOpt8 $Initializer8 $External8 $NameSpace8]
 lappend globalVariable $Port8
 set PortList ""
@@ -104,7 +104,7 @@ set PortName4 "version"
 set BitWidth4 "64"
 set ArrayOpt4 ""
 set Const4 "0"
-set Volatile4 "0"
+set Volatile4 "1"
 set Pointer4 "1"
 set Reference4 "0"
 set Dims4 [list 0]

@@ -11,9 +11,9 @@
 <Name>toplevel</Name>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>1.25</ClockUncertainty>
-<EstimatedClockPeriod>9.739</EstimatedClockPeriod>
+<TargetClockPeriod>7.50</TargetClockPeriod>
+<ClockUncertainty>0.94</ClockUncertainty>
+<EstimatedClockPeriod>6.562</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>undef</Best-caseLatency>
@@ -36,11 +36,11 @@
 <Latency>0</Latency>
 <IterationLatency>
 <range>
-<min>11</min>
-<max>13</max>
+<min>16</min>
+<max>18</max>
 </range>
 </IterationLatency>
-<PipelineDepth>11 ~ 13</PipelineDepth>
+<PipelineDepth>16 ~ 18</PipelineDepth>
 <visitedLoop>
 <Name>visitedLoop</Name>
 <TripCount>0</TripCount>
@@ -53,7 +53,7 @@
 <TripCount>0</TripCount>
 <Latency>0</Latency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>5</PipelineDepth>
+<PipelineDepth>10</PipelineDepth>
 </freqXLoop_freqYLoop>
 </mainXLoop_mainYLoop>
 </SummaryOfLoopLatency>
@@ -61,9 +61,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>10</BRAM_18K>
-<DSP48E>8</DSP48E>
-<FF>2267</FF>
-<LUT>4445</LUT>
+<DSP48E>16</DSP48E>
+<FF>4096</FF>
+<LUT>5915</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>

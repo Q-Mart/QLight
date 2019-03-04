@@ -11,6 +11,8 @@
 #include "DigiLED.h"
 #include "xgpio.h"
 #include "inttypes.h"
+#include "platform.h"
+#include "xtoplevel.h"
 
 #include "term.h"
 #include "constants.h"
@@ -61,7 +63,10 @@ Section sections[8];
 u8 frameToProcess[MAX_FRAME];
 u8 sectionData[MAX_ARRAY_SIZE*3];
 
+u32 ram[MAX_SCALED_ARRAY_SIZE_32];
+
 XGpio gpio;
+XToplevel modeCalc;
 
 u8 syncMode;
 
@@ -240,6 +245,11 @@ void initGPIO() {
 	XGpio_Initialize(&gpio, XPAR_GPIO_0_DEVICE_ID);
 }
 
+void initModeCalculator() {
+	XToplevel_Initialize(&modeCalc, XPAR_TOPLEVEL_0_DEVICE_ID);
+	XToplevel_Set_ram(&modeCalc, (u32) ram);
+}
+
 void ConnectedISR(void* callBackRef, void *pVideo) {
 	int *hdmiConnected = (int*) callBackRef;
 	moveCursorTo(7, 7);
@@ -330,6 +340,12 @@ int main() {
 	initSections();
 	printf("Sections initialised\r\n");
 
+	init_platform();
+	disable_caches();
+
+	initModeCalculator();
+	printf("Mode calculator initialised\r\n");
+
 	clearLEDs(40);
 
 	enable_LEDs();
@@ -366,24 +382,30 @@ int main() {
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
 		for (int i=0; i<8; i++) {
 
-			// TODO: Change this to a 32 bit int
 			// Move section from frame into section data
 			u32 startIndex = (sections[i].startX*3) + (STRIDE*sections[i].startY);
 			for (u16 j=0; j<sections[i].height; j++) {
 				memcpy(sectionData+(j*sections[i].length*3), &frameToProcess[startIndex+(STRIDE*j)], sections[i].length*3);
 			}
 
-			// TODO: Change startX and startY to 0
 			scale(sectionData,
 				  sections[i].length,
 				  sections[i].height,
 				  sections[i].scaledLength);
 
-			modePixel = mode(sectionData,
-							 sections[i].scaledLength,
-							 sections[i].scaledHeight);
+//			modePixel = mode(sectionData,
+//							 sections[i].scaledLength,
+//							 sections[i].scaledHeight);
+
+			memcpy(ram, sectionData, sections[i].scaledLength * sections[i].scaledHeight * 3);
+			XToplevel_Set_height(&modeCalc, sections[i].scaledLength);
+			XToplevel_Set_length_r(&modeCalc, sections[i].scaledLength);
+			XToplevel_Start(&modeCalc);
+			while(!XToplevel_IsDone(&modeCalc));
+			modePixel = XToplevel_Get_return(&modeCalc);
 
 			memcpy(modeBGR, modePixel, 3);
+//			printf("%d\t%d\t%d\t\r\n", modeBGR[2], modeBGR[1], modeBGR[0]);
 			setSectionLEDColour(sections[i], modeBGR[2], modeBGR[1], modeBGR[0]);
 
 #ifdef SCALE_DEBUG

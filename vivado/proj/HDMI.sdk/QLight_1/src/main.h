@@ -11,6 +11,7 @@
 
 void initVideo();
 void initGPIO();
+void initModeCalculator();
 void setSectionLEDColour(Section s, u8 r, u8 g, u8 b);
 void printGreeting();
 void updateSyncModeOnTerm();

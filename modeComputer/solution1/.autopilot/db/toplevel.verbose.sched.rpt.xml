@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'toplevel'" level="0">
-<item name = "Date">Thu Feb 28 16:20:01 2019
+<item name = "Date">Fri Mar  1 16:31:07 2019
 </item>
 <item name = "Version">2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)</item>
 <item name = "Project">modeComputer</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 9.739, 1.25</column>
+<column name="ap_clk">7.50, 6.562, 0.94</column>
 </table>
 </item>
 </section>
@@ -36,9 +36,9 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- memcpy.sectionData.ram">?, ?, 3, 1, 1, ?, yes</column>
-<column name="- mainXLoop_mainYLoop">0, 0, 11 ~ 13, -, -, 0, no</column>
+<column name="- mainXLoop_mainYLoop">0, 0, 16 ~ 18, -, -, 0, no</column>
 <column name=" + visitedLoop">2, 2, 3, 3, 1, 0, yes</column>
-<column name=" + freqXLoop_freqYLoop">0, 0, 5, 1, 1, 0, yes</column>
+<column name=" + freqXLoop_freqYLoop">0, 0, 10, 1, 1, 0, yes</column>
 </table>
 </item>
 </section>
