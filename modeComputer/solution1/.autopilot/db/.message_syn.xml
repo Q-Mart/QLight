@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;modeComputer/src/toplevel.cpp&apos; ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 363.559 ; gain = 2.211 ; free physical = 6271 ; free virtual = 27814"/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 363.559 ; gain = 2.211 ; free physical = 6270 ; free virtual = 27814"/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from modeComputer/src/toplevel.cpp:1:
+modeComputer/src/toplevel.cpp:117:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.\n"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 363.555 ; gain = 2.211 ; free physical = 8246 ; free virtual = 28108"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 363.555 ; gain = 2.211 ; free physical = 8246 ; free virtual = 28108"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 363.602 ; gain = 2.254 ; free physical = 6265 ; free virtual = 27811"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 363.727 ; gain = 2.383 ; free physical = 8235 ; free virtual = 28100"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;equal&apos; into &apos;inVisited&apos; (modeComputer/src/toplevel.cpp:26) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;equal&apos; into &apos;getFrequency&apos; (modeComputer/src/toplevel.cpp:55) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;inVisited&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:91) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;visit&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:95) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;getFrequency&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:99) automatically."/>
-	<Message severity="WARNING" prefix="[SYNCHK 200-23]" key="SYNCHK_VAR_INDEX_RANGE_359" tag="" content="modeComputer/src/toplevel.cpp:87: variable-indexed range selection may cause suboptimal QoR."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;inVisited&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:94) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;visit&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:100) automatically."/>
+	<Message severity="WARNING" prefix="[SYNCHK 200-78]" key="SYNCHK_RETURN_UNDEF_361" tag="" content="Function &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:66) has undefined return value (possible cause(s): an uninitialized variable is used in the computation of return result)."/>
 	<Message severity="INFO" prefix="[SYNCHK 200-10]" key="SYNCHK_SYNCHK_SUMMARY_377" tag="" content="0 error(s), 1 warning(s)."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 363.605 ; gain = 2.258 ; free physical = 6261 ; free virtual = 27808"/>
-	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;mainXLoop&apos; (modeComputer/src/toplevel.cpp:84) in function &apos;toplevel&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 363.727 ; gain = 2.383 ; free physical = 8229 ; free virtual = 28095"/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;mainXLoop&apos; (modeComputer/src/toplevel.cpp:86) in function &apos;toplevel&apos; for pipelining."/>
 	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;inVisited&apos; (modeComputer/src/toplevel.cpp:22)."/>
 	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;getFrequency&apos; (modeComputer/src/toplevel.cpp:43)."/>
-	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="SDX_LOOP" content="Cannot unroll loop &apos;mainYLoop&apos; (modeComputer/src/toplevel.cpp:87) in function &apos;toplevel&apos; completely: variable loop bound."/>
+	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="SDX_LOOP" content="Cannot unroll loop &apos;mainYLoop&apos; (modeComputer/src/toplevel.cpp:89) in function &apos;toplevel&apos; completely: variable loop bound."/>
 	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="SDX_LOOP" content="Cannot unroll loop &apos;visitedLoop&apos; (modeComputer/src/toplevel.cpp:23) in function &apos;inVisited&apos; completely: variable loop bound."/>
 	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_321" tag="SDX_LOOP" content="Cannot unroll loop &apos;freqXLoop&apos; (modeComputer/src/toplevel.cpp:48) in function &apos;getFrequency&apos;: cannot completely unroll a loop with a variable trip count."/>
 	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_321" tag="SDX_LOOP" content="Cannot unroll loop &apos;freqYLoop&apos; (modeComputer/src/toplevel.cpp:51) in function &apos;getFrequency&apos;: cannot completely unroll a loop with a variable trip count."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;equal&apos; into &apos;inVisited&apos; (modeComputer/src/toplevel.cpp:26) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;equal&apos; into &apos;getFrequency&apos; (modeComputer/src/toplevel.cpp:55) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;inVisited&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:91) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;visit&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:95) automatically."/>
-	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;getFrequency&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:99) automatically."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 491.418 ; gain = 130.070 ; free physical = 6236 ; free virtual = 27786"/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;inVisited&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:94) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;visit&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:100) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;getFrequency&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:104) automatically."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 491.414 ; gain = 130.070 ; free physical = 8203 ; free virtual = 28071"/>
 	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;freqXLoop&apos; (modeComputer/src/toplevel.cpp:48:43) in function &apos;toplevel&apos;."/>
-	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="SDX_LOOP" content="Cannot flatten a loop nest &apos;mainYLoop&apos; (modeComputer/src/toplevel.cpp:87:54) in function &apos;toplevel&apos; : 
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="SDX_LOOP" content="Cannot flatten a loop nest &apos;mainYLoop&apos; (modeComputer/src/toplevel.cpp:89:54) in function &apos;toplevel&apos; : 
 
 more than one sub loop."/>
-	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;mainXLoop&apos; (modeComputer/src/toplevel.cpp:84:54) in function &apos;toplevel&apos;."/>
-	<Message severity="INFO" prefix="[XFORM 203-811]" key="XFORM_BUS_BURST_INFER_STATUS_254" tag="SDX_AXI" content="Inferring multiple bus burst read of variable length on port &apos;MAXI&apos; (modeComputer/src/toplevel.cpp:75:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 491.418 ; gain = 130.070 ; free physical = 6243 ; free virtual = 27792"/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;mainXLoop&apos; (modeComputer/src/toplevel.cpp:86:54) in function &apos;toplevel&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-811]" key="XFORM_BUS_BURST_INFER_STATUS_254" tag="SDX_AXI" content="Inferring multiple bus burst read of variable length on port &apos;MAXI&apos; (modeComputer/src/toplevel.cpp:78:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 491.414 ; gain = 130.070 ; free physical = 8202 ; free virtual = 28070"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;toplevel&apos; ..."/>
 	<Message severity="WARNING" prefix="[SYN 201-107]" key="SYN_PORT_NAME_ILLEGAL_593" tag="" content="Renaming port name &apos;toplevel/length&apos; to &apos;toplevel/length_r&apos; to avoid the conflict with HDL keywords or other object names."/>
@@ -45,22 +49,26 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
 	<Message severity="WARNING" prefix="[SCHED 204-65]" key="SCHED_PIPELINE_REPORT_FAILURE_1080" tag="SCHEDULE" content="Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;visitedLoop&apos;."/>
-	<Message severity="WARNING" prefix="[SCHED 204-64]" key="SCHED_EXIT_TEST_TOO_LATE_49" tag="SDX_LOOP,SCHEDULE" content="Unable to schedule the loop exit test (&apos;and&apos; operation (&apos;val&apos;, modeComputer/src/toplevel.cpp:17-&gt;modeComputer/src/toplevel.cpp:26-&gt;modeComputer/src/toplevel.cpp:91)) in the first pipeline iteration (II = 1 cycles)."/>
-	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_38" tag="SDX,SCHEDULE" content="Unable to schedule &apos;load&apos; operation (&apos;pixel2B&apos;, modeComputer/src/toplevel.cpp:26-&gt;modeComputer/src/toplevel.cpp:91) on array &apos;visited&apos; due to limited memory ports. Please consider using a memory core with more ports or partitioning the array &apos;visited&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 3, Depth = 3."/>
+	<Message severity="WARNING" prefix="[SCHED 204-64]" key="SCHED_EXIT_TEST_TOO_LATE_49" tag="SDX_LOOP,SCHEDULE" content="Unable to schedule the loop exit test (&apos;and&apos; operation (&apos;val&apos;, modeComputer/src/toplevel.cpp:17-&gt;modeComputer/src/toplevel.cpp:26-&gt;modeComputer/src/toplevel.cpp:94)) in the first pipeline iteration (II = 1 cycles)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-69]" key="SCHED_RESOURCE_CONSTRAINT_NOT_MET_38" tag="SDX,SCHEDULE" content="Unable to schedule &apos;load&apos; operation (&apos;pixel2B&apos;, modeComputer/src/toplevel.cpp:26-&gt;modeComputer/src/toplevel.cpp:94) on array &apos;visited&apos; due to limited memory ports. Please consider using a memory core with more ports or partitioning the array &apos;visited&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 3, Depth = 4."/>
+	<Message severity="WARNING" prefix="[SCHED 204-70]" key="SCHED_FREQ_CONSTRAINT_NOT_MET_33_1" tag="SDX,SCHEDULE" content="Cannot meet target clock period from &apos;load&apos; operation (&apos;pixel2G&apos;) on array &apos;visited&apos; to &apos;and&apos; operation (&apos;val&apos;) (combination delay: 6.705 ns) to honor II or Latency constraint in region &apos;visitedLoop&apos;."/>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;freqXLoop_freqYLoop&apos;."/>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 10."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 5."/>
+	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_76" tag="SDX,TIMING,SCHEDULE" content="Estimated clock period (8.0595ns) exceeds the target (target clock period: 7.5ns, clock uncertainty: 0.9375ns, effective delay budget: 6.5625ns)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_74" tag="SDX" content="The critical path consists of the following:
+	&apos;mul&apos; operation (&apos;tmp_31_i&apos;, modeComputer/src/toplevel.cpp:54-&gt;modeComputer/src/toplevel.cpp:104) (3.36 ns)
+	&apos;add&apos; operation (&apos;tmp_i2&apos;, modeComputer/src/toplevel.cpp:54-&gt;modeComputer/src/toplevel.cpp:104) (3.02 ns)
+	&apos;sub&apos; operation (&apos;current.V&apos;, modeComputer/src/toplevel.cpp:54-&gt;modeComputer/src/toplevel.cpp:104) (1.68 ns)"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 14.19 seconds; current allocated memory: 76.022 MB."/>
-	<Message severity="WARNING" prefix="[HLS 200-433]" key="HLS 200-433" tag="SDX" content="Loop  + visitedLoop has an initiation interval that is equal to the pipeline depth (3) - this results in an unpipelined loop."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 15.63 seconds; current allocated memory: 82.195 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 3 loops out of a total 4 loops have been pipelined in this design."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.31 seconds; current allocated memory: 77.377 MB."/>
-	<Message severity="WARNING" prefix="[HLS 200-433]" key="HLS 200-433" tag="SDX" content="Loop  + visitedLoop has an initiation interval that is equal to the pipeline depth (3) - this results in an unpipelined loop."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.25 seconds; current allocated memory: 83.073 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;toplevel&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
@@ -68,30 +76,29 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;toplevel/ram&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;toplevel/length_r&apos; to &apos;s_axilite &amp; ap_none&apos; (register)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;toplevel/height&apos; to &apos;s_axilite &amp; ap_none&apos; (register)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;toplevel/r&apos; to &apos;s_axilite &amp; ap_vld&apos; (register)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;toplevel/g&apos; to &apos;s_axilite &amp; ap_vld&apos; (register)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;toplevel/b&apos; to &apos;s_axilite &amp; ap_vld&apos; (register)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;toplevel/version&apos; to &apos;s_axilite &amp; ap_vld&apos; (register)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;toplevel&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos; (register)."/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;toplevel_sectionData&apos; to &apos;toplevel_sectionDbkb&apos; due to the length limit 20"/>
 	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;numberOfPixelsVisted&apos; is power-on initialization."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos;, &apos;ram&apos;, &apos;length_r&apos;, &apos;height&apos; and &apos;version&apos; to AXI-Lite port AXILiteS."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos;, &apos;ram&apos;, &apos;length_r&apos;, &apos;height&apos;, &apos;r&apos;, &apos;g&apos;, &apos;b&apos; and &apos;version&apos; to AXI-Lite port AXILiteS."/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;toplevel_mul_32s_32s_32_3_1&apos; to &apos;toplevel_mul_32s_cud&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;toplevel_mul_32ns_32ns_64_3_1&apos; to &apos;toplevel_mul_32nsdEe&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;toplevel_mul_32s_35s_64_3_1&apos; to &apos;toplevel_mul_32s_eOg&apos; due to the length limit 20"/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;toplevel_mul_32nsdEe&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;toplevel_mac_muladd_13s_13s_13ns_13_1_1&apos; to &apos;toplevel_mac_mulaeOg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;toplevel_mac_mulaeOg&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;toplevel_mul_32nsdEe&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;toplevel_mul_32s_cud&apos;: 1 instance(s)."/>
-	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;toplevel_mul_32s_eOg&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;toplevel&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.59 seconds; current allocated memory: 80.448 MB."/>
-	<Message severity="WARNING" prefix="[HLS 200-433]" key="HLS 200-433" tag="SDX" content="Loop  + visitedLoop has an initiation interval that is equal to the pipeline depth (3) - this results in an unpipelined loop."/>
-	<Message severity="WARNING" prefix="[HLS 200-433]" key="HLS 200-433" tag="SDX" content="Loop  + visitedLoop has an initiation interval that is equal to the pipeline depth (3) - this results in an unpipelined loop."/>
-	<Message severity="WARNING" prefix="[HLS 200-433]" key="HLS 200-433" tag="SDX" content="Loop  + visitedLoop has an initiation interval that is equal to the pipeline depth (3) - this results in an unpipelined loop."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.48 seconds; current allocated memory: 85.222 MB."/>
 	<Message severity="INFO" prefix="[RTMG 210-282]" key="RTMG_282_1796" tag="" content="Generating pipelined core: &apos;toplevel_mul_32s_cud_MulnS_0&apos;"/>
 	<Message severity="INFO" prefix="[RTMG 210-282]" key="RTMG_282_1796" tag="" content="Generating pipelined core: &apos;toplevel_mul_32nsdEe_MulnS_1&apos;"/>
-	<Message severity="INFO" prefix="[RTMG 210-282]" key="RTMG_282_1796" tag="" content="Generating pipelined core: &apos;toplevel_mul_32s_eOg_MulnS_2&apos;"/>
 	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;toplevel_sectionDbkb_ram (RAM)&apos; using block RAMs with power-on initialization."/>
 	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;toplevel_visited_ram (RAM)&apos; using block RAMs with power-on initialization."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 491.418 ; gain = 130.070 ; free physical = 6247 ; free virtual = 27796"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 491.414 ; gain = 130.070 ; free physical = 8191 ; free virtual = 28058"/>
 	<Message severity="INFO" prefix="[SYSC 207-301]" key="SYSC_301_1065" tag="" content="Generating SystemC RTL for toplevel."/>
 	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for toplevel."/>
 	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for toplevel."/>
-	<Message severity="INFO" prefix="[HLS 200-112]" key="HLS_112_964" tag="" content="Total elapsed time: 19.21 seconds; peak allocated memory: 80.448 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-112]" key="HLS_112_964" tag="" content="Total elapsed time: 22.76 seconds; peak allocated memory: 85.222 MB."/>
 </Messages>

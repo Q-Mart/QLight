@@ -63,7 +63,7 @@ Section sections[8];
 u8 frameToProcess[MAX_FRAME];
 u8 sectionData[MAX_ARRAY_SIZE*3];
 
-u32 ram[MAX_SCALED_ARRAY_SIZE_32];
+u32 ram[MAX_SCALED_ARRAY_SIZE*3];
 
 XGpio gpio;
 XToplevel modeCalc;
@@ -326,6 +326,13 @@ void moveScaledSectionDataToFrame(Section *s, u8 *sData, u8 *frame, u32 stride) 
 
 }
 
+void showBits(unsigned int x) {
+    for(int i = (sizeof(int) * 8) - 1; i >= 0; i--) {
+       (x & (1u << i)) ? putchar('1') : putchar('0');
+    }
+}
+
+
 int main() {
 	printGreeting();
 	initVideo();
@@ -393,19 +400,68 @@ int main() {
 				  sections[i].height,
 				  sections[i].scaledLength);
 
-//			modePixel = mode(sectionData,
-//							 sections[i].scaledLength,
-//							 sections[i].scaledHeight);
+//			memcpy(ram, sectionData, sections[i].scaledLength * sections[i].scaledHeight * 3);
 
-			memcpy(ram, sectionData, sections[i].scaledLength * sections[i].scaledHeight * 3);
-			XToplevel_Set_height(&modeCalc, sections[i].scaledLength);
-			XToplevel_Set_length_r(&modeCalc, sections[i].scaledLength);
-			XToplevel_Start(&modeCalc);
-			while(!XToplevel_IsDone(&modeCalc));
-			modePixel = XToplevel_Get_return(&modeCalc);
+			for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
+				ram[j] = sectionData[j];
+				unsigned char switchVal = XGpio_DiscreteRead(&gpio, 1);
+				if (switchVal == 2 && sectionData[j] == 0) {
+					printf("j: %d\t%d\t%d\r\n", j, sectionData[j], ram[j]);
+					usleep(200000);
+				}
+			}
 
-			memcpy(modeBGR, modePixel, 3);
-//			printf("%d\t%d\t%d\t\r\n", modeBGR[2], modeBGR[1], modeBGR[0]);
+//			int x = 0;
+//			printf("ram[x]: %d %d %d \t sectionData[x]: %d %d %d\r\n",
+//					ram[x], ram[x+1], ram[x+2],
+//					sectionData[x], sectionData[x+1], sectionData[x+2]);
+
+			u32 version;
+			u32 r;
+			u32 g;
+			u32 b;
+
+			u32 length = sections[i].scaledLength;
+			u32 height = sections[i].scaledHeight;
+
+
+			modePixel = mode(ram,
+							 &length,
+							 &height,
+							 &r,
+							 &g,
+							 &b,
+							 &version);
+
+			Xil_DCacheFlush();
+
+
+//			XToplevel_Set_height(&modeCalc, sections[i].scaledLength);
+//			XToplevel_Set_length_r(&modeCalc, sections[i].scaledLength);
+//			XToplevel_Start(&modeCalc);
+//			while(!XToplevel_IsDone(&modeCalc));
+//			Xil_DCacheInvalidate();
+
+//			modePixel = XToplevel_Get_version(&modeCalc);
+//			r = XToplevel_Get_r(&modeCalc);
+//			g = XToplevel_Get_g(&modeCalc);
+//			b = XToplevel_Get_b(&modeCalc);
+
+//			memcpy(modeBGR, modePixel, 3);
+			modeBGR[0] = r;
+			modeBGR[1] = g;
+			modeBGR[2] = b;
+			printf("%d:\t%d\t%d\t%d\r\n", i+1, modeBGR[2], modeBGR[1], modeBGR[0]);
+
+//			showBits(modePixel);
+//			printf("\t");
+//			showBits(modeBGR[2]);
+//			printf("\t");
+//			showBits(modeBGR[1]);
+//			printf("\t");
+//			showBits(modeBGR[0]);
+//			printf("\r\n");
+
 			setSectionLEDColour(sections[i], modeBGR[2], modeBGR[1], modeBGR[0]);
 
 #ifdef SCALE_DEBUG
@@ -417,6 +473,8 @@ int main() {
 				numberOfDifferencesDetected += colourDifferenceAboveThreshold(newRGB, sections[i].RGB, colourThreshold);
 				sections[i].RGB = newRGB;
 			}
+
+			usleep(20000);
 		}
 
 		if (!syncMode) {
@@ -434,8 +492,8 @@ int main() {
 			VideoChangeFrame(&videoCapt, nextFrame);
 		}
 
-		updateSyncModeOnTerm();
-		updateSubsamplingRateOnTerm();
+//		updateSyncModeOnTerm();
+//		updateSubsamplingRateOnTerm();
 
 		usleep(subsampleDelay);
 	}

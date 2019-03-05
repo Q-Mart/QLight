@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module toplevel_AXILiteS_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 6,
+    C_S_AXI_ADDR_WIDTH = 7,
     C_S_AXI_DATA_WIDTH = 32
 )(
     // axi4 lite slave signals
@@ -42,6 +42,12 @@ module toplevel_AXILiteS_s_axi
     output wire [31:0]                   ram,
     output wire [31:0]                   length_r,
     output wire [31:0]                   height,
+    input  wire [31:0]                   r,
+    input  wire                          r_ap_vld,
+    input  wire [31:0]                   g,
+    input  wire                          g_ap_vld,
+    input  wire [31:0]                   b,
+    input  wire                          b_ap_vld,
     input  wire [31:0]                   version,
     input  wire                          version_ap_vld
 );
@@ -75,28 +81,49 @@ module toplevel_AXILiteS_s_axi
 // 0x28 : Data signal of height
 //        bit 31~0 - height[31:0] (Read/Write)
 // 0x2c : reserved
-// 0x30 : Data signal of version
+// 0x30 : Data signal of r
+//        bit 31~0 - r[31:0] (Read)
+// 0x34 : Control signal of r
+//        bit 0  - r_ap_vld (Read/COR)
+//        others - reserved
+// 0x38 : Data signal of g
+//        bit 31~0 - g[31:0] (Read)
+// 0x3c : Control signal of g
+//        bit 0  - g_ap_vld (Read/COR)
+//        others - reserved
+// 0x40 : Data signal of b
+//        bit 31~0 - b[31:0] (Read)
+// 0x44 : Control signal of b
+//        bit 0  - b_ap_vld (Read/COR)
+//        others - reserved
+// 0x48 : Data signal of version
 //        bit 31~0 - version[31:0] (Read)
-// 0x34 : Control signal of version
+// 0x4c : Control signal of version
 //        bit 0  - version_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL         = 6'h00,
-    ADDR_GIE             = 6'h04,
-    ADDR_IER             = 6'h08,
-    ADDR_ISR             = 6'h0c,
-    ADDR_AP_RETURN_0     = 6'h10,
-    ADDR_RAM_DATA_0      = 6'h18,
-    ADDR_RAM_CTRL        = 6'h1c,
-    ADDR_LENGTH_R_DATA_0 = 6'h20,
-    ADDR_LENGTH_R_CTRL   = 6'h24,
-    ADDR_HEIGHT_DATA_0   = 6'h28,
-    ADDR_HEIGHT_CTRL     = 6'h2c,
-    ADDR_VERSION_DATA_0  = 6'h30,
-    ADDR_VERSION_CTRL    = 6'h34,
+    ADDR_AP_CTRL         = 7'h00,
+    ADDR_GIE             = 7'h04,
+    ADDR_IER             = 7'h08,
+    ADDR_ISR             = 7'h0c,
+    ADDR_AP_RETURN_0     = 7'h10,
+    ADDR_RAM_DATA_0      = 7'h18,
+    ADDR_RAM_CTRL        = 7'h1c,
+    ADDR_LENGTH_R_DATA_0 = 7'h20,
+    ADDR_LENGTH_R_CTRL   = 7'h24,
+    ADDR_HEIGHT_DATA_0   = 7'h28,
+    ADDR_HEIGHT_CTRL     = 7'h2c,
+    ADDR_R_DATA_0        = 7'h30,
+    ADDR_R_CTRL          = 7'h34,
+    ADDR_G_DATA_0        = 7'h38,
+    ADDR_G_CTRL          = 7'h3c,
+    ADDR_B_DATA_0        = 7'h40,
+    ADDR_B_CTRL          = 7'h44,
+    ADDR_VERSION_DATA_0  = 7'h48,
+    ADDR_VERSION_CTRL    = 7'h4c,
     WRIDLE               = 2'd0,
     WRDATA               = 2'd1,
     WRRESP               = 2'd2,
@@ -104,7 +131,7 @@ localparam
     RDIDLE               = 2'd0,
     RDDATA               = 2'd1,
     RDRESET              = 2'd2,
-    ADDR_BITS         = 6;
+    ADDR_BITS         = 7;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -131,6 +158,12 @@ localparam
     reg  [31:0]                   int_ram = 'b0;
     reg  [31:0]                   int_length_r = 'b0;
     reg  [31:0]                   int_height = 'b0;
+    reg  [31:0]                   int_r = 'b0;
+    reg                           int_r_ap_vld;
+    reg  [31:0]                   int_g = 'b0;
+    reg                           int_g_ap_vld;
+    reg  [31:0]                   int_b = 'b0;
+    reg                           int_b_ap_vld;
     reg  [31:0]                   int_version = 'b0;
     reg                           int_version_ap_vld;
 
@@ -251,6 +284,24 @@ always @(posedge ACLK) begin
                 end
                 ADDR_HEIGHT_DATA_0: begin
                     rdata <= int_height[31:0];
+                end
+                ADDR_R_DATA_0: begin
+                    rdata <= int_r[31:0];
+                end
+                ADDR_R_CTRL: begin
+                    rdata[0] <= int_r_ap_vld;
+                end
+                ADDR_G_DATA_0: begin
+                    rdata <= int_g[31:0];
+                end
+                ADDR_G_CTRL: begin
+                    rdata[0] <= int_g_ap_vld;
+                end
+                ADDR_B_DATA_0: begin
+                    rdata <= int_b[31:0];
+                end
+                ADDR_B_CTRL: begin
+                    rdata[0] <= int_b_ap_vld;
                 end
                 ADDR_VERSION_DATA_0: begin
                     rdata <= int_version[31:0];
@@ -403,6 +454,72 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_HEIGHT_DATA_0)
             int_height[31:0] <= (WDATA[31:0] & wmask) | (int_height[31:0] & ~wmask);
+    end
+end
+
+// int_r
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_r <= 0;
+    else if (ACLK_EN) begin
+        if (r_ap_vld)
+            int_r <= r;
+    end
+end
+
+// int_r_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_r_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (r_ap_vld)
+            int_r_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_R_CTRL)
+            int_r_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_g
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_g <= 0;
+    else if (ACLK_EN) begin
+        if (g_ap_vld)
+            int_g <= g;
+    end
+end
+
+// int_g_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_g_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (g_ap_vld)
+            int_g_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_G_CTRL)
+            int_g_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_b
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_b <= 0;
+    else if (ACLK_EN) begin
+        if (b_ap_vld)
+            int_b <= b;
+    end
+end
+
+// int_b_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_b_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (b_ap_vld)
+            int_b_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_B_CTRL)
+            int_b_ap_vld <= 1'b0; // clear on read
     end
 end
 

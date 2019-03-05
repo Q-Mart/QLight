@@ -94,6 +94,12 @@ void XToplevel_Set_length_r(XToplevel *InstancePtr, u32 Data);
 u32 XToplevel_Get_length_r(XToplevel *InstancePtr);
 void XToplevel_Set_height(XToplevel *InstancePtr, u32 Data);
 u32 XToplevel_Get_height(XToplevel *InstancePtr);
+u32 XToplevel_Get_r(XToplevel *InstancePtr);
+u32 XToplevel_Get_r_vld(XToplevel *InstancePtr);
+u32 XToplevel_Get_g(XToplevel *InstancePtr);
+u32 XToplevel_Get_g_vld(XToplevel *InstancePtr);
+u32 XToplevel_Get_b(XToplevel *InstancePtr);
+u32 XToplevel_Get_b_vld(XToplevel *InstancePtr);
 u32 XToplevel_Get_version(XToplevel *InstancePtr);
 u32 XToplevel_Get_version_vld(XToplevel *InstancePtr);
 

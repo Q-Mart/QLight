@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity toplevel_AXILiteS_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 7;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -45,6 +45,12 @@ port (
     ram                   :out  STD_LOGIC_VECTOR(31 downto 0);
     length_r              :out  STD_LOGIC_VECTOR(31 downto 0);
     height                :out  STD_LOGIC_VECTOR(31 downto 0);
+    r                     :in   STD_LOGIC_VECTOR(31 downto 0);
+    r_ap_vld              :in   STD_LOGIC;
+    g                     :in   STD_LOGIC_VECTOR(31 downto 0);
+    g_ap_vld              :in   STD_LOGIC;
+    b                     :in   STD_LOGIC_VECTOR(31 downto 0);
+    b_ap_vld              :in   STD_LOGIC;
     version               :in   STD_LOGIC_VECTOR(31 downto 0);
     version_ap_vld        :in   STD_LOGIC
 );
@@ -80,9 +86,24 @@ end entity toplevel_AXILiteS_s_axi;
 -- 0x28 : Data signal of height
 --        bit 31~0 - height[31:0] (Read/Write)
 -- 0x2c : reserved
--- 0x30 : Data signal of version
+-- 0x30 : Data signal of r
+--        bit 31~0 - r[31:0] (Read)
+-- 0x34 : Control signal of r
+--        bit 0  - r_ap_vld (Read/COR)
+--        others - reserved
+-- 0x38 : Data signal of g
+--        bit 31~0 - g[31:0] (Read)
+-- 0x3c : Control signal of g
+--        bit 0  - g_ap_vld (Read/COR)
+--        others - reserved
+-- 0x40 : Data signal of b
+--        bit 31~0 - b[31:0] (Read)
+-- 0x44 : Control signal of b
+--        bit 0  - b_ap_vld (Read/COR)
+--        others - reserved
+-- 0x48 : Data signal of version
 --        bit 31~0 - version[31:0] (Read)
--- 0x34 : Control signal of version
+-- 0x4c : Control signal of version
 --        bit 0  - version_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -103,9 +124,15 @@ architecture behave of toplevel_AXILiteS_s_axi is
     constant ADDR_LENGTH_R_CTRL   : INTEGER := 16#24#;
     constant ADDR_HEIGHT_DATA_0   : INTEGER := 16#28#;
     constant ADDR_HEIGHT_CTRL     : INTEGER := 16#2c#;
-    constant ADDR_VERSION_DATA_0  : INTEGER := 16#30#;
-    constant ADDR_VERSION_CTRL    : INTEGER := 16#34#;
-    constant ADDR_BITS         : INTEGER := 6;
+    constant ADDR_R_DATA_0        : INTEGER := 16#30#;
+    constant ADDR_R_CTRL          : INTEGER := 16#34#;
+    constant ADDR_G_DATA_0        : INTEGER := 16#38#;
+    constant ADDR_G_CTRL          : INTEGER := 16#3c#;
+    constant ADDR_B_DATA_0        : INTEGER := 16#40#;
+    constant ADDR_B_CTRL          : INTEGER := 16#44#;
+    constant ADDR_VERSION_DATA_0  : INTEGER := 16#48#;
+    constant ADDR_VERSION_CTRL    : INTEGER := 16#4c#;
+    constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -131,6 +158,12 @@ architecture behave of toplevel_AXILiteS_s_axi is
     signal int_ram             : UNSIGNED(31 downto 0) := (others => '0');
     signal int_length_r        : UNSIGNED(31 downto 0) := (others => '0');
     signal int_height          : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_r               : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_r_ap_vld        : STD_LOGIC;
+    signal int_g               : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_g_ap_vld        : STD_LOGIC;
+    signal int_b               : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_b_ap_vld        : STD_LOGIC;
     signal int_version         : UNSIGNED(31 downto 0) := (others => '0');
     signal int_version_ap_vld  : STD_LOGIC;
 
@@ -262,6 +295,18 @@ begin
                         rdata_data <= RESIZE(int_length_r(31 downto 0), 32);
                     when ADDR_HEIGHT_DATA_0 =>
                         rdata_data <= RESIZE(int_height(31 downto 0), 32);
+                    when ADDR_R_DATA_0 =>
+                        rdata_data <= RESIZE(int_r(31 downto 0), 32);
+                    when ADDR_R_CTRL =>
+                        rdata_data <= (0 => int_r_ap_vld, others => '0');
+                    when ADDR_G_DATA_0 =>
+                        rdata_data <= RESIZE(int_g(31 downto 0), 32);
+                    when ADDR_G_CTRL =>
+                        rdata_data <= (0 => int_g_ap_vld, others => '0');
+                    when ADDR_B_DATA_0 =>
+                        rdata_data <= RESIZE(int_b(31 downto 0), 32);
+                    when ADDR_B_CTRL =>
+                        rdata_data <= (0 => int_b_ap_vld, others => '0');
                     when ADDR_VERSION_DATA_0 =>
                         rdata_data <= RESIZE(int_version(31 downto 0), 32);
                     when ADDR_VERSION_CTRL =>
@@ -447,6 +492,90 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_HEIGHT_DATA_0) then
                     int_height(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_height(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_r <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (r_ap_vld = '1') then
+                    int_r <= UNSIGNED(r); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_r_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (r_ap_vld = '1') then
+                    int_r_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_R_CTRL) then
+                    int_r_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_g <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (g_ap_vld = '1') then
+                    int_g <= UNSIGNED(g); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_g_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (g_ap_vld = '1') then
+                    int_g_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_G_CTRL) then
+                    int_g_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_b <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (b_ap_vld = '1') then
+                    int_b <= UNSIGNED(b); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_b_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (b_ap_vld = '1') then
+                    int_b_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_B_CTRL) then
+                    int_b_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

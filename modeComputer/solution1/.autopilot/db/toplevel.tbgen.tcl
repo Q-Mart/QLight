@@ -1,13 +1,10 @@
 set C_TypeInfoList {{ 
-"toplevel" : [[], {"return": [[],"0"] }, [{"ExternC" : 0}], [ {"ram": [[],{ "pointer": "0"}] }, {"length": [[],{ "pointer": "0"}] }, {"height": [[],{ "pointer": "0"}] }, {"version": [[],{ "pointer": "1"}] }],["2","3","4","5"],""],
- "2": [ "visited", [[], {"array": ["6", [6750]]}],""],
- "3": [ "sectionDataPtr", [[],{ "pointer": "6"}],""],
- "4": [ "sectionData", [[], {"array": ["0", [1688]]}],""],
- "5": [ "numberOfPixelsVisted", [[],"7"],""], 
-"1": [ "uint32", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
-"6": [ "u8", {"typedef": [[[], {"scalar": "unsigned char"}],""]}], 
-"0": [ "uint32", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
-"7": [ "uint_fast16_t", {"typedef": [[[], {"scalar": "long unsigned int"}],""]}]
+"toplevel" : [[], {"return": [[],"0"] }, [{"ExternC" : 0}], [ {"ram": [[],{ "pointer": "0"}] }, {"length": [[],{ "pointer": "0"}] }, {"height": [[],{ "pointer": "0"}] }, {"r": [[],{ "pointer": "0"}] }, {"g": [[],{ "pointer": "0"}] }, {"b": [[],{ "pointer": "0"}] }, {"version": [[],{ "pointer": "0"}] }],["1","2","3"],""],
+ "1": [ "visited", [[], {"array": ["0", [6750]]}],""],
+ "2": [ "sectionData", [[], {"array": ["0", [6750]]}],""],
+ "3": [ "numberOfPixelsVisted", [[],"4"],""], 
+"4": [ "ap_uint<12>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 12}}]],""]}}], 
+"0": [ "uint32", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
 }}
 set moduleName toplevel
 set isTaskLevelControl 1
@@ -27,6 +24,9 @@ set C_modelArgList {
 	{ ram int 32 regular {axi_slave 0}  }
 	{ length_r int 32 regular {axi_slave 0}  }
 	{ height int 32 regular {axi_slave 0}  }
+	{ r int 32 regular {axi_slave 1}  }
+	{ g int 32 regular {axi_slave 1}  }
+	{ b int 32 regular {axi_slave 1}  }
 	{ version int 32 regular {axi_slave 1}  }
 }
 set C_modelArgMapList {[ 
@@ -34,7 +34,10 @@ set C_modelArgMapList {[
  	{ "Name" : "ram", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} , 
  	{ "Name" : "length_r", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "length","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":32}, "offset_end" : {"in":39}} , 
  	{ "Name" : "height", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "height","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":40}, "offset_end" : {"in":47}} , 
- 	{ "Name" : "version", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "version","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":48}, "offset_end" : {"out":55}} , 
+ 	{ "Name" : "r", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "r","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":48}, "offset_end" : {"out":55}} , 
+ 	{ "Name" : "g", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "g","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":56}, "offset_end" : {"out":63}} , 
+ 	{ "Name" : "b", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "b","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":64}, "offset_end" : {"out":71}} , 
+ 	{ "Name" : "version", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "version","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":72}, "offset_end" : {"out":79}} , 
  	{ "Name" : "ap_return", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32,"bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "return","cData": "uint32","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 1,"step" : 0}]}]}], "offset" : {"out":16}} ]}
 # RTL Port declarations: 
 set portNum 65
@@ -88,14 +91,14 @@ set portList {
 	{ m_axi_MAXI_BUSER sc_in sc_lv 1 signal 0 } 
 	{ s_axi_AXILiteS_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 7 signal -1 } 
 	{ s_axi_AXILiteS_WVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_WREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_WDATA sc_in sc_lv 32 signal -1 } 
 	{ s_axi_AXILiteS_WSTRB sc_in sc_lv 4 signal -1 } 
 	{ s_axi_AXILiteS_ARVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_AXILiteS_ARADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_AXILiteS_ARADDR sc_in sc_lv 7 signal -1 } 
 	{ s_axi_AXILiteS_RVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_RREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_RDATA sc_out sc_lv 32 signal -1 } 
@@ -106,14 +109,14 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"toplevel","role":"start","value":"0","valid_bit":"0"},{"name":"toplevel","role":"continue","value":"0","valid_bit":"4"},{"name":"toplevel","role":"auto_start","value":"0","valid_bit":"7"},{"name":"ram","role":"data","value":"24"},{"name":"length_r","role":"data","value":"32"},{"name":"height","role":"data","value":"40"}] },
+	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"toplevel","role":"start","value":"0","valid_bit":"0"},{"name":"toplevel","role":"continue","value":"0","valid_bit":"4"},{"name":"toplevel","role":"auto_start","value":"0","valid_bit":"7"},{"name":"ram","role":"data","value":"24"},{"name":"length_r","role":"data","value":"32"},{"name":"height","role":"data","value":"40"}] },
 	{ "name": "s_axi_AXILiteS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWVALID" } },
 	{ "name": "s_axi_AXILiteS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWREADY" } },
 	{ "name": "s_axi_AXILiteS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WVALID" } },
 	{ "name": "s_axi_AXILiteS_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WREADY" } },
 	{ "name": "s_axi_AXILiteS_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WDATA" } },
 	{ "name": "s_axi_AXILiteS_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WSTRB" } },
-	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"toplevel","role":"start","value":"0","valid_bit":"0"},{"name":"toplevel","role":"done","value":"0","valid_bit":"1"},{"name":"toplevel","role":"idle","value":"0","valid_bit":"2"},{"name":"toplevel","role":"ready","value":"0","valid_bit":"3"},{"name":"toplevel","role":"auto_start","value":"0","valid_bit":"7"},{"name":"return","role":"data","value":"16"},{"name":"version","role":"data","value":"48"}, {"name":"version","role":"valid","value":"52","valid_bit":"0"}] },
+	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"toplevel","role":"start","value":"0","valid_bit":"0"},{"name":"toplevel","role":"done","value":"0","valid_bit":"1"},{"name":"toplevel","role":"idle","value":"0","valid_bit":"2"},{"name":"toplevel","role":"ready","value":"0","valid_bit":"3"},{"name":"toplevel","role":"auto_start","value":"0","valid_bit":"7"},{"name":"return","role":"data","value":"16"},{"name":"r","role":"data","value":"48"}, {"name":"r","role":"valid","value":"52","valid_bit":"0"},{"name":"g","role":"data","value":"56"}, {"name":"g","role":"valid","value":"60","valid_bit":"0"},{"name":"b","role":"data","value":"64"}, {"name":"b","role":"valid","value":"68","valid_bit":"0"},{"name":"version","role":"data","value":"72"}, {"name":"version","role":"valid","value":"76","valid_bit":"0"}] },
 	{ "name": "s_axi_AXILiteS_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARVALID" } },
 	{ "name": "s_axi_AXILiteS_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARREADY" } },
 	{ "name": "s_axi_AXILiteS_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "RVALID" } },
@@ -179,7 +182,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "-1", "EstimateLatencyMax" : "-1",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "17", "EstimateLatencyMax" : "1073741841",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -194,6 +197,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "ram", "Type" : "None", "Direction" : "I"},
 			{"Name" : "length_r", "Type" : "None", "Direction" : "I"},
 			{"Name" : "height", "Type" : "None", "Direction" : "I"},
+			{"Name" : "r", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "g", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "b", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "version", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "sectionData", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "numberOfPixelsVisted", "Type" : "OVld", "Direction" : "IO"},
@@ -204,17 +210,20 @@ set RtlHierarchyInfo {[
 	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_MAXI_m_axi_U", "Parent" : "0"},
 	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32s_cud_U1", "Parent" : "0"},
 	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32nsdEe_U2", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32nsdEe_U3", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32s_eOg_U4", "Parent" : "0"}]}
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mac_mulaeOg_U3", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mac_mulaeOg_U4", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	toplevel {
-		MAXI {Type I LastRead 14 FirstWrite -1}
+		MAXI {Type I LastRead 13 FirstWrite -1}
 		ram {Type I LastRead 0 FirstWrite -1}
 		length_r {Type I LastRead 0 FirstWrite -1}
 		height {Type I LastRead 0 FirstWrite -1}
-		version {Type O LastRead -1 FirstWrite 11}
+		r {Type O LastRead -1 FirstWrite 25}
+		g {Type O LastRead -1 FirstWrite 25}
+		b {Type O LastRead -1 FirstWrite 25}
+		version {Type O LastRead -1 FirstWrite 10}
 		sectionData {Type IO LastRead -1 FirstWrite -1}
 		numberOfPixelsVisted {Type IO LastRead -1 FirstWrite -1}
 		visited {Type IO LastRead -1 FirstWrite -1}}}
@@ -222,12 +231,13 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "-1", "Max" : "-1"}
-	, {"Name" : "Interval", "Min" : "0", "Max" : "0"}
+	{"Name" : "Latency", "Min" : "17", "Max" : "1073741841"}
+	, {"Name" : "Interval", "Min" : "18", "Max" : "1073741842"}
 ]}
 
 set PipelineEnableSignalInfo {[
 	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
+	{"Pipeline" : "1", "EnableSignal" : "ap_enable_pp1"}
 	{"Pipeline" : "2", "EnableSignal" : "ap_enable_pp2"}
 ]}
 

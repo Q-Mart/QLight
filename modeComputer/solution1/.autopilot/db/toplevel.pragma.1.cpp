@@ -1659,7 +1659,7 @@ typedef unsigned int uint32;
 typedef int int32;
 typedef unsigned char u8;
 
-uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, volatile uint32* version);
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b, uint32 *version);
 # 2 "modeComputer/src/toplevel.cpp" 2
 
 # 1 "/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdint.h" 1 3
@@ -30861,22 +30861,22 @@ inline bool operator!=(const ap_int<_AP_W> &__x, const complex<ap_int<_AP_W> > &
 # 69 "/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/common/technology/autopilot/ap_int.h" 2
 # 6 "modeComputer/src/toplevel.cpp" 2
 
-uint32 sectionData[1688];
-u8 *sectionDataPtr;
+uint32 sectionData[75*30*3];
 
-u8 visited[75*30*3];
 
-uint_fast16_t numberOfPixelsVisted;
+uint32 visited[75*30*3];
 
-ap_uint<1> equal(u8 pixel1B, u8 pixel1G, u8 pixel1R,
-     u8 pixel2B, u8 pixel2G, u8 pixel2R)
+ap_uint<12> numberOfPixelsVisted;
+
+ap_uint<1> equal(uint32 pixel1B, uint32 pixel1G, uint32 pixel1R,
+     uint32 pixel2B, uint32 pixel2G, uint32 pixel2R)
 {
  return (pixel1B == pixel2B &&
    pixel1G == pixel2G &&
    pixel1R == pixel2R);
 }
 
-ap_uint<1> inVisited(u8 pixelB, u8 pixelG, u8 pixelR) {
+ap_uint<1> inVisited(uint32 pixelB, uint32 pixelG, uint32 pixelR) {
  visitedLoop: for (int i=0; i<numberOfPixelsVisted; i++) {
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
@@ -30889,7 +30889,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  return 0;
 }
 
-void visit(u8 pixelB, u8 pixelG, u8 pixelR) {
+void visit(uint32 pixelB, uint32 pixelG, uint32 pixelR) {
  visited[(numberOfPixelsVisted*3)] = pixelB;
  visited[(numberOfPixelsVisted*3)+1] = pixelG;
  visited[(numberOfPixelsVisted*3)+2] = pixelR;
@@ -30897,11 +30897,11 @@ void visit(u8 pixelB, u8 pixelG, u8 pixelR) {
  numberOfPixelsVisted++;
 }
 
-uint_fast16_t getFrequency(u8 pixelB, u8 pixelG, u8 pixelR,
+ap_uint<12> getFrequency(uint32 pixelB, uint32 pixelG, uint32 pixelR,
        uint_fast16_t length, uint_fast16_t height)
 {
- uint_fast16_t current;
- uint_fast16_t result = 0;
+ ap_uint<13> current;
+ ap_uint<12> result = 0;
  freqXLoop: for (int x=0; x<length; x++) {
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
@@ -30909,7 +30909,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  current = (x*3) + (length * 3 * y);
-   if (equal(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+1],
+   if (equal(sectionData[current], sectionData[current+1], sectionData[current+1],
        pixelB, pixelG, pixelR))
    {
     result++;
@@ -30920,53 +30920,55 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  return result;
 }
 
-uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, volatile uint32 *version) {
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b, uint32 *version) {
 _ssdm_op_SpecInterface(ram, "m_axi", 0, 0, "", 0, 0, "MAXI", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(length, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(height, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(r, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(g, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(b, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(version, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 
  *version = 1;
 
- memcpy(sectionData, ram, (*length)*(*height)*3);
- sectionDataPtr = (u8*) sectionData;
+ memcpy(sectionData, ram, (*length)*(*height)*3*sizeof(uint32));
+
 
  numberOfPixelsVisted = 0;
- uint32 modePixel;
- uint_fast16_t modeFreq = 0;
+ ap_uint<12> modeFreq = 0;
 
- uint_fast16_t currentFreq = 0;
- uint_fast16_t current;
+ ap_uint<12> currentFreq = 0;
+ ap_uint<13> current;
  mainXLoop: for (uint_fast16_t x=0; x<*length; x++) {
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  mainYLoop: for (uint_fast16_t y=0; y<*height; y++) {
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+
  current = x*3 + ((*length) * y * 3);
-   if (!inVisited(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+2])) {
+   if (!inVisited(sectionData[current], sectionData[current+1], sectionData[current+2])) {
 
-    *version = sectionDataPtr[current+2] << 16 | sectionDataPtr[current+1] << 8 | sectionDataPtr[current];
+    *version = sectionData[current+2] << 16 | sectionData[current+1] << 8 | sectionData[current];
 
-    visit(sectionDataPtr[current],
-       sectionDataPtr[current+1],
-       sectionDataPtr[current+2]);
+    visit(sectionData[current],
+       sectionData[current+1],
+       sectionData[current+2]);
 
-    currentFreq = getFrequency(sectionDataPtr[current],
-             sectionDataPtr[current+1],
-             sectionDataPtr[current+2],
+    currentFreq = getFrequency(sectionData[current],
+             sectionData[current+1],
+             sectionData[current+2],
              *length,
              *height);
 
     if (currentFreq >= modeFreq) {
      modeFreq = currentFreq;
-     modePixel = sectionDataPtr[current+2] << 16 | sectionDataPtr[current+1] << 8 | sectionDataPtr[current];
+     *r = sectionData[current];
+     *g = sectionData[current+1];
+     *b = sectionData[current+2];
     }
    }
   }
  }
-
-
- return modePixel;
 }

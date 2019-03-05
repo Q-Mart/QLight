@@ -5,9 +5,9 @@
 // 
 // ==============================================================
 
-#ifndef __toplevel_mul_32s_eOg__HH__
-#define __toplevel_mul_32s_eOg__HH__
-#include "ACMP_mul_ss.h"
+#ifndef __toplevel_mac_mulaeOg__HH__
+#define __toplevel_mac_mulaeOg__HH__
+#include "simcore_mac_0.h"
 #include <systemc>
 
 template<
@@ -15,26 +15,23 @@ template<
     int NUM_STAGE,
     int din0_WIDTH,
     int din1_WIDTH,
+    int din2_WIDTH,
     int dout_WIDTH>
-SC_MODULE(toplevel_mul_32s_eOg) {
-    sc_core::sc_in_clk clk;
-    sc_core::sc_in<sc_dt::sc_logic> reset;
-    sc_core::sc_in<sc_dt::sc_logic> ce;
+SC_MODULE(toplevel_mac_mulaeOg) {
     sc_core::sc_in< sc_dt::sc_lv<din0_WIDTH> >   din0;
     sc_core::sc_in< sc_dt::sc_lv<din1_WIDTH> >   din1;
+    sc_core::sc_in< sc_dt::sc_lv<din2_WIDTH> >   din2;
     sc_core::sc_out< sc_dt::sc_lv<dout_WIDTH> >   dout;
 
 
 
-    ACMP_mul_ss<ID, 3, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_mul_ss_U;
+    simcore_mac_0<ID, 1, din0_WIDTH, din1_WIDTH, din2_WIDTH, dout_WIDTH> simcore_mac_0_U;
 
-    SC_CTOR(toplevel_mul_32s_eOg):  ACMP_mul_ss_U ("ACMP_mul_ss_U") {
-        ACMP_mul_ss_U.clk(clk);
-        ACMP_mul_ss_U.reset(reset);
-        ACMP_mul_ss_U.ce(ce);
-        ACMP_mul_ss_U.din0(din0);
-        ACMP_mul_ss_U.din1(din1);
-        ACMP_mul_ss_U.dout(dout);
+    SC_CTOR(toplevel_mac_mulaeOg):  simcore_mac_0_U ("simcore_mac_0_U") {
+        simcore_mac_0_U.din0(din0);
+        simcore_mac_0_U.din1(din1);
+        simcore_mac_0_U.din2(din2);
+        simcore_mac_0_U.dout(dout);
 
     }
 

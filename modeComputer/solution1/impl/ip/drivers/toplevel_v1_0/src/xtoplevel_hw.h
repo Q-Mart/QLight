@@ -35,9 +35,24 @@
 // 0x28 : Data signal of height
 //        bit 31~0 - height[31:0] (Read/Write)
 // 0x2c : reserved
-// 0x30 : Data signal of version
+// 0x30 : Data signal of r
+//        bit 31~0 - r[31:0] (Read)
+// 0x34 : Control signal of r
+//        bit 0  - r_ap_vld (Read/COR)
+//        others - reserved
+// 0x38 : Data signal of g
+//        bit 31~0 - g[31:0] (Read)
+// 0x3c : Control signal of g
+//        bit 0  - g_ap_vld (Read/COR)
+//        others - reserved
+// 0x40 : Data signal of b
+//        bit 31~0 - b[31:0] (Read)
+// 0x44 : Control signal of b
+//        bit 0  - b_ap_vld (Read/COR)
+//        others - reserved
+// 0x48 : Data signal of version
 //        bit 31~0 - version[31:0] (Read)
-// 0x34 : Control signal of version
+// 0x4c : Control signal of version
 //        bit 0  - version_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -54,7 +69,16 @@
 #define XTOPLEVEL_AXILITES_BITS_LENGTH_R_DATA 32
 #define XTOPLEVEL_AXILITES_ADDR_HEIGHT_DATA   0x28
 #define XTOPLEVEL_AXILITES_BITS_HEIGHT_DATA   32
-#define XTOPLEVEL_AXILITES_ADDR_VERSION_DATA  0x30
+#define XTOPLEVEL_AXILITES_ADDR_R_DATA        0x30
+#define XTOPLEVEL_AXILITES_BITS_R_DATA        32
+#define XTOPLEVEL_AXILITES_ADDR_R_CTRL        0x34
+#define XTOPLEVEL_AXILITES_ADDR_G_DATA        0x38
+#define XTOPLEVEL_AXILITES_BITS_G_DATA        32
+#define XTOPLEVEL_AXILITES_ADDR_G_CTRL        0x3c
+#define XTOPLEVEL_AXILITES_ADDR_B_DATA        0x40
+#define XTOPLEVEL_AXILITES_BITS_B_DATA        32
+#define XTOPLEVEL_AXILITES_ADDR_B_CTRL        0x44
+#define XTOPLEVEL_AXILITES_ADDR_VERSION_DATA  0x48
 #define XTOPLEVEL_AXILITES_BITS_VERSION_DATA  32
-#define XTOPLEVEL_AXILITES_ADDR_VERSION_CTRL  0x34
+#define XTOPLEVEL_AXILITES_ADDR_VERSION_CTRL  0x4c
 

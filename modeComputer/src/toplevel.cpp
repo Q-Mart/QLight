@@ -52,7 +52,7 @@ ap_uint<12> getFrequency(uint32 pixelB, uint32 pixelG, uint32 pixelR,
 #pragma HLS LOOP_TRIPCOUNT
 #pragma HLS PIPELINE
 			current = (x*3) + (length * 3 * y);
-			if (equal(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+1],
+			if (equal(sectionData[current], sectionData[current+1], sectionData[current+1],
 					  pixelB, pixelG, pixelR))
 			{
 				result++;
@@ -63,10 +63,13 @@ ap_uint<12> getFrequency(uint32 pixelB, uint32 pixelG, uint32 pixelR,
 	return result;
 }
 
-uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, volatile uint32 *version) {
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b, uint32 *version) {
 #pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI
 #pragma HLS INTERFACE s_axilite port=length bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=height bundle=AXILiteS register
+#pragma HLS INTERFACE s_axilite port=r bundle=AXILiteS register
+#pragma HLS INTERFACE s_axilite port=g bundle=AXILiteS register
+#pragma HLS INTERFACE s_axilite port=b bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=version bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS register
 
@@ -76,7 +79,6 @@ uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, volatile uint32 *ve
 //	sectionDataPtr = (u8*) sectionData;
 
 	numberOfPixelsVisted = 0;
-	uint32 modePixel;
 	ap_uint<12> modeFreq = 0;
 
 	ap_uint<12> currentFreq = 0;
@@ -87,29 +89,29 @@ uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, volatile uint32 *ve
 		mainYLoop: for (uint_fast16_t y=0; y<*height; y++) {
 #pragma HLS LOOP_TRIPCOUNT
 #pragma HLS PIPELINE
+
 			current = x*3 + ((*length) * y * 3);
-			if (!inVisited(sectionDataPtr[current], sectionDataPtr[current+1], sectionDataPtr[current+2])) {
+			if (!inVisited(sectionData[current], sectionData[current+1], sectionData[current+2])) {
 
-				*version = sectionDataPtr[current+2] << 16 | sectionDataPtr[current+1] << 8 | sectionDataPtr[current];
+				*version = sectionData[current+2] << 16 | sectionData[current+1] << 8 | sectionData[current];
 
-				visit(sectionDataPtr[current],
-					  sectionDataPtr[current+1],
-					  sectionDataPtr[current+2]);
+				visit(sectionData[current],
+					  sectionData[current+1],
+					  sectionData[current+2]);
 
-				currentFreq = getFrequency(sectionDataPtr[current],
-										   sectionDataPtr[current+1],
-										   sectionDataPtr[current+2],
+				currentFreq = getFrequency(sectionData[current],
+										   sectionData[current+1],
+										   sectionData[current+2],
 										   *length,
 										   *height);
 
 				if (currentFreq >= modeFreq) {
 					modeFreq = currentFreq;
-					modePixel = sectionDataPtr[current+2] << 16 | sectionDataPtr[current+1] << 8 | sectionDataPtr[current];
+					*r = sectionData[current];
+					*g = sectionData[current+1];
+					*b = sectionData[current+2];
 				}
 			}
 		}
 	}
-
-
-	return modePixel;
 }

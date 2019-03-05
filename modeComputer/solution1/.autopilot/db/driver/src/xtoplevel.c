@@ -136,6 +136,66 @@ u32 XToplevel_Get_height(XToplevel *InstancePtr) {
     return Data;
 }
 
+u32 XToplevel_Get_r(XToplevel *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XToplevel_ReadReg(InstancePtr->Axilites_BaseAddress, XTOPLEVEL_AXILITES_ADDR_R_DATA);
+    return Data;
+}
+
+u32 XToplevel_Get_r_vld(XToplevel *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XToplevel_ReadReg(InstancePtr->Axilites_BaseAddress, XTOPLEVEL_AXILITES_ADDR_R_CTRL);
+    return Data & 0x1;
+}
+
+u32 XToplevel_Get_g(XToplevel *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XToplevel_ReadReg(InstancePtr->Axilites_BaseAddress, XTOPLEVEL_AXILITES_ADDR_G_DATA);
+    return Data;
+}
+
+u32 XToplevel_Get_g_vld(XToplevel *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XToplevel_ReadReg(InstancePtr->Axilites_BaseAddress, XTOPLEVEL_AXILITES_ADDR_G_CTRL);
+    return Data & 0x1;
+}
+
+u32 XToplevel_Get_b(XToplevel *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XToplevel_ReadReg(InstancePtr->Axilites_BaseAddress, XTOPLEVEL_AXILITES_ADDR_B_DATA);
+    return Data;
+}
+
+u32 XToplevel_Get_b_vld(XToplevel *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XToplevel_ReadReg(InstancePtr->Axilites_BaseAddress, XTOPLEVEL_AXILITES_ADDR_B_CTRL);
+    return Data & 0x1;
+}
+
 u32 XToplevel_Get_version(XToplevel *InstancePtr) {
     u32 Data;
 

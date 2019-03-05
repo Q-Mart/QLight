@@ -8,7 +8,7 @@
 `timescale 1 ns / 1 ps
 module toplevel_visited_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
 
-parameter DWIDTH = 8;
+parameter DWIDTH = 32;
 parameter AWIDTH = 13;
 parameter MEM_SIZE = 6750;
 
@@ -80,7 +80,7 @@ module toplevel_visited(
     d1,
     q1);
 
-parameter DataWidth = 32'd8;
+parameter DataWidth = 32'd32;
 parameter AddressRange = 32'd6750;
 parameter AddressWidth = 32'd13;
 input reset;

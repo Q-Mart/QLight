@@ -10,37 +10,37 @@
 int test1() {
 	uint32 length = 74;
 	uint32 height = 29;
+	uint32 r;
+	uint32 g;
+	uint32 b;
 	uint32 version;
 
 	uint32 ram[MAX_SCALED_ARRAY_SIZE];
 
 	memcpy(ram, blueHoriz, MAX_SCALED_ARRAY_SIZE*sizeof(uint32));
 
-	uint32 mode = toplevel(ram, &length, &height, &version);
+	uint32 mode = toplevel(ram, &length, &height, &r, &g, &b, &version);
 
-	uint_fast8_t modeBGR[3];
-	memcpy(modeBGR, &mode, 3);
-
-	return (modeBGR[0] == 255) && (modeBGR[1] == 0) && (modeBGR[2] == 0);
+	return (r == 255) && (g == 0) && (b == 0);
 }
 
 int test2() {
 	uint32 length = 29;
 	uint32 height = 65;
+	uint32 r;
+	uint32 g;
+	uint32 b;
 	uint32 version;
 
-	uint32 ram[MAX_SCALED_ARRAY_SIZE_32];
+	uint32 ram[MAX_SCALED_ARRAY_SIZE];
 
 	memcpy(ram, blueGreenVert, MAX_SCALED_ARRAY_SIZE*sizeof(uint32));
 
-	uint32 mode = toplevel(ram, &length, &height, &version);
+	uint32 mode = toplevel(ram, &length, &height, &r, &g, &b, &version);
 
-	uint_fast8_t modeBGR[3];
-	memcpy(modeBGR, &mode, 3);
-
-	return  (modeBGR[0] == actualMode[0]) &&
-			(modeBGR[1] == actualMode[1]) &&
-			(modeBGR[2] == actualMode[2]);
+	return  (r == actualMode[0]) &&
+			(g == actualMode[1]) &&
+			(b == actualMode[2]);
 }
 
 int main() {

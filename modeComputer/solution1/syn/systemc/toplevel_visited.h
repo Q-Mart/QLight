@@ -21,7 +21,7 @@ using namespace sc_dt;
 
 struct toplevel_visited_ram : public sc_core::sc_module {
 
-  static const unsigned DataWidth = 8;
+  static const unsigned DataWidth = 32;
   static const unsigned AddressRange = 6750;
   static const unsigned AddressWidth = 13;
 
@@ -114,7 +114,7 @@ void prc_write_1()
 SC_MODULE(toplevel_visited) {
 
 
-static const unsigned DataWidth = 8;
+static const unsigned DataWidth = 32;
 static const unsigned AddressRange = 6750;
 static const unsigned AddressWidth = 13;
 

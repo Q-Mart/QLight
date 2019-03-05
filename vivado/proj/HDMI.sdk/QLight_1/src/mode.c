@@ -1,19 +1,24 @@
 #include "mode.h"
 
-u8 sectionDataCopy[MAX_SCALED_ARRAY_SIZE*3];
+u32 sectionData[MAX_SCALED_ARRAY_SIZE*3];
+//u8 *sectionDataPtr;
 
-u8 visited[MAX_SCALED_ARRAY_SIZE*3];
-u16 numberOfPixelsVisted = 0;
+u32 visited[MAX_SCALED_ARRAY_SIZE*3];
 
-u8 equal(u8 *pixel1, u8 *pixel2) {
-	return (pixel1[0] == pixel2[0] &&
-			pixel1[1] == pixel2[1] &&
-			pixel1[2] == pixel2[2]);
+u16 numberOfPixelsVisted;
+
+u32 equal(u32 pixel1B, u32 pixel1G, u32 pixel1R,
+				 u32 pixel2B, u32 pixel2G, u32 pixel2R)
+{
+	return (pixel1B == pixel2B &&
+			pixel1G == pixel2G &&
+			pixel1R == pixel2R);
 }
 
-u8 inVisited(u8 *pixel) {
+u32 inVisited(u32 pixelB, u32 pixelG, u32 pixelR) {
 	for (int i=0; i<numberOfPixelsVisted; i++) {
-		if (equal(pixel, &visited[i*3])) {
+		if (equal(pixelB, pixelG, pixelR,
+				  visited[(i*3)], visited[(i*3)+1], visited[(i*3)+2])) {
 			return 1;
 		}
 	}
@@ -21,18 +26,25 @@ u8 inVisited(u8 *pixel) {
 	return 0;
 }
 
-void visit(u8 *pixel) {
-	memcpy(&visited[numberOfPixelsVisted*3], pixel, 3);
+void visit(u32 pixelB, u32 pixelG, u32 pixelR) {
+	visited[(numberOfPixelsVisted*3)] = pixelB;
+	visited[(numberOfPixelsVisted*3)+1] = pixelG;
+	visited[(numberOfPixelsVisted*3)+2] = pixelR;
+
 	numberOfPixelsVisted++;
 }
 
-u16 getFrequency(u8 *pixel, u16 length, u16 height) {
-	u32 current;
-	u32 result = 0;
+u16 getFrequency(u32 pixelB, u32 pixelG, u32 pixelR,
+						 uint_fast16_t length, uint_fast16_t height)
+{
+	u16 current;
+	u16 result = 0;
 	for (int x=0; x<length; x++) {
 		for (int y=0; y<height; y++) {
 			current = (x*3) + (length * 3 * y);
-			if (equal(&sectionDataCopy[current], pixel)) {
+			if (equal(sectionData[current], sectionData[current+1], sectionData[current+1],
+					  pixelB, pixelG, pixelR))
+			{
 				result++;
 			}
 		}
@@ -41,33 +53,43 @@ u16 getFrequency(u8 *pixel, u16 length, u16 height) {
 	return result;
 }
 
+u32 mode(u32 *ram, u32 *length, u32 *height, u32 *r, u32 *g, u32 *b, u32 *version) {
 
-u32 mode(u8 *sectionData, u16 length, u16 height) {
+	*version = 1;
 
-	// Pretending an AXI burst transaction happens here
-	memcpy(sectionDataCopy, sectionData, length*height*3);
+	memcpy(sectionData, ram, (*length)*(*height)*3*sizeof(u32));
+//	sectionDataPtr = (u8*) sectionData;
 
 	numberOfPixelsVisted = 0;
-	u32 modePixel;
 	u16 modeFreq = 0;
 
 	u16 currentFreq = 0;
-	u32 current;
-	for (u16 x=0; x<length; x++) {
-		for (u16 y=0; y<height; y++) {
-			current = x*3 + (length * y * 3);
-			if (!inVisited(&sectionDataCopy[current])) {
-				visit(sectionDataCopy+current);
-				currentFreq = getFrequency(sectionDataCopy+current, length, height);
+	u16 current;
+	for (uint_fast16_t x=0; x<*length; x++) {
+		for (uint_fast16_t y=0; y<*height; y++) {
+
+			current = x*3 + ((*length+1) * y * 3);
+			if (!inVisited(sectionData[current], sectionData[current+1], sectionData[current+2])) {
+
+				*version = sectionData[current+2] << 16 | sectionData[current+1] << 8 | sectionData[current];
+
+				visit(sectionData[current],
+					  sectionData[current+1],
+					  sectionData[current+2]);
+
+				currentFreq = getFrequency(sectionData[current],
+										   sectionData[current+1],
+										   sectionData[current+2],
+										   *length,
+										   *height);
 
 				if (currentFreq >= modeFreq) {
 					modeFreq = currentFreq;
-					memcpy(modePixel, &sectionDataCopy[current], 3);
+					*r = sectionData[current];
+					*g = sectionData[current+1];
+					*b = sectionData[current+2];
 				}
 			}
 		}
 	}
-
-
-	return modePixel;
 }
