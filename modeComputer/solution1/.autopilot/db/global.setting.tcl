@@ -44,12 +44,12 @@ set TargetInfo "xc7z010:clg400:-1"
 set SourceFiles {sc {} c ../src/toplevel.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/userfs/q/qj544/w2k/QLight/modeComputer/solution1/solution1.directive}
-set TBFiles {verilog {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} bc {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} vhdl {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} sc {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} cas {../src/blueGreenVert.h ../src/blueHoriz.h ../src/testbench.cpp} c {}}
+set TBFiles {verilog {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp} bc {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp} sc {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp} vhdl {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp} c {} cas {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set PlatformFiles {{DefaultPlatform {xilinx/zynq/zynq xilinx/zynq/zynq_fpv6}}}

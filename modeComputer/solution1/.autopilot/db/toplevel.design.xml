@@ -13,13 +13,13 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>7.50</TargetClockPeriod>
 <ClockUncertainty>0.94</ClockUncertainty>
-<EstimatedClockPeriod>8.059</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.705</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>17</Best-caseLatency>
+<Best-caseLatency>22</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
-<Worst-caseLatency>1073741841</Worst-caseLatency>
-<PipelineInitiationInterval>18 ~ 1073741842</PipelineInitiationInterval>
+<Worst-caseLatency>2147483670</Worst-caseLatency>
+<PipelineInitiationInterval>23 ~ 2147483671</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -41,11 +41,11 @@
 <Latency>0</Latency>
 <IterationLatency>
 <range>
-<min>11</min>
-<max>14</max>
+<min>10</min>
+<max>13</max>
 </range>
 </IterationLatency>
-<PipelineDepth>11 ~ 14</PipelineDepth>
+<PipelineDepth>10 ~ 13</PipelineDepth>
 <visitedLoop>
 <Name>visitedLoop</Name>
 <TripCount>0</TripCount>
@@ -57,18 +57,30 @@
 <Name>freqXLoop_freqYLoop</Name>
 <TripCount>0</TripCount>
 <Latency>0</Latency>
-<PipelineII>1</PipelineII>
-<PipelineDepth>5</PipelineDepth>
+<PipelineII>2</PipelineII>
+<PipelineDepth>9</PipelineDepth>
 </freqXLoop_freqYLoop>
 </mainXLoop_mainYLoop>
+<memcpy.ram.sectionData.gep>
+<Name>memcpy.ram.sectionData.gep</Name>
+<TripCount>
+<range>
+<min>0</min>
+<max>1073741823</max>
+</range>
+</TripCount>
+<Latency>0 ~ 1073741824</Latency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>3</PipelineDepth>
+</memcpy.ram.sectionData.gep>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
 <BRAM_18K>34</BRAM_18K>
-<DSP48E>10</DSP48E>
-<FF>2591</FF>
-<LUT>2905</LUT>
+<DSP48E>13</DSP48E>
+<FF>3114</FF>
+<LUT>3277</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>

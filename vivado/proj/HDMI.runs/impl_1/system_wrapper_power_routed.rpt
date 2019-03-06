@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2.1 (lin64) Build 2288692 Thu Jul 26 18:23:50 MDT 2018
-| Date             : Mon Mar  4 15:28:41 2019
-| Host             : cse166pc-17 running 64-bit Ubuntu 18.04.2 LTS
+| Date             : Wed Mar  6 09:12:00 2019
+| Host             : cse066pc-15 running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
 | Design           : system_wrapper
 | Device           : xc7z010clg400-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.078        |
+| Total On-Chip Power (W)  | 2.070        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.943        |
+| Dynamic (W)              | 1.935        |
 | Device Static (W)        | 0.135        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 61.0         |
-| Junction Temperature (C) | 49.0         |
+| Max Ambient (C)          | 61.1         |
+| Junction Temperature (C) | 48.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.059 |       12 |       --- |             --- |
-| Slice Logic              |     0.016 |    31181 |       --- |             --- |
-|   LUT as Logic           |     0.013 |     9523 |     17600 |           54.11 |
-|   CARRY4                 |     0.002 |      702 |      4400 |           15.95 |
-|   Register               |     0.001 |    16777 |     35200 |           47.66 |
+| Clocks                   |     0.056 |       12 |       --- |             --- |
+| Slice Logic              |     0.018 |    33188 |       --- |             --- |
+|   LUT as Logic           |     0.015 |    10217 |     17600 |           58.05 |
+|   CARRY4                 |     0.002 |      752 |      4400 |           17.09 |
+|   Register               |     0.001 |    17801 |     35200 |           50.57 |
 |   F7/F8 Muxes            |    <0.001 |      412 |     17600 |            2.34 |
 |   LUT as Distributed RAM |    <0.001 |       42 |      6000 |            0.70 |
-|   Others                 |    <0.001 |      997 |       --- |             --- |
-|   LUT as Shift Register  |    <0.001 |      296 |      6000 |            4.93 |
-| Signals                  |     0.025 |    22835 |       --- |             --- |
-| Block RAM                |     0.063 |       31 |        60 |           51.67 |
+|   Others                 |    <0.001 |     1014 |       --- |             --- |
+|   LUT as Shift Register  |    <0.001 |      353 |      6000 |            5.88 |
+| Signals                  |     0.030 |    24309 |       --- |             --- |
+| Block RAM                |     0.051 |     31.5 |        60 |           52.50 |
 | MMCM                     |     0.200 |        2 |         2 |          100.00 |
-| DSPs                     |     0.002 |        9 |        80 |           11.25 |
+| DSPs                     |     0.001 |        9 |        80 |           11.25 |
 | I/O                      |     0.173 |       30 |       100 |           30.00 |
 | PS7                      |     1.406 |        1 |       --- |             --- |
 | Static Power             |     0.135 |          |           |                 |
-| Total                    |     2.078 |          |           |                 |
+| Total                    |     2.070 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.176 |       0.167 |      0.010 |
+| Vccint    |       1.000 |     0.169 |       0.160 |      0.010 |
 | Vccaux    |       1.800 |     0.136 |       0.127 |      0.009 |
 | Vcco33    |       3.300 |     0.043 |       0.042 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -87,7 +87,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.007 |       0.005 |      0.003 |
+| Vccbram   |       1.000 |     0.006 |       0.004 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -163,15 +163,15 @@ Table of Contents
 +---------------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                                    | Power (W) |
 +---------------------------------------------------------------------------------------------------------+-----------+
-| system_wrapper                                                                                          |     1.943 |
+| system_wrapper                                                                                          |     1.935 |
 |   hdmi_in_ddc_scl_iobuf                                                                                 |     0.000 |
 |   hdmi_in_ddc_sda_iobuf                                                                                 |     0.000 |
 |   hdmi_out_ddc_scl_iobuf                                                                                |     0.004 |
 |   hdmi_out_ddc_sda_iobuf                                                                                |     0.004 |
-|   system_i                                                                                              |     1.935 |
-|     DigiLED_0                                                                                           |     0.003 |
-|       inst                                                                                              |     0.003 |
-|         DigiLED_v1_0_S00_AXI_inst                                                                       |     0.003 |
+|   system_i                                                                                              |     1.927 |
+|     DigiLED_0                                                                                           |     0.002 |
+|       inst                                                                                              |     0.002 |
+|         DigiLED_v1_0_S00_AXI_inst                                                                       |     0.002 |
 |           led_driver                                                                                    |    <0.001 |
 |     axi_dynclk_0                                                                                        |     0.109 |
 |       U0                                                                                                |     0.109 |
@@ -250,7 +250,7 @@ Table of Contents
 |                               ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst                       |    <0.001 |
 |               USE_READ.USE_SPLIT_R.read_data_inst                                                       |    <0.001 |
 |               USE_WRITE.USE_SPLIT_W.write_resp_inst                                                     |    <0.001 |
-|               USE_WRITE.write_addr_inst                                                                 |     0.001 |
+|               USE_WRITE.write_addr_inst                                                                 |    <0.001 |
 |                 USE_BURSTS.cmd_queue                                                                    |    <0.001 |
 |                   inst                                                                                  |    <0.001 |
 |                     fifo_gen_inst                                                                       |    <0.001 |
@@ -329,9 +329,9 @@ Table of Contents
 |               si_register_slice_inst                                                                    |    <0.001 |
 |                 ar.ar_pipe                                                                              |    <0.001 |
 |                 aw.aw_pipe                                                                              |    <0.001 |
-|       xbar                                                                                              |     0.002 |
-|         inst                                                                                            |     0.002 |
-|           gen_samd.crossbar_samd                                                                        |     0.002 |
+|       xbar                                                                                              |     0.003 |
+|         inst                                                                                            |     0.003 |
+|           gen_samd.crossbar_samd                                                                        |     0.003 |
 |             addr_arbiter_ar                                                                             |    <0.001 |
 |               gen_arbiter.mux_mesg                                                                      |    <0.001 |
 |               gen_arbiter.si_amesg_mux_inst                                                             |    <0.001 |
@@ -375,12 +375,15 @@ Table of Contents
 |                 gen_target[0].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator |    <0.001 |
 |               gen_single_thread.mux_resp_single_thread                                                  |    <0.001 |
 |             gen_slave_slots[2].gen_si_write.si_transactor_aw                                            |    <0.001 |
+|               gen_addr_decoder.addr_decoder_inst                                                        |    <0.001 |
+|                 gen_target[0].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator |    <0.001 |
 |             gen_slave_slots[2].gen_si_write.splitter_aw_si                                              |    <0.001 |
 |             gen_slave_slots[2].gen_si_write.wdata_router_w                                              |    <0.001 |
 |               wrouter_aw_fifo                                                                           |    <0.001 |
+|                 gen_srls[0].gen_rep[0].srl_nx1                                                          |    <0.001 |
 |             splitter_aw_mi                                                                              |    <0.001 |
-|     axi_vdma_0                                                                                          |     0.027 |
-|       U0                                                                                                |     0.027 |
+|     axi_vdma_0                                                                                          |     0.025 |
+|       U0                                                                                                |     0.025 |
 |         AXI_LITE_REG_INTERFACE_I                                                                        |     0.002 |
 |           GEN_AXI_LITE_IF.AXI_LITE_IF_I                                                                 |     0.002 |
 |             GEN_LITE_IS_ASYNC.GEN_ASYNC_LITE_ACCESS.LITE_WVALID_MM2S_CDC_I                              |    <0.001 |
@@ -396,7 +399,7 @@ Table of Contents
 |             DYNAMIC_GENLOCK_FOR_SLAVE.GEN_FSTORES_GRTR_ONE.GREY_CODER_I                                 |    <0.001 |
 |             DYNAMIC_GENLOCK_FOR_SLAVE.GREY_CODER_I                                                      |    <0.001 |
 |           VIDEO_REG_I                                                                                   |    <0.001 |
-|             GEN_REGISTER_DIRECT.GEN_REGDIRECT_DRES.VIDADDR_MUX_I                                        |    <0.001 |
+|             GEN_REGISTER_DIRECT.GEN_REGDIRECT_DRES.VIDADDR_MUX_I                                        |     0.000 |
 |             GEN_REGISTER_DIRECT.GEN_REGDIRECT_DRES.VIDREGISTER_I                                        |    <0.001 |
 |         GEN_SPRT_FOR_MM2S.GEN_AXIS_MM2S_DWIDTH_CONV.AXIS_MM2S_DWIDTH_CONVERTER_I                        |     0.001 |
 |           GEN_DWIDTH_NO_SOF.MM2S_AXIS_DWIDTH_CONVERTER_I                                                |    <0.001 |
@@ -437,7 +440,7 @@ Table of Contents
 |           I_DMA_REGISTER                                                                                |    <0.001 |
 |           LITE_READ_MUX_I                                                                               |    <0.001 |
 |         GEN_SPRT_FOR_MM2S.MM2S_SOF_I                                                                    |    <0.001 |
-|         GEN_SPRT_FOR_S2MM.GEN_AXIS_S2MM_DWIDTH_CONV.AXIS_S2MM_DWIDTH_CONVERTER_I                        |     0.002 |
+|         GEN_SPRT_FOR_S2MM.GEN_AXIS_S2MM_DWIDTH_CONV.AXIS_S2MM_DWIDTH_CONVERTER_I                        |     0.001 |
 |           GEN_DWIDTH_FLUSH_SOF.S2MM_AXIS_DWIDTH_CONVERTER_I                                             |     0.001 |
 |             gen_downsizer_conversion.axisc_downsizer_0                                                  |    <0.001 |
 |             gen_upsizer_conversion.axisc_upsizer_0                                                      |    <0.001 |
@@ -489,7 +492,7 @@ Table of Contents
 |         GEN_SPRT_FOR_S2MM.S2MM_SOF_I                                                                    |    <0.001 |
 |         GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I                                                                |    <0.001 |
 |         I_AXI_DMA_INTRPT                                                                                |    <0.001 |
-|         I_PRMRY_DATAMOVER                                                                               |     0.013 |
+|         I_PRMRY_DATAMOVER                                                                               |     0.012 |
 |           GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER                                                             |     0.004 |
 |             GEN_INCLUDE_MM2S_SF.I_RD_SF                                                                 |     0.002 |
 |               I_DATA_FIFO                                                                               |     0.001 |
@@ -646,8 +649,8 @@ Table of Contents
 |             GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I                                                        |    <0.001 |
 |     axis_subset_converter_in                                                                            |     0.000 |
 |     axis_subset_converter_out                                                                           |     0.000 |
-|     dvi2rgb_0                                                                                           |     0.132 |
-|       U0                                                                                                |     0.132 |
+|     dvi2rgb_0                                                                                           |     0.131 |
+|       U0                                                                                                |     0.131 |
 |         DataDecoders[0].DecoderX                                                                        |     0.011 |
 |           ChannelBondX                                                                                  |    <0.001 |
 |             pFIFO_reg_0_31_0_5                                                                          |    <0.001 |
@@ -706,8 +709,8 @@ Table of Contents
 |           ACTIVE_LOW_EXT.ACT_LO_EXT                                                                     |    <0.001 |
 |         SEQ                                                                                             |    <0.001 |
 |           SEQ_COUNTER                                                                                   |    <0.001 |
-|     processing_system7_0                                                                                |     1.408 |
-|       inst                                                                                              |     1.408 |
+|     processing_system7_0                                                                                |     1.407 |
+|       inst                                                                                              |     1.407 |
 |     ps7_0_axi_periph                                                                                    |     0.007 |
 |       m07_couplers                                                                                      |     0.001 |
 |         auto_cc                                                                                         |     0.001 |
@@ -817,28 +820,36 @@ Table of Contents
 |           ACTIVE_LOW_EXT.ACT_LO_EXT                                                                     |    <0.001 |
 |         SEQ                                                                                             |    <0.001 |
 |           SEQ_COUNTER                                                                                   |    <0.001 |
-|     toplevel_0                                                                                          |     0.070 |
-|       U0                                                                                                |     0.070 |
-|         sectionData_U                                                                                   |     0.038 |
-|           toplevel_sectionDbkb_ram_U                                                                    |     0.038 |
+|     toplevel_0                                                                                          |     0.065 |
+|       U0                                                                                                |     0.065 |
+|         sectionData_U                                                                                   |     0.023 |
+|           toplevel_sectionDbkb_ram_U                                                                    |     0.023 |
 |         toplevel_AXILiteS_s_axi_U                                                                       |     0.001 |
-|         toplevel_MAXI_m_axi_U                                                                           |     0.006 |
+|         toplevel_MAXI_m_axi_U                                                                           |     0.011 |
 |           bus_read                                                                                      |     0.006 |
 |             fifo_rctl                                                                                   |    <0.001 |
 |             fifo_rdata                                                                                  |     0.004 |
 |             fifo_rreq                                                                                   |    <0.001 |
 |             rs_rdata                                                                                    |    <0.001 |
 |             rs_rreq                                                                                     |    <0.001 |
-|         toplevel_mac_mulaeOg_U3                                                                         |    <0.001 |
-|           toplevel_mac_mulaeOg_DSP48_0_U                                                                |    <0.001 |
-|         toplevel_mac_mulaeOg_U4                                                                         |     0.002 |
-|           toplevel_mac_mulaeOg_DSP48_0_U                                                                |     0.002 |
+|           bus_write                                                                                     |     0.005 |
+|             buff_wdata                                                                                  |     0.002 |
+|             bus_equal_gen.fifo_burst                                                                    |    <0.001 |
+|             fifo_resp                                                                                   |    <0.001 |
+|             fifo_resp_to_user                                                                           |    <0.001 |
+|             fifo_wreq                                                                                   |    <0.001 |
+|             rs_wreq                                                                                     |    <0.001 |
+|           wreq_throttl                                                                                  |    <0.001 |
+|         toplevel_mac_mulaeOg_U4                                                                         |     0.001 |
+|           toplevel_mac_mulaeOg_DSP48_0_U                                                                |     0.001 |
 |         toplevel_mul_32nsdEe_U2                                                                         |    <0.001 |
 |           toplevel_mul_32nsdEe_MulnS_1_U                                                                |    <0.001 |
 |         toplevel_mul_32s_cud_U1                                                                         |    <0.001 |
 |           toplevel_mul_32s_cud_MulnS_0_U                                                                |    <0.001 |
-|         visited_U                                                                                       |     0.012 |
-|           toplevel_visited_ram_U                                                                        |     0.012 |
+|         toplevel_mul_32s_cud_U3                                                                         |    <0.001 |
+|           toplevel_mul_32s_cud_MulnS_0_U                                                                |    <0.001 |
+|         visited_U                                                                                       |     0.013 |
+|           toplevel_visited_ram_U                                                                        |     0.013 |
 |     v_axi4s_vid_out_0                                                                                   |     0.007 |
 |       inst                                                                                              |     0.007 |
 |         COUPLER_INST                                                                                    |     0.006 |
@@ -868,7 +879,7 @@ Table of Contents
 |       U0                                                                                                |     0.010 |
 |         U_TC_TOP                                                                                        |     0.003 |
 |           GEN_DETECTION.U_tc_DET                                                                        |     0.002 |
-|         U_VIDEO_CTRL                                                                                    |     0.008 |
+|         U_VIDEO_CTRL                                                                                    |     0.007 |
 |           AXI4_LITE_INTERFACE.AXI_LITE_IPIF_I                                                           |    <0.001 |
 |             I_SLAVE_ATTACHMENT                                                                          |    <0.001 |
 |               I_DECODER                                                                                 |    <0.001 |
@@ -878,9 +889,9 @@ Table of Contents
 |           AXI4_LITE_INTERFACE.GENR_MUX0                                                                 |     0.002 |
 |           AXI4_LITE_INTERFACE.SYNC2PROCCLK_I                                                            |    <0.001 |
 |           AXI4_LITE_INTERFACE.SYNC2VIDCLK_I                                                             |    <0.001 |
-|     v_tc_out                                                                                            |     0.014 |
-|       U0                                                                                                |     0.014 |
-|         U_TC_TOP                                                                                        |     0.005 |
+|     v_tc_out                                                                                            |     0.013 |
+|       U0                                                                                                |     0.013 |
+|         U_TC_TOP                                                                                        |     0.004 |
 |           GEN_DETECTION.U_tc_DET                                                                        |     0.003 |
 |           GEN_GENERATOR.U_TC_GEN                                                                        |     0.001 |
 |         U_VIDEO_CTRL                                                                                    |     0.009 |

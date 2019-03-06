@@ -30898,7 +30898,7 @@ void visit(uint32 pixelB, uint32 pixelG, uint32 pixelR) {
 }
 
 ap_uint<12> getFrequency(uint32 pixelB, uint32 pixelG, uint32 pixelR,
-       uint_fast16_t length, uint_fast16_t height)
+       uint32 length, uint32 height)
 {
  ap_uint<13> current;
  ap_uint<12> result = 0;
@@ -30909,7 +30909,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 _ssdm_op_SpecLoopTripCount(0, 0, 0, "");
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  current = (x*3) + (length * 3 * y);
-   if (equal(sectionData[current], sectionData[current+1], sectionData[current+1],
+   if (equal(sectionData[current], sectionData[current+1], sectionData[current+2],
        pixelB, pixelG, pixelR))
    {
     result++;
@@ -30934,6 +30934,9 @@ _ssdm_op_SpecInterface(0, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0,
 
  memcpy(sectionData, ram, (*length)*(*height)*3*sizeof(uint32));
 
+ *r = sectionData[0];
+ *g = sectionData[1];
+ *b = sectionData[2];
 
  numberOfPixelsVisted = 0;
  ap_uint<12> modeFreq = 0;
@@ -30949,8 +30952,6 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 
  current = x*3 + ((*length) * y * 3);
    if (!inVisited(sectionData[current], sectionData[current+1], sectionData[current+2])) {
-
-    *version = sectionData[current+2] << 16 | sectionData[current+1] << 8 | sectionData[current];
 
     visit(sectionData[current],
        sectionData[current+1],
@@ -30971,4 +30972,6 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
    }
   }
  }
+
+ memcpy(ram, sectionData, (*length)*(*height)*3*sizeof(uint32));
 }

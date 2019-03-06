@@ -20,7 +20,7 @@
     "ClockPeriod": "7.5",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "17",
+    "Latency": "22",
     "Uncertainty": "0.9375"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 7.500 [get_ports ap_clk]"]},
@@ -1013,7 +1013,7 @@
       "statusOffset": "52",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "25"
+      "firstOutLatency": "21"
     },
     "g": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1022,7 +1022,7 @@
       "statusOffset": "60",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "25"
+      "firstOutLatency": "21"
     },
     "b": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1031,7 +1031,7 @@
       "statusOffset": "68",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "25"
+      "firstOutLatency": "21"
     },
     "version": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1064,19 +1064,19 @@
     "Hierarchy": {"ModuleName": "toplevel"},
     "Metrics": {"toplevel": {
         "Latency": {
-          "LatencyBest": "17",
+          "LatencyBest": "22",
           "LatencyAvg": "",
-          "LatencyWorst": "1073741841",
-          "PipelineIIMin": "18",
-          "PipelineIIMax": "1073741842",
-          "PipelineII": "18 ~ 1073741842",
+          "LatencyWorst": "2147483670",
+          "PipelineIIMin": "23",
+          "PipelineIIMax": "2147483671",
+          "PipelineII": "23 ~ 2147483671",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "7.50",
           "Uncertainty": "0.94",
-          "Estimate": "8.059"
+          "Estimate": "6.705"
         },
         "Loops": [
           {
@@ -1093,9 +1093,9 @@
             "TripCount": "0",
             "Latency": "0",
             "PipelineII": "",
-            "PipelineDepthMin": "11",
-            "PipelineDepthMax": "14",
-            "PipelineDepth": "11 ~ 14",
+            "PipelineDepthMin": "10",
+            "PipelineDepthMax": "13",
+            "PipelineDepth": "10 ~ 13",
             "Loops": [
               {
                 "Name": "visitedLoop",
@@ -1108,17 +1108,26 @@
                 "Name": "freqXLoop_freqYLoop",
                 "TripCount": "0",
                 "Latency": "0",
-                "PipelineII": "1",
-                "PipelineDepth": "5"
+                "PipelineII": "2",
+                "PipelineDepth": "9"
               }
             ]
+          },
+          {
+            "Name": "memcpy.ram.sectionData.gep",
+            "TripCount": "",
+            "LatencyMin": "0",
+            "LatencyMax": "1073741824",
+            "Latency": "0 ~ 1073741824",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
           }
         ],
         "Area": {
           "BRAM_18K": "34",
-          "DSP48E": "10",
-          "FF": "2591",
-          "LUT": "2905"
+          "DSP48E": "13",
+          "FF": "3114",
+          "LUT": "3277"
         }
       }}
   },
@@ -1129,7 +1138,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2019-03-04 15:14:08 GMT",
+    "Time": "2019-03-06 09:00:05 GMT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2.1"
   }

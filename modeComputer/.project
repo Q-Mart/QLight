@@ -62,6 +62,11 @@
 			<location>/home/userfs/q/qj544/w2k/QLight/modeComputer/src/blueHoriz.h</location>
 		</link>
 		<link>
+			<name>testbench/green.h</name>
+			<type>1</type>
+			<location>/home/userfs/q/qj544/w2k/QLight/modeComputer/src/green.h</location>
+		</link>
+		<link>
 			<name>testbench/testbench.cpp</name>
 			<type>1</type>
 			<location>/home/userfs/q/qj544/w2k/QLight/modeComputer/src/testbench.cpp</location>

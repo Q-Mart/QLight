@@ -20,7 +20,7 @@ set isEnableWaveformDebug 1
 set C_modelName {toplevel}
 set C_modelType { int 32 }
 set C_modelArgList {
-	{ MAXI int 32 regular {axi_master 0}  }
+	{ MAXI int 32 regular {axi_master 2}  }
 	{ ram int 32 regular {axi_slave 0}  }
 	{ length_r int 32 regular {axi_slave 0}  }
 	{ height int 32 regular {axi_slave 0}  }
@@ -30,7 +30,7 @@ set C_modelArgList {
 	{ version int 32 regular {axi_slave 1}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "MAXI", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "ram","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "ram","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+	{ "Name" : "MAXI", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "ram","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "ram","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "ram", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} , 
  	{ "Name" : "length_r", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "length","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":32}, "offset_end" : {"in":39}} , 
  	{ "Name" : "height", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "height","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":40}, "offset_end" : {"in":47}} , 
@@ -182,7 +182,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "17", "EstimateLatencyMax" : "1073741841",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "22", "EstimateLatencyMax" : "2147483670",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -190,10 +190,13 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
-			{"Name" : "MAXI", "Type" : "MAXI", "Direction" : "I",
+			{"Name" : "MAXI", "Type" : "MAXI", "Direction" : "IO",
 				"BlockSignal" : [
 					{"Name" : "MAXI_blk_n_AR", "Type" : "RtlSignal"},
-					{"Name" : "MAXI_blk_n_R", "Type" : "RtlSignal"}]},
+					{"Name" : "MAXI_blk_n_R", "Type" : "RtlSignal"},
+					{"Name" : "MAXI_blk_n_AW", "Type" : "RtlSignal"},
+					{"Name" : "MAXI_blk_n_W", "Type" : "RtlSignal"},
+					{"Name" : "MAXI_blk_n_B", "Type" : "RtlSignal"}]},
 			{"Name" : "ram", "Type" : "None", "Direction" : "I"},
 			{"Name" : "length_r", "Type" : "None", "Direction" : "I"},
 			{"Name" : "height", "Type" : "None", "Direction" : "I"},
@@ -210,19 +213,19 @@ set RtlHierarchyInfo {[
 	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_MAXI_m_axi_U", "Parent" : "0"},
 	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32s_cud_U1", "Parent" : "0"},
 	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32nsdEe_U2", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mac_mulaeOg_U3", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mul_32s_cud_U3", "Parent" : "0"},
 	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.toplevel_mac_mulaeOg_U4", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	toplevel {
-		MAXI {Type I LastRead 13 FirstWrite -1}
+		MAXI {Type IO LastRead 18 FirstWrite 19}
 		ram {Type I LastRead 0 FirstWrite -1}
 		length_r {Type I LastRead 0 FirstWrite -1}
 		height {Type I LastRead 0 FirstWrite -1}
-		r {Type O LastRead -1 FirstWrite 25}
-		g {Type O LastRead -1 FirstWrite 25}
-		b {Type O LastRead -1 FirstWrite 25}
+		r {Type O LastRead -1 FirstWrite 21}
+		g {Type O LastRead -1 FirstWrite 21}
+		b {Type O LastRead -1 FirstWrite 21}
 		version {Type O LastRead -1 FirstWrite 10}
 		sectionData {Type IO LastRead -1 FirstWrite -1}
 		numberOfPixelsVisted {Type IO LastRead -1 FirstWrite -1}
@@ -231,14 +234,15 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "17", "Max" : "1073741841"}
-	, {"Name" : "Interval", "Min" : "18", "Max" : "1073741842"}
+	{"Name" : "Latency", "Min" : "22", "Max" : "2147483670"}
+	, {"Name" : "Interval", "Min" : "23", "Max" : "-2147483625"}
 ]}
 
 set PipelineEnableSignalInfo {[
 	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 	{"Pipeline" : "1", "EnableSignal" : "ap_enable_pp1"}
 	{"Pipeline" : "2", "EnableSignal" : "ap_enable_pp2"}
+	{"Pipeline" : "3", "EnableSignal" : "ap_enable_pp3"}
 ]}
 
 set Spec2ImplPortList { 

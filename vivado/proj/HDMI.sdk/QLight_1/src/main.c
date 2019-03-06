@@ -142,8 +142,8 @@ void initSections() {
 	sections[7].startY = 525;
 	sections[7].length = 240;
 	sections[7].height = 525;
-	sections[7].scaledLength = 74;
-	sections[7].scaledHeight = 29;
+	sections[7].scaledLength = 29;
+	sections[7].scaledHeight = 65;
 	sections[7].startLED = 24;
 	sections[7].endLED = 27;
 
@@ -405,16 +405,11 @@ int main() {
 			for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
 				ram[j] = sectionData[j];
 				unsigned char switchVal = XGpio_DiscreteRead(&gpio, 1);
-				if (switchVal == 2 && sectionData[j] == 0) {
-					printf("j: %d\t%d\t%d\r\n", j, sectionData[j], ram[j]);
-					usleep(200000);
-				}
+//				if (switchVal == 2 && sectionData[j] == 0) {
+//					printf("j: %d\t%d\t%d\r\n", j, sectionData[j], ram[j]);
+//					usleep(200000);
+//				}
 			}
-
-//			int x = 0;
-//			printf("ram[x]: %d %d %d \t sectionData[x]: %d %d %d\r\n",
-//					ram[x], ram[x+1], ram[x+2],
-//					sectionData[x], sectionData[x+1], sectionData[x+2]);
 
 			u32 version;
 			u32 r;
@@ -425,34 +420,40 @@ int main() {
 			u32 height = sections[i].scaledHeight;
 
 
-			modePixel = mode(ram,
-							 &length,
-							 &height,
-							 &r,
-							 &g,
-							 &b,
-							 &version);
+
+//			modePixel = mode(ram,
+//							 &length,
+//							 &height,
+//							 &r,
+//							 &g,
+//							 &b,
+//							 &version);
 
 			Xil_DCacheFlush();
 
 
-//			XToplevel_Set_height(&modeCalc, sections[i].scaledLength);
-//			XToplevel_Set_length_r(&modeCalc, sections[i].scaledLength);
-//			XToplevel_Start(&modeCalc);
-//			while(!XToplevel_IsDone(&modeCalc));
-//			Xil_DCacheInvalidate();
+			XToplevel_Set_height(&modeCalc, height);
+			XToplevel_Set_length_r(&modeCalc, length);
+			XToplevel_Start(&modeCalc);
+			while(!XToplevel_IsDone(&modeCalc));
+			Xil_DCacheInvalidate();
 
-//			modePixel = XToplevel_Get_version(&modeCalc);
-//			r = XToplevel_Get_r(&modeCalc);
-//			g = XToplevel_Get_g(&modeCalc);
-//			b = XToplevel_Get_b(&modeCalc);
+			r = XToplevel_Get_r(&modeCalc);
+			g = XToplevel_Get_g(&modeCalc);
+			b = XToplevel_Get_b(&modeCalc);
+
+			for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
+				if (ram[j] != sectionData[j]) {
+//					printf("Different values for %d in section %d. ram: %d \t sectionData: %d\r\n",
+//							i, j, ram[j], sectionData[j]);
+				}
+			}
 
 //			memcpy(modeBGR, modePixel, 3);
 			modeBGR[0] = r;
 			modeBGR[1] = g;
 			modeBGR[2] = b;
-			printf("%d:\t%d\t%d\t%d\r\n", i+1, modeBGR[2], modeBGR[1], modeBGR[0]);
-
+//			printf("%d:\t%d\t%d\t%d\r\n", i+1, b, g, r);
 //			showBits(modePixel);
 //			printf("\t");
 //			showBits(modeBGR[2]);
@@ -461,6 +462,10 @@ int main() {
 //			printf("\t");
 //			showBits(modeBGR[0]);
 //			printf("\r\n");
+
+//			for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
+//				sectionData[j] = ram[j];
+//			}
 
 			setSectionLEDColour(sections[i], modeBGR[2], modeBGR[1], modeBGR[0]);
 
@@ -475,6 +480,19 @@ int main() {
 			}
 
 			usleep(20000);
+			unsigned char switchVal = XGpio_DiscreteRead(&gpio, 1);
+			int done=0;
+			while (switchVal == 2) {
+				switchVal = XGpio_DiscreteRead(&gpio, 1);
+
+				if (!done) {
+					for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
+						printf("%d\r\n", sectionData[j]);
+					}
+					done = 1;
+				}
+			}
+		}
 		}
 
 		if (!syncMode) {
@@ -496,7 +514,8 @@ int main() {
 //		updateSubsamplingRateOnTerm();
 
 		usleep(subsampleDelay);
-	}
+
+
 
 
 }
