@@ -21,6 +21,8 @@
 #include "debug.h"
 #include "colour_difference.h"
 #include "subsample.h"
+#include "sectionSubsample.h"
+#include "scaleFlags.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
@@ -79,8 +81,13 @@ void initSections() {
 	sections[0].startY = 0;
 	sections[0].length = 240;
 	sections[0].height = 525;
+#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
 	sections[0].scaledLength = 29;
 	sections[0].scaledHeight = 65;
+#elif SUBSAMPLE_SCALE_FACTOR == 256
+	sections[0].scaledLength = 15;
+	sections[0].scaledHeight = 32;
+#endif
 	sections[0].startLED = 20;
 	sections[0].endLED = 23;
 
@@ -88,8 +95,13 @@ void initSections() {
 	sections[1].startY = 0;
 	sections[1].length = 600;
 	sections[1].height = 240;
+#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
 	sections[1].scaledLength = 74;
 	sections[1].scaledHeight = 29;
+#elif SUBSAMPLE_SCALE_FACTOR == 256
+	sections[1].scaledLength = 37;
+	sections[1].scaledHeight = 15;
+#endif
 	sections[1].startLED = 14;
 	sections[1].endLED = 19;
 
@@ -97,8 +109,13 @@ void initSections() {
 	sections[2].startY = 0;
 	sections[2].length = 600;
 	sections[2].height = 240;
+#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
 	sections[2].scaledLength = 74;
 	sections[2].scaledHeight = 29;
+#elif SUBSAMPLE_SCALE_FACTOR == 256
+	sections[2].scaledLength = 37;
+	sections[2].scaledHeight = 15;
+#endif
 	sections[2].startLED = 8;
 	sections[2].endLED = 13;
 
@@ -106,8 +123,13 @@ void initSections() {
 	sections[3].startY = 0;
 	sections[3].length = 240;
 	sections[3].height = 525;
+#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
 	sections[3].scaledLength = 29;
 	sections[3].scaledHeight = 65;
+#elif SUBSAMPLE_SCALE_FACTOR == 256
+	sections[3].scaledLength = 15;
+	sections[3].scaledHeight = 32;
+#endif
 	sections[3].startLED = 4;
 	sections[3].endLED = 7;
 
@@ -115,8 +137,13 @@ void initSections() {
 	sections[4].startY = 525;
 	sections[4].length = 240;
 	sections[4].height = 525;
+#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
 	sections[4].scaledLength = 29;
 	sections[4].scaledHeight = 65;
+#elif SUBSAMPLE_SCALE_FACTOR == 256
+	sections[4].scaledLength = 15;
+	sections[4].scaledHeight = 32;
+#endif
 	sections[4].startLED = 0;
 	sections[4].endLED = 3;
 
@@ -124,8 +151,13 @@ void initSections() {
 	sections[5].startY = 810;
 	sections[5].length = 600;
 	sections[5].height = 240;
+#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
 	sections[5].scaledLength = 74;
 	sections[5].scaledHeight = 29;
+#elif SUBSAMPLE_SCALE_FACTOR == 256
+	sections[2].scaledLength = 37;
+	sections[2].scaledHeight = 15;
+#endif
 	sections[5].startLED = 34;
 	sections[5].endLED = 39;
 
@@ -133,8 +165,13 @@ void initSections() {
 	sections[6].startY = 810;
 	sections[6].length = 600;
 	sections[6].height = 240;
+#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
 	sections[6].scaledLength = 74;
 	sections[6].scaledHeight = 29;
+#elif SUBSAMPLE_SCALE_FACTOR == 256
+	sections[2].scaledLength = 37;
+	sections[2].scaledHeight = 15;
+#endif
 	sections[6].startLED = 28;
 	sections[6].endLED = 33;
 
@@ -142,8 +179,13 @@ void initSections() {
 	sections[7].startY = 525;
 	sections[7].length = 240;
 	sections[7].height = 525;
+#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
 	sections[7].scaledLength = 29;
 	sections[7].scaledHeight = 65;
+#elif SUBSAMPLE_SCALE_FACTOR == 256
+	sections[7].scaledLength = 15;
+	sections[7].scaledHeight = 32;
+#endif
 	sections[7].startLED = 24;
 	sections[7].endLED = 27;
 
@@ -252,7 +294,7 @@ void initModeCalculator() {
 
 void ConnectedISR(void* callBackRef, void *pVideo) {
 	int *hdmiConnected = (int*) callBackRef;
-	moveCursorTo(9, 7);
+	moveCursorTo(11, 7);
 	if (*hdmiConnected) {
 		*hdmiConnected = 0;
 		printf("disconnected\r\n");
@@ -382,6 +424,25 @@ int main() {
 	printf("modeComputer version: \r\n");
 	printf("\r\n");
 
+	printf("Section scaling technique: ");
+#ifdef AVERAGE_SCALE
+	printf("Average");
+#elif defined(SUBSAMPLE_SCALE)
+	printf("Subsample ");
+#ifdef CPU_SCALE
+	printf("CPU ");
+#elif defined(HW_SCALE)
+	printf("HW ");
+#endif
+#if (SUBSAMPLE_SCALE_FACTOR == 64)
+	printf("64");
+#elif (SUBSAMPLE_SCALE_FACTOR == 256)
+	printf("256");
+#endif
+#endif
+	printf("\r\n");
+
+	printf("\r\n");
 	printf("HDMI: disconnected\r\n");
 
 	u8 numberOfDifferencesDetected = 0;
@@ -411,6 +472,7 @@ int main() {
 				memcpy(sectionData+(j*sections[i].length*3), &frameToProcess[startIndex+(STRIDE*j)], sections[i].length*3);
 			}
 
+#ifdef AVERAGE_SCALE
 			scale(sectionData,
 				  sections[i].length,
 				  sections[i].height,
@@ -420,6 +482,13 @@ int main() {
 			for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
 				ram[j] = sectionData[j];
 			}
+
+#elif defined(SUBSAMPLE_SCALE)
+#ifdef CPU_SCALE
+			subsampleSection(SUBSAMPLE_SCALE_FACTOR, sections[i].length, sections[i].height, sectionData, ram);
+#elif defined(HW_SCALE)
+#endif
+#endif
 
 			u32 r;
 			u32 g;
