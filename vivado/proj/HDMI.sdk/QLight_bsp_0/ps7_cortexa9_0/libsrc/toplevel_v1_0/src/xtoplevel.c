@@ -196,26 +196,6 @@ u32 XToplevel_Get_b_vld(XToplevel *InstancePtr) {
     return Data & 0x1;
 }
 
-u32 XToplevel_Get_version(XToplevel *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XToplevel_ReadReg(InstancePtr->Axilites_BaseAddress, XTOPLEVEL_AXILITES_ADDR_VERSION_DATA);
-    return Data;
-}
-
-u32 XToplevel_Get_version_vld(XToplevel *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XToplevel_ReadReg(InstancePtr->Axilites_BaseAddress, XTOPLEVEL_AXILITES_ADDR_VERSION_CTRL);
-    return Data & 0x1;
-}
-
 void XToplevel_InterruptGlobalEnable(XToplevel *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

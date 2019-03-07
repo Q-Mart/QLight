@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'toplevel'
 ================================================================
-* Date:           Wed Mar  6 08:59:43 2019
+* Date:           Thu Mar  7 14:02:42 2019
 
 * Version:        2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)
 * Project:        modeComputer
@@ -29,7 +29,7 @@
     |      Latency     |     Interval     | Pipeline|
     | min |     max    | min |     max    |   Type  |
     +-----+------------+-----+------------+---------+
-    |   22|  2147483670|   22|  2147483670|   none  |
+    |   17|  1073741841|   17|  1073741841|   none  |
     +-----+------------+-----+------------+---------+
 
     + Detail: 
@@ -37,16 +37,15 @@
         N/A
 
         * Loop: 
-        +------------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
-        |                              |      Latency     | Iteration|  Initiation Interval  |      Trip      |          |
-        |           Loop Name          | min |     max    |  Latency |  achieved |   target  |      Count     | Pipelined|
-        +------------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
-        |- memcpy.sectionData.ram      |    0|  1073741824|         3|          1|          1| 0 ~ 1073741823 |    yes   |
-        |- mainXLoop_mainYLoop         |    0|           0|  10 ~ 13 |          -|          -|               0|    no    |
-        | + visitedLoop                |    3|           3|         4|          3|          1|               0|    yes   |
-        | + freqXLoop_freqYLoop        |    0|           0|         9|          2|          1|               0|    yes   |
-        |- memcpy.ram.sectionData.gep  |    0|  1073741824|         3|          1|          1| 0 ~ 1073741823 |    yes   |
-        +------------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+        +--------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+        |                          |      Latency     | Iteration|  Initiation Interval  |      Trip      |          |
+        |         Loop Name        | min |     max    |  Latency |  achieved |   target  |      Count     | Pipelined|
+        +--------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+        |- memcpy.sectionData.ram  |    0|  1073741824|         3|          1|          1| 0 ~ 1073741823 |    yes   |
+        |- mainXLoop_mainYLoop     |    0|           0|  11 ~ 14 |          -|          -|               0|    no    |
+        | + visitedLoop            |    3|           3|         4|          3|          1|               0|    yes   |
+        | + freqXLoop_freqYLoop    |    0|           0|         9|          2|          1|               0|    yes   |
+        +--------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -74,18 +73,16 @@ IsGatedGlobalClock: 0
   * Pipeline-0: initiation interval (II) = 1, depth = 3
   * Pipeline-1: initiation interval (II) = 3, depth = 4
   * Pipeline-2: initiation interval (II) = 2, depth = 9
-  * Pipeline-3: initiation interval (II) = 1, depth = 3
 
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 47
-* Pipeline : 4
+* Number of FSM states : 42
+* Pipeline : 3
   Pipeline-0 : II = 1, D = 3, States = { 13 14 15 }
   Pipeline-1 : II = 3, D = 4, States = { 24 25 26 27 }
   Pipeline-2 : II = 2, D = 9, States = { 31 32 33 34 35 36 37 38 39 }
-  Pipeline-3 : II = 1, D = 3, States = { 40 41 42 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
@@ -128,7 +125,7 @@ IsGatedGlobalClock: 0
 	19  / true
 19 --> 
 	20  / (!exitcond_flatten1)
-	40  / (exitcond_flatten1)
+	42  / (exitcond_flatten1)
 20 --> 
 	21  / true
 21 --> 
@@ -148,13 +145,13 @@ IsGatedGlobalClock: 0
 	29  / (!tmp_i)
 	24  / (tmp_i & !val_assign)
 28 --> 
-	19  / true
+	41  / true
 29 --> 
 	30  / true
 30 --> 
 	31  / true
 31 --> 
-	28  / (exitcond_flatten)
+	40  / (exitcond_flatten)
 	32  / (!exitcond_flatten)
 32 --> 
 	33  / true
@@ -173,396 +170,325 @@ IsGatedGlobalClock: 0
 39 --> 
 	31  / true
 40 --> 
-	43  / (exitcond1)
-	41  / (!exitcond1)
+	41  / true
 41 --> 
-	42  / true
+	19  / true
 42 --> 
-	40  / true
-43 --> 
-	44  / true
-44 --> 
-	45  / true
-45 --> 
-	46  / true
-46 --> 
-	47  / true
-47 --> 
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.00>
-ST_1 : Operation 48 [1/1] (1.00ns)   --->   "%ram_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %ram)"   --->   Operation 48 'read' 'ram_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%ram1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %ram_read, i32 2, i32 31)"   --->   Operation 49 'partselect' 'ram1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 50 [2/2] (1.00ns)   --->   "%length_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %length_r)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 50 'read' 'length_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 51 [2/2] (1.00ns)   --->   "%height_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %height)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 51 'read' 'height_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 43 [1/1] (1.00ns)   --->   "%ram_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %ram)"   --->   Operation 43 'read' 'ram_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%ram1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %ram_read, i32 2, i32 31)"   --->   Operation 44 'partselect' 'ram1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [2/2] (1.00ns)   --->   "%length_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %length_r)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 45 'read' 'length_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 46 [2/2] (1.00ns)   --->   "%height_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %height)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 46 'read' 'height_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 
 State 2 <SV = 1> <Delay = 3.55>
-ST_2 : Operation 52 [1/2] (1.00ns)   --->   "%length_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %length_r)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 52 'read' 'length_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_2 : Operation 53 [1/2] (1.00ns)   --->   "%height_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %height)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 53 'read' 'height_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_2 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node tmp)   --->   "%tmp_8 = shl i32 %length_read, 2" [modeComputer/src/toplevel.cpp:78]   --->   Operation 54 'shl' 'tmp_8' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 55 [1/1] (2.55ns) (out node of the LUT)   --->   "%tmp = sub i32 %tmp_8, %length_read" [modeComputer/src/toplevel.cpp:78]   --->   Operation 55 'sub' 'tmp' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 47 [1/2] (1.00ns)   --->   "%length_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %length_r)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 47 'read' 'length_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 48 [1/2] (1.00ns)   --->   "%height_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %height)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 48 'read' 'height_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 49 [1/1] (0.00ns) (grouped into LUT with out node tmp)   --->   "%tmp_8 = shl i32 %length_read, 2" [modeComputer/src/toplevel.cpp:74]   --->   Operation 49 'shl' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (2.55ns) (out node of the LUT)   --->   "%tmp = sub i32 %tmp_8, %length_read" [modeComputer/src/toplevel.cpp:74]   --->   Operation 50 'sub' 'tmp' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 
 State 3 <SV = 2> <Delay = 5.74>
-ST_3 : Operation 56 [3/3] (5.74ns)   --->   "%tmp_7 = mul i32 %tmp, %height_read" [modeComputer/src/toplevel.cpp:78]   --->   Operation 56 'mul' 'tmp_7' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 51 [3/3] (5.74ns)   --->   "%tmp_7 = mul i32 %tmp, %height_read" [modeComputer/src/toplevel.cpp:74]   --->   Operation 51 'mul' 'tmp_7' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
 
 State 4 <SV = 3> <Delay = 5.74>
-ST_4 : Operation 57 [2/3] (5.74ns)   --->   "%tmp_7 = mul i32 %tmp, %height_read" [modeComputer/src/toplevel.cpp:78]   --->   Operation 57 'mul' 'tmp_7' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 52 [2/3] (5.74ns)   --->   "%tmp_7 = mul i32 %tmp, %height_read" [modeComputer/src/toplevel.cpp:74]   --->   Operation 52 'mul' 'tmp_7' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
 
 State 5 <SV = 4> <Delay = 5.74>
-ST_5 : Operation 58 [1/3] (5.74ns)   --->   "%tmp_7 = mul i32 %tmp, %height_read" [modeComputer/src/toplevel.cpp:78]   --->   Operation 58 'mul' 'tmp_7' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_9 = trunc i32 %tmp_7 to i30" [modeComputer/src/toplevel.cpp:78]   --->   Operation 59 'trunc' 'tmp_9' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 53 [1/3] (5.74ns)   --->   "%tmp_7 = mul i32 %tmp, %height_read" [modeComputer/src/toplevel.cpp:74]   --->   Operation 53 'mul' 'tmp_7' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_9 = trunc i32 %tmp_7 to i30" [modeComputer/src/toplevel.cpp:74]   --->   Operation 54 'trunc' 'tmp_9' <Predicate = true> <Delay = 0.00>
 
 State 6 <SV = 5> <Delay = 6.56>
-ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_3 = zext i30 %ram1 to i64"   --->   Operation 60 'zext' 'tmp_3' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%MAXI_addr = getelementptr i32* %MAXI, i64 %tmp_3"   --->   Operation 61 'getelementptr' 'MAXI_addr' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%p_add_i32_shr_cast8 = zext i30 %tmp_9 to i32" [modeComputer/src/toplevel.cpp:78]   --->   Operation 62 'zext' 'p_add_i32_shr_cast8' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 63 [7/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast8)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 63 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_1 = zext i30 %ram1 to i64"   --->   Operation 55 'zext' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%MAXI_addr = getelementptr i32* %MAXI, i64 %tmp_1"   --->   Operation 56 'getelementptr' 'MAXI_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%p_add_i32_shr_cast7 = zext i30 %tmp_9 to i32" [modeComputer/src/toplevel.cpp:74]   --->   Operation 57 'zext' 'p_add_i32_shr_cast7' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 58 [7/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast7)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 58 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 7 <SV = 6> <Delay = 6.56>
-ST_7 : Operation 64 [6/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast8)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 64 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 59 [6/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast7)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 59 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 8 <SV = 7> <Delay = 6.56>
-ST_8 : Operation 65 [5/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast8)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 65 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 60 [5/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast7)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 60 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 9 <SV = 8> <Delay = 6.56>
-ST_9 : Operation 66 [4/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast8)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 66 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 61 [4/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast7)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 61 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 10 <SV = 9> <Delay = 6.56>
-ST_10 : Operation 67 [3/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast8)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 67 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 62 [3/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast7)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 62 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 11 <SV = 10> <Delay = 6.56>
-ST_11 : Operation 68 [2/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %version, i32 1)" [modeComputer/src/toplevel.cpp:76]   --->   Operation 68 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_11 : Operation 69 [2/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast8)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 69 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 63 [2/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast7)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 63 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 12 <SV = 11> <Delay = 6.56>
-ST_12 : Operation 70 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %MAXI), !map !106"   --->   Operation 70 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 71 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %length_r) nounwind, !map !110"   --->   Operation 71 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 72 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %height) nounwind, !map !114"   --->   Operation 72 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 73 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %r) nounwind, !map !118"   --->   Operation 73 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 74 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %g) nounwind, !map !122"   --->   Operation 74 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 75 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %b) nounwind, !map !126"   --->   Operation 75 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 76 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %version) nounwind, !map !130"   --->   Operation 76 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !134"   --->   Operation 77 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @toplevel_str) nounwind"   --->   Operation 78 'spectopmodule' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %MAXI, [6 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str6, [6 x i8]* @p_str7, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:67]   --->   Operation 79 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %ram, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @bundle, [6 x i8]* @p_str7, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:67]   --->   Operation 80 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %length_r, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:68]   --->   Operation 81 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %height, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:69]   --->   Operation 82 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %r, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:70]   --->   Operation 83 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %g, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:71]   --->   Operation 84 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %b, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:72]   --->   Operation 85 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %version, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:73]   --->   Operation 86 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 87 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:74]   --->   Operation 87 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 88 [1/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %version, i32 1)" [modeComputer/src/toplevel.cpp:76]   --->   Operation 88 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_12 : Operation 89 [1/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast8)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 89 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_12 : Operation 90 [1/1] (1.76ns)   --->   "br label %burst.rd.header"   --->   Operation 90 'br' <Predicate = true> <Delay = 1.76>
+ST_12 : Operation 64 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %MAXI), !map !104"   --->   Operation 64 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %length_r) nounwind, !map !108"   --->   Operation 65 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 66 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %height) nounwind, !map !112"   --->   Operation 66 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 67 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %r) nounwind, !map !116"   --->   Operation 67 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 68 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %g) nounwind, !map !120"   --->   Operation 68 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 69 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %b) nounwind, !map !124"   --->   Operation 69 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 70 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !128"   --->   Operation 70 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 71 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @toplevel_str) nounwind"   --->   Operation 71 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 72 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %MAXI, [6 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str6, [6 x i8]* @p_str7, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:66]   --->   Operation 72 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 73 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %ram, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @bundle, [6 x i8]* @p_str7, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:66]   --->   Operation 73 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 74 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %length_r, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:67]   --->   Operation 74 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 75 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %height, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:68]   --->   Operation 75 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 76 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %r, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:69]   --->   Operation 76 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %g, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:70]   --->   Operation 77 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %b, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:71]   --->   Operation 78 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str8, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str9, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:72]   --->   Operation 79 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 80 [1/7] (6.56ns)   --->   "%MAXI_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast7)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 80 'readreq' 'MAXI_addr_rd_req' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 81 [1/1] (1.76ns)   --->   "br label %burst.rd.header"   --->   Operation 81 'br' <Predicate = true> <Delay = 1.76>
 
 State 13 <SV = 12> <Delay = 2.49>
-ST_13 : Operation 91 [1/1] (0.00ns)   --->   "%indvar = phi i30 [ 0, %0 ], [ %indvar_next, %burst.rd.body ]"   --->   Operation 91 'phi' 'indvar' <Predicate = true> <Delay = 0.00>
-ST_13 : Operation 92 [1/1] (2.46ns)   --->   "%exitcond = icmp eq i30 %indvar, %tmp_9" [modeComputer/src/toplevel.cpp:78]   --->   Operation 92 'icmp' 'exitcond' <Predicate = true> <Delay = 2.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_13 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 1073741823, i64 0)"   --->   Operation 93 'speclooptripcount' <Predicate = true> <Delay = 0.00>
-ST_13 : Operation 94 [1/1] (2.49ns)   --->   "%indvar_next = add i30 %indvar, 1"   --->   Operation 94 'add' 'indvar_next' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_13 : Operation 95 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %burst.rd.end, label %burst.rd.body" [modeComputer/src/toplevel.cpp:78]   --->   Operation 95 'br' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 82 [1/1] (0.00ns)   --->   "%indvar = phi i30 [ 0, %0 ], [ %indvar_next, %burst.rd.body ]"   --->   Operation 82 'phi' 'indvar' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 83 [1/1] (2.46ns)   --->   "%exitcond = icmp eq i30 %indvar, %tmp_9" [modeComputer/src/toplevel.cpp:74]   --->   Operation 83 'icmp' 'exitcond' <Predicate = true> <Delay = 2.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 1073741823, i64 0)"   --->   Operation 84 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 85 [1/1] (2.49ns)   --->   "%indvar_next = add i30 %indvar, 1"   --->   Operation 85 'add' 'indvar_next' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 86 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %burst.rd.end, label %burst.rd.body" [modeComputer/src/toplevel.cpp:74]   --->   Operation 86 'br' <Predicate = true> <Delay = 0.00>
 
 State 14 <SV = 13> <Delay = 6.56>
-ST_14 : Operation 96 [1/1] (6.56ns)   --->   "%MAXI_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %MAXI_addr)" [modeComputer/src/toplevel.cpp:78]   --->   Operation 96 'read' 'MAXI_addr_read' <Predicate = (!exitcond)> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 87 [1/1] (6.56ns)   --->   "%MAXI_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %MAXI_addr)" [modeComputer/src/toplevel.cpp:74]   --->   Operation 87 'read' 'MAXI_addr_read' <Predicate = (!exitcond)> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 15 <SV = 14> <Delay = 3.25>
-ST_15 : Operation 97 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind"   --->   Operation 97 'specregionbegin' 'burstread_rbegin' <Predicate = (!exitcond)> <Delay = 0.00>
-ST_15 : Operation 98 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1)"   --->   Operation 98 'specpipeline' <Predicate = (!exitcond)> <Delay = 0.00>
-ST_15 : Operation 99 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([23 x i8]* @memcpy_OC_sectionDat)"   --->   Operation 99 'specloopname' <Predicate = (!exitcond)> <Delay = 0.00>
-ST_15 : Operation 100 [1/1] (0.00ns)   --->   "%indvar1 = zext i30 %indvar to i64"   --->   Operation 100 'zext' 'indvar1' <Predicate = (!exitcond)> <Delay = 0.00>
-ST_15 : Operation 101 [1/1] (0.00ns)   --->   "%sectionData_addr = getelementptr [6750 x i32]* @sectionData, i64 0, i64 %indvar1" [modeComputer/src/toplevel.cpp:78]   --->   Operation 101 'getelementptr' 'sectionData_addr' <Predicate = (!exitcond)> <Delay = 0.00>
-ST_15 : Operation 102 [1/1] (3.25ns)   --->   "store i32 %MAXI_addr_read, i32* %sectionData_addr, align 4" [modeComputer/src/toplevel.cpp:78]   --->   Operation 102 'store' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_15 : Operation 103 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin) nounwind"   --->   Operation 103 'specregionend' 'burstread_rend' <Predicate = (!exitcond)> <Delay = 0.00>
-ST_15 : Operation 104 [1/1] (0.00ns)   --->   "br label %burst.rd.header"   --->   Operation 104 'br' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_15 : Operation 88 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind"   --->   Operation 88 'specregionbegin' 'burstread_rbegin' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_15 : Operation 89 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1)"   --->   Operation 89 'specpipeline' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_15 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([23 x i8]* @memcpy_OC_sectionDat)"   --->   Operation 90 'specloopname' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_15 : Operation 91 [1/1] (0.00ns)   --->   "%indvar1 = zext i30 %indvar to i64"   --->   Operation 91 'zext' 'indvar1' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_15 : Operation 92 [1/1] (0.00ns)   --->   "%sectionData_addr = getelementptr [6750 x i32]* @sectionData, i64 0, i64 %indvar1" [modeComputer/src/toplevel.cpp:74]   --->   Operation 92 'getelementptr' 'sectionData_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_15 : Operation 93 [1/1] (3.25ns)   --->   "store i32 %MAXI_addr_read, i32* %sectionData_addr, align 4" [modeComputer/src/toplevel.cpp:74]   --->   Operation 93 'store' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_15 : Operation 94 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin) nounwind"   --->   Operation 94 'specregionend' 'burstread_rend' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_15 : Operation 95 [1/1] (0.00ns)   --->   "br label %burst.rd.header"   --->   Operation 95 'br' <Predicate = (!exitcond)> <Delay = 0.00>
 
 State 16 <SV = 13> <Delay = 5.74>
-ST_16 : Operation 105 [1/1] (0.00ns)   --->   "%p_0111_1 = alloca i12"   --->   Operation 105 'alloca' 'p_0111_1' <Predicate = true> <Delay = 0.00>
-ST_16 : Operation 106 [1/1] (0.00ns)   --->   "%b_local_1 = alloca i32"   --->   Operation 106 'alloca' 'b_local_1' <Predicate = true> <Delay = 0.00>
-ST_16 : Operation 107 [1/1] (0.00ns)   --->   "%g_local_1 = alloca i32"   --->   Operation 107 'alloca' 'g_local_1' <Predicate = true> <Delay = 0.00>
-ST_16 : Operation 108 [1/1] (0.00ns)   --->   "%r_local_1 = alloca i32"   --->   Operation 108 'alloca' 'r_local_1' <Predicate = true> <Delay = 0.00>
-ST_16 : Operation 109 [2/2] (3.25ns)   --->   "%sectionData_load = load i32* getelementptr inbounds ([6750 x i32]* @sectionData, i64 0, i64 0), align 16" [modeComputer/src/toplevel.cpp:80]   --->   Operation 109 'load' 'sectionData_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_16 : Operation 110 [1/1] (1.76ns)   --->   "store i12 0, i12* @numberOfPixelsVisted, align 2" [modeComputer/src/toplevel.cpp:84]   --->   Operation 110 'store' <Predicate = true> <Delay = 1.76>
-ST_16 : Operation 111 [1/1] (0.00ns)   --->   "%cast = zext i32 %length_read to i64" [modeComputer/src/toplevel.cpp:78]   --->   Operation 111 'zext' 'cast' <Predicate = true> <Delay = 0.00>
-ST_16 : Operation 112 [1/1] (0.00ns)   --->   "%cast4 = zext i32 %height_read to i64" [modeComputer/src/toplevel.cpp:78]   --->   Operation 112 'zext' 'cast4' <Predicate = true> <Delay = 0.00>
-ST_16 : Operation 113 [3/3] (5.74ns)   --->   "%bound = mul i64 %cast4, %cast" [modeComputer/src/toplevel.cpp:78]   --->   Operation 113 'mul' 'bound' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_16 : Operation 114 [1/1] (1.76ns)   --->   "store i12 0, i12* %p_0111_1"   --->   Operation 114 'store' <Predicate = true> <Delay = 1.76>
+ST_16 : Operation 96 [1/1] (0.00ns)   --->   "%p_0111_1 = alloca i12"   --->   Operation 96 'alloca' 'p_0111_1' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 97 [1/1] (1.76ns)   --->   "store i12 0, i12* @numberOfPixelsVisted, align 2" [modeComputer/src/toplevel.cpp:76]   --->   Operation 97 'store' <Predicate = true> <Delay = 1.76>
+ST_16 : Operation 98 [1/1] (0.00ns)   --->   "%cast = zext i32 %length_read to i64" [modeComputer/src/toplevel.cpp:74]   --->   Operation 98 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 99 [1/1] (0.00ns)   --->   "%cast3 = zext i32 %height_read to i64" [modeComputer/src/toplevel.cpp:74]   --->   Operation 99 'zext' 'cast3' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 100 [3/3] (5.74ns)   --->   "%bound = mul i64 %cast3, %cast" [modeComputer/src/toplevel.cpp:74]   --->   Operation 100 'mul' 'bound' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 101 [1/1] (1.76ns)   --->   "store i12 0, i12* %p_0111_1"   --->   Operation 101 'store' <Predicate = true> <Delay = 1.76>
 
 State 17 <SV = 14> <Delay = 5.74>
-ST_17 : Operation 115 [1/2] (3.25ns)   --->   "%sectionData_load = load i32* getelementptr inbounds ([6750 x i32]* @sectionData, i64 0, i64 0), align 16" [modeComputer/src/toplevel.cpp:80]   --->   Operation 115 'load' 'sectionData_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_17 : Operation 116 [2/2] (3.25ns)   --->   "%sectionData_load_1 = load i32* getelementptr inbounds ([6750 x i32]* @sectionData, i64 0, i64 1), align 4" [modeComputer/src/toplevel.cpp:81]   --->   Operation 116 'load' 'sectionData_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_17 : Operation 117 [2/2] (3.25ns)   --->   "%sectionData_load_2 = load i32* getelementptr inbounds ([6750 x i32]* @sectionData, i64 0, i64 2), align 8" [modeComputer/src/toplevel.cpp:82]   --->   Operation 117 'load' 'sectionData_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_17 : Operation 118 [2/3] (5.74ns)   --->   "%bound = mul i64 %cast4, %cast" [modeComputer/src/toplevel.cpp:78]   --->   Operation 118 'mul' 'bound' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_17 : Operation 119 [1/1] (1.76ns)   --->   "store i32 %sectionData_load, i32* %r_local_1" [modeComputer/src/toplevel.cpp:80]   --->   Operation 119 'store' <Predicate = true> <Delay = 1.76>
+ST_17 : Operation 102 [2/3] (5.74ns)   --->   "%bound = mul i64 %cast3, %cast" [modeComputer/src/toplevel.cpp:74]   --->   Operation 102 'mul' 'bound' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
 
 State 18 <SV = 15> <Delay = 5.74>
-ST_18 : Operation 120 [1/2] (3.25ns)   --->   "%sectionData_load_1 = load i32* getelementptr inbounds ([6750 x i32]* @sectionData, i64 0, i64 1), align 4" [modeComputer/src/toplevel.cpp:81]   --->   Operation 120 'load' 'sectionData_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_18 : Operation 121 [1/2] (3.25ns)   --->   "%sectionData_load_2 = load i32* getelementptr inbounds ([6750 x i32]* @sectionData, i64 0, i64 2), align 8" [modeComputer/src/toplevel.cpp:82]   --->   Operation 121 'load' 'sectionData_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_18 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_11 = trunc i32 %length_read to i13" [modeComputer/src/toplevel.cpp:96]   --->   Operation 122 'trunc' 'tmp_11' <Predicate = true> <Delay = 0.00>
-ST_18 : Operation 123 [1/3] (5.74ns)   --->   "%bound = mul i64 %cast4, %cast" [modeComputer/src/toplevel.cpp:78]   --->   Operation 123 'mul' 'bound' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_18 : Operation 124 [1/1] (1.76ns)   --->   "store i32 %sectionData_load_1, i32* %g_local_1" [modeComputer/src/toplevel.cpp:81]   --->   Operation 124 'store' <Predicate = true> <Delay = 1.76>
-ST_18 : Operation 125 [1/1] (1.76ns)   --->   "store i32 %sectionData_load_2, i32* %b_local_1" [modeComputer/src/toplevel.cpp:82]   --->   Operation 125 'store' <Predicate = true> <Delay = 1.76>
-ST_18 : Operation 126 [1/1] (1.76ns)   --->   "br label %1" [modeComputer/src/toplevel.cpp:89]   --->   Operation 126 'br' <Predicate = true> <Delay = 1.76>
+ST_18 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_11 = trunc i32 %length_read to i13" [modeComputer/src/toplevel.cpp:88]   --->   Operation 103 'trunc' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 104 [1/3] (5.74ns)   --->   "%bound = mul i64 %cast3, %cast" [modeComputer/src/toplevel.cpp:74]   --->   Operation 104 'mul' 'bound' <Predicate = true> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 105 [1/1] (1.76ns)   --->   "br label %1" [modeComputer/src/toplevel.cpp:81]   --->   Operation 105 'br' <Predicate = true> <Delay = 1.76>
 
-State 19 <SV = 16> <Delay = 6.56>
-ST_19 : Operation 127 [1/1] (0.00ns)   --->   "%indvar_flatten1 = phi i64 [ 0, %burst.rd.end ], [ %indvar_flatten_next1, %._crit_edge ]"   --->   Operation 127 'phi' 'indvar_flatten1' <Predicate = true> <Delay = 0.00>
-ST_19 : Operation 128 [1/1] (0.00ns)   --->   "%x = phi i32 [ 0, %burst.rd.end ], [ %x_cast_mid2_v, %._crit_edge ]" [modeComputer/src/toplevel.cpp:96]   --->   Operation 128 'phi' 'x' <Predicate = true> <Delay = 0.00>
-ST_19 : Operation 129 [1/1] (0.00ns)   --->   "%y = phi i32 [ 0, %burst.rd.end ], [ %y_1, %._crit_edge ]"   --->   Operation 129 'phi' 'y' <Predicate = true> <Delay = 0.00>
-ST_19 : Operation 130 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:91]   --->   Operation 130 'specpipeline' <Predicate = true> <Delay = 0.00>
-ST_19 : Operation 131 [1/1] (2.77ns)   --->   "%exitcond_flatten1 = icmp eq i64 %indvar_flatten1, %bound" [modeComputer/src/toplevel.cpp:78]   --->   Operation 131 'icmp' 'exitcond_flatten1' <Predicate = true> <Delay = 2.77> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 132 [1/1] (3.52ns)   --->   "%indvar_flatten_next1 = add i64 %indvar_flatten1, 1"   --->   Operation 132 'add' 'indvar_flatten_next1' <Predicate = true> <Delay = 3.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 133 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten1, label %burst.wr.header.preheader, label %.reset9" [modeComputer/src/toplevel.cpp:78]   --->   Operation 133 'br' <Predicate = true> <Delay = 0.00>
-ST_19 : Operation 134 [1/1] (2.47ns)   --->   "%exitcond2 = icmp ne i32 %y, %height_read" [modeComputer/src/toplevel.cpp:92]   --->   Operation 134 'icmp' 'exitcond2' <Predicate = (!exitcond_flatten1)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 135 [1/1] (0.69ns)   --->   "%y_mid2 = select i1 %exitcond2, i32 %y, i32 0" [modeComputer/src/toplevel.cpp:92]   --->   Operation 135 'select' 'y_mid2' <Predicate = (!exitcond_flatten1)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_19 : Operation 136 [1/1] (2.55ns)   --->   "%x_s = add i32 1, %x" [modeComputer/src/toplevel.cpp:89]   --->   Operation 136 'add' 'x_s' <Predicate = (!exitcond_flatten1)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 137 [1/1] (0.69ns)   --->   "%x_cast_mid2_v = select i1 %exitcond2, i32 %x, i32 %x_s" [modeComputer/src/toplevel.cpp:96]   --->   Operation 137 'select' 'x_cast_mid2_v' <Predicate = (!exitcond_flatten1)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_19 : Operation 138 [1/1] (0.00ns)   --->   "%tmp_12 = trunc i32 %x_cast_mid2_v to i13" [modeComputer/src/toplevel.cpp:96]   --->   Operation 138 'trunc' 'tmp_12' <Predicate = (!exitcond_flatten1)> <Delay = 0.00>
-ST_19 : Operation 139 [1/1] (0.00ns)   --->   "%tmp_13 = trunc i32 %y_mid2 to i13" [modeComputer/src/toplevel.cpp:96]   --->   Operation 139 'trunc' 'tmp_13' <Predicate = (!exitcond_flatten1)> <Delay = 0.00>
-ST_19 : Operation 140 [1/1] (6.56ns)   --->   "%MAXI_addr_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %MAXI_addr, i32 %p_add_i32_shr_cast8)" [modeComputer/src/toplevel.cpp:119]   --->   Operation 140 'writereq' 'MAXI_addr_wr_req' <Predicate = (exitcond_flatten1)> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_19 : Operation 141 [1/1] (1.76ns)   --->   "br label %burst.wr.header"   --->   Operation 141 'br' <Predicate = (exitcond_flatten1)> <Delay = 1.76>
+State 19 <SV = 16> <Delay = 3.75>
+ST_19 : Operation 106 [1/1] (0.00ns)   --->   "%indvar_flatten9 = phi i64 [ 0, %burst.rd.end ], [ %indvar_flatten_next1, %._crit_edge ]"   --->   Operation 106 'phi' 'indvar_flatten9' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 107 [1/1] (0.00ns)   --->   "%x = phi i32 [ 0, %burst.rd.end ], [ %x_cast_mid2_v, %._crit_edge ]" [modeComputer/src/toplevel.cpp:88]   --->   Operation 107 'phi' 'x' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 108 [1/1] (0.00ns)   --->   "%y = phi i32 [ 0, %burst.rd.end ], [ %y_1, %._crit_edge ]"   --->   Operation 108 'phi' 'y' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 109 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:83]   --->   Operation 109 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 110 [1/1] (2.77ns)   --->   "%exitcond_flatten1 = icmp eq i64 %indvar_flatten9, %bound" [modeComputer/src/toplevel.cpp:74]   --->   Operation 110 'icmp' 'exitcond_flatten1' <Predicate = true> <Delay = 2.77> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 111 [1/1] (3.52ns)   --->   "%indvar_flatten_next1 = add i64 %indvar_flatten9, 1"   --->   Operation 111 'add' 'indvar_flatten_next1' <Predicate = true> <Delay = 3.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 112 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten1, label %7, label %.reset8" [modeComputer/src/toplevel.cpp:74]   --->   Operation 112 'br' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 113 [1/1] (2.47ns)   --->   "%exitcond1 = icmp ne i32 %y, %height_read" [modeComputer/src/toplevel.cpp:84]   --->   Operation 113 'icmp' 'exitcond1' <Predicate = (!exitcond_flatten1)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 114 [1/1] (0.69ns)   --->   "%y_mid2 = select i1 %exitcond1, i32 %y, i32 0" [modeComputer/src/toplevel.cpp:84]   --->   Operation 114 'select' 'y_mid2' <Predicate = (!exitcond_flatten1)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 115 [1/1] (2.55ns)   --->   "%x_s = add i32 1, %x" [modeComputer/src/toplevel.cpp:81]   --->   Operation 115 'add' 'x_s' <Predicate = (!exitcond_flatten1)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 116 [1/1] (0.69ns)   --->   "%x_cast_mid2_v = select i1 %exitcond1, i32 %x, i32 %x_s" [modeComputer/src/toplevel.cpp:88]   --->   Operation 116 'select' 'x_cast_mid2_v' <Predicate = (!exitcond_flatten1)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_12 = trunc i32 %x_cast_mid2_v to i13" [modeComputer/src/toplevel.cpp:88]   --->   Operation 117 'trunc' 'tmp_12' <Predicate = (!exitcond_flatten1)> <Delay = 0.00>
+ST_19 : Operation 118 [1/1] (0.00ns)   --->   "%tmp_13 = trunc i32 %y_mid2 to i13" [modeComputer/src/toplevel.cpp:88]   --->   Operation 118 'trunc' 'tmp_13' <Predicate = (!exitcond_flatten1)> <Delay = 0.00>
+ST_19 : Operation 119 [2/2] (0.00ns)   --->   "ret i32 1" [modeComputer/src/toplevel.cpp:111]   --->   Operation 119 'ret' <Predicate = (exitcond_flatten1)> <Delay = 0.00>
 
 State 20 <SV = 17> <Delay = 6.38>
-ST_20 : Operation 142 [1/1] (3.36ns)   --->   "%tmp_5 = mul i13 %tmp_13, %tmp_11" [modeComputer/src/toplevel.cpp:96]   --->   Operation 142 'mul' 'tmp_5' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
-ST_20 : Operation 143 [1/1] (3.02ns)   --->   "%tmp_6 = add i13 %tmp_12, %tmp_5" [modeComputer/src/toplevel.cpp:96]   --->   Operation 143 'add' 'tmp_6' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_20 : Operation 120 [1/1] (3.36ns)   --->   "%tmp_3 = mul i13 %tmp_13, %tmp_11" [modeComputer/src/toplevel.cpp:88]   --->   Operation 120 'mul' 'tmp_3' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_20 : Operation 121 [1/1] (3.02ns)   --->   "%tmp_4 = add i13 %tmp_12, %tmp_3" [modeComputer/src/toplevel.cpp:88]   --->   Operation 121 'add' 'tmp_4' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
 
 State 21 <SV = 18> <Delay = 4.93>
-ST_21 : Operation 144 [1/1] (0.00ns) (grouped into LUT with out node current_V)   --->   "%tmp_14 = shl i13 %tmp_6, 2" [modeComputer/src/toplevel.cpp:96]   --->   Operation 144 'shl' 'tmp_14' <Predicate = true> <Delay = 0.00>
-ST_21 : Operation 145 [1/1] (1.67ns) (out node of the LUT)   --->   "%current_V = sub i13 %tmp_14, %tmp_6" [modeComputer/src/toplevel.cpp:96]   --->   Operation 145 'sub' 'current_V' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_21 : Operation 146 [1/1] (0.00ns)   --->   "%tmp_2 = zext i13 %current_V to i64" [modeComputer/src/toplevel.cpp:97]   --->   Operation 146 'zext' 'tmp_2' <Predicate = true> <Delay = 0.00>
-ST_21 : Operation 147 [1/1] (0.00ns)   --->   "%sectionData_addr_1 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_2" [modeComputer/src/toplevel.cpp:97]   --->   Operation 147 'getelementptr' 'sectionData_addr_1' <Predicate = true> <Delay = 0.00>
-ST_21 : Operation 148 [2/2] (3.25ns)   --->   "%sectionData_load_3 = load i32* %sectionData_addr_1, align 4" [modeComputer/src/toplevel.cpp:97]   --->   Operation 148 'load' 'sectionData_load_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_21 : Operation 122 [1/1] (0.00ns) (grouped into LUT with out node current_V)   --->   "%tmp_14 = shl i13 %tmp_4, 2" [modeComputer/src/toplevel.cpp:88]   --->   Operation 122 'shl' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 123 [1/1] (1.67ns) (out node of the LUT)   --->   "%current_V = sub i13 %tmp_14, %tmp_4" [modeComputer/src/toplevel.cpp:88]   --->   Operation 123 'sub' 'current_V' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 124 [1/1] (0.00ns)   --->   "%tmp_6 = zext i13 %current_V to i64" [modeComputer/src/toplevel.cpp:89]   --->   Operation 124 'zext' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 125 [1/1] (0.00ns)   --->   "%sectionData_addr_1 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_6" [modeComputer/src/toplevel.cpp:89]   --->   Operation 125 'getelementptr' 'sectionData_addr_1' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 126 [2/2] (3.25ns)   --->   "%sectionData_load = load i32* %sectionData_addr_1, align 4" [modeComputer/src/toplevel.cpp:89]   --->   Operation 126 'load' 'sectionData_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
 
 State 22 <SV = 19> <Delay = 4.93>
-ST_22 : Operation 149 [1/2] (3.25ns)   --->   "%sectionData_load_3 = load i32* %sectionData_addr_1, align 4" [modeComputer/src/toplevel.cpp:97]   --->   Operation 149 'load' 'sectionData_load_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_22 : Operation 150 [1/1] (0.00ns)   --->   "%lhs_V_cast = zext i13 %current_V to i14" [modeComputer/src/toplevel.cpp:97]   --->   Operation 150 'zext' 'lhs_V_cast' <Predicate = true> <Delay = 0.00>
-ST_22 : Operation 151 [1/1] (1.67ns)   --->   "%r_V = add i14 1, %lhs_V_cast" [modeComputer/src/toplevel.cpp:97]   --->   Operation 151 'add' 'r_V' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_22 : Operation 152 [1/1] (0.00ns)   --->   "%tmp_4 = zext i14 %r_V to i64" [modeComputer/src/toplevel.cpp:97]   --->   Operation 152 'zext' 'tmp_4' <Predicate = true> <Delay = 0.00>
-ST_22 : Operation 153 [1/1] (0.00ns)   --->   "%sectionData_addr_2 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_4" [modeComputer/src/toplevel.cpp:97]   --->   Operation 153 'getelementptr' 'sectionData_addr_2' <Predicate = true> <Delay = 0.00>
-ST_22 : Operation 154 [2/2] (3.25ns)   --->   "%sectionData_load_4 = load i32* %sectionData_addr_2, align 4" [modeComputer/src/toplevel.cpp:97]   --->   Operation 154 'load' 'sectionData_load_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_22 : Operation 155 [1/1] (1.67ns)   --->   "%r_V_1 = add i14 2, %lhs_V_cast" [modeComputer/src/toplevel.cpp:97]   --->   Operation 155 'add' 'r_V_1' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_22 : Operation 156 [1/1] (0.00ns)   --->   "%tmp_s = zext i14 %r_V_1 to i64" [modeComputer/src/toplevel.cpp:97]   --->   Operation 156 'zext' 'tmp_s' <Predicate = true> <Delay = 0.00>
-ST_22 : Operation 157 [1/1] (0.00ns)   --->   "%sectionData_addr_3 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_s" [modeComputer/src/toplevel.cpp:97]   --->   Operation 157 'getelementptr' 'sectionData_addr_3' <Predicate = true> <Delay = 0.00>
-ST_22 : Operation 158 [2/2] (3.25ns)   --->   "%sectionData_load_5 = load i32* %sectionData_addr_3, align 4" [modeComputer/src/toplevel.cpp:97]   --->   Operation 158 'load' 'sectionData_load_5' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_22 : Operation 127 [1/2] (3.25ns)   --->   "%sectionData_load = load i32* %sectionData_addr_1, align 4" [modeComputer/src/toplevel.cpp:89]   --->   Operation 127 'load' 'sectionData_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_22 : Operation 128 [1/1] (0.00ns)   --->   "%lhs_V_cast = zext i13 %current_V to i14" [modeComputer/src/toplevel.cpp:89]   --->   Operation 128 'zext' 'lhs_V_cast' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 129 [1/1] (1.67ns)   --->   "%r_V = add i14 1, %lhs_V_cast" [modeComputer/src/toplevel.cpp:89]   --->   Operation 129 'add' 'r_V' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 130 [1/1] (0.00ns)   --->   "%tmp_5 = zext i14 %r_V to i64" [modeComputer/src/toplevel.cpp:89]   --->   Operation 130 'zext' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 131 [1/1] (0.00ns)   --->   "%sectionData_addr_2 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_5" [modeComputer/src/toplevel.cpp:89]   --->   Operation 131 'getelementptr' 'sectionData_addr_2' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 132 [2/2] (3.25ns)   --->   "%sectionData_load_1 = load i32* %sectionData_addr_2, align 4" [modeComputer/src/toplevel.cpp:89]   --->   Operation 132 'load' 'sectionData_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_22 : Operation 133 [1/1] (1.67ns)   --->   "%r_V_1 = add i14 2, %lhs_V_cast" [modeComputer/src/toplevel.cpp:89]   --->   Operation 133 'add' 'r_V_1' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 134 [1/1] (0.00ns)   --->   "%tmp_s = zext i14 %r_V_1 to i64" [modeComputer/src/toplevel.cpp:89]   --->   Operation 134 'zext' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 135 [1/1] (0.00ns)   --->   "%sectionData_addr_3 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_s" [modeComputer/src/toplevel.cpp:89]   --->   Operation 135 'getelementptr' 'sectionData_addr_3' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 136 [2/2] (3.25ns)   --->   "%sectionData_load_2 = load i32* %sectionData_addr_3, align 4" [modeComputer/src/toplevel.cpp:89]   --->   Operation 136 'load' 'sectionData_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
 
 State 23 <SV = 20> <Delay = 3.25>
-ST_23 : Operation 159 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:91]   --->   Operation 159 'specpipeline' <Predicate = true> <Delay = 0.00>
-ST_23 : Operation 160 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @mainXLoop_mainYLoop_s)"   --->   Operation 160 'specloopname' <Predicate = true> <Delay = 0.00>
-ST_23 : Operation 161 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 0, i64 0)"   --->   Operation 161 'speclooptripcount' <Predicate = true> <Delay = 0.00>
-ST_23 : Operation 162 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:91]   --->   Operation 162 'specpipeline' <Predicate = true> <Delay = 0.00>
-ST_23 : Operation 163 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str11) nounwind" [modeComputer/src/toplevel.cpp:92]   --->   Operation 163 'specloopname' <Predicate = true> <Delay = 0.00>
-ST_23 : Operation 164 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str11) nounwind" [modeComputer/src/toplevel.cpp:92]   --->   Operation 164 'specregionbegin' 'tmp_1' <Predicate = true> <Delay = 0.00>
-ST_23 : Operation 165 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:94]   --->   Operation 165 'specpipeline' <Predicate = true> <Delay = 0.00>
-ST_23 : Operation 166 [1/2] (3.25ns)   --->   "%sectionData_load_4 = load i32* %sectionData_addr_2, align 4" [modeComputer/src/toplevel.cpp:97]   --->   Operation 166 'load' 'sectionData_load_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_23 : Operation 167 [1/2] (3.25ns)   --->   "%sectionData_load_5 = load i32* %sectionData_addr_3, align 4" [modeComputer/src/toplevel.cpp:97]   --->   Operation 167 'load' 'sectionData_load_5' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_23 : Operation 168 [1/1] (0.00ns)   --->   "%numberOfPixelsVisted_1 = load i12* @numberOfPixelsVisted, align 2" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 168 'load' 'numberOfPixelsVisted_1' <Predicate = true> <Delay = 0.00>
-ST_23 : Operation 169 [1/1] (1.76ns)   --->   "br label %2" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 169 'br' <Predicate = true> <Delay = 1.76>
+ST_23 : Operation 137 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:83]   --->   Operation 137 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 138 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @mainXLoop_mainYLoop_s)"   --->   Operation 138 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 0, i64 0)"   --->   Operation 139 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:83]   --->   Operation 140 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 141 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str11) nounwind" [modeComputer/src/toplevel.cpp:84]   --->   Operation 141 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 142 [1/1] (0.00ns)   --->   "%tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str11) nounwind" [modeComputer/src/toplevel.cpp:84]   --->   Operation 142 'specregionbegin' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 143 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:86]   --->   Operation 143 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 144 [1/2] (3.25ns)   --->   "%sectionData_load_1 = load i32* %sectionData_addr_2, align 4" [modeComputer/src/toplevel.cpp:89]   --->   Operation 144 'load' 'sectionData_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_23 : Operation 145 [1/2] (3.25ns)   --->   "%sectionData_load_2 = load i32* %sectionData_addr_3, align 4" [modeComputer/src/toplevel.cpp:89]   --->   Operation 145 'load' 'sectionData_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_23 : Operation 146 [1/1] (0.00ns)   --->   "%numberOfPixelsVisted_1 = load i12* @numberOfPixelsVisted, align 2" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 146 'load' 'numberOfPixelsVisted_1' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 147 [1/1] (1.76ns)   --->   "br label %2" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 147 'br' <Predicate = true> <Delay = 1.76>
 
 State 24 <SV = 21> <Delay = 5.06>
-ST_24 : Operation 170 [1/1] (0.00ns)   --->   "%i_i = phi i12 [ 0, %.reset9 ], [ %i, %4 ]"   --->   Operation 170 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
-ST_24 : Operation 171 [1/1] (1.99ns)   --->   "%tmp_i = icmp ult i12 %i_i, %numberOfPixelsVisted_1" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 171 'icmp' 'tmp_i' <Predicate = true> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_24 : Operation 172 [1/1] (1.54ns)   --->   "%i = add i12 %i_i, 1" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 172 'add' 'i' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_24 : Operation 173 [1/1] (0.00ns)   --->   "br i1 %tmp_i, label %3, label %inVisited.exit" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 173 'br' <Predicate = true> <Delay = 0.00>
-ST_24 : Operation 174 [1/1] (0.00ns)   --->   "%i_i_cast6 = zext i12 %i_i to i15" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 174 'zext' 'i_i_cast6' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_24 : Operation 175 [1/1] (0.00ns)   --->   "%p_shl_i = call i14 @_ssdm_op_BitConcatenate.i14.i12.i2(i12 %i_i, i2 0)" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 175 'bitconcatenate' 'p_shl_i' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_24 : Operation 176 [1/1] (0.00ns)   --->   "%p_shl_i_cast = zext i14 %p_shl_i to i15" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 176 'zext' 'p_shl_i_cast' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_24 : Operation 177 [1/1] (1.81ns)   --->   "%tmp_15_i = sub i15 %p_shl_i_cast, %i_i_cast6" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 177 'sub' 'tmp_15_i' <Predicate = (tmp_i)> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_24 : Operation 178 [1/1] (0.00ns)   --->   "%tmp_16_i = sext i15 %tmp_15_i to i64" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 178 'sext' 'tmp_16_i' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_24 : Operation 179 [1/1] (0.00ns)   --->   "%visited_addr = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_16_i" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 179 'getelementptr' 'visited_addr' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_24 : Operation 180 [2/2] (3.25ns)   --->   "%visited_load = load i32* %visited_addr, align 4" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 180 'load' 'visited_load' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_24 : Operation 148 [1/1] (0.00ns)   --->   "%i_i = phi i12 [ 0, %.reset8 ], [ %i, %4 ]"   --->   Operation 148 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 149 [1/1] (1.99ns)   --->   "%tmp_i = icmp ult i12 %i_i, %numberOfPixelsVisted_1" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 149 'icmp' 'tmp_i' <Predicate = true> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 150 [1/1] (1.54ns)   --->   "%i = add i12 %i_i, 1" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 150 'add' 'i' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 151 [1/1] (0.00ns)   --->   "br i1 %tmp_i, label %3, label %inVisited.exit" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 151 'br' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 152 [1/1] (0.00ns)   --->   "%i_i_cast5 = zext i12 %i_i to i15" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 152 'zext' 'i_i_cast5' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_24 : Operation 153 [1/1] (0.00ns)   --->   "%p_shl_i = call i14 @_ssdm_op_BitConcatenate.i14.i12.i2(i12 %i_i, i2 0)" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 153 'bitconcatenate' 'p_shl_i' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_24 : Operation 154 [1/1] (0.00ns)   --->   "%p_shl_i_cast = zext i14 %p_shl_i to i15" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 154 'zext' 'p_shl_i_cast' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_24 : Operation 155 [1/1] (1.81ns)   --->   "%tmp_13_i = sub i15 %p_shl_i_cast, %i_i_cast5" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 155 'sub' 'tmp_13_i' <Predicate = (tmp_i)> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 156 [1/1] (0.00ns)   --->   "%tmp_14_i = sext i15 %tmp_13_i to i64" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 156 'sext' 'tmp_14_i' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_24 : Operation 157 [1/1] (0.00ns)   --->   "%visited_addr = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_14_i" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 157 'getelementptr' 'visited_addr' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_24 : Operation 158 [2/2] (3.25ns)   --->   "%visited_load = load i32* %visited_addr, align 4" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 158 'load' 'visited_load' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
 
 State 25 <SV = 22> <Delay = 5.72>
-ST_25 : Operation 181 [1/2] (3.25ns)   --->   "%visited_load = load i32* %visited_addr, align 4" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 181 'load' 'visited_load' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_25 : Operation 182 [1/1] (1.94ns)   --->   "%tmp_17_i = add i15 %tmp_15_i, 1" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 182 'add' 'tmp_17_i' <Predicate = (tmp_i)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_25 : Operation 183 [1/1] (0.00ns)   --->   "%tmp_18_i = sext i15 %tmp_17_i to i64" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 183 'sext' 'tmp_18_i' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_25 : Operation 184 [1/1] (0.00ns)   --->   "%visited_addr_1 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_18_i" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 184 'getelementptr' 'visited_addr_1' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_25 : Operation 185 [2/2] (3.25ns)   --->   "%visited_load_1 = load i32* %visited_addr_1, align 4" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 185 'load' 'visited_load_1' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_25 : Operation 186 [1/1] (1.94ns)   --->   "%tmp_19_i = add i15 %tmp_15_i, 2" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 186 'add' 'tmp_19_i' <Predicate = (tmp_i)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_25 : Operation 187 [1/1] (0.00ns)   --->   "%tmp_20_i = sext i15 %tmp_19_i to i64" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 187 'sext' 'tmp_20_i' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_25 : Operation 188 [1/1] (0.00ns)   --->   "%visited_addr_2 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_20_i" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 188 'getelementptr' 'visited_addr_2' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_25 : Operation 189 [2/2] (3.25ns)   --->   "%visited_load_2 = load i32* %visited_addr_2, align 4" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 189 'load' 'visited_load_2' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_25 : Operation 190 [1/1] (2.47ns)   --->   "%tmp_i_i = icmp eq i32 %sectionData_load_3, %visited_load" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 190 'icmp' 'tmp_i_i' <Predicate = (tmp_i)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 159 [1/2] (3.25ns)   --->   "%visited_load = load i32* %visited_addr, align 4" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 159 'load' 'visited_load' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_25 : Operation 160 [1/1] (1.94ns)   --->   "%tmp_15_i = add i15 %tmp_13_i, 1" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 160 'add' 'tmp_15_i' <Predicate = (tmp_i)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 161 [1/1] (0.00ns)   --->   "%tmp_16_i = sext i15 %tmp_15_i to i64" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 161 'sext' 'tmp_16_i' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_25 : Operation 162 [1/1] (0.00ns)   --->   "%visited_addr_1 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_16_i" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 162 'getelementptr' 'visited_addr_1' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_25 : Operation 163 [2/2] (3.25ns)   --->   "%visited_load_1 = load i32* %visited_addr_1, align 4" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 163 'load' 'visited_load_1' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_25 : Operation 164 [1/1] (1.94ns)   --->   "%tmp_17_i = add i15 %tmp_13_i, 2" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 164 'add' 'tmp_17_i' <Predicate = (tmp_i)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 165 [1/1] (0.00ns)   --->   "%tmp_18_i = sext i15 %tmp_17_i to i64" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 165 'sext' 'tmp_18_i' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_25 : Operation 166 [1/1] (0.00ns)   --->   "%visited_addr_2 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_18_i" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 166 'getelementptr' 'visited_addr_2' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_25 : Operation 167 [2/2] (3.25ns)   --->   "%visited_load_2 = load i32* %visited_addr_2, align 4" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 167 'load' 'visited_load_2' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_25 : Operation 168 [1/1] (2.47ns)   --->   "%tmp_i_i = icmp eq i32 %sectionData_load, %visited_load" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 168 'icmp' 'tmp_i_i' <Predicate = (tmp_i)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 
 State 26 <SV = 23> <Delay = 6.70>
-ST_26 : Operation 191 [1/1] (0.00ns)   --->   "%tmp_21_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str) nounwind" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 191 'specregionbegin' 'tmp_21_i' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_26 : Operation 192 [1/2] (3.25ns)   --->   "%visited_load_1 = load i32* %visited_addr_1, align 4" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 192 'load' 'visited_load_1' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_26 : Operation 193 [1/2] (3.25ns)   --->   "%visited_load_2 = load i32* %visited_addr_2, align 4" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 193 'load' 'visited_load_2' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_26 : Operation 194 [1/1] (2.47ns)   --->   "%tmp_i_i_4 = icmp eq i32 %sectionData_load_4, %visited_load_1" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 194 'icmp' 'tmp_i_i_4' <Predicate = (tmp_i)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 195 [1/1] (2.47ns)   --->   "%tmp_26_i_i = icmp eq i32 %sectionData_load_5, %visited_load_2" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 195 'icmp' 'tmp_26_i_i' <Predicate = (tmp_i)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 196 [1/1] (0.00ns) (grouped into LUT with out node val_assign)   --->   "%tmp1 = and i1 %tmp_i_i_4, %tmp_26_i_i" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 196 'and' 'tmp1' <Predicate = (tmp_i)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 197 [1/1] (0.97ns) (out node of the LUT)   --->   "%val_assign = and i1 %tmp1, %tmp_i_i" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 197 'and' 'val_assign' <Predicate = (tmp_i)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_26 : Operation 198 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str, i32 %tmp_21_i) nounwind" [modeComputer/src/toplevel.cpp:30->modeComputer/src/toplevel.cpp:97]   --->   Operation 198 'specregionend' 'empty' <Predicate = (tmp_i & !val_assign)> <Delay = 0.00>
-ST_26 : Operation 199 [1/1] (0.00ns)   --->   "br label %2" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 199 'br' <Predicate = (tmp_i & !val_assign)> <Delay = 0.00>
+ST_26 : Operation 169 [1/2] (3.25ns)   --->   "%visited_load_1 = load i32* %visited_addr_1, align 4" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 169 'load' 'visited_load_1' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_26 : Operation 170 [1/2] (3.25ns)   --->   "%visited_load_2 = load i32* %visited_addr_2, align 4" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 170 'load' 'visited_load_2' <Predicate = (tmp_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_26 : Operation 171 [1/1] (2.47ns)   --->   "%tmp_i_i_4 = icmp eq i32 %sectionData_load_1, %visited_load_1" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 171 'icmp' 'tmp_i_i_4' <Predicate = (tmp_i)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 172 [1/1] (2.47ns)   --->   "%tmp_24_i_i = icmp eq i32 %sectionData_load_2, %visited_load_2" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 172 'icmp' 'tmp_24_i_i' <Predicate = (tmp_i)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 173 [1/1] (0.00ns) (grouped into LUT with out node val_assign)   --->   "%tmp1 = and i1 %tmp_i_i_4, %tmp_24_i_i" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 173 'and' 'tmp1' <Predicate = (tmp_i)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 174 [1/1] (0.97ns) (out node of the LUT)   --->   "%val_assign = and i1 %tmp1, %tmp_i_i" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 174 'and' 'val_assign' <Predicate = (tmp_i)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 
 State 27 <SV = 24> <Delay = 0.00>
-ST_27 : Operation 200 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str) nounwind" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97]   --->   Operation 200 'specloopname' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_27 : Operation 201 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 0, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:24->modeComputer/src/toplevel.cpp:97]   --->   Operation 201 'speclooptripcount' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_27 : Operation 202 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:97]   --->   Operation 202 'specpipeline' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_27 : Operation 203 [1/1] (0.00ns)   --->   "br i1 %val_assign, label %._crit_edge.loopexit, label %4" [modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97]   --->   Operation 203 'br' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_27 : Operation 175 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str) nounwind" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 175 'specloopname' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_27 : Operation 176 [1/1] (0.00ns)   --->   "%tmp_19_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str) nounwind" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 176 'specregionbegin' 'tmp_19_i' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_27 : Operation 177 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 0, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:89]   --->   Operation 177 'speclooptripcount' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_27 : Operation 178 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:24->modeComputer/src/toplevel.cpp:89]   --->   Operation 178 'specpipeline' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_27 : Operation 179 [1/1] (0.00ns)   --->   "br i1 %val_assign, label %._crit_edge.loopexit, label %4" [modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89]   --->   Operation 179 'br' <Predicate = (tmp_i)> <Delay = 0.00>
+ST_27 : Operation 180 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str, i32 %tmp_19_i) nounwind" [modeComputer/src/toplevel.cpp:29->modeComputer/src/toplevel.cpp:89]   --->   Operation 180 'specregionend' 'empty' <Predicate = (tmp_i & !val_assign)> <Delay = 0.00>
+ST_27 : Operation 181 [1/1] (0.00ns)   --->   "br label %2" [modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89]   --->   Operation 181 'br' <Predicate = (tmp_i & !val_assign)> <Delay = 0.00>
 
-State 28 <SV = 25> <Delay = 4.45>
-ST_28 : Operation 204 [1/1] (0.00ns)   --->   "br label %._crit_edge"   --->   Operation 204 'br' <Predicate = (tmp_i)> <Delay = 0.00>
-ST_28 : Operation 205 [1/1] (0.00ns)   --->   "%p_0111_1_load = load i12* %p_0111_1" [modeComputer/src/toplevel.cpp:109]   --->   Operation 205 'load' 'p_0111_1_load' <Predicate = (!tmp_i)> <Delay = 0.00>
-ST_28 : Operation 206 [1/1] (0.00ns)   --->   "%b_local_1_load_1 = load i32* %b_local_1" [modeComputer/src/toplevel.cpp:109]   --->   Operation 206 'load' 'b_local_1_load_1' <Predicate = (!tmp_i)> <Delay = 0.00>
-ST_28 : Operation 207 [1/1] (0.00ns)   --->   "%g_local_1_load_1 = load i32* %g_local_1" [modeComputer/src/toplevel.cpp:109]   --->   Operation 207 'load' 'g_local_1_load_1' <Predicate = (!tmp_i)> <Delay = 0.00>
-ST_28 : Operation 208 [1/1] (0.00ns)   --->   "%r_local_1_load_1 = load i32* %r_local_1" [modeComputer/src/toplevel.cpp:109]   --->   Operation 208 'load' 'r_local_1_load_1' <Predicate = (!tmp_i)> <Delay = 0.00>
-ST_28 : Operation 209 [1/1] (1.99ns)   --->   "%tmp_10 = icmp ult i12 %agg_result_V_1_i, %p_0111_1_load" [modeComputer/src/toplevel.cpp:109]   --->   Operation 209 'icmp' 'tmp_10' <Predicate = (!tmp_i)> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_28 : Operation 210 [1/1] (0.69ns)   --->   "%r_local_1_pixelB_ass = select i1 %tmp_10, i32 %r_local_1_load_1, i32 %sectionData_load_3" [modeComputer/src/toplevel.cpp:109]   --->   Operation 210 'select' 'r_local_1_pixelB_ass' <Predicate = (!tmp_i)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_28 : Operation 211 [1/1] (0.69ns)   --->   "%g_local_1_pixelG_ass = select i1 %tmp_10, i32 %g_local_1_load_1, i32 %sectionData_load_4" [modeComputer/src/toplevel.cpp:109]   --->   Operation 211 'select' 'g_local_1_pixelG_ass' <Predicate = (!tmp_i)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_28 : Operation 212 [1/1] (0.69ns)   --->   "%b_local_1_pixelR_ass = select i1 %tmp_10, i32 %b_local_1_load_1, i32 %sectionData_load_5" [modeComputer/src/toplevel.cpp:109]   --->   Operation 212 'select' 'b_local_1_pixelR_ass' <Predicate = (!tmp_i)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_28 : Operation 213 [1/1] (0.69ns)   --->   "%p_0111_1_agg_result_V = select i1 %tmp_10, i12 %p_0111_1_load, i12 %agg_result_V_1_i" [modeComputer/src/toplevel.cpp:109]   --->   Operation 213 'select' 'p_0111_1_agg_result_V' <Predicate = (!tmp_i)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_28 : Operation 214 [1/1] (1.76ns)   --->   "store i32 %r_local_1_pixelB_ass, i32* %r_local_1" [modeComputer/src/toplevel.cpp:109]   --->   Operation 214 'store' <Predicate = (!tmp_i)> <Delay = 1.76>
-ST_28 : Operation 215 [1/1] (1.76ns)   --->   "store i32 %g_local_1_pixelG_ass, i32* %g_local_1" [modeComputer/src/toplevel.cpp:109]   --->   Operation 215 'store' <Predicate = (!tmp_i)> <Delay = 1.76>
-ST_28 : Operation 216 [1/1] (1.76ns)   --->   "store i32 %b_local_1_pixelR_ass, i32* %b_local_1" [modeComputer/src/toplevel.cpp:109]   --->   Operation 216 'store' <Predicate = (!tmp_i)> <Delay = 1.76>
-ST_28 : Operation 217 [1/1] (1.76ns)   --->   "store i12 %p_0111_1_agg_result_V, i12* %p_0111_1" [modeComputer/src/toplevel.cpp:109]   --->   Operation 217 'store' <Predicate = (!tmp_i)> <Delay = 1.76>
-ST_28 : Operation 218 [1/1] (0.00ns)   --->   "br label %._crit_edge" [modeComputer/src/toplevel.cpp:109]   --->   Operation 218 'br' <Predicate = (!tmp_i)> <Delay = 0.00>
-ST_28 : Operation 219 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str11, i32 %tmp_1) nounwind" [modeComputer/src/toplevel.cpp:116]   --->   Operation 219 'specregionend' 'empty_8' <Predicate = true> <Delay = 0.00>
-ST_28 : Operation 220 [1/1] (2.55ns)   --->   "%y_1 = add i32 %y_mid2, 1" [modeComputer/src/toplevel.cpp:92]   --->   Operation 220 'add' 'y_1' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_28 : Operation 221 [1/1] (0.00ns)   --->   "br label %1" [modeComputer/src/toplevel.cpp:92]   --->   Operation 221 'br' <Predicate = true> <Delay = 0.00>
+State 28 <SV = 25> <Delay = 0.00>
+ST_28 : Operation 182 [1/1] (0.00ns)   --->   "br label %._crit_edge"   --->   Operation 182 'br' <Predicate = true> <Delay = 0.00>
 
 State 29 <SV = 22> <Delay = 5.06>
-ST_29 : Operation 222 [1/1] (0.00ns)   --->   "%lhs_V_1_cast4 = zext i12 %numberOfPixelsVisted_1 to i15" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101]   --->   Operation 222 'zext' 'lhs_V_1_cast4' <Predicate = true> <Delay = 0.00>
-ST_29 : Operation 223 [1/1] (0.00ns)   --->   "%p_shl_i1 = call i14 @_ssdm_op_BitConcatenate.i14.i12.i2(i12 %numberOfPixelsVisted_1, i2 0)" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101]   --->   Operation 223 'bitconcatenate' 'p_shl_i1' <Predicate = true> <Delay = 0.00>
-ST_29 : Operation 224 [1/1] (0.00ns)   --->   "%p_shl_i1_cast = zext i14 %p_shl_i1 to i15" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101]   --->   Operation 224 'zext' 'p_shl_i1_cast' <Predicate = true> <Delay = 0.00>
-ST_29 : Operation 225 [1/1] (1.81ns)   --->   "%r_V_2 = sub i15 %p_shl_i1_cast, %lhs_V_1_cast4" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101]   --->   Operation 225 'sub' 'r_V_2' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_29 : Operation 226 [1/1] (0.00ns)   --->   "%r_V_2_cast = sext i15 %r_V_2 to i44" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101]   --->   Operation 226 'sext' 'r_V_2_cast' <Predicate = true> <Delay = 0.00>
-ST_29 : Operation 227 [1/1] (0.00ns)   --->   "%tmp_i1 = zext i44 %r_V_2_cast to i64" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101]   --->   Operation 227 'zext' 'tmp_i1' <Predicate = true> <Delay = 0.00>
-ST_29 : Operation 228 [1/1] (0.00ns)   --->   "%visited_addr_3 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_i1" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101]   --->   Operation 228 'getelementptr' 'visited_addr_3' <Predicate = true> <Delay = 0.00>
-ST_29 : Operation 229 [1/1] (3.25ns)   --->   "store i32 %sectionData_load_3, i32* %visited_addr_3, align 4" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101]   --->   Operation 229 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_29 : Operation 230 [1/1] (1.54ns)   --->   "%tmp_6_i = add i12 %numberOfPixelsVisted_1, 1" [modeComputer/src/toplevel.cpp:40->modeComputer/src/toplevel.cpp:101]   --->   Operation 230 'add' 'tmp_6_i' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_29 : Operation 231 [1/1] (1.76ns)   --->   "store i12 %tmp_6_i, i12* @numberOfPixelsVisted, align 2" [modeComputer/src/toplevel.cpp:40->modeComputer/src/toplevel.cpp:101]   --->   Operation 231 'store' <Predicate = true> <Delay = 1.76>
+ST_29 : Operation 183 [1/1] (0.00ns)   --->   "%lhs_V_1_cast3 = zext i12 %numberOfPixelsVisted_1 to i15" [modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93]   --->   Operation 183 'zext' 'lhs_V_1_cast3' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 184 [1/1] (0.00ns)   --->   "%p_shl_i1 = call i14 @_ssdm_op_BitConcatenate.i14.i12.i2(i12 %numberOfPixelsVisted_1, i2 0)" [modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93]   --->   Operation 184 'bitconcatenate' 'p_shl_i1' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 185 [1/1] (0.00ns)   --->   "%p_shl_i1_cast = zext i14 %p_shl_i1 to i15" [modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93]   --->   Operation 185 'zext' 'p_shl_i1_cast' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 186 [1/1] (1.81ns)   --->   "%r_V_2 = sub i15 %p_shl_i1_cast, %lhs_V_1_cast3" [modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93]   --->   Operation 186 'sub' 'r_V_2' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 187 [1/1] (0.00ns)   --->   "%r_V_2_cast = sext i15 %r_V_2 to i44" [modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93]   --->   Operation 187 'sext' 'r_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 188 [1/1] (0.00ns)   --->   "%tmp_i1 = zext i44 %r_V_2_cast to i64" [modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93]   --->   Operation 188 'zext' 'tmp_i1' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 189 [1/1] (0.00ns)   --->   "%visited_addr_3 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_i1" [modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93]   --->   Operation 189 'getelementptr' 'visited_addr_3' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 190 [1/1] (3.25ns)   --->   "store i32 %sectionData_load, i32* %visited_addr_3, align 4" [modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93]   --->   Operation 190 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_29 : Operation 191 [1/1] (1.54ns)   --->   "%tmp_6_i = add i12 %numberOfPixelsVisted_1, 1" [modeComputer/src/toplevel.cpp:39->modeComputer/src/toplevel.cpp:93]   --->   Operation 191 'add' 'tmp_6_i' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 192 [1/1] (1.76ns)   --->   "store i12 %tmp_6_i, i12* @numberOfPixelsVisted, align 2" [modeComputer/src/toplevel.cpp:39->modeComputer/src/toplevel.cpp:93]   --->   Operation 192 'store' <Predicate = true> <Delay = 1.76>
 
 State 30 <SV = 23> <Delay = 6.24>
-ST_30 : Operation 232 [1/1] (0.00ns)   --->   "%lhs_V = zext i44 %r_V_2_cast to i45" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:101]   --->   Operation 232 'zext' 'lhs_V' <Predicate = true> <Delay = 0.00>
-ST_30 : Operation 233 [1/1] (2.98ns)   --->   "%r_V_3 = add nsw i45 %lhs_V, 1" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:101]   --->   Operation 233 'add' 'r_V_3' <Predicate = true> <Delay = 2.98> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_30 : Operation 234 [1/1] (0.00ns)   --->   "%tmp_3_i = zext i45 %r_V_3 to i64" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:101]   --->   Operation 234 'zext' 'tmp_3_i' <Predicate = true> <Delay = 0.00>
-ST_30 : Operation 235 [1/1] (0.00ns)   --->   "%visited_addr_4 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_3_i" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:101]   --->   Operation 235 'getelementptr' 'visited_addr_4' <Predicate = true> <Delay = 0.00>
-ST_30 : Operation 236 [1/1] (3.25ns)   --->   "store i32 %sectionData_load_4, i32* %visited_addr_4, align 4" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:101]   --->   Operation 236 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_30 : Operation 237 [1/1] (2.98ns)   --->   "%r_V_4 = add nsw i45 %lhs_V, 2" [modeComputer/src/toplevel.cpp:38->modeComputer/src/toplevel.cpp:101]   --->   Operation 237 'add' 'r_V_4' <Predicate = true> <Delay = 2.98> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_30 : Operation 238 [1/1] (0.00ns)   --->   "%tmp_5_i = zext i45 %r_V_4 to i64" [modeComputer/src/toplevel.cpp:38->modeComputer/src/toplevel.cpp:101]   --->   Operation 238 'zext' 'tmp_5_i' <Predicate = true> <Delay = 0.00>
-ST_30 : Operation 239 [1/1] (0.00ns)   --->   "%visited_addr_5 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_5_i" [modeComputer/src/toplevel.cpp:38->modeComputer/src/toplevel.cpp:101]   --->   Operation 239 'getelementptr' 'visited_addr_5' <Predicate = true> <Delay = 0.00>
-ST_30 : Operation 240 [1/1] (3.25ns)   --->   "store i32 %sectionData_load_5, i32* %visited_addr_5, align 4" [modeComputer/src/toplevel.cpp:38->modeComputer/src/toplevel.cpp:101]   --->   Operation 240 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_30 : Operation 241 [1/1] (1.76ns)   --->   "br label %5" [modeComputer/src/toplevel.cpp:48->modeComputer/src/toplevel.cpp:105]   --->   Operation 241 'br' <Predicate = true> <Delay = 1.76>
+ST_30 : Operation 193 [1/1] (0.00ns)   --->   "%lhs_V = zext i44 %r_V_2_cast to i45" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:93]   --->   Operation 193 'zext' 'lhs_V' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 194 [1/1] (2.98ns)   --->   "%r_V_3 = add nsw i45 %lhs_V, 1" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:93]   --->   Operation 194 'add' 'r_V_3' <Predicate = true> <Delay = 2.98> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 195 [1/1] (0.00ns)   --->   "%tmp_3_i = zext i45 %r_V_3 to i64" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:93]   --->   Operation 195 'zext' 'tmp_3_i' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 196 [1/1] (0.00ns)   --->   "%visited_addr_4 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_3_i" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:93]   --->   Operation 196 'getelementptr' 'visited_addr_4' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 197 [1/1] (3.25ns)   --->   "store i32 %sectionData_load_1, i32* %visited_addr_4, align 4" [modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:93]   --->   Operation 197 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_30 : Operation 198 [1/1] (2.98ns)   --->   "%r_V_4 = add nsw i45 %lhs_V, 2" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:93]   --->   Operation 198 'add' 'r_V_4' <Predicate = true> <Delay = 2.98> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 199 [1/1] (0.00ns)   --->   "%tmp_5_i = zext i45 %r_V_4 to i64" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:93]   --->   Operation 199 'zext' 'tmp_5_i' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 200 [1/1] (0.00ns)   --->   "%visited_addr_5 = getelementptr inbounds [6750 x i32]* @visited, i64 0, i64 %tmp_5_i" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:93]   --->   Operation 200 'getelementptr' 'visited_addr_5' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 201 [1/1] (3.25ns)   --->   "store i32 %sectionData_load_2, i32* %visited_addr_5, align 4" [modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:93]   --->   Operation 201 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_30 : Operation 202 [1/1] (1.76ns)   --->   "br label %5" [modeComputer/src/toplevel.cpp:47->modeComputer/src/toplevel.cpp:97]   --->   Operation 202 'br' <Predicate = true> <Delay = 1.76>
 
 State 31 <SV = 24> <Delay = 3.75>
-ST_31 : Operation 242 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i64 [ 0, %inVisited.exit ], [ %indvar_flatten_next, %.reset ]"   --->   Operation 242 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
-ST_31 : Operation 243 [1/1] (0.00ns)   --->   "%x_i = phi i32 [ 0, %inVisited.exit ], [ %x_i_mid2, %.reset ]" [modeComputer/src/toplevel.cpp:51->modeComputer/src/toplevel.cpp:105]   --->   Operation 243 'phi' 'x_i' <Predicate = true> <Delay = 0.00>
-ST_31 : Operation 244 [1/1] (0.00ns)   --->   "%agg_result_V_1_i = phi i12 [ 0, %inVisited.exit ], [ %tmp_25_agg_result_V_s, %.reset ]" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 244 'phi' 'agg_result_V_1_i' <Predicate = true> <Delay = 0.00>
-ST_31 : Operation 245 [1/1] (0.00ns)   --->   "%agg_result_V_load_i = phi i12 [ 0, %inVisited.exit ], [ %tmp_25_agg_result_V_1, %.reset ]" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 245 'phi' 'agg_result_V_load_i' <Predicate = true> <Delay = 0.00>
-ST_31 : Operation 246 [1/1] (0.00ns)   --->   "%y_i = phi i32 [ 0, %inVisited.exit ], [ %y_2, %.reset ]"   --->   Operation 246 'phi' 'y_i' <Predicate = true> <Delay = 0.00>
-ST_31 : Operation 247 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:105]   --->   Operation 247 'specpipeline' <Predicate = true> <Delay = 0.00>
-ST_31 : Operation 248 [1/1] (2.77ns)   --->   "%exitcond_flatten = icmp eq i64 %indvar_flatten, %bound" [modeComputer/src/toplevel.cpp:78]   --->   Operation 248 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 2.77> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_31 : Operation 249 [1/1] (3.52ns)   --->   "%indvar_flatten_next = add i64 %indvar_flatten, 1"   --->   Operation 249 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 3.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_31 : Operation 250 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %getFrequency.exit, label %.reset" [modeComputer/src/toplevel.cpp:78]   --->   Operation 250 'br' <Predicate = true> <Delay = 0.00>
-ST_31 : Operation 251 [1/1] (2.47ns)   --->   "%exitcond_i8 = icmp eq i32 %y_i, %height_read" [modeComputer/src/toplevel.cpp:51->modeComputer/src/toplevel.cpp:105]   --->   Operation 251 'icmp' 'exitcond_i8' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_31 : Operation 252 [1/1] (0.69ns)   --->   "%y_i_mid2 = select i1 %exitcond_i8, i32 0, i32 %y_i" [modeComputer/src/toplevel.cpp:51->modeComputer/src/toplevel.cpp:105]   --->   Operation 252 'select' 'y_i_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_31 : Operation 253 [1/1] (2.55ns)   --->   "%x_1 = add nsw i32 1, %x_i" [modeComputer/src/toplevel.cpp:48->modeComputer/src/toplevel.cpp:105]   --->   Operation 253 'add' 'x_1' <Predicate = (!exitcond_flatten)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_31 : Operation 254 [1/1] (0.69ns)   --->   "%x_i_mid2 = select i1 %exitcond_i8, i32 %x_1, i32 %x_i" [modeComputer/src/toplevel.cpp:51->modeComputer/src/toplevel.cpp:105]   --->   Operation 254 'select' 'x_i_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_31 : Operation 203 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i64 [ 0, %inVisited.exit ], [ %indvar_flatten_next, %.reset ]"   --->   Operation 203 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 204 [1/1] (0.00ns)   --->   "%x_i = phi i32 [ 0, %inVisited.exit ], [ %x_i_mid2, %.reset ]" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:97]   --->   Operation 204 'phi' 'x_i' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 205 [1/1] (0.00ns)   --->   "%agg_result_V_1_i = phi i12 [ 0, %inVisited.exit ], [ %tmp_23_agg_result_V_s, %.reset ]" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 205 'phi' 'agg_result_V_1_i' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 206 [1/1] (0.00ns)   --->   "%agg_result_V_load_i = phi i12 [ 0, %inVisited.exit ], [ %tmp_23_agg_result_V_1, %.reset ]" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 206 'phi' 'agg_result_V_load_i' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 207 [1/1] (0.00ns)   --->   "%y_i = phi i32 [ 0, %inVisited.exit ], [ %y_2, %.reset ]"   --->   Operation 207 'phi' 'y_i' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 208 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:49->modeComputer/src/toplevel.cpp:97]   --->   Operation 208 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 209 [1/1] (2.77ns)   --->   "%exitcond_flatten = icmp eq i64 %indvar_flatten, %bound" [modeComputer/src/toplevel.cpp:74]   --->   Operation 209 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 2.77> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 210 [1/1] (3.52ns)   --->   "%indvar_flatten_next = add i64 %indvar_flatten, 1"   --->   Operation 210 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 3.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 211 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %getFrequency.exit, label %.reset" [modeComputer/src/toplevel.cpp:74]   --->   Operation 211 'br' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 212 [1/1] (2.47ns)   --->   "%exitcond_i5 = icmp eq i32 %y_i, %height_read" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:97]   --->   Operation 212 'icmp' 'exitcond_i5' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 213 [1/1] (0.69ns)   --->   "%y_i_mid2 = select i1 %exitcond_i5, i32 0, i32 %y_i" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:97]   --->   Operation 213 'select' 'y_i_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_31 : Operation 214 [1/1] (2.55ns)   --->   "%x_1 = add nsw i32 1, %x_i" [modeComputer/src/toplevel.cpp:47->modeComputer/src/toplevel.cpp:97]   --->   Operation 214 'add' 'x_1' <Predicate = (!exitcond_flatten)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 215 [1/1] (0.69ns)   --->   "%x_i_mid2 = select i1 %exitcond_i5, i32 %x_1, i32 %x_i" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:97]   --->   Operation 215 'select' 'x_i_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 
 State 32 <SV = 25> <Delay = 5.74>
-ST_32 : Operation 255 [3/3] (5.74ns)   --->   "%tmp_i1_5 = mul i32 %y_i_mid2, %length_read" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105]   --->   Operation 255 'mul' 'tmp_i1_5' <Predicate = (!exitcond_flatten)> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_32 : Operation 256 [1/1] (2.55ns)   --->   "%y_2 = add nsw i32 1, %y_i_mid2" [modeComputer/src/toplevel.cpp:51->modeComputer/src/toplevel.cpp:105]   --->   Operation 256 'add' 'y_2' <Predicate = (!exitcond_flatten)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 216 [3/3] (5.74ns)   --->   "%tmp_i1_5 = mul i32 %y_i_mid2, %length_read" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97]   --->   Operation 216 'mul' 'tmp_i1_5' <Predicate = (!exitcond_flatten)> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 217 [1/1] (2.55ns)   --->   "%y_2 = add nsw i32 1, %y_i_mid2" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:97]   --->   Operation 217 'add' 'y_2' <Predicate = (!exitcond_flatten)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 
 State 33 <SV = 26> <Delay = 5.74>
-ST_33 : Operation 257 [2/3] (5.74ns)   --->   "%tmp_i1_5 = mul i32 %y_i_mid2, %length_read" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105]   --->   Operation 257 'mul' 'tmp_i1_5' <Predicate = (!exitcond_flatten)> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 218 [2/3] (5.74ns)   --->   "%tmp_i1_5 = mul i32 %y_i_mid2, %length_read" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97]   --->   Operation 218 'mul' 'tmp_i1_5' <Predicate = (!exitcond_flatten)> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
 
 State 34 <SV = 27> <Delay = 5.74>
-ST_34 : Operation 258 [1/3] (5.74ns)   --->   "%tmp_i1_5 = mul i32 %y_i_mid2, %length_read" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105]   --->   Operation 258 'mul' 'tmp_i1_5' <Predicate = (!exitcond_flatten)> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 219 [1/3] (5.74ns)   --->   "%tmp_i1_5 = mul i32 %y_i_mid2, %length_read" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97]   --->   Operation 219 'mul' 'tmp_i1_5' <Predicate = (!exitcond_flatten)> <Delay = 5.74> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 2> <II = 1> <Delay = 5.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
 
 State 35 <SV = 28> <Delay = 4.23>
-ST_35 : Operation 259 [1/1] (2.55ns)   --->   "%tmp_i2 = add i32 %tmp_i1_5, %x_i_mid2" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105]   --->   Operation 259 'add' 'tmp_i2' <Predicate = (!exitcond_flatten)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_35 : Operation 260 [1/1] (0.00ns)   --->   "%tmp_15 = trunc i32 %tmp_i2 to i13" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105]   --->   Operation 260 'trunc' 'tmp_15' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_35 : Operation 261 [1/1] (0.00ns)   --->   "%tmp_16 = trunc i32 %tmp_i2 to i11" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105]   --->   Operation 261 'trunc' 'tmp_16' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_35 : Operation 262 [1/1] (0.00ns)   --->   "%p_shl_i2 = call i13 @_ssdm_op_BitConcatenate.i13.i11.i2(i11 %tmp_16, i2 0)" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105]   --->   Operation 262 'bitconcatenate' 'p_shl_i2' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_35 : Operation 263 [1/1] (1.67ns)   --->   "%current_V_1 = sub i13 %p_shl_i2, %tmp_15" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105]   --->   Operation 263 'sub' 'current_V_1' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 220 [1/1] (2.55ns)   --->   "%tmp_i2 = add i32 %tmp_i1_5, %x_i_mid2" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97]   --->   Operation 220 'add' 'tmp_i2' <Predicate = (!exitcond_flatten)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 221 [1/1] (0.00ns)   --->   "%tmp_15 = trunc i32 %tmp_i2 to i13" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97]   --->   Operation 221 'trunc' 'tmp_15' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_35 : Operation 222 [1/1] (0.00ns)   --->   "%tmp_16 = trunc i32 %tmp_i2 to i11" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97]   --->   Operation 222 'trunc' 'tmp_16' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_35 : Operation 223 [1/1] (0.00ns)   --->   "%p_shl_i2 = call i13 @_ssdm_op_BitConcatenate.i13.i11.i2(i11 %tmp_16, i2 0)" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97]   --->   Operation 223 'bitconcatenate' 'p_shl_i2' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_35 : Operation 224 [1/1] (1.67ns)   --->   "%current_V_1 = sub i13 %p_shl_i2, %tmp_15" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97]   --->   Operation 224 'sub' 'current_V_1' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 
 State 36 <SV = 29> <Delay = 4.93>
-ST_36 : Operation 264 [1/1] (0.00ns)   --->   "%tmp_22_i = zext i13 %current_V_1 to i64" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 264 'zext' 'tmp_22_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_36 : Operation 265 [1/1] (0.00ns)   --->   "%sectionData_addr_5 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_22_i" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 265 'getelementptr' 'sectionData_addr_5' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_36 : Operation 266 [2/2] (3.25ns)   --->   "%sectionData_load_7 = load i32* %sectionData_addr_5, align 4" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 266 'load' 'sectionData_load_7' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_36 : Operation 267 [1/1] (0.00ns)   --->   "%lhs_V_3_cast = zext i13 %current_V_1 to i14" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 267 'zext' 'lhs_V_3_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_36 : Operation 268 [1/1] (1.67ns)   --->   "%r_V_5 = add i14 1, %lhs_V_3_cast" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 268 'add' 'r_V_5' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_36 : Operation 269 [1/1] (0.00ns)   --->   "%tmp_23_i = zext i14 %r_V_5 to i64" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 269 'zext' 'tmp_23_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_36 : Operation 270 [1/1] (0.00ns)   --->   "%sectionData_addr_6 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_23_i" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 270 'getelementptr' 'sectionData_addr_6' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_36 : Operation 271 [2/2] (3.25ns)   --->   "%sectionData_load_8 = load i32* %sectionData_addr_6, align 4" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 271 'load' 'sectionData_load_8' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_36 : Operation 225 [1/1] (0.00ns)   --->   "%tmp_20_i = zext i13 %current_V_1 to i64" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 225 'zext' 'tmp_20_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_36 : Operation 226 [1/1] (0.00ns)   --->   "%sectionData_addr_4 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_20_i" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 226 'getelementptr' 'sectionData_addr_4' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_36 : Operation 227 [2/2] (3.25ns)   --->   "%sectionData_load_3 = load i32* %sectionData_addr_4, align 4" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 227 'load' 'sectionData_load_3' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_36 : Operation 228 [1/1] (0.00ns)   --->   "%lhs_V_3_cast = zext i13 %current_V_1 to i14" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 228 'zext' 'lhs_V_3_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_36 : Operation 229 [1/1] (1.67ns)   --->   "%r_V_5 = add i14 1, %lhs_V_3_cast" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 229 'add' 'r_V_5' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 230 [1/1] (0.00ns)   --->   "%tmp_21_i = zext i14 %r_V_5 to i64" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 230 'zext' 'tmp_21_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_36 : Operation 231 [1/1] (0.00ns)   --->   "%sectionData_addr_5 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_21_i" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 231 'getelementptr' 'sectionData_addr_5' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_36 : Operation 232 [2/2] (3.25ns)   --->   "%sectionData_load_4 = load i32* %sectionData_addr_5, align 4" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 232 'load' 'sectionData_load_4' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
 
 State 37 <SV = 30> <Delay = 5.72>
-ST_37 : Operation 272 [1/2] (3.25ns)   --->   "%sectionData_load_7 = load i32* %sectionData_addr_5, align 4" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 272 'load' 'sectionData_load_7' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_37 : Operation 273 [1/2] (3.25ns)   --->   "%sectionData_load_8 = load i32* %sectionData_addr_6, align 4" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 273 'load' 'sectionData_load_8' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_37 : Operation 274 [1/1] (1.67ns)   --->   "%r_V_6 = add i14 2, %lhs_V_3_cast" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 274 'add' 'r_V_6' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_37 : Operation 275 [1/1] (0.00ns)   --->   "%tmp_24_i = zext i14 %r_V_6 to i64" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 275 'zext' 'tmp_24_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_37 : Operation 276 [1/1] (0.00ns)   --->   "%sectionData_addr_7 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_24_i" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 276 'getelementptr' 'sectionData_addr_7' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_37 : Operation 277 [2/2] (3.25ns)   --->   "%sectionData_load_9 = load i32* %sectionData_addr_7, align 4" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 277 'load' 'sectionData_load_9' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_37 : Operation 278 [1/1] (2.47ns)   --->   "%tmp_i_i1 = icmp eq i32 %sectionData_load_7, %sectionData_load_3" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 278 'icmp' 'tmp_i_i1' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_37 : Operation 279 [1/1] (2.47ns)   --->   "%tmp_i_i1_6 = icmp eq i32 %sectionData_load_8, %sectionData_load_4" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 279 'icmp' 'tmp_i_i1_6' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 233 [1/2] (3.25ns)   --->   "%sectionData_load_3 = load i32* %sectionData_addr_4, align 4" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 233 'load' 'sectionData_load_3' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_37 : Operation 234 [1/2] (3.25ns)   --->   "%sectionData_load_4 = load i32* %sectionData_addr_5, align 4" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 234 'load' 'sectionData_load_4' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_37 : Operation 235 [1/1] (1.67ns)   --->   "%r_V_6 = add i14 2, %lhs_V_3_cast" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 235 'add' 'r_V_6' <Predicate = (!exitcond_flatten)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 236 [1/1] (0.00ns)   --->   "%tmp_22_i = zext i14 %r_V_6 to i64" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 236 'zext' 'tmp_22_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_37 : Operation 237 [1/1] (0.00ns)   --->   "%sectionData_addr_6 = getelementptr inbounds [6750 x i32]* @sectionData, i64 0, i64 %tmp_22_i" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 237 'getelementptr' 'sectionData_addr_6' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_37 : Operation 238 [2/2] (3.25ns)   --->   "%sectionData_load_5 = load i32* %sectionData_addr_6, align 4" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 238 'load' 'sectionData_load_5' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_37 : Operation 239 [1/1] (2.47ns)   --->   "%tmp_i_i1 = icmp eq i32 %sectionData_load_3, %sectionData_load" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 239 'icmp' 'tmp_i_i1' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 240 [1/1] (2.47ns)   --->   "%tmp_i_i1_6 = icmp eq i32 %sectionData_load_4, %sectionData_load_1" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 240 'icmp' 'tmp_i_i1_6' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 
 State 38 <SV = 31> <Delay = 5.72>
-ST_38 : Operation 280 [1/2] (3.25ns)   --->   "%sectionData_load_9 = load i32* %sectionData_addr_7, align 4" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 280 'load' 'sectionData_load_9' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
-ST_38 : Operation 281 [1/1] (2.47ns)   --->   "%tmp_26_i_i1 = icmp eq i32 %sectionData_load_9, %sectionData_load_5" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 281 'icmp' 'tmp_26_i_i1' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_38 : Operation 282 [1/1] (1.54ns)   --->   "%result_V = add i12 1, %agg_result_V_load_i" [modeComputer/src/toplevel.cpp:58->modeComputer/src/toplevel.cpp:105]   --->   Operation 282 'add' 'result_V' <Predicate = (!exitcond_flatten)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 241 [1/2] (3.25ns)   --->   "%sectionData_load_5 = load i32* %sectionData_addr_6, align 4" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 241 'load' 'sectionData_load_5' <Predicate = (!exitcond_flatten)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+ST_38 : Operation 242 [1/1] (2.47ns)   --->   "%tmp_24_i_i1 = icmp eq i32 %sectionData_load_5, %sectionData_load_2" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 242 'icmp' 'tmp_24_i_i1' <Predicate = (!exitcond_flatten)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 243 [1/1] (1.54ns)   --->   "%result_V = add i12 1, %agg_result_V_load_i" [modeComputer/src/toplevel.cpp:57->modeComputer/src/toplevel.cpp:97]   --->   Operation 243 'add' 'result_V' <Predicate = (!exitcond_flatten)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 
 State 39 <SV = 32> <Delay = 1.67>
-ST_39 : Operation 283 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:105]   --->   Operation 283 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_39 : Operation 284 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @freqXLoop_freqYLoop_s)"   --->   Operation 284 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_39 : Operation 285 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 0, i64 0)"   --->   Operation 285 'speclooptripcount' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_39 : Operation 286 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:105]   --->   Operation 286 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_39 : Operation 287 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str4) nounwind" [modeComputer/src/toplevel.cpp:51->modeComputer/src/toplevel.cpp:105]   --->   Operation 287 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_39 : Operation 288 [1/1] (0.00ns)   --->   "%tmp_27_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str4) nounwind" [modeComputer/src/toplevel.cpp:51->modeComputer/src/toplevel.cpp:105]   --->   Operation 288 'specregionbegin' 'tmp_27_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_39 : Operation 289 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:105]   --->   Operation 289 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_39 : Operation 290 [1/1] (0.00ns) (grouped into LUT with out node val_assign_1)   --->   "%tmp2 = and i1 %tmp_i_i1_6, %tmp_26_i_i1" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 290 'and' 'tmp2' <Predicate = (!exitcond_flatten)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_39 : Operation 291 [1/1] (0.97ns) (out node of the LUT)   --->   "%val_assign_1 = and i1 %tmp2, %tmp_i_i1" [modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 291 'and' 'val_assign_1' <Predicate = (!exitcond_flatten)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_39 : Operation 292 [1/1] (0.69ns)   --->   "%tmp_25_agg_result_V_s = select i1 %val_assign_1, i12 %result_V, i12 %agg_result_V_1_i" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 292 'select' 'tmp_25_agg_result_V_s' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_39 : Operation 293 [1/1] (0.69ns)   --->   "%tmp_25_agg_result_V_1 = select i1 %val_assign_1, i12 %result_V, i12 %agg_result_V_load_i" [modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105]   --->   Operation 293 'select' 'tmp_25_agg_result_V_1' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_39 : Operation 294 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str4, i32 %tmp_27_i) nounwind" [modeComputer/src/toplevel.cpp:60->modeComputer/src/toplevel.cpp:105]   --->   Operation 294 'specregionend' 'empty_7' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_39 : Operation 295 [1/1] (0.00ns)   --->   "br label %5" [modeComputer/src/toplevel.cpp:51->modeComputer/src/toplevel.cpp:105]   --->   Operation 295 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 244 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:49->modeComputer/src/toplevel.cpp:97]   --->   Operation 244 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 245 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @freqXLoop_freqYLoop_s)"   --->   Operation 245 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 246 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 0, i64 0)"   --->   Operation 246 'speclooptripcount' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 247 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:49->modeComputer/src/toplevel.cpp:97]   --->   Operation 247 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 248 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str4) nounwind" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:97]   --->   Operation 248 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 249 [1/1] (0.00ns)   --->   "%tmp_25_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str4) nounwind" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:97]   --->   Operation 249 'specregionbegin' 'tmp_25_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 250 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [modeComputer/src/toplevel.cpp:52->modeComputer/src/toplevel.cpp:97]   --->   Operation 250 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 251 [1/1] (0.00ns) (grouped into LUT with out node val_assign_1)   --->   "%tmp2 = and i1 %tmp_i_i1_6, %tmp_24_i_i1" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 251 'and' 'tmp2' <Predicate = (!exitcond_flatten)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 252 [1/1] (0.97ns) (out node of the LUT)   --->   "%val_assign_1 = and i1 %tmp2, %tmp_i_i1" [modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 252 'and' 'val_assign_1' <Predicate = (!exitcond_flatten)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 253 [1/1] (0.69ns)   --->   "%tmp_23_agg_result_V_s = select i1 %val_assign_1, i12 %result_V, i12 %agg_result_V_1_i" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 253 'select' 'tmp_23_agg_result_V_s' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_39 : Operation 254 [1/1] (0.69ns)   --->   "%tmp_23_agg_result_V_1 = select i1 %val_assign_1, i12 %result_V, i12 %agg_result_V_load_i" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 254 'select' 'tmp_23_agg_result_V_1' <Predicate = (!exitcond_flatten)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_39 : Operation 255 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str4, i32 %tmp_25_i) nounwind" [modeComputer/src/toplevel.cpp:59->modeComputer/src/toplevel.cpp:97]   --->   Operation 255 'specregionend' 'empty_7' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_39 : Operation 256 [1/1] (0.00ns)   --->   "br label %5" [modeComputer/src/toplevel.cpp:50->modeComputer/src/toplevel.cpp:97]   --->   Operation 256 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
 
-State 40 <SV = 17> <Delay = 3.44>
-ST_40 : Operation 296 [1/1] (0.00ns)   --->   "%indvar2 = phi i30 [ %indvar_next1, %burst.wr.body ], [ 0, %burst.wr.header.preheader ]"   --->   Operation 296 'phi' 'indvar2' <Predicate = true> <Delay = 0.00>
-ST_40 : Operation 297 [1/1] (2.46ns)   --->   "%exitcond1 = icmp eq i30 %indvar2, %tmp_9" [modeComputer/src/toplevel.cpp:78]   --->   Operation 297 'icmp' 'exitcond1' <Predicate = true> <Delay = 2.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_40 : Operation 298 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 1073741823, i64 0)"   --->   Operation 298 'speclooptripcount' <Predicate = true> <Delay = 0.00>
-ST_40 : Operation 299 [1/1] (2.49ns)   --->   "%indvar_next1 = add i30 %indvar2, 1"   --->   Operation 299 'add' 'indvar_next1' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_40 : Operation 300 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %memcpy.tail, label %burst.wr.body" [modeComputer/src/toplevel.cpp:78]   --->   Operation 300 'br' <Predicate = true> <Delay = 0.00>
-ST_40 : Operation 301 [1/1] (0.00ns)   --->   "%indvar3 = zext i30 %indvar2 to i64"   --->   Operation 301 'zext' 'indvar3' <Predicate = (!exitcond1)> <Delay = 0.00>
-ST_40 : Operation 302 [1/1] (0.00ns)   --->   "%sectionData_addr_4 = getelementptr [6750 x i32]* @sectionData, i64 0, i64 %indvar3" [modeComputer/src/toplevel.cpp:119]   --->   Operation 302 'getelementptr' 'sectionData_addr_4' <Predicate = (!exitcond1)> <Delay = 0.00>
-ST_40 : Operation 303 [2/2] (3.25ns)   --->   "%sectionData_load_6 = load i32* %sectionData_addr_4, align 4" [modeComputer/src/toplevel.cpp:119]   --->   Operation 303 'load' 'sectionData_load_6' <Predicate = (!exitcond1)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+State 40 <SV = 25> <Delay = 1.99>
+ST_40 : Operation 257 [1/1] (0.00ns)   --->   "%p_0111_1_load = load i12* %p_0111_1" [modeComputer/src/toplevel.cpp:101]   --->   Operation 257 'load' 'p_0111_1_load' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 258 [1/1] (1.99ns)   --->   "%tmp_10 = icmp ult i12 %agg_result_V_1_i, %p_0111_1_load" [modeComputer/src/toplevel.cpp:101]   --->   Operation 258 'icmp' 'tmp_10' <Predicate = true> <Delay = 1.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 259 [1/1] (0.00ns)   --->   "br i1 %tmp_10, label %._crit_edge, label %6" [modeComputer/src/toplevel.cpp:101]   --->   Operation 259 'br' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 260 [2/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %r, i32 %sectionData_load)" [modeComputer/src/toplevel.cpp:103]   --->   Operation 260 'write' <Predicate = (!tmp_10)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_40 : Operation 261 [2/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %g, i32 %sectionData_load_1)" [modeComputer/src/toplevel.cpp:104]   --->   Operation 261 'write' <Predicate = (!tmp_10)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_40 : Operation 262 [2/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %b, i32 %sectionData_load_2)" [modeComputer/src/toplevel.cpp:105]   --->   Operation 262 'write' <Predicate = (!tmp_10)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_40 : Operation 263 [1/1] (1.76ns)   --->   "store i12 %agg_result_V_1_i, i12* %p_0111_1" [modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97]   --->   Operation 263 'store' <Predicate = (!tmp_10)> <Delay = 1.76>
 
-State 41 <SV = 18> <Delay = 3.25>
-ST_41 : Operation 304 [1/2] (3.25ns)   --->   "%sectionData_load_6 = load i32* %sectionData_addr_4, align 4" [modeComputer/src/toplevel.cpp:119]   --->   Operation 304 'load' 'sectionData_load_6' <Predicate = (!exitcond1)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6750> <RAM>
+State 41 <SV = 26> <Delay = 2.55>
+ST_41 : Operation 264 [1/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %r, i32 %sectionData_load)" [modeComputer/src/toplevel.cpp:103]   --->   Operation 264 'write' <Predicate = (!tmp_i & !tmp_10)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_41 : Operation 265 [1/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %g, i32 %sectionData_load_1)" [modeComputer/src/toplevel.cpp:104]   --->   Operation 265 'write' <Predicate = (!tmp_i & !tmp_10)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_41 : Operation 266 [1/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %b, i32 %sectionData_load_2)" [modeComputer/src/toplevel.cpp:105]   --->   Operation 266 'write' <Predicate = (!tmp_i & !tmp_10)> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_41 : Operation 267 [1/1] (0.00ns)   --->   "br label %._crit_edge" [modeComputer/src/toplevel.cpp:106]   --->   Operation 267 'br' <Predicate = (!tmp_i & !tmp_10)> <Delay = 0.00>
+ST_41 : Operation 268 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str11, i32 %tmp_2) nounwind" [modeComputer/src/toplevel.cpp:108]   --->   Operation 268 'specregionend' 'empty_8' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 269 [1/1] (2.55ns)   --->   "%y_1 = add i32 %y_mid2, 1" [modeComputer/src/toplevel.cpp:84]   --->   Operation 269 'add' 'y_1' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 270 [1/1] (0.00ns)   --->   "br label %1" [modeComputer/src/toplevel.cpp:84]   --->   Operation 270 'br' <Predicate = true> <Delay = 0.00>
 
-State 42 <SV = 19> <Delay = 6.56>
-ST_42 : Operation 305 [1/1] (0.00ns)   --->   "%burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind"   --->   Operation 305 'specregionbegin' 'burstwrite_rbegin' <Predicate = (!exitcond1)> <Delay = 0.00>
-ST_42 : Operation 306 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str12)"   --->   Operation 306 'specpipeline' <Predicate = (!exitcond1)> <Delay = 0.00>
-ST_42 : Operation 307 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([27 x i8]* @memcpy_OC_ram_OC_sec)"   --->   Operation 307 'specloopname' <Predicate = (!exitcond1)> <Delay = 0.00>
-ST_42 : Operation 308 [1/1] (6.56ns)   --->   "call void @_ssdm_op_Write.m_axi.i32P(i32* %MAXI_addr, i32 %sectionData_load_6, i4 -1)" [modeComputer/src/toplevel.cpp:119]   --->   Operation 308 'write' <Predicate = (!exitcond1)> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_42 : Operation 309 [1/1] (0.00ns)   --->   "%burstwrite_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin) nounwind"   --->   Operation 309 'specregionend' 'burstwrite_rend' <Predicate = (!exitcond1)> <Delay = 0.00>
-ST_42 : Operation 310 [1/1] (0.00ns)   --->   "br label %burst.wr.header"   --->   Operation 310 'br' <Predicate = (!exitcond1)> <Delay = 0.00>
-
-State 43 <SV = 18> <Delay = 6.56>
-ST_43 : Operation 311 [5/5] (6.56ns)   --->   "%MAXI_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %MAXI_addr)" [modeComputer/src/toplevel.cpp:119]   --->   Operation 311 'writeresp' 'MAXI_addr_wr_resp' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 44 <SV = 19> <Delay = 6.56>
-ST_44 : Operation 312 [4/5] (6.56ns)   --->   "%MAXI_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %MAXI_addr)" [modeComputer/src/toplevel.cpp:119]   --->   Operation 312 'writeresp' 'MAXI_addr_wr_resp' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 45 <SV = 20> <Delay = 6.56>
-ST_45 : Operation 313 [3/5] (6.56ns)   --->   "%MAXI_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %MAXI_addr)" [modeComputer/src/toplevel.cpp:119]   --->   Operation 313 'writeresp' 'MAXI_addr_wr_resp' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 46 <SV = 21> <Delay = 6.56>
-ST_46 : Operation 314 [1/1] (0.00ns)   --->   "%b_local_1_load = load i32* %b_local_1"   --->   Operation 314 'load' 'b_local_1_load' <Predicate = true> <Delay = 0.00>
-ST_46 : Operation 315 [1/1] (0.00ns)   --->   "%g_local_1_load = load i32* %g_local_1"   --->   Operation 315 'load' 'g_local_1_load' <Predicate = true> <Delay = 0.00>
-ST_46 : Operation 316 [1/1] (0.00ns)   --->   "%r_local_1_load = load i32* %r_local_1"   --->   Operation 316 'load' 'r_local_1_load' <Predicate = true> <Delay = 0.00>
-ST_46 : Operation 317 [2/5] (6.56ns)   --->   "%MAXI_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %MAXI_addr)" [modeComputer/src/toplevel.cpp:119]   --->   Operation 317 'writeresp' 'MAXI_addr_wr_resp' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_46 : Operation 318 [2/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %r, i32 %r_local_1_load)"   --->   Operation 318 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_46 : Operation 319 [2/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %g, i32 %g_local_1_load)"   --->   Operation 319 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_46 : Operation 320 [2/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %b, i32 %b_local_1_load)"   --->   Operation 320 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_46 : Operation 321 [2/2] (0.00ns)   --->   "ret i32 undef" [modeComputer/src/toplevel.cpp:120]   --->   Operation 321 'ret' <Predicate = true> <Delay = 0.00>
-
-State 47 <SV = 22> <Delay = 6.56>
-ST_47 : Operation 322 [1/5] (6.56ns)   --->   "%MAXI_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %MAXI_addr)" [modeComputer/src/toplevel.cpp:119]   --->   Operation 322 'writeresp' 'MAXI_addr_wr_resp' <Predicate = true> <Delay = 6.56> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_47 : Operation 323 [1/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %r, i32 %r_local_1_load)"   --->   Operation 323 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_47 : Operation 324 [1/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %g, i32 %g_local_1_load)"   --->   Operation 324 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_47 : Operation 325 [1/2] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %b, i32 %b_local_1_load)"   --->   Operation 325 'write' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_47 : Operation 326 [1/2] (0.00ns)   --->   "ret i32 undef" [modeComputer/src/toplevel.cpp:120]   --->   Operation 326 'ret' <Predicate = true> <Delay = 0.00>
+State 42 <SV = 17> <Delay = 0.00>
+ST_42 : Operation 271 [1/2] (0.00ns)   --->   "ret i32 1" [modeComputer/src/toplevel.cpp:111]   --->   Operation 271 'ret' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -572,223 +498,199 @@ Target clock period: 7.5ns, clock uncertainty: 0.938ns.
 
  <State 1>: 1ns
 The critical path consists of the following:
-	s_axi read on port 'ram' [12]  (1 ns)
+	s_axi read on port 'ram' [11]  (1 ns)
 
  <State 2>: 3.55ns
 The critical path consists of the following:
-	s_axi read on port 'length_r' (modeComputer/src/toplevel.cpp:78) [35]  (1 ns)
-	'sub' operation ('tmp', modeComputer/src/toplevel.cpp:78) [38]  (2.55 ns)
+	s_axi read on port 'length_r' (modeComputer/src/toplevel.cpp:74) [31]  (1 ns)
+	'sub' operation ('tmp', modeComputer/src/toplevel.cpp:74) [34]  (2.55 ns)
 
  <State 3>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('tmp_7', modeComputer/src/toplevel.cpp:78) [39]  (5.75 ns)
+	'mul' operation ('tmp_7', modeComputer/src/toplevel.cpp:74) [35]  (5.75 ns)
 
  <State 4>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('tmp_7', modeComputer/src/toplevel.cpp:78) [39]  (5.75 ns)
+	'mul' operation ('tmp_7', modeComputer/src/toplevel.cpp:74) [35]  (5.75 ns)
 
  <State 5>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('tmp_7', modeComputer/src/toplevel.cpp:78) [39]  (5.75 ns)
+	'mul' operation ('tmp_7', modeComputer/src/toplevel.cpp:74) [35]  (5.75 ns)
 
  <State 6>: 6.56ns
 The critical path consists of the following:
-	'getelementptr' operation ('MAXI_addr') [15]  (0 ns)
-	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:78) [42]  (6.56 ns)
+	'getelementptr' operation ('MAXI_addr') [14]  (0 ns)
+	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:74) [38]  (6.56 ns)
 
  <State 7>: 6.56ns
 The critical path consists of the following:
-	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:78) [42]  (6.56 ns)
+	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:74) [38]  (6.56 ns)
 
  <State 8>: 6.56ns
 The critical path consists of the following:
-	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:78) [42]  (6.56 ns)
+	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:74) [38]  (6.56 ns)
 
  <State 9>: 6.56ns
 The critical path consists of the following:
-	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:78) [42]  (6.56 ns)
+	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:74) [38]  (6.56 ns)
 
  <State 10>: 6.56ns
 The critical path consists of the following:
-	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:78) [42]  (6.56 ns)
+	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:74) [38]  (6.56 ns)
 
  <State 11>: 6.56ns
 The critical path consists of the following:
-	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:78) [42]  (6.56 ns)
+	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:74) [38]  (6.56 ns)
 
  <State 12>: 6.56ns
 The critical path consists of the following:
-	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:78) [42]  (6.56 ns)
+	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:74) [38]  (6.56 ns)
 
  <State 13>: 2.49ns
 The critical path consists of the following:
-	'phi' operation ('indvar') with incoming values : ('indvar_next') [45]  (0 ns)
-	'add' operation ('indvar_next') [48]  (2.49 ns)
+	'phi' operation ('indvar') with incoming values : ('indvar_next') [41]  (0 ns)
+	'add' operation ('indvar_next') [44]  (2.49 ns)
 
  <State 14>: 6.56ns
 The critical path consists of the following:
-	bus read on port 'MAXI' (modeComputer/src/toplevel.cpp:78) [55]  (6.56 ns)
+	bus read on port 'MAXI' (modeComputer/src/toplevel.cpp:74) [51]  (6.56 ns)
 
  <State 15>: 3.25ns
 The critical path consists of the following:
-	'getelementptr' operation ('sectionData_addr', modeComputer/src/toplevel.cpp:78) [56]  (0 ns)
-	'store' operation (modeComputer/src/toplevel.cpp:78) of variable 'MAXI_addr_read', modeComputer/src/toplevel.cpp:78 on array 'sectionData' [57]  (3.25 ns)
+	'getelementptr' operation ('sectionData_addr', modeComputer/src/toplevel.cpp:74) [52]  (0 ns)
+	'store' operation (modeComputer/src/toplevel.cpp:74) of variable 'MAXI_addr_read', modeComputer/src/toplevel.cpp:74 on array 'sectionData' [53]  (3.25 ns)
 
  <State 16>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('bound', modeComputer/src/toplevel.cpp:78) [72]  (5.75 ns)
+	'mul' operation ('bound', modeComputer/src/toplevel.cpp:74) [62]  (5.75 ns)
 
  <State 17>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('bound', modeComputer/src/toplevel.cpp:78) [72]  (5.75 ns)
+	'mul' operation ('bound', modeComputer/src/toplevel.cpp:74) [62]  (5.75 ns)
 
  <State 18>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('bound', modeComputer/src/toplevel.cpp:78) [72]  (5.75 ns)
+	'mul' operation ('bound', modeComputer/src/toplevel.cpp:74) [62]  (5.75 ns)
 
- <State 19>: 6.56ns
+ <State 19>: 3.75ns
 The critical path consists of the following:
-	bus request on port 'MAXI' (modeComputer/src/toplevel.cpp:119) [246]  (6.56 ns)
+	'icmp' operation ('exitcond_flatten1', modeComputer/src/toplevel.cpp:74) [70]  (2.78 ns)
+	blocking operation 0.978 ns on control path)
 
  <State 20>: 6.38ns
 The critical path consists of the following:
-	'mul' operation ('tmp_5', modeComputer/src/toplevel.cpp:96) [100]  (3.36 ns)
-	'add' operation ('tmp_6', modeComputer/src/toplevel.cpp:96) [101]  (3.02 ns)
+	'mul' operation ('tmp_3', modeComputer/src/toplevel.cpp:88) [87]  (3.36 ns)
+	'add' operation ('tmp_4', modeComputer/src/toplevel.cpp:88) [88]  (3.02 ns)
 
  <State 21>: 4.93ns
 The critical path consists of the following:
-	'shl' operation ('tmp_14', modeComputer/src/toplevel.cpp:96) [102]  (0 ns)
-	'sub' operation ('current.V', modeComputer/src/toplevel.cpp:96) [103]  (1.68 ns)
-	'getelementptr' operation ('sectionData_addr_1', modeComputer/src/toplevel.cpp:97) [105]  (0 ns)
-	'load' operation ('pixelB', modeComputer/src/toplevel.cpp:97) on array 'sectionData' [106]  (3.25 ns)
+	'shl' operation ('tmp_14', modeComputer/src/toplevel.cpp:88) [89]  (0 ns)
+	'sub' operation ('current.V', modeComputer/src/toplevel.cpp:88) [90]  (1.68 ns)
+	'getelementptr' operation ('sectionData_addr_1', modeComputer/src/toplevel.cpp:89) [92]  (0 ns)
+	'load' operation ('pixelB', modeComputer/src/toplevel.cpp:89) on array 'sectionData' [93]  (3.25 ns)
 
  <State 22>: 4.93ns
 The critical path consists of the following:
-	'add' operation ('r.V', modeComputer/src/toplevel.cpp:97) [108]  (1.68 ns)
-	'getelementptr' operation ('sectionData_addr_2', modeComputer/src/toplevel.cpp:97) [110]  (0 ns)
-	'load' operation ('pixelG', modeComputer/src/toplevel.cpp:97) on array 'sectionData' [111]  (3.25 ns)
+	'add' operation ('r.V', modeComputer/src/toplevel.cpp:89) [95]  (1.68 ns)
+	'getelementptr' operation ('sectionData_addr_2', modeComputer/src/toplevel.cpp:89) [97]  (0 ns)
+	'load' operation ('pixelG', modeComputer/src/toplevel.cpp:89) on array 'sectionData' [98]  (3.25 ns)
 
  <State 23>: 3.25ns
 The critical path consists of the following:
-	'load' operation ('pixelG', modeComputer/src/toplevel.cpp:97) on array 'sectionData' [111]  (3.25 ns)
+	'load' operation ('pixelG', modeComputer/src/toplevel.cpp:89) on array 'sectionData' [98]  (3.25 ns)
 
  <State 24>: 5.07ns
 The critical path consists of the following:
-	'phi' operation ('i') with incoming values : ('i', modeComputer/src/toplevel.cpp:23->modeComputer/src/toplevel.cpp:97) [119]  (0 ns)
-	'sub' operation ('tmp_15_i', modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) [131]  (1.81 ns)
-	'getelementptr' operation ('visited_addr', modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) [133]  (0 ns)
-	'load' operation ('pixel2B', modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) on array 'visited' [134]  (3.25 ns)
+	'phi' operation ('i') with incoming values : ('i', modeComputer/src/toplevel.cpp:22->modeComputer/src/toplevel.cpp:89) [106]  (0 ns)
+	'sub' operation ('tmp_13_i', modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) [118]  (1.81 ns)
+	'getelementptr' operation ('visited_addr', modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) [120]  (0 ns)
+	'load' operation ('pixel2B', modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) on array 'visited' [121]  (3.25 ns)
 
  <State 25>: 5.73ns
 The critical path consists of the following:
-	'load' operation ('pixel2B', modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) on array 'visited' [134]  (3.25 ns)
-	'icmp' operation ('tmp_i_i', modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) [143]  (2.47 ns)
+	'load' operation ('pixel2B', modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) on array 'visited' [121]  (3.25 ns)
+	'icmp' operation ('tmp_i_i', modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) [130]  (2.47 ns)
 
  <State 26>: 6.71ns
 The critical path consists of the following:
-	'load' operation ('pixel2G', modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) on array 'visited' [138]  (3.25 ns)
-	'icmp' operation ('tmp_i_i_4', modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) [144]  (2.47 ns)
-	'and' operation ('tmp1', modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) [146]  (0 ns)
-	'and' operation ('val', modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:26->modeComputer/src/toplevel.cpp:97) [147]  (0.978 ns)
+	'load' operation ('pixel2G', modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) on array 'visited' [125]  (3.25 ns)
+	'icmp' operation ('tmp_i_i_4', modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) [131]  (2.47 ns)
+	'and' operation ('tmp1', modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) [133]  (0 ns)
+	'and' operation ('val', modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:25->modeComputer/src/toplevel.cpp:89) [134]  (0.978 ns)
 
  <State 27>: 0ns
 The critical path consists of the following:
 
- <State 28>: 4.46ns
+ <State 28>: 0ns
 The critical path consists of the following:
-	'load' operation ('p_0111_1_load', modeComputer/src/toplevel.cpp:109) on local variable 'p_0111_1' [227]  (0 ns)
-	'icmp' operation ('tmp_10', modeComputer/src/toplevel.cpp:109) [231]  (1.99 ns)
-	'select' operation ('r_local_1_pixelB_ass', modeComputer/src/toplevel.cpp:109) [232]  (0.698 ns)
-	'store' operation (modeComputer/src/toplevel.cpp:109) of variable 'r_local_1_pixelB_ass', modeComputer/src/toplevel.cpp:109 on local variable 'r_local_1' [236]  (1.77 ns)
 
  <State 29>: 5.07ns
 The critical path consists of the following:
-	'sub' operation ('r.V', modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101) [158]  (1.81 ns)
-	'getelementptr' operation ('visited_addr_3', modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101) [161]  (0 ns)
-	'store' operation (modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:101) of variable 'pixelB', modeComputer/src/toplevel.cpp:97 on array 'visited' [162]  (3.25 ns)
+	'sub' operation ('r.V', modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93) [145]  (1.81 ns)
+	'getelementptr' operation ('visited_addr_3', modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93) [148]  (0 ns)
+	'store' operation (modeComputer/src/toplevel.cpp:35->modeComputer/src/toplevel.cpp:93) of variable 'pixelB', modeComputer/src/toplevel.cpp:89 on array 'visited' [149]  (3.25 ns)
 
  <State 30>: 6.24ns
 The critical path consists of the following:
-	'add' operation ('r.V', modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:101) [164]  (2.99 ns)
-	'getelementptr' operation ('visited_addr_4', modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:101) [166]  (0 ns)
-	'store' operation (modeComputer/src/toplevel.cpp:37->modeComputer/src/toplevel.cpp:101) of variable 'pixelG', modeComputer/src/toplevel.cpp:97 on array 'visited' [167]  (3.25 ns)
+	'add' operation ('r.V', modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:93) [151]  (2.99 ns)
+	'getelementptr' operation ('visited_addr_4', modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:93) [153]  (0 ns)
+	'store' operation (modeComputer/src/toplevel.cpp:36->modeComputer/src/toplevel.cpp:93) of variable 'pixelG', modeComputer/src/toplevel.cpp:89 on array 'visited' [154]  (3.25 ns)
 
  <State 31>: 3.75ns
 The critical path consists of the following:
-	'icmp' operation ('exitcond_flatten', modeComputer/src/toplevel.cpp:78) [182]  (2.78 ns)
+	'icmp' operation ('exitcond_flatten', modeComputer/src/toplevel.cpp:74) [169]  (2.78 ns)
 	blocking operation 0.978 ns on control path)
 
  <State 32>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('tmp_i1_5', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105) [197]  (5.75 ns)
+	'mul' operation ('tmp_i1_5', modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97) [184]  (5.75 ns)
 
  <State 33>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('tmp_i1_5', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105) [197]  (5.75 ns)
+	'mul' operation ('tmp_i1_5', modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97) [184]  (5.75 ns)
 
  <State 34>: 5.75ns
 The critical path consists of the following:
-	'mul' operation ('tmp_i1_5', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105) [197]  (5.75 ns)
+	'mul' operation ('tmp_i1_5', modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97) [184]  (5.75 ns)
 
  <State 35>: 4.23ns
 The critical path consists of the following:
-	'add' operation ('tmp_i2', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105) [198]  (2.55 ns)
-	'sub' operation ('current.V', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:105) [202]  (1.68 ns)
+	'add' operation ('tmp_i2', modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97) [185]  (2.55 ns)
+	'sub' operation ('current.V', modeComputer/src/toplevel.cpp:53->modeComputer/src/toplevel.cpp:97) [189]  (1.68 ns)
 
  <State 36>: 4.93ns
 The critical path consists of the following:
-	'add' operation ('r.V', modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) [207]  (1.68 ns)
-	'getelementptr' operation ('sectionData_addr_6', modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) [209]  (0 ns)
-	'load' operation ('pixel1G', modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) on array 'sectionData' [210]  (3.25 ns)
+	'add' operation ('r.V', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) [194]  (1.68 ns)
+	'getelementptr' operation ('sectionData_addr_5', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) [196]  (0 ns)
+	'load' operation ('pixel1G', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) on array 'sectionData' [197]  (3.25 ns)
 
  <State 37>: 5.73ns
 The critical path consists of the following:
-	'load' operation ('pixel1B', modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) on array 'sectionData' [205]  (3.25 ns)
-	'icmp' operation ('tmp_i_i1', modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) [215]  (2.47 ns)
+	'load' operation ('pixel1B', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) on array 'sectionData' [192]  (3.25 ns)
+	'icmp' operation ('tmp_i_i1', modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) [202]  (2.47 ns)
 
  <State 38>: 5.73ns
 The critical path consists of the following:
-	'load' operation ('pixel1R', modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) on array 'sectionData' [214]  (3.25 ns)
-	'icmp' operation ('tmp_26_i_i1', modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) [217]  (2.47 ns)
+	'load' operation ('pixel1R', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) on array 'sectionData' [201]  (3.25 ns)
+	'icmp' operation ('tmp_24_i_i1', modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) [204]  (2.47 ns)
 
  <State 39>: 1.67ns
 The critical path consists of the following:
-	'and' operation ('tmp2', modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) [218]  (0 ns)
-	'and' operation ('val', modeComputer/src/toplevel.cpp:17->modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) [219]  (0.978 ns)
-	'select' operation ('tmp_25_agg_result_V_s', modeComputer/src/toplevel.cpp:55->modeComputer/src/toplevel.cpp:105) [221]  (0.697 ns)
+	'and' operation ('tmp2', modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) [205]  (0 ns)
+	'and' operation ('val', modeComputer/src/toplevel.cpp:16->modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) [206]  (0.978 ns)
+	'select' operation ('tmp_23_agg_result_V_s', modeComputer/src/toplevel.cpp:54->modeComputer/src/toplevel.cpp:97) [208]  (0.697 ns)
 
- <State 40>: 3.45ns
+ <State 40>: 1.99ns
 The critical path consists of the following:
-	'icmp' operation ('exitcond1', modeComputer/src/toplevel.cpp:78) [250]  (2.47 ns)
-	blocking operation 0.978 ns on control path)
+	'load' operation ('p_0111_1_load', modeComputer/src/toplevel.cpp:101) on local variable 'p_0111_1' [214]  (0 ns)
+	'icmp' operation ('tmp_10', modeComputer/src/toplevel.cpp:101) [215]  (1.99 ns)
 
- <State 41>: 3.25ns
+ <State 41>: 2.55ns
 The critical path consists of the following:
-	'load' operation ('sectionData_load_6', modeComputer/src/toplevel.cpp:119) on array 'sectionData' [260]  (3.25 ns)
+	'add' operation ('y', modeComputer/src/toplevel.cpp:84) [225]  (2.55 ns)
 
- <State 42>: 6.56ns
+ <State 42>: 0ns
 The critical path consists of the following:
-	bus write on port 'MAXI' (modeComputer/src/toplevel.cpp:119) [261]  (6.56 ns)
-
- <State 43>: 6.56ns
-The critical path consists of the following:
-	bus access on port 'MAXI' (modeComputer/src/toplevel.cpp:119) [268]  (6.56 ns)
-
- <State 44>: 6.56ns
-The critical path consists of the following:
-	bus access on port 'MAXI' (modeComputer/src/toplevel.cpp:119) [268]  (6.56 ns)
-
- <State 45>: 6.56ns
-The critical path consists of the following:
-	bus access on port 'MAXI' (modeComputer/src/toplevel.cpp:119) [268]  (6.56 ns)
-
- <State 46>: 6.56ns
-The critical path consists of the following:
-	bus access on port 'MAXI' (modeComputer/src/toplevel.cpp:119) [268]  (6.56 ns)
-
- <State 47>: 6.56ns
-The critical path consists of the following:
-	bus access on port 'MAXI' (modeComputer/src/toplevel.cpp:119) [268]  (6.56 ns)
 
 
 ============================================================
@@ -841,11 +743,6 @@ N/A
 	State 40
 	State 41
 	State 42
-	State 43
-	State 44
-	State 45
-	State 46
-	State 47
 
 
 ============================================================

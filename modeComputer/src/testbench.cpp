@@ -21,7 +21,7 @@ int test1() {
 
 	memcpy(ram, blueHoriz, MAX_SCALED_ARRAY_SIZE*sizeof(uint32));
 
-	uint32 mode = toplevel(ram, &length, &height, &r, &g, &b, &version);
+	uint32 mode = toplevel(ram, &length, &height, &r, &g, &b);
 
 	return (r == 255) && (g == 0) && (b == 0);
 }
@@ -38,7 +38,7 @@ int test2() {
 
 	memcpy(ram, blueGreenVert, MAX_SCALED_ARRAY_SIZE*sizeof(uint32));
 
-	uint32 mode = toplevel(ram, &length, &height, &r, &g, &b, &version);
+	uint32 mode = toplevel(ram, &length, &height, &r, &g, &b);
 
 	return  (r == actualMode[0]) &&
 			(g == actualMode[1]) &&
@@ -57,7 +57,7 @@ int test3() {
 
 	memcpy(ram, green, MAX_SCALED_ARRAY_SIZE*sizeof(uint32));
 
-	uint32 mode = toplevel(ram, &length, &height, &r, &g, &b, &version);
+	uint32 mode = toplevel(ram, &length, &height, &r, &g, &b);
 
 	return  (r == 133) &&
 			(g == 191) &&

@@ -47,9 +47,7 @@ module toplevel_AXILiteS_s_axi
     input  wire [31:0]                   g,
     input  wire                          g_ap_vld,
     input  wire [31:0]                   b,
-    input  wire                          b_ap_vld,
-    input  wire [31:0]                   version,
-    input  wire                          version_ap_vld
+    input  wire                          b_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -96,11 +94,6 @@ module toplevel_AXILiteS_s_axi
 // 0x44 : Control signal of b
 //        bit 0  - b_ap_vld (Read/COR)
 //        others - reserved
-// 0x48 : Data signal of version
-//        bit 31~0 - version[31:0] (Read)
-// 0x4c : Control signal of version
-//        bit 0  - version_ap_vld (Read/COR)
-//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -122,8 +115,6 @@ localparam
     ADDR_G_CTRL          = 7'h3c,
     ADDR_B_DATA_0        = 7'h40,
     ADDR_B_CTRL          = 7'h44,
-    ADDR_VERSION_DATA_0  = 7'h48,
-    ADDR_VERSION_CTRL    = 7'h4c,
     WRIDLE               = 2'd0,
     WRDATA               = 2'd1,
     WRRESP               = 2'd2,
@@ -164,8 +155,6 @@ localparam
     reg                           int_g_ap_vld;
     reg  [31:0]                   int_b = 'b0;
     reg                           int_b_ap_vld;
-    reg  [31:0]                   int_version = 'b0;
-    reg                           int_version_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -302,12 +291,6 @@ always @(posedge ACLK) begin
                 end
                 ADDR_B_CTRL: begin
                     rdata[0] <= int_b_ap_vld;
-                end
-                ADDR_VERSION_DATA_0: begin
-                    rdata <= int_version[31:0];
-                end
-                ADDR_VERSION_CTRL: begin
-                    rdata[0] <= int_version_ap_vld;
                 end
             endcase
         end
@@ -520,28 +503,6 @@ always @(posedge ACLK) begin
             int_b_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_B_CTRL)
             int_b_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_version
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_version <= 0;
-    else if (ACLK_EN) begin
-        if (version_ap_vld)
-            int_version <= version;
-    end
-end
-
-// int_version_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_version_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (version_ap_vld)
-            int_version_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_VERSION_CTRL)
-            int_version_ap_vld <= 1'b0; // clear on read
     end
 end
 

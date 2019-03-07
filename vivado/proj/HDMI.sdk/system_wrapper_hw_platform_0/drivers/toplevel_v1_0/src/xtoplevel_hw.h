@@ -50,11 +50,6 @@
 // 0x44 : Control signal of b
 //        bit 0  - b_ap_vld (Read/COR)
 //        others - reserved
-// 0x48 : Data signal of version
-//        bit 31~0 - version[31:0] (Read)
-// 0x4c : Control signal of version
-//        bit 0  - version_ap_vld (Read/COR)
-//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XTOPLEVEL_AXILITES_ADDR_AP_CTRL       0x00
@@ -78,7 +73,4 @@
 #define XTOPLEVEL_AXILITES_ADDR_B_DATA        0x40
 #define XTOPLEVEL_AXILITES_BITS_B_DATA        32
 #define XTOPLEVEL_AXILITES_ADDR_B_CTRL        0x44
-#define XTOPLEVEL_AXILITES_ADDR_VERSION_DATA  0x48
-#define XTOPLEVEL_AXILITES_BITS_VERSION_DATA  32
-#define XTOPLEVEL_AXILITES_ADDR_VERSION_CTRL  0x4c
 

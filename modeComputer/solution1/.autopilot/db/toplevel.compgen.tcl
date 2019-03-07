@@ -492,14 +492,6 @@ b {
 	offset 64
 	offset_end 71
 }
-version { 
-	dir O
-	width 32
-	depth 1
-	mode ap_vld
-	offset 72
-	offset_end 79
-}
 }
 
 

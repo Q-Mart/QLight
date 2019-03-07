@@ -5,7 +5,6 @@
 #include <ap_int.h>
 
 uint32 sectionData[MAX_SCALED_ARRAY_SIZE];
-//u8 *sectionDataPtr;
 
 uint32 visited[MAX_SCALED_ARRAY_SIZE];
 
@@ -63,23 +62,16 @@ ap_uint<12> getFrequency(uint32 pixelB, uint32 pixelG, uint32 pixelR,
 	return result;
 }
 
-uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b, uint32 *version) {
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b) {
 #pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI
 #pragma HLS INTERFACE s_axilite port=length bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=height bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=r bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=g bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=b bundle=AXILiteS register
-#pragma HLS INTERFACE s_axilite port=version bundle=AXILiteS register
 #pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS register
 
-	*version = VERSION;
-
 	memcpy(sectionData, ram, (*length)*(*height)*3*sizeof(uint32));
-//	sectionDataPtr = (u8*) sectionData;
-	*r = sectionData[0];
-	*g = sectionData[1];
-	*b = sectionData[2];
 
 	numberOfPixelsVisted = 0;
 	ap_uint<12> modeFreq = 0;
@@ -116,5 +108,5 @@ uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *
 		}
 	}
 
-	memcpy(ram, sectionData, (*length)*(*height)*3*sizeof(uint32));
+	return VERSION;
 }

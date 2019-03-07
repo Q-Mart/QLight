@@ -50,9 +50,7 @@ port (
     g                     :in   STD_LOGIC_VECTOR(31 downto 0);
     g_ap_vld              :in   STD_LOGIC;
     b                     :in   STD_LOGIC_VECTOR(31 downto 0);
-    b_ap_vld              :in   STD_LOGIC;
-    version               :in   STD_LOGIC_VECTOR(31 downto 0);
-    version_ap_vld        :in   STD_LOGIC
+    b_ap_vld              :in   STD_LOGIC
 );
 end entity toplevel_AXILiteS_s_axi;
 
@@ -101,11 +99,6 @@ end entity toplevel_AXILiteS_s_axi;
 -- 0x44 : Control signal of b
 --        bit 0  - b_ap_vld (Read/COR)
 --        others - reserved
--- 0x48 : Data signal of version
---        bit 31~0 - version[31:0] (Read)
--- 0x4c : Control signal of version
---        bit 0  - version_ap_vld (Read/COR)
---        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of toplevel_AXILiteS_s_axi is
@@ -130,8 +123,6 @@ architecture behave of toplevel_AXILiteS_s_axi is
     constant ADDR_G_CTRL          : INTEGER := 16#3c#;
     constant ADDR_B_DATA_0        : INTEGER := 16#40#;
     constant ADDR_B_CTRL          : INTEGER := 16#44#;
-    constant ADDR_VERSION_DATA_0  : INTEGER := 16#48#;
-    constant ADDR_VERSION_CTRL    : INTEGER := 16#4c#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -164,8 +155,6 @@ architecture behave of toplevel_AXILiteS_s_axi is
     signal int_g_ap_vld        : STD_LOGIC;
     signal int_b               : UNSIGNED(31 downto 0) := (others => '0');
     signal int_b_ap_vld        : STD_LOGIC;
-    signal int_version         : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_version_ap_vld  : STD_LOGIC;
 
 
 begin
@@ -307,10 +296,6 @@ begin
                         rdata_data <= RESIZE(int_b(31 downto 0), 32);
                     when ADDR_B_CTRL =>
                         rdata_data <= (0 => int_b_ap_vld, others => '0');
-                    when ADDR_VERSION_DATA_0 =>
-                        rdata_data <= RESIZE(int_version(31 downto 0), 32);
-                    when ADDR_VERSION_CTRL =>
-                        rdata_data <= (0 => int_version_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -576,34 +561,6 @@ begin
                     int_b_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_B_CTRL) then
                     int_b_ap_vld <= '0'; -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_version <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (version_ap_vld = '1') then
-                    int_version <= UNSIGNED(version); -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_version_ap_vld <= '0';
-            elsif (ACLK_EN = '1') then
-                if (version_ap_vld = '1') then
-                    int_version_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_VERSION_CTRL) then
-                    int_version_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

@@ -100,8 +100,6 @@ u32 XToplevel_Get_g(XToplevel *InstancePtr);
 u32 XToplevel_Get_g_vld(XToplevel *InstancePtr);
 u32 XToplevel_Get_b(XToplevel *InstancePtr);
 u32 XToplevel_Get_b_vld(XToplevel *InstancePtr);
-u32 XToplevel_Get_version(XToplevel *InstancePtr);
-u32 XToplevel_Get_version_vld(XToplevel *InstancePtr);
 
 void XToplevel_InterruptGlobalEnable(XToplevel *InstancePtr);
 void XToplevel_InterruptGlobalDisable(XToplevel *InstancePtr);

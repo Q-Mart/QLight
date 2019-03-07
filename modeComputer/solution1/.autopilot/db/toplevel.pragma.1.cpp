@@ -1659,7 +1659,7 @@ typedef unsigned int uint32;
 typedef int int32;
 typedef unsigned char u8;
 
-uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b, uint32 *version);
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b);
 # 2 "modeComputer/src/toplevel.cpp" 2
 
 # 1 "/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdint.h" 1 3
@@ -30863,7 +30863,6 @@ inline bool operator!=(const ap_int<_AP_W> &__x, const complex<ap_int<_AP_W> > &
 
 uint32 sectionData[75*30*3];
 
-
 uint32 visited[75*30*3];
 
 ap_uint<12> numberOfPixelsVisted;
@@ -30920,23 +30919,16 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  return result;
 }
 
-uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b, uint32 *version) {
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b) {
 _ssdm_op_SpecInterface(ram, "m_axi", 0, 0, "", 0, 0, "MAXI", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(length, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(height, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(r, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(g, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(b, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(version, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 1, 1, "", 0, 0, "AXILiteS", "", "", 0, 0, 0, 0, "", "");
 
- *version = 1;
-
  memcpy(sectionData, ram, (*length)*(*height)*3*sizeof(uint32));
-
- *r = sectionData[0];
- *g = sectionData[1];
- *b = sectionData[2];
 
  numberOfPixelsVisted = 0;
  ap_uint<12> modeFreq = 0;
@@ -30973,5 +30965,5 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
   }
  }
 
- memcpy(ram, sectionData, (*length)*(*height)*3*sizeof(uint32));
+ return 1;
 }

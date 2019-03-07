@@ -1234,67 +1234,6 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
         </spirit:register>
-        <spirit:register>
-          <spirit:name>version</spirit:name>
-          <spirit:displayName>version</spirit:displayName>
-          <spirit:description>Data signal of version</spirit:description>
-          <spirit:addressOffset>72</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
-          <spirit:access>read-only</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>version</spirit:name>
-            <spirit:description>Bit 31 to 0 Data signal of version</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:readAction>modify</spirit:readAction>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-        </spirit:register>
-        <spirit:register>
-          <spirit:name>version_ctrl</spirit:name>
-          <spirit:displayName>version_ctrl</spirit:displayName>
-          <spirit:description>Control signal of version</spirit:description>
-          <spirit:addressOffset>76</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
-          <spirit:access>read-only</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>version_ap_vld</spirit:name>
-            <spirit:description>Control signal version_ap_vld</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:readAction>modify</spirit:readAction>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>RESERVED</spirit:name>
-            <spirit:description>Reserved.  0s on read.</spirit:description>
-            <spirit:bitOffset>1</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">31</spirit:bitWidth>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:readAction>modify</spirit:readAction>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-        </spirit:register>
       </spirit:addressBlock>
     </spirit:memoryMap>
   </spirit:memoryMaps>
@@ -1312,7 +1251,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c81add39</spirit:value>
+            <spirit:value>4cc2b785</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1328,7 +1267,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>bacf326e</spirit:value>
+            <spirit:value>29fc2b9d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1344,7 +1283,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ebe52db4</spirit:value>
+            <spirit:value>1b34737f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1360,7 +1299,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1239a38e</spirit:value>
+            <spirit:value>c7421f05</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1374,7 +1313,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>608458f7</spirit:value>
+            <spirit:value>b7e73543</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2765,7 +2704,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       <spirit:file>
         <spirit:name>hdl/vhdl/toplevel.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_cf85737a</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_94ef185c</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -3007,7 +2946,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="17">22</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="17">17</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -3024,18 +2963,18 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>modeCalculator</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1903060900</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-03-06T09:00:28Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1903071403</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-03-07T14:03:21Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="3cdf679e"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="6e018b6b"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="4a5b6647"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c722e3a3"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="95e824e1"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ff8214eb"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="0eb693b1"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="c18d004e"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="72777ed8"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="516b71e1"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

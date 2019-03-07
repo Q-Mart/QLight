@@ -3,7 +3,22 @@ set moduleName "toplevel"
 set moduleIsExternC "0"
 set rawDecl ""
 set globalVariable ""
-set PortName8 "visited"
+set PortName7 "visited"
+set BitWidth7 "216000"
+set ArrayOpt7 ""
+set Const7 "0"
+set Volatile7 "0"
+set Pointer7 "0"
+set Reference7 "0"
+set Initializer7 ""
+set External7 0
+set Dims7 [list  6750]
+set Interface7 "wire"
+set NameSpace7 [list ]
+set DataType7 "unsigned int"
+set Port7 [list $PortName7 $Interface7 $DataType7 $Pointer7 $Dims7 $Const7 $Volatile7 $ArrayOpt7 $Initializer7 $External7 $NameSpace7]
+lappend globalVariable $Port7
+set PortName8 "sectionData"
 set BitWidth8 "216000"
 set ArrayOpt8 ""
 set Const8 "0"
@@ -18,8 +33,8 @@ set NameSpace8 [list ]
 set DataType8 "unsigned int"
 set Port8 [list $PortName8 $Interface8 $DataType8 $Pointer8 $Dims8 $Const8 $Volatile8 $ArrayOpt8 $Initializer8 $External8 $NameSpace8]
 lappend globalVariable $Port8
-set PortName9 "sectionData"
-set BitWidth9 "216000"
+set PortName9 "numberOfPixelsVisted"
+set BitWidth9 "16"
 set ArrayOpt9 ""
 set Const9 "0"
 set Volatile9 "0"
@@ -27,27 +42,12 @@ set Pointer9 "0"
 set Reference9 "0"
 set Initializer9 ""
 set External9 0
-set Dims9 [list  6750]
+set Dims9 [list 0]
 set Interface9 "wire"
 set NameSpace9 [list ]
-set DataType9 "unsigned int"
+set DataType9 "[list ap_uint 12 ]"
 set Port9 [list $PortName9 $Interface9 $DataType9 $Pointer9 $Dims9 $Const9 $Volatile9 $ArrayOpt9 $Initializer9 $External9 $NameSpace9]
 lappend globalVariable $Port9
-set PortName10 "numberOfPixelsVisted"
-set BitWidth10 "16"
-set ArrayOpt10 ""
-set Const10 "0"
-set Volatile10 "0"
-set Pointer10 "0"
-set Reference10 "0"
-set Initializer10 ""
-set External10 0
-set Dims10 [list 0]
-set Interface10 "wire"
-set NameSpace10 [list ]
-set DataType10 "[list ap_uint 12 ]"
-set Port10 [list $PortName10 $Interface10 $DataType10 $Pointer10 $Dims10 $Const10 $Volatile10 $ArrayOpt10 $Initializer10 $External10 $NameSpace10]
-lappend globalVariable $Port10
 set PortList ""
 set PortName1 "ram"
 set BitWidth1 "64"
@@ -121,18 +121,6 @@ set Interface6 "wire"
 set DataType6 "unsigned int"
 set Port6 [list $PortName6 $Interface6 $DataType6 $Pointer6 $Dims6 $Const6 $Volatile6 $ArrayOpt6]
 lappend PortList $Port6
-set PortName7 "version"
-set BitWidth7 "64"
-set ArrayOpt7 ""
-set Const7 "0"
-set Volatile7 "0"
-set Pointer7 "1"
-set Reference7 "0"
-set Dims7 [list 0]
-set Interface7 "wire"
-set DataType7 "unsigned int"
-set Port7 [list $PortName7 $Interface7 $DataType7 $Pointer7 $Dims7 $Const7 $Volatile7 $ArrayOpt7]
-lappend PortList $Port7
 set PortName0 "return"
 set BitWidth0 "32"
 set ArrayOpt0 ""

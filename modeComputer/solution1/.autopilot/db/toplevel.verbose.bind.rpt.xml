@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'toplevel'" level="0">
-<item name = "Date">Wed Mar  6 08:59:44 2019
+<item name = "Date">Thu Mar  7 14:02:42 2019
 </item>
 <item name = "Version">2018.2.1 (Build 2288704 on Thu Jul 26 18:46:41 MDT 2018)</item>
 <item name = "Project">modeComputer</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">22, 2147483670, 22, 2147483670, none</column>
+<column name="">17, 1073741841, 17, 1073741841, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,10 +36,9 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- memcpy.sectionData.ram">0, 1073741824, 3, 1, 1, 0 ~ 1073741823, yes</column>
-<column name="- mainXLoop_mainYLoop">0, 0, 10 ~ 13, -, -, 0, no</column>
+<column name="- mainXLoop_mainYLoop">0, 0, 11 ~ 14, -, -, 0, no</column>
 <column name=" + visitedLoop">3, 3, 4, 3, 1, 0, yes</column>
 <column name=" + freqXLoop_freqYLoop">0, 0, 9, 2, 1, 0, yes</column>
-<column name="- memcpy.ram.sectionData.gep">0, 1073741824, 3, 1, 1, 0 ~ 1073741823, yes</column>
 </table>
 </item>
 </section>

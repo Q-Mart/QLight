@@ -252,7 +252,7 @@ void initModeCalculator() {
 
 void ConnectedISR(void* callBackRef, void *pVideo) {
 	int *hdmiConnected = (int*) callBackRef;
-	moveCursorTo(7, 7);
+	moveCursorTo(9, 7);
 	if (*hdmiConnected) {
 		*hdmiConnected = 0;
 		printf("disconnected\r\n");
@@ -266,6 +266,15 @@ void setSectionLEDColour(Section s, u8 r, u8 g, u8 b) {
 	for (int i=s.startLED; i<=s.endLED; i++) {
 		SetLEDColor(i, r, g, b);
 	}
+}
+
+u8 checkIfSwitchIsOn(u8 switchNumber) {
+	unsigned char switchVal = XGpio_DiscreteRead(&gpio, 1);
+	if (switchVal & 1 << (switchNumber - 1)) {
+		return 1;
+	}
+
+	return 0;
 }
 
 void printGreeting() {
@@ -305,9 +314,13 @@ void updateThresholdOnTerm() {
 	printf("%"PRIu32"                        \r\n", colourThreshold);
 }
 
+void updateModeVersionOnTerm(u32 versionNum) {
+	moveCursorTo(7, 23);
+	printf("%"PRIu32"     \r\n", versionNum);
+}
+
 void getSyncMode() {
-	unsigned char switchVal = XGpio_DiscreteRead(&gpio, 1);
-	if (switchVal == 1) {
+	if (checkIfSwitchIsOn(1)) {
 		syncMode = 1;
 	} else {
 		syncMode = 0;
@@ -324,12 +337,6 @@ void moveScaledSectionDataToFrame(Section *s, u8 *sData, u8 *frame, u32 stride) 
 		memcpy(frame+frameStartIndex, sData+sectionStartIndex, s->scaledLength*3);
 	}
 
-}
-
-void showBits(unsigned int x) {
-    for(int i = (sizeof(int) * 8) - 1; i >= 0; i--) {
-       (x & (1u << i)) ? putchar('1') : putchar('0');
-    }
 }
 
 
@@ -359,7 +366,7 @@ int main() {
 
 	resetTerminal();
 
-	printf("QLight Version %.1f: CPU Only Implementation\r\n", VERSION);
+	printf("QLight Version %.1f: HW Accelerated mode\r\n", VERSION);
 	printf("\r\n");
 
 	getSyncMode();
@@ -370,6 +377,9 @@ int main() {
 	}
 	printf("Subsample delay (ns): %"PRIu32"\r\n", subsampleDelay);
 	printf("Threshold: %"PRIu32"\r\n", colourThreshold);
+	printf("\r\n");
+
+	printf("modeComputer version: \r\n");
 	printf("\r\n");
 
 	printf("HDMI: disconnected\r\n");
@@ -400,18 +410,11 @@ int main() {
 				  sections[i].height,
 				  sections[i].scaledLength);
 
-//			memcpy(ram, sectionData, sections[i].scaledLength * sections[i].scaledHeight * 3);
 
 			for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
 				ram[j] = sectionData[j];
-				unsigned char switchVal = XGpio_DiscreteRead(&gpio, 1);
-//				if (switchVal == 2 && sectionData[j] == 0) {
-//					printf("j: %d\t%d\t%d\r\n", j, sectionData[j], ram[j]);
-//					usleep(200000);
-//				}
 			}
 
-			u32 version;
 			u32 r;
 			u32 g;
 			u32 b;
@@ -419,18 +422,7 @@ int main() {
 			u32 length = sections[i].scaledLength;
 			u32 height = sections[i].scaledHeight;
 
-
-
-//			modePixel = mode(ram,
-//							 &length,
-//							 &height,
-//							 &r,
-//							 &g,
-//							 &b,
-//							 &version);
-
 			Xil_DCacheFlush();
-
 
 			XToplevel_Set_height(&modeCalc, height);
 			XToplevel_Set_length_r(&modeCalc, length);
@@ -438,34 +430,16 @@ int main() {
 			while(!XToplevel_IsDone(&modeCalc));
 			Xil_DCacheInvalidate();
 
+			updateModeVersionOnTerm(XToplevel_Get_return(&modeCalc));
+
 			r = XToplevel_Get_r(&modeCalc);
 			g = XToplevel_Get_g(&modeCalc);
 			b = XToplevel_Get_b(&modeCalc);
 
-			for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
-				if (ram[j] != sectionData[j]) {
-//					printf("Different values for %d in section %d. ram: %d \t sectionData: %d\r\n",
-//							i, j, ram[j], sectionData[j]);
-				}
-			}
-
-//			memcpy(modeBGR, modePixel, 3);
 			modeBGR[0] = r;
 			modeBGR[1] = g;
 			modeBGR[2] = b;
-//			printf("%d:\t%d\t%d\t%d\r\n", i+1, b, g, r);
-//			showBits(modePixel);
-//			printf("\t");
-//			showBits(modeBGR[2]);
-//			printf("\t");
-//			showBits(modeBGR[1]);
-//			printf("\t");
-//			showBits(modeBGR[0]);
-//			printf("\r\n");
 
-//			for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
-//				sectionData[j] = ram[j];
-//			}
 
 			setSectionLEDColour(sections[i], modeBGR[2], modeBGR[1], modeBGR[0]);
 
@@ -486,13 +460,13 @@ int main() {
 				switchVal = XGpio_DiscreteRead(&gpio, 1);
 
 				if (!done) {
+					printf("Printing data for section %d\r\n", i);
 					for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
 						printf("%d\r\n", sectionData[j]);
 					}
 					done = 1;
 				}
 			}
-		}
 		}
 
 		if (!syncMode) {
@@ -510,12 +484,9 @@ int main() {
 			VideoChangeFrame(&videoCapt, nextFrame);
 		}
 
-//		updateSyncModeOnTerm();
-//		updateSubsamplingRateOnTerm();
+		updateSyncModeOnTerm();
+		updateSubsamplingRateOnTerm();
 
 		usleep(subsampleDelay);
-
-
-
-
+	}
 }

@@ -1,1 +1,1 @@
-#define SCALE_DEBUG
+//#define SCALE_DEBUG

@@ -20,7 +20,7 @@
     "ClockPeriod": "7.5",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "22",
+    "Latency": "17",
     "Uncertainty": "0.9375"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 7.500 [get_ports ap_clk]"]},
@@ -613,46 +613,6 @@
               "description": "Reserved.  0s on read."
             }
           ]
-        },
-        {
-          "offset": "0x48",
-          "name": "version",
-          "access": "R",
-          "reset_value": "0x0",
-          "description": "Data signal of version",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "version",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of version"
-            }]
-        },
-        {
-          "offset": "0x4c",
-          "name": "version_ctrl",
-          "access": "R",
-          "reset_value": "0x0",
-          "description": "Control signal of version",
-          "fields": [
-            {
-              "offset": "0",
-              "width": "1",
-              "name": "version_ap_vld",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Control signal version_ap_vld"
-            },
-            {
-              "offset": "1",
-              "width": "31",
-              "name": "RESERVED",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Reserved.  0s on read."
-            }
-          ]
         }
       ],
       "memories": "",
@@ -1013,7 +973,7 @@
       "statusOffset": "52",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "21"
+      "firstOutLatency": "25"
     },
     "g": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1022,7 +982,7 @@
       "statusOffset": "60",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "21"
+      "firstOutLatency": "25"
     },
     "b": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1031,16 +991,7 @@
       "statusOffset": "68",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "21"
-    },
-    "version": {
-      "interfaceRef": "s_axi_AXILiteS",
-      "dir": "out",
-      "offset": "72",
-      "statusOffset": "76",
-      "handshakeRef": "ap_vld",
-      "Object": "AXILiteS",
-      "firstOutLatency": "10"
+      "firstOutLatency": "25"
     },
     "ap_return": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1064,12 +1015,12 @@
     "Hierarchy": {"ModuleName": "toplevel"},
     "Metrics": {"toplevel": {
         "Latency": {
-          "LatencyBest": "22",
+          "LatencyBest": "17",
           "LatencyAvg": "",
-          "LatencyWorst": "2147483670",
-          "PipelineIIMin": "23",
-          "PipelineIIMax": "2147483671",
-          "PipelineII": "23 ~ 2147483671",
+          "LatencyWorst": "1073741841",
+          "PipelineIIMin": "18",
+          "PipelineIIMax": "1073741842",
+          "PipelineII": "18 ~ 1073741842",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1093,9 +1044,9 @@
             "TripCount": "0",
             "Latency": "0",
             "PipelineII": "",
-            "PipelineDepthMin": "10",
-            "PipelineDepthMax": "13",
-            "PipelineDepth": "10 ~ 13",
+            "PipelineDepthMin": "11",
+            "PipelineDepthMax": "14",
+            "PipelineDepth": "11 ~ 14",
             "Loops": [
               {
                 "Name": "visitedLoop",
@@ -1112,22 +1063,13 @@
                 "PipelineDepth": "9"
               }
             ]
-          },
-          {
-            "Name": "memcpy.ram.sectionData.gep",
-            "TripCount": "",
-            "LatencyMin": "0",
-            "LatencyMax": "1073741824",
-            "Latency": "0 ~ 1073741824",
-            "PipelineII": "1",
-            "PipelineDepth": "3"
           }
         ],
         "Area": {
           "BRAM_18K": "34",
           "DSP48E": "13",
-          "FF": "3114",
-          "LUT": "3277"
+          "FF": "2878",
+          "LUT": "2897"
         }
       }}
   },
@@ -1138,7 +1080,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2019-03-06 09:00:05 GMT",
+    "Time": "2019-03-07 14:03:01 GMT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2.1"
   }

@@ -15,6 +15,6 @@ typedef unsigned int uint32;
 typedef int int32;
 typedef unsigned char u8;
 
-uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b, uint32 *version);
+uint32 toplevel(uint32 *ram, uint32 *length, uint32 *height, uint32 *r, uint32 *g, uint32 *b);
 
 #endif
