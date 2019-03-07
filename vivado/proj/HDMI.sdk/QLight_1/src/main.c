@@ -397,6 +397,12 @@ int main() {
 		u32 modePixel;
 		u8 modeBGR[3];
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
+
+		if (syncMode) {
+			VideoStop(&videoCapt);
+		} else {
+			VideoStart(&videoCapt);
+		}
 		for (int i=0; i<8; i++) {
 
 			// Move section from frame into section data
@@ -478,10 +484,7 @@ int main() {
 		getSyncMode();
 
 		if (syncMode) {
-			memcpy(pFrames[nextFrame], frameToProcess, sizeof(frameToProcess));
-			DisplayChangeFrame(&dispCtrl, nextFrame);
-		} else  if (previousSyncMode == 1) {
-			VideoChangeFrame(&videoCapt, nextFrame);
+			VideoStart(&videoCapt);
 		}
 
 		updateSyncModeOnTerm();
