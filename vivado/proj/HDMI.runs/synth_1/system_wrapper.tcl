@@ -32,6 +32,7 @@ set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
 set_property ip_repo_paths {
   /home/userfs/q/qj544/w2k/QLight/vivado/repo
   /home/userfs/q/qj544/w2k/QLight/modeComputer
+  /home/userfs/q/qj544/w2k/QLight/sectionSubsampler
   /home/userfs/q/qj544/w2k/QLight/components
 } [current_project]
 set_property ip_output_repo /home/userfs/q/qj544/w2k/QLight/cache [current_project]

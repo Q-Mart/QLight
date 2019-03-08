@@ -24,6 +24,7 @@
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../repo"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../modeComputer"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../sectionSubsampler"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../components"/>
     <Option Name="IPOutputRepo" Val="/home/userfs/q/qj544/w2k/QLight/cache"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -152,9 +153,9 @@
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
         <Step Id="synth_design">
+          <Option Id="FsmExtraction">0</Option>
           <Option Id="FlattenHierarchy">1</Option>
           <Option Id="Directive">0</Option>
-          <Option Id="FsmExtraction">0</Option>
         </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>

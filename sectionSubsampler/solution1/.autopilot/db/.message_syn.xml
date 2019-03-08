@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;sectionSubsampler/src/toplevel.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 363.566 ; gain = 2.215 ; free physical = 4585 ; free virtual = 24326"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 363.566 ; gain = 2.215 ; free physical = 4585 ; free virtual = 24326"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_311" tag="" content="Unrolling loop &apos;subloop&apos; (sectionSubsampler/src/toplevel.cpp:19) in function &apos;subSampleSection(unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int*)&apos;: changing partial unrolling into complete unrolling since the unrolling factor (=3) is no less than the loop trip count (=3)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 363.598 ; gain = 2.246 ; free physical = 4578 ; free virtual = 24320"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+</Messages>

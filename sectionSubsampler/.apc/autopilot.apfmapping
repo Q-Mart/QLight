@@ -4,5 +4,15 @@
     <originFiles name="toplevel.cpp" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/toplevel.cpp"/>
     <originFiles name="toplevel.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/toplevel.h"/>
   </source>
-  <testbench/>
+  <testbench>
+    <originFiles name="horizInputDataNotSampled_64.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/horizInputDataNotSampled_64.h"/>
+    <originFiles name="horizInputDataNotSampled_256.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/horizInputDataNotSampled_256.h"/>
+    <originFiles name="horizInputDataSampled_64.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/horizInputDataSampled_64.h"/>
+    <originFiles name="horizInputDataSampled_256.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/horizInputDataSampled_256.h"/>
+    <originFiles name="vertInputDataNotSampled_64.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/vertInputDataNotSampled_64.h"/>
+    <originFiles name="vertInputDataNotSampled_256.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/vertInputDataNotSampled_256.h"/>
+    <originFiles name="vertInputDataSampled_64.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/vertInputDataSampled_64.h"/>
+    <originFiles name="vertInputDataSampled_256.h" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/vertInputDataSampled_256.h"/>
+    <originFiles name="testbench.cpp" path="/home/userfs/q/qj544/w2k/QLight/sectionSubsampler/src/testbench.cpp"/>
+  </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

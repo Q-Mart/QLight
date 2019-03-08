@@ -87,6 +87,9 @@ void initSections() {
 #elif SUBSAMPLE_SCALE_FACTOR == 256
 	sections[0].scaledLength = 15;
 	sections[0].scaledHeight = 32;
+#elif SUBSAMPLE_SCALE_FACTOR == 1024
+	sections[0].scaledLength = 7;
+	sections[0].scaledHeight = 16;
 #endif
 	sections[0].startLED = 20;
 	sections[0].endLED = 23;
@@ -101,6 +104,9 @@ void initSections() {
 #elif SUBSAMPLE_SCALE_FACTOR == 256
 	sections[1].scaledLength = 37;
 	sections[1].scaledHeight = 15;
+#elif SUBSAMPLE_SCALE_FACTOR == 1024
+	sections[1].scaledLength = 18;
+	sections[1].scaledHeight = 7;
 #endif
 	sections[1].startLED = 14;
 	sections[1].endLED = 19;
@@ -115,6 +121,9 @@ void initSections() {
 #elif SUBSAMPLE_SCALE_FACTOR == 256
 	sections[2].scaledLength = 37;
 	sections[2].scaledHeight = 15;
+#elif SUBSAMPLE_SCALE_FACTOR == 1024
+	sections[2].scaledLength = 18;
+	sections[2].scaledHeight = 7;
 #endif
 	sections[2].startLED = 8;
 	sections[2].endLED = 13;
@@ -129,6 +138,10 @@ void initSections() {
 #elif SUBSAMPLE_SCALE_FACTOR == 256
 	sections[3].scaledLength = 15;
 	sections[3].scaledHeight = 32;
+#elif SUBSAMPLE_SCALE_FACTOR == 1024
+	sections[3].scaledLength = 7;
+	sections[3].scaledHeight = 16;
+
 #endif
 	sections[3].startLED = 4;
 	sections[3].endLED = 7;
@@ -143,6 +156,9 @@ void initSections() {
 #elif SUBSAMPLE_SCALE_FACTOR == 256
 	sections[4].scaledLength = 15;
 	sections[4].scaledHeight = 32;
+#elif SUBSAMPLE_SCALE_FACTOR == 1024
+	sections[4].scaledLength = 7;
+	sections[4].scaledHeight = 16;
 #endif
 	sections[4].startLED = 0;
 	sections[4].endLED = 3;
@@ -155,8 +171,11 @@ void initSections() {
 	sections[5].scaledLength = 74;
 	sections[5].scaledHeight = 29;
 #elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[2].scaledLength = 37;
-	sections[2].scaledHeight = 15;
+	sections[5].scaledLength = 37;
+	sections[5].scaledHeight = 15;
+#elif SUBSAMPLE_SCALE_FACTOR == 1024
+	sections[5].scaledLength = 18;
+	sections[5].scaledHeight = 7;
 #endif
 	sections[5].startLED = 34;
 	sections[5].endLED = 39;
@@ -169,8 +188,11 @@ void initSections() {
 	sections[6].scaledLength = 74;
 	sections[6].scaledHeight = 29;
 #elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[2].scaledLength = 37;
-	sections[2].scaledHeight = 15;
+	sections[6].scaledLength = 37;
+	sections[6].scaledHeight = 15;
+#elif SUBSAMPLE_SCALE_FACTOR == 1024
+	sections[6].scaledLength = 18;
+	sections[6].scaledHeight = 7;
 #endif
 	sections[6].startLED = 28;
 	sections[6].endLED = 33;
@@ -185,6 +207,9 @@ void initSections() {
 #elif SUBSAMPLE_SCALE_FACTOR == 256
 	sections[7].scaledLength = 15;
 	sections[7].scaledHeight = 32;
+#elif SUBSAMPLE_SCALE_FACTOR == 1024
+	sections[7].scaledLength = 7;
+	sections[7].scaledHeight = 16;
 #endif
 	sections[7].startLED = 24;
 	sections[7].endLED = 27;
@@ -429,15 +454,12 @@ int main() {
 	printf("Average");
 #elif defined(SUBSAMPLE_SCALE)
 	printf("Subsample ");
-#ifdef CPU_SCALE
-	printf("CPU ");
-#elif defined(HW_SCALE)
-	printf("HW ");
-#endif
 #if (SUBSAMPLE_SCALE_FACTOR == 64)
 	printf("64");
 #elif (SUBSAMPLE_SCALE_FACTOR == 256)
 	printf("256");
+#elif (SUBSAMPLE_SCALE_FACTOR == 1024)
+	printf("1024");
 #endif
 #endif
 	printf("\r\n");
@@ -484,10 +506,7 @@ int main() {
 			}
 
 #elif defined(SUBSAMPLE_SCALE)
-#ifdef CPU_SCALE
 			subsampleSection(SUBSAMPLE_SCALE_FACTOR, sections[i].length, sections[i].height, sectionData, ram);
-#elif defined(HW_SCALE)
-#endif
 #endif
 
 			u32 r;
