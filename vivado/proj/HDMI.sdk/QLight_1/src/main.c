@@ -81,15 +81,12 @@ void initSections() {
 	sections[0].startY = 0;
 	sections[0].length = 240;
 	sections[0].height = 525;
-#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
+#if defined(AVERAGE_SCALE)
 	sections[0].scaledLength = 29;
 	sections[0].scaledHeight = 65;
-#elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[0].scaledLength = 15;
-	sections[0].scaledHeight = 32;
-#elif SUBSAMPLE_SCALE_FACTOR == 1024
-	sections[0].scaledLength = 7;
-	sections[0].scaledHeight = 16;
+#else
+	sections[0].scaledLength = sections[0].length / SUBSAMPLE_SCALE_FACTOR;
+	sections[0].scaledHeight = sections[0].height / SUBSAMPLE_SCALE_FACTOR;
 #endif
 	sections[0].startLED = 20;
 	sections[0].endLED = 23;
@@ -98,15 +95,12 @@ void initSections() {
 	sections[1].startY = 0;
 	sections[1].length = 600;
 	sections[1].height = 240;
-#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
+#if defined(AVERAGE_SCALE)
 	sections[1].scaledLength = 74;
 	sections[1].scaledHeight = 29;
-#elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[1].scaledLength = 37;
-	sections[1].scaledHeight = 15;
-#elif SUBSAMPLE_SCALE_FACTOR == 1024
-	sections[1].scaledLength = 18;
-	sections[1].scaledHeight = 7;
+#else
+	sections[1].scaledLength = sections[1].length / SUBSAMPLE_SCALE_FACTOR;
+	sections[1].scaledHeight = sections[1].height / SUBSAMPLE_SCALE_FACTOR;
 #endif
 	sections[1].startLED = 14;
 	sections[1].endLED = 19;
@@ -115,15 +109,12 @@ void initSections() {
 	sections[2].startY = 0;
 	sections[2].length = 600;
 	sections[2].height = 240;
-#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
+#if defined(AVERAGE_SCALE)
 	sections[2].scaledLength = 74;
 	sections[2].scaledHeight = 29;
-#elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[2].scaledLength = 37;
-	sections[2].scaledHeight = 15;
-#elif SUBSAMPLE_SCALE_FACTOR == 1024
-	sections[2].scaledLength = 18;
-	sections[2].scaledHeight = 7;
+#else
+	sections[2].scaledLength = sections[2].length / SUBSAMPLE_SCALE_FACTOR;
+	sections[2].scaledHeight = sections[2].height / SUBSAMPLE_SCALE_FACTOR;
 #endif
 	sections[2].startLED = 8;
 	sections[2].endLED = 13;
@@ -132,16 +123,12 @@ void initSections() {
 	sections[3].startY = 0;
 	sections[3].length = 240;
 	sections[3].height = 525;
-#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
+#if defined(AVERAGE_SCALE)
 	sections[3].scaledLength = 29;
 	sections[3].scaledHeight = 65;
-#elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[3].scaledLength = 15;
-	sections[3].scaledHeight = 32;
-#elif SUBSAMPLE_SCALE_FACTOR == 1024
-	sections[3].scaledLength = 7;
-	sections[3].scaledHeight = 16;
-
+#else
+	sections[3].scaledLength = sections[3].length / SUBSAMPLE_SCALE_FACTOR;
+	sections[3].scaledHeight = sections[3].height / SUBSAMPLE_SCALE_FACTOR;
 #endif
 	sections[3].startLED = 4;
 	sections[3].endLED = 7;
@@ -150,15 +137,12 @@ void initSections() {
 	sections[4].startY = 525;
 	sections[4].length = 240;
 	sections[4].height = 525;
-#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
+#if defined(AVERAGE_SCALE)
 	sections[4].scaledLength = 29;
 	sections[4].scaledHeight = 65;
-#elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[4].scaledLength = 15;
-	sections[4].scaledHeight = 32;
-#elif SUBSAMPLE_SCALE_FACTOR == 1024
-	sections[4].scaledLength = 7;
-	sections[4].scaledHeight = 16;
+#else
+	sections[4].scaledLength = sections[4].length / SUBSAMPLE_SCALE_FACTOR;
+	sections[4].scaledHeight = sections[4].height / SUBSAMPLE_SCALE_FACTOR;
 #endif
 	sections[4].startLED = 0;
 	sections[4].endLED = 3;
@@ -167,15 +151,12 @@ void initSections() {
 	sections[5].startY = 810;
 	sections[5].length = 600;
 	sections[5].height = 240;
-#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
+#if defined(AVERAGE_SCALE)
 	sections[5].scaledLength = 74;
 	sections[5].scaledHeight = 29;
-#elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[5].scaledLength = 37;
-	sections[5].scaledHeight = 15;
-#elif SUBSAMPLE_SCALE_FACTOR == 1024
-	sections[5].scaledLength = 18;
-	sections[5].scaledHeight = 7;
+#else
+	sections[5].scaledLength = sections[5].length / SUBSAMPLE_SCALE_FACTOR;
+	sections[5].scaledHeight = sections[5].height / SUBSAMPLE_SCALE_FACTOR;
 #endif
 	sections[5].startLED = 34;
 	sections[5].endLED = 39;
@@ -184,15 +165,12 @@ void initSections() {
 	sections[6].startY = 810;
 	sections[6].length = 600;
 	sections[6].height = 240;
-#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
+#if defined(AVERAGE_SCALE)
 	sections[6].scaledLength = 74;
 	sections[6].scaledHeight = 29;
-#elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[6].scaledLength = 37;
-	sections[6].scaledHeight = 15;
-#elif SUBSAMPLE_SCALE_FACTOR == 1024
-	sections[6].scaledLength = 18;
-	sections[6].scaledHeight = 7;
+#else
+	sections[6].scaledLength = sections[6].length / SUBSAMPLE_SCALE_FACTOR;
+	sections[6].scaledHeight = sections[6].height / SUBSAMPLE_SCALE_FACTOR;
 #endif
 	sections[6].startLED = 28;
 	sections[6].endLED = 33;
@@ -201,15 +179,12 @@ void initSections() {
 	sections[7].startY = 525;
 	sections[7].length = 240;
 	sections[7].height = 525;
-#if defined(AVERAGE_SCALE) || SUBSAMPLE_SCALE_FACTOR == 64
+#if defined(AVERAGE_SCALE)
 	sections[7].scaledLength = 29;
 	sections[7].scaledHeight = 65;
-#elif SUBSAMPLE_SCALE_FACTOR == 256
-	sections[7].scaledLength = 15;
-	sections[7].scaledHeight = 32;
-#elif SUBSAMPLE_SCALE_FACTOR == 1024
-	sections[7].scaledLength = 7;
-	sections[7].scaledHeight = 16;
+#else
+	sections[7].scaledLength = sections[7].length / SUBSAMPLE_SCALE_FACTOR;
+	sections[7].scaledHeight = sections[7].height / SUBSAMPLE_SCALE_FACTOR;
 #endif
 	sections[7].startLED = 24;
 	sections[7].endLED = 27;
@@ -506,7 +481,7 @@ int main() {
 			}
 
 #elif defined(SUBSAMPLE_SCALE)
-			subsampleSection(SUBSAMPLE_SCALE_FACTOR, sections[i].length, sections[i].height, sectionData, ram);
+			subsampleSection((SUBSAMPLE_SCALE_FACTOR*SUBSAMPLE_SCALE_FACTOR), sections[i].length, sections[i].height, sectionData, ram);
 #endif
 
 			u32 r;

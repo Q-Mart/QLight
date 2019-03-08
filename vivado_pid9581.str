@@ -1773,3 +1773,6 @@ selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
 dismissDialog("Launch SDK"); // aa (ck)
 // Tcl Message: launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf 
 // Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,756 MB. GUI used memory: 124 MB. Current time: 3/8/19 4:26:56 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,776 MB. GUI used memory: 125 MB. Current time: 3/8/19 4:37:01 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,776 MB. GUI used memory: 123 MB. Current time: 3/8/19 5:07:01 PM GMT
