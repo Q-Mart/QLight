@@ -42,7 +42,7 @@ u16 getFrequency(u32 pixelB, u32 pixelG, u32 pixelR,
 	for (int x=0; x<length; x++) {
 		for (int y=0; y<height; y++) {
 			current = (x*3) + (length * 3 * y);
-			if (equal(sectionDataCopy[current], sectionDataCopy[current+1], sectionDataCopy[current+1],
+			if (equal(sectionDataCopy[current], sectionDataCopy[current+1], sectionDataCopy[current+2],
 					  pixelB, pixelG, pixelR))
 			{
 				result++;
@@ -53,9 +53,7 @@ u16 getFrequency(u32 pixelB, u32 pixelG, u32 pixelR,
 	return result;
 }
 
-u32 mode(u32 *ram, u32 *length, u32 *height, u32 *r, u32 *g, u32 *b, u32 *version) {
-
-	*version = 1;
+u32 mode(u32 *ram, u32 *length, u32 *height, u32 *r, u32 *g, u32 *b) {
 
 	memcpy(sectionDataCopy, ram, (*length)*(*height)*3*sizeof(u32));
 //	sectionDataCopyPtr = (u8*) sectionDataCopy;
@@ -70,8 +68,6 @@ u32 mode(u32 *ram, u32 *length, u32 *height, u32 *r, u32 *g, u32 *b, u32 *versio
 
 			current = x*3 + ((*length+1) * y * 3);
 			if (!inVisited(sectionDataCopy[current], sectionDataCopy[current+1], sectionDataCopy[current+2])) {
-
-				*version = sectionDataCopy[current+2] << 16 | sectionDataCopy[current+1] << 8 | sectionDataCopy[current];
 
 				visit(sectionDataCopy[current],
 					  sectionDataCopy[current+1],
@@ -92,4 +88,6 @@ u32 mode(u32 *ram, u32 *length, u32 *height, u32 *r, u32 *g, u32 *b, u32 *versio
 			}
 		}
 	}
+
+	return 1;
 }

@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Fri Mar  8 14:41:00 2019
+# Process ID: 9581
+# Current directory: /home/userfs/q/qj544/w2k/QLight
+# Command line: vivado
+# Log file: /home/userfs/q/qj544/w2k/QLight/vivado.log
+# Journal file: /home/userfs/q/qj544/w2k/QLight/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd}
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+open_bd_design {/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/system.bd}
+startgroup
+set_property -dict [list CONFIG.c_include_sg {1}] [get_bd_cells axi_dma_0]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/processing_system7_0/FCLK_CLK1 (133 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK1 (133 MHz)} Master {/axi_dma_0/M_AXI_SG} Slave {/processing_system7_0/S_AXI_HP0} intc_ip {/axi_interconnect_0} master_apm {0}}  [get_bd_intf_pins axi_dma_0/M_AXI_SG]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+delete_bd_objs [get_bd_intf_nets axi_dma_0_M_AXI_SG] [get_bd_intf_nets ps7_0_axi_periph_M08_AXI] [get_bd_intf_nets axi_dma_0_M_AXI_MM2S] [get_bd_cells axi_dma_0]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_run impl_1
+close_design
+open_run synth_1 -name synth_1
+report_power -name {power_1}
+file copy -force /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/impl_1/system_wrapper.sysdef /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf
+
+launch_sdk -workspace /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk -hwspec /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.sdk/system_wrapper.hdf

@@ -14,6 +14,7 @@
 #include "platform.h"
 #include "xtoplevel.h"
 
+#include "algoFlags.h"
 #include "term.h"
 #include "constants.h"
 #include "mode.h"
@@ -22,7 +23,7 @@
 #include "colour_difference.h"
 #include "subsample.h"
 #include "sectionSubsample.h"
-#include "scaleFlags.h"
+#include "timer.h"
 
 DisplayCtrl dispCtrl;
 XAxiVdma vdma;
@@ -75,6 +76,14 @@ u8 syncMode;
 // 25 cubed
 u32 colourThreshold = 1000;
 u32 subsampleDelay = 0;
+
+#ifdef TIMING
+Timer overallTimer;
+Timer scaleTimer;
+Timer modeTimer;
+
+int loggingStarted = 0;
+#endif
 
 void initSections() {
 	sections[0].startX = 0;
@@ -275,16 +284,21 @@ void initVideo() {
 		xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
 	}
 
+#ifndef TIMING
 	/*
 	 * Set the Video Detect callback to print to terminal
 	 */
 	VideoSetCallback(&videoCapt, ConnectedISR, &hdmiConnection);
+#endif
 
 	return;
 }
 
 void initGPIO() {
 	XGpio_Initialize(&gpio, XPAR_GPIO_0_DEVICE_ID);
+
+	XGpio_SetDataDirection(&gpio, 1, 0XF);
+	XGpio_SetDataDirection(&gpio, 2, 0XF);
 }
 
 void initModeCalculator() {
@@ -319,20 +333,37 @@ u8 checkIfSwitchIsOn(u8 switchNumber) {
 	return 0;
 }
 
+u8 checkIfButtonPressed(u8 buttonNumber) {
+	unsigned char val = XGpio_DiscreteRead(&gpio, 2);
+	if (val & 1 << (buttonNumber)) {
+		return 1;
+	}
+
+	return 0;
+}
+
+u8 checkIfButtonDepressed(u8 buttonNumber) {
+	if (checkIfButtonPressed(buttonNumber)) {
+		return 0;
+	}
+
+	return 1;
+}
+
 void printGreeting() {
 	resetTerminal();
 
 	printf("  /$$$$$$  /$$       /$$           /$$         /$$    \r\n");
 	printf(" /$$__  $$| $$      |__/          | $$        | $$    \r\n");
-	printf("| $$  \ $$| $$       /$$  /$$$$$$ | $$$$$$$  /$$$$$$  \r\n");
+	printf("| $$  \\ $$| $$       /$$  /$$$$$$ | $$$$$$$  /$$$$$$  \r\n");
 	printf("| $$  | $$| $$      | $$ /$$__  $$| $$__  $$|_  $$_/  \r\n");
-	printf("| $$  | $$| $$      | $$| $$  \ $$| $$  \ $$  | $$    \r\n");
+	printf("| $$  | $$| $$      | $$| $$  \\ $$| $$  \\ $$  | $$    \r\n");
 	printf("| $$/$$ $$| $$      | $$| $$  | $$| $$  | $$  | $$ /$$\r\n");
 	printf("|  $$$$$$/| $$$$$$$$| $$|  $$$$$$$| $$  | $$  |  $$$$/\r\n");
-	printf(" \____ $$$|________/|__/ \____  $$|__/  |__/   \___/  \r\n");
-	printf("      \__/               /$$  \ $$                    \r\n");
+	printf(" \\____ $$$|________/|__/ \\____  $$|__/  |__/   \\___/  \r\n");
+	printf("      \\__/               /$$  \\ $$                    \r\n");
 	printf("                        |  $$$$$$/                    \r\n");
-	printf("                         \______/                     \r\n");
+	printf("                         \\______/                     \r\n");
 	sleep(1);
 
 }
@@ -408,7 +439,7 @@ int main() {
 
 	resetTerminal();
 
-	printf("QLight Version %.1f: HW Accelerated mode\r\n", VERSION);
+	printf("QLight Version %.1f: HW Accelerated mode with section subsampling and timing\r\n", VERSION);
 	printf("\r\n");
 
 	getSyncMode();
@@ -421,7 +452,11 @@ int main() {
 	printf("Threshold: %"PRIu32"\r\n", colourThreshold);
 	printf("\r\n");
 
-	printf("modeComputer version: \r\n");
+#ifdef CPU_MODE
+	printf("CPU modeComputer\r\n");
+#elif defined(HW_MODE)
+	printf("HW modeComputer\r\n");
+#endif
 	printf("\r\n");
 
 	printf("Section scaling technique: ");
@@ -442,9 +477,21 @@ int main() {
 	printf("\r\n");
 	printf("HDMI: disconnected\r\n");
 
+#ifdef TIMING
+	printf("FPS,");
+	printf("Overall execution time (s),");
+	printf("Scaling execution time (s),");
+	printf("Mode execution time (s),");
+	printf("\r\n");
+#endif
+
 	u8 numberOfDifferencesDetected = 0;
 	u32 nextFrame;
 	while (1) {
+
+#ifdef TIMING
+		timerStart(&overallTimer);
+#endif
 		numberOfDifferencesDetected = 0;
 
 		nextFrame = videoCapt.curFrame + 1;
@@ -452,7 +499,6 @@ int main() {
 		{
 			nextFrame = 0;
 		}
-		u32 modePixel;
 		u8 modeBGR[3];
 		memcpy(frameToProcess, pFrames[videoCapt.curFrame], sizeof(frameToProcess));
 
@@ -469,6 +515,10 @@ int main() {
 				memcpy(sectionData+(j*sections[i].length*3), &frameToProcess[startIndex+(STRIDE*j)], sections[i].length*3);
 			}
 
+#ifdef TIMING
+			timerStart(&scaleTimer);
+#endif
+
 #ifdef AVERAGE_SCALE
 			scale(sectionData,
 				  sections[i].length,
@@ -484,6 +534,10 @@ int main() {
 			subsampleSection((SUBSAMPLE_SCALE_FACTOR*SUBSAMPLE_SCALE_FACTOR), sections[i].length, sections[i].height, sectionData, ram);
 #endif
 
+#ifdef TIMING
+			timerStop(&scaleTimer);
+#endif
+
 			u32 r;
 			u32 g;
 			u32 b;
@@ -491,6 +545,13 @@ int main() {
 			u32 length = sections[i].scaledLength;
 			u32 height = sections[i].scaledHeight;
 
+#ifdef TIMING
+			timerStart(&modeTimer);
+#endif
+
+#ifdef CPU_MODE
+			mode(ram, &length, &height, &r, &g, &b);
+#elif defined(HW_MODE)
 			Xil_DCacheFlush();
 
 			XToplevel_Set_height(&modeCalc, height);
@@ -498,12 +559,21 @@ int main() {
 			XToplevel_Start(&modeCalc);
 			while(!XToplevel_IsDone(&modeCalc));
 			Xil_DCacheInvalidate();
+#endif
 
+#ifndef TIMING
 			updateModeVersionOnTerm(XToplevel_Get_return(&modeCalc));
+#endif
 
+#ifdef HW_MODE
 			r = XToplevel_Get_r(&modeCalc);
 			g = XToplevel_Get_g(&modeCalc);
 			b = XToplevel_Get_b(&modeCalc);
+#endif
+
+#ifdef TIMING
+			timerStop(&modeTimer);
+#endif
 
 			modeBGR[0] = r;
 			modeBGR[1] = g;
@@ -521,21 +591,6 @@ int main() {
 				numberOfDifferencesDetected += colourDifferenceAboveThreshold(newRGB, sections[i].RGB, colourThreshold);
 				sections[i].RGB = newRGB;
 			}
-
-			usleep(20000);
-			unsigned char switchVal = XGpio_DiscreteRead(&gpio, 1);
-			int done=0;
-			while (switchVal == 2) {
-				switchVal = XGpio_DiscreteRead(&gpio, 1);
-
-				if (!done) {
-					printf("Printing data for section %d\r\n", i);
-					for (u32 j=0; j<(sections[i].scaledLength * sections[i].scaledHeight * 3); j++) {
-						printf("%d\r\n", sectionData[j]);
-					}
-					done = 1;
-				}
-			}
 		}
 
 		if (!syncMode) {
@@ -543,15 +598,34 @@ int main() {
 		}
 
 		// Update sync mode
-		u8 previousSyncMode = syncMode;
 		getSyncMode();
 
 		if (syncMode) {
 			VideoStart(&videoCapt);
 		}
 
+#ifndef TIMING
 		updateSyncModeOnTerm();
 		updateSubsamplingRateOnTerm();
+#endif
+
+#ifdef TIMING
+		timerStop(&overallTimer);
+
+		if (loggingStarted) {
+			printf("%.2f,", timerGetFPS(&overallTimer));
+			printf("%.4f,", timerGetExecutionTime(&overallTimer));
+			printf("%.8f,", timerGetExecutionTime(&scaleTimer));
+			printf("%.8f,", timerGetExecutionTime(&modeTimer));
+			printf("\r\n");
+		} else {
+			if (checkIfButtonPressed(0)) {
+				while(checkIfButtonDepressed(0));
+
+				loggingStarted = 1;
+			}
+		}
+#endif
 
 		usleep(subsampleDelay);
 	}
