@@ -612,21 +612,19 @@ int main() {
 #ifdef TIMING
 		timerStop(&overallTimer);
 
+		loggingStarted = checkIfSwitchIsOn(2);
+
 		if (loggingStarted) {
 			printf("%.2f,", timerGetFPS(&overallTimer));
 			printf("%.4f,", timerGetExecutionTime(&overallTimer));
 			printf("%.8f,", timerGetExecutionTime(&scaleTimer));
 			printf("%.8f,", timerGetExecutionTime(&modeTimer));
 			printf("\r\n");
-		} else {
-			if (checkIfButtonPressed(0)) {
-				while(checkIfButtonDepressed(0));
-
-				loggingStarted = 1;
-			}
 		}
 #endif
 
+#ifndef TIMING
 		usleep(subsampleDelay);
+#endif
 	}
 }

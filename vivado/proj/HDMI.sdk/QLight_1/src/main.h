@@ -12,6 +12,7 @@
 void initVideo();
 void initGPIO();
 void initModeCalculator();
+
 void setSectionLEDColour(Section s, u8 r, u8 g, u8 b);
 u8 checkIfSwitchIsOn(u8 switchNumber);
 u8 checkIfButtonPressed(u8 buttonNumber);
