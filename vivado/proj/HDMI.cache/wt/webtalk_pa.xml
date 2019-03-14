@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Feb 19 11:55:37 2019">
+<application name="pa" timeStamp="Thu Mar 14 16:24:56 2019">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="1ad8062a52a54da9a6726dac8e0a8cd0" type="ProjectID"/>
 <property name="ProjectIteration" value="37" type="ProjectIteration"/>
@@ -150,6 +150,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE" value="1" type="GuiHandlerData"/>
 <property name="ProgramFpgaDialog_SPECIFY_DEBUG_PROBES_FILE" value="2" type="GuiHandlerData"/>
 <property name="ProgressDialog_CANCEL" value="3" type="GuiHandlerData"/>
+<property name="ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED" value="1" type="GuiHandlerData"/>
 <property name="RDICommands_COPY" value="1" type="GuiHandlerData"/>
 <property name="RDICommands_CUSTOM_COMMANDS" value="1" type="GuiHandlerData"/>
 <property name="RDICommands_DELETE" value="1" type="GuiHandlerData"/>
@@ -166,7 +167,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY" value="3" type="GuiHandlerData"/>
 <property name="SrcMenu_IP_HIERARCHY" value="4" type="GuiHandlerData"/>
 <property name="StateMonitor_RESET_RUN" value="2" type="GuiHandlerData"/>
-<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="39" type="GuiHandlerData"/>
+<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="40" type="GuiHandlerData"/>
 <property name="SyntheticaStateMonitor_CANCEL" value="5" type="GuiHandlerData"/>
 <property name="SystemBuilderMenu_ADD_IP" value="19" type="GuiHandlerData"/>
 <property name="SystemBuilderMenu_CLEAR_DEBUG" value="15" type="GuiHandlerData"/>
@@ -188,6 +189,11 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="TriggerStatusPanel_STOP_TRIGGER_FOR_THIS_ILA_CORE" value="5" type="GuiHandlerData"/>
 <property name="TriggerStatusPanel_TOGGLE_AUTO_RE_TRIGGER_MODE" value="20" type="GuiHandlerData"/>
 <property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="11" type="GuiHandlerData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="198" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="179" type="TclMode"/>
 </item>
 </section>
 </application>
