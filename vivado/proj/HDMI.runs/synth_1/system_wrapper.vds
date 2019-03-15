@@ -2,8 +2,8 @@
 # Vivado v2018.2.1 (64-bit)
 # SW Build 2288692 on Thu Jul 26 18:23:50 MDT 2018
 # IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Fri Mar  8 15:41:11 2019
-# Process ID: 29942
+# Start of session at: Fri Mar 15 10:07:22 2019
+# Process ID: 7498
 # Current directory: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1
 # Command line: vivado -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
 # Log file: /home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/system_wrapper.vds
@@ -16,15 +16,15 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/userfs/q/qj544/w2k/QLig
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/userfs/q/qj544/w2k/QLight/sectionSubsampler'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/userfs/q/qj544/w2k/QLight/components'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/data/ip'.
-add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1282.848 ; gain = 73.789 ; free physical = 7772 ; free virtual = 27493
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1283.891 ; gain = 73.828 ; free physical = 8986 ; free virtual = 27944
 Command: synth_design -top system_wrapper -part xc7z010clg400-1 -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 29955 
+INFO: Helper process launched with PID 7571 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1391.574 ; gain = 102.855 ; free physical = 7641 ; free virtual = 27362
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1393.617 ; gain = 103.855 ; free physical = 9207 ; free virtual = 28123
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-1565] actual for formal port arst is neither a static name nor a globally static expression [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/c1e8/src/TMDS_Clocking.vhd:128]
 WARNING: [Synth 8-1565] actual for formal port arst is neither a static name nor a globally static expression [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/c1e8/src/dvi2rgb.vhd:161]
@@ -45,9 +45,9 @@ INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [/opt/york/cs/net/xi
 INFO: [Synth 8-3491] module 'IOBUF' declared at '/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_in_ddc_sda_iobuf' of component 'IOBUF' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:136]
 INFO: [Synth 8-3491] module 'IOBUF' declared at '/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_out_ddc_scl_iobuf' of component 'IOBUF' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:143]
 INFO: [Synth 8-3491] module 'IOBUF' declared at '/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_out_ddc_sda_iobuf' of component 'IOBUF' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:150]
-INFO: [Synth 8-3491] module 'system' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:7435' bound to instance 'system_i' of component 'system' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:157]
-INFO: [Synth 8-638] synthesizing module 'system' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:7490]
-INFO: [Synth 8-3491] module 'system_DigiLED_0_3' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/synth/system_DigiLED_0_3.v:56' bound to instance 'DigiLED_0' of component 'system_DigiLED_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:8700]
+INFO: [Synth 8-3491] module 'system' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:7766' bound to instance 'system_i' of component 'system' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/hdl/system_wrapper.vhd:157]
+INFO: [Synth 8-638] synthesizing module 'system' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:7821]
+INFO: [Synth 8-3491] module 'system_DigiLED_0_3' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/synth/system_DigiLED_0_3.v:56' bound to instance 'DigiLED_0' of component 'system_DigiLED_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9042]
 INFO: [Synth 8-6157] synthesizing module 'system_DigiLED_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/synth/system_DigiLED_0_3.v:56]
 INFO: [Synth 8-6157] synthesizing module 'DigiLED_v1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0.v:3]
 	Parameter NUMBER_OF_LEDS bound to: 40 - type: integer 
@@ -80,7 +80,7 @@ WARNING: [Synth 8-3936] Found unconnected internal register 'rgb_temp_reg' and i
 INFO: [Synth 8-6155] done synthesizing module 'DigiLED_v1_0_S00_AXI' (3#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0_S00_AXI.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'DigiLED_v1_0' (4#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/936f/hdl/DigiLED_v1_0.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'system_DigiLED_0_3' (5#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_DigiLED_0_3/synth/system_DigiLED_0_3.v:56]
-INFO: [Synth 8-3491] module 'system_axi_dynclk_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_dynclk_0_0/synth/system_axi_dynclk_0_0.vhd:56' bound to instance 'axi_dynclk_0' of component 'system_axi_dynclk_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:8725]
+INFO: [Synth 8-3491] module 'system_axi_dynclk_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_dynclk_0_0/synth/system_axi_dynclk_0_0.vhd:56' bound to instance 'axi_dynclk_0' of component 'system_axi_dynclk_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9067]
 INFO: [Synth 8-638] synthesizing module 'system_axi_dynclk_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_dynclk_0_0/synth/system_axi_dynclk_0_0.vhd:86]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
@@ -171,7 +171,7 @@ INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (7#1) [/opt/york/cs/n
 INFO: [Synth 8-6155] done synthesizing module 'mmcme2_drp' (8#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/9097/src/mmcme2_drp.v:50]
 INFO: [Synth 8-256] done synthesizing module 'axi_dynclk' (9#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/9097/src/axi_dynclk.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'system_axi_dynclk_0_0' (10#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_dynclk_0_0/synth/system_axi_dynclk_0_0.vhd:86]
-INFO: [Synth 8-3491] module 'system_axi_gpio_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/synth/system_axi_gpio_0_1.vhd:59' bound to instance 'axi_gpio_0' of component 'system_axi_gpio_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:8753]
+INFO: [Synth 8-3491] module 'system_axi_gpio_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/synth/system_axi_gpio_0_1.vhd:59' bound to instance 'axi_gpio_0' of component 'system_axi_gpio_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9095]
 INFO: [Synth 8-638] synthesizing module 'system_axi_gpio_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/synth/system_axi_gpio_0_1.vhd:85]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -344,7 +344,7 @@ WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (16#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/c193/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (17#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/c193/hdl/axi_gpio_v2_0_vh_rfs.vhd:1358]
 INFO: [Synth 8-256] done synthesizing module 'system_axi_gpio_0_1' (18#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_1/synth/system_axi_gpio_0_1.vhd:85]
-INFO: [Synth 8-3491] module 'system_axi_gpio_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_0/synth/system_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_video' of component 'system_axi_gpio_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:8777]
+INFO: [Synth 8-3491] module 'system_axi_gpio_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_0/synth/system_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_video' of component 'system_axi_gpio_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9119]
 INFO: [Synth 8-638] synthesizing module 'system_axi_gpio_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_0/synth/system_axi_gpio_0_0.vhd:86]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
@@ -565,7 +565,7 @@ WARNING: [Synth 8-6014] Unused sequential element Dual.ALLIN0_ND_G2.READ_REG2_GE
 INFO: [Synth 8-256] done synthesizing module 'GPIO_Core__parameterized0' (19#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/c193/hdl/axi_gpio_v2_0_vh_rfs.vhd:178]
 INFO: [Synth 8-256] done synthesizing module 'axi_gpio__parameterized1' (19#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/c193/hdl/axi_gpio_v2_0_vh_rfs.vhd:1358]
 INFO: [Synth 8-256] done synthesizing module 'system_axi_gpio_0_0' (20#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_gpio_0_0/synth/system_axi_gpio_0_0.vhd:86]
-INFO: [Synth 8-638] synthesizing module 'system_axi_interconnect_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3698]
+INFO: [Synth 8-638] synthesizing module 'system_axi_interconnect_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3865]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_LCIC31' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:201]
 INFO: [Synth 8-3491] module 'system_auto_pc_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58' bound to instance 'auto_pc' of component 'system_auto_pc_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:568]
 INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
@@ -1061,8 +1061,8 @@ INFO: [Synth 8-6155] done synthesizing module 'system_m00_regslice_0' (52#1) [/h
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_LCIC31' (53#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:201]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1QVELOC' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:823]
 INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1QVELOC' (54#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:823]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_Y9JEWS' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2242]
-INFO: [Synth 8-3491] module 'system_s00_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s00_regslice_0/synth/system_s00_regslice_0.v:58' bound to instance 's00_regslice' of component 'system_s00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2343]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_Y9JEWS' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2257]
+INFO: [Synth 8-3491] module 'system_s00_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s00_regslice_0/synth/system_s00_regslice_0.v:58' bound to instance 's00_regslice' of component 'system_s00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2358]
 INFO: [Synth 8-6157] synthesizing module 'system_s00_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s00_regslice_0/synth/system_s00_regslice_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_17_axi_register_slice__parameterized0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:2417]
 	Parameter C_FAMILY bound to: zynq - type: string 
@@ -1388,9 +1388,9 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__
 INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (54#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_17_axi_register_slice__parameterized0' (54#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:2417]
 INFO: [Synth 8-6155] done synthesizing module 'system_s00_regslice_0' (55#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s00_regslice_0/synth/system_s00_regslice_0.v:58]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_Y9JEWS' (56#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2242]
-INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_1N4HKML' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2428]
-INFO: [Synth 8-3491] module 'system_s01_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s01_regslice_0/synth/system_s01_regslice_0.v:58' bound to instance 's01_regslice' of component 'system_s01_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2547]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_Y9JEWS' (56#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2257]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_1N4HKML' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2443]
+INFO: [Synth 8-3491] module 'system_s01_regslice_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s01_regslice_0/synth/system_s01_regslice_0.v:58' bound to instance 's01_regslice' of component 'system_s01_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2562]
 INFO: [Synth 8-6157] synthesizing module 'system_s01_regslice_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s01_regslice_0/synth/system_s01_regslice_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_17_axi_register_slice__parameterized1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:2417]
 	Parameter C_FAMILY bound to: zynq - type: string 
@@ -1520,9 +1520,9 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_17_axic_regist
 INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_17_axic_register_slice__parameterized10' (56#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:189]
 INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_17_axi_register_slice__parameterized1' (56#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:2417]
 INFO: [Synth 8-6155] done synthesizing module 'system_s01_regslice_0' (57#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_s01_regslice_0/synth/system_s01_regslice_0.v:58]
-INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_1N4HKML' (58#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2428]
-INFO: [Synth 8-638] synthesizing module 's02_couplers_imp_1Y5U2QN' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2672]
-INFO: [Synth 8-3491] module 'system_auto_us_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_us_0/synth/system_auto_us_0.v:58' bound to instance 'auto_us' of component 'system_auto_us_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2892]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_1N4HKML' (58#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2443]
+INFO: [Synth 8-638] synthesizing module 's02_couplers_imp_1Y5U2QN' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2687]
+INFO: [Synth 8-3491] module 'system_auto_us_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_us_0/synth/system_auto_us_0.v:58' bound to instance 'auto_us' of component 'system_auto_us_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2907]
 INFO: [Synth 8-6157] synthesizing module 'system_auto_us_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_us_0/synth/system_auto_us_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_17_top' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/2839/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:14462]
 	Parameter C_FAMILY bound to: zynq - type: string 
@@ -2113,14 +2113,14 @@ WARNING: [Synth 8-350] instance 'si_register_slice_inst' of module 'axi_register
 INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_17_axi_upsizer' (63#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/2839/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7038]
 INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_17_top' (64#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/2839/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:14462]
 INFO: [Synth 8-6155] done synthesizing module 'system_auto_us_0' (65#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_us_0/synth/system_auto_us_0.v:58]
-INFO: [Synth 8-256] done synthesizing module 's02_couplers_imp_1Y5U2QN' (66#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2672]
-INFO: [Synth 8-638] synthesizing module 's03_couplers_imp_MY7POU' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3055]
-INFO: [Synth 8-256] done synthesizing module 's03_couplers_imp_MY7POU' (67#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3055]
-INFO: [Synth 8-638] synthesizing module 's04_couplers_imp_1CN3ZY3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3208]
-INFO: [Synth 8-256] done synthesizing module 's04_couplers_imp_1CN3ZY3' (68#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3208]
-INFO: [Synth 8-638] synthesizing module 's05_couplers_imp_BJ8RU' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3337]
-INFO: [Synth 8-256] done synthesizing module 's05_couplers_imp_BJ8RU' (69#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3337]
-INFO: [Synth 8-3491] module 'system_xbar_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_1/synth/system_xbar_1.v:59' bound to instance 'xbar' of component 'system_xbar_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5082]
+INFO: [Synth 8-256] done synthesizing module 's02_couplers_imp_1Y5U2QN' (66#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2687]
+INFO: [Synth 8-638] synthesizing module 's03_couplers_imp_MY7POU' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3070]
+INFO: [Synth 8-256] done synthesizing module 's03_couplers_imp_MY7POU' (67#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3070]
+INFO: [Synth 8-638] synthesizing module 's04_couplers_imp_1CN3ZY3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3271]
+INFO: [Synth 8-256] done synthesizing module 's04_couplers_imp_1CN3ZY3' (68#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3271]
+INFO: [Synth 8-638] synthesizing module 's05_couplers_imp_BJ8RU' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3472]
+INFO: [Synth 8-256] done synthesizing module 's05_couplers_imp_BJ8RU' (69#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3472]
+INFO: [Synth 8-3491] module 'system_xbar_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_1/synth/system_xbar_1.v:59' bound to instance 'xbar' of component 'system_xbar_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:5318]
 INFO: [Synth 8-6157] synthesizing module 'system_xbar_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_1/synth/system_xbar_1.v:59]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_axi_crossbar' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
 	Parameter C_FAMILY bound to: zynq - type: string 
@@ -3315,8 +3315,8 @@ INFO: [Synth 8-3936] Found unconnected internal register 'gen_arbiter.next_rr_ho
 WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[0].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:2997]
 WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[1].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:2997]
 WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[2].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:2997]
-INFO: [Synth 8-256] done synthesizing module 'system_axi_interconnect_0_0' (87#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3698]
-INFO: [Synth 8-3491] module 'system_axi_vdma_0_3' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_vdma_0_3/synth/system_axi_vdma_0_3.vhd:59' bound to instance 'axi_vdma_0' of component 'system_axi_vdma_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9043]
+INFO: [Synth 8-256] done synthesizing module 'system_axi_interconnect_0_0' (87#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:3865]
+INFO: [Synth 8-3491] module 'system_axi_vdma_0_3' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_vdma_0_3/synth/system_axi_vdma_0_3.vhd:59' bound to instance 'axi_vdma_0' of component 'system_axi_vdma_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9417]
 INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_0_3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_vdma_0_3/synth/system_axi_vdma_0_3.vhd:131]
 	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
@@ -5948,7 +5948,7 @@ INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM ge
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-256] done synthesizing module 'system_axi_vdma_0_3' (172#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axi_vdma_0_3/synth/system_axi_vdma_0_3.vhd:131]
-INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_0/synth/system_axis_subset_converter_0_0.v:58' bound to instance 'axis_subset_converter_in' of component 'system_axis_subset_converter_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9113]
+INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_0/synth/system_axis_subset_converter_0_0.v:58' bound to instance 'axis_subset_converter_in' of component 'system_axis_subset_converter_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9487]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
 	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
@@ -6047,7 +6047,7 @@ INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_0' declared at '/hom
 	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
 	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/synth/system_axis_subset_converter_0_1.v:58' bound to instance 'axis_subset_converter_out' of component 'system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9128]
+INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_axis_subset_converter_0_1/synth/system_axis_subset_converter_0_1.v:58' bound to instance 'axis_subset_converter_out' of component 'system_axis_subset_converter_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9502]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
 	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
@@ -6146,7 +6146,7 @@ INFO: [Synth 8-3491] module 'system_axis_subset_converter_0_1' declared at '/hom
 	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
 	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'system_dvi2rgb_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_dvi2rgb_0_0/synth/system_dvi2rgb_0_0.vhd:56' bound to instance 'dvi2rgb_0' of component 'system_dvi2rgb_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9145]
+INFO: [Synth 8-3491] module 'system_dvi2rgb_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_dvi2rgb_0_0/synth/system_dvi2rgb_0_0.vhd:56' bound to instance 'dvi2rgb_0' of component 'system_dvi2rgb_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9519]
 INFO: [Synth 8-638] synthesizing module 'system_dvi2rgb_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_dvi2rgb_0_0/synth/system_dvi2rgb_0_0.vhd:80]
 	Parameter kEmulateDDC bound to: 1 - type: bool 
 	Parameter kRstActiveHigh bound to: 0 - type: bool 
@@ -6363,7 +6363,7 @@ INFO: [Synth 8-226] default block is never used [/home/userfs/q/qj544/w2k/QLight
 INFO: [Synth 8-256] done synthesizing module 'EEPROM_8b' (202#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/c1e8/src/EEPROM_8b.vhd:85]
 INFO: [Synth 8-256] done synthesizing module 'dvi2rgb' (203#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/c1e8/src/dvi2rgb.vhd:110]
 INFO: [Synth 8-256] done synthesizing module 'system_dvi2rgb_0_0' (204#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_dvi2rgb_0_0/synth/system_dvi2rgb_0_0.vhd:80]
-INFO: [Synth 8-3491] module 'system_proc_sys_reset_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_0_0/synth/system_proc_sys_reset_0_0.vhd:59' bound to instance 'proc_sys_reset_0' of component 'system_proc_sys_reset_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9167]
+INFO: [Synth 8-3491] module 'system_proc_sys_reset_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_0_0/synth/system_proc_sys_reset_0_0.vhd:59' bound to instance 'proc_sys_reset_0' of component 'system_proc_sys_reset_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9541]
 INFO: [Synth 8-638] synthesizing module 'system_proc_sys_reset_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_0_0/synth/system_proc_sys_reset_0_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -6445,7 +6445,7 @@ INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (207#1) [/home/userfs/q/q
 INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (208#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
 INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (209#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
 INFO: [Synth 8-256] done synthesizing module 'system_proc_sys_reset_0_0' (210#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_0_0/synth/system_proc_sys_reset_0_0.vhd:74]
-INFO: [Synth 8-3491] module 'system_proc_sys_reset_1_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_1_0/synth/system_proc_sys_reset_1_0.vhd:59' bound to instance 'proc_sys_reset_1' of component 'system_proc_sys_reset_1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9180]
+INFO: [Synth 8-3491] module 'system_proc_sys_reset_1_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_1_0/synth/system_proc_sys_reset_1_0.vhd:59' bound to instance 'proc_sys_reset_1' of component 'system_proc_sys_reset_1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9554]
 INFO: [Synth 8-638] synthesizing module 'system_proc_sys_reset_1_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_1_0/synth/system_proc_sys_reset_1_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -6458,7 +6458,7 @@ INFO: [Synth 8-638] synthesizing module 'system_proc_sys_reset_1_0' [/home/userf
 	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
 INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1264' bound to instance 'U0' of component 'proc_sys_reset' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_1_0/synth/system_proc_sys_reset_1_0.vhd:129]
 INFO: [Synth 8-256] done synthesizing module 'system_proc_sys_reset_1_0' (211#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_proc_sys_reset_1_0/synth/system_proc_sys_reset_1_0.vhd:74]
-INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9193]
+INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9567]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -6518,7 +6518,7 @@ INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at '/home/u
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
 WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:497]
-INFO: [Synth 8-638] synthesizing module 'system_ps7_0_axi_periph_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:6063]
+INFO: [Synth 8-638] synthesizing module 'system_ps7_0_axi_periph_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:6428]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1H7AUOX' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1H7AUOX' (217#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:57]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_4Y7TYO' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:990]
@@ -6903,10 +6903,10 @@ INFO: [Synth 8-4471] merging register 'dest_req_ext_ff_reg' into 'dest_req_ff_re
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_IE0TQS' (229#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1613]
-INFO: [Synth 8-638] synthesizing module 'm08_couplers_imp_1KSFJCE' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1834]
-INFO: [Synth 8-256] done synthesizing module 'm08_couplers_imp_1KSFJCE' (230#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1834]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_11SE3QO' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1955]
-INFO: [Synth 8-3491] module 'system_auto_pc_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_1/synth/system_auto_pc_1.v:58' bound to instance 'auto_pc' of component 'system_auto_pc_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2138]
+INFO: [Synth 8-638] synthesizing module 'm08_couplers_imp_1KSFJCE' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1840]
+INFO: [Synth 8-256] done synthesizing module 'm08_couplers_imp_1KSFJCE' (230#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1840]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_11SE3QO' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1970]
+INFO: [Synth 8-3491] module 'system_auto_pc_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_auto_pc_1/synth/system_auto_pc_1.v:58' bound to instance 'auto_pc' of component 'system_auto_pc_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:2153]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_M_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_S_AXI_PROTOCOL bound to: 1 - type: integer 
@@ -7617,8 +7617,8 @@ WARNING: [Synth 8-350] instance 'SI_REG' of module 'axi_register_slice_v2_1_17_a
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
 WARNING: [Synth 8-350] instance 'MI_REG' of module 'axi_register_slice_v2_1_17_axi_register_slice' requires 93 connections, but only 92 given [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/ccfb/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4650]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_11SE3QO' (243#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1955]
-INFO: [Synth 8-3491] module 'system_xbar_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_0/synth/system_xbar_0.v:59' bound to instance 'xbar' of component 'system_xbar_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:7206]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_11SE3QO' (243#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:1970]
+INFO: [Synth 8-3491] module 'system_xbar_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xbar_0/synth/system_xbar_0.v:59' bound to instance 'xbar' of component 'system_xbar_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:7537]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
 	Parameter C_NUM_MASTER_SLOTS bound to: 9 - type: integer 
@@ -7818,8 +7818,8 @@ INFO: [Synth 8-3491] module 'system_xbar_0' declared at '/home/userfs/q/qj544/w2
 	Parameter C_RATIO bound to: 10 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 4 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'system_ps7_0_axi_periph_0' (247#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:6063]
-INFO: [Synth 8-3491] module 'system_rgb2dvi_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rgb2dvi_0_0/synth/system_rgb2dvi_0_0.vhd:56' bound to instance 'rgb2dvi_0' of component 'system_rgb2dvi_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9539]
+INFO: [Synth 8-256] done synthesizing module 'system_ps7_0_axi_periph_0' (247#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:6428]
+INFO: [Synth 8-3491] module 'system_rgb2dvi_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rgb2dvi_0_0/synth/system_rgb2dvi_0_0.vhd:56' bound to instance 'rgb2dvi_0' of component 'system_rgb2dvi_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9916]
 INFO: [Synth 8-638] synthesizing module 'system_rgb2dvi_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rgb2dvi_0_0/synth/system_rgb2dvi_0_0.vhd:72]
 	Parameter kGenerateSerialClk bound to: 0 - type: bool 
 	Parameter kClkPrimitive bound to: PLL - type: string 
@@ -7902,7 +7902,7 @@ INFO: [Synth 8-638] synthesizing module 'TMDS_Encoder' [/home/userfs/q/qj544/w2k
 INFO: [Synth 8-256] done synthesizing module 'TMDS_Encoder' (249#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/20df/src/TMDS_Encoder.vhd:80]
 INFO: [Synth 8-256] done synthesizing module 'rgb2dvi' (250#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/20df/src/rgb2dvi.vhd:94]
 INFO: [Synth 8-256] done synthesizing module 'system_rgb2dvi_0_0' (251#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rgb2dvi_0_0/synth/system_rgb2dvi_0_0.vhd:72]
-INFO: [Synth 8-3491] module 'system_rst_axi_dynclk_0_100M_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/synth/system_rst_axi_dynclk_0_100M_0.vhd:59' bound to instance 'rst_axi_dynclk_0_100M' of component 'system_rst_axi_dynclk_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9553]
+INFO: [Synth 8-3491] module 'system_rst_axi_dynclk_0_100M_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/synth/system_rst_axi_dynclk_0_100M_0.vhd:59' bound to instance 'rst_axi_dynclk_0_100M' of component 'system_rst_axi_dynclk_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9930]
 INFO: [Synth 8-638] synthesizing module 'system_rst_axi_dynclk_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/synth/system_rst_axi_dynclk_0_100M_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -7915,7 +7915,7 @@ INFO: [Synth 8-638] synthesizing module 'system_rst_axi_dynclk_0_100M_0' [/home/
 	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
 INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1264' bound to instance 'U0' of component 'proc_sys_reset' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/synth/system_rst_axi_dynclk_0_100M_0.vhd:129]
 INFO: [Synth 8-256] done synthesizing module 'system_rst_axi_dynclk_0_100M_0' (252#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_axi_dynclk_0_100M_0/synth/system_rst_axi_dynclk_0_100M_0.vhd:74]
-INFO: [Synth 8-3491] module 'system_rst_ps7_0_100M_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_ps7_0_100M_0/synth/system_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'system_rst_ps7_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9566]
+INFO: [Synth 8-3491] module 'system_rst_ps7_0_100M_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_ps7_0_100M_0/synth/system_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'system_rst_ps7_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9943]
 INFO: [Synth 8-638] synthesizing module 'system_rst_ps7_0_100M_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_ps7_0_100M_0/synth/system_rst_ps7_0_100M_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -7928,7 +7928,7 @@ INFO: [Synth 8-638] synthesizing module 'system_rst_ps7_0_100M_0' [/home/userfs/
 	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
 INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1264' bound to instance 'U0' of component 'proc_sys_reset' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_ps7_0_100M_0/synth/system_rst_ps7_0_100M_0.vhd:129]
 INFO: [Synth 8-256] done synthesizing module 'system_rst_ps7_0_100M_0' (253#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_rst_ps7_0_100M_0/synth/system_rst_ps7_0_100M_0.vhd:74]
-INFO: [Synth 8-3491] module 'system_toplevel_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_toplevel_0_0/synth/system_toplevel_0_0.vhd:56' bound to instance 'toplevel_0' of component 'system_toplevel_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9579]
+INFO: [Synth 8-3491] module 'system_toplevel_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_toplevel_0_0/synth/system_toplevel_0_0.vhd:56' bound to instance 'toplevel_0' of component 'system_toplevel_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9956]
 INFO: [Synth 8-638] synthesizing module 'system_toplevel_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_toplevel_0_0/synth/system_toplevel_0_0.vhd:116]
 	Parameter C_S_AXI_AXILITES_ADDR_WIDTH bound to: 7 - type: integer 
 	Parameter C_S_AXI_AXILITES_DATA_WIDTH bound to: 32 - type: integer 
@@ -7943,8 +7943,8 @@ INFO: [Synth 8-638] synthesizing module 'system_toplevel_0_0' [/home/userfs/q/qj
 	Parameter C_M_AXI_MAXI_USER_VALUE bound to: 0 - type: integer 
 	Parameter C_M_AXI_MAXI_PROT_VALUE bound to: 0 - type: integer 
 	Parameter C_M_AXI_MAXI_CACHE_VALUE bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:12' bound to instance 'U0' of component 'toplevel' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_toplevel_0_0/synth/system_toplevel_0_0.vhd:278]
-INFO: [Synth 8-638] synthesizing module 'toplevel' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:96]
+INFO: [Synth 8-3491] module 'toplevel' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:12' bound to instance 'U0' of component 'toplevel' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_toplevel_0_0/synth/system_toplevel_0_0.vhd:278]
+INFO: [Synth 8-638] synthesizing module 'toplevel' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:96]
 	Parameter C_M_AXI_MAXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXI_MAXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_M_AXI_MAXI_AWUSER_WIDTH bound to: 1 - type: integer 
@@ -7958,63 +7958,63 @@ INFO: [Synth 8-638] synthesizing module 'toplevel' [/home/userfs/q/qj544/w2k/QLi
 	Parameter C_M_AXI_MAXI_USER_VALUE bound to: 0 - type: integer 
 	Parameter C_M_AXI_MAXI_PROT_VALUE bound to: 0 - type: integer 
 	Parameter C_M_AXI_MAXI_CACHE_VALUE bound to: 3 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:186]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:189]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:232]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:235]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:271]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:278]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:287]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:291]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:297]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:310]
-INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:312]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:316]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:319]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:322]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:328]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:338]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:186]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:189]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:232]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:235]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:271]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:278]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:287]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:291]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:297]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:310]
+INFO: [Synth 8-5534] Detected attribute (* use_dsp48 = "no" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:312]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:316]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:319]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:322]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:328]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:338]
 INFO: [Common 17-14] Message 'Synth 8-5534' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 6750 - type: integer 
 	Parameter AddressWidth bound to: 13 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_sectionDbkb' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_sectionDbkb.vhd:101' bound to instance 'sectionData_U' of component 'toplevel_sectionDbkb' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:761]
-INFO: [Synth 8-638] synthesizing module 'toplevel_sectionDbkb' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_sectionDbkb.vhd:119]
+INFO: [Synth 8-3491] module 'toplevel_sectionDbkb' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_sectionDbkb.vhd:101' bound to instance 'sectionData_U' of component 'toplevel_sectionDbkb' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:761]
+INFO: [Synth 8-638] synthesizing module 'toplevel_sectionDbkb' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_sectionDbkb.vhd:119]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 6750 - type: integer 
 	Parameter AddressWidth bound to: 13 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_sectionDbkb_ram' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_sectionDbkb.vhd:13' bound to instance 'toplevel_sectionDbkb_ram_U' of component 'toplevel_sectionDbkb_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_sectionDbkb.vhd:136]
-INFO: [Synth 8-638] synthesizing module 'toplevel_sectionDbkb_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_sectionDbkb.vhd:34]
+INFO: [Synth 8-3491] module 'toplevel_sectionDbkb_ram' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_sectionDbkb.vhd:13' bound to instance 'toplevel_sectionDbkb_ram_U' of component 'toplevel_sectionDbkb_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_sectionDbkb.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'toplevel_sectionDbkb_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_sectionDbkb.vhd:34]
 	Parameter MEM_TYPE bound to: block - type: string 
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 13 - type: integer 
 	Parameter MEM_SIZE bound to: 6750 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'toplevel_sectionDbkb_ram' (254#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_sectionDbkb.vhd:34]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_sectionDbkb' (255#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_sectionDbkb.vhd:119]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_sectionDbkb_ram' (254#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_sectionDbkb.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_sectionDbkb' (255#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_sectionDbkb.vhd:119]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 6750 - type: integer 
 	Parameter AddressWidth bound to: 13 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_visited' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_visited.vhd:106' bound to instance 'visited_U' of component 'toplevel_visited' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:778]
-INFO: [Synth 8-638] synthesizing module 'toplevel_visited' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_visited.vhd:126]
+INFO: [Synth 8-3491] module 'toplevel_visited' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_visited.vhd:106' bound to instance 'visited_U' of component 'toplevel_visited' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:778]
+INFO: [Synth 8-638] synthesizing module 'toplevel_visited' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_visited.vhd:126]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 6750 - type: integer 
 	Parameter AddressWidth bound to: 13 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_visited_ram' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_visited.vhd:13' bound to instance 'toplevel_visited_ram_U' of component 'toplevel_visited_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_visited.vhd:145]
-INFO: [Synth 8-638] synthesizing module 'toplevel_visited_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_visited.vhd:36]
+INFO: [Synth 8-3491] module 'toplevel_visited_ram' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_visited.vhd:13' bound to instance 'toplevel_visited_ram_U' of component 'toplevel_visited_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_visited.vhd:145]
+INFO: [Synth 8-638] synthesizing module 'toplevel_visited_ram' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_visited.vhd:36]
 	Parameter MEM_TYPE bound to: block - type: string 
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 13 - type: integer 
 	Parameter MEM_SIZE bound to: 6750 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'toplevel_visited_ram' (256#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_visited.vhd:36]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_visited' (257#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_visited.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_visited_ram' (256#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_visited.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_visited' (257#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_visited.vhd:126]
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_AXILiteS_s_axi' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_AXILiteS_s_axi.vhd:12' bound to instance 'toplevel_AXILiteS_s_axi_U' of component 'toplevel_AXILiteS_s_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:797]
-INFO: [Synth 8-638] synthesizing module 'toplevel_AXILiteS_s_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_AXILiteS_s_axi.vhd:104]
+INFO: [Synth 8-3491] module 'toplevel_AXILiteS_s_axi' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_AXILiteS_s_axi.vhd:12' bound to instance 'toplevel_AXILiteS_s_axi_U' of component 'toplevel_AXILiteS_s_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:797]
+INFO: [Synth 8-638] synthesizing module 'toplevel_AXILiteS_s_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_AXILiteS_s_axi.vhd:104]
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'toplevel_AXILiteS_s_axi' (258#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_AXILiteS_s_axi.vhd:104]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_AXILiteS_s_axi' (258#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_AXILiteS_s_axi.vhd:104]
 	Parameter CONSERVATIVE bound to: 0 - type: integer 
 	Parameter USER_DW bound to: 32 - type: integer 
 	Parameter USER_AW bound to: 32 - type: integer 
@@ -8034,8 +8034,8 @@ INFO: [Synth 8-256] done synthesizing module 'toplevel_AXILiteS_s_axi' (258#1) [
 	Parameter C_USER_VALUE bound to: 0 - type: integer 
 	Parameter C_PROT_VALUE bound to: 0 - type: integer 
 	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:12' bound to instance 'toplevel_MAXI_m_axi_U' of component 'toplevel_MAXI_m_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:838]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:143]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:12' bound to instance 'toplevel_MAXI_m_axi_U' of component 'toplevel_MAXI_m_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:838]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:143]
 	Parameter CONSERVATIVE bound to: 0 - type: integer 
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
@@ -8063,8 +8063,8 @@ INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi' [/home/userfs/q/qj
 	Parameter DEPTH bound to: 16 - type: integer 
 	Parameter USER_MAXREQS bound to: 16 - type: integer 
 	Parameter CONSERVATIVE bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_throttl' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:954' bound to instance 'wreq_throttl' of component 'toplevel_MAXI_m_axi_throttl' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:309]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_throttl' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1000]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_throttl' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:954' bound to instance 'wreq_throttl' of component 'toplevel_MAXI_m_axi_throttl' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_throttl' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1000]
 	Parameter USED_FIX bound to: 0 - type: bool 
 	Parameter FIX_VALUE bound to: 4 - type: integer 
 	Parameter ADDR_WIDTH bound to: 32 - type: integer 
@@ -8072,7 +8072,7 @@ INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_throttl' [/home/use
 	Parameter DEPTH bound to: 16 - type: integer 
 	Parameter USER_MAXREQS bound to: 16 - type: integer 
 	Parameter CONSERVATIVE bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_throttl' (259#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_throttl' (259#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1000]
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -8088,8 +8088,8 @@ INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_throttl' (259#
 	Parameter USER_DW bound to: 32 - type: integer 
 	Parameter USER_AW bound to: 32 - type: integer 
 	Parameter USER_MAXREQS bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_write' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2125' bound to instance 'bus_write' of component 'toplevel_MAXI_m_axi_write' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:347]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_write' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2213]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_write' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2125' bound to instance 'bus_write' of component 'toplevel_MAXI_m_axi_write' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:347]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_write' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2213]
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -8106,62 +8106,62 @@ INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_write' [/home/userf
 	Parameter USER_AW bound to: 32 - type: integer 
 	Parameter USER_MAXREQS bound to: 5 - type: integer 
 	Parameter N bound to: 64 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:471' bound to instance 'rs_wreq' of component 'toplevel_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2349]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:488]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:471' bound to instance 'rs_wreq' of component 'toplevel_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2349]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:488]
 	Parameter N bound to: 64 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_reg_slice' (260#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:488]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_reg_slice' (260#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:488]
 	Parameter DATA_BITS bound to: 64 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_wreq' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2362]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_wreq' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2362]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
 	Parameter DATA_BITS bound to: 64 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:705]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_fifo' (261#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
+WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:705]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_fifo' (261#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 36 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_buffer' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:722' bound to instance 'buff_wdata' of component 'toplevel_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2761]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:744]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_buffer' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:722' bound to instance 'buff_wdata' of component 'toplevel_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2761]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:744]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 36 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_buffer' (262#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:744]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_buffer' (262#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:744]
 	Parameter DATA_BITS bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_burst' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2793]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_burst' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2793]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
 	Parameter DATA_BITS bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:705]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized1' (262#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
+WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:705]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized1' (262#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 15 - type: integer 
 	Parameter DEPTH_BITS bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_resp' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:3225]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_resp' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:3225]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized3' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 15 - type: integer 
 	Parameter DEPTH_BITS bound to: 4 - type: integer 
-WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:705]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized3' (262#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
+WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:705]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized3' (262#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_resp_to_user' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:3241]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized5' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_resp_to_user' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:3241]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized5' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:705]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized5' (262#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_write' (263#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2213]
+WARNING: [Synth 8-614] signal 'sclk_en' is read in the process but is not in the sensitivity list [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:705]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_fifo__parameterized5' (262#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:612]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_write' (263#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:2213]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -8176,8 +8176,8 @@ INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_write' (263#1)
 	Parameter USER_DW bound to: 32 - type: integer 
 	Parameter USER_AW bound to: 32 - type: integer 
 	Parameter USER_MAXREQS bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_read' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1182' bound to instance 'bus_read' of component 'toplevel_MAXI_m_axi_read' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:411]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_read' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1260]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_read' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1182' bound to instance 'bus_read' of component 'toplevel_MAXI_m_axi_read' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:411]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_read' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1260]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -8193,92 +8193,92 @@ INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_read' [/home/userfs
 	Parameter USER_AW bound to: 32 - type: integer 
 	Parameter USER_MAXREQS bound to: 5 - type: integer 
 	Parameter N bound to: 64 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:471' bound to instance 'rs_rreq' of component 'toplevel_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1393]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:471' bound to instance 'rs_rreq' of component 'toplevel_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1393]
 	Parameter DATA_BITS bound to: 64 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_rreq' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1406]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_rreq' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1406]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 35 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_buffer' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:722' bound to instance 'fifo_rdata' of component 'toplevel_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1783]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_buffer__parameterized1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:744]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_buffer' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:722' bound to instance 'fifo_rdata' of component 'toplevel_MAXI_m_axi_buffer' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1783]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_buffer__parameterized1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:744]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 35 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_buffer__parameterized1' (263#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:744]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_buffer__parameterized1' (263#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:744]
 	Parameter N bound to: 34 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:471' bound to instance 'rs_rdata' of component 'toplevel_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1801]
-INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_reg_slice__parameterized2' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:488]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_reg_slice' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:471' bound to instance 'rs_rdata' of component 'toplevel_MAXI_m_axi_reg_slice' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1801]
+INFO: [Synth 8-638] synthesizing module 'toplevel_MAXI_m_axi_reg_slice__parameterized2' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:488]
 	Parameter N bound to: 34 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_reg_slice__parameterized2' (263#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:488]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_reg_slice__parameterized2' (263#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:488]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 15 - type: integer 
 	Parameter DEPTH_BITS bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_rctl' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1814]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_read' (264#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1260]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi' (265#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:143]
+INFO: [Synth 8-3491] module 'toplevel_MAXI_m_axi_fifo' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:595' bound to instance 'fifo_rctl' of component 'toplevel_MAXI_m_axi_fifo' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1814]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi_read' (264#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:1260]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_MAXI_m_axi' (265#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:143]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 3 - type: integer 
 	Parameter din0_WIDTH bound to: 32 - type: integer 
 	Parameter din1_WIDTH bound to: 32 - type: integer 
 	Parameter dout_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_mul_32s_cud' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:53' bound to instance 'toplevel_mul_32s_cud_U1' of component 'toplevel_mul_32s_cud' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:954]
-INFO: [Synth 8-638] synthesizing module 'toplevel_mul_32s_cud' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:69]
+INFO: [Synth 8-3491] module 'toplevel_mul_32s_cud' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:53' bound to instance 'toplevel_mul_32s_cud_U1' of component 'toplevel_mul_32s_cud' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:954]
+INFO: [Synth 8-638] synthesizing module 'toplevel_mul_32s_cud' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:69]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 3 - type: integer 
 	Parameter din0_WIDTH bound to: 32 - type: integer 
 	Parameter din1_WIDTH bound to: 32 - type: integer 
 	Parameter dout_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_mul_32s_cud_MulnS_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:12' bound to instance 'toplevel_mul_32s_cud_MulnS_0_U' of component 'toplevel_mul_32s_cud_MulnS_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:82]
-INFO: [Synth 8-638] synthesizing module 'toplevel_mul_32s_cud_MulnS_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_mul_32s_cud_MulnS_0' (266#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_mul_32s_cud' (267#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:69]
+INFO: [Synth 8-3491] module 'toplevel_mul_32s_cud_MulnS_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:12' bound to instance 'toplevel_mul_32s_cud_MulnS_0_U' of component 'toplevel_mul_32s_cud_MulnS_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'toplevel_mul_32s_cud_MulnS_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_mul_32s_cud_MulnS_0' (266#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_mul_32s_cud' (267#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:69]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 3 - type: integer 
 	Parameter din0_WIDTH bound to: 32 - type: integer 
 	Parameter din1_WIDTH bound to: 32 - type: integer 
 	Parameter dout_WIDTH bound to: 64 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_mul_32nsdEe' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32nsdEe.vhd:53' bound to instance 'toplevel_mul_32nsdEe_U2' of component 'toplevel_mul_32nsdEe' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:969]
-INFO: [Synth 8-638] synthesizing module 'toplevel_mul_32nsdEe' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32nsdEe.vhd:69]
+INFO: [Synth 8-3491] module 'toplevel_mul_32nsdEe' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32nsdEe.vhd:53' bound to instance 'toplevel_mul_32nsdEe_U2' of component 'toplevel_mul_32nsdEe' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:969]
+INFO: [Synth 8-638] synthesizing module 'toplevel_mul_32nsdEe' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32nsdEe.vhd:69]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 3 - type: integer 
 	Parameter din0_WIDTH bound to: 32 - type: integer 
 	Parameter din1_WIDTH bound to: 32 - type: integer 
 	Parameter dout_WIDTH bound to: 64 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_mul_32nsdEe_MulnS_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32nsdEe.vhd:12' bound to instance 'toplevel_mul_32nsdEe_MulnS_1_U' of component 'toplevel_mul_32nsdEe_MulnS_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32nsdEe.vhd:82]
-INFO: [Synth 8-638] synthesizing module 'toplevel_mul_32nsdEe_MulnS_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32nsdEe.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_mul_32nsdEe_MulnS_1' (268#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32nsdEe.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_mul_32nsdEe' (269#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32nsdEe.vhd:69]
+INFO: [Synth 8-3491] module 'toplevel_mul_32nsdEe_MulnS_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32nsdEe.vhd:12' bound to instance 'toplevel_mul_32nsdEe_MulnS_1_U' of component 'toplevel_mul_32nsdEe_MulnS_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32nsdEe.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'toplevel_mul_32nsdEe_MulnS_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32nsdEe.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_mul_32nsdEe_MulnS_1' (268#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32nsdEe.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_mul_32nsdEe' (269#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32nsdEe.vhd:69]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 3 - type: integer 
 	Parameter din0_WIDTH bound to: 32 - type: integer 
 	Parameter din1_WIDTH bound to: 32 - type: integer 
 	Parameter dout_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_mul_32s_cud' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:53' bound to instance 'toplevel_mul_32s_cud_U3' of component 'toplevel_mul_32s_cud' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:984]
+INFO: [Synth 8-3491] module 'toplevel_mul_32s_cud' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:53' bound to instance 'toplevel_mul_32s_cud_U3' of component 'toplevel_mul_32s_cud' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:984]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 1 - type: integer 
 	Parameter din0_WIDTH bound to: 13 - type: integer 
 	Parameter din1_WIDTH bound to: 13 - type: integer 
 	Parameter din2_WIDTH bound to: 13 - type: integer 
 	Parameter dout_WIDTH bound to: 13 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_mac_mulaeOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mac_mulaeOg.vhd:42' bound to instance 'toplevel_mac_mulaeOg_U4' of component 'toplevel_mac_mulaeOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:999]
-INFO: [Synth 8-638] synthesizing module 'toplevel_mac_mulaeOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mac_mulaeOg.vhd:57]
+INFO: [Synth 8-3491] module 'toplevel_mac_mulaeOg' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mac_mulaeOg.vhd:42' bound to instance 'toplevel_mac_mulaeOg_U4' of component 'toplevel_mac_mulaeOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:999]
+INFO: [Synth 8-638] synthesizing module 'toplevel_mac_mulaeOg' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mac_mulaeOg.vhd:57]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 1 - type: integer 
 	Parameter din0_WIDTH bound to: 13 - type: integer 
 	Parameter din1_WIDTH bound to: 13 - type: integer 
 	Parameter din2_WIDTH bound to: 13 - type: integer 
 	Parameter dout_WIDTH bound to: 13 - type: integer 
-INFO: [Synth 8-3491] module 'toplevel_mac_mulaeOg_DSP48_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mac_mulaeOg.vhd:12' bound to instance 'toplevel_mac_mulaeOg_DSP48_0_U' of component 'toplevel_mac_mulaeOg_DSP48_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mac_mulaeOg.vhd:69]
-INFO: [Synth 8-638] synthesizing module 'toplevel_mac_mulaeOg_DSP48_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mac_mulaeOg.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_mac_mulaeOg_DSP48_0' (270#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mac_mulaeOg.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'toplevel_mac_mulaeOg' (271#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mac_mulaeOg.vhd:57]
-INFO: [Synth 8-256] done synthesizing module 'toplevel' (272#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:96]
+INFO: [Synth 8-3491] module 'toplevel_mac_mulaeOg_DSP48_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mac_mulaeOg.vhd:12' bound to instance 'toplevel_mac_mulaeOg_DSP48_0_U' of component 'toplevel_mac_mulaeOg_DSP48_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mac_mulaeOg.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'toplevel_mac_mulaeOg_DSP48_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mac_mulaeOg.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_mac_mulaeOg_DSP48_0' (270#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mac_mulaeOg.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'toplevel_mac_mulaeOg' (271#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mac_mulaeOg.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'toplevel' (272#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:96]
 INFO: [Synth 8-256] done synthesizing module 'system_toplevel_0_0' (273#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_toplevel_0_0/synth/system_toplevel_0_0.vhd:116]
-INFO: [Synth 8-3491] module 'system_v_axi4s_vid_out_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_axi4s_vid_out_0_0/synth/system_v_axi4s_vid_out_0_0.v:58' bound to instance 'v_axi4s_vid_out_0' of component 'system_v_axi4s_vid_out_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9637]
+INFO: [Synth 8-3491] module 'system_v_axi4s_vid_out_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_axi4s_vid_out_0_0/synth/system_v_axi4s_vid_out_0_0.v:58' bound to instance 'v_axi4s_vid_out_0' of component 'system_v_axi4s_vid_out_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:10014]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_PIXELS_PER_CLOCK bound to: 1 - type: integer 
 	Parameter C_COMPONENTS_PER_PIXEL bound to: 3 - type: integer 
@@ -8525,7 +8525,7 @@ INFO: [Synth 8-155] case statement is not full and has no default [/home/userfs/
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 WARNING: [Synth 8-3848] Net fifo_underflow_from_remap in module/entity v_axi4s_vid_out_v4_0_9 does not have driver. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/9a07/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:2219]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-3491] module 'system_v_tc_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_0/synth/system_v_tc_0_0.vhd:59' bound to instance 'v_tc_in' of component 'system_v_tc_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9670]
+INFO: [Synth 8-3491] module 'system_v_tc_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_0/synth/system_v_tc_0_0.vhd:59' bound to instance 'v_tc_in' of component 'system_v_tc_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:10047]
 INFO: [Synth 8-638] synthesizing module 'system_v_tc_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_0/synth/system_v_tc_0_0.vhd:93]
 	Parameter C_HAS_AXI4_LITE bound to: 1 - type: integer 
 	Parameter C_HAS_INTC_IF bound to: 1 - type: integer 
@@ -8646,7 +8646,7 @@ INFO: [Synth 8-226] default block is never used [/home/userfs/q/qj544/w2k/QLight
 INFO: [Synth 8-256] done synthesizing module 'slave_attachment__parameterized1' (284#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
 INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif__parameterized1' (284#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
 INFO: [Synth 8-256] done synthesizing module 'system_v_tc_0_0' (291#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_0/synth/system_v_tc_0_0.vhd:93]
-INFO: [Synth 8-3491] module 'system_v_tc_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_1/synth/system_v_tc_0_1.vhd:59' bound to instance 'v_tc_out' of component 'system_v_tc_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9702]
+INFO: [Synth 8-3491] module 'system_v_tc_0_1' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_1/synth/system_v_tc_0_1.vhd:59' bound to instance 'v_tc_out' of component 'system_v_tc_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:10079]
 INFO: [Synth 8-638] synthesizing module 'system_v_tc_0_1' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_1/synth/system_v_tc_0_1.vhd:102]
 	Parameter C_HAS_AXI4_LITE bound to: 1 - type: integer 
 	Parameter C_HAS_INTC_IF bound to: 0 - type: integer 
@@ -8735,7 +8735,7 @@ INFO: [Synth 8-638] synthesizing module 'system_v_tc_0_1' [/home/userfs/q/qj544/
 	Parameter C_DET_FIELDID_EN bound to: 0 - type: integer 
 INFO: [Synth 8-3491] module 'v_tc' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6694/hdl/v_tc_v6_1_vh_rfs.vhd:7217' bound to instance 'U0' of component 'v_tc' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_1/synth/system_v_tc_0_1.vhd:294]
 INFO: [Synth 8-256] done synthesizing module 'system_v_tc_0_1' (293#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_tc_0_1/synth/system_v_tc_0_1.vhd:102]
-INFO: [Synth 8-3491] module 'system_v_vid_in_axi4s_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_vid_in_axi4s_0_0/synth/system_v_vid_in_axi4s_0_0.v:57' bound to instance 'v_vid_in_axi4s_0' of component 'system_v_vid_in_axi4s_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9743]
+INFO: [Synth 8-3491] module 'system_v_vid_in_axi4s_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_v_vid_in_axi4s_0_0/synth/system_v_vid_in_axi4s_0_0.v:57' bound to instance 'v_vid_in_axi4s_0' of component 'system_v_vid_in_axi4s_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:10120]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_PIXELS_PER_CLOCK bound to: 1 - type: integer 
 	Parameter C_COMPONENTS_PER_PIXEL bound to: 3 - type: integer 
@@ -8773,7 +8773,7 @@ INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM g
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 WARNING: [Synth 8-3848] Net fifo_overflow_from_remap in module/entity v_vid_in_axi4s_v4_0_8 does not have driver. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/d987/hdl/v_vid_in_axi4s_v4_0_vl_rfs.v:1820]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-3491] module 'system_xlconcat_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'system_xlconcat_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9774]
+INFO: [Synth 8-3491] module 'system_xlconcat_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'system_xlconcat_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:10151]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
 	Parameter IN1_WIDTH bound to: 1 - type: integer 
 	Parameter IN2_WIDTH bound to: 1 - type: integer 
@@ -8808,7 +8808,7 @@ INFO: [Synth 8-3491] module 'system_xlconcat_0_0' declared at '/home/userfs/q/qj
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 5 - type: integer 
 	Parameter NUM_PORTS bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'system_xlconstant_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57' bound to instance 'xlconstant_axis_sc_reset' of component 'system_xlconstant_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:9783]
+INFO: [Synth 8-3491] module 'system_xlconstant_0_0' declared at '/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57' bound to instance 'xlconstant_axis_sc_reset' of component 'system_xlconstant_0_0' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:10160]
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
@@ -8816,7 +8816,7 @@ INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM g
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'system' (304#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:7490]
+INFO: [Synth 8-256] done synthesizing module 'system' (304#1) [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/synth/system.vhd:7821]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
@@ -8925,7 +8925,7 @@ WARNING: [Synth 8-3331] design tc_generator has unconnected port gen_v1fp_start[
 WARNING: [Synth 8-3331] design tc_generator has unconnected port gen_v1fp_start[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:04:34 ; elapsed = 00:04:51 . Memory (MB): peak = 1904.988 ; gain = 616.270 ; free physical = 7217 ; free virtual = 26987
+Finished RTL Elaboration : Time (s): cpu = 00:04:34 ; elapsed = 00:04:52 . Memory (MB): peak = 1906.258 ; gain = 616.496 ; free physical = 8876 ; free virtual = 27789
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -8940,10 +8940,10 @@ INFO: [Synth 8-3295] tying undriven pin CDC_SINGLE_REMAP_OVERFLOW_INST:DAT_IN to
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:36 ; elapsed = 00:04:54 . Memory (MB): peak = 1904.988 ; gain = 616.270 ; free physical = 7304 ; free virtual = 27074
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:36 ; elapsed = 00:04:55 . Memory (MB): peak = 1906.258 ; gain = 616.496 ; free physical = 8953 ; free virtual = 27866
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:04:36 ; elapsed = 00:04:54 . Memory (MB): peak = 1904.988 ; gain = 616.270 ; free physical = 7304 ; free virtual = 27074
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:04:36 ; elapsed = 00:04:55 . Memory (MB): peak = 1906.258 ; gain = 616.496 ; free physical = 8953 ; free virtual = 27866
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 449 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -9120,9 +9120,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
   SRL16 => SRL16E: 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.20 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2121.160 ; gain = 0.000 ; free physical = 6863 ; free virtual = 26633
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2122.430 ; gain = 0.000 ; free physical = 8467 ; free virtual = 27426
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:04:59 ; elapsed = 00:05:31 . Memory (MB): peak = 2121.160 ; gain = 832.441 ; free physical = 7096 ; free virtual = 26866
+Finished Constraint Validation : Time (s): cpu = 00:05:00 ; elapsed = 00:05:31 . Memory (MB): peak = 2122.430 ; gain = 832.668 ; free physical = 8703 ; free virtual = 27662
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
 ---------------------------------------------------------------------------------
@@ -9130,7 +9130,7 @@ Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:04:59 ; elapsed = 00:05:31 . Memory (MB): peak = 2125.078 ; gain = 836.359 ; free physical = 7096 ; free virtual = 26866
+Finished Loading Part and Timing Information : Time (s): cpu = 00:05:00 ; elapsed = 00:05:31 . Memory (MB): peak = 2126.348 ; gain = 836.586 ; free physical = 8703 ; free virtual = 27662
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -9228,7 +9228,7 @@ Applied set_property DONT_TOUCH = true for system_i/axi_vdma_0/U0/I_PRMRY_DATAMO
 Applied set_property DONT_TOUCH = true for system_i/v_axi4s_vid_out_0/inst/COUPLER_INST/\generate_async_fifo.FIFO_INST /XPM_FIFO_ASYNC_INST/\gnuram_async_fifo.xpm_fifo_base_inst . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/v_vid_in_axi4s_0/inst/COUPLER_INST/\generate_async_fifo.FIFO_INST /XPM_FIFO_ASYNC_INST/\gnuram_async_fifo.xpm_fifo_base_inst . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:05:00 ; elapsed = 00:05:32 . Memory (MB): peak = 2125.078 ; gain = 836.359 ; free physical = 7084 ; free virtual = 26854
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:05:00 ; elapsed = 00:05:32 . Memory (MB): peak = 2126.348 ; gain = 836.586 ; free physical = 8694 ; free virtual = 27653
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "frame_counter_div_flag" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "delay_done_flag" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
@@ -9426,27 +9426,27 @@ INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because ad
 INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5546] ROM "req_en" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:804]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:804]
 INFO: [Synth 8-5546] ROM "full_n" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "empty_n" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:696]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_MAXI_m_axi.vhd:804]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:696]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_MAXI_m_axi.vhd:804]
 INFO: [Synth 8-5546] ROM "full_n" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "empty_n" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32s_cud.vhd:36]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel_mul_32nsdEe.vhd:36]
-INFO: [Synth 8-4471] merging register 'agg_result_V_load_i_reg_394_reg[11:0]' into 'agg_result_V_1_i_reg_382_reg[11:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:1222]
-WARNING: [Synth 8-3936] Found unconnected internal register 'indvar_reg_304_pp0_iter1_reg_reg' and it is trimmed from '30' to '13' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:1455]
-WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_i1_5_reg_1151_reg' and it is trimmed from '32' to '13' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:1623]
-WARNING: [Synth 8-3936] Found unconnected internal register 'x_i_mid2_reg_1140_pp2_iter1_reg_reg' and it is trimmed from '32' to '13' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:1445]
-WARNING: [Synth 8-3936] Found unconnected internal register 'r_V_2_cast_reg_1120_reg' and it is trimmed from '44' to '13' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/bea6/hdl/vhdl/toplevel.vhd:1555]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32s_cud.vhd:36]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel_mul_32nsdEe.vhd:36]
+INFO: [Synth 8-4471] merging register 'agg_result_V_load_i_reg_394_reg[11:0]' into 'agg_result_V_1_i_reg_382_reg[11:0]' [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:1222]
+WARNING: [Synth 8-3936] Found unconnected internal register 'indvar_reg_304_pp0_iter1_reg_reg' and it is trimmed from '30' to '13' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:1455]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_i1_5_reg_1151_reg' and it is trimmed from '32' to '13' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:1623]
+WARNING: [Synth 8-3936] Found unconnected internal register 'x_i_mid2_reg_1140_pp2_iter1_reg_reg' and it is trimmed from '32' to '13' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:1445]
+WARNING: [Synth 8-3936] Found unconnected internal register 'r_V_2_cast_reg_1120_reg' and it is trimmed from '44' to '13' bits. [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/b395/hdl/vhdl/toplevel.vhd:1555]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:827]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/opt/york/cs/net/xilinx_vivado-2018.2_ise-14.7_x86-64-1/Vivado/2018.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:827]
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:05:18 ; elapsed = 00:05:54 . Memory (MB): peak = 2125.078 ; gain = 836.359 ; free physical = 5850 ; free virtual = 25629
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:05:18 ; elapsed = 00:05:54 . Memory (MB): peak = 2126.348 ; gain = 836.586 ; free physical = 7515 ; free virtual = 26482
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -14324,7 +14324,7 @@ WARNING: [Synth 8-3332] Sequential element (q_buf_reg[31]) is unused and will be
 WARNING: [Synth 8-3332] Sequential element (q_tmp_reg[31]) is unused and will be removed from module toplevel_MAXI_m_axi_buffer.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:03 ; elapsed = 00:07:06 . Memory (MB): peak = 2125.078 ; gain = 836.359 ; free physical = 5109 ; free virtual = 24941
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:02 ; elapsed = 00:07:03 . Memory (MB): peak = 2126.348 ; gain = 836.586 ; free physical = 6683 ; free virtual = 25705
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -14420,7 +14420,7 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:06:11 ; elapsed = 00:07:18 . Memory (MB): peak = 2174.160 ; gain = 885.441 ; free physical = 4835 ; free virtual = 24667
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:06:10 ; elapsed = 00:07:14 . Memory (MB): peak = 2175.430 ; gain = 885.668 ; free physical = 6374 ; free virtual = 25430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -14512,7 +14512,7 @@ INFO: [Synth 8-4480] The timing for the instance system_i/toplevel_0/U0/visited_
 INFO: [Synth 8-4480] The timing for the instance system_i/toplevel_0/U0/toplevel_MAXI_m_axi_U/bus_read/fifo_rdata/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance system_i/DigiLED_0/inst/DigiLED_v1_0_S00_AXI_inst/led_data_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:06:35 ; elapsed = 00:07:44 . Memory (MB): peak = 2224.191 ; gain = 935.473 ; free physical = 4796 ; free virtual = 24628
+Finished Technology Mapping : Time (s): cpu = 00:06:32 ; elapsed = 00:07:39 . Memory (MB): peak = 2224.461 ; gain = 934.699 ; free physical = 6379 ; free virtual = 25403
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -14645,7 +14645,7 @@ WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/
 WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/userfs/q/qj544/w2k/QLight/vivado/src/bd/system/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:422]
 INFO: [Common 17-14] Message 'Synth 8-5396' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:06:38 ; elapsed = 00:07:47 . Memory (MB): peak = 2224.191 ; gain = 935.473 ; free physical = 4685 ; free virtual = 24490
+Finished IO Insertion : Time (s): cpu = 00:06:35 ; elapsed = 00:07:42 . Memory (MB): peak = 2224.461 ; gain = 934.699 ; free physical = 6377 ; free virtual = 25402
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -14658,7 +14658,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:06:39 ; elapsed = 00:07:48 . Memory (MB): peak = 2224.191 ; gain = 935.473 ; free physical = 4673 ; free virtual = 24479
+Finished Renaming Generated Instances : Time (s): cpu = 00:06:35 ; elapsed = 00:07:42 . Memory (MB): peak = 2224.461 ; gain = 934.699 ; free physical = 6377 ; free virtual = 25402
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -14670,7 +14670,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:06:39 ; elapsed = 00:07:48 . Memory (MB): peak = 2224.191 ; gain = 935.473 ; free physical = 4674 ; free virtual = 24480
+Finished Handling Custom Attributes : Time (s): cpu = 00:06:35 ; elapsed = 00:07:42 . Memory (MB): peak = 2224.461 ; gain = 934.699 ; free physical = 6377 ; free virtual = 25402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -15606,11 +15606,11 @@ Report Instance Areas:
 |815   |          SEQ_COUNTER                                                                                     |upcnt_n                                                                          |    13|
 +------+----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:06:39 ; elapsed = 00:07:48 . Memory (MB): peak = 2224.191 ; gain = 935.473 ; free physical = 4674 ; free virtual = 24480
+Finished Writing Synthesis Report : Time (s): cpu = 00:06:35 ; elapsed = 00:07:42 . Memory (MB): peak = 2224.461 ; gain = 934.699 ; free physical = 6375 ; free virtual = 25401
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1868 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:06:19 ; elapsed = 00:07:17 . Memory (MB): peak = 2228.102 ; gain = 723.211 ; free physical = 6625 ; free virtual = 26431
-Synthesis Optimization Complete : Time (s): cpu = 00:06:40 ; elapsed = 00:07:49 . Memory (MB): peak = 2228.102 ; gain = 939.383 ; free physical = 6625 ; free virtual = 26431
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:16 ; elapsed = 00:07:15 . Memory (MB): peak = 2228.371 ; gain = 722.438 ; free physical = 8302 ; free virtual = 27329
+Synthesis Optimization Complete : Time (s): cpu = 00:06:36 ; elapsed = 00:07:47 . Memory (MB): peak = 2228.371 ; gain = 938.609 ; free physical = 8302 ; free virtual = 27329
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1627 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -15628,10 +15628,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 1644 Infos, 539 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:06:48 ; elapsed = 00:07:57 . Memory (MB): peak = 2232.195 ; gain = 949.348 ; free physical = 6856 ; free virtual = 26645
+synth_design: Time (s): cpu = 00:06:44 ; elapsed = 00:07:56 . Memory (MB): peak = 2232.465 ; gain = 948.574 ; free physical = 8475 ; free virtual = 27497
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/userfs/q/qj544/w2k/QLight/vivado/proj/HDMI.runs/synth_1/system_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2256.207 ; gain = 24.012 ; free physical = 6749 ; free virtual = 26598
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2256.477 ; gain = 24.012 ; free physical = 8460 ; free virtual = 27501
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.45 . Memory (MB): peak = 2256.207 ; gain = 0.000 ; free physical = 6762 ; free virtual = 26602
-INFO: [Common 17-206] Exiting Vivado at Fri Mar  8 15:49:43 2019...
+report_utilization: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.40 . Memory (MB): peak = 2256.477 ; gain = 0.000 ; free physical = 8460 ; free virtual = 27501
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 15 10:15:49 2019...

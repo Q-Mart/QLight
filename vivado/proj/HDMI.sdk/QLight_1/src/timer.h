@@ -3,7 +3,7 @@
 
 #include <xtime_l.h>
 
-#define TIMING
+//#define TIMING
 
 typedef struct {
 	XTime start;

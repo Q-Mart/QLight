@@ -74,7 +74,7 @@ XToplevel modeCalc;
 u8 syncMode;
 
 // 25 cubed
-u32 colourThreshold = 1000;
+u32 colourThreshold = 100;
 u32 subsampleDelay = 0;
 
 #ifdef TIMING
@@ -83,6 +83,9 @@ Timer scaleTimer;
 Timer modeTimer;
 
 int loggingStarted = 0;
+
+int recordLoggingStarted;
+u32 numberOfRecordsMade = 0;
 #endif
 
 void initSections() {
@@ -466,10 +469,12 @@ int main() {
 	printf("Subsample ");
 #if (SUBSAMPLE_SCALE_FACTOR == 64)
 	printf("64");
-#elif (SUBSAMPLE_SCALE_FACTOR == 256)
-	printf("256");
-#elif (SUBSAMPLE_SCALE_FACTOR == 1024)
-	printf("1024");
+#elif (SUBSAMPLE_SCALE_FACTOR == 32)
+	printf("32");
+#elif (SUBSAMPLE_SCALE_FACTOR == 16)
+	printf("16");
+#elif (SUBSAMPLE_SCALE_FACTOR == 8)
+	printf("8");
 #endif
 #endif
 	printf("\r\n");
@@ -614,12 +619,28 @@ int main() {
 
 		loggingStarted = checkIfSwitchIsOn(2);
 
-		if (loggingStarted) {
+		if (checkIfButtonPressed(0)) {
+			recordLoggingStarted = 1;
+			while (checkIfButtonPressed(0));
+			numberOfRecordsMade = 0;
+		}
+
+		if (loggingStarted || recordLoggingStarted) {
 			printf("%.2f,", timerGetFPS(&overallTimer));
 			printf("%.4f,", timerGetExecutionTime(&overallTimer));
 			printf("%.8f,", timerGetExecutionTime(&scaleTimer));
 			printf("%.8f,", timerGetExecutionTime(&modeTimer));
 			printf("\r\n");
+		}
+
+		if (recordLoggingStarted) {
+			numberOfRecordsMade++;
+
+			if (numberOfRecordsMade == 100) {
+				numberOfRecordsMade = 0;
+				recordLoggingStarted = 0;
+				printf("LOGGING FINISHED\r\n");
+			}
 		}
 #endif
 

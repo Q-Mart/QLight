@@ -44,7 +44,7 @@ set TargetInfo "xc7z010:clg400:-1"
 set SourceFiles {sc {} c ../src/toplevel.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/userfs/q/qj544/w2k/QLight/modeComputer/solution1/solution1.directive}
-set TBFiles {verilog {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp} bc {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp} sc {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp} vhdl {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp} c {} cas {../src/blueGreenVert.h ../src/blueHoriz.h ../src/green.h ../src/testbench.cpp}}
+set TBFiles {verilog {../src/testbench.cpp ../src/green.h ../src/blueHoriz.h ../src/blueGreenVert.h} bc {../src/testbench.cpp ../src/green.h ../src/blueHoriz.h ../src/blueGreenVert.h} sc {../src/testbench.cpp ../src/green.h ../src/blueHoriz.h ../src/blueGreenVert.h} vhdl {../src/testbench.cpp ../src/green.h ../src/blueHoriz.h ../src/blueGreenVert.h} c {} cas {../src/testbench.cpp ../src/green.h ../src/blueHoriz.h ../src/blueGreenVert.h}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

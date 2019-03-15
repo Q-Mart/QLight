@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;modeComputer/src/toplevel.cpp&apos; ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 363.566 ; gain = 2.215 ; free physical = 8391 ; free virtual = 28796"/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 363.566 ; gain = 2.215 ; free physical = 8391 ; free virtual = 28796"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 363.559 ; gain = 2.215 ; free physical = 9818 ; free virtual = 28615"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 363.559 ; gain = 2.215 ; free physical = 9818 ; free virtual = 28615"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 363.734 ; gain = 2.383 ; free physical = 8380 ; free virtual = 28788"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 363.727 ; gain = 2.383 ; free physical = 9802 ; free virtual = 28607"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;equal&apos; into &apos;inVisited&apos; (modeComputer/src/toplevel.cpp:25) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;equal&apos; into &apos;getFrequency&apos; (modeComputer/src/toplevel.cpp:54) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;inVisited&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:89) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;visit&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:93) automatically."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 363.734 ; gain = 2.383 ; free physical = 8376 ; free virtual = 28785"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 363.727 ; gain = 2.383 ; free physical = 9797 ; free virtual = 28603"/>
 	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;mainXLoop&apos; (modeComputer/src/toplevel.cpp:81) in function &apos;toplevel&apos; for pipelining."/>
 	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;inVisited&apos; (modeComputer/src/toplevel.cpp:21)."/>
 	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;getFrequency&apos; (modeComputer/src/toplevel.cpp:42)."/>
@@ -23,14 +23,14 @@
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;inVisited&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:89) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;visit&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:93) automatically."/>
 	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;getFrequency&apos; into &apos;toplevel&apos; (modeComputer/src/toplevel.cpp:97) automatically."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 491.422 ; gain = 130.070 ; free physical = 8344 ; free virtual = 28754"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 491.414 ; gain = 130.070 ; free physical = 9769 ; free virtual = 28579"/>
 	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;freqXLoop&apos; (modeComputer/src/toplevel.cpp:47:43) in function &apos;toplevel&apos;."/>
 	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="SDX_LOOP" content="Cannot flatten a loop nest &apos;mainYLoop&apos; (modeComputer/src/toplevel.cpp:84:54) in function &apos;toplevel&apos; : 
 
 more than one sub loop."/>
 	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;mainXLoop&apos; (modeComputer/src/toplevel.cpp:81:54) in function &apos;toplevel&apos;."/>
 	<Message severity="INFO" prefix="[XFORM 203-811]" key="XFORM_BUS_BURST_INFER_STATUS_254" tag="SDX_AXI" content="Inferring multiple bus burst read of variable length on port &apos;MAXI&apos; (modeComputer/src/toplevel.cpp:74:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 491.422 ; gain = 130.070 ; free physical = 8343 ; free virtual = 28753"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 491.414 ; gain = 130.070 ; free physical = 9768 ; free virtual = 28578"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;toplevel&apos; ..."/>
 	<Message severity="WARNING" prefix="[SYN 201-107]" key="SYN_PORT_NAME_ILLEGAL_593" tag="" content="Renaming port name &apos;toplevel/length&apos; to &apos;toplevel/length_r&apos; to avoid the conflict with HDL keywords or other object names."/>
@@ -56,14 +56,14 @@ more than one sub loop."/>
 	&apos;and&apos; operation (&apos;tmp1&apos;, modeComputer/src/toplevel.cpp:16-&gt;modeComputer/src/toplevel.cpp:25-&gt;modeComputer/src/toplevel.cpp:89) (0 ns)
 	&apos;and&apos; operation (&apos;val&apos;, modeComputer/src/toplevel.cpp:16-&gt;modeComputer/src/toplevel.cpp:25-&gt;modeComputer/src/toplevel.cpp:89) (0.978 ns)"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 15.71 seconds; current allocated memory: 82.188 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 17.52 seconds; current allocated memory: 82.187 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 3 loops out of a total 4 loops have been pipelined in this design."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.21 seconds; current allocated memory: 83.075 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.24 seconds; current allocated memory: 83.075 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;toplevel&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
@@ -85,14 +85,14 @@ more than one sub loop."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;toplevel_mul_32nsdEe&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;toplevel_mul_32s_cud&apos;: 2 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;toplevel&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.42 seconds; current allocated memory: 85.225 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.44 seconds; current allocated memory: 85.210 MB."/>
 	<Message severity="INFO" prefix="[RTMG 210-282]" key="RTMG_282_1796" tag="" content="Generating pipelined core: &apos;toplevel_mul_32s_cud_MulnS_0&apos;"/>
 	<Message severity="INFO" prefix="[RTMG 210-282]" key="RTMG_282_1796" tag="" content="Generating pipelined core: &apos;toplevel_mul_32nsdEe_MulnS_1&apos;"/>
 	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;toplevel_sectionDbkb_ram (RAM)&apos; using block RAMs with power-on initialization."/>
 	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;toplevel_visited_ram (RAM)&apos; using block RAMs with power-on initialization."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 491.422 ; gain = 130.070 ; free physical = 8329 ; free virtual = 28741"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:14 ; elapsed = 00:00:22 . Memory (MB): peak = 491.414 ; gain = 130.070 ; free physical = 9366 ; free virtual = 28223"/>
 	<Message severity="INFO" prefix="[SYSC 207-301]" key="SYSC_301_1065" tag="" content="Generating SystemC RTL for toplevel."/>
 	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for toplevel."/>
 	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for toplevel."/>
-	<Message severity="INFO" prefix="[HLS 200-112]" key="HLS_112_964" tag="" content="Total elapsed time: 19.99 seconds; peak allocated memory: 85.225 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-112]" key="HLS_112_964" tag="" content="Total elapsed time: 21.76 seconds; peak allocated memory: 85.210 MB."/>
 </Messages>

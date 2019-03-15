@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="toplevel.cpp" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/toplevel.cpp"/>
     <originFiles name="toplevel.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/toplevel.h"/>
+    <originFiles name="toplevel.cpp" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/toplevel.cpp"/>
   </source>
   <testbench>
-    <originFiles name="testbench.cpp" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/testbench.cpp"/>
-    <originFiles name="green.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/green.h"/>
-    <originFiles name="blueHoriz.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/blueHoriz.h"/>
     <originFiles name="blueGreenVert.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/blueGreenVert.h"/>
+    <originFiles name="blueHoriz.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/blueHoriz.h"/>
+    <originFiles name="green.h" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/green.h"/>
+    <originFiles name="testbench.cpp" path="/home/userfs/q/qj544/w2k/QLight/modeComputer/src/testbench.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>
