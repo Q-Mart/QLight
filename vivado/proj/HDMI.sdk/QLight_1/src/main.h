@@ -4,7 +4,7 @@
 #include "section.h"
 #include "xbasic_types.h"
 
-#define VERSION 1.2
+#define VERSION 1.0
 
 // Set the flag to start HDMI video streaming on detection to true
 #define START_ON_DET 1
